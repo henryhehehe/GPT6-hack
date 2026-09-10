@@ -14,6 +14,7 @@ export function loadSettingAssets(parent: THREE.Object3D, placements: SettingPla
   const fallbacks = new Map<string, THREE.Group>();
   const status = new Map<SettingAssetId, 'loading' | 'ready' | 'failed'>();
   let disposed = false;
+  const sourceObjects = new Set<SettingAssetId>(['open-scroll', 'rolled-scroll', 'writing-tablet', 'open-letter', 'folded-letter']);
 
   function disposeGeometry(group: THREE.Object3D) {
     group.traverse(o => { if (o instanceof THREE.Mesh) o.geometry.dispose(); });
@@ -29,6 +30,9 @@ export function loadSettingAssets(parent: THREE.Object3D, placements: SettingPla
   }
   function transform(group: THREE.Group, p: SettingPlacement) {
     group.position.set(...p.at); group.rotation.y = p.turn; group.scale.setScalar(p.scale);
+    // A blank model is a station entry point; the selected lesson owns its evidence.
+    // Never embed quotations or infer a different source from the shared GLB.
+    if (p.zone && sourceObjects.has(p.id)) group.userData.sourceStation = p.zone;
   }
   for (const p of placements) {
     const fallback = new THREE.Group(); fallback.name = `fallback:${p.key}`;

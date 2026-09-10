@@ -24,6 +24,8 @@ ships, coastal rocks, three sheep and a walk-through cave.
 
 ## Behavior
 
+- Overview hides pavilion roofs to show the furnished reading stations. Walk mode
+  restores the roofs; the same models and collision map remain in place.
 - Furniture, rock, tree, column and character footprints stop the walking camera.
   Station arrivals and routes remain open. The cave has a conservative clear
   passage under its curved roof; both ends connect to the island's floor.
@@ -34,10 +36,12 @@ ships, coastal rocks, three sheep and a walk-through cave.
   Cave and ship fallbacks preserve recognizable openings and silhouettes.
 - Teardown removes the model group before the renderer's scene cleanup, disposes
   each shared source once, and releases late-arriving loads without reattaching.
-- Existing character identities, labels, conversation buttons, evidence markers
-  and keyboard inspection remain the lesson interaction. Decorative letters and
-  scrolls have no invented source text or new evidence bindings. Marker rotation
-  respects reduced motion.
+- Letters, scrolls and wax tablets open their assigned station's evidence through
+  the existing lesson reader, before and after their detailed models load. They
+  contain no invented quotations or embedded source IDs. Character identities,
+  labels, conversation buttons, evidence markers and keyboard inspection remain
+  available. The nearest visible surface wins a click, so walls and furniture
+  block objects behind them. Marker rotation respects reduced motion.
 
 ## Verification
 
@@ -52,6 +56,15 @@ Scoped TypeScript checking covers the renderer and its new modules. ESLint passe
 for the new modules, test and layout exporter. The combined production build and
 live browser rehearsal belong to the coordinating scene task; this checkpoint
 does not claim browser performance or native literary-scene acceptance.
+
+The combined local integration also passes the external-loader checks and the
+scene-selection tests: 19 tests across `setting-models.test.ts`,
+`externalModels.test.ts`, and `scenePicking.test.ts`. The common hit resolver
+preserves external prop inspection and named-character conversation actions.
+An optional HTTP checksum check against the running preview was blocked by the
+approval service's account usage limit; live-server delivery remains unverified
+by this task. The real local GLBs, their checksum/bounds contracts and application
+type checking are verified independently.
 
 ## Placement preview
 
