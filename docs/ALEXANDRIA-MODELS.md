@@ -1,6 +1,6 @@
 # Alexandria model pack
 
-48 original reusable scenery models across two packs, added September 10, 2026: the original 28-model collection plus a 20-model everyday-detail expansion. The existing library and lighthouse remain in place, giving Alexandria 50 scenery model types from these authored collections, excluding the separately authored characters. Every new model has a scene placement.
+54 original reusable scenery models across two packs, added September 10, 2026: the original 28-model collection plus a 26-model everyday-detail expansion. The existing library and lighthouse remain in place, giving Alexandria 56 scenery model types from these authored collections, excluding the separately authored characters. Every new model has a scene placement.
 
 These are detailed, stylized Hellenistic-inspired teaching props. They are not scanned artifacts, verified reconstructions, or evidence of ancient economic activity. No external geometry or textures were acquired. The new assets use the repository's MIT license; historical and textual evidence remains in its existing source cards.
 
@@ -20,9 +20,9 @@ These are detailed, stylized Hellenistic-inspired teaching props. They are not s
 | Neighborhood | Harbor warehouse, courtyard house, workshop house | Roof tiles, parapets, masonry courses, corner quoins, shutter boards, door planks and bronze straps |
 | Waterfront | Mooring bollard, quay steps | Turned stone caps, wrapped line, individual dressed treads |
 
-## Everyday-detail expansion: 20 more models
+## Everyday-detail expansion: 26 more models
 
-![Twenty additional street and scholarly props](../assets/blender/alexandria-details-contact-sheet.png)
+![Twenty-six additional street and scholarly props](../assets/blender/alexandria-details-contact-sheet.png)
 
 | Area | Models | Detail |
 | --- | --- | --- |
@@ -38,7 +38,7 @@ The rings, sundial, tools, and music props are artistic teaching interpretations
 ## Files and reuse
 
 - `public/models/alexandria/`: 28 standalone GLBs, the optimized runtime `alexandria-kit.glb`, and `manifest.json`.
-- `public/models/alexandria-details/`: 20 standalone GLBs, `alexandria-details.glb`, and its independent manifest.
+- `public/models/alexandria-details/`: 26 standalone GLBs, `alexandria-details.glb`, and its independent manifest.
 - `assets/blender/alexandria-details.blend`, `alexandria-details-contact-sheet.png`, and `alexandria-details-validation.json`: expansion source, inspected studio preview, and measured checks.
 - `assets/blender/alexandria-kit.blend`: editable source, organized as a labeled studio collection. Individual objects are normalized for the contact sheet in this file; regenerate the GLBs with the script to restore the scene-scale export transforms.
 - `assets/blender/alexandria-contact-sheet.png`: rendered and visually inspected collection preview.
@@ -56,7 +56,15 @@ The existing library, lighthouse and animated archive-door nodes are unchanged. 
 
 Market displays respond to market activity; harbor cargo responds to harbor activity. This is an illustrative scenario display, not historical data. The whole bundle is validated before replacing placeholders. A failed or incomplete load keeps the original playable scene. Late loads after unmount dispose their resources. Shared geometry is reused for repeated models, and repeated static decorations use instanced draw calls. All learning state and source readers stay outside the asset loader.
 
-## Measured checks
+## Craft and scholarship continuation
+
+Six further original props are integrated: a compartmented scribe tray with ink and reed pens on the library scroll cabinet; a hollow pigment mortar with resting pestle at the produce stall; a basket of wool and clay-whorl spindles beside the loom; hemmed, fringed linen on the textile counter; a pegged oil-flask carrier on the pottery counter; and a plank tool chest with raised lid, hinges, handles and tools beside the craft rack. They use the existing material palette and the same MIT provenance. No written evidence is fabricated.
+
+All six have runtime placements. Ground props stay within the existing weaving collision envelope. Counter props use the measured top of the actual scaled GLB planks, and raycasts verify support at all four footprint corners. New market supplies follow the existing market-activity visibility; the library and craft tools remain present. The loader requests bundle revision 2 so previously loaded scene assets refresh.
+
+The expanded detail bundle measures **1,899,028 bytes**, an increase of 550,932 bytes, with **60,560 unique triangles**. Every individual detail stays below 500 KB and 10,000 triangles. The legacy initial-pack budget including the three named-character reserve is **14,552,784 bytes**, below its 15 MB target; this excludes the separately added external assets, expanded city and background crowd. This is a download/geometry check, not a browser frame-rate measurement. The 26-model Blender sheet was inspected; loader fallback, late disposal, activity visibility, collision envelopes, supported footprints and the connected main route passed the asset validation script.
+
+## Earlier 20-model checkpoint measurements
 
 - 28 standalone models and the complete bundle parse through the production Three.js GLTFLoader.
 - New bundle: **6,158,180 bytes**; detail expansion: **1,348,096 bytes**; both packs with the existing two landmarks: **12,065,488 bytes**, below the documented 15 MB initial model target.
