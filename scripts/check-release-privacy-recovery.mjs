@@ -40,6 +40,12 @@ try{
   const response=await mf.dispatchFetch(`http://localhost${endpoint}`,{method:'POST',headers:{Origin:'http://localhost','Content-Type':'application/json',...(token?{Authorization:`Bearer ${token}`}:{}) ,...(cookie?{Cookie:cookie}:{})},body:JSON.stringify(body)});
   const data=await response.json();assert.equal(response.status,status,JSON.stringify(data));return {data,headers:response.headers};
  };
+ const freshPage=await mf.dispatchFetch('http://localhost/try');assert.equal(freshPage.status,200);
+ const freshHtml=await freshPage.text();
+ assert.ok(freshHtml.includes('Save starting prediction'),'Fresh trial renders the prediction form');
+ assert.ok(freshHtml.includes('Defend your idea'),'Fresh trial has an idle submission form before classroom creation');
+ assert.ok(!freshHtml.includes('Please wait…'),'Fresh trial must not wait for a classroom it has not created');
+ console.log('PASS fresh trial renders an idle learning form before classroom creation.');
  const login=await post('/api/teacher-access',{code:'offline-regression-code'}),cookie=login.headers.get('set-cookie').split(';')[0];
  const classroom=async()=> (await post('/api/classroom',{action:'create'},undefined,cookie)).data;
  const c=await classroom(),foreign=await classroom();
