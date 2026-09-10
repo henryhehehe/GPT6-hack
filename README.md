@@ -1,5 +1,7 @@
 # Counterfactual Worlds
 
+Deployment: when a development checkpoint is ready, ask **“Deploy the latest checkpoint.”** Follow the [deployment runbook](docs/DEPLOYMENT.md) for validation, publishing, pilot limits, and recovery. Development edits are not automatically published.
+
 A teacher shapes a historical thought experiment. A student explores a living 3D harbor, examines evidence, and defends a causal explanation. The teacher can add help to the running world without losing the student's work.
 
 Built for the GPT-6 Astra hackathon. The one-minute video uses **both interfaces**: teacher → student → teacher intervention → student revision.
@@ -10,7 +12,7 @@ Product scope also includes English: [The Odyssey and Pride and Prejudice expans
 
 For independent review, pass along [the one-page context brief](docs/REVIEW-CONTEXT.md). [Learning UX research](docs/LEARNING-UX-RESEARCH.md) compares five products and separates documented patterns from design recommendations.
 
-The [open-model shortlist](docs/OPEN-MODEL-SHORTLIST.md) records reusable 3D asset candidates for Alexandria, The Odyssey, and Pride and Prejudice, with publisher license labels, optimization needs, and an integration plan. These external candidates are not installed yet.
+The [external model library](assets/external/README.md) includes 69 local CC0 GLBs with a [detailed guide for every item](assets/external/USAGE-GUIDE.md). Open `/model-catalog` in the app for search, live 3D previews, animation playback and downloads. All forty-nine scene-eligible external models now supplement Alexandria and the coast, garden and archive settings in 91 placements; unadapted characters and assemblies remain references. Licenses, original source files and checksums are retained. See [integration notes](docs/EXTERNAL-MODEL-INTEGRATION.md) and the [remaining shortlist](docs/OPEN-MODEL-SHORTLIST.md).
 
 Students can now talk to Dorian at the harbor, Thaleia at the market, and Ione near the library. Click a character or their name in the scene, or use **Talk to someone**. Astra generates source-grounded text replies and follow-ups; conversations persist per learner, character, and viewed scenario. Supporting material opens inside the source reader. Dialogue is explicitly simulated and cannot award points, collect evidence, or unlock the archive; **Make your case** remains the separate assessment flow. This release does not add voice or animated lip-sync.
 
@@ -28,6 +30,8 @@ cp .env.local .dev.vars
 npm run build
 node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0000_common_dreadnoughts.sql
 node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0001_fearless_whiplash.sql
+node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0002_zippy_warhawk.sql
+node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0003_large_phil_sheldon.sql
 npm run dev
 ```
 
@@ -108,8 +112,22 @@ Original concept materials remain in `counterfactual-worlds-handoff/`; the revie
 
 ### Book-specific setting illustrations
 
-Lesson preparation now asks GPT-6 Astra to direct its `image_generation` tool after the evidence-grounded lesson is saved. The image tool defaults to `gpt-image-2.5-flare`, using the existing server API key; `OPENAI_IMAGE_MODEL` may override that tool model. Generated PNGs remain private in R2. The teacher reviews the exact image revision before launch; students can switch between the illustrated setting and the walkable learning view and inspect the image in the source reader. Illustrations depict the baseline and are labeled interpretations, never source evidence. Image errors preserve the lesson and allow a retry or image-less launch. Successful images are reused, not regenerated on refresh.
+For the hackathon, new image generation is paused and lesson preparation skips it so a ready walkable lesson can launch. Existing saved illustrations remain available. The underlying image workflow can ask GPT-6 Astra to direct its `image_generation` tool after the evidence-grounded lesson is saved when re-enabled. The image tool defaults to `gpt-image-2.5-flare`, using the existing server API key; `OPENAI_IMAGE_MODEL` may override that tool model. Generated PNGs remain private in R2. The teacher reviews the exact image revision before launch; students can switch between the illustrated setting and the walkable learning view and inspect the image in the source reader. Illustrations depict the baseline and are labeled interpretations, never source evidence. Image errors preserve the lesson and allow a retry or image-less launch. Successful images are reused, not regenerated on refresh.
 
 A real upload fixture is included at `public/samples/pride-and-prejudice-chapter-3.pdf`, downloadable inside the builder. It contains Jane Austen's complete Chapter III, reformatted from the public-domain Project Gutenberg edition, plus a clearly separated editorial note. Select PDF pages 1–4. A TXT alternative and upload guide are under `output/pdf/`. The complete illustrated source edition is https://www.gutenberg.org/ebooks/1342.
 
-Run `node scripts/smoke-book-images.mjs --images` for a paid end-to-end check of the real PDF, lesson generation, illustration, cached replay, and teacher/student image access. Use `--resume --images` to retry the saved private test draft without repeating PDF extraction.
+When image generation is re-enabled, run `node scripts/smoke-book-images.mjs --images` for a paid end-to-end check of the real PDF, lesson generation, illustration, cached replay, and teacher/student image access. Use `--resume --images` to retry the saved private test draft without repeating PDF extraction.
+
+## Teaching kit and buyer review
+
+In the teacher studio, open **Teaching guide & worksheet** for a 30-, 45-, or 60-minute sequence and a downloadable source packet with a student worksheet. The self-contained HTML download can be opened offline and printed or saved as PDF; paper answers do not sync automatically. **Learning report** compares first/latest explanations and exports every submitted turn, excluding the teacher preview. AI feedback remains provisional; repeated or changed wording is not evidence of learning gains.
+
+From **Learning report** or **Live classroom**, choose **Prepare teaching help** on a learner. Review their saved explanation, then generate a challenge. Both request paths load the selected learner from classroom storage; the preview identifies whose work informed it and that **Share with whole class** sends it to everyone. Report filters highlight missing work or criteria flagged in the latest provisional AI feedback.
+
+The [business validity review](docs/BUSINESS-VALIDITY-REVIEW.md) covers the initial buyer, competitor alternatives, school-readiness gaps, proposed pricing experiments, cost sensitivity, and a four-week customer-validation plan. Pricing and pilot targets are hypotheses, not offers or observed results.
+
+### Try it before a school rollout
+
+Start at `/try` to explore and write, then switch to **Teacher studio** in the same practice classroom. No signup or teacher code is needed. **Learning report** can include your own practice learner without counting it as a joined student. Older learner-only trials stay intact; open `/studio` separately to try teacher tools.
+
+**Download my writing** works without a new AI call and includes your unsent draft, saved evidence, and prior submitted explanations. It is a local copy, not a submission. New image generation is paused for the hackathon, so the builder goes directly from lesson generation to review. Shared AI and classroom quotas remain in place.

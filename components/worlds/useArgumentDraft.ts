@@ -5,7 +5,8 @@ import { useCallback, useEffect, useRef, useState, type SetStateAction } from 'r
 // A draft belongs to one learner in one classroom, including teacher previews.
 export function useArgumentDraft(classroomId?: string, studentId?: string) {
  const key=classroomId&&studentId?`cw-argument-draft:${classroomId}:${studentId}`:null;
- const currentKey=useRef(key);currentKey.current=key;
+ const currentKey=useRef(key);
+ useEffect(()=>{currentKey.current=key;},[key]);
  const [draft,setDraft]=useState<{key:string|null;text:string}>({key:null,text:''});
  const [saved,setSaved]=useState(false);
 

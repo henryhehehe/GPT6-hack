@@ -2,7 +2,7 @@
 
 Updated September 10, 2026 · 10 worlds · 30 prepared lesson drafts
 
-The local app now implements this catalog through the World Library: choose, review, and launch any of the 30 prepared lessons. All remain **teaching drafts requiring teacher review**. The 27 literary/document lessons use saved excerpts with bounded context; Alexandria retains its existing labeled packet. The [historical accuracy review](curriculum/HISTORICAL-ACCURACY-REVIEW.md) identifies edition, excerpt-boundary, and activity-coverage corrections still needed in the pinned runtime packets. Planning corrections below do not update that runtime snapshot. New worlds use symbolic scene templates. See [implementation and actual verification](curriculum/IMPLEMENTATION.md) for the scope and remaining learning-loop work.
+The local app now implements this catalog through the World Library: choose, review, and launch any of the 30 prepared lessons. All remain **teaching drafts requiring teacher review**. The 27 literary/document lessons use saved excerpts with bounded context; Alexandria retains its existing labeled packet. The [historical accuracy review](curriculum/HISTORICAL-ACCURACY-REVIEW.md) identifies edition, excerpt-boundary, and activity-coverage corrections now applied in runtime version `2026-09-10.3`. Existing saved classrooms retain their original packet. New worlds use symbolic scene templates. See [implementation and actual verification](curriculum/IMPLEMENTATION.md) for the scope and remaining learning-loop work.
 
 The user requested ongoing catalog work. This content track can progress independently while the product team completes the core learning loop. Catalog priority does not override the release gates in [PRODUCT-READINESS.md](PRODUCT-READINESS.md).
 
@@ -10,7 +10,7 @@ Assumptions: ages 14–18, teacher-led use, approximately 45 minutes per lesson,
 
 ## Start here
 
-- [Historical accuracy and source review](curriculum/HISTORICAL-ACCURACY-REVIEW.md): sourced context, corrections, and exact remaining packet work.
+- [Historical accuracy and source review](curriculum/HISTORICAL-ACCURACY-REVIEW.md): sourced context, correction history, and implementation verification.
 
 - [Detailed first-three-world briefs](curriculum/PRIORITY-LESSON-BRIEFS.md)
 - [Structured catalog](curriculum/catalog.json): stable world and lesson IDs, questions, activities, boundaries, sources, and status. This planning format is **not** the runtime `LessonPackSchema`.
@@ -45,7 +45,7 @@ Suggested 45-minute rhythm: prediction 4 min; three source stops 15; initial arg
 
 **Why this world:** Existing setting makes this the first place to exercise the complete reasoning loop.
 
-**Source:** [Strabo, Geography 17.1.8](https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A1*.html). H. L. Jones English translation on LacusCurtius; existing app card is a paraphrase. Source check: September 10, 2026; selected packet prepared locally, teacher review required.
+**Source:** [Strabo, Geography 17.1.8](https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A1*.html). H. L. Jones English translation (1932), LacusCurtius; new lessons use an exact saved Mouseion passage with a separate reading note. Older saved classrooms retain their paraphrase. Source check: September 10, 2026; selected packet prepared locally, teacher review required.
 
 **Reading boundary:** 17.1.8 plus separately labeled local funding assumption and invented ledger.
 

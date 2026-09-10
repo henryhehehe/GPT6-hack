@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import {MuseumSelectionSchema} from './museums';
 import alexandriaSource from './curriculum/alexandria.json';
 import sourceNotes from './curriculum/sourceNotes.json';
 
@@ -13,6 +14,7 @@ export const WorldSchema = z.object({
   nodes:z.array(z.object({ id:Zone, title:z.string().max(80), baseline:z.string().max(200), consequence:z.string().max(240), mechanism:z.string().max(350), evidenceIds:z.array(z.string()).min(1).max(3), activity:z.number().min(0).max(1) })).length(3),
   evidence:z.array(EvidenceSchema).min(3).max(6),
   lessonPack:LessonPackSchema.optional(),
+  museumObjectIds:MuseumSelectionSchema.optional(),
   settingImage:z.object({draftId:z.string().uuid(),caption:z.string().max(250),model:z.string().max(80),responseId:z.string().max(150)}).optional(),
 });
 export type World = z.infer<typeof WorldSchema>;
@@ -23,7 +25,7 @@ export const RubricSchema = z.object({
   evidenceIds:z.array(z.string()).max(6), nextQuestion:z.string().max(250),
 });
 export type Evaluation=z.infer<typeof RubricSchema> & {score:number;unlocked:boolean;responseId:string;latencyMs:number};
-export type Turn={claim:string;npc:ZoneId;result:Evaluation;at:string;worldVersion:number;scenario:boolean};
+export type Turn={requestId?:string;claim:string;npc:ZoneId;result:Evaluation;at:string;worldVersion:number;scenario:boolean};
 export const DialogueSchema=z.object({reply:z.string().min(1).max(900),evidenceIds:z.array(z.string().max(60)).max(3),followUp:z.string().max(200)});
 export type DialogueTurn={id:string;message:string;npc:ZoneId;result:z.infer<typeof DialogueSchema>;at:string;worldVersion:number;scenario:boolean;responseId:string;latencyMs:number};
 export type StudentState={name:string;evidence:string[];turns:Turn[];zone:ZoneId;unlocked:boolean;dialogue?:DialogueTurn[]};

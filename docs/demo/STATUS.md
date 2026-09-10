@@ -1,11 +1,13 @@
 # Demo production status
 
-Version 3 is rendered at `output/demo/v3/counterfactual-worlds-60s.mp4`. See [its package](v3/README.md) for narration, captions, source cuts, hashes, verification, and rebuild instructions.
+Version 4 is the current film: `output/demo/v4/counterfactual-worlds-60s.mp4`.
 
-This is a re-edit of the actual September 10 version-2 recordings, with new OpenAI Marin narration and a closing pickup. No new app session was filmed in this pass. Later changes to the local scene, character models, and studio are not represented in this footage. Version 2 remains preserved with its recording log in `archive-v2/STATUS.md`.
+Recorded September 10, 2026 from the updated local app: new landing page, 30 prepared lessons, rich Alexandria city, source reader with citation, teaching guide, applied teacher challenge, and first/latest classroom report. The teacher and a separately joined Demo Learner completed a real two-submission session. The capture was isolated from ongoing hot reloads using a frozen local build on port 5179.
 
-The film opens on the real claim “The library would definitely close” and ends with the recorded revision “Closure is possible, not inevitable.” Actual responses and scores were preserved. All seven narration paragraphs were checked against transcription; captions follow word timestamps. Large raw captures remain local, while the final MP4 is a standalone deliverable.
+The user authorized local hackathon access changes and recording via screencapture. Only the local AI request budget was raised to 100 in ignored configuration; the per-class limit and disabled image generation were preserved. Public deployment limits were not changed by this demo task. The studio access change was made concurrently by the product task.
 
-Technical validation and frame review are recorded in `output/demo/v3/verification.json`. No independent subjective listening review or new release-readiness validation is claimed.
+The narration is fresh OpenAI Marin speech, with a separately verified closing pickup. The video is an edited sequence of real recordings, with waits cut and AI narration disclosed. Large quote overlays are labeled excerpts of actual submitted text or feedback. The report’s context-change label remains; this is a demonstration of revised reasoning, not a learning-effectiveness claim.
 
-For a future recording of the current app, use [DEMO-ENTRY.md](DEMO-ENTRY.md). The studio no longer requires a teacher code. Capture a complete new rehearsal before describing the video as showing the latest build.
+Earlier recordings of unrelated browser windows were excluded. Only inspected app-only source ranges are used in the edit. Some raw captures ended early; cuts use verified available footage.
+
+See `output/demo/v4/verification.json` for media validation and `edit-decision-list.json` for exact source cuts. Scripts, narration, captions, and recording instructions now describe v4. Previous current documents were preserved in archive-v3. The existing 30-minute maintenance heartbeat remains active and reports meaningful changes.

@@ -9,10 +9,12 @@ const {d:teacher,r:created}=await post('/api/classroom',{action:'create'});asser
 const preview=await read(teacher);assert.equal(preview.r.status,200);assert.ok(preview.d.student);assert.deepEqual(preview.d.students,[]);
 assert.equal((await post('/api/classroom',{action:'scenario',id:teacher.id,scenario:true},{Authorization:`Bearer ${teacher.teacherToken}`})).r.status,200);
 assert.equal((await read(teacher)).d.state.scenario,true,'student preview follows the teacher scenario');
-const {d:trial,r:tr}=await post('/api/classroom',{action:'try'});assert.equal(tr.status,200);assert.equal(trial.teacherToken,undefined);assert.equal(trial.inviteToken,undefined);
+const {d:trial,r:tr}=await post('/api/classroom',{action:'try'});assert.equal(tr.status,200);assert.ok(trial.teacherToken);assert.ok(trial.inviteToken);
+assert.equal((await read(trial,trial.teacherToken)).r.status,200);
 const trialRead=await read(trial);assert.equal(trialRead.r.status,200);assert.deepEqual(trialRead.d.students,[]);
 assert.notEqual((await post('/api/classroom',{action:'scenario',id:trial.id,scenario:true},{Authorization:`Bearer ${trial.studentToken}`})).r.status,200);
 const {d:a}=await post('/api/classroom',{action:'join',id:teacher.id,name:'Test A'},{Authorization:`Bearer ${teacher.inviteToken}`});
+assert.equal(a.teacherToken,undefined);assert.equal(a.inviteToken,undefined);
 const {d:b}=await post('/api/classroom',{action:'join',id:teacher.id,name:'Test B'},{Authorization:`Bearer ${teacher.inviteToken}`});
 assert.equal((await read(a)).r.status,200);assert.notEqual((await read(a,b.studentToken)).r.status,200);
 const evidence=(await read(a)).d.world.evidence[0].id;

@@ -1,0 +1,4 @@
+import PageHeader from "@/components/PageHeader";
+import MuseumCollection from '@/components/museums/MuseumCollection';
+export const metadata={title:'Museum objects | Counterfactual Worlds',description:'Explore a curated collection of open-access museum objects, with original records, attribution, and questions for classroom discussion.'};
+export default function Collections(){return <main className="museum-page"><PageHeader/><section className="museum-page-heading"><p>THE OBJECT COLLECTION / 001</p><h1>The past,<br/><span>in the details.</span></h1><p>Five objects. Thousands of questions.<br/>Start with what you can see.</p><a className="museum-try-link" href="/try?museum=1">Try the museum demo →</a></section><MuseumCollection/><footer>To share objects with learners, open <a href="/studio">Teacher studio</a> and choose Museum objects in your lesson.</footer></main>;}

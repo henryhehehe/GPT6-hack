@@ -16,3 +16,7 @@ Verified locally on 2026-09-10: `/studio` returns successfully without the teach
 The latest rendered video is version 3, a new edit of the version-2 recordings with updated narration and captions. It does not show later local UI/model changes; see [recording status](README.md).
 
 The local access rehearsal passed with `APP_URL=http://localhost:5173 node scripts/smoke-pilot.mjs`: direct classroom creation, student preview, teacher scenario propagation, invitation joins, separate student access, and evidence persistence. This check uses HTTP requests, makes no paid AI calls, and does not substitute for recording the current UI.
+
+## Museum investigation entry
+
+Open `/try?museum=1` for the new artifact-first live demo. It opens the real coin photograph, then leads into the Strabo source and the learner’s existing explanation. See [Museum demo flow](MUSEUM-FLOW.md) for the presenter sequence and limits. New practice classrooms include the three Alexandria objects; earlier practice work is preserved. This does not replace or re-record the existing film.

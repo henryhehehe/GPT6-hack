@@ -1,91 +1,95 @@
 1
-00:00:00,120 --> 00:00:02,580
-“The library would definitely close.”
+00:00:00,000 --> 00:00:02,600
+“The library will definitely close.”
 
 2
-00:00:03,240 --> 00:00:04,800
-That’s our student’s first answer.
+00:00:03,100 --> 00:00:05,300
+That’s the first answer. Let’s test it.
 
 3
-00:00:05,380 --> 00:00:06,380
-Let’s put it to the test.
+00:00:06,400 --> 00:00:08,800
+Counterfactual Worlds turns history and literature
 
 4
-00:00:07,200 --> 00:00:10,220
-This is Counterfactual Worlds: a history lesson you
+00:00:08,800 --> 00:00:11,400
+into investigations students can walk through.
 
 5
-00:00:10,220 --> 00:00:11,160
-can walk into.
+00:00:12,540 --> 00:00:14,800
+Teachers choose from thirty prepared lessons,
 
 6
-00:00:11,960 --> 00:00:15,120
-In our prepared Alexandria lesson, we collapse harbor
+00:00:15,100 --> 00:00:17,300
+review the sources, and get a teaching guide.
 
 7
-00:00:15,120 --> 00:00:15,600
-trade.
+00:00:18,460 --> 00:00:20,900
+In Alexandria, we collapse harbor trade.
 
 8
-00:00:17,200 --> 00:00:17,880
-Fewer ships.
+00:00:21,250 --> 00:00:22,700
+Fewer ships. Less income.
 
 9
-00:00:18,420 --> 00:00:19,020
-Less income.
+00:00:22,900 --> 00:00:24,700
+But must the scholars disappear?
 
 10
-00:00:19,400 --> 00:00:21,540
-But does that mean the scholars disappear?
+00:00:25,940 --> 00:00:28,150
+Students read Strabo, cite the evidence,
 
 11
-00:00:22,600 --> 00:00:24,440
-Astra challenges the student’s certainty.
+00:00:28,260 --> 00:00:29,600
+and defend their explanation.
 
 12
-00:00:25,200 --> 00:00:27,920
-Now the teacher changes the challenge: could a
+00:00:29,610 --> 00:00:32,700
+Astra challenges unsupported certainty.
 
 13
-00:00:27,920 --> 00:00:28,920
-new patron help?
+00:00:34,020 --> 00:00:35,500
+Then the teacher changes the challenge:
 
 14
-00:00:29,600 --> 00:00:32,520
-Astra turns that instruction into a question we
+00:00:35,780 --> 00:00:37,000
+could a new patron help?
 
 15
-00:00:32,520 --> 00:00:34,840
-preview and add to the student’s world.
+00:00:37,850 --> 00:00:39,100
+Preview. Apply.
 
 16
-00:00:37,200 --> 00:00:40,220
-The student reads Strabo, cites the source, and
+00:00:39,440 --> 00:00:40,700
+The student keeps their work.
 
 17
-00:00:40,220 --> 00:00:42,780
-separates historical evidence from our invented ledger.
+00:00:41,910 --> 00:00:43,100
+Now the answer changes:
 
 18
-00:00:45,190 --> 00:00:48,814
-The answer changes: “Closure is possible, not inevitable.”
+00:00:43,550 --> 00:00:45,450
+“Closure is possible, not inevitable.”
 
 19
-00:00:49,514 --> 00:00:52,162
-Now the student explains the mechanism, cites evidence,
+00:00:46,330 --> 00:00:48,250
+The teacher can review the first and latest
 
 20
-00:00:52,443 --> 00:00:53,783
-and considers another outcome.
+00:00:48,250 --> 00:00:50,000
+explanations side by side.
 
 21
-00:00:54,120 --> 00:00:55,689
-Counterfactual Worlds.
+00:00:53,700 --> 00:00:55,150
+Built with Astra.
 
 22
-00:00:56,415 --> 00:00:57,626
-Step inside a question.
+00:00:55,650 --> 00:00:56,950
+Counterfactual Worlds.
 
 23
-00:00:58,428 --> 00:00:59,771
+00:00:57,200 --> 00:00:58,350
+Step inside a question.
+
+24
+00:00:58,750 --> 00:00:59,950
 Come back with an argument.

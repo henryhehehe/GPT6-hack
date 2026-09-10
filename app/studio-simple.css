@@ -12,7 +12,7 @@
 .cw-app:not(.immersive-student) .workspace-heading { padding: 16px 20px; }
 .cw-app:not(.immersive-student) .heading-actions { gap: 16px; }
 .cw-app:not(.immersive-student) .heading-actions .text-button { border: 0; padding: 8px 0; }
-.cw-app:not(.immersive-student) :is(.left-panel,.world-panel) { border-radius: 2px; border-color: #41413e; }
+.cw-app:not(.immersive-student) :is(.left-panel,.world-panel) { border-radius:var(--control-radius); border-color: #41413e; }
 .cw-app:not(.immersive-student) .left-panel { background: #222220; }
 .cw-app:not(.immersive-student) .right-panel { display: contents; }
 .cw-app:not(.immersive-student) .current-lesson { padding: 0 0 18px; }
@@ -21,10 +21,10 @@
 .cw-app:not(.immersive-student) .lesson-facts { margin-top: 12px; gap: 14px; }
 .cw-app:not(.immersive-student) .lesson-facts span { border: 0; padding: 0; color: #b4b4aa; font-family: 'SFMono-Regular',Consolas,monospace; font-size: 12px; }
 .cw-app .lesson-actions,.cw-app:not(.immersive-student) .teaching-entry { display: flex; flex-direction: column; gap: 0; margin: 0; }
-.cw-app .lesson-actions { border-top: 1px solid #9cb0b229; border-bottom: 1px solid #9cb0b229; margin: 8px 0 14px; padding: 6px 0; }
-.cw-app .lesson-actions button,.cw-app:not(.immersive-student) .teaching-entry button { display: flex; align-items: center; gap: 10px; min-height: 40px; width: 100%; text-align: left; border: 0; border-radius: 3px; padding: 8px 4px; font-size: 14px; background: transparent; color: #c5d3d5; }
+.cw-app .lesson-actions { border-top: 1px solid #bdbdbd29; border-bottom: 1px solid #bdbdbd29; margin: 8px 0 14px; padding: 6px 0; }
+.cw-app .lesson-actions button,.cw-app:not(.immersive-student) .teaching-entry button { display: flex; align-items: center; gap: 10px; min-height: 40px; width: 100%; text-align: left; border: 0; border-radius:var(--control-radius); padding: 8px 4px; font-size: 14px; background: transparent; color: #dedede; }
 .cw-app .lesson-actions button:hover,.cw-app:not(.immersive-student) .teaching-entry button:hover { background: #343431; color: #fff; }
-.cw-app:not(.immersive-student) .primary-button { border-radius: 2px; background: #d8321c; border-color: #d8321c; color: #fff; }
+.cw-app:not(.immersive-student) .primary-button { border-radius:var(--control-radius); background: #d8321c; border-color: #d8321c; color: #fff; }
 .cw-app:not(.immersive-student) .primary-button:hover { background: #b92a18; border-color: #b92a18; }
 .cw-app:not(.immersive-student) .sample-lesson { margin: 12px 0; }
 .cw-app:not(.immersive-student) .sample-lesson > summary { font-size: 13px; }
@@ -41,7 +41,7 @@
 .cw-app:not(.immersive-student) .heading-actions .text-button { color: #c2c2ba; }
 .cw-app:not(.immersive-student) .heading-actions .text-button:hover { color: #ff927f; }
 .cw-app:not(.immersive-student) :is(button,a,summary):focus-visible { outline-color: #ff927f; }
-.studio-notes[data-slot=dialog-content] { width: min(490px,calc(100vw - 24px)); max-height: calc(100dvh - 32px); display: flex; flex-direction: column; gap: 0; padding: 24px 0 0; background: #222220; color: #eee; border: 1px solid #55554f; border-top: 3px solid #d8321c; border-radius: 2px; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; }
+.studio-notes[data-slot=dialog-content] { width: min(490px,calc(100vw - 24px)); max-height: calc(100dvh - 32px); display: flex; flex-direction: column; gap: 0; padding: 24px 0 0; background: #222220; color: #eee; border: 1px solid #55554f; border-top: 3px solid #d8321c; border-radius:var(--control-radius); font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; }
 .studio-notes > [data-slot=dialog-title] { padding: 0 52px 0 22px; font: 650 24px/1.2 'Helvetica Neue',Helvetica,Arial,sans-serif; letter-spacing: -.6px; }
 .studio-notes > [data-slot=dialog-description] { padding: 10px 52px 20px 22px; font-size: 14px; line-height: 1.6; color: #bdbdb5; }
 .studio-notes .insight-workspace { min-height: 0; overflow: hidden; gap: 0; }
@@ -63,23 +63,23 @@
 .studio-notes .causal-node:hover h3 { text-decoration: underline; text-underline-offset: 4px; }
 .studio-notes .causal-node.selected { border-left: 2px solid #ff7963; padding-left: 12px; }
 .studio-notes .director-card { border: 0; padding: 0; }
-.studio-notes .director-card :is(textarea,input) { font-size: 16px; background: #171717; color: #eee; border-color: #65655d; border-radius: 2px; }
-.studio-notes .director-card .primary-button { background: #d8321c; border-color: #d8321c; color: #fff; border-radius: 2px; }
+.studio-notes .director-card :is(textarea,input) { font-size: 16px; background: #171717; color: #eee; border-color: #65655d; border-radius:var(--control-radius); }
+.studio-notes .director-card .primary-button { background: #d8321c; border-color: #d8321c; color: #fff; border-radius:var(--control-radius); }
 .studio-notes .director-card .primary-button:hover { background: #b92a18; border-color: #b92a18; }
 .studio-notes .director-card .quiet-button { color: #c4c4bc; }
-.studio-notes .learner-context { background: #2b2b28; border: 1px solid #55554c; border-radius: 2px; color: #eee; }
+.studio-notes .learner-context { background: #2b2b28; border: 1px solid #55554c; border-radius:var(--control-radius); color: #eee; }
 .studio-notes .learner-context label { color: #eee; font-size: 14px; }
-.studio-notes .learner-context select { width: 100%; min-height: 42px; padding: 8px; background: #171717; border: 1px solid #65655d; border-radius: 2px; color: #eee; font-size: 14px; }
+.studio-notes .learner-context select { width: 100%; min-height: 42px; padding: 8px; background: #171717; border: 1px solid #65655d; border-radius:var(--control-radius); color: #eee; font-size: 14px; }
 .studio-notes .learner-context blockquote { color: #eee; border-color: #ff7963; }
 .studio-notes :is(button,textarea,input,select):focus-visible { outline-color: #ff927f; }
-.studio-notes > [data-slot=dialog-close] { width: 36px; height: 36px; display: grid; place-items: center; top: 12px; right: 12px; border: 1px solid #626259; border-radius: 2px; background: transparent; opacity: 1; }
+.studio-notes > [data-slot=dialog-close] { width: 36px; height: 36px; display: grid; place-items: center; top: 12px; right: 12px; border: 1px solid #626259; border-radius:var(--control-radius); background: transparent; opacity: 1; }
 .cw-app.immersive-student .learning-path { display: none; }
 .cw-app.immersive-student .world-panel .scene-header h2 { font-size: clamp(18px,2vw,23px); line-height: 1.35; }
 .cw-app.immersive-student .world-panel .scene-header { max-width: min(430px,calc(100% - 76px)); }
 /* Secondary world menus share one disclosure, leaving the scene unobstructed. */
 .explorer-controls .world-tools { pointer-events: auto; width: 240px; max-width: 100%; margin-top: 8px; color: #eee; font-size: 14px; }
-.explorer-controls .world-tools > summary { cursor: pointer; width: fit-content; padding: 9px 12px; background: #20201fed; border: 1px solid #ffffff35; border-radius: 2px; }
-.explorer-controls .world-tools[open] { background: #20201ff5; border: 1px solid #ffffff35; border-radius: 2px; }
+.explorer-controls .world-tools > summary { cursor: pointer; width: fit-content; padding: 9px 12px; background: #20201fed; border: 1px solid #ffffff35; border-radius:var(--control-radius); }
+.explorer-controls .world-tools[open] { background: #20201ff5; border: 1px solid #ffffff35; border-radius:var(--control-radius); }
 .explorer-controls .world-tools[open] > summary { width: 100%; border: 0; border-bottom: 1px solid #ffffff25; color: #ff927f; }
 .world-tools-body { max-height: min(300px,40dvh); overflow-y: auto; overscroll-behavior: contain; padding: 4px 10px 10px; scrollbar-width: thin; scrollbar-color: #888 transparent; }
 .explorer-controls .world-tools-body > p { background: transparent; padding: 4px 0 9px; margin: 0; color: #c5c5be; font-size: 13px; }
@@ -87,7 +87,7 @@
 .cw-app .explorer-controls .world-tools-body > details > summary { width: 100%; padding: 10px 0; border: 0; border-top: 1px solid #ffffff20; border-radius: 0; background: transparent; color: #eee; font-size: 14px; }
 .cw-app .explorer-controls .world-tools-body > details[open] > summary { color: #ff927f; }
 .world-tools-body :is(button,a,summary):focus-visible { outline-color: #ff927f; }
-.cw-app:not(.immersive-student) .explorer-modes { background: #20201fed; border-color: #ffffff35; border-radius: 2px; }
+.cw-app:not(.immersive-student) .explorer-modes { background: #20201fed; border-color: #ffffff35; border-radius:var(--control-radius); }
 .cw-app:not(.immersive-student) .explorer-modes button { color: #ccc; border-radius: 0; }
 .cw-app:not(.immersive-student) .explorer-modes button[aria-pressed=true] { background: #eee; color: #202020; }
 @media (min-width: 701px) {

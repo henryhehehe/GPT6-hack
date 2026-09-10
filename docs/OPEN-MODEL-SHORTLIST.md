@@ -1,6 +1,8 @@
 # Open 3D assets for the learning worlds
 
-Researched September 10, 2026. These are acquisition candidates, not installed assets. Publisher listings establish advertised geometry and license labels; downloaded files, appearance in our renderer, and frame rate have not been verified. Some Sketchfab page fetches returned 403; indexed publisher listings supplied the metadata below. Recheck the actual download license/version before importing.
+Researched September 10, 2026. **Acquisition update:** the [external model library](../assets/external/README.md) now stores eight downloaded CC0 collections, 69 selected source assets, rights records and checksums, plus twelve prepared GLB examples. See [the acquisition handoff](OPEN-MODEL-ACQUISITION.md). **Integration update:** all 69 have local browser-ready GLBs and individual usage guidance; 49 models are used in 91 scene placements. See [the integration handoff](EXTERNAL-MODEL-INTEGRATION.md) and `/model-catalog` in the running app.
+
+The original candidate notes below remain useful for comparison. Coast Rocks 01 has now been acquired and sampled; the Sketchfab candidates remain unacquired. Publisher listings establish advertised geometry and license labels, not verified download rights, runtime appearance or frame rate. Some Sketchfab page fetches returned 403; indexed publisher listings supplied the original metadata below. Recheck the actual download license/version before importing those candidates.
 
 ## Direction
 

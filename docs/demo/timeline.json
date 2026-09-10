@@ -1,51 +1,155 @@
 [
   {
     "start": 0,
-    "end": 7,
-    "label": "COLD OPEN · THE FIRST CLAIM",
-    "direction": "Open on the actual initial claim. Enlarge its exact excerpt. Let the quote land before the cut.",
-    "text": "“The library would definitely close.” That’s our student’s first answer. Let’s put it to the test."
+    "end": 6,
+    "source": "final-first-claim.mov",
+    "sourceIn": 3,
+    "sourceOut": 9,
+    "crop": "crop=3456:1712:112:368,scale=1920:952",
+    "label": "STUDENT \u00b7 THE FIRST ANSWER"
   },
   {
-    "start": 7,
-    "end": 17,
-    "label": "TEACHER → STUDENT · ENTER THE INVESTIGATION",
-    "direction": "Teacher studio and Preview as student, then ground-level movement and the harbor-trade toggle. Keep Prepared Alexandria lesson visible.",
-    "text": "This is Counterfactual Worlds: a history lesson you can walk into. In our prepared Alexandria lesson, we collapse harbor trade."
+    "start": 6,
+    "end": 9,
+    "source": "landing-library.mov",
+    "sourceIn": 2,
+    "sourceOut": 5,
+    "crop": "crop=3456:1712:68:340,scale=1920:952",
+    "label": "COUNTERFACTUAL WORLDS"
   },
   {
-    "start": 17,
-    "end": 25,
-    "label": "ASTRA · CHALLENGE CERTAINTY",
-    "direction": "Show changed harbor, then actual initial feedback. On-screen excerpt: Closure is not certain. Keep the 1/4 incidental.",
-    "text": "Fewer ships. Less income. But does that mean the scholars disappear? Astra challenges the student’s certainty."
+    "start": 9,
+    "end": 12,
+    "source": "final-walk.mov",
+    "sourceIn": 24,
+    "sourceOut": 27,
+    "crop": "crop=3456:1712:112:368,scale=1920:952",
+    "label": "STUDENT \u00b7 WALK THROUGH THE QUESTION"
   },
   {
-    "start": 25,
-    "end": 37,
-    "label": "TEACHER · CHANGE THE CHALLENGE",
-    "direction": "Teacher prompt, actual Astra preview, apply, and student view. Give the apply action a distinct visual beat. Label omitted waiting.",
-    "text": "Now the teacher changes the challenge: could a new patron help? Astra turns that instruction into a question we preview and add to the student’s world."
+    "start": 12,
+    "end": 14.7,
+    "source": "final-teacher.mov",
+    "sourceIn": 2,
+    "sourceOut": 4.7,
+    "crop": "crop=3456:1712:68:340,scale=1920:952",
+    "label": "TEACHER \u00b7 30 PREPARED LESSONS"
   },
   {
-    "start": 37,
-    "end": 45,
-    "label": "STUDENT · FIND THE EVIDENCE",
-    "direction": "Read Strabo, show source/provenance labels beside the invented ledger in the journal, then insert the citation.",
-    "text": "The student reads Strabo, cites the source, and separates historical evidence from our invented ledger."
+    "start": 14.7,
+    "end": 16.2,
+    "source": "final-teacher.mov",
+    "sourceIn": 9.5,
+    "sourceOut": 11,
+    "crop": "crop=3456:1712:68:340,scale=1920:952",
+    "label": "TEACHER \u00b7 REVIEW THE SOURCE PACKET"
   },
   {
-    "start": 45,
-    "end": 54,
-    "label": "PAYOFF · A DIFFERENT EXPLANATION",
-    "direction": "Show exact revised-claim excerpt: Closure is possible, not inevitable. Then actual mechanism/limitation feedback. Keep the student’s words larger than the score.",
-    "text": "The answer changes: “Closure is possible, not inevitable.” Now the student explains the mechanism, cites evidence, and considers another outcome."
+    "start": 16.2,
+    "end": 18.0,
+    "source": "final-teacher.mov",
+    "sourceIn": 32,
+    "sourceOut": 33.8,
+    "crop": "crop=3456:1712:68:340,scale=1920:952",
+    "label": "TEACHER \u00b7 GUIDE + WORKSHEET"
   },
   {
-    "start": 54,
-    "end": 60,
-    "label": "COUNTERFACTUAL WORLDS",
-    "direction": "Return to moving world overview. Closing text: Step inside a question. Come back with an argument. Small proof line: Built with Astra · Astra-powered feedback and teacher challenges.",
-    "text": "Counterfactual Worlds. Step inside a question. Come back with an argument."
+    "start": 18.0,
+    "end": 21.5,
+    "source": "final-walk.mov",
+    "sourceIn": 18.5,
+    "sourceOut": 22,
+    "crop": "crop=3456:1712:112:368,scale=1920:952",
+    "label": "STUDENT \u00b7 CHANGE ONE ASSUMPTION"
+  },
+  {
+    "start": 21.5,
+    "end": 25.5,
+    "source": "final-walk.mov",
+    "sourceIn": 1,
+    "sourceOut": 5,
+    "crop": "crop=3456:1712:112:368,scale=1920:952",
+    "label": "ALEXANDRIA \u00b7 WHAT IF HARBOR TRADE COLLAPSED?"
+  },
+  {
+    "start": 25.5,
+    "end": 29.8,
+    "source": "final-source-world.mov",
+    "sourceIn": 40.7,
+    "sourceOut": 45,
+    "crop": "crop=3456:1712:112:368,scale=1920:952",
+    "label": "STUDENT \u00b7 READ STRABO IN CONTEXT"
+  },
+  {
+    "start": 29.8,
+    "end": 33.5,
+    "source": "final-feedback.mov",
+    "sourceIn": 1,
+    "sourceOut": 4.7,
+    "crop": "crop=3456:1712:112:368,scale=1920:952",
+    "label": "ASTRA \u00b7 CHALLENGE UNSUPPORTED CERTAINTY"
+  },
+  {
+    "start": 33.5,
+    "end": 36.0,
+    "source": "final-challenge.mov",
+    "sourceIn": 1,
+    "sourceOut": 3.5,
+    "crop": "crop=3456:1712:112:368,scale=1920:952",
+    "label": "TEACHER \u00b7 DIRECT THE NEXT QUESTION"
+  },
+  {
+    "start": 36.0,
+    "end": 39.0,
+    "source": "final-challenge.mov",
+    "sourceIn": 14,
+    "sourceOut": 17,
+    "crop": "crop=3456:1712:112:368,scale=1920:952",
+    "label": "TEACHER \u00b7 REVIEW THE GENERATED PREVIEW"
+  },
+  {
+    "start": 39.0,
+    "end": 41.5,
+    "source": "final-hint.mov",
+    "sourceIn": 17,
+    "sourceOut": 19.5,
+    "crop": "crop=3456:1712:112:368,scale=1920:952",
+    "label": "STUDENT \u00b7 THE TEACHER\u2019S QUESTION ARRIVES"
+  },
+  {
+    "start": 41.5,
+    "end": 46.0,
+    "source": "final-source-world.mov",
+    "sourceIn": 7,
+    "sourceOut": 11.5,
+    "crop": "crop=3456:1712:112:368,scale=1920:952",
+    "label": "STUDENT \u00b7 REVISE WITH EVIDENCE"
+  },
+  {
+    "start": 46.0,
+    "end": 49.0,
+    "source": "final-report.mov",
+    "sourceIn": 1,
+    "sourceOut": 4,
+    "crop": "crop=3456:1712:112:368,scale=1920:952",
+    "label": "TEACHER \u00b7 REVIEW SUBMITTED WORK"
+  },
+  {
+    "start": 49.0,
+    "end": 53.7,
+    "source": "final-report.mov",
+    "sourceIn": 10,
+    "sourceOut": 14.7,
+    "crop": "crop=3456:1712:112:368,scale=1920:952",
+    "label": "TEACHER \u00b7 FIRST AND LATEST EXPLANATIONS"
+  },
+  {
+    "start": 53.7,
+    "end": 60.0,
+    "source": "final-walk.mov",
+    "sourceIn": 30,
+    "sourceOut": 36.3,
+    "crop": "crop=3456:1712:112:368,scale=1920:952",
+    "label": "COUNTERFACTUAL WORLDS \u00b7 BUILT WITH ASTRA"
   }
 ]

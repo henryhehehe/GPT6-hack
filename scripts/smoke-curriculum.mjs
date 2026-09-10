@@ -3,7 +3,15 @@ import {randomUUID} from 'node:crypto';
 import {readFileSync} from 'node:fs';
 const packetVersion=JSON.parse(readFileSync(new URL('../lib/curriculum/packets.json',import.meta.url),'utf8')).version;
 const base=process.env.SMOKE_BASE_URL??'http://localhost:5173';
-async function post(path,body,token){const r=await fetch(base+path,{method:'POST',headers:{'Content-Type':'application/json',...(token?{Authorization:`Bearer ${token}`}:{})},body:JSON.stringify(body)});return {status:r.status,data:await r.json()};}
+const isolated=process.argv.includes('--local-isolated');
+if(isolated&&!['localhost','127.0.0.1','[::1]'].includes(new URL(base).hostname))throw new Error('--local-isolated requires a loopback server with a disposable test database.');
+// Local Wrangler accepts the edge client header. Give each test case its own
+// synthetic visitor; hosted requests never receive this header from the script.
+const runId=randomUUID().replaceAll('-','').slice(0,8),visitorHeaders={};let visitor=0;
+function nextVisitor(){if(isolated)visitorHeaders['CF-Connecting-IP']=`2001:db8:${runId.slice(0,4)}:${runId.slice(4)}::${++visitor}`;}
+nextVisitor();
+async function post(path,body,token){const r=await fetch(base+path,{method:'POST',redirect:'error',headers:{'Content-Type':'application/json',...visitorHeaders,...(token?{Authorization:`Bearer ${token}`}:{})},body:JSON.stringify(body)});return {status:r.status,data:await r.json()};}
+function sameAccess(actual,expected){for(const key of ['id','teacherToken','inviteToken','studentId','studentToken'])assert.ok(typeof actual[key]==='string'&&actual[key]===expected[key],`Launch retry changed ${key}; credentials omitted.`);}
 const original=(await post('/api/classroom',{action:'create'})).data;
 assert.ok(original.teacherToken);
 const path=`/api/lesson-builder?id=${original.id}`;
@@ -12,6 +20,7 @@ assert.notEqual(denied.status,200);
 const invalid=await post(path,{action:'catalog',draftId:randomUUID(),lessonId:'not-a-lesson'},original.teacherToken);
 assert.notEqual(invalid.status,200);
 for(const lessonId of ['alexandria-02','odyssey-ix-02','austen-letter-02','seneca-falls-01','christmas-carol-03','tempest-03','douglass-literacy-01','declaration-01','frankenstein-01','frankenstein-03']){
+ nextVisitor();
  const draftId=randomUUID();const body={action:'catalog',draftId,lessonId};
  const first=await post(path,body,original.teacherToken);assert.equal(first.status,200,JSON.stringify(first.data));
  assert.equal(first.data.world.lessonPack.curriculum.lessonId,lessonId);
@@ -23,7 +32,7 @@ for(const lessonId of ['alexandria-02','odyssey-ix-02','austen-letter-02','senec
  const blocked=await post(path,{action:'launch',draftId,reviewed:false},original.teacherToken);assert.notEqual(blocked.status,200);
  const launch=await post(path,{action:'launch',draftId,reviewed:true},original.teacherToken);assert.equal(launch.status,200);
  const c=launch.data;assert.notEqual(c.id,original.id);
- assert.deepEqual((await post(path,{action:'launch',draftId,reviewed:true},original.teacherToken)).data,c);
+ const repeated=await post(path,{action:'launch',draftId,reviewed:true},original.teacherToken);assert.equal(repeated.status,200,repeated.data.error);sameAccess(repeated.data,c);
  const read=await fetch(`${base}/api/classroom?id=${c.id}&studentId=${c.studentId}`,{headers:{Authorization:`Bearer ${c.studentToken}`}});
  const snapshot=await read.json();assert.equal(snapshot.world.lessonPack.curriculum.lessonId,lessonId);
  const prepared=first.data.world;

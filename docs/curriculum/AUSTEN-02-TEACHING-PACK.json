@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "teacher-scaffold",
+  "runtimeImportable": false,
+  "lessonId": "austen-letter-02",
+  "packetVersion": "2026-09-10.3",
+  "status": "authored teaching draft; teacher review and classroom trial pending",
+  "source": {
+    "title": "Jane Austen, Pride and Prejudice",
+    "url": "https://www.gutenberg.org/ebooks/1342",
+    "edition": "Project Gutenberg #1342; preserve selected edition and chapter numbering",
+    "verification": "selected excerpts and bounded context matched to pinned normalized source; teacher review required",
+    "checkedAt": "2026-09-10"
+  },
+  "readingBoundary": "Chapter 36: first reading, rereading, and self-assessment; no direct Chapter 35 letter passage in this packet",
+  "inquiry": "How does the narration represent Elizabeth’s reconsideration?",
+  "evidenceActivity": "Compare the narration of Elizabeth’s first reading, rereading, and self-assessment; distinguish her changing interpretation from independent proof.",
+  "teacherChallenge": "Which phrase supports your account of the change, rather than just naming it?",
+  "revisionTask": "Explain a change in interpretation through wording and acknowledge an alternative reading.",
+  "assessment": [
+    "interpretive claim",
+    "accurate use of supplied wording",
+    "analysis connecting wording and interpretation",
+    "plausible alternative reading or limit"
+  ],
+  "timingNote": "45 minutes is a planning estimate, not observed timing.",
+  "schedule": [
+    {
+      "minutes": 5,
+      "title": "Orient and predict",
+      "activity": "Name the distinction between a change of judgment and proof that a judgment is correct. Write what wording might show reconsideration; no prior plot knowledge is required."
+    },
+    {
+      "minutes": 8,
+      "title": "First reading",
+      "activity": "Read card 1342-1196-0. Underline a phrase showing conviction or conflicting emotion. Explain the phrase instead of labeling Elizabeth with one trait."
+    },
+    {
+      "minutes": 10,
+      "title": "Read again",
+      "activity": "Read card 1342-1198-0. Compare the language of effort and attention with the first card. Identify whose earlier words are being compared, and distinguish reported agreement from an independent statement supplied to you."
+    },
+    {
+      "minutes": 8,
+      "title": "Self-assessment",
+      "activity": "Read card 1342-1205-0. Examine the list of self-critical adjectives. Test both a reading of useful self-correction and a reading of severe self-reproach."
+    },
+    {
+      "minutes": 10,
+      "title": "Challenge and revise",
+      "activity": "Use the teacher challenge and at least two cards to revise your interpretation. Name an alternative reading and explain what changed or why your initial claim remained defensible."
+    },
+    {
+      "minutes": 4,
+      "title": "Exit evidence check",
+      "activity": "Identify one claim supported by the wording and one claim the packet cannot establish. State why a desk, garden, or companion in the scene cannot settle either claim."
+    }
+  ],
+  "quoteOffsetConvention": "Zero-based UTF-16 code units within the displayed evidence card; exclusive end. These are teaching annotations, not runtime citation objects.",
+  "quotes": [
+    {
+      "id": "first-conviction",
+      "evidenceId": "1342-1196-0",
+      "quote": "steadfastly was she persuaded",
+      "cardStart": 432,
+      "cardEnd": 461,
+      "sourceVersion": "9c70ed42ffe94090bd14e5960bde979845f45d4ebe719e9b9e9f149b57e4646b"
+    },
+    {
+      "id": "conflicting-feelings",
+      "evidenceId": "1342-1196-0",
+      "quote": "contrariety of emotion",
+      "cardStart": 248,
+      "cardEnd": 270,
+      "sourceVersion": "9c70ed42ffe94090bd14e5960bde979845f45d4ebe719e9b9e9f149b57e4646b"
+    },
+    {
+      "id": "effort",
+      "evidenceId": "1342-1198-0",
+      "quote": "collecting herself as well as she could",
+      "cardStart": 163,
+      "cardEnd": 202,
+      "sourceVersion": "ea7af15cef9cd23d8a24460df1dbddcafc45d10e47e4f2a5283a7c0b77a0460b"
+    },
+    {
+      "id": "attention",
+      "evidenceId": "1342-1198-0",
+      "quote": "examine the meaning of every sentence",
+      "cardStart": 310,
+      "cardEnd": 347,
+      "sourceVersion": "ea7af15cef9cd23d8a24460df1dbddcafc45d10e47e4f2a5283a7c0b77a0460b"
+    },
+    {
+      "id": "reported-agreement",
+      "evidenceId": "1342-1198-0",
+      "quote": "agreed equally well with his own words",
+      "cardStart": 535,
+      "cardEnd": 573,
+      "sourceVersion": "ea7af15cef9cd23d8a24460df1dbddcafc45d10e47e4f2a5283a7c0b77a0460b"
+    },
+    {
+      "id": "self-reproach",
+      "evidenceId": "1342-1205-0",
+      "quote": "blind, partial, prejudiced, absurd",
+      "cardStart": 125,
+      "cardEnd": 159,
+      "sourceVersion": "d6c9215e64c9915f3c95936748938d5ee9da61fbb34011c15e6ebaf341d41d2e"
+    }
+  ],
+  "examples": [
+    {
+      "id": "deliberate-attention",
+      "stance": "Supported interpretation",
+      "answer": "The narration presents reconsideration as effort, not just a new feeling. “steadfastly was she persuaded” gives way to an attempt to “examine the meaning of every sentence.” The later self-criticism shows a changed view of herself, but it does not independently prove every claim in Darcy’s letter.",
+      "quoteIds": [
+        "first-conviction",
+        "attention"
+      ],
+      "feedback": "Recognize the contrast in wording and the limit on what self-assessment proves. Ask the learner to explain the final card’s adjective list if the interpretation needs development."
+    },
+    {
+      "id": "self-reproach",
+      "stance": "Supported alternative",
+      "answer": "The change may be thoughtful, but it is also emotionally severe. “collecting herself as well as she could” suggests effort under strain, while “blind, partial, prejudiced, absurd” turns her criticism onto herself. I would not treat the intensity of that self-reproach as a guarantee of accurate judgment.",
+      "quoteIds": [
+        "effort",
+        "self-reproach"
+      ],
+      "feedback": "Accept this qualified alternative if the learner explains the quoted details. Do not require a verdict that Elizabeth has become completely impartial or entirely correct."
+    },
+    {
+      "id": "certainty-leap",
+      "stance": "Needs revision",
+      "answer": "Elizabeth is ashamed, so Darcy has been proved right about everything and she will never misjudge anyone again.",
+      "quoteIds": [],
+      "feedback": "Ask which words prove every claim or predict every later judgment. Keep the narrower observation that the narration represents shame and reassessment; remove unsupported certainty and future claims."
+    },
+    {
+      "id": "scenery-leap",
+      "stance": "Needs revision",
+      "answer": "The garden and writing desk look peaceful, so Elizabeth must read calmly and understand everything accurately.",
+      "quoteIds": [],
+      "feedback": "The illustrated setting is not textual evidence. Ask the learner to compare that impression with conflicting emotion and effort in the cards, and support the revised interpretation with wording."
+    }
+  ],
+  "modelEvaluation": "not run for these examples"
+}

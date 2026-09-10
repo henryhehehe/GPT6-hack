@@ -19,7 +19,8 @@ import {worldCharacters} from '@/lib/characters';
 import type {World,ZoneId} from '@/lib/world';
 type Props={world:World;scenario:boolean;focus:ZoneId|null;focusRevision?:number;onSelect:(id:ZoneId)=>void;onTalk:(id:ZoneId)=>void};
 export default function GeneratedWorldScene(props:Props){
- const host=useRef<HTMLDivElement>(null),latest=useRef(props);latest.current=props;
+ const host=useRef<HTMLDivElement>(null),latest=useRef(props);
+ useEffect(()=>{latest.current=props;},[props]);
  const explorer=useRef<ReturnType<typeof createExplorer>|null>(null),labels=useRef<Partial<Record<ZoneId,HTMLButtonElement|null>>>({});const [walking,setWalking]=useState(false),[nearby,setNearby]=useState<ZoneId|null>(null),[error,setError]=useState('');
  const sceneIdentity=JSON.stringify(props.world);
  const cast=worldCharacters(props.world),theme=worldTheme(props.world),layout=themeLayout(theme),spots=layout.spots;

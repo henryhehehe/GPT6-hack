@@ -33,8 +33,8 @@ async function main(){
  let learning:LearningTools|undefined;
  if(live){try{
   const modulePath=pathToFileURL(resolve('lib/learning.ts')).href;
-  const module=await import(modulePath);
-  if(typeof module.materials==='function'&&typeof module.sourceVersion==='function')learning=module;
+  const learningModule=await import(modulePath);
+  if(typeof learningModule.materials==='function'&&typeof learningModule.sourceVersion==='function')learning=learningModule;
  }catch{}}
  const report=await runEvaluation({baseUrl,live,suite,caseIds,learning,teacherCode:process.env.CURRICULUM_EVAL_TEACHER_CODE,parent:classId&&teacherToken?{id:classId,teacherToken}:undefined,save});
  console.log(`${report.status}: ${report.results.filter(r=>r.status==='captured').length}/${report.results.length} responses captured; human review pending.\n${join(directory,'review.html')}\n${join(directory,'report.json')}`);

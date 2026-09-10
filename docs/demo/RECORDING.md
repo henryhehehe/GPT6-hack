@@ -1,45 +1,48 @@
-# Recording and rebuilding the demo
+# Record or rebuild the updated demo
 
-Version 3 is finished in `output/demo/v3/`. It re-edits the actual version-2 screen recordings and adds fresh narration and captions. It does not capture the latest local UI. Preserve both versions; make new recordings when the product changes materially.
+Current deliverable: `output/demo/v4/counterfactual-worlds-60s.mp4`. This version has new screen recordings, OpenAI Marin narration, synchronized captions, and a complete closing pickup. Versions 2 and 3 remain preserved.
 
-## How I recorded it
+## Recording setup
 
-I operated the published app through computer-use browser controls in a dedicated Chrome tab. After Screenshot and QuickTime control repeatedly timed out, the user explicitly approved macOS `screencapture`. Window capture succeeded without changing system permissions. The first long capture ended early at 122.11 seconds, so teacher/source/result pickups were captured in short clips. All included screen imagery comes from these actual moving recordings.
+The user approved macOS `screencapture` after native Screenshot and QuickTime control timed out. Operate the app through computer-use browser controls and capture only the dedicated Chrome window. Resolve its current window ID from the window inventory. Never assume the active Chrome window is the demo: other work can change focus.
 
-Capture only the dedicated demo window. Resolve its current window ID from the visible app/window inventory; the recorded ID 517 is session-specific. Do not reuse it blindly or capture another agent's development window. Start each capture before acting and verify the file duration afterward.
-
-```sh
-python3 scripts/demo/capture.py --window VERIFIED_WINDOW_ID --seconds 45 --name UNIQUE_CLIP_NAME
-```
-
-Use a unique name for every take. The script records into `output/demo/v2/raw/` and stores timing metadata. Keep clips under a minute and allow the process to finish before starting another. Record narration separately.
-
-## Manual recording sequence
-
-1. Open one fresh prepared Alexandria classroom. Keep its provenance visible. Start in Teacher studio, then Preview as student.
-2. Capture the overview, a short Walk around movement, and the harbor-trade hypothesis switch.
-3. Paste the initial claim from SCRIPT.md and submit. Wait for the real reply; capture the claim and actual rubric feedback.
-4. Return to Teacher studio, enter the scripted patron challenge, use **Use standard request**, inspect the generated preview, then **Add to student world**. Use native steering only after it actually works in a new rehearsal.
-5. Return to the same student world. Open the harbor ledger and Strabo reader, save evidence, and use the citation action.
-6. Submit the revised explanation and capture its actual feedback. Expand Mechanism and Limitation so the reasoning is legible. A score other than 4/4 is acceptable; never replace real results to match a script.
-7. Close the conversation and return to the overview for the closing shot.
-
-Record 2 seconds of breathing room around actions. Keep generation waits in the raw take, then remove them with a labeled cut. The finished minute is edited time, not elapsed model latency. Crop browser tabs, address bars, and unrelated windows out of the export.
-
-## Voiceover
-
-Version 3 uses a new OpenAI Marin main take and a separate closing pickup, generated with conversational delivery instructions. Astra generates the app's reasoning; it does not directly emit this audio. The film explicitly discloses AI narration. Do not use `say` for the finished film.
-
-Use the [version-3 package](v3/README.md) to regenerate narration and timestamp transcripts. The version-2 narration scripts remain archival and write to the version-2 folder; do not run them for this edit.
-
-For your own voice: record two takes in QuickTime → New Audio Recording. Use a quiet room, microphone 15–20 cm away and slightly off-axis. Speak to one person, pause after the opening question, and keep the final phrase relaxed. Replace the speech track and retime captions from that recording.
-
-## Rebuild the current edit
+The v4 recording used a frozen local build at `http://127.0.0.1:5179`, with an isolated database in `/private/tmp/cw-demo-recording`. This avoided development hot reloads resetting the lesson. The teacher and joined Demo Learner occupied two tabs in one dedicated window. This temporary directory is a recording fixture, not a deployment.
 
 ```sh
-python3 scripts/demo/render-v3.py --ffmpeg /path/to/ffmpeg
+python3 scripts/demo/capture.py --window VERIFIED_WINDOW_ID --seconds 40 --name UNIQUE_TAKE --version v4
 ```
 
-See [the version-3 package](v3/README.md) for source dependencies. The renderer uses the original moving recordings, crops browser chrome, assembles 13 cuts, places seven narration sections into exact sample-length slots, and burns synchronized captions into a separate footer. Quoted claims are editorial excerpts of the actual submitted text, not simulated UI. Export is H.264/AAC, 1920×1080, 30 fps, exactly 60 seconds.
+Capture metadata is written beside each raw movie. Inspect actual duration: some recordings ended early. Never choose source cuts from the requested duration alone. Crop browser chrome and exclude unrelated windows from the final edit.
 
-Check a new export for real clicks and movement, source labels, readable text, caption timing, and complete narration before 60 seconds. Technical audio checks do not constitute an independent listening review.
+## Rehearsal sequence
+
+1. Show the new landing page and open Teacher studio. Choose Alexandria in the 30-lesson library. Review the source packet, approve it, launch, and open the teaching guide.
+2. Join a separate learner using the classroom invitation. Keep the invitation out of the film. Show Overview, Walk around, and the Baseline / What if switch.
+3. Read the invented harbor ledger and the Strabo source. Save both; open Read in context and add the citation to the explanation.
+4. Submit the exact initial answer in SCRIPT.md. Wait for the actual response. Record its words; never substitute an expected score or generated reply.
+5. In Teacher studio, open Lesson notes → Teaching help. Enter the request in SCRIPT.md, use the standard request path, review the preview, and add it to the student world.
+6. Return to the same learner. Show the applied teacher question and preserved work. Submit the revised explanation and wait for the real feedback.
+7. Open the teacher report. Show the first and latest explanations, retaining the context-change label. Finish on a moving city view.
+
+Record short pickups with 2–3 seconds of breathing room around clicks. Keep waiting time in the raw takes and remove it with a labeled edit.
+
+## Narration
+
+The v4 main take and closing pickup use OpenAI speech generation, voice Marin, with conversational founder-style delivery. The original main take omitted the last phrase; the closing pickup contains the complete line. The edit preserves delivery within paragraphs and inserts pauses only between them.
+
+```sh
+node scripts/demo/narrate.mjs output/demo/v4 output/demo/v4/voiceover.txt
+node scripts/demo/narrate.mjs output/demo/v4/closing output/demo/v4/closing.txt
+```
+
+These commands use the existing local API configuration. Preserve verified audio before regenerating. Transcribe and check every phrase before replacing the current voice track.
+
+For your own voice, record two takes in a quiet room with the microphone slightly off-axis, 15–20 cm away. Speak to one person. Pause after “Let’s test it,” and give the changed answer time to land. Keep the last line relaxed.
+
+## Rebuild
+
+```sh
+python3 scripts/demo/edit-v4.py --ffmpeg /path/to/ffmpeg
+```
+
+The renderer uses the raw clips listed in `output/demo/v4/edit-decision-list.json`, the main and closing WAVs, and exact speech timings. It produces H.264/AAC, 1920×1080 at 30 fps, exactly 60 seconds. Raw footage stays local; the MP4 is standalone. `captions.srt` is also available separately.
