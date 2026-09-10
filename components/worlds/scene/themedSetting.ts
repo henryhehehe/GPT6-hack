@@ -1,17 +1,79 @@
 import * as THREE from 'three';
 import type {WorldTheme} from '@/lib/worldThemes';
-import {settingPlacements} from './settingLayout';
+import {settingPlacements,SETTING_SPOTS,SETTING_ASSETS,type SettingPlacement} from './settingLayout';
+import {themeLayout} from './themeLayouts';
 import {externalPlacements} from './externalLayout';
 
 export function themedPlacements(theme:WorldTheme){
- return settingPlacements(theme.furniture).filter(p=>theme.id!=='tempest'||!['sheep','cave-module'].includes(p.id));
+ const spots=themeLayout(theme).spots;
+ const result=settingPlacements(theme.furniture).filter(p=>{
+  if(theme.id==='custom')return true;
+  if(theme.id==='tempest'&&['sheep','cave-module','merchant-ship','amphora','storage-jar'].includes(p.id))return false;
+  if(['paneled-wall','garden-path'].includes(p.id))return false;
+  if(p.id==='garden-bench'&&theme.id!=='austen-letter')return false;
+  if(p.id==='coast-rocks'&&theme.id==='tempest'&&Number(p.key.split('-').at(-1))%2===0)return false;
+  return true;
+ }).map(p=>p.zone?{...p,at:[p.at[0]+spots[p.zone].x-SETTING_SPOTS[p.zone].x,p.at[1],p.at[2]+spots[p.zone].z-SETTING_SPOTS[p.zone].z] as [number,number,number]}:p);
+ // Existing detailed joinery is shared at the model level, arranged per building.
+ const add=(id:SettingPlacement['id'],x:number,y:number,z:number,scale=1,turn=0)=>result.push({key:`architecture-${id}-${result.length}`,id,at:[x,y-SETTING_ASSETS[id].bounds.min[1]*scale,z],scale,turn,collision:'none'});
+ const kind=themeLayout(theme).kind;
+ if(['study','assembly','meeting'].includes(kind)){
+  for(let x=-16;x<=16;x+=4)add('paneled-wall',x,0,-18.04,1.5);
+  for(let x=-13.5;x<=13.5;x+=4.5){if(kind==='study'&&Math.abs(x)<2)continue;add('sash-window',x,2.6,-17.7,1.2);}
+  if(kind!=='study')add('austen-doorway',15,0,-17.6,1.2);
+ }else if(kind==='garden'){
+  for(let x=-12;x<=12;x+=4)add('sash-window',x,5.6,-26.65,1.2);
+  add('austen-doorway',0,0,-26.6,1.5);
+ }else if(kind==='courtyard'){
+  for(let x=-15.75;x<=15.75;x+=4.5)add('sash-window',x,2.6,-20.1,1.2);
+  add('austen-doorway',-7,0,-20.1,1.2);
+ }else if(kind==='street'){
+  for(const sign of [-1,1])for(let i=0;i<5;i++){
+   const z=-25+i*12;for(const dz of [-1.75,1.75])add('sash-window',sign*16.15,3.6,z+dz,1.2,-sign*Math.PI/2);
+   add('austen-doorway',sign*16.1,0,z,1.15,-sign*Math.PI/2);
+  }
+ }
+ return result;
+
 }
 export function themedExternalPlacements(theme:WorldTheme){
- const all=externalPlacements(theme.furniture);
- if(theme.id==='custom'||theme.id==='austen-letter'||theme.furniture==='coast')return all;
- // Keep writing-room furniture; market stalls and produce do not belong in every document lesson.
- const filtered=all.filter(p=>!p.key.startsWith('garden-display')&&!p.key.startsWith('garden-produce')&&!p.key.startsWith('garden-tea'));
- const keys=new Set(filtered.map(p=>p.key));return filtered.filter(p=>!p.support||keys.has(p.support));
+ if(theme.id==='custom')return externalPlacements(theme.furniture);
+ const spots=themeLayout(theme).spots;
+ // Reuse curated Kenney, Quaternius and Poly Haven objects without repeating full kits.
+ const all=externalPlacements(theme.furniture).filter(p=>{
+  if(p.key.startsWith('coastal-palm'))return false;
+  if(theme.furniture==='coast')return theme.id==='odyssey-ix'||(!p.key.startsWith('coastal-')&&!p.key.startsWith('shore-rowboat'));
+  return p.key.endsWith('-candle')||(theme.id==='austen-letter'&&(p.key.endsWith('-planter')||p.key.endsWith('-basket')||p.key.startsWith('garden-tea')));
+ });
+ const result=all.map(p=>p.zone?{...p,at:[p.at[0]+spots[p.zone].x-SETTING_SPOTS[p.zone].x,p.at[1],p.at[2]+spots[p.zone].z-SETTING_SPOTS[p.zone].z] as [number,number,number]}:p);
+ const prop=(name:string)=>`quaternius-fantasy-props-${name}`;
+ const add=(key:string,asset:string,x:number,z:number,scale=1,turn=0)=>result.push({key,asset,at:[x,0,z],scale,turn,solid:true});
+ if(theme.id==='frankenstein'){
+  add('study-bookcase-left',prop('bookcase-2'),-15,-4,1.5);
+  add('study-bookcase-right',prop('bookcase-2'),15,-4,1.5);
+  add('study-cabinet',prop('cabinet'),-8,-16,1.3);
+  add('study-shelf',prop('shelf-arch'),8,-16,1.5);
+ }else if(theme.id==='declaration'){
+  add('assembly-table-left',prop('table-large'),-7,-6,1.6);
+  add('assembly-table-right',prop('table-large'),7,-6,1.6);
+ }else if(theme.id==='christmas-carol'){
+  add('street-cart',prop('stall-cart-empty'),10,13);
+  add('street-crate',prop('farmcrate-empty'),13,12);
+  add('counting-house-cabinet',prop('cabinet'),-13,15);
+ }else if(theme.id==='douglass-literacy'){
+  add('courtyard-bench',prop('bench'),-11,14,1.5);
+  add('courtyard-table',prop('workbench-drawers'),11,-10);
+ }else if(theme.id==='seneca-falls'){
+  add('meeting-lectern',prop('bookstand'),0,-15,1.4);
+  add('meeting-desk',prop('table-large'),-10,-13,1.4);
+ }else if(theme.id==='macbeth'){
+  add('ruin-crate',prop('crate-wooden'),-13,-7);
+  add('ruin-vessel',prop('vase-4'),13,-9);
+ }else if(theme.id==='tempest'){
+  result.push({key:'storm-east-shelf',asset:'polyhaven-coast_rocks_01',at:[31,-.4,-8],turn:.4,scale:1.7});
+  result.push({key:'storm-rock-shelf',asset:'polyhaven-coast_rocks_01',at:[-31,-.15,10],turn:1.2,scale:1.5});
+ }
+ return result;
 }
 
 /** Distant scenery is outside the walking boundary; local furniture owns its collisions. */
@@ -19,36 +81,16 @@ export function addThemeScenery(scene:THREE.Scene,theme:WorldTheme){
  const root=new THREE.Group();root.name='Interpreted setting';scene.add(root);
  const materials=new Set<THREE.Material>(),geometries=new Set<THREE.BufferGeometry>();
  const mat=(color:string,roughness=.9)=>{const m=new THREE.MeshStandardMaterial({color,roughness});materials.add(m);return m;};
- const wall=mat(theme.building),roof=mat(theme.roof),stone=mat(theme.stone),leaf=mat(theme.foliage),hill=mat(theme.ground),trim=mat('#ded6c2');
- const glass=new THREE.MeshStandardMaterial({color:theme.night?'#ffd994':'#71868a',emissive:theme.night?'#edb566':'#263c42',emissiveIntensity:theme.night?.55:.06,roughness:.3});materials.add(glass);
- const cube=new THREE.BoxGeometry(1,1,1),cone=new THREE.ConeGeometry(1,1,4),mound=new THREE.SphereGeometry(1,16,10);[cube,cone,mound].forEach(g=>geometries.add(g));
+ const hill=mat(theme.ground);
+ const mound=new THREE.SphereGeometry(1,16,10);geometries.add(mound);
  function mesh(g:THREE.BufferGeometry,m:THREE.Material,x:number,y:number,z:number,sx:number,sy:number,sz:number){const o=new THREE.Mesh(g,m);o.position.set(x,y,z);o.scale.set(sx,sy,sz);o.castShadow=false;o.receiveShadow=true;root.add(o);return o;}
  if(theme.landscape==='shore'||theme.landscape==='highlands'){
   for(let i=0;i<9;i++){
    const angle=Math.PI*.12+i*Math.PI*.105,r=57+(i%3)*9,height=theme.landscape==='highlands'?13+i%4*5:5+i%4*3;
    mesh(mound,hill,Math.cos(angle)*r,-2,Math.sin(angle)*-r,12+i%3*4,height,10+i%2*4);
   }
- }else{
-  // The path beyond the activity courtyard makes an inland setting, not another island.
-  mesh(cube,hill,0,-1.9,0,280,.5,280);
-  for(let i=0;i<11;i++){
-   const x=(i-5)*8,z=-36-Math.abs(i-5)*1.8,height=theme.landscape==='town'?8+(i%3)*1.5:7;
-   mesh(cube,wall,x,height/2-1.6,z,6,height,6);
-   const top=mesh(cone,roof,x,height-.1,z,5,3,5);top.rotation.y=Math.PI/4;
-   for(const dx of [-1.6,1.6])for(const dy of [1.5,4.3]){
-    mesh(cube,trim,x+dx,dy,z+3.06,1.35,1.75,.12);
-    mesh(cube,glass,x+dx,dy,z+3.15,1.05,1.45,.08);
-    mesh(cube,trim,x+dx,dy,z+3.23,.055,1.45,.04);
-   }
-   mesh(cube,roof,x+1.8,height+1,z-1, .65,2,.65);
-  }
-  if(theme.landscape==='estate')for(let i=0;i<12;i++){
-   const a=i/12*Math.PI*2;mesh(mound,leaf,Math.cos(a)*36,1,Math.sin(a)*36,3.5,5,3.5);
-  }
  }
- // Quiet, static cloud layers preserve reduced-motion behavior and keep visual noise low.
- const cloud=new THREE.MeshBasicMaterial({color:theme.horizon,transparent:true,opacity:.3,depthWrite:false});materials.add(cloud);
- for(let i=0;i<7;i++)mesh(mound,cloud,(i-3)*20,30+(i%3)*4,-64-i%2*12,16,2.3,6);
+
  return {dispose(){root.removeFromParent();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());}};
 }
 

@@ -13,3 +13,25 @@ Generic prepared guides acquire distinct fictional names and reading roles throu
 The route provides reading and exploration, not saved student assessment. Teacher-reviewed launch, live dialogue, assessment, and learner persistence remain part of the existing classroom flow and its access/AI configuration. Browser interaction, visual screenshots, performance on classroom devices, and a teacher/student trial were not performed in this pass. Do not label the result classroom-validated or photorealistic on the basis of these checks.
 
 Verification: three new tests cover all theme/source/character mappings, safe and connected arrivals for every themed furniture arrangement, supported prop dependencies, scene resource cleanup, and guide dimensions. The combined checkout passed 122 automated tests, TypeScript, and a production build. The new route returned HTTP 200 locally. Existing large-client-chunk warnings remain. The separate reviewed-release integration must preserve its newer hint/learning contracts when merging this generated-scene change.
+
+## September 10 — distinct layouts and existing detailed models
+
+The follow-up replaces the shared circular plaza, three pavilions, and tree ring with compositions specific to each work. Alexandria retains its existing detailed harbor renderer. The other nine use these arrangements:
+
+| Work | Spatial identity |
+| --- | --- |
+| Odyssey | An irregular cove, authored cave and sheep, shipping and coastal rock models |
+| Austen | A walled garden with planted beds, estate facade, paneled doorway and sash windows |
+| Macbeth | An open ruined courtyard, crenellated walls, corner towers and bare trees |
+| Frankenstein | A cutaway study with a chimney, book bays, existing bookcases and paneled joinery |
+| A Christmas Carol | A long winter street, facing brick shopfronts, detailed doors/windows and a handcart |
+| The Tempest | A separate irregular island, scanned rock shelves and storm lighting; no Cyclops cave or sheep |
+| Declaration | A cutaway document hall, pilasters, comparison tables and paneling |
+| Douglass | An enclosed brick courtyard with domestic windows, a bench and a work desk |
+| Seneca Falls | A meeting room with bench rows, a central aisle and a reading stand |
+
+The authored `austen-doorway` and `sash-window` GLBs join the existing setting registry. Paneled walls, desks, chairs, Quaternius furniture and Poly Haven scans are reused through the existing model loaders and credits. Repetition now shares model resources, not the entire scene layout. Architectural shells and some planting remain native geometry; these are interpreted settings, not measured reconstructions or wholly photorealistic environments.
+
+Lighting reuses the existing harbor's physical sky and filtered environment approach, with separate sun position, cloud cover, fill, fog and exposure for each work. Interiors include warm local desk lighting. Coastal works reuse the local water-normal texture and reflective water implementation, with reflection updates capped around 30 fps and different wave speeds. Soft 2048-pixel shadows and environment lighting reveal the existing models' material detail. Reduced motion stops water/sky animation as well as station-marker motion.
+
+Scene layouts own reading-stop positions, camera framing, architectural blockers and safe arrivals. Navigation no longer inherits invisible pavilion columns or tree trunks. Tests cover reachable arrivals **and** reading-stop centers in every layout, scene-eligible external assets, supported prop dependencies, unchanged source text, distinct compositions, cleanup and parsing/bounds of all 26 registered setting GLBs. The targeted scene suite passed 29 tests; TypeScript and the production build passed. The local world-library route returned HTTP 200. Existing large-client-chunk warnings remain. Browser visual testing and target-device performance remain unverified. These changes do not modify source packets, classroom launch or assessment behavior.

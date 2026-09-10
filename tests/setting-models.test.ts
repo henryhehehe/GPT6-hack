@@ -22,7 +22,7 @@ function model(id: SettingAssetId) {
   return pending;
 }
 
-test('all 24 registered setting GLBs parse and match their placement bounds', async () => {
+test('all registered setting GLBs parse and match their placement bounds', async () => {
   for (const id of SETTING_ASSET_IDS) {
     const root = await model(id), box = new THREE.Box3().setFromObject(root, true), expected = SETTING_ASSETS[id].bounds;
     assert.ok(root.getObjectByName(`${id}__Anchor_Inspect`), `${id} inspect anchor retained`);

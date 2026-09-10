@@ -11,7 +11,7 @@ export const SETTING_SPOTS: Record<ZoneId, Point> = {
 export const SETTING_ASSET_IDS = [
   'reading-table', 'scroll-rack', 'open-scroll', 'rolled-scroll', 'writing-tablet',
   'writing-desk', 'period-chair', 'quill-inkwell', 'open-letter', 'folded-letter',
-  'garden-bench', 'garden-path', 'paneled-wall',
+  'garden-bench', 'garden-path', 'paneled-wall', 'austen-doorway', 'sash-window',
   'merchant-ship', 'coast-rocks', 'cave-module', 'sheep', 'amphora', 'storage-jar',
   'cargo-crate', 'rope-coil', 'tied-sack', 'woven-basket', 'ceramic-bowl',
 ] as const;
@@ -90,7 +90,7 @@ export function placementBounds(p: SettingPlacement): Bounds {
   return [Math.min(...corners.map(p => p.x)), Math.max(...corners.map(p => p.x)), Math.min(...corners.map(p => p.z)), Math.max(...corners.map(p => p.z))];
 }
 
-export function settingObstacles(placements: SettingPlacement[]): Bounds[] {
+export function settingObstacles(placements: SettingPlacement[], legacyScenery = true): Bounds[] {
   const obstacles: Bounds[] = [];
   for (const p of placements) {
     if (p.collision === 'solid') obstacles.push(placementBounds(p));
@@ -101,20 +101,22 @@ export function settingObstacles(placements: SettingPlacement[]): Bounds[] {
       obstacles.push([x0, p.at[0] - .85, z0, z1], [p.at[0] + .85, x1, z0, z1]);
     }
   }
-  for (const p of Object.values(SETTING_SPOTS)) {
+  if (legacyScenery) for (const p of Object.values(SETTING_SPOTS)) {
     for (const x of [-3, 3]) for (const z of [-2.5, 2.5]) obstacles.push([p.x + x - .23, p.x + x + .23, p.z + z - .23, p.z + z + .23]);
     obstacles.push([p.x + 1, p.x + 1.6, p.z + .2, p.z + .8]);
   }
   // The visible tree trunks around the island also stop the walking camera.
-  for (let i = 0; i < 22; i++) {
+  for (let i = 0; legacyScenery && i < 22; i++) {
     const a = i / 22 * Math.PI * 2, x = Math.cos(a) * 23, z = Math.sin(a) * 23;
     obstacles.push([x - .22, x + .22, z - .22, z + .22]);
   }
   return obstacles;
 }
 
-export function createSettingNavigation(placements: SettingPlacement[], extraObstacles: readonly Bounds[] = []) {
-  const obstacles = [...settingObstacles(placements), ...extraObstacles];
+export function createSettingNavigation(placements: SettingPlacement[], extraObstacles: readonly Bounds[] = [], layout?: {spots:Record<ZoneId,Point>}) {
+  const spots = layout?.spots ?? SETTING_SPOTS;
+  const obstacles = [...settingObstacles(placements, !layout), ...extraObstacles];
+  if (layout) for (const p of Object.values(spots)) obstacles.push([p.x+1,p.x+1.6,p.z+.2,p.z+.8]);
   const paving = placements.filter(p => p.id === 'garden-path').map(placementBounds);
   const finite = (p: Point) => Number.isFinite(p.x) && Number.isFinite(p.z);
   function isWalkable(p: Point, radius = .28) {
@@ -122,12 +124,12 @@ export function createSettingNavigation(placements: SettingPlacement[], extraObs
     return obstacles.every(([x0, x1, z0, z1]) => Math.hypot(Math.max(x0 - p.x, 0, p.x - x1), Math.max(z0 - p.z, 0, p.z - z1)) > radius);
   }
   function groundHeight(p: Point) {
-    if (Object.values(SETTING_SPOTS).some(s => Math.hypot(p.x - s.x, p.z - s.z) <= 4)) return .22;
+    if (Object.values(spots).some(s => layout ? Math.abs(p.x-s.x)<=4 && Math.abs(p.z-s.z)<=3.5 : Math.hypot(p.x - s.x, p.z - s.z) <= 4)) return .22;
     if (paving.some(([x0, x1, z0, z1]) => p.x >= x0 && p.x <= x1 && p.z >= z0 && p.z <= z1)) return .09;
-    if (Math.hypot(p.x, p.z) <= 5.5) return .095;
-    for (const s of Object.values(SETTING_SPOTS)) {
+    if (!layout && Math.hypot(p.x, p.z) <= 5.5) return .095;
+    for (const s of Object.values(spots)) {
       const length = Math.hypot(s.x, s.z), along = (p.x * s.x + p.z * s.z) / length, across = Math.abs(p.x * s.z - p.z * s.x) / length;
-      if (along >= 0 && along <= length && across <= 1) return .07;
+      if (along >= 0 && along <= length && across <= (layout ? .9 : 1)) return layout ? .05 : .07;
     }
     return 0;
   }
@@ -145,6 +147,6 @@ export function createSettingNavigation(placements: SettingPlacement[], extraObs
     }
     return result;
   }
-  return { groundHeight, moveWalker, isWalkable, approach: SETTING_SPOTS,
-    spawns: { harbor: { x: -12, z: 9 }, market: { x: 12, z: 9 }, library: { x: 0, z: -7 } } };
+  return { groundHeight, moveWalker, isWalkable, approach: spots,
+    spawns: layout ? Object.fromEntries(Object.entries(spots).map(([id,p])=>[id,{x:p.x,z:p.z+4}])) as Record<ZoneId,Point> : { harbor: { x: -12, z: 9 }, market: { x: 12, z: 9 }, library: { x: 0, z: -7 } } };
 }
