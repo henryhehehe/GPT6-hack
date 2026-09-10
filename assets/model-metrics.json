@@ -14,6 +14,19 @@
       "clips": []
     },
     {
+      "id": "austen-doorway",
+      "bytes": 117840,
+      "triangles": 1356,
+      "primitives": 3,
+      "materials": 2,
+      "size": [
+        1.5,
+        2.35,
+        0.23
+      ],
+      "clips": []
+    },
+    {
       "id": "cargo-crate",
       "bytes": 351732,
       "triangles": 4096,
@@ -83,6 +96,32 @@
       ]
     },
     {
+      "id": "folded-letter",
+      "bytes": 22852,
+      "triangles": 389,
+      "primitives": 2,
+      "materials": 2,
+      "size": [
+        0.27,
+        0.028,
+        0.16
+      ],
+      "clips": []
+    },
+    {
+      "id": "garden-bench",
+      "bytes": 133540,
+      "triangles": 1404,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        1.5,
+        1.005,
+        0.6
+      ],
+      "clips": []
+    },
+    {
       "id": "ione",
       "bytes": 628720,
       "triangles": 12776,
@@ -126,6 +165,19 @@
       "clips": []
     },
     {
+      "id": "open-letter",
+      "bytes": 2332,
+      "triangles": 24,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.36,
+        0.008,
+        0.48
+      ],
+      "clips": []
+    },
+    {
       "id": "open-scroll",
       "bytes": 11828,
       "triangles": 328,
@@ -135,6 +187,32 @@
         0.782,
         0.102,
         0.57
+      ],
+      "clips": []
+    },
+    {
+      "id": "period-chair",
+      "bytes": 149220,
+      "triangles": 2244,
+      "primitives": 2,
+      "materials": 2,
+      "size": [
+        0.575,
+        1.037,
+        0.589
+      ],
+      "clips": []
+    },
+    {
+      "id": "quill-inkwell",
+      "bytes": 31608,
+      "triangles": 1092,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.271,
+        0.581,
+        0.134
       ],
       "clips": []
     },
@@ -174,6 +252,19 @@
         0.889,
         0.064,
         0.695
+      ],
+      "clips": []
+    },
+    {
+      "id": "sash-window",
+      "bytes": 113240,
+      "triangles": 1188,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        1.38,
+        2.215,
+        0.32
       ],
       "clips": []
     },
@@ -260,6 +351,19 @@
       "clips": []
     },
     {
+      "id": "writing-desk",
+      "bytes": 155996,
+      "triangles": 1848,
+      "primitives": 2,
+      "materials": 2,
+      "size": [
+        1.3,
+        0.941,
+        0.74
+      ],
+      "clips": []
+    },
+    {
       "id": "writing-tablet",
       "bytes": 37928,
       "triangles": 492,
@@ -273,6 +377,6 @@
       "clips": []
     }
   ],
-  "totalBytes": 4603320,
-  "withLandmarksBytes": 9162532
+  "totalBytes": 5329948,
+  "withLandmarksBytes": 9889160
 }

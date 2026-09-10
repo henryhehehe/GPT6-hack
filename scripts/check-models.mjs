@@ -32,6 +32,15 @@ for (const asset of manifest.assets) {
     assert(Math.abs(bounds.max.getComponent(i) - asset.bounds.max[i]) < .006, `${asset.id}: maximum bound mismatch`);
   }
   for (const name of Object.values(asset.anchors)) assert(scene.getObjectByName(name), `${asset.id}: missing ${name}`);
+  if (asset.id === 'austen-doorway') {
+    const hinge = scene.getObjectByName('austen-doorway__DoorHinge');
+    assert(hinge, 'Austen door hinge is missing');
+    const closed = new Box3().setFromObject(hinge, true).getSize(new Vector3());
+    hinge.rotation.y = Math.PI * .45; scene.updateMatrixWorld(true);
+    const open = new Box3().setFromObject(hinge, true).getSize(new Vector3());
+    assert(open.z > closed.z + .5, 'Austen door must swing around a vertical hinge');
+    hinge.rotation.y = 0; scene.updateMatrixWorld(true);
+  }
   let triangles = 0, primitives = 0, skinned = 0;
   const materials = new Set();
   scene.traverse(object => {

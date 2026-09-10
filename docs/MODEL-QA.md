@@ -32,6 +32,12 @@ Delivered a coastal rock cluster, open-ended cave shell, merchant ship with sail
 
 All 20 exports pass the loader checks; their combined payload is 4,603,320 bytes, or 9,162,532 bytes with the existing landmarks. The original Alexandria pottery can be reused without another download. The ship has no sailing animation; the sheep is a static prop.
 
+## Checkpoint 5 — Austen objects
+
+Delivered a folded/sealed letter, open letter, quill/inkwell, upholstered chair, writing desk, garden bench, sash window frame, and paneled doorway. Inspected the studio sheet and validated all 28 exports. The doorway keeps a separate vertical hinge and movable leaf; the checker verifies its swing. Window openings are unglazed; there is no hidden room or photographic scene inside them.
+
+These are period-inspired original furnishings, not objects authenticated by Austen's text or a reproduction of a film set. Blank paper opens the lesson's own source reader when integrated. Elizabeth/Darcy characters, source review, spoiler boundaries, and a playable literature room are not supplied by this model collection.
+
 ## Verification limits
 
 No browser performance, touch hardware, two-student rehearsal, or live lesson acceptance is claimed by these offline export/render checks. Asset integration must preserve source access, conversations, and student state. Per-asset anchors use `<asset-id>__Anchor_Inspect`, `__Anchor_Talk`, and `__Anchor_Label`; the manifest records the exact names to avoid Blender name collisions.

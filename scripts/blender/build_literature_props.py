@@ -105,6 +105,25 @@ def doorway():
     door.parent=hinge;door.location=(0,0,0)
 
 
+def paneled_wall():
+    a.box('Plaster wall',(0,0,1.30),(2.4,.16,2.6),'cream',.008)
+    a.box('Wall skirting',(0,-.10,.10),(2.42,.07,.20),'paper',.008)
+    for z in [.94,1.01,2.56]:a.box('Wall molding',(0,-.105,z),(2.42,.10,.045),'paper',.008)
+    for x in [-.8,0,.8]:
+        a.box('Inset panel',(x,-.10,.55),(.67,.035,.58),'linen',.012)
+        for dx in [-.335,.335]:a.box('Panel upright',(x+dx,-.13,.55),(.026,.035,.62),'paper',.004)
+        for z in [.24,.86]:a.box('Panel rail',(x,-.13,z),(.696,.035,.027),'paper',.004)
+
+
+def garden_path():
+    for row in range(8):
+        for col in range(4):
+            color=(.44+row%3*.018,.45+col%2*.018,.40,1)
+            a.box('Garden paving',(-.75+col*.5,-1.75+row*.5,.045),(.48,.48,.09),color,.025)
+    for side in [-1,1]:
+        for row in range(8):a.box('Path edging',(side*1.04,-1.75+row*.5,.07),(.13,.485,.14),'cream',.014)
+
+
 def rock():
     rng=random.Random(19)
     for p,s in [((0,0,.52),(1.0,.73,.62)),((.68,.10,.26),(.53,.44,.30)),((-.40,-.48,.18),(.43,.30,.22))]:
@@ -216,6 +235,7 @@ def sheep():
 
 
 PACKS={
+ 'austen-architecture': [('paneled-wall','Paneled interior wall',paneled_wall,(-1.4,1.0,0)),('garden-path','Garden paving module',garden_path,(1.1,-.1,0))],
  'austen': [('folded-letter','Sealed folded letter',lambda:letter(False),(-1.4,-1.1,0)),('open-letter','Open blank letter',lambda:letter(True),(-.75,-1.1,0)),('quill-inkwell','Quill and inkwell',writing_set,(-.1,-1.1,0)),('period-chair','Period-inspired chair',chair,(-1.35,.1,0)),('writing-desk','Writing desk',desk,(0,.6,0)),('garden-bench','Garden bench',bench,(1.5,-.3,0)),('sash-window','Sash window frame',window,(-1.5,1.5,0)),('austen-doorway','Paneled doorway',doorway,(1.5,1.5,0))],
  'odyssey': [('coast-rocks','Coastal rock cluster',rock,(-2,-1,0)),('cave-module','Open cave module',cave,(-2,2,0)),('merchant-ship','Interpretive merchant ship',ship,(2.4,1,0)),('sheep','Woolly sheep',sheep,(0,-1.8,0))],
 }
@@ -234,4 +254,4 @@ if __name__=='__main__':
         anchors=['Anchor_Inspect']+(['Anchor_Entrance','Anchor_Exit'] if asset_id=='cave-module' else [])
         a.export_asset(r,'props',pack,title,anchors);roots.append((r,p))
     for r,p in roots:r.location=p
-    a.studio(pack,'props',(0,.4,1.0 if pack=='austen' else 1.5),7 if pack=='austen' else 12,1500,1000,view=(7,-12,8))
+    a.studio(pack,'props',(0,.4,1.0 if pack.startswith('austen') else 1.5),7 if pack.startswith('austen') else 12,1500,1000,view=(7,-12,8))

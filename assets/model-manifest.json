@@ -34,6 +34,37 @@
       "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
     },
     {
+      "id": "austen-doorway",
+      "title": "Paneled doorway",
+      "pack": "austen",
+      "category": "props",
+      "url": "/models/props/austen-doorway.glb",
+      "source": "assets/blender/props/austen.blend",
+      "bytes": 117840,
+      "sha256": "98431e3d90fe57a4c842a20e685ad74727129a29383d39f0e46c8ccbb10514a8",
+      "bounds": {
+        "min": [
+          -0.75,
+          0.0,
+          -0.115
+        ],
+        "max": [
+          0.75,
+          2.35,
+          0.115
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "austen-doorway__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
       "id": "cargo-crate",
       "title": "Slatted cargo crate",
       "pack": "cargo",
@@ -196,6 +227,68 @@
       "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
     },
     {
+      "id": "folded-letter",
+      "title": "Sealed folded letter",
+      "pack": "austen",
+      "category": "props",
+      "url": "/models/props/folded-letter.glb",
+      "source": "assets/blender/props/austen.blend",
+      "bytes": 22852,
+      "sha256": "72f919625ba5c53258fa8dc39d9d4696ea2b77e061874053916c7b8a4470d420",
+      "bounds": {
+        "min": [
+          -0.135,
+          0.0,
+          -0.08
+        ],
+        "max": [
+          0.135,
+          0.028,
+          0.08
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "folded-letter__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "garden-bench",
+      "title": "Garden bench",
+      "pack": "austen",
+      "category": "props",
+      "url": "/models/props/garden-bench.glb",
+      "source": "assets/blender/props/austen.blend",
+      "bytes": 133540,
+      "sha256": "2132265c4e4c1b107f0f8f1e0557a9b57d1bce342f121832f6b07af7926f1a41",
+      "bounds": {
+        "min": [
+          -0.75,
+          0.0224,
+          -0.3185
+        ],
+        "max": [
+          0.75,
+          1.0275,
+          0.2814
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "garden-bench__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
       "id": "ione",
       "title": "Ione \u00b7 archivist",
       "pack": "alexandria-cast",
@@ -294,6 +387,37 @@
       "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
     },
     {
+      "id": "open-letter",
+      "title": "Open blank letter",
+      "pack": "austen",
+      "category": "props",
+      "url": "/models/props/open-letter.glb",
+      "source": "assets/blender/props/austen.blend",
+      "bytes": 2332,
+      "sha256": "1bd9f30662b65197616ec127e2521ae3483d54fbc67f2c4c6f2b2a89abb03b15",
+      "bounds": {
+        "min": [
+          -0.18,
+          0.012,
+          -0.24
+        ],
+        "max": [
+          0.18,
+          0.0198,
+          0.24
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "open-letter__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
       "id": "open-scroll",
       "title": "Open blank scroll",
       "pack": "archive",
@@ -316,6 +440,68 @@
       },
       "anchors": {
         "Anchor_Inspect": "open-scroll__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "period-chair",
+      "title": "Period-inspired chair",
+      "pack": "austen",
+      "category": "props",
+      "url": "/models/props/period-chair.glb",
+      "source": "assets/blender/props/austen.blend",
+      "bytes": 149220,
+      "sha256": "6fcf29137c046997243ea0c7a39c79025dfa20994c79a6b42ba8a2daf9012663",
+      "bounds": {
+        "min": [
+          -0.2873,
+          0.0234,
+          -0.3131
+        ],
+        "max": [
+          0.2873,
+          1.06,
+          0.2758
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "period-chair__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "quill-inkwell",
+      "title": "Quill and inkwell",
+      "pack": "austen",
+      "category": "props",
+      "url": "/models/props/quill-inkwell.glb",
+      "source": "assets/blender/props/austen.blend",
+      "bytes": 31608,
+      "sha256": "669c77de8a01395f3c7cf4be6b307726ead1293dd73951b61984f6efe56b4bd3",
+      "bounds": {
+        "min": [
+          -0.067,
+          0.0,
+          -0.067
+        ],
+        "max": [
+          0.2038,
+          0.5812,
+          0.067
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "quill-inkwell__Anchor_Inspect"
       },
       "clips": [],
       "provenance": "Original interpretive teaching asset; not primary evidence",
@@ -409,6 +595,37 @@
       },
       "anchors": {
         "Anchor_Inspect": "rope-coil__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "sash-window",
+      "title": "Sash window frame",
+      "pack": "austen",
+      "category": "props",
+      "url": "/models/props/sash-window.glb",
+      "source": "assets/blender/props/austen.blend",
+      "bytes": 113240,
+      "sha256": "b91fcaa47d7790d5a489c5c09598dffcaf42b6cc199ecb7b91ff1217efa95e75",
+      "bounds": {
+        "min": [
+          -0.69,
+          0.0,
+          -0.1
+        ],
+        "max": [
+          0.69,
+          2.215,
+          0.22
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "sash-window__Anchor_Inspect"
       },
       "clips": [],
       "provenance": "Original interpretive teaching asset; not primary evidence",
@@ -600,6 +817,37 @@
       },
       "anchors": {
         "Anchor_Inspect": "woven-basket__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "writing-desk",
+      "title": "Writing desk",
+      "pack": "austen",
+      "category": "props",
+      "url": "/models/props/writing-desk.glb",
+      "source": "assets/blender/props/austen.blend",
+      "bytes": 155996,
+      "sha256": "7acf21c0b6827454e39267b4b2fe4fb393feadabb75278cbcc8e1a1c2b1701d6",
+      "bounds": {
+        "min": [
+          -0.65,
+          0.0141,
+          -0.37
+        ],
+        "max": [
+          0.65,
+          0.955,
+          0.37
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "writing-desk__Anchor_Inspect"
       },
       "clips": [],
       "provenance": "Original interpretive teaching asset; not primary evidence",
