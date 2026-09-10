@@ -1,4 +1,4 @@
-"""Twenty original street/workshop props; scene context, not archaeological evidence."""
+"""Thirty original street/workshop props; scene context, not archaeological evidence."""
 import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -295,5 +295,61 @@ rod('Mallet in chest',(-.25,-.12,.085),(.15,.1,.10),.021,'woodlight',8)
 box('Mallet head',(.13,.09,.135),(.12,.21,.09),'wood',.012)
 rod('Chisel handle',(.22,-.14,.13),(.22,.02,.13),.022,'woodlight',8)
 rod('Bronze chisel blade',(.22,.02,.13),(.22,.18,.13),.01,'bronze',4)
+
+start('fishing-creel','Woven fishing creel','harbor','Tapered open wicker creel with bound mouth, alternating reed weave, lid and carrying strap.')
+lathe('Creel shadow lining',[(0,0),(.22,0),(.27,.12),(.25,.35),(.17,.49),(.13,.5),(.14,.46),(.22,.33),(.24,.12),(.19,.03),(0,.03)],mat='rope',n=24)
+for j in range(16):
+    z=.025+j*.029;r=.22+.06*math.sin(z/.5*math.pi)-.07*(z/.5)**3
+    ring('Horizontal creel weave',(0,0,z),r,.01,'linen' if j%3==0 else 'woodlight',24,4)
+for i in range(20):
+    a=i*math.tau/20
+    tube('Upright creel reed',[(r*math.cos(a),r*math.sin(a),z) for r,z in [(.22,.02),(.263,.16),(.255,.32),(.173,.48)]],.009,'rope',4)
+ring('Bound open mouth',(0,0,.49),.16,.018,'linen',24,5)
+# The lid rests beside the basket so the open woven mouth is visible.
+for i in range(9):
+    x=-.135+i*.034;half=math.sqrt(max(0,.15**2-x*x))
+    rod('Separate lid reed',(x+.44,-half,.02),(x+.44,half,.02),.013,'woodlight',5)
+ring('Lid binding',(.44,0,.02),.156,.012,'rope',24,4)
+tube('Carrying strap',[(-.22,0,.30),(-.34,.08,.63),(0,.14,.78),(.34,.08,.63),(.22,0,.3)],.018,'clay',6)
+
+start('rigging-block','Rope and pulley block','harbor','Paired timber cheeks, a grooved bronze sheave, axle pegs and two reeved rope ends; origin at suspension line.')
+for y in [-.056,.056]:
+    box('Rounded block cheek',(0,y,-.23),(.24,.048,.31),'woodlight',.04)
+    sphere('Axle peg',(0,y*1.6,-.23),(.034,.009,.034),'bronze',12)
+tube('Grooved pulley wheel',[(.10*math.cos(i*math.tau/24),0,-.23+.10*math.sin(i*math.tau/24)) for i in range(25)],.02,'bronze',6)
+rod('Block axle',(0,-.085,-.23),(0,.085,-.23),.019,'bronze',8)
+tube('Suspension strop',[(0,-.10,-.10),(0,-.10,0),(0,-.07,.08),(0,0,.10),(0,.07,.08),(0,.10,0),(0,.10,-.10)],.016,'rope',6)
+tube('Reeved running rope',[(-.125,0,-.74),(-.125,0,-.23),(-.1,0,-.15),(0,0,-.105),(.1,0,-.15),(.125,0,-.23),(.125,0,-.61)],.011,'linen',5)
+anchor('SuspensionAnchor',(0,0,0))
+
+start('grain-measure','Wooden grain measure','harbor','Open stave measure with wooden base, bound hoops, side handles and loose grain.')
+lathe('Measure base',[(0,0),(.17,0),(.17,.025),(0,.025)],mat='wood',n=24)
+for i in range(16):
+    a=i*math.tau/16;verts=[]
+    for z in [.025,.30]:
+        for r in [.148,.176]:
+            for t in [a+.013,a+math.tau/16-.013]:verts.append((r*math.cos(t),r*math.sin(t),z))
+    mesh('Individual measure stave',verts,[(0,1,3,2),(4,6,7,5),(0,4,5,1),(2,3,7,6),(0,2,6,4),(1,5,7,3)],'woodlight' if i%3 else 'wood')
+for z in [.055,.25]:ring('Bronze binding hoop',(0,0,z),.18,.012,'bronze',24,5)
+for side in [-1,1]:tube('Measure handle',[(side*.17,0,.24),(side*.25,0,.24),(side*.25,0,.12),(side*.17,0,.12)],.017,'wood',5)
+lathe('Grain fill',[(0,.15),(.143,.15)],mat='ochre',n=24)
+for i in range(24):
+    a=i*2.4;r=.125*math.sqrt(i/24)
+    sphere('Individual grain',(r*math.cos(a),r*math.sin(a),.158),(.012,.006,.007),'linen',8)
+
+start('sailmaker-kit','Sail repair kit','harbor','Folded sail patch, raised stitched seam, wound cord, bone needles and a wooden palm tool on an open tray.')
+box('Repair tray base',(0,0,.02),(.60,.40,.04),'woodlight',.008)
+for y in [-.195,.195]:box('Repair tray rim',(0,y,.052),(.60,.018,.065),'wood',.005)
+for x in [-.29,.29]:box('Repair tray end',(x,0,.052),(.018,.4,.065),'wood',.005)
+box('Folded sail patch',(-.095,0,.058),(.34,.30,.036),'linen',.012)
+for j in range(11):
+    y=-.125+j*.025
+    rod('Sail seam stitch',(-.15,y,.078),(-.115,y+.012,.078),.003,'woodlight',4)
+for j in range(7):ring('Wound repair cord',(.16,.08,.049+j*.009),.055,.0045,'rope',20,4)
+for j in range(3):
+    x=.05+j*.066
+    rod('Bone sail needle',(x,-.15,.045),(x+.035,-.015,.049),.004,'linen',6)
+box('Palm tool',(-.20,-.07,.095),(.07,.10,.035),'wood',.015)
+anchor('InspectAnchor',(0,0,.12))
 
 export_pack('alexandria-details','alexandria-details-contact-sheet','scripts/blender/build_alexandria_details.py')

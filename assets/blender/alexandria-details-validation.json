@@ -467,16 +467,88 @@
           0.25800004601478577
         ]
       }
+    },
+    {
+      "id": "fishing-creel",
+      "bytes": 93480,
+      "triangles": 4818,
+      "primitives": 4,
+      "bounds": {
+        "min": [
+          -0.35638803243637085,
+          0,
+          -0.2827903628349304
+        ],
+        "max": [
+          0.6078973412513733,
+          0.7955884337425232,
+          0.2827903628349304
+        ]
+      }
+    },
+    {
+      "id": "rigging-block",
+      "bytes": 32888,
+      "triangles": 926,
+      "primitives": 4,
+      "bounds": {
+        "min": [
+          -0.13600000739097595,
+          -0.7400000095367432,
+          -0.11385640501976013
+        ],
+        "max": [
+          0.13600000739097595,
+          0.11385640501976013,
+          0.11385640501976013
+        ]
+      }
+    },
+    {
+      "id": "grain-measure",
+      "bytes": 88644,
+      "triangles": 2868,
+      "primitives": 5,
+      "bounds": {
+        "min": [
+          -0.26345255970954895,
+          0,
+          -0.19200000166893005
+        ],
+        "max": [
+          0.26345255970954895,
+          0.30000001192092896,
+          0.19200000166893005
+        ]
+      }
+    },
+    {
+      "id": "sailmaker-kit",
+      "bytes": 69912,
+      "triangles": 2096,
+      "primitives": 4,
+      "bounds": {
+        "min": [
+          -0.30000001192092896,
+          0,
+          -0.20399999618530273
+        ],
+        "max": [
+          0.30000001192092896,
+          0.11249999701976776,
+          0.20399999618530273
+        ]
+      }
     }
   ],
-  "bundleBytes": 1899028,
-  "uniqueTriangles": 60560,
-  "placedTriangles": 61882,
-  "drawCalls": 103,
-  "initialSceneModelBytes": 12616420,
-  "withAuthoredCharacterReserveBytes": 14552784,
+  "bundleBytes": 2179952,
+  "uniqueTriangles": 71268,
+  "placedTriangles": 72590,
+  "drawCalls": 120,
+  "initialSceneModelBytes": 12897344,
+  "withAuthoredCharacterReserveBytes": 14833708,
   "checks": [
-    "26 individual exports and bundle",
+    "30 individual exports and bundle",
     "Every model placed",
     "Exact Y-up bounds and finite vertices",
     "500 KB and 10k triangles per detail",

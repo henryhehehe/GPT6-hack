@@ -8,6 +8,7 @@ export const ALEXANDRIA_DETAIL_IDS = [
   'courtyard-sundial', 'courtyard-well', 'rotary-quern', 'bread-board', 'pouring-jug',
   'weighted-loom', 'reed-screen', 'stone-planter', 'craft-tool-rack', 'mosaic-pavement',
   'scribe-tray', 'pigment-mortar', 'spindle-basket', 'folded-linen', 'oil-flask-stand', 'joiner-chest',
+  'fishing-creel', 'rigging-block', 'grain-measure', 'sailmaker-kit',
 ] as const;
 type DetailId = typeof ALEXANDRIA_DETAIL_IDS[number];
 export type DetailPlacement = {
@@ -42,9 +43,13 @@ export const ALEXANDRIA_DETAIL_PLACEMENTS: DetailPlacement[] = [
   { id: 'folded-linen', at: [10.9, CRAFT_COUNTER_Y, 10.75], scale: .7, activity: 'market' },
   { id: 'oil-flask-stand', at: [15.1, CRAFT_COUNTER_Y, 5.75], scale: .8, activity: 'market' },
   { id: 'joiner-chest', at: [26.5, 1, 10.45], scale: .7 },
+  { id: 'fishing-creel', at: [-26, .95, 7.6], scale: .8 },
+  { id: 'rigging-block', at: [-24.75, 3.1, 10] },
+  { id: 'grain-measure', at: [-25, .95, 7.65], activity: 'harbor' },
+  { id: 'sailmaker-kit', at: [-25.6, .95, 8.3] },
 ];
 
-// Combined conservative footprints for the five new ground-level clusters.
+// Combined conservative footprints for the ground-level work areas.
 // Small props live on existing blocked furniture or inside these footprints.
 export const ALEXANDRIA_DETAIL_OBSTACLES = [
   { id: 'handcart', bounds: [-22.02, -19.98, 3.52, 6.83], height: .85 },
@@ -52,4 +57,5 @@ export const ALEXANDRIA_DETAIL_OBSTACLES = [
   { id: 'capstan', bounds: [-20.91, -19.09, 19.89, 21.71], height: .9 },
   { id: 'well', bounds: [26.12, 28.65, 4.14, 5.86], height: .8 },
   { id: 'weaving', bounds: [24.25, 28.26, 9.25, 10.75], height: 1.55 },
+  { id: 'fishing-gear', bounds: [-26.3, -24.7, 7.3, 8.55], height: .3 },
 ] as const;
