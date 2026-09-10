@@ -1,0 +1,19 @@
+/* Keep the sharing task in one compact, keyboard-friendly surface. */
+.invitation-dialog.share-invitation[data-slot=dialog-content] { width:min(520px,calc(100vw - 32px)); padding:24px; border-top:3px solid #d8321c; }
+.invitation-dialog.share-invitation[data-slot=dialog-content] [data-slot=dialog-title] { margin:0; padding-right:32px; font-size:24px; font-weight:650; line-height:1.25; letter-spacing:-.5px; }
+.invitation-dialog.share-invitation[data-slot=dialog-content] [data-slot=dialog-description] { margin:10px 24px 20px 0; font-size:14px; line-height:1.6; }
+.invitation-dialog.share-invitation .invited-lesson { margin:0 0 20px; padding:0 0 18px; border:0; border-bottom:1px solid #bdbdbd26; border-radius:0; background:transparent; }
+.invitation-dialog.share-invitation .invited-lesson span { font-size:12px; margin-bottom:6px; }
+.invitation-dialog.share-invitation .invited-lesson strong { display:block; font-size:16px; line-height:1.45; font-weight:550; overflow-wrap:anywhere; }
+.invitation-link-row { display:flex; align-items:stretch; gap:8px; }
+.invitation-dialog.share-invitation .invitation-link-row input { min-width:0; flex:1; width:0; min-height:46px; padding:10px; font-size:16px; }
+.invitation-dialog.share-invitation .invitation-link-row .primary-button { flex-shrink:0; min-width:116px; margin:0; padding:10px 12px; font-size:14px; }
+.invitation-dialog.share-invitation .invitation-copy-status { min-height:42px; margin:10px 0 0; font-size:13px; line-height:1.6; }
+.invitation-dialog.share-invitation .invitation-next { margin:14px 0 0; padding-top:14px; font-size:13px; line-height:1.6; color:#bdbdbd; }
+.invitation-dialog.share-invitation :is(button,input):focus-visible { outline:2px solid #ff927f; outline-offset:3px; }
+@media(max-width:380px) {
+ .invitation-dialog.share-invitation[data-slot=dialog-content] { padding:20px; }
+ .invitation-link-row { flex-wrap:wrap; }
+ .invitation-dialog.share-invitation .invitation-link-row input { flex-basis:100%; }
+ .invitation-dialog.share-invitation .invitation-link-row .primary-button { width:100%; }
+}
