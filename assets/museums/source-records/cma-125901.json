@@ -1,0 +1,29 @@
+{
+  "endpoint": "https://openaccess-api.clevelandart.org/api/artworks/125901",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "id": 125901,
+    "accession_number": "1948.141",
+    "title": "Torso of Amenpayom",
+    "creation_date": "probably 200–100 BCE",
+    "culture": [
+      "Egypt, Greco-Roman period (332 BCE–395 CE), Ptolemaic dynasty (305–30 BCE)"
+    ],
+    "technique": "granodiorite",
+    "measurements": "Overall: 96.4 x 32.3 x 28.6 cm (37 15/16 x 12 11/16 x 11 1/4 in.)",
+    "creators": [],
+    "creditline": "Gift of the Hanna Fund",
+    "url": "https://clevelandart.org/art/1948.141",
+    "images": {
+      "web": {
+        "url": "https://openaccess-cdn.clevelandart.org/1948.141/1948.141_web.jpg",
+        "width": "606",
+        "height": "893",
+        "filesize": "247179",
+        "filename": "1948.141_web.jpg"
+      }
+    },
+    "share_license_status": "CC0",
+    "updated_at": "2026-09-10 18:02:44.701000"
+  }
+}

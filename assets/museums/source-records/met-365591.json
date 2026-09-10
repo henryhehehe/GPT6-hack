@@ -1,0 +1,65 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/365591",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 365591,
+    "isPublicDomain": true,
+    "accessionNumber": "42.119.525",
+    "title": "The Enchanted Island Before the Cell of Prospero - Prospero, Miranda, Caliban and Ariel (Shakespeare, The Tempest, Act 1, Scene 2)",
+    "objectDate": "first published 1797; reissued 1852",
+    "culture": "",
+    "medium": "Stipple engraving; fourth state of four",
+    "dimensions": "image: 16 7/8 x 23 1/16 in. (42.9 x 58.5 cm)\r\nsheet: 20 1/16 x 25 1/2 in. (51 x 64.7 cm)",
+    "artistDisplayName": "Peter Simon",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Engraver",
+    "artistDisplayBio": "British, London ca. 1764–1813 Paris",
+    "constituents": [
+      {
+        "constituentID": 181724,
+        "role": "Engraver",
+        "name": "Peter Simon",
+        "constituentULAN_URL": "",
+        "constituentWikidata_URL": "",
+        "gender": ""
+      },
+      {
+        "constituentID": 165448,
+        "role": "Artist",
+        "name": "After Henry Fuseli",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500115235",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q122382",
+        "gender": ""
+      },
+      {
+        "constituentID": 90085,
+        "role": "Publisher",
+        "name": "Originally published John &amp; Josiah Boydell",
+        "constituentULAN_URL": "(not assigned)",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q26879556",
+        "gender": ""
+      },
+      {
+        "constituentID": 208528,
+        "role": "Publisher",
+        "name": "Reissued by Shearjashub Spooner",
+        "constituentULAN_URL": "(not assigned)",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q7492202",
+        "gender": ""
+      },
+      {
+        "constituentID": 164876,
+        "role": "Subject",
+        "name": "William Shakespeare",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500272240",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q692",
+        "gender": ""
+      }
+    ],
+    "creditLine": "Gertrude and Thomas Jefferson Mumford Collection, Gift of Dorothy Quick Mayer, 1942",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/365591",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP859557.jpg",
+    "metadataDate": "2026-03-25T04:56:54.88Z"
+  }
+}

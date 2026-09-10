@@ -1,0 +1,35 @@
+{
+  "endpoint": "https://openaccess-api.clevelandart.org/api/artworks/137145",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "id": 137145,
+    "accession_number": "1962.109",
+    "title": "Macbeth Consulting the Witches",
+    "creation_date": "1825",
+    "culture": [
+      "France, 19th century"
+    ],
+    "technique": "lithograph",
+    "measurements": "Image: 32.2 x 25.2 cm (12 11/16 x 9 15/16 in.)",
+    "creators": [
+      {
+        "description": "Eugène Delacroix (French, 1798–1863)",
+        "qualifier": null,
+        "role": "artist"
+      }
+    ],
+    "creditline": "Gift of The Print Club of Cleveland",
+    "url": "https://clevelandart.org/art/1962.109",
+    "images": {
+      "web": {
+        "url": "https://openaccess-cdn.clevelandart.org/1962.109/1962.109_web.jpg",
+        "width": "657",
+        "height": "893",
+        "filesize": "492912",
+        "filename": "1962.109_web.jpg"
+      }
+    },
+    "share_license_status": "CC0",
+    "updated_at": "2026-05-29 06:59:51.377000"
+  }
+}

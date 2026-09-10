@@ -1,0 +1,35 @@
+{
+  "endpoint": "https://openaccess-api.clevelandart.org/api/artworks/170713",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "id": 170713,
+    "accession_number": "2013.238",
+    "title": "Barnaby Rudge Helping Lead the Gordon Riots",
+    "creation_date": "1884",
+    "culture": [
+      "England, 19th century"
+    ],
+    "technique": "watercolor with traces of graphite",
+    "measurements": "Sheet: 25.4 x 17.6 cm (10 x 6 15/16 in.)",
+    "creators": [
+      {
+        "description": "Charles Green (British, 1840–1898)",
+        "qualifier": null,
+        "role": "artist"
+      }
+    ],
+    "creditline": "Gift in memory of Helen Borowitz",
+    "url": "https://clevelandart.org/art/2013.238",
+    "images": {
+      "web": {
+        "url": "https://openaccess-cdn.clevelandart.org/2013.238/2013.238_web.jpg",
+        "width": "626",
+        "height": "900",
+        "filesize": "228150",
+        "filename": "2013.238_web.jpg"
+      }
+    },
+    "share_license_status": "CC0",
+    "updated_at": "2026-05-29 08:45:27.734000"
+  }
+}

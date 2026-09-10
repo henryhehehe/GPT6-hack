@@ -1,0 +1,24 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/3583",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 3583,
+    "isPublicDomain": true,
+    "accessionNumber": "32.134.1",
+    "title": "Fan",
+    "objectDate": "ca. 1800–1810",
+    "culture": "Chinese, for American market",
+    "medium": "Carved and pierced ivory",
+    "dimensions": "10 1/8 x 16 7/8 in. (25.7 x 42.9 cm)",
+    "artistDisplayName": "",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "",
+    "artistDisplayBio": "",
+    "constituents": null,
+    "creditLine": "Gift of Mrs. Morgan Grinnell, 1932",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/3583",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/10A_043R4.jpg",
+    "metadataDate": "2026-03-31T09:41:00.23Z"
+  }
+}

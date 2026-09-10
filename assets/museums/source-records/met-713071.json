@@ -1,0 +1,57 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/713071",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 713071,
+    "isPublicDomain": true,
+    "accessionNumber": "17.3.2601",
+    "title": "An English Country Performance of Macbeth",
+    "objectDate": "1790",
+    "culture": "",
+    "medium": "Aquatint and etching, hand-colored",
+    "dimensions": "Sheet (trimmed within plate): 15 11/16 × 19 7/16 in. (39.8 × 49.4 cm)",
+    "artistDisplayName": "J. Wright",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Etcher",
+    "artistDisplayBio": "British, active 1788–90",
+    "constituents": [
+      {
+        "constituentID": 191532,
+        "role": "Etcher",
+        "name": "J. Wright",
+        "constituentULAN_URL": "",
+        "constituentWikidata_URL": "",
+        "gender": ""
+      },
+      {
+        "constituentID": 79356,
+        "role": "Artist",
+        "name": "After William Henry Pyne",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500032205",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q8012127",
+        "gender": ""
+      },
+      {
+        "constituentID": 164876,
+        "role": "Subject",
+        "name": "William Shakespeare",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500272240",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q692",
+        "gender": ""
+      },
+      {
+        "constituentID": 191533,
+        "role": "Publisher",
+        "name": "Thomas Martyn",
+        "constituentULAN_URL": "",
+        "constituentWikidata_URL": "",
+        "gender": ""
+      }
+    ],
+    "creditLine": "Harris Brisbane Dick Fund, 1917",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/713071",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP859556.jpg",
+    "metadataDate": "2025-05-28T04:50:32.287Z"
+  }
+}

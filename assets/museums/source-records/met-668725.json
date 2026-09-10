@@ -1,0 +1,73 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/668725",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 668725,
+    "isPublicDomain": true,
+    "accessionNumber": "62.600.350",
+    "title": "The Tempest, Act I: Ferdinand and Miranda",
+    "objectDate": "1788",
+    "culture": "",
+    "medium": "Etching",
+    "dimensions": "Plate: 13 15/16 × 14 15/16 in. (35.4 × 38 cm)\r\nSheet: 15 3/4 × 19 5/16 in. (40 × 49 cm)",
+    "artistDisplayName": "Samuel Middiman",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Engraver",
+    "artistDisplayBio": "British, 1751–1831 London",
+    "constituents": [
+      {
+        "constituentID": 90084,
+        "role": "Engraver",
+        "name": "Samuel Middiman",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500020205",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q7412183",
+        "gender": ""
+      },
+      {
+        "constituentID": 91329,
+        "role": "Artist",
+        "name": "After Giovanni Battista Cipriani",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500031736",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q2687759",
+        "gender": ""
+      },
+      {
+        "constituentID": 97104,
+        "role": "Artist",
+        "name": "After George Barret, the elder",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500006857",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q5536751",
+        "gender": ""
+      },
+      {
+        "constituentID": 164276,
+        "role": "Artist",
+        "name": "After Francesco Bartolozzi",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500032318",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q734889",
+        "gender": ""
+      },
+      {
+        "constituentID": 90085,
+        "role": "Publisher",
+        "name": "John &amp; Josiah Boydell",
+        "constituentULAN_URL": "(not assigned)",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q26879556",
+        "gender": ""
+      },
+      {
+        "constituentID": 164876,
+        "role": "Subject",
+        "name": "William Shakespeare",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500272240",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q692",
+        "gender": ""
+      }
+    ],
+    "creditLine": "The Elisha Whittelsey Collection, The Elisha Whittelsey Fund, 1962",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/668725",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP860135.jpg",
+    "metadataDate": "2025-12-06T04:50:40.56Z"
+  }
+}

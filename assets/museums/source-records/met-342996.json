@@ -1,0 +1,33 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/342996",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 342996,
+    "isPublicDomain": true,
+    "accessionNumber": "2013.1135.23",
+    "title": "Ecorché: Torso of a Male Cadaver",
+    "objectDate": "1828?",
+    "culture": "",
+    "medium": "Red, black, and white fabricated chalk, graphite",
+    "dimensions": "sheet: 9 15/16 x 6 1/4 in. (25.2 x 15.9 cm)",
+    "artistDisplayName": "Eugène Delacroix",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Artist",
+    "artistDisplayBio": "French, Charenton-Saint-Maurice 1798–1863 Paris",
+    "constituents": [
+      {
+        "constituentID": 161823,
+        "role": "Artist",
+        "name": "Eugène Delacroix",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500115509",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q33477",
+        "gender": ""
+      }
+    ],
+    "creditLine": "Gift from the Karen B. Cohen Collection of Eugène Delacroix, in honor of William M. Griswold, 2013",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/342996",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP836034.jpg",
+    "metadataDate": "2026-08-01T04:49:33.94Z"
+  }
+}

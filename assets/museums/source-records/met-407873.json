@@ -1,0 +1,49 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/407873",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 407873,
+    "isPublicDomain": true,
+    "accessionNumber": "53.638.19",
+    "title": "Scene from the Tempest: Caliban, Prospero and Miranda",
+    "objectDate": "1783–87, reissued 1801",
+    "culture": "",
+    "medium": "Etching",
+    "dimensions": "Sheet: 9 5/16 x 12 15/16 in. (23.7 x 32.8 cm)",
+    "artistDisplayName": "Thomas Rowlandson",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Etcher",
+    "artistDisplayBio": "British, London 1757–1827 London",
+    "constituents": [
+      {
+        "constituentID": 165095,
+        "role": "Etcher",
+        "name": "Thomas Rowlandson",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500006930",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q318584",
+        "gender": ""
+      },
+      {
+        "constituentID": 75624,
+        "role": "Artist",
+        "name": "After John Hamilton Mortimer",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500015637",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q4208518",
+        "gender": ""
+      },
+      {
+        "constituentID": 164876,
+        "role": "Subject",
+        "name": "William Shakespeare",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500272240",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q692",
+        "gender": ""
+      }
+    ],
+    "creditLine": "The Elisha Whittelsey Collection, The Elisha Whittelsey Fund, 1953",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/407873",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP828462.jpg",
+    "metadataDate": "2025-03-06T04:54:30Z"
+  }
+}

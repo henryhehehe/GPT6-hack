@@ -1,0 +1,34 @@
+{
+  "endpoint": "https://openaccess-api.clevelandart.org/api/artworks/100166",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "id": 100166,
+    "accession_number": "1919.675",
+    "title": "Signing the Declaration of Independence",
+    "creation_date": "1823",
+    "culture": [
+      "America"
+    ],
+    "technique": "etching",
+    "creators": [
+      {
+        "description": "Asher B. Durand (American, 1796–1886)",
+        "qualifier": null,
+        "role": "artist"
+      }
+    ],
+    "creditline": "Gift of George A. Goddard",
+    "url": "https://clevelandart.org/art/1919.675",
+    "images": {
+      "web": {
+        "url": "https://openaccess-cdn.clevelandart.org/1919.675/1919.675_web.jpg",
+        "width": "900",
+        "height": "657",
+        "filesize": "236964",
+        "filename": "1919.675_web.jpg"
+      }
+    },
+    "share_license_status": "CC0",
+    "updated_at": "2026-08-03 14:06:04.168000"
+  }
+}

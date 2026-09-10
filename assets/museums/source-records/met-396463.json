@@ -1,0 +1,49 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/396463",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 396463,
+    "isPublicDomain": true,
+    "accessionNumber": "49.40.24",
+    "title": "Phillis Wheatley",
+    "objectDate": "1773",
+    "culture": "",
+    "medium": "Engraving",
+    "dimensions": "Oval sheet (trimmed): 5 in. × 3 7/8 in. (12.7 × 9.8 cm)",
+    "artistDisplayName": "Scipio Moorhead",
+    "artistPrefix": "Attributed to",
+    "artistSuffix": "",
+    "artistRole": "Artist",
+    "artistDisplayBio": "American, active Boston, 1760–75",
+    "constituents": [
+      {
+        "constituentID": 214510,
+        "role": "Artist",
+        "name": "Attributed to Scipio Moorhead",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500122055",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q7434016",
+        "gender": ""
+      },
+      {
+        "constituentID": 214514,
+        "role": "Publisher",
+        "name": "Archibald Bell",
+        "constituentULAN_URL": "",
+        "constituentWikidata_URL": "",
+        "gender": ""
+      },
+      {
+        "constituentID": 103856,
+        "role": "Sitter",
+        "name": "Phillis Wheatley",
+        "constituentULAN_URL": "(not assigned)",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q257911",
+        "gender": ""
+      }
+    ],
+    "creditLine": "The Elisha Whittelsey Collection, The Elisha Whittelsey Fund, 1949",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/396463",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP-42869-001.jpg",
+    "metadataDate": "2026-05-16T04:55:07.937Z"
+  }
+}

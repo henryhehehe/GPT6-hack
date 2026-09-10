@@ -1,0 +1,35 @@
+{
+  "endpoint": "https://openaccess-api.clevelandart.org/api/artworks/325423",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "id": 325423,
+    "accession_number": "2019.52",
+    "title": "Sufferers from the Floods",
+    "creation_date": "1877",
+    "culture": [
+      "England, 19th century"
+    ],
+    "technique": "woodburytype",
+    "measurements": "Image: 11.5 x 9 cm (4 1/2 x 3 9/16 in.); Paper: 11.5 x 9 cm (4 1/2 x 3 9/16 in.); Mounted: 27 x 20.7 cm (10 5/8 x 8 1/8 in.)",
+    "creators": [
+      {
+        "description": "John Thomson (Scottish, 1837–1921)",
+        "qualifier": null,
+        "role": "artist"
+      }
+    ],
+    "creditline": "Photography Discretionary Fund",
+    "url": "https://clevelandart.org/art/2019.52",
+    "images": {
+      "web": {
+        "url": "https://openaccess-cdn.clevelandart.org/2019.52/2019.52_web.jpg",
+        "width": "710",
+        "height": "900",
+        "filesize": "214367",
+        "filename": "2019.52_web.jpg"
+      }
+    },
+    "share_license_status": "CC0",
+    "updated_at": "2026-05-29 08:56:23.453000"
+  }
+}

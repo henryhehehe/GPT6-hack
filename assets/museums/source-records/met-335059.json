@@ -1,0 +1,33 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/335059",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 335059,
+    "isPublicDomain": true,
+    "accessionNumber": "1996.77",
+    "title": "Ships in a Stormy Sea",
+    "objectDate": "mid-17th–early 18th century",
+    "culture": "",
+    "medium": "Pen and brown ink, with gray wash, over black chalk",
+    "dimensions": "10 5/16 x 14 3/4 in.  (26.2 x 37.5 cm)",
+    "artistDisplayName": "Ludolf Backhuysen",
+    "artistPrefix": "Circle of",
+    "artistSuffix": "",
+    "artistRole": "Artist",
+    "artistDisplayBio": "Dutch, Emden 1630–1708 Amsterdam",
+    "constituents": [
+      {
+        "constituentID": 70013,
+        "role": "Artist",
+        "name": "Circle of Ludolf Backhuysen",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500004095",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q468214",
+        "gender": ""
+      }
+    ],
+    "creditLine": "Frits and Rita Markus Fund, 1996",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/335059",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP800915.jpg",
+    "metadataDate": "2025-03-06T04:54:30Z"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "endpoint": "https://openaccess-api.clevelandart.org/api/artworks/144280",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "id": 144280,
+    "accession_number": "1969.118",
+    "title": "Apis Bull",
+    "creation_date": "400–100 BCE",
+    "culture": [
+      "Egypt, Greco-Roman period (332 BCE–395 CE), Ptolemaic dynasty (305–30 BCE)"
+    ],
+    "technique": "serpentinite",
+    "measurements": "Overall: 53 x 19 x 59 cm (20 7/8 x 7 1/2 x 23 1/4 in.)",
+    "creators": [],
+    "creditline": "Leonard C. Hanna Jr. Fund",
+    "url": "https://clevelandart.org/art/1969.118",
+    "images": {
+      "web": {
+        "url": "https://openaccess-cdn.clevelandart.org/1969.118/1969.118_web.jpg",
+        "width": "900",
+        "height": "675",
+        "filesize": "139607",
+        "filename": "1969.118_web.jpg"
+      }
+    },
+    "share_license_status": "CC0",
+    "updated_at": "2026-09-10 18:03:51.755000"
+  }
+}

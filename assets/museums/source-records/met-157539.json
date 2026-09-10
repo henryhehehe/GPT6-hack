@@ -1,0 +1,24 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/157539",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 157539,
+    "isPublicDomain": true,
+    "accessionNumber": "2009.300.2685",
+    "title": "Evening dress",
+    "objectDate": "1810–12",
+    "culture": "American or European",
+    "medium": "cotton",
+    "dimensions": "",
+    "artistDisplayName": "",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "",
+    "artistDisplayBio": "",
+    "constituents": null,
+    "creditLine": "Brooklyn Museum Costume Collection at The Metropolitan Museum of Art, Gift of the Brooklyn Museum, 2009; Gift of Mrs. M. Dow Brine, 1924",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/157539",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ci/web-large/24.304_CP4.jpg",
+    "metadataDate": "2025-03-06T04:54:30Z"
+  }
+}

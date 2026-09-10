@@ -1,0 +1,24 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/258449",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 258449,
+    "isPublicDomain": true,
+    "accessionNumber": "2009.529",
+    "title": "Terracotta vase in the form of a ketos (sea monster)",
+    "objectDate": "2nd half of the 7th century BCE",
+    "culture": "Greek, Cretan or South Italian",
+    "medium": "Terracotta",
+    "dimensions": "Overall: 3 1/16 x 3 15/16 in. (7.7 x 10 cm)",
+    "artistDisplayName": "",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "",
+    "artistDisplayBio": "",
+    "constituents": null,
+    "creditLine": "Gift of Ariel Herrmann, in memory of Brian T. Aitken, 2009",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/258449",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DP225817.jpg",
+    "metadataDate": "2026-09-09T04:58:15.453Z"
+  }
+}

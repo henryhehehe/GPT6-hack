@@ -1,5 +1,9 @@
 # Museum collections in Counterfactual Worlds
 
+## Current collection — expanded 10 September 2026
+
+The museum page now has **60 objects across all ten curriculum topics**, including 53 records added after the initial seven. Classroom topic suggestions cover every supported world. See [the expansion catalog and usage notes](MUSEUM-OBJECT-EXPANSION.md) for the added objects, comparison ideas, retained API snapshots, and maintenance steps. The original seven objects, demo selection, and three guided investigations remain intact. Seven additional investigations now provide one guided pair per curriculum topic; see [the classroom investigation guide](MUSEUM-INVESTIGATION-GUIDE.md).
+
 ## Product decision
 
 Treat a museum object as a separately attributed historical or artistic source, with explicit limits on its relevance. A photograph of an ancient coin is not a reconstruction of Alexandria; a seventeenth-century painting of the Odyssey is evidence of later reception, not an eyewitness account. Teaching prompts are our editorial material, not museum quotations.
@@ -29,13 +33,13 @@ For a presenter walkthrough, see [Museum demo flow](demo/MUSEUM-FLOW.md). Existi
 
 Every collection card now offers **Inspect & zoom** and **Compare**. Inspection retains the museum’s metadata, credit, citation, and editorial evidence limits. Select two distinct objects to open a comparison; each photograph has independent 100–300% magnification and a reset control. A scale notice explains that photographs are fitted separately and their displayed sizes cannot establish relative physical size. Museum dimensions remain available for that comparison.
 
-The Alexandria demo adds **Compare gold & silver coins** within the existing investigation, preserving the next step into Strabo’s source. Comparison choices are temporary viewing state and never modify the classroom’s saved object selection or a learner’s answer. The classroom collection browser suggests Alexandria, The Odyssey or Jane Austen only from the known curriculum identity, with no guesses from a custom reading’s title. Learners continue to see every teacher-selected object, including those from another topic.
+The Alexandria demo adds **Compare gold & silver coins** within the existing investigation, preserving the next step into Strabo’s source. Comparison choices are temporary viewing state and never modify the classroom’s saved object selection or a learner’s answer. The classroom collection browser suggests the matching topic for all ten worlds only from the known curriculum identity, with no guesses from a custom reading’s title. Learners continue to see every teacher-selected object, including those from another topic.
 
 ## Guided pairs and reusable worksheets
 
-The collection offers three editorial eight-minute investigations: **How does power make itself visible?** (Alexandria coins), **What changes when a story is retold?** (the siren flask and Calypso painting), and **What do appearances leave out?** (the Met dress and teapot). Each opens the existing comparison with observation, comparison and limitation prompts, followed by a specific bridge back to its assigned reading. These are discussion starters, not museum quotations or generated answers.
+The collection now offers ten editorial eight-minute investigations, including the original three: **How does power make itself visible?** (Alexandria coins), **What changes when a story is retold?** (the siren flask and Calypso painting), and **What do appearances leave out?** (the Met dress and teapot). Each opens the existing comparison with observation, comparison and limitation prompts, followed by a specific bridge back to its assigned reading. These are discussion starters, not museum quotations or generated answers.
 
-Choosing the same pair manually reveals the same guide. The Alexandria demo’s gold/silver comparison also includes its guide. Teacher suggestions follow the known lesson topic; learner suggestions appear only when both objects are selected for that classroom. Browsing filters do not hide or move the suggested investigations.
+Choosing the same pair manually reveals the same guide. The Alexandria demo’s gold/silver comparison also includes its guide. Teacher suggestions follow the known lesson topic; learner suggestions appear only when both objects are selected for that classroom. The selected topic filters the suggested investigations too. All-topic browsing starts with three suggestions and offers a Show all investigations control; the complete set is documented in the investigation guide.
 
 Teacher collection cards now offer **Add pair to lesson** (or **Add missing object** when one is already selected). The `museum-investigation` action requires the teacher token, accepts only a reviewed investigation ID, validates the full union against the six-object limit, and persists it in one classroom-version-checked write. It cannot leave half a pair behind after a capacity failure. Existing objects keep their order; retries with both objects present do not write or increment the world version. Learner work and AI quota are unchanged.
 
@@ -108,3 +112,7 @@ Sources: [Met collection API](https://metmuseum.github.io/), [Art Institute API 
 The automated tests execute the actual classroom HTTP route against SQLite: teacher addition and removal persist, repeated additions do not duplicate, learner writes and unknown IDs are refused, learner reads contain the selection, original evidence/student work remain unchanged, and no AI quota is used. Schema tests reject restricted rights, missing photographs and untrusted URLs. World parsing retains approved selections and lesson generation cannot manufacture them.
 
 Manually verify collection filtering, readable citations, image fallback, keyboard focus, mobile layout, and teacher selection → reload → learner field journal. These objects are contextual supplements; broad live museum search, IIIF and 3D import remain future work.
+
+## Direct object and comparison links
+
+The object inspector now offers a reusable public link and Copy link. `/collections?object=<reviewed-id>` opens one object; adding `&compare=<second-reviewed-id>` opens the ordered pair. Links may cross topics, contain no classroom or learner data, and do not modify lesson selections. The existing investigation links retain precedence. Invalid, repeated, partial, or duplicate IDs return to normal browsing. See the expansion guide for working examples.

@@ -1,0 +1,24 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/108064",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 108064,
+    "isPublicDomain": true,
+    "accessionNumber": "1977.91.2",
+    "title": "Morning dress",
+    "objectDate": "1840–45",
+    "culture": "British",
+    "medium": "wool",
+    "dimensions": "",
+    "artistDisplayName": "",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "",
+    "artistDisplayBio": "",
+    "constituents": null,
+    "creditLine": "Purchase, Irene Lewisohn Bequest, 1977",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/108064",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ci/web-large/1977.91.2_F.jpg",
+    "metadataDate": "2025-03-06T04:54:30Z"
+  }
+}

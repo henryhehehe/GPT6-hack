@@ -1,0 +1,29 @@
+{
+  "endpoint": "https://openaccess-api.clevelandart.org/api/artworks/142227",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "id": 142227,
+    "accession_number": "1965.78",
+    "title": "Siana Cup (Black-Figure Kylix [Drinking Cup]): Horseman and Warriors",
+    "creation_date": "575–550 BCE",
+    "culture": [
+      "Greek, Attic"
+    ],
+    "technique": "ceramic",
+    "measurements": "Diameter: 26.8 cm (10 9/16 in.); Overall: 14.1 cm (5 9/16 in.)",
+    "creators": [],
+    "creditline": "Gift of Edgar A. Hahn",
+    "url": "https://clevelandart.org/art/1965.78",
+    "images": {
+      "web": {
+        "url": "https://openaccess-cdn.clevelandart.org/1965.78/1965.78_web.jpg",
+        "width": "900",
+        "height": "565",
+        "filesize": "117811",
+        "filename": "1965.78_web.jpg"
+      }
+    },
+    "share_license_status": "CC0",
+    "updated_at": "2026-07-25 11:42:20.838000"
+  }
+}

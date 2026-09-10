@@ -1,0 +1,33 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/19019",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 19019,
+    "isPublicDomain": true,
+    "accessionNumber": "2005.463.3",
+    "title": "Embroidered sampler",
+    "objectDate": "1830",
+    "culture": "American",
+    "medium": "Embroidered silk on linen",
+    "dimensions": "17 x 12 3/4 in. (43.2 x 32.4 cm)",
+    "artistDisplayName": "Hannah Ann Smith",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Maker",
+    "artistDisplayBio": "1821–1899",
+    "constituents": [
+      {
+        "constituentID": 5014,
+        "role": "Maker",
+        "name": "Hannah Ann Smith",
+        "constituentULAN_URL": "",
+        "constituentWikidata_URL": "",
+        "gender": "Female"
+      }
+    ],
+    "creditLine": "Gift of Virginia F. Thors, 2005",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/19019",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DP168660.jpg",
+    "metadataDate": "2025-01-30T04:54:21.21Z"
+  }
+}

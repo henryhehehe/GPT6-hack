@@ -1,0 +1,29 @@
+{
+  "endpoint": "https://openaccess-api.clevelandart.org/api/artworks/159061",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "id": 159061,
+    "accession_number": "1995.262",
+    "title": "Alabastron",
+    "creation_date": "305–222 BCE",
+    "culture": [
+      "Egypt, Greco-Roman period (332 BCE–395 CE), Ptolemaic dynasty (305–30 BCE)"
+    ],
+    "technique": "travertine",
+    "measurements": "Diameter: 3.3 cm (1 5/16 in.); Overall: 22.9 cm (9 in.); Stopper: 4.5 cm (1 3/4 in.); Body: 19.1 x 2.5 cm (7 1/2 x 1 in.)",
+    "creators": [],
+    "creditline": "John L. Severance Fund",
+    "url": "https://clevelandart.org/art/1995.262",
+    "images": {
+      "web": {
+        "url": "https://openaccess-cdn.clevelandart.org/1995.262/1995.262_web.jpg",
+        "width": "500",
+        "height": "900",
+        "filesize": "117100",
+        "filename": "1995.262_web.jpg"
+      }
+    },
+    "share_license_status": "CC0",
+    "updated_at": "2026-05-29 08:14:07.221000"
+  }
+}

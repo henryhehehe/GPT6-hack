@@ -1,0 +1,29 @@
+{
+  "endpoint": "https://openaccess-api.clevelandart.org/api/artworks/154727",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "id": 154727,
+    "accession_number": "1989.31",
+    "title": "Mit Rahina Ware Vessel",
+    "creation_date": "200–100 BCE",
+    "culture": [
+      "Egypt, Greco-Roman period (332 BCE–395 CE), Ptolemaic dynasty (305–30 BCE)"
+    ],
+    "technique": "polychrome faience",
+    "measurements": "Diameter: 10.7 cm (4 3/16 in.); Overall: 9.4 cm (3 11/16 in.)",
+    "creators": [],
+    "creditline": "Purchase from the J. H. Wade Fund",
+    "url": "https://clevelandart.org/art/1989.31",
+    "images": {
+      "web": {
+        "url": "https://openaccess-cdn.clevelandart.org/1989.31/1989.31_web.jpg",
+        "width": "1116",
+        "height": "893",
+        "filesize": "600219",
+        "filename": "1989.31_web.jpg"
+      }
+    },
+    "share_license_status": "CC0",
+    "updated_at": "2026-08-03 14:21:58.616000"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/197364",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 197364,
+    "isPublicDomain": true,
+    "accessionNumber": "33.112",
+    "title": "Desk or writing table",
+    "objectDate": "ca. 1780–90",
+    "culture": "",
+    "medium": "Satinwood, inlaid",
+    "dimensions": "Overall: 36 × 34 1/2 × 27 3/8 in. (91.4 × 87.6 × 69.5 cm)",
+    "artistDisplayName": "",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "",
+    "artistDisplayBio": "",
+    "constituents": null,
+    "creditLine": "Gift of Louis J. Boury, 1933",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/197364",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/DP-14204-031.jpg",
+    "metadataDate": "2026-01-12T04:52:36.437Z"
+  }
+}

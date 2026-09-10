@@ -1,0 +1,33 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/384401",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 384401,
+    "isPublicDomain": true,
+    "accessionNumber": "54.580.2",
+    "title": "Anatomical drawing",
+    "objectDate": "18th century",
+    "culture": "",
+    "medium": "Pen and ink, brush and gray wash on blue paper",
+    "dimensions": "sheet: 8 5/16 x 13 3/16 in. (21.1 x 33.5 cm)",
+    "artistDisplayName": "Anonymous, French, 18th century",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Artist",
+    "artistDisplayBio": "",
+    "constituents": [
+      {
+        "constituentID": 73905,
+        "role": "Artist",
+        "name": "Anonymous, French, 18th century",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500397994",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q4233718",
+        "gender": ""
+      }
+    ],
+    "creditLine": "Gift of Jenny Philippsohn, in memory of Siegfried Philippsohn, 1954",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/384401",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP808740.jpg",
+    "metadataDate": "2025-03-06T04:54:30Z"
+  }
+}

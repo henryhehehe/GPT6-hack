@@ -1,0 +1,33 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/282066",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 282066,
+    "isPublicDomain": true,
+    "accessionNumber": "2001.756",
+    "title": "Frederick Douglass",
+    "objectDate": "ca. 1855",
+    "culture": "",
+    "medium": "Daguerreotype",
+    "dimensions": "8.3 × 7 cm (3 1/4 × 2 3/4 in.)",
+    "artistDisplayName": "Unknown",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Artist",
+    "artistDisplayBio": "American",
+    "constituents": [
+      {
+        "constituentID": 169986,
+        "role": "Artist",
+        "name": "Unknown",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500125274",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q24238356",
+        "gender": ""
+      }
+    ],
+    "creditLine": "The Rubel Collection, Gift of William Rubel, 2001",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/282066",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ph/web-large/DT1144.jpg",
+    "metadataDate": "2026-07-21T04:54:45.957Z"
+  }
+}

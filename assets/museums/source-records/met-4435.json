@@ -1,0 +1,24 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/4435",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 4435,
+    "isPublicDomain": true,
+    "accessionNumber": "30.120.149",
+    "title": "Inkstand",
+    "objectDate": "1700–1800",
+    "culture": "American or British",
+    "medium": "Pewter",
+    "dimensions": "2 1/4 x 8 x 3 in. (5.7 x 20.3 x 7.6 cm)",
+    "artistDisplayName": "",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "",
+    "artistDisplayBio": "",
+    "constituents": null,
+    "creditLine": "The Sylmaris Collection, Gift of George Coe Graves, 1930",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/4435",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/80935.jpg",
+    "metadataDate": "2026-03-31T09:41:00.23Z"
+  }
+}

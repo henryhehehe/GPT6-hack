@@ -1,0 +1,24 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/623325",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 623325,
+    "isPublicDomain": true,
+    "accessionNumber": "2013.516a–c",
+    "title": "Suit",
+    "objectDate": "1770–80",
+    "culture": "probably British",
+    "medium": "wool, silk, cotton",
+    "dimensions": "",
+    "artistDisplayName": "",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "",
+    "artistDisplayBio": "",
+    "constituents": null,
+    "creditLine": "Purchase, Friends of The Costume Institute Gifts, 2013",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/623325",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ci/web-large/DP325949.jpg",
+    "metadataDate": "2025-03-06T04:54:30Z"
+  }
+}

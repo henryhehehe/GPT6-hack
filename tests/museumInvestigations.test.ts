@@ -1,10 +1,11 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {getMuseumInvestigation,museumInvestigations,investigationObjects,investigationForObjects,museumInvestigationPath,suggestedMuseumInvestigations} from '../lib/museumInvestigations';
+import {getMuseumInvestigation,museumInvestigations,investigationObjects,investigationForObjects,museumInvestigationPath,suggestedMuseumInvestigations,addMuseumInvestigation} from '../lib/museumInvestigations';
 import {museumWorksheetHtml} from '../lib/museumWorksheet';
+import {museumTopics,museumObjects} from '../lib/museums';
 
 test('guided investigations bind two reviewed objects and preserve their reading boundaries',()=>{
- assert.equal(new Set(museumInvestigations.map(plan=>plan.id)).size,3);
+ assert.equal(new Set(museumInvestigations.map(plan=>plan.id)).size,10);
  for(const plan of museumInvestigations){
   const objects=investigationObjects(plan);
   assert.equal(objects.length,2);assert.notEqual(objects[0].id,objects[1].id);
@@ -55,5 +56,26 @@ test('teaching guide includes only complete pairs and leaves the planned lesson 
   assert.ok(html.includes(plan.title));assert.ok(html.includes(plan.steps[0].prompt));
   assert.ok(html.includes('within investigation time'));
   assert.equal(teachingPlan(world,45).reduce((total,step)=>total+step.minutes,0),45);
+ }
+});
+
+test('every collection topic has one usable investigation and suggestions respect the chosen topic',()=>{
+ for(const topic of museumTopics){
+  const plans=suggestedMuseumInvestigations(topic);
+  assert.equal(plans.length,1,topic);
+  assert.equal(investigationObjects(plans[0]).length,2);
+  assert.deepEqual(suggestedMuseumInvestigations(topic,plans[0].objectIds),plans);
+  assert.deepEqual(suggestedMuseumInvestigations(topic,[plans[0].objectIds[0]]),[]);
+ }
+});
+
+test('every investigation adds a complete pair, safely retries, and refuses a full unrelated selection',()=>{
+ for(const plan of museumInvestigations){
+  assert.deepEqual(addMuseumInvestigation([],plan.id),plan.objectIds);
+  assert.deepEqual(addMuseumInvestigation(plan.objectIds,plan.id),plan.objectIds);
+  const full=museumObjects.filter(item=>!plan.objectIds.includes(item.id)).slice(0,6).map(item=>item.id);
+  const before=[...full];
+  assert.throws(()=>addMuseumInvestigation(full,plan.id),/make room/);
+  assert.deepEqual(full,before);
  }
 });

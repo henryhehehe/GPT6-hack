@@ -1,0 +1,41 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/301989",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 301989,
+    "isPublicDomain": true,
+    "accessionNumber": "2013.54",
+    "title": "Sojourner Truth, \"I Sell the Shadow to Support the Substance\"",
+    "objectDate": "1864",
+    "culture": "",
+    "medium": "Albumen silver print from glass negative",
+    "dimensions": "Image: 8.5 × 5.4 cm (3 3/8 × 2 1/8 in.)",
+    "artistDisplayName": "Unknown",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Artist",
+    "artistDisplayBio": "American",
+    "constituents": [
+      {
+        "constituentID": 169986,
+        "role": "Artist",
+        "name": "Unknown",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500125274",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q24238356",
+        "gender": ""
+      },
+      {
+        "constituentID": 207946,
+        "role": "Person in Photograph",
+        "name": "Person in photograph Sojourner Truth",
+        "constituentULAN_URL": "(not assigned)",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q105180",
+        "gender": ""
+      }
+    ],
+    "creditLine": "Purchase, Alfred Stieglitz Society Gifts, 2013",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/301989",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ph/web-large/DP265089.jpg",
+    "metadataDate": "2026-07-15T04:54:56.933Z"
+  }
+}

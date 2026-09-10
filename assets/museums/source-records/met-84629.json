@@ -1,0 +1,24 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/84629",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 84629,
+    "isPublicDomain": true,
+    "accessionNumber": "1984.325",
+    "title": "Reticule",
+    "objectDate": "1800–1825",
+    "culture": "British",
+    "medium": "silk, metal",
+    "dimensions": "",
+    "artistDisplayName": "",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "",
+    "artistDisplayBio": "",
+    "constituents": null,
+    "creditLine": "Purchase, Judith and Gerson Leiber Fund, 1984",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/84629",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ci/web-large/1984.325.jpg",
+    "metadataDate": "2026-08-20T04:58:27.367Z"
+  }
+}

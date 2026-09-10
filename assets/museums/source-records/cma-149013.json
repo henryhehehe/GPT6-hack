@@ -1,0 +1,29 @@
+{
+  "endpoint": "https://openaccess-api.clevelandart.org/api/artworks/149013",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "id": 149013,
+    "accession_number": "1977.166",
+    "title": "Stemless Kylix",
+    "creation_date": "c. 200s BCE",
+    "culture": [
+      "Greece"
+    ],
+    "technique": "silver",
+    "measurements": "Diameter: 15 cm (5 7/8 in.); Overall: 6.1 x 18.2 cm (2 3/8 x 7 3/16 in.)",
+    "creators": [],
+    "creditline": "Gift of Mr. and Mrs. Max Ratner",
+    "url": "https://clevelandart.org/art/1977.166",
+    "images": {
+      "web": {
+        "url": "https://openaccess-cdn.clevelandart.org/1977.166/1977.166_web.jpg",
+        "width": "1263",
+        "height": "649",
+        "filesize": "379738",
+        "filename": "1977.166_web.jpg"
+      }
+    },
+    "share_license_status": "CC0",
+    "updated_at": "2026-05-29 07:39:12.189000"
+  }
+}

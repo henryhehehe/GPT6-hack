@@ -1,0 +1,24 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/251812",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 251812,
+    "isPublicDomain": true,
+    "accessionNumber": "25.78.26",
+    "title": "Terracotta plaque",
+    "objectDate": "ca. 450 BCE",
+    "culture": "Greek, Melian",
+    "medium": "Terracotta",
+    "dimensions": "Overall: 7 3/4 x 7 5/16 in. (19.7 x 18.6 cm)",
+    "artistDisplayName": "",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "",
+    "artistDisplayBio": "",
+    "constituents": null,
+    "creditLine": "Fletcher Fund, 1925",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/251812",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/gr/web-large/DT5590.jpg",
+    "metadataDate": "2026-07-21T04:54:45.957Z"
+  }
+}

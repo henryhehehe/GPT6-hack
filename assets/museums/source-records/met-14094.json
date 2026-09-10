@@ -1,0 +1,33 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/14094",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 14094,
+    "isPublicDomain": true,
+    "accessionNumber": "1984.331.15",
+    "title": "Sampler",
+    "objectDate": "1830",
+    "culture": "American",
+    "medium": "Silk embroidery on linen",
+    "dimensions": "23 3/4 x 25 1/4 in. (60.3 x 64.1 cm)",
+    "artistDisplayName": "Mary Ann Stauffer",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Maker",
+    "artistDisplayBio": "American, 1811–1896",
+    "constituents": [
+      {
+        "constituentID": 3269,
+        "role": "Maker",
+        "name": "Mary Ann Stauffer",
+        "constituentULAN_URL": "",
+        "constituentWikidata_URL": "",
+        "gender": "Female"
+      }
+    ],
+    "creditLine": "Gift of Barbara Schiff Sinauer, 1984",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/14094",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DT247962.jpg",
+    "metadataDate": "2026-06-04T04:55:34.617Z"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "endpoint": "https://openaccess-api.clevelandart.org/api/artworks/155968",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "id": 155968,
+    "accession_number": "1991.254",
+    "title": "Prometheus",
+    "creation_date": "c. early 1900s",
+    "culture": [
+      "France, 20th century"
+    ],
+    "technique": "gypsograph",
+    "measurements": "Sheet: 32.5 x 47.5 cm (12 13/16 x 18 11/16 in.); Image: 29.7 x 44.5 cm (11 11/16 x 17 1/2 in.)",
+    "creators": [
+      {
+        "description": "Pierre Roche (French, 1855–1922)",
+        "qualifier": null,
+        "role": "artist"
+      }
+    ],
+    "creditline": "Gift of Louise S. Richards",
+    "url": "https://clevelandart.org/art/1991.254",
+    "images": {
+      "web": {
+        "url": "https://openaccess-cdn.clevelandart.org/1991.254/1991.254_web.jpg",
+        "width": "1263",
+        "height": "874",
+        "filesize": "808133",
+        "filename": "1991.254_web.jpg"
+      }
+    },
+    "share_license_status": "CC0",
+    "updated_at": "2026-05-29 08:06:29.943000"
+  }
+}

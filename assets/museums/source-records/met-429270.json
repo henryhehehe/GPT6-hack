@@ -1,0 +1,41 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/429270",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 429270,
+    "isPublicDomain": true,
+    "accessionNumber": "29.88.4(10)",
+    "title": "Emancipation of the Negroes – The Past and the Future (from \"Harper's Weekly\")",
+    "objectDate": "January 24, 1863",
+    "culture": "",
+    "medium": "Wood engraving",
+    "dimensions": "Sheet: 14 5/8 × 20 11/16 in. (37.2 × 52.6 cm)",
+    "artistDisplayName": "Thomas Nast",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Artist",
+    "artistDisplayBio": "American (born Germany), Landau 1840–1902 Guayaquil",
+    "constituents": [
+      {
+        "constituentID": 163778,
+        "role": "Artist",
+        "name": "Thomas Nast",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500026650",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q214957",
+        "gender": ""
+      },
+      {
+        "constituentID": 166072,
+        "role": "Publisher",
+        "name": "Harper&#39;s Weekly",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500524528",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q3127693",
+        "gender": ""
+      }
+    ],
+    "creditLine": "Harris Brisbane Dick Fund, 1929",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/429270",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP831349.jpg",
+    "metadataDate": "2025-03-19T04:53:33.417Z"
+  }
+}

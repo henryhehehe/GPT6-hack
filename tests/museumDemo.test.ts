@@ -2,6 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {createMuseumDemoWorld,alexandriaMuseumIds,museumDemoSource} from '../lib/museumDemo';
 import {initialWorld,validateWorld} from '../lib/world';
+import {museumObjects} from '../lib/museums';
 import {lessonKitHtml,teachingPlan} from '../lib/teachingKit';
 
 test('museum demo starts with reviewed Alexandria objects and the unchanged source packet',()=>{
@@ -17,4 +18,9 @@ test('teacher and paper demo include attribution, observation prompts, and sourc
  for(const text of ['1965.552','CC0','Museum object discussion','One detail I can observe','Limit:','Original museum record','the app assesses the assigned source cards'])assert.ok(html.includes(text),text);
  assert.equal(teachingPlan(world,45).reduce((sum,step)=>sum+step.minutes,0),45);
  assert.ok(!lessonKitHtml(initialWorld,45).includes('Museum object discussion'));
+});
+
+test('a growing Alexandria collection cannot overflow or alter the introductory demo',()=>{
+ assert.ok(museumObjects.filter(item=>item.topic==='Alexandria').length>6);
+ assert.deepEqual(validateWorld(createMuseumDemoWorld()).museumObjectIds,['cma-142026','cma-101386','cma-97411']);
 });

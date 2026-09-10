@@ -1,0 +1,35 @@
+{
+  "endpoint": "https://openaccess-api.clevelandart.org/api/artworks/325420",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "id": 325420,
+    "accession_number": "2019.49",
+    "title": "Covent Garden Flower Women",
+    "creation_date": "1877",
+    "culture": [
+      "England, 19th century"
+    ],
+    "technique": "woodburytype",
+    "measurements": "Image: 11 x 7.9 cm (4 5/16 x 3 1/8 in.); Paper: 11 x 7.9 cm (4 5/16 x 3 1/8 in.); Mounted: 27.1 x 20.8 cm (10 11/16 x 8 3/16 in.)",
+    "creators": [
+      {
+        "description": "John Thomson (Scottish, 1837–1921)",
+        "qualifier": null,
+        "role": "artist"
+      }
+    ],
+    "creditline": "Photography Discretionary Fund",
+    "url": "https://clevelandart.org/art/2019.49",
+    "images": {
+      "web": {
+        "url": "https://openaccess-cdn.clevelandart.org/2019.49/2019.49_web.jpg",
+        "width": "655",
+        "height": "900",
+        "filesize": "264834",
+        "filename": "2019.49_web.jpg"
+      }
+    },
+    "share_license_status": "CC0",
+    "updated_at": "2026-05-29 08:56:22.719000"
+  }
+}

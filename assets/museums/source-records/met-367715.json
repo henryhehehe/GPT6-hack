@@ -1,0 +1,33 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/367715",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 367715,
+    "isPublicDomain": true,
+    "accessionNumber": "2005.78",
+    "title": "Mont Blanc Seen from the Massif, Les Aiguilles Rouges",
+    "objectDate": "1874",
+    "culture": "",
+    "medium": "Watercolor heightened with gouache over traces of graphite on two sheets of blue-gray wove paper (glued together in a vertical seam at left)",
+    "dimensions": "sheet: 11 7/16 x 26 1/8 in. (29 x 66.4 cm)",
+    "artistDisplayName": "Eugène-Emmanuel Viollet-le-Duc",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Artist",
+    "artistDisplayBio": "French, Paris 1814–1879 Lausanne",
+    "constituents": [
+      {
+        "constituentID": 75482,
+        "role": "Artist",
+        "name": "Eugène-Emmanuel Viollet-le-Duc",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500017148",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q272912",
+        "gender": ""
+      }
+    ],
+    "creditLine": "Purchase, Isaacson-Draper Foundation Gift, 2005",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/367715",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP828966.jpg",
+    "metadataDate": "2026-09-05T04:58:27.893Z"
+  }
+}

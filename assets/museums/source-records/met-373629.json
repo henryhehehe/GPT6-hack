@@ -1,0 +1,57 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/373629",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 373629,
+    "isPublicDomain": true,
+    "accessionNumber": "69.582.5",
+    "title": "Macbeth",
+    "objectDate": "1828",
+    "culture": "",
+    "medium": "Mezzotint",
+    "dimensions": "Image: 9 7/8 x 13 15/16 in. (25.1 x 35.4 cm)\r\nPlate: 12 3/4 x 16 in. (32.4 x 40.6 cm)",
+    "artistDisplayName": "Thomas Goff Lupton",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Engraver",
+    "artistDisplayBio": "British, London 1791–1873 London",
+    "constituents": [
+      {
+        "constituentID": 87003,
+        "role": "Engraver",
+        "name": "Thomas Goff Lupton",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500008469",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q7790086",
+        "gender": ""
+      },
+      {
+        "constituentID": 69113,
+        "role": "Artist",
+        "name": "After John Martin",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500023063",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q937096",
+        "gender": ""
+      },
+      {
+        "constituentID": 105171,
+        "role": "Publisher",
+        "name": "Walter Benjamin Tiffin",
+        "constituentULAN_URL": "(not assigned)",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q42161884",
+        "gender": ""
+      },
+      {
+        "constituentID": 164876,
+        "role": "Author",
+        "name": "Related author William Shakespeare",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500272240",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q692",
+        "gender": ""
+      }
+    ],
+    "creditLine": "The Elisha Whittelsey Collection, The Elisha Whittelsey Fund, 1969",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/373629",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP860038.jpg",
+    "metadataDate": "2025-05-28T04:50:32.287Z"
+  }
+}

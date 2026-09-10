@@ -1,0 +1,29 @@
+{
+  "endpoint": "https://openaccess-api.clevelandart.org/api/artworks/108536",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "id": 108536,
+    "accession_number": "1926.242",
+    "title": "Fragmentary Red-Figure Kylix (Drinking Cup): Warrior Sacrificing Ram",
+    "creation_date": "c. 490–480 BCE",
+    "culture": [
+      "Greek, Attic"
+    ],
+    "technique": "ceramic",
+    "measurements": "Diameter: 10.1 cm (4 in.)",
+    "creators": [],
+    "creditline": "Dudley P. Allen Fund",
+    "url": "https://clevelandart.org/art/1926.242",
+    "images": {
+      "web": {
+        "url": "https://openaccess-cdn.clevelandart.org/1926.242/1926.242_web.jpg",
+        "width": "741",
+        "height": "893",
+        "filesize": "395085",
+        "filename": "1926.242_web.jpg"
+      }
+    },
+    "share_license_status": "CC0",
+    "updated_at": "2026-07-24 11:49:01.049000"
+  }
+}

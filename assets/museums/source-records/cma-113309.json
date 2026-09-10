@@ -1,0 +1,29 @@
+{
+  "endpoint": "https://openaccess-api.clevelandart.org/api/artworks/113309",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "id": 113309,
+    "accession_number": "1932.32",
+    "title": "Decorated Situla",
+    "creation_date": "305–30 BCE",
+    "culture": [
+      "Egypt, Greco-Roman period (332 BCE–395 CE), Ptolemaic dynasty (305–30 BCE)"
+    ],
+    "technique": "bronze",
+    "measurements": "Diameter: 15.5 cm (6 1/8 in.); Diameter of mouth: 10.2 cm (4 in.); Overall: 28.3 cm (11 1/8 in.); with handle: 45.2 cm (17 13/16 in.)",
+    "creators": [],
+    "creditline": "The Charles W. Harkness Endowment Fund",
+    "url": "https://clevelandart.org/art/1932.32",
+    "images": {
+      "web": {
+        "url": "https://openaccess-cdn.clevelandart.org/1932.32/1932.32_web.jpg",
+        "width": "609",
+        "height": "893",
+        "filesize": "235432",
+        "filename": "1932.32_web.jpg"
+      }
+    },
+    "share_license_status": "CC0",
+    "updated_at": "2026-05-29 05:57:48.589000"
+  }
+}

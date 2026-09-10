@@ -1,0 +1,33 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/14051",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 14051,
+    "isPublicDomain": true,
+    "accessionNumber": "18.123.2",
+    "title": "Embroidered Sampler",
+    "objectDate": "1830–50",
+    "culture": "American",
+    "medium": "Silk on linen, embroidered",
+    "dimensions": "24 1/2 x 20 3/4 in. (62.2 x 52.7 cm)",
+    "artistDisplayName": "Christiana Baird",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Maker",
+    "artistDisplayBio": "",
+    "constituents": [
+      {
+        "constituentID": 3229,
+        "role": "Maker",
+        "name": "Christiana Baird",
+        "constituentULAN_URL": "",
+        "constituentWikidata_URL": "",
+        "gender": "Female"
+      }
+    ],
+    "creditLine": "Gift in memory of Florence Baird Meyer, 1918",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/14051",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/RT529.jpg",
+    "metadataDate": "2023-07-29T04:54:55.24Z"
+  }
+}

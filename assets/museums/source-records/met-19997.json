@@ -1,0 +1,41 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/19997",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 19997,
+    "isPublicDomain": true,
+    "accessionNumber": "2008.453",
+    "title": "Sampler",
+    "objectDate": "1844",
+    "culture": "American, Shaker",
+    "medium": "Silk and cotton embroidery on linen/cotton",
+    "dimensions": "13 x 11 3/4 in. (33 x 29.8 cm)",
+    "artistDisplayName": "Mariah Boil",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Artist",
+    "artistDisplayBio": "born 1832",
+    "constituents": [
+      {
+        "constituentID": 7297,
+        "role": "Artist",
+        "name": "Mariah Boil",
+        "constituentULAN_URL": "",
+        "constituentWikidata_URL": "",
+        "gender": "Female"
+      },
+      {
+        "constituentID": 87377,
+        "role": "Maker",
+        "name": "United Society of Believers in Christ’s Second Appearing (“Shakers”)",
+        "constituentULAN_URL": "(not assigned)",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q1370167",
+        "gender": ""
+      }
+    ],
+    "creditLine": "Purchase, Edward J. Scheider Gift, in memory of Kathleen N. Scheider, and David S. and Elizabeth W. Quackenbush Gift, 2008",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/19997",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DP168662.jpg",
+    "metadataDate": "2025-06-14T04:50:23.08Z"
+  }
+}

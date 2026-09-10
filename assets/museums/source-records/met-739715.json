@@ -1,0 +1,49 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/739715",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 739715,
+    "isPublicDomain": true,
+    "accessionNumber": "41.91.153",
+    "title": "Lady Macbeth, Macbeth and the Murder of Duncan (Shakespeare, Macbeth, Act II, Scene II)",
+    "objectDate": "1825–40",
+    "culture": "",
+    "medium": "Etching and engraving",
+    "dimensions": "Sheet: 3 7/16 × 2 9/16 in. (8.8 × 6.5 cm)",
+    "artistDisplayName": "Charles Rolls",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Engraver",
+    "artistDisplayBio": "British, 1799–1885",
+    "constituents": [
+      {
+        "constituentID": 89285,
+        "role": "Engraver",
+        "name": "Charles Rolls",
+        "constituentULAN_URL": "",
+        "constituentWikidata_URL": "",
+        "gender": ""
+      },
+      {
+        "constituentID": 91334,
+        "role": "Artist",
+        "name": "After Henry Corbould",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500002129",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q1476596",
+        "gender": ""
+      },
+      {
+        "constituentID": 164876,
+        "role": "Subject",
+        "name": "William Shakespeare",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500272240",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q692",
+        "gender": ""
+      }
+    ],
+    "creditLine": "Gift of Harriet McDonald, 1941",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/739715",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP870103.jpg",
+    "metadataDate": "2025-03-06T04:54:30Z"
+  }
+}

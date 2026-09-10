@@ -1,0 +1,34 @@
+{
+  "endpoint": "https://openaccess-api.clevelandart.org/api/artworks/455642",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "id": 455642,
+    "accession_number": "2022.78",
+    "title": "Street Advertising",
+    "creation_date": "1876–77",
+    "culture": [
+      "England, 19th century"
+    ],
+    "technique": "woodburytype",
+    "creators": [
+      {
+        "description": "John Thomson (Scottish, 1837–1921)",
+        "qualifier": null,
+        "role": "artist"
+      }
+    ],
+    "creditline": "Gift of Sharon & Del Zogg in honor of Wendy Watriss and Frederick C. Baldwin (1929-2021), co-founders of Fotofest, Houston, Texas",
+    "url": "https://clevelandart.org/art/2022.78",
+    "images": {
+      "web": {
+        "url": "https://openaccess-cdn.clevelandart.org/2022.78/2022.78_web.jpg",
+        "width": "701",
+        "height": "900",
+        "filesize": "307444",
+        "filename": "2022.78_web.jpg"
+      }
+    },
+    "share_license_status": "CC0",
+    "updated_at": "2026-07-16 11:12:41.516000"
+  }
+}

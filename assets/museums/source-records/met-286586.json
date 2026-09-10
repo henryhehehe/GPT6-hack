@@ -1,0 +1,41 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/286586",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 286586,
+    "isPublicDomain": true,
+    "accessionNumber": "2005.100.754",
+    "title": "Frederick Douglass",
+    "objectDate": "1876",
+    "culture": "",
+    "medium": "Albumen silver print from glass negative",
+    "dimensions": "Image: 14.7 × 10.2 cm (5 13/16 × 4 in.)\r\nMount: 16.5 × 10.8 cm (6 1/2 × 4 1/4 in.)",
+    "artistDisplayName": "George Kendall Warren",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Artist",
+    "artistDisplayBio": "American, 1834–1884",
+    "constituents": [
+      {
+        "constituentID": 59546,
+        "role": "Artist",
+        "name": "George Kendall Warren",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500037181",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q30303227",
+        "gender": ""
+      },
+      {
+        "constituentID": 58500,
+        "role": "Person in Photograph",
+        "name": "Person in photograph Frederick Douglass",
+        "constituentULAN_URL": "",
+        "constituentWikidata_URL": "",
+        "gender": ""
+      }
+    ],
+    "creditLine": "Gilman Collection, Museum Purchase, 2005",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/286586",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ph/web-large/DP254780.jpg",
+    "metadataDate": "2025-03-06T04:54:30Z"
+  }
+}

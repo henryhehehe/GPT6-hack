@@ -1,0 +1,35 @@
+{
+  "endpoint": "https://openaccess-api.clevelandart.org/api/artworks/170257",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "id": 170257,
+    "accession_number": "2012.43",
+    "title": "Desk and Bookcase",
+    "creation_date": "c. 1780–95",
+    "culture": [
+      "America, Rhode Island, Newport, 18th century"
+    ],
+    "technique": "\"Plum pudding\" mahogany, red cedar, chestnut, white pine, brass",
+    "measurements": "Overall: 240 x 108 x 64.8 cm (94 1/2 x 42 1/2 x 25 1/2 in.)",
+    "creators": [
+      {
+        "description": "John Townsend (American, 1732–1809)",
+        "qualifier": "attributed to",
+        "role": "artist"
+      }
+    ],
+    "creditline": "Gift of Harvey Buchanan in memory of Penelope Draper Buchanan and Dorothy Tuckerman Draper",
+    "url": "https://clevelandart.org/art/2012.43",
+    "images": {
+      "web": {
+        "url": "https://openaccess-cdn.clevelandart.org/2012.43/2012.43_web.jpg",
+        "width": "538",
+        "height": "893",
+        "filesize": "68083",
+        "filename": "2012.43_web.jpg"
+      }
+    },
+    "share_license_status": "CC0",
+    "updated_at": "2026-08-22 11:53:18.211000"
+  }
+}

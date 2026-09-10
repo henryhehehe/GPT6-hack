@@ -1,0 +1,33 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/785846",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 785846,
+    "isPublicDomain": true,
+    "accessionNumber": "2019.283.73",
+    "title": "Orrery clock",
+    "objectDate": "1790",
+    "culture": "",
+    "medium": "Cast and gilded bronze, Carrara marble, copper, brass, steel, enamel",
+    "dimensions": "19 × 9 1/2 in. (48.3 × 24.1 cm)",
+    "artistDisplayName": "Louis Thouverez",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Maker",
+    "artistDisplayBio": "French, master 1788– died after 1823",
+    "constituents": [
+      {
+        "constituentID": 208723,
+        "role": "Maker",
+        "name": "Louis Thouverez",
+        "constituentULAN_URL": "",
+        "constituentWikidata_URL": "",
+        "gender": ""
+      }
+    ],
+    "creditLine": "Bequest of Mrs. Charles Wrightsman, 2019",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/785846",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/DP-17434-001.jpg",
+    "metadataDate": "2025-01-31T04:54:36.6Z"
+  }
+}

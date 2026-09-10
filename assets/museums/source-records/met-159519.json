@@ -1,0 +1,24 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/159519",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 159519,
+    "isPublicDomain": true,
+    "accessionNumber": "2009.300.933a, b",
+    "title": "Afternoon dress",
+    "objectDate": "ca. 1845",
+    "culture": "American",
+    "medium": "silk, cotton",
+    "dimensions": "",
+    "artistDisplayName": "",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "",
+    "artistDisplayBio": "",
+    "constituents": null,
+    "creditLine": "Brooklyn Museum Costume Collection at The Metropolitan Museum of Art, Gift of the Brooklyn Museum, 2009; Gift of The Jason and Peggy Westerfield Collection, 1969",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/159519",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ci/web-large/69.108.130a-b_CP4.jpg",
+    "metadataDate": "2025-03-06T04:54:30Z"
+  }
+}

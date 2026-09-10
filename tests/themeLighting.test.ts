@@ -54,6 +54,11 @@ test('lamp placement stays local to reading furniture and light cleanup preserve
       lights.lamps.forEach(l=>assert.ok(Number.isFinite(l.intensity)&&Math.abs(l.intensity-base)<=base*.0251));
     }
     lights.update(53,true);lights.lamps.forEach(l=>assert.equal(l.intensity,base));
+    // Directed atmosphere retains its lamp level through animation frames, and
+    // removing the override restores the authored scene's light level.
+    lights.update(54,true,14);lights.lamps.forEach(l=>assert.equal(l.intensity,14));
+    lights.update(55,false,5);lights.lamps.forEach(l=>assert.ok(Math.abs(l.intensity-5)<=5*.0251));
+    lights.update(56,true);lights.lamps.forEach(l=>assert.equal(l.intensity,base));
     const target=new THREE.WebGLRenderTarget(1,1);let disposals=0;target.addEventListener('dispose',()=>disposals++);lights.sun.shadow.map=target;
     lights.dispose();lights.dispose();assert.equal(disposals,1);assert.deepEqual(scene.children,[fixture]);
     assert.ok(material.color.equals(initialColor));assert.equal(material.roughness,.82);

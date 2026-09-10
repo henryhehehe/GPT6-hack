@@ -15,6 +15,8 @@ test('collection suggestions follow the assigned curriculum without guessing fro
  const alexandria=prepareCatalogLesson('alexandria-01').world!;assert.equal(relatedMuseumTopic(alexandria),'Alexandria');
  const custom={...alexandria,title:'The Odyssey',lessonPack:{...alexandria.lessonPack!,curriculum:undefined}};assert.equal(relatedMuseumTopic(custom),undefined);
  const odyssey={...alexandria,lessonPack:{...alexandria.lessonPack!,curriculum:{...alexandria.lessonPack!.curriculum!,worldId:'odyssey-ix'}}};assert.equal(relatedMuseumTopic(odyssey),'The Odyssey');
- const other={...odyssey,lessonPack:{...odyssey.lessonPack,curriculum:{...odyssey.lessonPack.curriculum,worldId:'macbeth'}}};assert.equal(relatedMuseumTopic(other),undefined);
+ const other={...odyssey,lessonPack:{...odyssey.lessonPack,curriculum:{...odyssey.lessonPack.curriculum,worldId:'unreviewed-world'}}};assert.equal(relatedMuseumTopic(other),undefined);
+ assert.equal(relatedMuseumTopic(prepareCatalogLesson('austen-letter-01').world!),'Jane Austen');
+ assert.deepEqual(comparisonObjects(['met-90487','cma-142026']).map(item=>item.id),['met-90487','cma-142026']);
  assert.equal(alexandria.museumObjectIds,undefined);
 });

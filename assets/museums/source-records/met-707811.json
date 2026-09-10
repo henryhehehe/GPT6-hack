@@ -1,0 +1,73 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/707811",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 707811,
+    "isPublicDomain": true,
+    "accessionNumber": "42.119.538",
+    "title": "Lady Macbeth (Shakespeare, Macbeth, Act 1, Scene 5)",
+    "objectDate": "first published 1800; reissued 1852",
+    "culture": "",
+    "medium": "Etching and engraving",
+    "dimensions": "Plate: 22 5/16 × 16 in. (56.7 × 40.6 cm)\r\nSheet: 27 13/16 × 21 3/4 in. (70.7 × 55.2 cm)",
+    "artistDisplayName": "James Parker",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Engraver",
+    "artistDisplayBio": "British, London 1750–1805 London",
+    "constituents": [
+      {
+        "constituentID": 72163,
+        "role": "Engraver",
+        "name": "James Parker",
+        "constituentULAN_URL": "",
+        "constituentWikidata_URL": "",
+        "gender": ""
+      },
+      {
+        "constituentID": 89273,
+        "role": "Artist",
+        "name": "After Richard Westall",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500012476",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q3109174",
+        "gender": ""
+      },
+      {
+        "constituentID": 90085,
+        "role": "Publisher",
+        "name": "Originally published by John &amp; Josiah Boydell",
+        "constituentULAN_URL": "(not assigned)",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q26879556",
+        "gender": ""
+      },
+      {
+        "constituentID": 208528,
+        "role": "Publisher",
+        "name": "Reissued by Shearjashub Spooner",
+        "constituentULAN_URL": "(not assigned)",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q7492202",
+        "gender": ""
+      },
+      {
+        "constituentID": 164876,
+        "role": "Subject",
+        "name": "William Shakespeare",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500272240",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q692",
+        "gender": ""
+      },
+      {
+        "constituentID": 69414,
+        "role": "Sitter",
+        "name": "Sarah Siddons",
+        "constituentULAN_URL": "(not assigned)",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q234746",
+        "gender": ""
+      }
+    ],
+    "creditLine": "Gertrude and Thomas Jefferson Mumford Collection, Gift of Dorothy Quick Mayer, 1942",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/707811",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP859570.jpg",
+    "metadataDate": "2026-03-25T04:56:54.88Z"
+  }
+}
