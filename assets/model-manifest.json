@@ -420,7 +420,7 @@
       "url": "/models/props/garden-path.glb",
       "source": "assets/blender/props/austen-architecture.blend",
       "bytes": 488876,
-      "sha256": "94268add5a5272fbcf1cc8ed72f0867c7cb8209a7c1173a1af181e6be53daf57",
+      "sha256": "4e4b6e46c3f7f753968c7e922b50427de7ff416659440de682acd317155ffd4f",
       "bounds": {
         "min": [
           -1.105,
@@ -611,7 +611,7 @@
       "url": "/models/props/paneled-wall.glb",
       "source": "assets/blender/props/austen-architecture.blend",
       "bytes": 204616,
-      "sha256": "57dd64175003f06b41392b950fba38b63d0929ca5b73685e99a36e4096b1cc7c",
+      "sha256": "7f61bebe493d1fef12e2df9eb39dbbc3acae1c81df7720689d2a6d1be40a052f",
       "bounds": {
         "min": [
           -1.21,

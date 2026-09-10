@@ -2,6 +2,8 @@
 
 September 10, 2026. Planning deliverable only; the assets and checks proposed below have not been produced or performed.
 
+**Production update:** The original plan below is retained as the scope record. The subsequent modeling pass delivered 34 original GLBs, editable Blender collections, preview sheets, an inventory, validation scripts, and a local browser viewer. See [the model kit](../assets/MODEL-KIT.md) and [actual QA results](MODEL-QA.md). Runtime scene placement/source wiring and full product readiness remain separate; the existence of these assets does not mark those gates passed.
+
 ## Objective and scope
 
 Create coherent, approachable 3D objects and characters for Counterfactual Worlds. Prioritize what students see while walking, reading evidence, and speaking with characters. The first delivery improves the existing Alexandria lesson; subsequent deliveries support the symbolic generated settings and then distinct Odyssey and Austen packs.

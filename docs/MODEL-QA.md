@@ -48,6 +48,16 @@ Delivered four static background figures in ochre, teal, indigo, and rose, deriv
 
 All 34 assets pass validation, including the stricter 3,000-triangle background limit and existence of each editable source file. Background figures are intended for distant placement; use the hero models at conversation distance.
 
+## Final asset handoff — local viewer
+
+The delivered inventory contains **34 models: 27 props/scenery pieces, three rigged teaching characters, and four static background variants**. Runtime GLBs total **6,378,088 bytes**. Together with the unchanged library/lighthouse, the combined archive is **10,937,300 bytes**; runtime lessons should still load only their own required kits.
+
+The local model viewer was exercised in the Codex in-app browser at 1280 × 720. Selected all 34 model buttons and verified each reached its own loaded state with rendered geometry metrics. Visually inspected the rendered Thaleia GLB and greeting animation, plus the market stall; the full collection also has inspected Blender studio sheets. Returning to a static pose and switching between animated and static models worked. Browser error logs were empty after this pass. Fixed an initial viewer-height overflow before the final inventory pass.
+
+Final checks: all 34 exports pass `check-models.mjs`, both existing landmark models pass `check-landmarks.mjs`, and the six Python authoring/QA scripts plus viewer/server JavaScript pass syntax checks. The wall/path preview was reframed to keep both complete models visible. The handoff index is `assets/MODEL-KIT.md`; editable sources, GLBs, inventory, metrics, repeatable scripts, and previews are committed in separate checkpoints.
+
+No classroom renderer or learning-state code was edited by this asset-production task. Another set of scene changes exists in the shared checkout; the integration handoff explicitly preserves that owner's work. No site deployment, app build, live-model call, or learning-outcome claim is part of this delivery.
+
 ## Verification limits
 
 No browser performance, touch hardware, two-student rehearsal, or live lesson acceptance is claimed by these offline export/render checks. Asset integration must preserve source access, conversations, and student state. Per-asset anchors use `<asset-id>__Anchor_Inspect`, `__Anchor_Talk`, and `__Anchor_Label`; the manifest records the exact names to avoid Blender name collisions.

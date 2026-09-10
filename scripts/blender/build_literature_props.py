@@ -254,4 +254,5 @@ if __name__=='__main__':
         anchors=['Anchor_Inspect']+(['Anchor_Entrance','Anchor_Exit'] if asset_id=='cave-module' else [])
         a.export_asset(r,'props',pack,title,anchors);roots.append((r,p))
     for r,p in roots:r.location=p
-    a.studio(pack,'props',(0,.4,1.0 if pack.startswith('austen') else 1.5),7 if pack.startswith('austen') else 12,1500,1000,view=(7,-12,8))
+    scale=8.8 if pack=='austen-architecture' else 7 if pack=='austen' else 12
+    a.studio(pack,'props',(0,.4,1.0 if pack.startswith('austen') else 1.5),scale,1500,1000,view=(7,-12,8))
