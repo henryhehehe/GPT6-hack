@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {HUMAN_SCALE,MARKET_COUNTER_Y,LIBRARY_DESK_Y} from './humanScale';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 export const ALEXANDRIA_ASSET_IDS = [
@@ -16,11 +17,11 @@ type Placement = { id: AssetId; at: [number, number, number]; scale?: number | [
 // Portico furniture stays within the library's existing blocked footprint.
 export const ALEXANDRIA_STATIC_PLACEMENTS: Placement[] = [
   { id: 'courtyard-fountain', at: [-9, .96, 0] },
-  { id: 'marble-bench', at: [-12, .96, 0], turn: Math.PI / 2 },
-  { id: 'marble-bench', at: [-6, .96, 0], turn: -Math.PI / 2 },
-  { id: 'writing-desk', at: [-4.7, 4, -8.4] },
-  { id: 'wooden-stool', at: [-4.7, 4, -9.45] },
-  { id: 'oil-lamp', at: [-5.4, 5.09, -8.5] },
+  { id: 'marble-bench', at: [-12, .96, 0], scale:[1,HUMAN_SCALE.benchVertical,1], turn: Math.PI / 2 },
+  { id: 'marble-bench', at: [-6, .96, 0], scale:[1,HUMAN_SCALE.benchVertical,1], turn: -Math.PI / 2 },
+  { id: 'writing-desk', at: [-4.7, 4, -8.4], scale:[1,HUMAN_SCALE.deskVertical,1] },
+  { id: 'wooden-stool', at: [-4.7, 4, -9.45], scale:[1,HUMAN_SCALE.stoolVertical,1] },
+  { id: 'oil-lamp', at: [-5.4, LIBRARY_DESK_Y, -8.5] },
   { id: 'scroll-rack', at: [-6.5, 4, -9.55] },
   { id: 'scroll-rack', at: [6.5, 4, -9.55] },
   { id: 'bronze-brazier', at: [-4, 4, -6.2] },
@@ -94,10 +95,10 @@ export function loadAlexandriaKit(parent: THREE.Object3D, fallback: Fallbacks) {
       i === 3 ? [.85, 1, 1.15] : undefined));
     fallback.palms.forEach(palm => replace(palm, 'date-palm'));
     fallback.stalls.forEach((stall, i) => {
-      replace(stall, 'market-canopy');
-      const display = place({ id: (['pottery-display', 'produce-display', 'textile-display'] as const)[i % 3], at: [stall.position.x, 2.01, stall.position.z] });
+      replace(stall, 'market-canopy', [1,HUMAN_SCALE.marketVertical,1]);
+      const display = place({ id: (['pottery-display', 'produce-display', 'textile-display'] as const)[i % 3], at: [stall.position.x, MARKET_COUNTER_Y, stall.position.z] });
       merchandise.push(display); additions.add(display);
-      if (i < 2) additions.add(place({ id: 'balance-scale', at: [stall.position.x + 1.75, 2.01, stall.position.z + .5], scale: .65 }));
+      if (i < 2) additions.add(place({ id: 'balance-scale', at: [stall.position.x + 1.75, MARKET_COUNTER_Y, stall.position.z + .5], scale: .65 }));
       additions.add(place({ id: 'woven-basket', at: [stall.position.x - 1.7, 1.32, stall.position.z], scale: .7 }));
     });
     for (let i = 0; i < 14; i++) {
