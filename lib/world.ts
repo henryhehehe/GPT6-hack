@@ -16,7 +16,9 @@ export const RubricSchema = z.object({
 });
 export type Evaluation=z.infer<typeof RubricSchema> & {score:number;unlocked:boolean;responseId:string;latencyMs:number};
 export type Turn={claim:string;npc:ZoneId;result:Evaluation;at:string;worldVersion:number;scenario:boolean};
-export type StudentState={name:string;evidence:string[];turns:Turn[];zone:ZoneId;unlocked:boolean};
+export const DialogueSchema=z.object({reply:z.string().min(1).max(900),evidenceIds:z.array(z.string().max(60)).max(3),followUp:z.string().max(200)});
+export type DialogueTurn={id:string;message:string;npc:ZoneId;result:z.infer<typeof DialogueSchema>;at:string;worldVersion:number;scenario:boolean;responseId:string;latencyMs:number};
+export type StudentState={name:string;evidence:string[];turns:Turn[];zone:ZoneId;unlocked:boolean;dialogue?:DialogueTurn[]};
 export type Intervention={id:string;title:string;text:string;question:string;zone:ZoneId;responseId:string;latencyMs:number;request:string;kind:'teaching-prop'};
 export type ClassroomState={scenario:boolean;hint:Intervention|null;run:{responseId:string;latencyMs:number}|null};
 export const HintSchema=z.object({title:z.string().max(80),text:z.string().max(650),question:z.string().max(250),zone:Zone});
@@ -62,4 +64,4 @@ export function gradeArgument(value:unknown,claim:string,available:string[],worl
  return {...r,score,unlocked:score>=3&&e.earned&&!!r.items.find(i=>i.key==='mechanism')?.earned};
 }
 export const zoneNames:Record<ZoneId,string>={harbor:'Harbor',market:'Market',library:'Library'};
-export const npcNames:Record<ZoneId,string>={harbor:'Dorian, the merchant',market:'Dorian, the merchant',library:'Ione, the archivist'};
+export const npcNames:Record<ZoneId,string>={harbor:'Dorian, the merchant',market:'Thaleia, the market trader',library:'Ione, the archivist'};

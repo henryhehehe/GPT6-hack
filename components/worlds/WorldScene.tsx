@@ -7,10 +7,12 @@ import { createExplorer } from './scene/explorer';
 import { loadLandmarks } from './scene/landmarks';
 import LandmarkPreview from './LandmarkPreview';
 import type { LandmarkId } from '@/lib/landmarkReferences';
+import { characters } from '@/lib/characters';
 
-type Props={world:World;scenario:boolean;focus:ZoneId|null;focusRevision?:number;unlocked:boolean;hint:boolean;onSelect:(zone:ZoneId)=>void};
+type Props={world:World;scenario:boolean;focus:ZoneId|null;focusRevision?:number;unlocked:boolean;hint:boolean;onSelect:(zone:ZoneId)=>void;onTalk:(zone:ZoneId)=>void};
 const positions:Record<ZoneId,[number,number,number]>={harbor:[-14,1,12],market:[8,2,7],library:[0,5,-12]};
 export default function WorldScene(props:Props){
+ const characterButtons=useRef<Partial<Record<ZoneId,HTMLButtonElement|null>>>({});
  const [reference,setReference]=useState<LandmarkId|null>(null),[pinned,setPinned]=useState(false),[ready,setReady]=useState<LandmarkId[]>([]);
  const pinRef=useRef(false),closeTimer=useRef<ReturnType<typeof setTimeout>|null>(null);
  const keepReference=()=>{if(closeTimer.current)clearTimeout(closeTimer.current);};
@@ -77,6 +79,10 @@ export default function WorldScene(props:Props){
   // Decorative citizens follow a fixed loop, never pretending to be real students.
   const citizens:THREE.Group[]=[];
   for(let i=0;i<24;i++){const g=new THREE.Group();const color=[mats.cloth,mats.teal,mats.roof,mats.light][i%4];cylinder(g,.23,.85,0,0,0,color,6);mesh(new THREE.SphereGeometry(.20,8,6),mats.edge,g,0,1.04,0);g.position.set(-12+i%9*3,1.05,2+Math.floor(i/9)*3);scene.add(g);citizens.push(g);}
+  // Named teaching characters stay in place and remain present in both scenarios.
+  const npcs:THREE.Group[]=[];
+  for(const id of ['harbor','market','library'] as ZoneId[]){const profile=characters[id],g=new THREE.Group();g.position.set(...profile.position);g.userData.character=id;land.add(g);npcs.push(g);const robe=new THREE.MeshStandardMaterial({color:profile.color,roughness:.9});mesh(new THREE.CylinderGeometry(.25,.4,1.2,12),robe,g,0,.65,0);mesh(new THREE.SphereGeometry(.25,16,12),mats.edge,g,0,1.55,0);mesh(new THREE.SphereGeometry(.26,16,8,0,Math.PI*2,0,Math.PI*.5),mats.dark,g,0,1.62,0);for(const side of [-1,1]){const arm=cylinder(g,.10,.75,side*.35,.65,0,robe,8);arm.rotation.z=side*.18;}const ring=mesh(new THREE.RingGeometry(.65,.74,32),mats.teal,g,0,.04,0);ring.rotation.x=-Math.PI/2;ring.castShadow=false;g.traverse(object=>{object.userData.character=id;});}
+  const labelPoint=new THREE.Vector3();
   function ship(x:number,z:number,s:number){const g=new THREE.Group();scene.add(g);g.position.set(x,.3,z);g.scale.setScalar(s);const hull=mesh(new THREE.SphereGeometry(1,12,6),mats.wood,g);hull.scale.set(1.5,.65,3.5);box(g,2.2,.18,5,0,.2,0,mats.edge);cylinder(g,.10,5,0,.35,0,mats.wood,7);const sail=mesh(new THREE.PlaneGeometry(3.5,3.4,8,4),mats.cloth,g,0,3.15,.15);sail.rotation.y=.2;for(const z of [-1.8,1.8])box(g,2,.15,.18,0,.8,z,mats.wood);return g;}
   const ships=[ship(-8,23,1),ship(1,23,.85),ship(13,31,1.15),ship(-20,35,.8),ship(23,34,.7),ship(-4,40,.8)];
   const markers:THREE.Mesh[]=[];const ringMats:THREE.MeshBasicMaterial[]=[];
@@ -89,11 +95,12 @@ export default function WorldScene(props:Props){
   const explorer=createExplorer(camera,controls,renderer.domElement,{mode:value=>{focusing=false;setWalking(value);},nearby:setNearby,inspect:zone=>latest.current.onSelect(zone)});explorerRef.current=explorer;
   const ray=new THREE.Raycaster();const pointer=new THREE.Vector2();let down:[number,number]|null=null;
   function pointRay(e:PointerEvent){const rect=el.getBoundingClientRect();pointer.set((e.clientX-rect.left)/rect.width*2-1,-(e.clientY-rect.top)/rect.height*2+1);ray.setFromCamera(pointer,camera);}
-  function landmarkAtPointer(){const hit=ray.intersectObjects(land.children,true).find(hit=>{let object:THREE.Object3D|null=hit.object;while(object){if(!object.visible)return false;object=object.parent;}return true;});return hit?.object.userData.landmarkReference as LandmarkId|undefined;}
+  function objectAtPointer(){return ray.intersectObjects(land.children,true).find(hit=>{let object:THREE.Object3D|null=hit.object;while(object){if(!object.visible)return false;object=object.parent;}return true;})?.object;}
+  function landmarkAtPointer(){return objectAtPointer()?.userData.landmarkReference as LandmarkId|undefined;}
   let lastHover=0;
   const onMove=(e:PointerEvent)=>{if(e.pointerType==='touch'||e.buttons||performance.now()-lastHover<80)return;lastHover=performance.now();pointRay(e);const id=landmarkAtPointer();if(id)referenceEvents.current.showReference(id);else referenceEvents.current.leaveReference();};
   const onLeave=()=>{down=null;referenceEvents.current.leaveReference();};
-  const onDown=(e:PointerEvent)=>{down=[e.clientX,e.clientY]};const onUp=(e:PointerEvent)=>{const start=down;down=null;if(!start||Math.hypot(e.clientX-start[0],e.clientY-start[1])>5)return;pointRay(e);const id=landmarkAtPointer();if(id){referenceEvents.current.showReference(id,true);return;}if(explorer.walking)return;const hit=ray.intersectObjects(markers)[0];if(hit)latest.current.onSelect(hit.object.userData.zone);};
+  const onDown=(e:PointerEvent)=>{down=[e.clientX,e.clientY]};const onUp=(e:PointerEvent)=>{const start=down;down=null;if(!start||Math.hypot(e.clientX-start[0],e.clientY-start[1])>5)return;pointRay(e);const object=objectAtPointer(),npc=object?.userData.character as ZoneId|undefined;if(npc){latest.current.onTalk(npc);return;}const id=object?.userData.landmarkReference as LandmarkId|undefined;if(id){referenceEvents.current.showReference(id,true);return;}if(explorer.walking)return;const hit=ray.intersectObjects(markers)[0];if(hit)latest.current.onSelect(hit.object.userData.zone);};
   el.addEventListener('pointerdown',onDown);el.addEventListener('pointerup',onUp);el.addEventListener('pointermove',onMove);el.addEventListener('pointerleave',onLeave);
   const resize=()=>{const w=Math.max(1,el.clientWidth),h=Math.max(1,el.clientHeight);renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();};const observer=new ResizeObserver(resize);observer.observe(el);resize();
   let frame=0,t=0,last=performance.now(),blend=0,oldFocus:ZoneId|null=null,oldFocusRevision=props.focusRevision;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -109,17 +116,21 @@ export default function WorldScene(props:Props){
    citizens.forEach((c,i)=>{const active=p.world.nodes.find(n=>n.id==='library')?.activity??.3;c.visible=i/citizens.length<1-blend*(1-active);c.position.x=-12+i%9*3+(reduced?0:Math.sin(t*.2+i)*.8);});
    landmarks.update(p.unlocked,dt,reduced);door.scale.x=THREE.MathUtils.damp(door.scale.x,p.unlocked?.06:1,4,dt);hint.visible=p.hint;hint.rotation.y=reduced?0:Math.sin(t)*.06;
    ringMats.forEach(m=>m.color.set(p.scenario?'#ffc574':'#6adeca'));pathMat.opacity=blend*.55;particle.visible=blend>.2;if(!reduced)particle.position.copy(curve.getPoint((t*.13)%1));flame.scale.setScalar(1+(reduced?0:Math.sin(t*5)*.12));
-   explorer.update(dt);if(!explorer.walking)controls.update();renderer.render(scene,camera);frame=requestAnimationFrame(animate);
+   explorer.update(dt);if(!explorer.walking)controls.update();
+   for(const npc of npcs){const id=npc.userData.character as ZoneId,button=characterButtons.current[id];npc.rotation.y=Math.atan2(camera.position.x-npc.position.x,camera.position.z-npc.position.z);if(button){labelPoint.copy(npc.position);labelPoint.y+=2.4;const distance=camera.position.distanceTo(labelPoint);labelPoint.project(camera);const visible=labelPoint.z>-1&&labelPoint.z<1&&Math.abs(labelPoint.x)<.95&&Math.abs(labelPoint.y)<.85&&(!explorer.walking||distance<14);button.style.display=visible?'flex':'none';if(visible){button.style.left=`${(labelPoint.x+1)*.5*el.clientWidth}px`;button.style.top=`${(1-labelPoint.y)*.5*el.clientHeight}px`;}}}
+   renderer.render(scene,camera);frame=requestAnimationFrame(animate);
   }frame=requestAnimationFrame(animate);
   return()=>{cancelAnimationFrame(frame);explorer.dispose();explorerRef.current=null;landmarks.dispose();observer.disconnect();controls.removeEventListener('start',interruptFocus);controls.dispose();el.removeEventListener('pointerdown',onDown);el.removeEventListener('pointerup',onUp);el.removeEventListener('pointermove',onMove);el.removeEventListener('pointerleave',onLeave);scene.traverse(o=>{if(o instanceof THREE.Mesh){o.geometry.dispose();const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>m.dispose());}});renderer.dispose();renderer.domElement.remove();};
  },[]);
  return <>
   <div ref={host} className="world-canvas" role="group" aria-label="Interactive harbor, market, and library">{error&&<p className="world-error">{error}</p>}</div>
+  {(['harbor','market','library'] as ZoneId[]).map(id=><button key={id} ref={element=>{characterButtons.current[id]=element;}} className="character-world-label" style={{display:'none'}} onClick={()=>props.onTalk(id)} aria-label={`Talk to ${characters[id].name}, ${characters[id].role}`}><span>◌</span>{characters[id].name}<small>Talk</small></button>)}
   <div className="explorer-controls">
    <div className="explorer-modes" aria-label="Exploration mode"><button aria-pressed={!walking} onClick={()=>explorerRef.current?.mode(false)}>Overview</button><button aria-pressed={walking} onClick={()=>explorerRef.current?.mode(true)}>Walk around</button></div>
    <p>{walking?'WASD / arrows · drag to look · Shift to move faster · Esc to overview':'Orbit the world, or step into its streets.'}</p>
    <div className="landmark-reference-buttons" aria-label="Landmark photographs and context">{(['lighthouse','library'] as LandmarkId[]).map(id=><button key={id} onPointerEnter={event=>{if(event.pointerType!=='touch')showReference(id);}} onPointerLeave={leaveReference} onFocus={()=>showReference(id)} onBlur={leaveReference} onClick={()=>showReference(id,true)} aria-expanded={reference===id} aria-controls={reference===id?'landmark-reference':undefined}>{id==='lighthouse'?'Lighthouse site photo':'Library context'}{!ready.includes(id)&&<span className="sr-only">, available while model loads</span>}</button>)}</div>
    {walking&&nearby&&<button className="explorer-inspect" onClick={()=>explorerRef.current?.inspect()}>Inspect {zoneNames[nearby]} <kbd>E</kbd></button>}
+   <details className="character-directory"><summary>Talk to someone</summary>{(['harbor','market','library'] as ZoneId[]).map(id=><button key={id} onClick={()=>props.onTalk(id)}>{characters[id].name} · {characters[id].role}</button>)}</details>
   </div>
   {reference&&<LandmarkPreview key={reference} id={reference} pinned={pinned} onPin={()=>{pinRef.current=!pinRef.current;setPinned(pinRef.current);}} onClose={closeReference} onEnter={keepReference} onLeave={leaveReference}/>}
   {walking&&<div className="explorer-pad" aria-label="Movement controls">

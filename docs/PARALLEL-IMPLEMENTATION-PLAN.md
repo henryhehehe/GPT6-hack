@@ -4,6 +4,8 @@ Updated September 10, 2026. This is the next implementation sprint for the exist
 
 ## Target
 
+**Character-dialogue checkpoint:** free-form, source-grounded Astra conversations are now connected to three scene characters. Eight new tests cover dialogue validation/context and atomic world/progress writes. This also implements the atomic persistence guard from C2 and student-role restoration/stale-response guards; full A3 reset, selected-learner intervention, source-card omission validation, and formal prediction/revision work remain. See the build log for exact live and browser checks; do not treat the original diagnostic findings as an unchanged inventory.
+
 **Product acceptance:** [Product readiness](PRODUCT-READINESS.md) defines the signature teacher-directed learning moment and concrete usability gates. A separate agent reviews the present build independently; after fixes, a final independent review against the frozen commit and deployed app is required before calling it ready. Distinguish recording readiness from a supervised classroom pilot or broader release.
 
 **Learning/immersion priority:** [UX research](LEARNING-UX-RESEARCH.md) and the [independent review brief](REVIEW-CONTEXT.md) now guide the next pass. The student shell now uses a viewport-filling world with an on-demand journal/conversation and in-app evidence reader. Next learning gates: structured per-claim citation selection, passage annotations/versioning, an explicit prediction and revision reflection, and teacher-visible changes in reasoning. Evidence count and archive unlock must not be reported as learning outcomes. These requirements apply to the literature expansion too.

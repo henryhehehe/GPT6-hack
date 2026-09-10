@@ -12,6 +12,10 @@ For independent review, pass along [the one-page context brief](docs/REVIEW-CONT
 
 The [open-model shortlist](docs/OPEN-MODEL-SHORTLIST.md) records reusable 3D asset candidates for Alexandria, The Odyssey, and Pride and Prejudice, with publisher license labels, optimization needs, and an integration plan. These external candidates are not installed yet.
 
+Students can now talk to Dorian at the harbor, Thaleia at the market, and Ione near the library. Click a character or their name in the scene, or use **Talk to someone**. Astra generates source-grounded text replies and follow-ups; conversations persist per learner, character, and viewed scenario. Supporting material opens inside the source reader. Dialogue is explicitly simulated and cannot award points, collect evidence, or unlock the archive; **Make your case** remains the separate assessment flow. This release does not add voice or animated lip-sync.
+
+Run `node scripts/smoke-dialogue.mjs` for request-boundary checks, or add `--live` for three real Astra turns (uses the configured API key and incurs API usage). `APP_URL` can select the target environment. The script creates an isolated test classroom and does not print access credentials.
+
 ## Run locally
 
 Requires Node 24 (the repository includes `.tool-versions`).
