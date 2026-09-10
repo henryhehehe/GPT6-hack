@@ -94,7 +94,7 @@ def sack():
     a.lathe('Gathered linen sack',[(.001,0),(.24,0),(.32,.08),(.36,.24),(.34,.43),(.25,.57),(.12,.65),(.105,.70),(.15,.76),(.14,.79),(.09,.78),(.07,.69),(.001,.69)],'linen',36,flutes=.035)
     for z in [.664,.686,.708]: a.ring('Tied cord',(0,0,z),.108,.013,'rope',24)
     a.tube('Loose tie',[(.10,-.035,.70),(.19,-.045,.69),(.23,-.055,.60),(.18,-.07,.55)],.013,'rope')
-    a.tube('Stitched seam',[(.012,-r-.004,z) for r,z in [(.25,.04),(.32,.10),(.36,.24),(.34,.43),(.25,.57)]],.006,'wood',5)
+    a.tube('Stitched seam',[(.012,-r*1.035-.004,z) for r,z in [(.25,.04),(.32,.10),(.36,.24),(.34,.43),(.25,.57)]],.006,'wood',5)
 
 
 def basket():
@@ -112,10 +112,10 @@ def basket():
 def rope():
     pts=[]
     for i in range(200):
-        t=i/199*math.tau*4.2;r=.13+.023*t/math.tau
+        t=i/199*math.tau*4.2;r=.13+.051*t/math.tau
         pts.append((r*math.cos(t),r*math.sin(t),.027+.008*math.sin(t*3)))
     a.tube('Four loop coil',pts,.024,'rope',8)
-    a.tube('Loose rope end',[pts[-1],(.28,.02,.028),(.34,.13,.027),(.43,.15,.025)],.024,'rope',8)
+    a.tube('Loose rope end',[pts[-1],(.40,.23,.028),(.48,.21,.027),(.55,.23,.025)],.024,'rope',8)
 
 
 def scroll(opened=False):
@@ -124,7 +124,7 @@ def scroll(opened=False):
         o.rotation_euler[1]=math.pi/2;o.location=(-.295,0,.079)
         for x in [-.27,.27]:
             o=a.ring('Rolled edge',(0,0,0),.054,.008,'linen',24);o.rotation_euler[1]=math.pi/2;o.location=(x,0,.079)
-        a.tube('Binding',[(-.035,-.075,.08),(-.035,0,.16),(-.035,.075,.08),(-.035,0,.002),(-.035,-.075,.08)],.009,'teal')
+        o=a.ring('Binding',(0,0,0),.080,.009,'teal',24);o.rotation_euler[1]=math.pi/2;o.location=(-.035,0,.079)
     else:
         for x in [-.34,.34]:
             o=a.lathe('Rolled end',[(.001,0),(.051,0),(.051,.57),(.001,.57)],'paper',24)

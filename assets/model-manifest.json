@@ -34,6 +34,37 @@
       "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
     },
     {
+      "id": "cargo-crate",
+      "title": "Slatted cargo crate",
+      "pack": "cargo",
+      "category": "props",
+      "url": "/models/props/cargo-crate.glb",
+      "source": "assets/blender/props/cargo.blend",
+      "bytes": 351732,
+      "sha256": "88dd9ad5a927c5e95678a0ea38caf39da0857f73f3d874c65a72a3078d0b39e0",
+      "bounds": {
+        "min": [
+          -0.51,
+          0.0,
+          -0.5275
+        ],
+        "max": [
+          0.51,
+          0.8275,
+          0.5275
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "cargo-crate__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
       "id": "ceramic-bowl",
       "title": "Glazed ceramic bowl",
       "pack": "market",
@@ -168,6 +199,161 @@
       "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
     },
     {
+      "id": "open-scroll",
+      "title": "Open blank scroll",
+      "pack": "archive",
+      "category": "props",
+      "url": "/models/props/open-scroll.glb",
+      "source": "assets/blender/props/archive.blend",
+      "bytes": 11828,
+      "sha256": "6fb6d795b298ed621a3f5410a2fc630c7767beee2bc2a4a5ce4586e064396e74",
+      "bounds": {
+        "min": [
+          -0.391,
+          0.001,
+          -0.285
+        ],
+        "max": [
+          0.391,
+          0.103,
+          0.285
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "open-scroll__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "reading-table",
+      "title": "Wooden reading table",
+      "pack": "archive",
+      "category": "props",
+      "url": "/models/props/reading-table.glb",
+      "source": "assets/blender/props/archive.blend",
+      "bytes": 174200,
+      "sha256": "0427d7f7f1cdf92d4052a6d67963d9599c619ce850c4a050f35ca76bb2a4ddf9",
+      "bounds": {
+        "min": [
+          -0.7745,
+          -0.0,
+          -0.435
+        ],
+        "max": [
+          0.7745,
+          0.9025,
+          0.435
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "reading-table__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "rolled-scroll",
+      "title": "Bound papyrus roll",
+      "pack": "archive",
+      "category": "props",
+      "url": "/models/props/rolled-scroll.glb",
+      "source": "assets/blender/props/archive.blend",
+      "bytes": 35756,
+      "sha256": "13433483f62d9be916cf482c174cc35114e40918ec51829a2f10c0f9f9c5d98b",
+      "bounds": {
+        "min": [
+          -0.295,
+          -0.01,
+          -0.089
+        ],
+        "max": [
+          0.295,
+          0.168,
+          0.089
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "rolled-scroll__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "rope-coil",
+      "title": "Loose rope coil",
+      "pack": "cargo",
+      "category": "props",
+      "url": "/models/props/rope-coil.glb",
+      "source": "assets/blender/props/cargo.blend",
+      "bytes": 79712,
+      "sha256": "a9946f451a6e93fbb1570105304a144507f18a91bf9cf11ab81b0a5e0b852dce",
+      "bounds": {
+        "min": [
+          -0.3326,
+          -0.005,
+          -0.3501
+        ],
+        "max": [
+          0.5566,
+          0.059,
+          0.3453
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "rope-coil__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "scroll-rack",
+      "title": "Scroll storage rack",
+      "pack": "archive",
+      "category": "props",
+      "url": "/models/props/scroll-rack.glb",
+      "source": "assets/blender/props/archive.blend",
+      "bytes": 199420,
+      "sha256": "aa6dd9c8638699a1f8b20406910372271a5fd402ee8385974b7670e8536db938",
+      "bounds": {
+        "min": [
+          -0.605,
+          0.0,
+          -0.215
+        ],
+        "max": [
+          0.605,
+          1.42,
+          0.215
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "scroll-rack__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
       "id": "storage-jar",
       "title": "Lidded storage jar",
       "pack": "market",
@@ -228,6 +414,99 @@
         "Greeting",
         "Talk"
       ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "tied-sack",
+      "title": "Tied linen sack",
+      "pack": "cargo",
+      "category": "props",
+      "url": "/models/props/tied-sack.glb",
+      "source": "assets/blender/props/cargo.blend",
+      "bytes": 53776,
+      "sha256": "832a913f5fba8d2fc60fa9e4a6634c288975983013d2f9daf5854c1525000124",
+      "bounds": {
+        "min": [
+          -0.3726,
+          0.0,
+          -0.3726
+        ],
+        "max": [
+          0.3726,
+          0.79,
+          0.3823
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "tied-sack__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "woven-basket",
+      "title": "Woven carrying basket",
+      "pack": "cargo",
+      "category": "props",
+      "url": "/models/props/woven-basket.glb",
+      "source": "assets/blender/props/cargo.blend",
+      "bytes": 191280,
+      "sha256": "7eb71fee354913f2de910fd444860952ae75d0c172797731d19362ef572ab976",
+      "bounds": {
+        "min": [
+          -0.3549,
+          0.0,
+          -0.353
+        ],
+        "max": [
+          0.3549,
+          0.875,
+          0.353
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "woven-basket__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "writing-tablet",
+      "title": "Wax tablet and stylus",
+      "pack": "archive",
+      "category": "props",
+      "url": "/models/props/writing-tablet.glb",
+      "source": "assets/blender/props/archive.blend",
+      "bytes": 37928,
+      "sha256": "d79a8f488ed584eaae30d44663c188b1e8361de0e33f8c033ebf2d2f0221f6f8",
+      "bounds": {
+        "min": [
+          -0.23,
+          -0.0,
+          -0.3
+        ],
+        "max": [
+          0.367,
+          0.0565,
+          0.3
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "writing-tablet__Anchor_Inspect"
+      },
+      "clips": [],
       "provenance": "Original interpretive teaching asset; not primary evidence",
       "creator": "Counterfactual Worlds",
       "license": "MIT",

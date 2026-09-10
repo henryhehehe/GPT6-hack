@@ -20,6 +20,12 @@ Inspected front, back, and mid-greeting studio renders. Fixed garment/belt inter
 
 The GLTFLoader checker passed all seven delivered assets. It additionally verifies skin weights sum to one, each rig contains the expected minimum bone count, all advertised clips exist and contain actual motion, and sampled animated bounds remain finite and bounded. The market/cast payload plus existing landmarks is 7,224,492 bytes. Browser playtesting remains separate.
 
+## Checkpoint 3 — cargo and archive props
+
+Delivered slatted cargo crate, tied sack, woven basket, rope coil, rolled/open scrolls, wax tablet/stylus, reading table, and scroll rack. Source files and preview sheets are in `assets/blender/props/`. Corrected rope spacing, the sack seam, and the scroll binding after inspecting the renders. Scrolls and tablet intentionally contain no fabricated writing.
+
+All 16 Alexandria exports pass the GLTFLoader checks. Exact current sizes and geometry counts are recorded in `assets/model-metrics.json`; the complete kit remains below 4 MB, and below 8.5 MB together with the original two landmarks. This is a download-size result, not a frame-rate measurement.
+
 ## Verification limits
 
 No browser performance, touch hardware, two-student rehearsal, or live lesson acceptance is claimed by these offline export/render checks. Asset integration must preserve source access, conversations, and student state. Per-asset anchors use `<asset-id>__Anchor_Inspect`, `__Anchor_Talk`, and `__Anchor_Label`; the manifest records the exact names to avoid Blender name collisions.

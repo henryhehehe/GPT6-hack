@@ -14,6 +14,19 @@
       "clips": []
     },
     {
+      "id": "cargo-crate",
+      "bytes": 351732,
+      "triangles": 4096,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        1.02,
+        0.828,
+        1.055
+      ],
+      "clips": []
+    },
+    {
       "id": "ceramic-bowl",
       "bytes": 74740,
       "triangles": 2944,
@@ -74,6 +87,71 @@
       "clips": []
     },
     {
+      "id": "open-scroll",
+      "bytes": 11828,
+      "triangles": 328,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.782,
+        0.102,
+        0.57
+      ],
+      "clips": []
+    },
+    {
+      "id": "reading-table",
+      "bytes": 174200,
+      "triangles": 1836,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        1.549,
+        0.903,
+        0.87
+      ],
+      "clips": []
+    },
+    {
+      "id": "rolled-scroll",
+      "bytes": 35756,
+      "triangles": 1392,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.59,
+        0.178,
+        0.178
+      ],
+      "clips": []
+    },
+    {
+      "id": "rope-coil",
+      "bytes": 79712,
+      "triangles": 3256,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.889,
+        0.064,
+        0.695
+      ],
+      "clips": []
+    },
+    {
+      "id": "scroll-rack",
+      "bytes": 199420,
+      "triangles": 4980,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        1.21,
+        1.42,
+        0.43
+      ],
+      "clips": []
+    },
+    {
       "id": "storage-jar",
       "bytes": 114104,
       "triangles": 3808,
@@ -102,8 +180,47 @@
         "Greeting",
         "Talk"
       ]
+    },
+    {
+      "id": "tied-sack",
+      "bytes": 53776,
+      "triangles": 2122,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.745,
+        0.79,
+        0.755
+      ],
+      "clips": []
+    },
+    {
+      "id": "woven-basket",
+      "bytes": 191280,
+      "triangles": 7788,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.71,
+        0.875,
+        0.706
+      ],
+      "clips": []
+    },
+    {
+      "id": "writing-tablet",
+      "bytes": 37928,
+      "triangles": 492,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.597,
+        0.057,
+        0.6
+      ],
+      "clips": []
     }
   ],
-  "totalBytes": 2665280,
-  "withLandmarksBytes": 7224492
+  "totalBytes": 3800912,
+  "withLandmarksBytes": 8360124
 }
