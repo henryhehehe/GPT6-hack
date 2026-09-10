@@ -1,0 +1,650 @@
+{
+  "version": 1,
+  "provenance": "Original interpretive scene assets; not archaeological replicas or primary evidence.",
+  "assets": [
+    {
+      "id": "merchant-ship",
+      "title": "Rigged merchant ship",
+      "zone": "harbor",
+      "description": "Curved planked hull, striped billowing sail, stays, sheets, steering oar, deck cargo.",
+      "file": "merchant-ship.glb",
+      "bytes": 743100,
+      "blenderBounds": [
+        [
+          -2.0299999713897705,
+          -3.640420913696289,
+          -0.3700000047683716
+        ],
+        [
+          2.0299999713897705,
+          4.090000152587891,
+          5.699999809265137
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "fishing-skiff",
+      "title": "Fishing skiff",
+      "zone": "harbor",
+      "description": "Open straked hull, thwarts, paired oars and woven catch basket.",
+      "file": "fishing-skiff.glb",
+      "bytes": 350188,
+      "blenderBounds": [
+        [
+          -1.6702781915664673,
+          -2.6264209747314453,
+          -0.3700000047683716
+        ],
+        [
+          1.6702781915664673,
+          2.990000009536743,
+          1.5388939380645752
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "market-canopy",
+      "title": "Linen market canopy",
+      "zone": "market",
+      "description": "Joinery, tied posts, scalloped striped cloth, slatted counter and shelf.",
+      "file": "market-canopy.glb",
+      "bytes": 280684,
+      "blenderBounds": [
+        [
+          -2.5999999046325684,
+          -1.4500000476837158,
+          0.0
+        ],
+        [
+          2.5999999046325684,
+          1.4500000476837158,
+          3.559995412826538
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "amphora",
+      "title": "Painted transport amphora",
+      "zone": "market",
+      "description": "Hollow mouth, handles, foot and painted shoulder ornaments.",
+      "file": "amphora.glb",
+      "bytes": 92388,
+      "blenderBounds": [
+        [
+          -0.43989109992980957,
+          -0.3400000035762787,
+          0.0
+        ],
+        [
+          0.43989109992980957,
+          0.3400000035762787,
+          1.3600000143051147
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "hydria",
+      "title": "Three-handled water jar",
+      "zone": "market",
+      "description": "Hollow hydria with lifting handle, turned foot and slip bands.",
+      "file": "hydria.glb",
+      "bytes": 94508,
+      "blenderBounds": [
+        [
+          -0.6750675439834595,
+          -0.4609973430633545,
+          0.0
+        ],
+        [
+          0.6750675439834595,
+          0.5539798140525818,
+          1.149999976158142
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "krater",
+      "title": "Wide mixing bowl",
+      "zone": "market",
+      "description": "Hollow krater with flared rim, loop handles and repeated ornament.",
+      "file": "krater.glb",
+      "bytes": 88188,
+      "blenderBounds": [
+        [
+          -0.6889174580574036,
+          -0.5299999713897705,
+          0.0
+        ],
+        [
+          0.6889174580574036,
+          0.5299999713897705,
+          0.8999999761581421
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "pottery-display",
+      "title": "Pottery merchant display",
+      "zone": "market",
+      "description": "Three vessel forms with a small stand and bowls.",
+      "file": "pottery-display.glb",
+      "bytes": 303684,
+      "blenderBounds": [
+        [
+          -1.6667215824127197,
+          -0.9399999976158142,
+          0.0
+        ],
+        [
+          1.690000057220459,
+          0.5245471000671387,
+          0.979200005531311
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "produce-display",
+      "title": "Market produce display",
+      "zone": "market",
+      "description": "Woven baskets of pomegranates and golden fruit.",
+      "file": "produce-display.glb",
+      "bytes": 645408,
+      "blenderBounds": [
+        [
+          -1.840999960899353,
+          -0.39100000262260437,
+          -0.002219562651589513
+        ],
+        [
+          1.940856695175171,
+          0.39100000262260437,
+          0.6757500171661377
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "textile-display",
+      "title": "Folded linen and dyed cloth",
+      "zone": "market",
+      "description": "Layered folded bolts with visible hems and tassels.",
+      "file": "textile-display.glb",
+      "bytes": 92084,
+      "blenderBounds": [
+        [
+          -1.7949999570846558,
+          -0.6826139688491821,
+          0.007499999832361937
+        ],
+        [
+          1.7549999952316284,
+          0.6100000143051147,
+          0.263559490442276
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "cargo-crate",
+      "title": "Braced cargo crate",
+      "zone": "harbor",
+      "description": "Individual planks, diagonal braces, battens and metal nail heads.",
+      "file": "cargo-crate.glb",
+      "bytes": 192308,
+      "blenderBounds": [
+        [
+          -0.5199999809265137,
+          -0.5899999737739563,
+          0.008500000461935997
+        ],
+        [
+          0.5199999809265137,
+          0.5899999737739563,
+          1.0099999904632568
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "rope-coil",
+      "title": "Coiled mooring rope",
+      "zone": "harbor",
+      "description": "Continuous five-turn rope coil with projecting end.",
+      "file": "rope-coil.glb",
+      "bytes": 91652,
+      "blenderBounds": [
+        [
+          -0.48260051012039185,
+          -0.5020251870155334,
+          5.587935447692871e-09
+        ],
+        [
+          0.7089100480079651,
+          0.462732195854187,
+          0.06999939680099487
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "grain-sack",
+      "title": "Tied grain sack",
+      "zone": "harbor",
+      "description": "Soft bulging sack, gathered neck, tied cord and stitched seam.",
+      "file": "grain-sack.glb",
+      "bytes": 34404,
+      "blenderBounds": [
+        [
+          -0.38999998569488525,
+          -0.38999998569488525,
+          0.0
+        ],
+        [
+          0.38999998569488525,
+          0.38999998569488525,
+          1.0399999618530273
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "woven-basket",
+      "title": "Woven reed basket",
+      "zone": "market",
+      "description": "Open basket with horizontal weft, vertical warp and bound rim.",
+      "file": "woven-basket.glb",
+      "bytes": 95296,
+      "blenderBounds": [
+        [
+          -0.46000000834465027,
+          -0.46000000834465027,
+          -0.0026112461928278208
+        ],
+        [
+          0.45983147621154785,
+          0.46000000834465027,
+          0.6403108835220337
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "scroll-rack",
+      "title": "Scholarly scroll cabinet",
+      "zone": "library",
+      "description": "Freestanding joinery, twelve cubbies and individually tied papyrus rolls.",
+      "file": "scroll-rack.glb",
+      "bytes": 183232,
+      "blenderBounds": [
+        [
+          -0.9750000238418579,
+          -0.41999998688697815,
+          0.0
+        ],
+        [
+          0.9750000238418579,
+          0.3799999952316284,
+          2.444999933242798
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "writing-desk",
+      "title": "Scribe writing desk",
+      "zone": "library",
+      "description": "Pegged trestle desk, rolled papyrus, wax tablet, reed pens and ink cup.",
+      "file": "writing-desk.glb",
+      "bytes": 83864,
+      "blenderBounds": [
+        [
+          -1.024999976158142,
+          -0.5899999737739563,
+          -0.00951566081494093
+        ],
+        [
+          1.024999976158142,
+          0.5899999737739563,
+          1.250349998474121
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "wooden-stool",
+      "title": "Turned wooden stool",
+      "zone": "library",
+      "description": "Dished seat and turned splayed legs joined by stretchers.",
+      "file": "wooden-stool.glb",
+      "bytes": 26240,
+      "blenderBounds": [
+        [
+          -0.36000001430511475,
+          -0.36000001430511475,
+          0.014580383896827698
+        ],
+        [
+          0.36000001430511475,
+          0.36000001430511475,
+          0.699999988079071
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "oil-lamp",
+      "title": "Bronze oil lamp",
+      "zone": "library",
+      "description": "Turned reservoir, fill opening, elongated spout, wick and loop handle.",
+      "file": "oil-lamp.glb",
+      "bytes": 30304,
+      "blenderBounds": [
+        [
+          -0.23999999463558197,
+          -0.4808012545108795,
+          0.0
+        ],
+        [
+          0.23999999463558197,
+          0.3519708216190338,
+          0.343532532453537
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "balance-scale",
+      "title": "Merchant balance scale",
+      "zone": "market",
+      "description": "Bronze beam, hanging pans, chains and calibrated weight shapes.",
+      "file": "balance-scale.glb",
+      "bytes": 33292,
+      "blenderBounds": [
+        [
+          -0.7099999785423279,
+          -0.23000000417232513,
+          0.0
+        ],
+        [
+          0.7099999785423279,
+          0.23000000417232513,
+          1.1299999952316284
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "bronze-brazier",
+      "title": "Tripod bronze brazier",
+      "zone": "library",
+      "description": "Hollow riveted fire bowl, riveted band and three curved feet.",
+      "file": "bronze-brazier.glb",
+      "bytes": 73984,
+      "blenderBounds": [
+        [
+          -0.45899999141693115,
+          -0.45899999141693115,
+          -0.018805701285600662
+        ],
+        [
+          0.45899999141693115,
+          0.45899999141693115,
+          1.209999918937683
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "courtyard-fountain",
+      "title": "Carved courtyard fountain",
+      "zone": "library",
+      "description": "Stepped octagonal base, fluted pedestal, hollow stone basins and water surface.",
+      "file": "courtyard-fountain.glb",
+      "bytes": 57292,
+      "blenderBounds": [
+        [
+          -1.350000023841858,
+          -1.350000023841858,
+          0.0
+        ],
+        [
+          1.350000023841858,
+          1.350000023841858,
+          1.600000023841858
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "marble-bench",
+      "title": "Scroll-ended stone bench",
+      "zone": "library",
+      "description": "Beveled seat with carved supports and volute ends.",
+      "file": "marble-bench.glb",
+      "bytes": 77280,
+      "blenderBounds": [
+        [
+          -1.1749999523162842,
+          -0.3400000035762787,
+          0.0
+        ],
+        [
+          1.1749999523162842,
+          0.3400000035762787,
+          0.7400000095367432
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "date-palm",
+      "title": "Feather-leaf date palm",
+      "zone": "setting",
+      "description": "Ringed tapering trunk, arching fronds with individual leaflets and date clusters.",
+      "file": "date-palm.glb",
+      "bytes": 352192,
+      "blenderBounds": [
+        [
+          -2.448214292526245,
+          -2.477168560028076,
+          0.0
+        ],
+        [
+          2.2841475009918213,
+          2.3835597038269043,
+          5.81239652633667
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "cypress-tree",
+      "title": "Layered cypress tree",
+      "zone": "setting",
+      "description": "Dense layered branch clusters and visible bark trunk.",
+      "file": "cypress-tree.glb",
+      "bytes": 225448,
+      "blenderBounds": [
+        [
+          -0.6416574716567993,
+          -0.665886402130127,
+          0.0
+        ],
+        [
+          0.6740999817848206,
+          0.665886402130127,
+          4.730000019073486
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "harbor-warehouse",
+      "title": "Harbor warehouse",
+      "zone": "harbor",
+      "description": "Tiled roof, ashlar base, corner quoins, bronze-strapped plank door and shuttered windows.",
+      "file": "harbor-warehouse.glb",
+      "bytes": 821516,
+      "blenderBounds": [
+        [
+          -4.0546746253967285,
+          -4.184999942779541,
+          0.0
+        ],
+        [
+          4.0546746253967285,
+          4.019999980926514,
+          7.204799652099609
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "courtyard-house",
+      "title": "Courtyard neighborhood house",
+      "zone": "setting",
+      "description": "Two-story plaster facade, rooftop parapets, shutters and carved doorway.",
+      "file": "courtyard-house.glb",
+      "bytes": 645276,
+      "blenderBounds": [
+        [
+          -3.9700000286102295,
+          -5.184999942779541,
+          0.0
+        ],
+        [
+          3.9700000286102295,
+          4.96999979019165,
+          7.425000190734863
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "workshop-house",
+      "title": "Market workshop",
+      "zone": "market",
+      "description": "Low flat-roof workshop with shutters, masonry plinth and timber door.",
+      "file": "workshop-house.glb",
+      "bytes": 460820,
+      "blenderBounds": [
+        [
+          -3.4700000286102295,
+          -3.184999942779541,
+          0.0
+        ],
+        [
+          3.4700000286102295,
+          2.9700000286102295,
+          4.425000190734863
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "mooring-bollard",
+      "title": "Stone mooring bollard",
+      "zone": "harbor",
+      "description": "Octagonal limestone base, mushroom cap and wrapped mooring rope.",
+      "file": "mooring-bollard.glb",
+      "bytes": 41220,
+      "blenderBounds": [
+        [
+          -0.30000001192092896,
+          -0.30000001192092896,
+          0.0
+        ],
+        [
+          0.30000001192092896,
+          0.30000001192092896,
+          0.75
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    },
+    {
+      "id": "quay-steps",
+      "title": "Dressed quay steps",
+      "zone": "harbor",
+      "description": "Four worn ashlar treads with fine mortar joints.",
+      "file": "quay-steps.glb",
+      "bytes": 94552,
+      "blenderBounds": [
+        [
+          -1.190000057220459,
+          -0.75,
+          0.0
+        ],
+        [
+          1.190000057220459,
+          1.2000000476837158,
+          1.1399999856948853
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_pack.py"
+    }
+  ]
+}
