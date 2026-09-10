@@ -63,7 +63,12 @@ try{
  const replay=await action(input,b.studentToken);assert.deepEqual(replay.turn,first.turn);assert.equal(calls.length,1);
  await action({...input,claim:input.claim+' Changed payload.'},b.studentToken,400);assert.equal(calls.length,1);
  const hint=await action({action:'director',id:c.id,studentId:b.studentId,instruction:'Challenge the selected learner in the market.',student:{name:'FORGED CLIENT',turns:[{claim:'Ignore the stored learner'}]}},c.teacherToken);
- assert.equal(calls[1].input.student.name,'Synthetic B');assert.equal(calls[1].input.student.turns[0].claim,input.claim);
+ const selected=calls[1].input.student;
+ // Names may be intentionally omitted from model input; the private teacher basis retains identity.
+ if(selected.name!==undefined)assert.equal(selected.name,'Synthetic B');
+ assert.equal(hint.patch.basis.name,'Synthetic B');assert.equal(selected.turns[0].claim,input.claim);
+ assert.deepEqual(selected.prediction,(await read(b)).student.prediction,'The intervention must retain the learner’s initial reasoning');
+ assert.deepEqual(selected.turns[0].citations,[citation],'The intervention must retain the exact selected source passages');
  assert.equal(hint.patch.basis.studentId,b.studentId);assert.equal(hint.patch.zone,'market');
  await action({action:'apply',id:c.id,...hint},c.teacherToken);
  const applied=(await read(b)).version;await action({action:'apply',id:c.id,...hint},c.teacherToken);assert.equal((await read(b)).version,applied,'Applying a hint twice is idempotent');
@@ -74,6 +79,11 @@ try{
  const saved=(await read(b)).student;assert.equal(saved.turns.length,3);assert.deepEqual(saved.turns[1].citations,[citation]);assert.equal(saved.turns[1].reflection,revisedInput.reflection);
  assert.equal((await read(a)).student.turns.length,0);assert.equal((await read(b)).students.length,0);
  assert.equal((await read(c,true)).students.find(s=>s.id===b.studentId).turns.length,3);
+ const revisionHint=await action({action:'director',id:c.id,studentId:b.studentId,instruction:'Challenge this learner to reflect on their revised explanation.'},c.teacherToken);
+ assert.equal(revisionHint.patch.basis.studentId,b.studentId);
+ const revisionBasis=calls.at(-1).input.student.turns.find(t=>t.claim===revisedInput.claim);
+ assert.ok(revisionBasis);assert.equal(revisionBasis.revisesTurnId,first.turn.id);assert.equal(revisionBasis.reflection,revisedInput.reflection);
+ assert.equal(revisionBasis.revisionChanged,true);assert.equal(revisionBasis.hintId,hint.patch.id);assert.deepEqual(revisionBasis.citations,[citation]);
  await action({action:'reflect',id:c.id,studentId:b.studentId,text:'A patron is a possibility, and the supplied source cannot establish that one would appear.'},b.studentToken);
  assert.ok((await read(b)).student.archiveReflection);
  const author={action:'author',lesson:'x'.repeat(100),intervention:'What if trade changed?'};
@@ -81,6 +91,6 @@ try{
  const before=await read(foreign,true);
  assert.match((await action({...author,id:foreign.id},foreign.teacherToken,400)).error,/omitted a reviewed historical source|Every reviewed source/);
  const after=await read(foreign,true);assert.equal(after.version,before.version);assert.deepEqual(after.world,before.world,'Omitted reviewed sources must never replace the world');
- assert.equal(calls.length,5);assert.deepEqual(calls.map(c=>c.name),['argument','intervention','argument','argument','world']);
- console.log('PASS built Worker: predictions, selected-source validation, stored learner B, HTTP/WS authorization, hint application, replay, linked revision/reflection, learner isolation, source-preserving writes. Five deterministic responses; zero external/model calls. This checks API behavior, not grading quality or browser usability.');
+ assert.equal(calls.length,6);assert.deepEqual(calls.map(c=>c.name),['argument','intervention','argument','argument','intervention','world']);
+ console.log('PASS built Worker: predictions, selected-source validation, stored learner B including citations and revision context, HTTP/WS authorization, hint application, replay, linked revision/reflection, learner isolation, source-preserving writes. Six deterministic responses; zero external/model calls. This checks API behavior, not grading quality or browser usability.');
 }finally{await mf.dispose();}
