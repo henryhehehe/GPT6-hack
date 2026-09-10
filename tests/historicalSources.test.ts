@@ -7,6 +7,7 @@ import {groundLesson} from '../lib/lessonBuilder';
 import {prepareCatalogLesson} from '../lib/curriculum';
 import packets from '../lib/curriculum/packets.json';
 import manifest from '../docs/curriculum/sources/manifest.json';
+import historicalCases from '../docs/curriculum/HISTORICAL-FEEDBACK-CASES.json';
 
 test('new Alexandria uses the saved Jones quotation and separate contextual explanation',()=>{
  const evidence=initialWorld.evidence.find(e=>e.id==='strabo')!;
@@ -52,4 +53,37 @@ test('model-generated lessons cannot mint trusted historical notes or reference 
  const generated=groundLesson(world,passages,'Declaration of Sentiments','Selected grievances');
  assert.ok(generated.evidence.every(e=>!e.context));
  assert.equal(generated.lessonPack?.curriculum,undefined);
+});
+
+test('historical feedback cases match the assigned quotations and separately labeled notes',()=>{
+ assert.equal(historicalCases.packetVersion,packets.version,'Review these cases when the packet changes.');
+ const notes=readFileSync(new URL('../lib/curriculum/sourceNotes.json',import.meta.url));
+ assert.equal(historicalCases.sourceNotesSha256,createHash('sha256').update(notes).digest('hex'),'Review the case expectations when context notes change.');
+ assert.equal(new Set(historicalCases.examples.map(e=>e.id)).size,historicalCases.examples.length);
+ for(const example of historicalCases.examples){
+  const world=prepareCatalogLesson(example.lessonId).world!;
+  const selected=world.evidence.filter(e=>example.evidenceIds.includes(e.id));
+  assert.equal(selected.length,example.evidenceIds.length,`${example.id}: missing or repeated evidence`);
+  const sourceMaterials=world.evidence.flatMap(e=>[e.text,e.context?.text??'']);
+  for(const phrase of example.quotedPhrases){
+   assert.ok(example.learnerText.includes(phrase),`${example.id}: quotation absent from the learner answer`);
+   if(example.kind==='fabricated-quotation'){
+    assert.ok(!sourceMaterials.some(text=>text.toLowerCase().includes(phrase.toLowerCase())),`${example.id}: supposed fabrication occurs in the source`);
+   }else{
+    assert.ok(selected.some(e=>e.text.includes(phrase)),`${example.id}: legitimate quotation absent from selected cards`);
+   }
+  }
+  for(const assertion of example.contextAssertions){
+   const evidence=selected.find(e=>e.id===assertion.evidenceId);
+   assert.ok(evidence,`${example.id}: context refers to unselected evidence`);
+   assert.ok(['readingNote','editorialNote'].includes(assertion.material));
+   const context=evidence.context!;
+   const note=assertion.material==='readingNote'?context.readingNote:context.editorialNote;
+   assert.ok(note?.includes(assertion.text),`${example.id}: missing context statement`);
+   assert.ok(!sourceMaterials.some(text=>text.includes(assertion.text)),`${example.id}: note quotation also occurs in the source; reassess attribution expectation`);
+   if(example.kind==='context-misattribution')assert.ok(example.learnerText.includes(assertion.text));
+  }
+  if(example.kind==='fabricated-quotation')assert.ok(example.quotedPhrases.length>0);
+  if(example.kind==='context-misattribution')assert.ok(example.contextAssertions.length>0);
+ }
 });

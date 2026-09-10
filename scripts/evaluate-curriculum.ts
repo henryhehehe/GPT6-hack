@@ -2,18 +2,19 @@ import {mkdir,readFile,writeFile,rename} from 'node:fs/promises';
 import {resolve,join} from 'node:path';
 import {execFileSync} from 'node:child_process';
 import {pathToFileURL} from 'node:url';
-import {runEvaluation,hash,type Report,type LearningTools} from './curriculum-evaluation/runner';
+import {runEvaluation,hash,type Report,type LearningTools,type Suite} from './curriculum-evaluation/runner';
 import {reportHtml} from './curriculum-evaluation/report';
 
 async function main(){
  const args=process.argv.slice(2),caseIds:string[]=[];
  let live=false,baseUrl='http://localhost:5173',outputRoot='artifacts/private/curriculum-evaluations';
+ let suite:Suite='formative';
  for(let i=0;i<args.length;i++){
   const arg=args[i];
-  if(arg==='--help'){console.log('Usage: node --import tsx scripts/evaluate-curriculum.ts [--live] [--case EXAMPLE_ID] [--base http://localhost:5173] [--out DIRECTORY]\nDefault: local preflight only; no HTTP or model calls. Live mode requires configured teacher access and AI allowance. Credentials are read only from CURRICULUM_EVAL_TEACHER_CODE or CURRICULUM_EVAL_CLASS_ID plus CURRICULUM_EVAL_TEACHER_TOKEN.');return;}
+  if(arg==='--help'){console.log('Usage: node --import tsx scripts/evaluate-curriculum.ts [--suite formative|historical] [--live] [--case EXAMPLE_ID] [--base http://localhost:5173] [--out DIRECTORY]\nDefault: formative suite, local preflight only; no HTTP or model calls. Live mode requires configured teacher access and AI allowance. Credentials are read only from CURRICULUM_EVAL_TEACHER_CODE or CURRICULUM_EVAL_CLASS_ID plus CURRICULUM_EVAL_TEACHER_TOKEN.');return;}
   if(arg==='--live'){live=true;continue;}
-  if(!['--case','--base','--out'].includes(arg)||!args[i+1]||args[i+1].startsWith('--'))throw new Error('Invalid arguments. Use --help for supported options.');
-  const value=args[++i];if(arg==='--case')caseIds.push(value);else if(arg==='--base')baseUrl=value;else outputRoot=value;
+  if(!['--suite','--case','--base','--out'].includes(arg)||!args[i+1]||args[i+1].startsWith('--'))throw new Error('Invalid arguments. Use --help for supported options.');
+  const value=args[++i];if(arg==='--suite'){if(value!=='formative'&&value!=='historical')throw new Error('Unknown evaluation suite.');suite=value;}else if(arg==='--case')caseIds.push(value);else if(arg==='--base')baseUrl=value;else outputRoot=value;
  }
  const classId=process.env.CURRICULUM_EVAL_CLASS_ID,teacherToken=process.env.CURRICULUM_EVAL_TEACHER_TOKEN;
  if(!!classId!==!!teacherToken)throw new Error('Supply both evaluation classroom ID and teacher token, or neither.');
@@ -35,7 +36,7 @@ async function main(){
   const module=await import(modulePath);
   if(typeof module.materials==='function'&&typeof module.sourceVersion==='function')learning=module;
  }catch{}}
- const report=await runEvaluation({baseUrl,live,caseIds,learning,teacherCode:process.env.CURRICULUM_EVAL_TEACHER_CODE,parent:classId&&teacherToken?{id:classId,teacherToken}:undefined,save});
+ const report=await runEvaluation({baseUrl,live,suite,caseIds,learning,teacherCode:process.env.CURRICULUM_EVAL_TEACHER_CODE,parent:classId&&teacherToken?{id:classId,teacherToken}:undefined,save});
  console.log(`${report.status}: ${report.results.filter(r=>r.status==='captured').length}/${report.results.length} responses captured; human review pending.\n${join(directory,'review.html')}\n${join(directory,'report.json')}`);
  if(report.error)console.log(report.error);
  if(report.status==='blocked'||report.status==='interrupted')process.exitCode=2;
