@@ -17,6 +17,7 @@ import {createHarborEnvironment} from './scene/harborEnvironment';
 import {HUMAN_SCALE,MARKET_COUNTER_Y} from './scene/humanScale';
 import {groundHeight} from './scene/walkGeometry';
 import {createCityDistrict} from './scene/cityDistrict';
+import {CITY_SURFACE_Y,createCityPavingGeometry} from './scene/cityPaving';
 import {loadTeachingCharacters} from './scene/teachingCharacters';
 import {loadStreetCrowd} from './scene/streetCrowd';
 import {CITY_OUTLINE,CITY_DESTINATIONS,DISTRICT_BUILDINGS} from './scene/cityLayout';
@@ -52,10 +53,10 @@ export default function WorldScene(props:Props){
   const land=new THREE.Group();scene.add(land);const district=createCityDistrict(land);
   // Layered cutaway island, with a harbor cut into the southern edge.
   const shape=new THREE.Shape();CITY_OUTLINE.forEach((p,i)=>{if(i===0)shape.moveTo(p.x,p.z);else shape.lineTo(p.x,p.z);});shape.closePath();
-  const island=mesh(new THREE.ExtrudeGeometry(shape,{depth:3.8,bevelEnabled:false,steps:1}),mats.edge,land);island.rotation.x=Math.PI/2;island.position.y=.84;
-  const top=mesh(new THREE.ShapeGeometry(shape),district.floor,land);top.rotation.x=Math.PI/2;top.position.y=.9;top.castShadow=false;
+  const island=mesh(new THREE.ExtrudeGeometry(shape,{depth:3.8,bevelEnabled:false,steps:1}),mats.edge,land);island.rotation.x=Math.PI/2;island.position.y=CITY_SURFACE_Y.island;
+  const top=mesh(new THREE.ShapeGeometry(shape),district.floor,land);top.rotation.x=Math.PI/2;top.position.y=CITY_SURFACE_Y.ground;top.castShadow=false;
   // Plaza, paved paths and raised library terrace.
-  box(land,27,.04,7,0,.91,0,mats.light);box(land,5,.04,34,1,.955,0,mats.light);
+  const paving=mesh(createCityPavingGeometry(),mats.light,land);paving.name='ContinuousCityPaving';paving.castShadow=false;
   box(land,29,1.8,18,0,.7,-12,mats.edge);box(land,29,.35,18,0,2.5,-12,mats.light);
   // Eight shallow treads match the navigable ramp from street to terrace.
   for(let i=0;i<8;i++)box(land,11,.95+(i+1)*1.9/8-.7,2.5/8,0,.7,-.5-(i+.5)*2.5/8,mats.light);
