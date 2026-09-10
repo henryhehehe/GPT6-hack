@@ -359,20 +359,129 @@
           1.4199999570846558
         ]
       }
+    },
+    {
+      "id": "scribe-tray",
+      "bytes": 49128,
+      "triangles": 1112,
+      "primitives": 5,
+      "bounds": {
+        "min": [
+          -0.3619999885559082,
+          0,
+          -0.20200000703334808
+        ],
+        "max": [
+          0.3619999885559082,
+          0.18000000715255737,
+          0.20200000703334808
+        ]
+      }
+    },
+    {
+      "id": "pigment-mortar",
+      "bytes": 55308,
+      "triangles": 1948,
+      "primitives": 4,
+      "bounds": {
+        "min": [
+          -0.2199999988079071,
+          0,
+          -0.2199999988079071
+        ],
+        "max": [
+          0.2199999988079071,
+          0.3934238851070404,
+          0.2199999988079071
+        ]
+      }
+    },
+    {
+      "id": "spindle-basket",
+      "bytes": 196912,
+      "triangles": 9604,
+      "primitives": 5,
+      "bounds": {
+        "min": [
+          -0.2667999863624573,
+          -0.0015145228244364262,
+          -0.2667999863624573
+        ],
+        "max": [
+          0.266702264547348,
+          0.6399999856948853,
+          0.2667999863624573
+        ]
+      }
+    },
+    {
+      "id": "folded-linen",
+      "bytes": 32940,
+      "triangles": 732,
+      "primitives": 3,
+      "bounds": {
+        "min": [
+          -0.33000001311302185,
+          0.001500000013038516,
+          -0.23499999940395355
+        ],
+        "max": [
+          0.34200000762939453,
+          0.1979999989271164,
+          0.27874162793159485
+        ]
+      }
+    },
+    {
+      "id": "oil-flask-stand",
+      "bytes": 75348,
+      "triangles": 2788,
+      "primitives": 4,
+      "bounds": {
+        "min": [
+          -0.26499998569488525,
+          0,
+          -0.14499999582767487
+        ],
+        "max": [
+          0.26499998569488525,
+          0.4519999921321869,
+          0.14499999582767487
+        ]
+      }
+    },
+    {
+      "id": "joiner-chest",
+      "bytes": 149176,
+      "triangles": 3120,
+      "primitives": 4,
+      "bounds": {
+        "min": [
+          -0.47286802530288696,
+          0,
+          -0.27250000834465027
+        ],
+        "max": [
+          0.47286802530288696,
+          0.7250000238418579,
+          0.25800004601478577
+        ]
+      }
     }
   ],
-  "bundleBytes": 1348096,
-  "uniqueTriangles": 41256,
-  "placedTriangles": 42578,
-  "drawCalls": 78,
-  "initialSceneModelBytes": 12065488,
-  "withAuthoredCharacterReserveBytes": 14001852,
+  "bundleBytes": 1899028,
+  "uniqueTriangles": 60560,
+  "placedTriangles": 61882,
+  "drawCalls": 103,
+  "initialSceneModelBytes": 12616420,
+  "withAuthoredCharacterReserveBytes": 14552784,
   "checks": [
-    "20 individual exports and bundle",
+    "26 individual exports and bundle",
     "Every model placed",
     "Exact Y-up bounds and finite vertices",
     "500 KB and 10k triangles per detail",
     "Actual footprints fit collisions",
+    "New tabletop props supported at all four footprint corners",
     "Independent stock activity",
     "Fallback on download failure",
     "Late-load resource disposal",

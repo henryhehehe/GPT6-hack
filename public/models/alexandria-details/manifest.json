@@ -461,6 +461,144 @@
       "license": "MIT",
       "creator": "Counterfactual Worlds",
       "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "scribe-tray",
+      "title": "Scribe writing tray",
+      "zone": "library",
+      "description": "Recessed compartmented tray, hollow ink cup, sharpened reeds and blank rolled sheets.",
+      "file": "scribe-tray.glb",
+      "bytes": 49128,
+      "blenderBounds": [
+        [
+          -0.3619999885559082,
+          -0.20200000703334808,
+          0.0
+        ],
+        [
+          0.3619999885559082,
+          0.20200000703334808,
+          0.18000000715255737
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "pigment-mortar",
+      "title": "Pigment mortar and pestle",
+      "zone": "market",
+      "description": "Thick hollow stone bowl, loose pigment and a polished resting pestle.",
+      "file": "pigment-mortar.glb",
+      "bytes": 55308,
+      "blenderBounds": [
+        [
+          -0.2199999988079071,
+          -0.2199999988079071,
+          0.0
+        ],
+        [
+          0.2199999988079071,
+          0.2199999988079071,
+          0.3934238851070404
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "spindle-basket",
+      "title": "Basket of wool and spindles",
+      "zone": "market",
+      "description": "Open woven basket, wound wool balls and drop spindles with pierced clay whorls.",
+      "file": "spindle-basket.glb",
+      "bytes": 196912,
+      "blenderBounds": [
+        [
+          -0.2667999863624573,
+          -0.2667999863624573,
+          -0.0015145228244364262
+        ],
+        [
+          0.266702264547348,
+          0.2667999863624573,
+          0.6399999856948853
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "folded-linen",
+      "title": "Folded linen stack",
+      "zone": "market",
+      "description": "Four folded cloth layers with rolled edges, stitched borders and short fringe.",
+      "file": "folded-linen.glb",
+      "bytes": 32940,
+      "blenderBounds": [
+        [
+          -0.33000001311302185,
+          -0.27874162793159485,
+          0.001500000013038516
+        ],
+        [
+          0.34200000762939453,
+          0.23499999940395355,
+          0.1979999989271164
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "oil-flask-stand",
+      "title": "Small oil flask stand",
+      "zone": "market",
+      "description": "Pegged wooden carrier with two hollow ceramic oil flasks and separate stoppers.",
+      "file": "oil-flask-stand.glb",
+      "bytes": 75348,
+      "blenderBounds": [
+        [
+          -0.26499998569488525,
+          -0.14499999582767487,
+          0.0
+        ],
+        [
+          0.26499998569488525,
+          0.14499999582767487,
+          0.4519999921321869
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "joiner-chest",
+      "title": "Joiner tool chest",
+      "zone": "market",
+      "description": "Open plank chest with raised lid, bronze hinges, pegs, hand tools and lifting handles.",
+      "file": "joiner-chest.glb",
+      "bytes": 149176,
+      "blenderBounds": [
+        [
+          -0.47286802530288696,
+          -0.25800004601478577,
+          0.0
+        ],
+        [
+          0.47286802530288696,
+          0.27250000834465027,
+          0.7250000238418579
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
     }
   ]
 }

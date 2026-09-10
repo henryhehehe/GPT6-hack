@@ -227,4 +227,73 @@ for i in range(n):
         mat='teal' if dark else 'ochre' if edge==0 else 'marble'
         box('Inset mosaic tessera',(-1.35+i*.1286,-1.35+j*.1286,.043),(.120,.120,.03),mat,0)
 
+start('scribe-tray','Scribe writing tray','library','Recessed compartmented tray, hollow ink cup, sharpened reeds and blank rolled sheets.')
+box('Tray base',(0,0,.025),(.72,.40,.05),'woodlight',.008)
+for x in [-.35,.35]:box('Tray side',(x,0,.073),(.024,.40,.096),'wood')
+for y in [-.19,.19]:box('Tray end',(0,y,.073),(.72,.024,.096),'wood')
+box('Compartment divider',(-.10,0,.070),(.02,.38,.09),'wood')
+lathe('Hollow ink cup',[(0,0),(.065,0),(.078,.045),(.070,.13),(.050,.13),(.054,.044),(0,.03)],(-.23,0,.05),'bronze',24)
+lathe('Ink surface',[(0,.086),(.052,.086)],(-.23,0,.05),'slip',24)
+for i in range(4):
+    x=.02+i*.066
+    rod('Cut reed pen',(x,-.15,.075),(x+.04,.12,.075),.009,'linen',6)
+    rod('Dark pen nib',(x,-.15,.075),(x-.002,-.18,.071),.006,'slip',4)
+anchor('InspectAnchor',(0,0,.16))
+
+start('pigment-mortar','Pigment mortar and pestle','market','Thick hollow stone bowl, loose pigment and a polished resting pestle.')
+lathe('Mortar bowl',[(0,0),(.12,0),(.18,.045),(.22,.18),(.215,.23),(.175,.23),(.16,.10),(.09,.055),(0,.055)],mat='marble',n=40)
+lathe('Ground ochre',[(0,.083),(.135,.083)],mat='ochre',n=32)
+rod('Stone pestle',(-.10,-.03,.09),(.18,.08,.37),.032,'limestone',16)
+sphere('Pestle grinding end',(-.10,-.03,.09),(.046,.046,.048),'limestone',16)
+for i in range(12):
+    a=i*2.4;r=.1*math.sqrt(i/12)
+    sphere('Pigment crumb',(r*math.cos(a),r*math.sin(a),.091),(.012,.01,.006),'clay',8)
+
+start('spindle-basket','Basket of wool and spindles','market','Open woven basket, wound wool balls and drop spindles with pierced clay whorls.')
+basket(s=.58)
+for i in range(4):
+    x=(-.09 if i%2 else .09);y=(-.08 if i<2 else .08)
+    sphere('Wool ball',(x,y,.32),(.096,.085,.09),'linen' if i%2 else 'teal',16)
+    for j in range(5):
+        a=j*.40
+        tube('Wool winding',[(x+.093*math.cos(t)*math.cos(a),y+.085*math.cos(t)*math.sin(a),.32+.093*math.sin(t)) for t in [k*math.tau/20 for k in range(21)]],.004,'rope',4)
+for x in [-.12,.08]:
+    rod('Spindle shaft',(x,0,.19),(x,0,.64),.011,'woodlight',8)
+    lathe('Clay whorl',[(.013,.40),(.052,.40),(.06,.425),(.047,.45),(.013,.45),(.013,.40)],(x,0,0),'clay',20)
+
+start('folded-linen','Folded linen stack','market','Four folded cloth layers with rolled edges, stitched borders and short fringe.')
+for layer in range(4):
+    z=.025+layer*.049;x=.012*(layer%2)
+    box('Soft folded cloth',(x,0,z),(.66,.47,.047),'linen' if layer%2 else 'teal',.019)
+    for y in [-.214,.214]:rod('Stitched cloth hem',(x-.3,y,z+.022),(x+.3,y,z+.022),.004,'ochre',4)
+    if layer==3:
+        for j in range(17):rod('Linen fringe',(-.29+j*.036,-.225,z),(-.29+j*.036,-.278,z-.01),.004,'linen',4)
+
+start('oil-flask-stand','Small oil flask stand','market','Pegged wooden carrier with two hollow ceramic oil flasks and separate stoppers.')
+box('Stand base',(0,0,.025),(.53,.29,.05),'woodlight',.008)
+for x in [-.24,.24]:box('Carrier cheek',(x,0,.15),(.035,.28,.28),'wood')
+for y in [-.13,.13]:box('Retaining rail',(0,y,.13),(.5,.025,.055),'woodlight',.006)
+for x in [-.115,.115]:
+    lathe('Oil flask',[(0,0),(.07,0),(.091,.10),(.08,.19),(.038,.235),(.033,.32),(.041,.33),(.041,.35),(.023,.35),(.024,.25),(.059,.19),(.07,.1),(0,.03)],(x,0,.05),'clay',32)
+    ring('Flask slip stripe',(x,0,.19),.087,.006,'slip',24,4)
+    lathe('Wooden stopper',[(0,0),(.027,0),(.027,.046),(.034,.05),(.034,.066),(0,.066)],(x,0,.386),'woodlight',16)
+
+start('joiner-chest','Joiner tool chest','market','Open plank chest with raised lid, bronze hinges, pegs, hand tools and lifting handles.')
+box('Chest bottom',(0,0,.035),(.80,.46,.07),'wood')
+for y in [-.23,.23]:
+    for j in range(3):box('Chest front plank',(0,y,.09+j*.09),(.82,.035,.084),'woodlight',.006)
+for x in [-.40,.40]:
+    for j in range(3):box('Chest end plank',(x,0,.09+j*.09),(.035,.46,.084),'wood',.006)
+    tube('Chest lifting handle',[(x, -.07,.23),(x+(.06 if x>0 else -.06),-.07,.19),(x+(.06 if x>0 else -.06),.07,.19),(x,.07,.23)],.014,'bronze',6)
+for j in range(5):box('Raised lid plank',(-.32+j*.16,.255,.51),(.153,.035,.43),'woodlight',.006)
+for x in [-.27,.27]:
+    box('Lid reinforcing batten',(x,.226,.51),(.048,.028,.40),'wood')
+    rod('Bronze hinge pin',(x-.05,.24,.295),(x+.05,.24,.295),.014,'bronze',8)
+    for y in [-.252,.252]:
+        for z in [.10,.27]:sphere('Wood joinery peg',(x,y,z),(.012,.006,.012),'endgrain',8)
+rod('Mallet in chest',(-.25,-.12,.085),(.15,.1,.10),.021,'woodlight',8)
+box('Mallet head',(.13,.09,.135),(.12,.21,.09),'wood',.012)
+rod('Chisel handle',(.22,-.14,.13),(.22,.02,.13),.022,'woodlight',8)
+rod('Bronze chisel blade',(.22,.02,.13),(.22,.18,.13),.01,'bronze',4)
+
 export_pack('alexandria-details','alexandria-details-contact-sheet','scripts/blender/build_alexandria_details.py')

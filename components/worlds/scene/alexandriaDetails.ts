@@ -25,7 +25,7 @@ export function loadAlexandriaDetails(parent: THREE.Object3D) {
     });
     geometries.forEach(g => g.dispose()); materials.forEach(m => m.dispose()); source = undefined;
   };
-  void new GLTFLoader().loadAsync('/models/alexandria-details/alexandria-details.glb?v=1').then(gltf => {
+  void new GLTFLoader().loadAsync('/models/alexandria-details/alexandria-details.glb?v=2').then(gltf => {
     source = gltf.scene;
     if (disposed) { disposeSource(); return; }
     for (const id of ALEXANDRIA_DETAIL_IDS) if (!source.getObjectByName(id)) throw new Error(`Missing detail: ${id}`);
