@@ -50,3 +50,7 @@ Eight runner tests cover offline preflight, missing integration/access, all 12 i
 The real CLI preflight prepared all 12 cases. A live invocation stopped before any HTTP or model call because the selected-citation module was not yet present in shared main; its integration was in progress in the separate reviewed release. The local environment presence check also found no configured pilot teacher code or AI allowance. Zero actual model responses were captured in this pass.
 
 Next: after the reviewed contract is integrated and the local pilot is configured, run a single case, inspect the report, then run the remaining predeclared cases and record human judgments. Do not reinterpret the blocked run or stub responses as model performance.
+
+## Integrated live follow-up
+
+The review integration subsequently ran all twelve cases against its actual built application using fresh synthetic learners and the documented local Node egress harness. All twelve responses were captured with the selected-citation contract intact. The exact output and implementation-agent observations are in [the integrated results report](../CURRICULUM-EVALUATION-RESULTS.md). This supersedes the integration-unavailable block for that isolated build; human review remains pending and production pilot configuration was not evaluated by this run.

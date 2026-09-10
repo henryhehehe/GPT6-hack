@@ -1,0 +1,867 @@
+{
+  "runId": "combined-0336ffee-7d87-4301-8ed6-ab7f17807a8f+03b89a43-d3d2-4c52-8ac7-28a70ad60543",
+  "startedAt": "2026-09-10T18:42:02.616Z",
+  "mode": "live",
+  "status": "completed",
+  "assessmentContract": "selected-citations-v1",
+  "packetVersion": "2026-09-10.3",
+  "fixtureHash": "347a6c141d5a657d595b77e3f7843e0cf8919fc7faaf1f397cb5fa6598453a97",
+  "sourceHashes": {
+    "austen-letter-01": "dac997ca53882d55310499501576ba68ba0a1b5a0c0b58ea18af59bb76d83dde",
+    "alexandria-01": "68d71a3196c95bee392d4f85c324d4594bba6a562eab5bf706a084e45d1b8ca3",
+    "odyssey-ix-01": "89f871d6b38622005000746f43e0a8c9ced57cccbc8a1911134c08fbd015beb1"
+  },
+  "results": [
+    {
+      "exampleId": "alexandria-01-supported",
+      "lessonId": "alexandria-01",
+      "kind": "supported",
+      "learnerText": "Trade loss could reduce scholar support if support depends on trade-linked revenue and no patron replaces it. Strabo’s description of shared scholarly facilities does not prove that funding link.",
+      "expectedFeedback": "Recognize the conditional mechanism and the distinction between Strabo’s supplied institutional description and the scenario assumption. Do not require agreement that closure is inevitable.",
+      "status": "captured",
+      "reviewFlags": [],
+      "humanReview": "pending",
+      "submission": {
+        "prediction": "I will examine the assigned source before deciding.",
+        "requestId": "56fcbcb2-6ad2-43f5-b4b7-a54f348edd4b",
+        "claim": "Trade loss could reduce scholar support if support depends on trade-linked revenue and no patron replaces it. Strabo’s description of shared scholarly facilities does not prove that funding link.",
+        "npc": "library",
+        "scenario": true,
+        "citations": [
+          {
+            "evidenceId": "strabo",
+            "material": "text",
+            "sourceVersion": "c3dc8e15a57305137a816fe26f5884b39756506dac5225cc3e543f0b9852c1e4",
+            "start": 0,
+            "end": 361,
+            "quote": "The Museum is also a part of the royal palaces; it has a public walk, an Exedra with seats, and a large house, in which is the common mess-hall of the men of learning who share the Museum. This group of men not only hold property in common, but also have a priest in charge of the Museum, who formerly was appointed by the kings, but is now appointed by Caesar.",
+            "relevance": "This is the supplied passage I am using for this answer."
+          },
+          {
+            "evidenceId": "funding",
+            "material": "text",
+            "sourceVersion": "340a564a7d25bbe37f0ff3acaae76ddd378fc6b9b622adce3f467383cdfe0cc8",
+            "start": 0,
+            "end": 165,
+            "quote": "Assume part of scholar support comes from trade-linked revenue. Losing it could reduce support. A new patron could replace that income, so closure is not inevitable.",
+            "relevance": "This is the supplied passage I am using for this answer."
+          }
+        ],
+        "reflection": ""
+      },
+      "durationMs": 8196,
+      "evaluation": {
+        "reply": "Provisionally, your argument earns all four points. You distinguish Strabo’s documentary support from the scenario’s assumed funding link and make the outcome conditional rather than inevitable.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": true,
+            "excerpt": "Trade loss could reduce scholar support",
+            "reason": "States a relevant conditional outcome."
+          },
+          {
+            "key": "evidence",
+            "earned": true,
+            "excerpt": "Strabo’s description of shared scholarly facilities does not prove that funding link.",
+            "reason": "Accurately identifies what Strabo describes and what his passage does not establish."
+          },
+          {
+            "key": "mechanism",
+            "earned": true,
+            "excerpt": "if support depends on trade-linked revenue and no patron replaces it",
+            "reason": "Connects trade loss to reduced support through an explicitly conditional revenue dependency, consistent with the funding assumption."
+          },
+          {
+            "key": "limitation",
+            "earned": true,
+            "excerpt": "Strabo’s description of shared scholarly facilities does not prove that funding link.",
+            "reason": "Identifies the documentary gap; the replacement-patron condition also acknowledges an alternative outcome."
+          }
+        ],
+        "evidenceIds": [
+          "strabo",
+          "funding"
+        ],
+        "nextQuestion": "What kind of evidence would help establish whether scholar support actually depended on trade-linked revenue?",
+        "score": 4,
+        "unlocked": true,
+        "responseId": "resp_0754459a61b5eee5006aa2fa2372ec87d287cfc94eafb5ca37",
+        "latencyMs": 8182
+      }
+    },
+    {
+      "exampleId": "alexandria-01-uncertain",
+      "lessonId": "alexandria-01",
+      "kind": "uncertain",
+      "learnerText": "The invented ledger shows fewer ships in this exercise, but I cannot infer an actual ancient budget from it. I would need evidence of how scholars were supported.",
+      "expectedFeedback": "Recognize the source limit; ask the learner to explain a conditional mechanism using the funding assumption. Uncertainty is defensible but does not by itself supply the mechanism.",
+      "status": "captured",
+      "reviewFlags": [],
+      "humanReview": "pending",
+      "submission": {
+        "prediction": "I will examine the assigned source before deciding.",
+        "requestId": "4c5720bd-dedb-43d6-af5a-4224e173df3e",
+        "claim": "The invented ledger shows fewer ships in this exercise, but I cannot infer an actual ancient budget from it. I would need evidence of how scholars were supported.",
+        "npc": "library",
+        "scenario": true,
+        "citations": [
+          {
+            "evidenceId": "ledger",
+            "material": "text",
+            "sourceVersion": "6ee24ae673a27d0d3f094bf7cef8656b7c8ee3e4599eed0cb63c92a26fea6f05",
+            "start": 0,
+            "end": 152,
+            "quote": "Before: 12 ships. After disruption: 4. These invented counts help compare the scenario. Fewer arrivals could mean fewer goods and lower merchant income.",
+            "relevance": "This is the supplied passage I am using for this answer."
+          },
+          {
+            "evidenceId": "strabo",
+            "material": "text",
+            "sourceVersion": "c3dc8e15a57305137a816fe26f5884b39756506dac5225cc3e543f0b9852c1e4",
+            "start": 0,
+            "end": 361,
+            "quote": "The Museum is also a part of the royal palaces; it has a public walk, an Exedra with seats, and a large house, in which is the common mess-hall of the men of learning who share the Museum. This group of men not only hold property in common, but also have a priest in charge of the Museum, who formerly was appointed by the kings, but is now appointed by Caesar.",
+            "relevance": "This is the supplied passage I am using for this answer."
+          }
+        ],
+        "reflection": ""
+      },
+      "durationMs": 7127,
+      "evaluation": {
+        "reply": "Your caution is well grounded: an invented ship count cannot establish an ancient budget. Provisionally, you’ve earned claim, evidence, and limitation credit. To develop the mechanism, explain conditionally how reduced trade might affect support rather than treating that link as documented.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": true,
+            "excerpt": "I cannot infer an actual ancient budget from it.",
+            "reason": "Makes a defensible, evidence-bounded judgment."
+          },
+          {
+            "key": "evidence",
+            "earned": true,
+            "excerpt": "The invented ledger shows fewer ships in this exercise",
+            "reason": "Accurately interprets the ledger as a hypothetical prop showing decreased arrivals, not an ancient record."
+          },
+          {
+            "key": "mechanism",
+            "earned": false,
+            "excerpt": "",
+            "reason": "Does not yet connect reduced trade to scholar support through an explicitly conditional funding relationship."
+          },
+          {
+            "key": "limitation",
+            "earned": true,
+            "excerpt": "I would need evidence of how scholars were supported.",
+            "reason": "Identifies the missing evidence needed to connect ship arrivals with scholarly funding."
+          }
+        ],
+        "evidenceIds": [
+          "ledger"
+        ],
+        "nextQuestion": "Under what funding assumptions would fewer ships reduce scholar support?",
+        "score": 3,
+        "unlocked": false,
+        "responseId": "resp_094f016209bcc45e006aa2fa2b7be887d2a8953c884a5efa03",
+        "latencyMs": 7117
+      }
+    },
+    {
+      "exampleId": "alexandria-01-fabricated-quotation",
+      "lessonId": "alexandria-01",
+      "kind": "fabricated-quotation",
+      "learnerText": "Strabo writes, “Twelve ships paid every scholar’s salary,” so losing eight ships proves the Library closed.",
+      "expectedFeedback": "Identify the invented quotation and the unsupported closure claim. Check against the supplied source wording and invite a corrected conditional argument.",
+      "status": "captured",
+      "reviewFlags": [],
+      "humanReview": "pending",
+      "submission": {
+        "prediction": "I will examine the assigned source before deciding.",
+        "requestId": "928e261d-ac7f-44d4-9f86-9d3ae377ca31",
+        "claim": "Strabo writes, “Twelve ships paid every scholar’s salary,” so losing eight ships proves the Library closed.",
+        "npc": "library",
+        "scenario": true,
+        "citations": [
+          {
+            "evidenceId": "strabo",
+            "material": "text",
+            "sourceVersion": "c3dc8e15a57305137a816fe26f5884b39756506dac5225cc3e543f0b9852c1e4",
+            "start": 0,
+            "end": 361,
+            "quote": "The Museum is also a part of the royal palaces; it has a public walk, an Exedra with seats, and a large house, in which is the common mess-hall of the men of learning who share the Museum. This group of men not only hold property in common, but also have a priest in charge of the Museum, who formerly was appointed by the kings, but is now appointed by Caesar.",
+            "relevance": "This is the supplied passage I am using for this answer."
+          }
+        ],
+        "reflection": ""
+      },
+      "durationMs": 7232,
+      "evaluation": {
+        "reply": "Provisionally, your conclusion exceeds the packet. That quotation is absent from Strabo: he describes the Museum’s communal arrangements, not ship-funded salaries. Ship counts are invented props; trade-linked funding is an assumption. Neither establishes Library closure.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": false,
+            "excerpt": "losing eight ships proves the Library closed",
+            "reason": "The assertion treats a hypothetical outcome as proven history."
+          },
+          {
+            "key": "evidence",
+            "earned": false,
+            "excerpt": "Twelve ships paid every scholar’s salary",
+            "reason": "This quotation does not appear in the selected Strabo passage."
+          },
+          {
+            "key": "mechanism",
+            "earned": false,
+            "excerpt": "so losing eight ships proves the Library closed",
+            "reason": "No warranted conditional link connects trade, scholar support, and closure."
+          },
+          {
+            "key": "limitation",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No uncertainty or alternative explanation is acknowledged."
+          }
+        ],
+        "evidenceIds": [
+          "strabo"
+        ],
+        "nextQuestion": "How would your conclusion change if a new patron replaced lost trade-linked support?",
+        "score": 0,
+        "unlocked": false,
+        "responseId": "resp_0b6c2b7b8cb1f351006aa2fa32ad8087d2b977ab66603d4c13",
+        "latencyMs": 7225
+      }
+    },
+    {
+      "exampleId": "alexandria-01-out-of-range",
+      "lessonId": "alexandria-01",
+      "kind": "out-of-range",
+      "learnerText": "Which precise year did the Library burn down, and which building in this scene was destroyed?",
+      "expectedFeedback": "Explain that neither the packet nor the symbolic scene establishes a destruction date or building identification. Return to the supplied institutional description and scenario assumptions.",
+      "status": "captured",
+      "reviewFlags": [],
+      "humanReview": "pending",
+      "submission": {
+        "prediction": "I will examine the assigned source before deciding.",
+        "requestId": "dc3c2fac-2e5a-429c-953d-5e11fb711417",
+        "claim": "Which precise year did the Library burn down, and which building in this scene was destroyed?",
+        "npc": "library",
+        "scenario": true,
+        "citations": [],
+        "reflection": ""
+      },
+      "durationMs": 6540,
+      "evaluation": {
+        "reply": "This packet establishes neither a precise burning year nor which building was destroyed. Strabo describes the Mouseion’s scholarly community, not a destruction. The illustrated building is not an established reconstruction of the Library. Your question is useful, but it is not yet an argument to assess.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": false,
+            "excerpt": "",
+            "reason": "Provisionally, a question rather than a claim."
+          },
+          {
+            "key": "evidence",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No selected evidence is used."
+          },
+          {
+            "key": "mechanism",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No conditional reasoning is offered."
+          },
+          {
+            "key": "limitation",
+            "earned": false,
+            "excerpt": "",
+            "reason": "The question does not yet state an evidentiary limitation."
+          }
+        ],
+        "evidenceIds": [],
+        "nextQuestion": "What can Strabo establish about scholar support?",
+        "score": 0,
+        "unlocked": false,
+        "responseId": "resp_0e3c49696b5f88ee006aa2fa39ef6487d2bb3b1c351dadba75",
+        "latencyMs": 6521
+      }
+    },
+    {
+      "exampleId": "odyssey-ix-01-supported",
+      "lessonId": "odyssey-ix-01",
+      "kind": "supported",
+      "learnerText": "Ulysses invites admiration when he says he “schemed and schemed” to save himself and his companions. The account presents careful planning, but it is also his own story about his cleverness.",
+      "expectedFeedback": "Recognize the connection between repeated wording, planning, and self-presentation. Invite a competing reading rather than demanding unqualified admiration.",
+      "status": "captured",
+      "reviewFlags": [],
+      "humanReview": "pending",
+      "submission": {
+        "prediction": "I will examine the assigned source before deciding.",
+        "requestId": "c921d2be-10d5-46c2-9302-a9b43a1c499f",
+        "claim": "Ulysses invites admiration when he says he “schemed and schemed” to save himself and his companions. The account presents careful planning, but it is also his own story about his cleverness.",
+        "npc": "library",
+        "scenario": false,
+        "citations": [
+          {
+            "evidenceId": "1727-420-0",
+            "material": "text",
+            "sourceVersion": "a2904786a1df28dc4ce5f4abfaecb800271e0bc17e8e28906f10dc18ab87888c",
+            "start": 0,
+            "end": 578,
+            "quote": "“As for myself I kept on puzzling to think how I could best save my own life and those of my companions; I schemed and schemed, as one who knows that his life depends upon it, for the danger was very great. In the end I deemed that this plan would be the best; the male sheep were well grown, and carried a heavy black fleece, so I bound them noiselessly in threes together, with some of the withies on which the wicked monster used to sleep. There was to be a man under the middle sheep, and the two on either side were to cover him, so that there were three sheep to each man.",
+            "relevance": "This is the supplied passage I am using for this answer."
+          }
+        ],
+        "reflection": ""
+      },
+      "durationMs": 6758,
+      "evaluation": {
+        "reply": "Provisionally, your reading supports admiration while recognizing self-presentation. You connect his planning to saving others without treating his account as neutral. A closer look at the repeated verb could sharpen your analysis.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": true,
+            "excerpt": "Ulysses invites admiration",
+            "reason": "Offers a clear interpretation."
+          },
+          {
+            "key": "evidence",
+            "earned": true,
+            "excerpt": "“schemed and schemed” to save himself and his companions",
+            "reason": "Accurately interprets the selected passage."
+          },
+          {
+            "key": "mechanism",
+            "earned": true,
+            "excerpt": "The account presents careful planning",
+            "reason": "Connects the quoted scheming to admirable deliberation."
+          },
+          {
+            "key": "limitation",
+            "earned": true,
+            "excerpt": "but it is also his own story about his cleverness",
+            "reason": "Identifies self-presentation as an alternative reading."
+          }
+        ],
+        "evidenceIds": [
+          "1727-420-0"
+        ],
+        "nextQuestion": "How does repeating “schemed” shape your impression of his effort?",
+        "score": 4,
+        "unlocked": true,
+        "responseId": "resp_06dee3c3c9689340006aa2fa408e5087d29d64ceead7fd022a",
+        "latencyMs": 6746
+      }
+    },
+    {
+      "exampleId": "odyssey-ix-01-uncertain",
+      "lessonId": "odyssey-ix-01",
+      "kind": "uncertain",
+      "learnerText": "Calling himself “renowned among mankind for all manner of subtlety” is self-praise. It tells me how Ulysses presents himself; it is not independent proof that everyone admired him.",
+      "expectedFeedback": "Recognize the narrator/source distinction. Ask for a decision in another supplied card to develop or complicate the interpretation.",
+      "status": "captured",
+      "reviewFlags": [],
+      "humanReview": "pending",
+      "submission": {
+        "prediction": "I will examine the assigned source before deciding.",
+        "requestId": "495a0b2c-a4f2-4e9f-87e5-5bc1ce5f0a5e",
+        "claim": "Calling himself “renowned among mankind for all manner of subtlety” is self-praise. It tells me how Ulysses presents himself; it is not independent proof that everyone admired him.",
+        "npc": "library",
+        "scenario": false,
+        "citations": [
+          {
+            "evidenceId": "1727-391-0",
+            "material": "text",
+            "sourceVersion": "7fd8853d5cb7fb83f4fe730fec7e1be658e735624aa312060314686b785bba24",
+            "start": 0,
+            "end": 504,
+            "quote": "“Firstly, then, I will tell you my name that you too may know it, and one day, if I outlive this time of sorrow, may become my guests though I live so far away from all of you. I am Ulysses son of Laertes, renowned among mankind for all manner of subtlety, so that my fame ascends to heaven. I live in Ithaca, where there is a high mountain called Neritum, covered with forests; and not far from it there is a group of islands very near to one another—Dulichium, Same, and the wooded island of Zacynthus.",
+            "relevance": "This is the supplied passage I am using for this answer."
+          }
+        ],
+        "reflection": ""
+      },
+      "durationMs": 8370,
+      "evaluation": {
+        "reply": "Provisionally, your reading makes a strong distinction: Ulysses’ praise of himself shows self-presentation, not independently established admiration. You connect the wording to its speaker and acknowledge what it cannot prove.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": true,
+            "excerpt": "is self-praise.",
+            "reason": "Offers a clear interpretation."
+          },
+          {
+            "key": "evidence",
+            "earned": true,
+            "excerpt": "renowned among mankind for all manner of subtlety",
+            "reason": "Accurately interprets the selected wording."
+          },
+          {
+            "key": "mechanism",
+            "earned": true,
+            "excerpt": "It tells me how Ulysses presents himself",
+            "reason": "Connects first-person praise to self-presentation."
+          },
+          {
+            "key": "limitation",
+            "earned": true,
+            "excerpt": "it is not independent proof that everyone admired him.",
+            "reason": "Identifies a warranted uncertainty about reception."
+          }
+        ],
+        "evidenceIds": [
+          "1727-391-0"
+        ],
+        "nextQuestion": "Could self-praise still invite admiration without proving that others admired him?",
+        "score": 4,
+        "unlocked": true,
+        "responseId": "resp_01a0bc9ad154064d006aa2fa4748fc87d2bffcb8ddfcbe3606",
+        "latencyMs": 8361
+      }
+    },
+    {
+      "exampleId": "odyssey-ix-01-fabricated-quotation",
+      "lessonId": "odyssey-ix-01",
+      "kind": "fabricated-quotation",
+      "learnerText": "He says “I escaped without a single plan,” which proves his success was accidental.",
+      "expectedFeedback": "Flag the quotation as absent from the assigned evidence. Ask the learner to reread the planning passage and revise using actual wording.",
+      "status": "captured",
+      "reviewFlags": [],
+      "humanReview": "pending",
+      "submission": {
+        "prediction": "I will examine the assigned source before deciding.",
+        "requestId": "fdf1963e-4b0c-429f-bbc5-44d5ecaad63e",
+        "claim": "He says “I escaped without a single plan,” which proves his success was accidental.",
+        "npc": "library",
+        "scenario": false,
+        "citations": [
+          {
+            "evidenceId": "1727-420-0",
+            "material": "text",
+            "sourceVersion": "a2904786a1df28dc4ce5f4abfaecb800271e0bc17e8e28906f10dc18ab87888c",
+            "start": 0,
+            "end": 578,
+            "quote": "“As for myself I kept on puzzling to think how I could best save my own life and those of my companions; I schemed and schemed, as one who knows that his life depends upon it, for the danger was very great. In the end I deemed that this plan would be the best; the male sheep were well grown, and carried a heavy black fleece, so I bound them noiselessly in threes together, with some of the withies on which the wicked monster used to sleep. There was to be a man under the middle sheep, and the two on either side were to cover him, so that there were three sheep to each man.",
+            "relevance": "This is the supplied passage I am using for this answer."
+          }
+        ],
+        "reflection": ""
+      },
+      "durationMs": 7530,
+      "evaluation": {
+        "reply": "Provisionally, your interpretation is clear, but the quotation is absent from the assigned passage. Ulysses instead says, “I schemed and schemed.” You can question his self-presentation, but that requires analysis of the actual wording.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": true,
+            "excerpt": "his success was accidental",
+            "reason": "Clear interpretive claim."
+          },
+          {
+            "key": "evidence",
+            "earned": false,
+            "excerpt": "",
+            "reason": "The purported quotation is not in the selected passage."
+          },
+          {
+            "key": "mechanism",
+            "earned": false,
+            "excerpt": "",
+            "reason": "The inference relies on absent wording, not close analysis."
+          },
+          {
+            "key": "limitation",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No uncertainty or alternative reading is considered."
+          }
+        ],
+        "evidenceIds": [],
+        "nextQuestion": "Does “I schemed and schemed” establish cleverness, or emphasize how Ulysses wants to appear?",
+        "score": 1,
+        "unlocked": false,
+        "responseId": "resp_003752fae14b997e006aa2fa4fc72887d2b540352bf5a0b0dc",
+        "latencyMs": 7515
+      }
+    },
+    {
+      "exampleId": "odyssey-ix-01-out-of-range",
+      "lessonId": "odyssey-ix-01",
+      "kind": "out-of-range",
+      "learnerText": "Does the ending of Book XXIV prove this narrator is always reliable?",
+      "expectedFeedback": "State that Book XXIV is outside this packet. Invite analysis of the supplied introduction, assumed name, or escape plan without supplying later events.",
+      "status": "captured",
+      "reviewFlags": [],
+      "humanReview": "pending",
+      "submission": {
+        "prediction": "I will examine the assigned source before deciding.",
+        "requestId": "b583fb73-cdf3-4346-806d-e34099d37555",
+        "claim": "Does the ending of Book XXIV prove this narrator is always reliable?",
+        "npc": "library",
+        "scenario": false,
+        "citations": [],
+        "reflection": ""
+      },
+      "durationMs": 6551,
+      "evaluation": {
+        "reply": "We cannot test that using this packet: Book XXIV is outside our assigned excerpts. Book IX lets us examine Ulysses’ self-presentation, but cannot establish that he is always reliable. Provisionally, your question opens an inquiry rather than making a supported argument.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": false,
+            "excerpt": "",
+            "reason": "A question, not yet an interpretive claim."
+          },
+          {
+            "key": "evidence",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No selected passage supports the question."
+          },
+          {
+            "key": "mechanism",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No textual detail is analyzed."
+          },
+          {
+            "key": "limitation",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No alternative reading or explicit uncertainty is developed."
+          }
+        ],
+        "evidenceIds": [],
+        "nextQuestion": "Which Book IX detail might support both admiration and skepticism toward Ulysses’ self-presentation?",
+        "score": 0,
+        "unlocked": false,
+        "responseId": "resp_08c946d8cccb9666006aa2fa57578087d2a9367c5874abbfba",
+        "latencyMs": 6540
+      }
+    },
+    {
+      "exampleId": "austen-letter-01-supported",
+      "lessonId": "austen-letter-01",
+      "kind": "supported",
+      "learnerText": "Darcy admits he was “desirous of believing her indifferent,” then insists his judgment was impartial. The tension gives a reader reason to examine his argument carefully, without proving that everything in the letter is false.",
+      "expectedFeedback": "Recognize the analysis of an admission and a claim to impartiality. Accept qualified skepticism without treating it as automatic rejection.",
+      "status": "captured",
+      "reviewFlags": [],
+      "humanReview": "pending",
+      "submission": {
+        "prediction": "I will examine the assigned source before deciding.",
+        "requestId": "a318b257-c62c-4e66-855d-c65649205e4c",
+        "claim": "Darcy admits he was “desirous of believing her indifferent,” then insists his judgment was impartial. The tension gives a reader reason to examine his argument carefully, without proving that everything in the letter is false.",
+        "npc": "library",
+        "scenario": false,
+        "citations": [
+          {
+            "evidenceId": "1342-1193-2835",
+            "material": "text",
+            "sourceVersion": "59e0a96b7d1d25037d458270f0c72296213d9698286536dc03d64eec14c3209b",
+            "start": 0,
+            "end": 541,
+            "quote": "That I was desirous of believing her indifferent is certain; but I will venture to say that my investigations and decisions are not usually influenced by my hopes or fears. I did not believe her to be indifferent because I wished it; I believed it on impartial conviction, as truly as I wished it in reason. My objections to the marriage were not merely those which I last night acknowledged to have required the utmost force of passion to put aside in my own case; the want of connection could not be so great an evil to my friend as to me.",
+            "relevance": "This is the supplied passage I am using for this answer."
+          }
+        ],
+        "reflection": ""
+      },
+      "durationMs": 8541,
+      "evaluation": {
+        "reply": "Provisionally, your reading earns all four points: you notice a revealing tension without treating it as proof of wholesale dishonesty. That balance keeps scrutiny distinct from rejection.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": true,
+            "excerpt": "The tension gives a reader reason to examine his argument carefully",
+            "reason": "Offers a clear, passage-bounded interpretation."
+          },
+          {
+            "key": "evidence",
+            "earned": true,
+            "excerpt": "desirous of believing her indifferent",
+            "reason": "Accurately identifies Darcy’s admitted preference."
+          },
+          {
+            "key": "mechanism",
+            "earned": true,
+            "excerpt": "then insists his judgment was impartial. The tension gives a reader reason to examine his argument carefully",
+            "reason": "Connects conflicting self-descriptions to critical scrutiny."
+          },
+          {
+            "key": "limitation",
+            "earned": true,
+            "excerpt": "without proving that everything in the letter is false",
+            "reason": "Allows that questionable impartiality need not invalidate every assertion."
+          }
+        ],
+        "evidenceIds": [
+          "1342-1193-2835"
+        ],
+        "nextQuestion": "Could Darcy’s admission of his preference also make him seem candid?",
+        "score": 4,
+        "unlocked": true,
+        "responseId": "resp_0f72e9c07f03676f006aa2f9fb212487d2b125810234997eb8",
+        "latencyMs": 8502
+      }
+    },
+    {
+      "exampleId": "austen-letter-01-uncertain",
+      "lessonId": "austen-letter-01",
+      "kind": "uncertain",
+      "learnerText": "Darcy’s appeal to Colonel Fitzwilliam offers a way to check his account, but the packet gives me Darcy’s appeal, not Fitzwilliam’s own testimony. I would suspend judgment on the claims that need that witness.",
+      "expectedFeedback": "Recognize the difference between an offered witness and independent corroboration. Do not require the learner to know testimony or later chapters absent from this packet.",
+      "status": "captured",
+      "reviewFlags": [],
+      "humanReview": "pending",
+      "submission": {
+        "prediction": "I will examine the assigned source before deciding.",
+        "requestId": "7275b986-6ba8-45c4-a6bb-fb5c61772b75",
+        "claim": "Darcy’s appeal to Colonel Fitzwilliam offers a way to check his account, but the packet gives me Darcy’s appeal, not Fitzwilliam’s own testimony. I would suspend judgment on the claims that need that witness.",
+        "npc": "library",
+        "scenario": false,
+        "citations": [
+          {
+            "evidenceId": "1342-1193-13451",
+            "material": "text",
+            "sourceVersion": "7dab4ad622551e8aaac784b4d6ee699381af6e3897b9646f18cf18a33f4e99c8",
+            "start": 0,
+            "end": 637,
+            "quote": "For the truth of everything here related, I can appeal more particularly to the testimony of Colonel Fitzwilliam, who, from our near relationship and constant intimacy, and still more as one of the executors of my father’s will, has been unavoidably acquainted with every particular of these transactions. If your abhorrence of me should make my assertions valueless, you cannot be prevented by the same cause from confiding in my cousin; and that there may be the possibility of consulting him, I shall endeavour to find some opportunity of putting this letter in your hands in the course of the morning. I will only add, God bless you.",
+            "relevance": "This is the supplied passage I am using for this answer."
+          }
+        ],
+        "reflection": ""
+      },
+      "durationMs": 7268,
+      "evaluation": {
+        "reply": "Provisionally, your cautious reading is well supported: an offered witness is not independent testimony. You explain why the appeal permits checking without settling the account’s truth.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": true,
+            "excerpt": "I would suspend judgment on the claims that need that witness.",
+            "reason": "Clear, evidence-bounded judgment."
+          },
+          {
+            "key": "evidence",
+            "earned": true,
+            "excerpt": "the packet gives me Darcy’s appeal, not Fitzwilliam’s own testimony",
+            "reason": "Accurately distinguishes appeal from corroboration."
+          },
+          {
+            "key": "mechanism",
+            "earned": true,
+            "excerpt": "Darcy’s appeal to Colonel Fitzwilliam offers a way to check his account",
+            "reason": "Connects textual strategy to verification."
+          },
+          {
+            "key": "limitation",
+            "earned": true,
+            "excerpt": "not Fitzwilliam’s own testimony",
+            "reason": "Identifies uncertainty limiting acceptance."
+          }
+        ],
+        "evidenceIds": [
+          "1342-1193-13451"
+        ],
+        "nextQuestion": "How might Fitzwilliam’s intimacy with Darcy both strengthen and complicate this appeal?",
+        "score": 4,
+        "unlocked": true,
+        "responseId": "resp_0f79ac25effd0737006aa2fa5dd5b087d296c8f404699e7fce",
+        "latencyMs": 7257
+      }
+    },
+    {
+      "exampleId": "austen-letter-01-fabricated-quotation",
+      "lessonId": "austen-letter-01",
+      "kind": "fabricated-quotation",
+      "learnerText": "Colonel Fitzwilliam writes, “I certify every detail of Darcy’s letter,” so we have two independent witnesses.",
+      "expectedFeedback": "Identify the absent quotation and false attribution. Ask the learner to distinguish Darcy’s reference to his cousin from a supplied statement by that cousin.",
+      "status": "captured",
+      "reviewFlags": [],
+      "humanReview": "pending",
+      "submission": {
+        "prediction": "I will examine the assigned source before deciding.",
+        "requestId": "78a68f4e-7154-47a7-a121-5177cf34249d",
+        "claim": "Colonel Fitzwilliam writes, “I certify every detail of Darcy’s letter,” so we have two independent witnesses.",
+        "npc": "library",
+        "scenario": false,
+        "citations": [
+          {
+            "evidenceId": "1342-1193-13451",
+            "material": "text",
+            "sourceVersion": "7dab4ad622551e8aaac784b4d6ee699381af6e3897b9646f18cf18a33f4e99c8",
+            "start": 0,
+            "end": 637,
+            "quote": "For the truth of everything here related, I can appeal more particularly to the testimony of Colonel Fitzwilliam, who, from our near relationship and constant intimacy, and still more as one of the executors of my father’s will, has been unavoidably acquainted with every particular of these transactions. If your abhorrence of me should make my assertions valueless, you cannot be prevented by the same cause from confiding in my cousin; and that there may be the possibility of consulting him, I shall endeavour to find some opportunity of putting this letter in your hands in the course of the morning. I will only add, God bless you.",
+            "relevance": "This is the supplied passage I am using for this answer."
+          }
+        ],
+        "reflection": ""
+      },
+      "durationMs": 9163,
+      "evaluation": {
+        "reply": "Provisionally, this needs revision: the quoted certification is absent from the packet. Darcy offers Fitzwilliam as someone Elizabeth could consult; Fitzwilliam does not speak here. An offered witness is not independent confirmation.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": false,
+            "excerpt": "",
+            "reason": "The two-witness conclusion rests on an invented quotation."
+          },
+          {
+            "key": "evidence",
+            "earned": false,
+            "excerpt": "",
+            "reason": "The passage contains Darcy’s appeal, not Fitzwilliam’s certification."
+          },
+          {
+            "key": "mechanism",
+            "earned": false,
+            "excerpt": "",
+            "reason": "The reasoning confuses possible verification with actual corroboration."
+          },
+          {
+            "key": "limitation",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No uncertainty or alternative reading is acknowledged."
+          }
+        ],
+        "evidenceIds": [
+          "1342-1193-13451"
+        ],
+        "nextQuestion": "How might offering a witness strengthen Darcy’s persuasion without proving his account?",
+        "score": 0,
+        "unlocked": false,
+        "responseId": "resp_0a516f084c53138a006aa2fa6520e487d2b1f032eccd646872",
+        "latencyMs": 9153
+      }
+    },
+    {
+      "exampleId": "austen-letter-01-out-of-range",
+      "lessonId": "austen-letter-01",
+      "kind": "out-of-range",
+      "learnerText": "How does the final marriage prove that every statement in this letter is accurate?",
+      "expectedFeedback": "Do not use the ending to adjudicate this selected Chapter 35 packet. Return to the letter’s assertions, offered support, and rhetorical purpose.",
+      "status": "captured",
+      "reviewFlags": [],
+      "humanReview": "pending",
+      "submission": {
+        "prediction": "I will examine the assigned source before deciding.",
+        "requestId": "d6922a29-601f-4fc9-b4d2-221cf6b0a834",
+        "claim": "How does the final marriage prove that every statement in this letter is accurate?",
+        "npc": "library",
+        "scenario": false,
+        "citations": [],
+        "reflection": ""
+      },
+      "durationMs": 8685,
+      "evaluation": {
+        "reply": "It wouldn’t, by itself: a marriage cannot verify every assertion in a letter. Later events also fall outside our assigned packet. Your question raises a useful concern, but provisionally it is not yet a passage-supported argument.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": false,
+            "excerpt": "",
+            "reason": "Asks a question rather than offering an interpretation."
+          },
+          {
+            "key": "evidence",
+            "earned": false,
+            "excerpt": "",
+            "reason": "Uses no selected passage."
+          },
+          {
+            "key": "mechanism",
+            "earned": false,
+            "excerpt": "",
+            "reason": "Does not analyze textual details."
+          },
+          {
+            "key": "limitation",
+            "earned": false,
+            "excerpt": "",
+            "reason": "Does not explicitly develop uncertainty or an alternative reading."
+          }
+        ],
+        "evidenceIds": [],
+        "nextQuestion": "What remains unverified when Darcy offers a witness rather than that witness’s testimony?",
+        "score": 0,
+        "unlocked": false,
+        "responseId": "resp_08c94b121ebef230006aa2fa6e4e8087d292987448a31a49f5",
+        "latencyMs": 8617
+      }
+    }
+  ],
+  "notice": "Twelve real synthetic responses captured in two bounded local runs. Agent observations are not an independent human review; human review remains pending. No classroom efficacy or grading reliability is established.",
+  "finishedAt": "2026-09-10T18:44:06.899Z",
+  "execution": {
+    "runIds": [
+      "0336ffee-7d87-4301-8ed6-ab7f17807a8f",
+      "03b89a43-d3d2-4c52-8ac7-28a70ad60543"
+    ],
+    "applicationRuntimeCommit": "d2e13b2",
+    "transport": "Actual built Worker, ephemeral local D1/R2, test-only Node outbound relay to the actual configured Astra API. No production endpoint or actual learner data.",
+    "requests": 12,
+    "retries": 0
+  },
+  "sourceRuns": [
+    {
+      "runId": "0336ffee-7d87-4301-8ed6-ab7f17807a8f",
+      "startedAt": "2026-09-10T18:42:02.616Z",
+      "mode": "live",
+      "status": "completed",
+      "assessmentContract": "selected-citations-v1",
+      "packetVersion": "2026-09-10.3",
+      "fixtureHash": "347a6c141d5a657d595b77e3f7843e0cf8919fc7faaf1f397cb5fa6598453a97",
+      "sourceHashes": {
+        "austen-letter-01": "dac997ca53882d55310499501576ba68ba0a1b5a0c0b58ea18af59bb76d83dde"
+      },
+      "notice": "Synthetic examples only. Captured means a response was recorded, not that its interpretation or grading is correct. Human review is required; no learning gains or model reliability are established.",
+      "finishedAt": "2026-09-10T18:42:11.459Z",
+      "localCheckout": {
+        "gitCommit": "d99cfe842bb2751cc42400d085c07fb45ed6422e",
+        "files": {
+          "app/api/classroom/route.ts": "e455256bfbc32c742a6e98616b2bfd777a2768c42e729a0b0133aea44bc00d7a",
+          "lib/server.ts": "84d128dc92dbab46ae250e1089eea9937047f2eac5b5b4bd4ea2a2baf1dc4839",
+          "lib/world.ts": "24d315daab3bfb227bbfd9baf912065713fc22add9554736e1557fe1595195df",
+          "lib/curriculum.ts": "0c382b0544000247b1019be373d54d5abd7f6dc952a8b4c9c7999772ffd35f3d",
+          "lib/learning.ts": "1f6baddda1e830cd4412aea04a97a722ad7589c009cfab2a1a46765d42184f0f"
+        },
+        "note": "Local source fingerprint only; not independent proof of the server build."
+      }
+    },
+    {
+      "runId": "03b89a43-d3d2-4c52-8ac7-28a70ad60543",
+      "startedAt": "2026-09-10T18:42:43.072Z",
+      "mode": "live",
+      "status": "completed",
+      "assessmentContract": "selected-citations-v1",
+      "packetVersion": "2026-09-10.3",
+      "fixtureHash": "347a6c141d5a657d595b77e3f7843e0cf8919fc7faaf1f397cb5fa6598453a97",
+      "sourceHashes": {
+        "alexandria-01": "68d71a3196c95bee392d4f85c324d4594bba6a562eab5bf706a084e45d1b8ca3",
+        "odyssey-ix-01": "89f871d6b38622005000746f43e0a8c9ced57cccbc8a1911134c08fbd015beb1",
+        "austen-letter-01": "dac997ca53882d55310499501576ba68ba0a1b5a0c0b58ea18af59bb76d83dde"
+      },
+      "notice": "Synthetic examples only. Captured means a response was recorded, not that its interpretation or grading is correct. Human review is required; no learning gains or model reliability are established.",
+      "finishedAt": "2026-09-10T18:44:06.899Z",
+      "localCheckout": {
+        "gitCommit": "d99cfe842bb2751cc42400d085c07fb45ed6422e",
+        "files": {
+          "app/api/classroom/route.ts": "e455256bfbc32c742a6e98616b2bfd777a2768c42e729a0b0133aea44bc00d7a",
+          "lib/server.ts": "84d128dc92dbab46ae250e1089eea9937047f2eac5b5b4bd4ea2a2baf1dc4839",
+          "lib/world.ts": "24d315daab3bfb227bbfd9baf912065713fc22add9554736e1557fe1595195df",
+          "lib/curriculum.ts": "0c382b0544000247b1019be373d54d5abd7f6dc952a8b4c9c7999772ffd35f3d",
+          "lib/learning.ts": "1f6baddda1e830cd4412aea04a97a722ad7589c009cfab2a1a46765d42184f0f"
+        },
+        "note": "Local source fingerprint only; not independent proof of the server build."
+      }
+    }
+  ]
+}
