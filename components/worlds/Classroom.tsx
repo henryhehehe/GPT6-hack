@@ -34,7 +34,7 @@ const api=async<T=unknown,>(body:Record<string,unknown>,auth?:string)=>{const r=
 async function loadClassroom(c:Credentials):Promise<Snapshot>{const r=await fetch(`/api/classroom?id=${encodeURIComponent(c.id)}&studentId=${encodeURIComponent(c.studentId)}`,{headers:{Authorization:`Bearer ${c.teacherToken||c.studentToken}`}});const d=await r.json();if(!r.ok)throw new Error((d as {error:string}).error);return d as Snapshot;}
 export default function Classroom({initialLessonId,publicTrial=false}:{initialLessonId?:string;publicTrial?:boolean}={}){
 
- const [illustrated,setIllustrated]=useState(true);
+ const [illustrated,setIllustrated]=useState(false);
  const [insightTab,setInsightTab]=useState('consequences');
  const [notesOpen,setNotesOpen]=useState(false);
  const [kitView,setKitView]=useState<'plan'|'report'|null>(null);
@@ -65,7 +65,7 @@ export default function Classroom({initialLessonId,publicTrial=false}:{initialLe
  const {draft,update:updateDraft,read:readDraft,warning:draftWarning}=useLearningDraft(credentials&&snapshot?.id===credentials.id?`cw-learning:${credentials.id}:${credentials.studentId}`:null,JSON.stringify(world.evidence));
  function enterSession(c:Credentials,preserveOperation=false){
   sessionRef.current=c;if(!preserveOperation)operationRef.current++;ws.current?.close();ws.current=null;pendingRef.current=null;
-  setCredentials(c);setSnapshot(null);setRole(c.teacherToken?'teacher':'student');setTeacherTab('lesson');setInsightTab('consequences');setIllustrated(true);setBusy('');setError('');setNotice('');setSource(lesson);setChange(initialWorld.intervention);setInstruction('Create a source-grounded challenge that asks the learner to consider another explanation.');setFocus(null);setEvidenceId(null);setCharacter(null);setStudentPanel(null);setScenario(false);setPatch(null);setSteering('');setSteerText('');setSelectedStudentId('');setInvitationUrl('');setInspect(false);setBuilderOpen(false);setCatalogOpen(false);setCatalogLessonId(null);setKitView(null);setReturning(null);setJoin(null);setName('');setFocusRevision(v=>v+1);
+  setCredentials(c);setSnapshot(null);setRole(c.teacherToken?'teacher':'student');setTeacherTab('lesson');setInsightTab('consequences');setIllustrated(false);setBusy('');setError('');setNotice('');setSource(lesson);setChange(initialWorld.intervention);setInstruction('Create a source-grounded challenge that asks the learner to consider another explanation.');setFocus(null);setEvidenceId(null);setCharacter(null);setStudentPanel(null);setScenario(false);setPatch(null);setSteering('');setSteerText('');setSelectedStudentId('');setInvitationUrl('');setInspect(false);setBuilderOpen(false);setCatalogOpen(false);setCatalogLessonId(null);setKitView(null);setReturning(null);setJoin(null);setName('');setFocusRevision(v=>v+1);
   rememberAccess(c);
  }
  const {url:settingImage}=useSettingImage(credentials,world.settingImage?.draftId);
@@ -87,7 +87,7 @@ export default function Classroom({initialLessonId,publicTrial=false}:{initialLe
   const observer=new ResizeObserver(position);observer.observe(header);position();
   return()=>observer.disconnect();
  },[role]);
- useEffect(()=>{setIllustrated(true);},[world.settingImage?.draftId]);
+ useEffect(()=>{setIllustrated(false);},[world.settingImage?.draftId]);
  useEffect(()=>{
   const query=new URLSearchParams(location.search),invite=query.get('join'),id=query.get('class');
   if(invite&&id){setJoin({id,token:invite});setRole('student');try{const saved=readClassroomAccess(localStorage,id);if(saved&&!saved.teacherToken)setReturning(saved);}catch{}return;}
