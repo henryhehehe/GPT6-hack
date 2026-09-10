@@ -37,7 +37,7 @@ export default function GeneratedWorldScene(props:Props){
   const marker=mesh(new THREE.OctahedronGeometry(.45),gold,p.x-1.5,1.3,p.z+.5);marker.userData.zone=id;markers.push(marker);
   const body=mesh(new THREE.CapsuleGeometry(.3,.8,4,8),new THREE.MeshStandardMaterial({color:cast[id].color}),p.x+1.3,.95,p.z+.5);body.userData.npc=id;const head=mesh(new THREE.SphereGeometry(.26,12,8),stone,p.x+1.3,1.75,p.z+.5);head.userData.npc=id;
  }
- for(let i=0;i<22;i++){const a=i/22*Math.PI*2,x=Math.cos(a)*23,z=Math.sin(a)*23;mesh(new THREE.CylinderGeometry(.12,.22,2,8),dark,x,1,z);mesh(new THREE.IcosahedronGeometry(setting==='garden'?2:1.25,1),green,x,3,z);}
+ if(setting!=='coast')for(let i=0;i<22;i++){const a=i/22*Math.PI*2,x=Math.cos(a)*23,z=Math.sin(a)*23;mesh(new THREE.CylinderGeometry(.12,.22,2,8),dark,x,1,z);mesh(new THREE.IcosahedronGeometry(setting==='garden'?2:1.25,1),green,x,3,z);}
  const additions=externalPlacements(setting),external=loadExternalModels(scene,additions);
  const placements=settingPlacements(setting),models=loadSettingAssets(scene,placements),nav=createSettingNavigation(placements,additions.filter(p=>p.solid).map(placementBounds));
  const walk=createExplorer(camera,orbit,renderer.domElement,{mode:setWalking,nearby:setNearby,inspect:id=>latest.current.onSelect(id)},nav);explorer.current=walk;
