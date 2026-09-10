@@ -22,6 +22,7 @@ import { characters } from '@/lib/characters';
 import {createHarborEnvironment} from './scene/harborEnvironment';
 import {HUMAN_SCALE,MARKET_COUNTER_Y} from './scene/humanScale';
 import {groundHeight} from './scene/walkGeometry';
+import {createLibraryFallback,addLibraryReadingLight} from './scene/libraryInterior';
 import {createCityDistrict} from './scene/cityDistrict';
 import {CITY_SURFACE_Y,createCityPavingGeometry} from './scene/cityPaving';
 import {loadTeachingCharacters} from './scene/teachingCharacters';
@@ -70,14 +71,7 @@ export default function WorldScene(props:Props){
   box(land,29,1.8,18,0,.7,-12,mats.edge);box(land,29,.35,18,0,2.5,-12,mats.light);
   // Eight shallow treads match the navigable ramp from street to terrace.
   for(let i=0;i<8;i++)box(land,11,.95+(i+1)*1.9/8-.7,2.5/8,0,.7,-.5-(i+.5)*2.5/8,mats.light);
-  function temple(x:number,z:number,w=19,d=10,h=7){const g=new THREE.Group();g.position.set(x,2.9,z);land.add(g);box(g,w,h,d,0,0,0,mats.light);box(g,w+2,.55,d+2,0,h,0,mats.light);box(g,w+3,.35,d+3,0,h+.6,0,mats.edge);
-   for(let i=0;i<8;i++){const cx=-w/2+.9+i*(w-1.8)/7;cylinder(g,.38,h,cx,0,d/2+1.25);box(g,.95,.3,.95,cx,h-.25,d/2+1.25,mats.light);box(g,.9,.25,.9,cx,0,d/2+1.25,mats.light);}
-   const roof=mesh(new THREE.CylinderGeometry(0,(w+3)/1.7,2.4,3),mats.roof,g,0,h+1.7,0);roof.rotation.z=Math.PI/2;roof.rotation.y=Math.PI/2;roof.scale.set(.9,.65,1);
-   // The triangular pediment is a real mesh, not a flat image.
-   const tri=new THREE.Shape();tri.moveTo(-w/2-1,h+.55);tri.lineTo(0,h+3.9);tri.lineTo(w/2+1,h+.55);tri.closePath();mesh(new THREE.ExtrudeGeometry(tri,{depth:d+2,bevelEnabled:false}),mats.light,g,0,0,-d/2-1);
-   const door=box(g,2.8,4.7,.25,0,0,d/2+.13,mats.dark);return {group:g,door};
-  }
-  const library=temple(0,-13);const door=library.door;
+  const library=createLibraryFallback(land);addLibraryReadingLight(land);
   // All surrounding homes now share the detailed, four-sided district model.
   // Keep this empty replacement list for the rest of the optional asset kit.
   const houses:THREE.Group[]=[];
@@ -108,7 +102,7 @@ export default function WorldScene(props:Props){
   cylinder(courtyardFallback,1.35,.25,-9,.95,0,mats.stone,8);cylinder(courtyardFallback,1.05,.5,-9,1.2,0,mats.light,24);cylinder(courtyardFallback,.91,.025,-9,1.7,0,mats.teal,24);cylinder(courtyardFallback,.18,.8,-9,1.45,0,mats.light);cylinder(courtyardFallback,.57,.12,-9,2.25,0,mats.light,24);
   for(const x of [-12,-6]){box(courtyardFallback,.68,.16,2.35,x,1.29,0,mats.light);for(const z of [-.83,.83])box(courtyardFallback,.46,.34,.28,x,.95,z,mats.stone);}
   for(const x of [-12,-4,5])for(const z of [16,25]){cylinder(courtyardFallback,.13,.38,x-1.14,1.28,z,mats.stone);cylinder(courtyardFallback,.21,.12,x-1.14,1.66,z,mats.light);}
-  const scenery=loadAlexandriaKit(land,{houses,palms,stalls,ships,goods:[...goods,...harborCrates],decor:[courtyardFallback]});
+  const scenery=loadAlexandriaKit(land,{houses,palms,stalls,ships,goods:[...goods,...harborCrates],decor:[courtyardFallback,library.furnishings]});
   const details=loadAlexandriaDetails(land);
   const external=loadExternalModels(land,ALEXANDRIA_EXTERNAL);
   const loadingTracker=trackSceneLoading([landmarks.loaded,scenery.loaded,details.loaded,teachingCharacters.loaded,crowd.loaded,external.ready],()=>setLoading(false),()=>setSceneRendered(true));
@@ -148,7 +142,7 @@ export default function WorldScene(props:Props){
    ships.forEach((s,i)=>{s.position.y=.25+(reduced?0:Math.sin(t*1.1+i)*waterBob);s.rotation.z=reduced?0:Math.sin(t*.7+i)*waterBob*.16;const visible=visibleAtActivity(p.world,'harbor',i,ships.length,blend);s.visible=visible;if(i>=2&&!reduced){s.position.x=[13,-20,23,-4][i-2]+Math.sin(t*.055+i)*2.5;}});
    if(!scenery.ready){goods.forEach((g,i)=>g.visible=visibleAtActivity(p.world,'market',i,goods.length,blend));harborCrates.forEach((g,i)=>g.visible=visibleAtActivity(p.world,'harbor',i,harborCrates.length,blend));}
    const harbor=p.world.nodes.find(n=>n.id==='harbor')?.activity??.22,market=p.world.nodes.find(n=>n.id==='market')?.activity??.35;scenery.update(blend,harbor,market,t,reduced);details.update(blend,harbor,market);external.update(blend,harbor,market);
-   landmarks.update(p.unlocked,dt,reduced);door.scale.x=THREE.MathUtils.damp(door.scale.x,p.unlocked?.06:1,4,dt);hint.visible=!!p.hint;if(p.hint)hint.position.set(...alexandriaHintPositions[p.hint.zone]);hint.rotation.y=reduced?0:Math.sin(t)*.06;
+   landmarks.update(p.unlocked,dt,reduced);hint.visible=!!p.hint;if(p.hint)hint.position.set(...alexandriaHintPositions[p.hint.zone]);hint.rotation.y=reduced?0:Math.sin(t)*.06;
    ringMats.forEach(m=>m.color.set(p.scenario?'#ffc574':'#6adeca'));pathMat.opacity=blend*.38;path.visible=blend>.01;particle.visible=blend>.2;if(!reduced)particle.position.copy(curve.getPoint((t*.13)%1));flame.scale.setScalar(1);
    explorer.update(dt);if(!explorer.walking)controls.update();
    for(const npc of npcs){const id=npc.userData.character as ZoneId,button=characterButtons.current[id];if(button){labelPoint.copy(npc.position);labelPoint.y+=2.4;const distance=camera.position.distanceTo(labelPoint);labelPoint.project(camera);const visible=labelPoint.z>-1&&labelPoint.z<1&&Math.abs(labelPoint.x)<.95&&Math.abs(labelPoint.y)<.85&&(explorer.walking?distance<14:distance<32);button.style.display=visible?'flex':'none';if(visible){button.style.left=`${(labelPoint.x+1)*.5*el.clientWidth}px`;button.style.top=`${(1-labelPoint.y)*.5*el.clientHeight}px`;}}}

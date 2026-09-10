@@ -27,7 +27,9 @@ export function loadLandmarks(
           object.receiveShadow = true;
         }
         if (object.name === 'ArchiveDoorLeft' || object.name === 'ArchiveDoorRight') {
-          doors.push({ object, angle: object.rotation.y, direction: object.name.endsWith('Left') ? -1 : 1 });
+          const direction=object.name.endsWith('Left')?-1:1,angle=object.rotation.y;
+          doors.push({object,angle,direction});
+          object.rotation.y=angle+direction*Math.PI*.46;
         }
       });
       parent.add(scene);
@@ -39,14 +41,15 @@ export function loadLandmarks(
     }
   }
 
-  const loaded=Promise.all([load('library', '/models/library.glb?v=1', [0, 2.9, -13], libraryFallback),
+  const loaded=Promise.all([load('library', '/models/library.glb?v=interior-2', [0, 2.9, -13], libraryFallback),
    load('lighthouse', '/models/lighthouse.glb?v=1', [-24, 1, 16], lighthouseFallback)]);
 
   return {
     loaded,
     update(unlocked: boolean, dt: number, reducedMotion: boolean) {
       for (const { object, angle, direction } of doors) {
-        const target = angle + (unlocked ? direction * Math.PI * .44 : 0);
+        // Exploration is always open; earning the archive reward opens the leaves a little further.
+        const target=angle+direction*Math.PI*(unlocked?.49:.46);
         object.rotation.y = reducedMotion ? target : THREE.MathUtils.damp(object.rotation.y, target, 4, dt);
       }
     },

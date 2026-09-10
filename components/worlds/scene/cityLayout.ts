@@ -24,6 +24,7 @@ export const CITY_DESTINATIONS=[
  {name:'Working quay',point:{x:-23,z:5},yaw:-Math.PI/2},
  {name:'Market stalls',point:{x:17,z:16},yaw:Math.atan2(4,6)},
  {name:'Library forecourt',point:{x:0,z:3.8},yaw:0},
+ {name:'Library reading hall',point:{x:0,z:-14},yaw:Math.PI},
  {name:'Harbor promenade',point:{x:-30,z:5},yaw:-Math.PI*.65},
  {name:'Merchant quarter',point:{x:-43,z:-28},yaw:0},
  {name:'Scholars’ garden',point:{x:0,z:-40},yaw:0},

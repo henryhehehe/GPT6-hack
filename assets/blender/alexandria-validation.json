@@ -310,11 +310,11 @@
     }
   ],
   "bundleBytes": 6158180,
-  "initialSceneModelBytes": 10717392,
+  "initialSceneModelBytes": 10747440,
   "uniqueTriangles": 213838,
   "meshPrimitives": 111,
   "placedKitDrawCalls": 256,
-  "placedKitTriangles": 610416,
+  "placedKitTriangles": 648624,
   "checks": [
     "28 individual GLBs and bundle loaded",
     "Y-up and exact vertex bounds",

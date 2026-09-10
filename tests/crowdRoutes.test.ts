@@ -11,7 +11,8 @@ test('crowd has 28 separated adult positions with independent activity zones',()
 });
 test('every crowd route follows traversable terrain without crossing obstacles or terrace walls',()=>{
  for(const route of CROWD_ROUTES){assert.ok(safeCrowdSegment(route.points[0],route.points[1]));assert.ok(safeCrowdSegment(route.points[1],route.points[0]));}
- assert.equal(safeCrowdSegment({x:0,z:0},{x:0,z:-13}),false);
+ assert.equal(safeCrowdSegment({x:0,z:0},{x:0,z:-13}),true);
+ assert.equal(safeCrowdSegment({x:0,z:0},{x:0,z:-20}),false); // Rear hall wall remains solid.
 });
 
 test('citizens populate the lesson market and forecourt rather than only distant back streets',()=>{

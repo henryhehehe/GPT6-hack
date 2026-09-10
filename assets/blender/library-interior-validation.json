@@ -1,0 +1,21 @@
+{
+  "id": "library",
+  "file": "public/models/library.glb",
+  "bytes": 3711084,
+  "sha256": "41a125666409f99cbd9f05cad5b90cc413db97a5ef7266d1a02b5f97d4e70bbd",
+  "triangles": 56822,
+  "source": "scripts/blender/build_landmarks.py",
+  "editableSource": "assets/blender/library-interior.blend",
+  "license": "MIT",
+  "description": "Original interpretive Alexandrian scholarly hall with a real central doorway, eight entrance treads and furnished reading space. Not an archaeological reconstruction.",
+  "verification": {
+    "focusedTestsPassed": 5,
+    "doorwayRayChecks": 9,
+    "floorHeight": 4,
+    "browserQA": false,
+    "offlineViews": [
+      "library-entry.png",
+      "library-reading-hall.png"
+    ]
+  }
+}

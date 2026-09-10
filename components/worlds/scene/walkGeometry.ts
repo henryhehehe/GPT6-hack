@@ -1,4 +1,5 @@
 import {CITY_SHORELINE,DISTRICT_BLOCKERS} from './cityLayout';
+import {LIBRARY_OBSTACLES,libraryGroundHeight} from './libraryInterior';
 /** Pure navigation geometry in the scene's Three.js X/Z coordinates. */
 import { ALEXANDRIA_DETAIL_OBSTACLES } from './alexandriaDetailLayout';
 export type WalkPoint = { x: number; z: number };
@@ -22,7 +23,7 @@ type Bounds = readonly [minX: number, maxX: number, minZ: number, maxZ: number];
 const buildings: readonly Bounds[] = [
   ...DISTRICT_BLOCKERS,
   ...ALEXANDRIA_DETAIL_OBSTACLES.map(obstacle => obstacle.bounds),
-  [-13.5, 13.5, -20.1, -3.9], // Library: do not walk through its closed geometry.
+  ...LIBRARY_OBSTACLES, // The portico and central reading hall are enterable.
   [-25.2, -16.8, -17.2, -8.8],
   [17.8, 26.2, -19.2, -8.8],
   [19.3, 26.7, -6.2, .2],
@@ -67,6 +68,7 @@ export function isWalkable(point: WalkPoint, radius = .28): boolean {
 }
 
 export function groundHeight(point: WalkPoint): number {
+  const interior=libraryGroundHeight(point);if(interior!==undefined)return interior;
   // Smooth the six stair treads into a ramp, keeping the camera comfortable.
   if (Math.abs(point.x) <= 5.5 && point.z <= -.5 && point.z >= -3) {
     return .95 + (-.5 - point.z) / 2.5 * 1.9;

@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {LIBRARY_INTERIOR_PLACEMENTS} from './libraryInterior';
 import {addAlexandriaWind,applyAlexandriaWindDepth} from './alexandriaWind';
 import {HUMAN_SCALE,MARKET_COUNTER_Y,LIBRARY_DESK_Y} from './humanScale';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
@@ -15,8 +16,9 @@ type AssetId = typeof ALEXANDRIA_ASSET_IDS[number];
 type Placement = { id: AssetId; at: [number, number, number]; scale?: number | [number, number, number]; turn?: number };
 
 // Large additions have matching conservative footprints in walkGeometry.ts.
-// Portico furniture stays within the library's existing blocked footprint.
+// Library furniture has individual footprints, leaving the central reading aisle open.
 export const ALEXANDRIA_STATIC_PLACEMENTS: Placement[] = [
+  ...LIBRARY_INTERIOR_PLACEMENTS,
   { id: 'courtyard-fountain', at: [-9, .96, 0] },
   { id: 'marble-bench', at: [-12, .96, 0], scale:[1,HUMAN_SCALE.benchVertical,1], turn: Math.PI / 2 },
   { id: 'marble-bench', at: [-6, .96, 0], scale:[1,HUMAN_SCALE.benchVertical,1], turn: -Math.PI / 2 },

@@ -6,6 +6,7 @@ import bpy, math, random, sys, os
 from mathutils import Vector
 random.seed(49)
 OUTPUT = sys.argv[sys.argv.index('--')+1] if '--' in sys.argv else '/private/tmp/cw-landmarks/output'
+LIBRARY_ONLY = '--library-only' in sys.argv
 os.makedirs(OUTPUT, exist_ok=True)
 bpy.ops.object.select_all(action='SELECT'); bpy.ops.object.delete(use_global=False)
 M={}
@@ -98,12 +99,28 @@ def root(name):
     ROOT=bpy.data.objects.new(name,None); bpy.context.collection.objects.link(ROOT); return ROOT
 
 library=root('AlexandrianScholarlyComplex_Interpretation')
-for i in range(4): box('Broad processional stair',(0,-1.0-i*.25,.15+i*.25),(27-i*.55,16.2-i*.55,.30),'warm limestone',.06)
+# The center opening and staircase are real geometry; no concealed backdrop or solid ramp volume.
+# Blender Y becomes negative Three.js Z; world origin is (0,2.9,-13).
+box('Reading hall floor',(0,.5,.55),(27,13.2,1.1),'warm limestone',.015)
+for x in [-9.5,9.5]: box('Portico side platform',(x,-7.6,.55),(8,3,1.1),'warm limestone',.015)
+# Eight shallow treads continue the existing terrace flight, ending at world y=4.
+for i in range(8):
+    height=(i+1)*1.15/8
+    box('Enterable portico tread',(0,-10+(i+.5)*3.9/8,-.05+height/2),(11,3.9/8,height),'cream marble',.008)
+
 # Main hall and two slightly projecting flanking study wings.
 masonry_wall('Rear hall wall',(0,5.45),20.6,6.2,.5)
 masonry_wall('West hall wall',(-9.8,.6),9.7,6.2,.45,'y')
 masonry_wall('East hall wall',(9.8,.6),9.7,6.2,.45,'y')
-box('Hall recessed interior',(0,-2.35,4.3),(17.6,.3,6.4),'recess')
+# Split the facade around a full-height central passage. The old solid backdrop
+# made animated doors decorative only. Warm plaster also lights the interior naturally.
+for x in [-5.11,5.11]: box('Hall entrance wall',(x,-2.35,4.3),(7.38,.3,6.4),'warm limestone')
+box('Hall entrance overdoor',(0,-2.35,6.5),(2.84,.3,2.0),'warm limestone')
+# A fine inlaid border and low skirting give the newly accessible hall human scale.
+for x in [-8.9,8.9]: box('Interior floor border',(x,1.5,1.112),(.16,7.1,.024),'stone shadow')
+for y in [-1.8,4.9]: box('Interior floor border',(0,y,1.112),(17.9,.16,.024),'stone shadow')
+for x in [-9.53,9.53]: box('Interior stone skirting',(x,.7,1.24),(.12,8.9,.28),'cream marble')
+
 for x in [-6.5,-3.5,3.5,6.5]:
     box('Portico wall pier',(x,-2.6,4.15),(2.6,.55,6.1),'warm limestone',.04)
     box('Scroll niche shadow',(x,-2.90,4.45),(1.26,.025,2.3),'recess')
@@ -132,7 +149,7 @@ for x in [-9.78,9.78]:
     for i in range(31):box('Side cornice dentil',(x,-6.2+i*.4,8.26),(.25,.19,.18),'cream marble')
 gabled_roof(0,-.2,8.48,20.4,13.4,2.45)
 # Central bronze archive doors retain separate object names and origin at hinges.
-box('Archive stone threshold',(0,-3.04,1.22),(3.05,1.1,.22),'cream marble')
+box('Archive flush threshold',(0,-3.04,1.105),(3.05,1.1,.01),'cream marble')
 for x in [-1.46,1.46]:box('Archive jamb',(x,-2.95,3.20),(.25,.46,4.2),'cream marble')
 box('Archive lintel',(0,-2.95,5.38),(3.25,.53,.32),'cream marble')
 for side,name in [(-1,'ArchiveDoorLeft'),(1,'ArchiveDoorRight')]:
@@ -158,44 +175,44 @@ for x in [-7,7]:
     cylinder('Bronze brazier bowl',(x,-7,2.03),.20,.25,'bronze',24,top=.36)
 
 ROOT=None
-lighthouse=root('PharosInspiredLighthouse_Interpretation')
-for zz,ww in [(.18,5.8),(.48,5.4),(.76,5.05)]:box('Lighthouse stepped footing',(0,0,zz),(ww,ww,.30),'warm limestone',.045)
-# Tapered square masonry shaft with visible course bands and recessed openings.
-def tapered_square(z0,z1,w0,w1,name):
-    verts=[(x*w,y*w,z) for z,w in [(z0,w0/2),(z1,w1/2)] for x,y in [(-1,-1),(1,-1),(1,1),(-1,1)]]
-    return mesh(name,verts,[(0,3,2,1),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7),(4,5,6,7)],'warm limestone')
-tapered_square(.92,7.6,4.5,3.62,'Tapered square lower Pharos tier')
-for i in range(12):
-    zz=1+i*.55;ww=4.5-(zz-.92)/(7.6-.92)*.88
-    box('Lower shaft masonry course',(0,0,zz),(ww+.02,ww+.02,.045),'stone shadow')
-for zz in [2.45,4.25,6.05]:
-    ww=4.5-(zz-.92)/6.68*.88
+if not LIBRARY_ONLY:
+    lighthouse=root('PharosInspiredLighthouse_Interpretation')
+    for zz,ww in [(.18,5.8),(.48,5.4),(.76,5.05)]:box('Lighthouse stepped footing',(0,0,zz),(ww,ww,.30),'warm limestone',.045)
+    # Tapered square masonry shaft with visible course bands and recessed openings.
+    def tapered_square(z0,z1,w0,w1,name):
+        verts=[(x*w,y*w,z) for z,w in [(z0,w0/2),(z1,w1/2)] for x,y in [(-1,-1),(1,-1),(1,1),(-1,1)]]
+        return mesh(name,verts,[(0,3,2,1),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7),(4,5,6,7)],'warm limestone')
+    tapered_square(.92,7.6,4.5,3.62,'Tapered square lower Pharos tier')
+    for i in range(12):
+        zz=1+i*.55;ww=4.5-(zz-.92)/(7.6-.92)*.88
+        box('Lower shaft masonry course',(0,0,zz),(ww+.02,ww+.02,.045),'stone shadow')
+    for zz in [2.45,4.25,6.05]:
+        ww=4.5-(zz-.92)/6.68*.88
+        for side in [-1,1]:
+            box('Narrow lower tier opening',(0,side*(ww/2+.01),zz),(.32,.028,.86),'recess')
+            box('Narrow side tier opening',(side*(ww/2+.01),0,zz),(.028,.32,.86),'recess')
+    box('Base entry shadow',(0,-2.26,1.70),(.9,.045,1.55),'recess')
+    for zz,w,h in [(7.64,4.10,.28),(7.87,4.48,.18)]:box('First terrace cornice',(0,0,zz),(w,w,h),'cream marble',.03)
     for side in [-1,1]:
-        box('Narrow lower tier opening',(0,side*(ww/2+.01),zz),(.32,.028,.86),'recess')
-        box('Narrow side tier opening',(side*(ww/2+.01),0,zz),(.028,.32,.86),'recess')
-box('Base entry shadow',(0,-2.26,1.70),(.9,.045,1.55),'recess')
-for zz,w,h in [(7.64,4.10,.28),(7.87,4.48,.18)]:box('First terrace cornice',(0,0,zz),(w,w,h),'cream marble',.03)
-for side in [-1,1]:
-    for i in range(7):
-        box('Lower balcony crenel',(side*2.06,-1.8+i*.6,8.08),(.30,.29,.40),'cream marble')
-        box('Lower balcony crenel',(-1.8+i*.6,side*2.06,8.08),(.29,.30,.40),'cream marble')
-cylinder('Octagonal middle tier',(0,0,10.05),1.71,4.15,'warm limestone',8,top=1.40)
-for zz in [8.4,9.0,9.6,10.2,10.8,11.4]:
-    rr=1.71-(zz-7.975)/4.15*.31
-    cylinder('Octagonal stone course',(0,0,zz),rr+.014,.043,'stone shadow',8)
-for a in [i*math.pi/2 for i in range(4)]:
-    rr=1.49;o=box('Middle tier slit',(rr*math.sin(a),-rr*math.cos(a),10.55),(.24,.032,1.10),'recess');o.rotation_euler[2]=a
-cylinder('Octagonal balcony',(0,0,12.16),1.80,.26,'cream marble',8)
-cylinder('Lantern base',(0,0,12.40),1.17,.25,'cream marble',32)
-for i in range(8):
-    a=i*math.tau/8;column(math.cos(a)*.97,math.sin(a)*.97,12.53,height=1.53,r=.105)
-cylinder('Lantern basin',(0,0,12.8),.48,.24,'bronze',24,top=.62)
-cylinder('Lantern golden reflector',(0,0,13.22),.30,.72,'bronze',24,top=.18)
-cylinder('Lantern entablature',(0,0,14.13),1.32,.21,'cream marble',32)
-cylinder('Conical lantern roof',(0,0,14.49),1.39,.59,'aged turquoise',32,top=.12)
-cylinder('Roof finial',(0,0,15.00),.095,.58,'bronze',16,top=.025)
-ROOT=None
-
+        for i in range(7):
+            box('Lower balcony crenel',(side*2.06,-1.8+i*.6,8.08),(.30,.29,.40),'cream marble')
+            box('Lower balcony crenel',(-1.8+i*.6,side*2.06,8.08),(.29,.30,.40),'cream marble')
+    cylinder('Octagonal middle tier',(0,0,10.05),1.71,4.15,'warm limestone',8,top=1.40)
+    for zz in [8.4,9.0,9.6,10.2,10.8,11.4]:
+        rr=1.71-(zz-7.975)/4.15*.31
+        cylinder('Octagonal stone course',(0,0,zz),rr+.014,.043,'stone shadow',8)
+    for a in [i*math.pi/2 for i in range(4)]:
+        rr=1.49;o=box('Middle tier slit',(rr*math.sin(a),-rr*math.cos(a),10.55),(.24,.032,1.10),'recess');o.rotation_euler[2]=a
+    cylinder('Octagonal balcony',(0,0,12.16),1.80,.26,'cream marble',8)
+    cylinder('Lantern base',(0,0,12.40),1.17,.25,'cream marble',32)
+    for i in range(8):
+        a=i*math.tau/8;column(math.cos(a)*.97,math.sin(a)*.97,12.53,height=1.53,r=.105)
+    cylinder('Lantern basin',(0,0,12.8),.48,.24,'bronze',24,top=.62)
+    cylinder('Lantern golden reflector',(0,0,13.22),.30,.72,'bronze',24,top=.18)
+    cylinder('Lantern entablature',(0,0,14.13),1.32,.21,'cream marble',32)
+    cylinder('Conical lantern roof',(0,0,14.49),1.39,.59,'aged turquoise',32,top=.12)
+    cylinder('Roof finial',(0,0,15.00),.095,.58,'bronze',16,top=.025)
+    ROOT=None
 def descendants(r): return [o for o in bpy.data.objects if o.parent==r and o.type=='MESH']
 def consolidate(r):
     groups={}
@@ -213,7 +230,11 @@ def export(r,name):
     bpy.ops.object.select_all(action='DESELECT');r.select_set(True)
     for o in descendants(r):o.select_set(True)
     bpy.ops.export_scene.gltf(filepath=os.path.join(OUTPUT,name+'.glb'),export_format='GLB',use_selection=True,export_yup=True,export_apply=True)
-for r,n in [(library,'library'),(lighthouse,'lighthouse')]:consolidate(r);export(r,n)
+for r,n in ([(library,'library')] if LIBRARY_ONLY else [(library,'library'),(lighthouse,'lighthouse')]):consolidate(r);export(r,n)
+if LIBRARY_ONLY:
+    bpy.ops.wm.save_as_mainfile(filepath=os.path.join(OUTPUT,'library-interior.blend'))
+    print('LIBRARY_INTERIOR_OUTPUT',OUTPUT)
+    sys.exit(0)
 # QA studio scene has both assets; lighthouse is set aside after standalone export.
 lighthouse.location=(19,4,0)
 world=bpy.data.worlds.new('Navy studio');bpy.context.scene.world=world;world.use_nodes=True;world.node_tree.nodes['Background'].inputs[0].default_value=(.035,.055,.09,1);world.node_tree.nodes['Background'].inputs[1].default_value=.5

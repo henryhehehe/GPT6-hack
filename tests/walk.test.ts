@@ -43,7 +43,7 @@ test('large movements cannot tunnel through houses, stalls, library, or cargo', 
   const cases: [WalkPoint, WalkPoint, (p: WalkPoint) => boolean][] = [
     [{ x: 23, z: 2 }, { x: 0, z: -35 }, p => p.z > .2],
     [{ x: 8, z: 5 }, { x: 22, z: 0 }, p => p.x < 10.5],
-    [{ x: 0, z: 0 }, { x: 0, z: -40 }, p => p.z > -3.9],
+    [{ x: 0, z: 0 }, { x: 0, z: -40 }, p => p.z > -18.17 && p.z < -17],
     [{ x: -14, z: 8 }, { x: -12, z: 0 }, p => p.x > -14.85],
   ];
   for (const [start, delta, stopped] of cases) {
@@ -60,8 +60,8 @@ test('diagonal movement slides along a blocked wall', () => {
 });
 
 test('stairs connect street and terrace but the terrace sides cannot be climbed or dropped', () => {
-  const landing = route({ x: 0, z: 0 }, [{ x: 0, z: -3.4 }]);
-  assert.equal(groundHeight(landing), 2.85);
+  const landing = route({ x: 0, z: 0 }, [{ x: 0, z: -3 }]);
+  assert.ok(Math.abs(groundHeight(landing)-2.85)<1e-9);
   route(landing, [{ x: 0, z: 0 }]);
   assert.equal(groundHeight({ x: 0, z: -.5 }), .95);
   assert.ok(Math.abs(groundHeight({ x: 0, z: -3 }) - 2.85) < 1e-9);
