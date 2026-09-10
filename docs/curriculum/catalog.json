@@ -1,0 +1,736 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "curriculum-planning-catalog",
+  "updatedAt": "2026-09-10",
+  "baselineCommit": "0928decadd9b1d64c9e1dd85cd3c8ccda8842ef4",
+  "runtimeImportable": false,
+  "audience": "Provisional ages 14–18; teacher adjusts reading and support",
+  "timingNote": "45 minutes is an authored planning estimate, not observed classroom timing.",
+  "rubrics": {
+    "history": [
+      "claim",
+      "source evidence and provenance",
+      "reasoning appropriate to the inquiry",
+      "limitation or alternative explanation"
+    ],
+    "literature": [
+      "interpretive claim",
+      "textual evidence",
+      "analysis of language or narrative",
+      "alternative reading"
+    ]
+  },
+  "learningSequence": [
+    "prediction",
+    "read and classify evidence",
+    "select passages and explain relevance",
+    "initial argument",
+    "teacher challenge",
+    "revision and reflection"
+  ],
+  "definitions": {
+    "draft": "Authored teaching proposal; prepared sources may exist, but historical/source review and teacher approval are separate gates.",
+    "source_verified": "Exact selected text, edition, locator, and provenance checked and saved; document attribution, context adequacy, and any applicable reuse notices must also be reviewed. Byte agreement alone is insufficient.",
+    "teacher_reviewed": "Teacher approved objective, packet, reading boundary, accessibility, and content.",
+    "integrated": "Pack loaded through trusted runtime contracts and exercised in a fresh classroom.",
+    "pilot_ready": "Current build passed applicable PRODUCT-READINESS.md gates; separate from content status."
+  },
+  "worlds": [
+    {
+      "id": "alexandria",
+      "title": "Alexandria: the systems that sustain knowledge",
+      "subject": "history",
+      "priority": 1,
+      "contentStatus": "draft",
+      "runtimeStatus": "prepared-local; classroom review required",
+      "proposedScene": "existing Alexandria exterior",
+      "places": [
+        "Harbor",
+        "Waterfront market",
+        "House of knowledge"
+      ],
+      "source": {
+        "title": "Strabo, Geography 17.1.8",
+        "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A1*.html",
+        "edition": "H. L. Jones English translation (1932), LacusCurtius; exact saved Mouseion passage",
+        "verification": "exact Mouseion passage saved with provenance and offsets; historical framing supplied separately; teacher review required",
+        "checkedAt": "2026-09-10"
+      },
+      "readingBoundary": "17.1.8 plus separately labeled local funding assumption and invented ledger",
+      "rationale": "Existing setting makes this the first place to exercise the complete reasoning loop.",
+      "cautions": [
+        "Strabo does not prove the proposed trade-to-funding mechanism.",
+        "The 12-to-4 ship ledger is invented.",
+        "No single-event destruction story or exact architectural reconstruction is established.",
+        "The Mouseion (Museum) described by Strabo is a scholarly institution; it is not interchangeable with a Library building or book collection."
+      ],
+      "lessons": [
+        {
+          "id": "alexandria-01",
+          "title": "Could knowledge survive a trade collapse?",
+          "inquiry": "Under which assumptions would less trade reduce scholar support?",
+          "sourceRange": "17.1.8 + local funding and ledger cards",
+          "evidenceActivity": "Classify source, assumption, and prop; draw a conditional chain with a citation at each supported step.",
+          "teacherChallenge": "Which link does Strabo establish, and which link belongs only to this scenario?",
+          "revisionTask": "Rewrite one inevitable outcome as a conditional claim and identify the missing evidence.",
+          "mode": "counterfactual",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "history"
+        },
+        {
+          "id": "alexandria-02",
+          "title": "The replacement patron",
+          "inquiry": "Could another source of support change the explanation?",
+          "sourceRange": "Same approved packet; patron replacement is an explicit scenario assumption",
+          "evidenceActivity": "Compare two funding diagrams while holding the disruption constant.",
+          "teacherChallenge": "What would you need to observe to distinguish the two explanations?",
+          "revisionTask": "Add a competing mechanism and one observation that could discriminate between them.",
+          "mode": "counterfactual",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "history"
+        },
+        {
+          "id": "alexandria-03",
+          "title": "A building or a community?",
+          "inquiry": "What can a description of an institution tell us about sustaining knowledge?",
+          "sourceRange": "17.1.8; existing card linked to original source",
+          "evidenceActivity": "Separate statements about facilities, people, and institutional support from visual guesses.",
+          "teacherChallenge": "Does a detailed building model add documentary evidence?",
+          "revisionTask": "Refine the claim about preservation and state what this source cannot answer.",
+          "mode": "source-investigation",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "history"
+        }
+      ]
+    },
+    {
+      "id": "odyssey-ix",
+      "title": "The Odyssey: cleverness, pride, and leadership",
+      "subject": "literature",
+      "priority": 2,
+      "contentStatus": "draft",
+      "runtimeStatus": "prepared-local; classroom review required",
+      "proposedScene": "coast prototype; authored cave and ship later",
+      "places": [
+        "Shore briefing",
+        "Cave evidence station",
+        "Departing ship"
+      ],
+      "source": {
+        "title": "Homer, The Odyssey",
+        "url": "https://www.gutenberg.org/ebooks/1727",
+        "edition": "Samuel Butler prose translation; use Ulysses in displayed excerpts",
+        "verification": "selected excerpts and bounded context matched to pinned normalized source; teacher review required",
+        "checkedAt": "2026-09-10"
+      },
+      "readingBoundary": "Book IX only; no later-book events, preface theories, or footnotes in model context",
+      "rationale": "Explicit first literature priority in LITERATURE-EXPANSION.md.",
+      "cautions": [
+        "Narrated choices are not a neutral historical record.",
+        "Mythic geography and staging are interpretations.",
+        "Violence stays in teacher-reviewed text; no combat reenactment."
+      ],
+      "lessons": [
+        {
+          "id": "odyssey-ix-01",
+          "title": "The clever escape",
+          "inquiry": "How does the account invite admiration for cleverness?",
+          "sourceRange": "Book IX: cave encounter, assumed name, and escape",
+          "evidenceActivity": "Annotate a decision and the narrator’s wording; distinguish action from self-presentation.",
+          "teacherChallenge": "Is your evidence about what he does, or how he tells it?",
+          "revisionTask": "Qualify the interpretation with one detail that complicates admiration.",
+          "mode": "close-reading",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "literature"
+        },
+        {
+          "id": "odyssey-ix-02",
+          "title": "The name shouted back",
+          "inquiry": "How does revealing an identity change a reading of leadership?",
+          "sourceRange": "Book IX: narrated stratagem evaluation, crew warning, and shouted identity",
+          "evidenceActivity": "Compare the narrator’s claim of cleverness with his response to the crew’s warning; cite wording from both.",
+          "teacherChallenge": "What does the crew’s objection make harder to explain?",
+          "revisionTask": "Revise the leadership claim without reducing the episode to a single trait.",
+          "mode": "close-reading",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "literature"
+        },
+        {
+          "id": "odyssey-ix-03",
+          "title": "If the name stayed hidden",
+          "inquiry": "What can a textual counterfactual reveal about the original choice?",
+          "sourceRange": "Book IX: same departure packet only",
+          "evidenceActivity": "Write a two-column comparison of textual evidence and invented consequences.",
+          "teacherChallenge": "Which consequences are supported possibilities, and which are inventions?",
+          "revisionTask": "Return to the original text and explain how the comparison changes your reading.",
+          "mode": "counterfactual",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "literature"
+        }
+      ]
+    },
+    {
+      "id": "austen-letter",
+      "title": "Pride and Prejudice: revising a judgment",
+      "subject": "literature",
+      "priority": 3,
+      "contentStatus": "draft",
+      "runtimeStatus": "prepared-local; classroom review required",
+      "proposedScene": "garden prototype; authored Hunsford kit later",
+      "places": [
+        "Hunsford lane",
+        "Letter-reading place",
+        "Comparison desk"
+      ],
+      "source": {
+        "title": "Jane Austen, Pride and Prejudice",
+        "url": "https://www.gutenberg.org/ebooks/1342",
+        "edition": "Project Gutenberg #1342; preserve selected edition and chapter numbering",
+        "verification": "selected excerpts and bounded context matched to pinned normalized source; teacher review required",
+        "checkedAt": "2026-09-10"
+      },
+      "readingBoundary": "Chapters 35–36 only; earlier material requires a separate teacher-approved packet; nothing after 36",
+      "rationale": "Explicit second literature priority; makes evidence-based revision the lesson’s subject.",
+      "cautions": [
+        "Darcy’s assertions are not independent corroboration.",
+        "Elizabeth’s reassessment is arguable, not a required answer.",
+        "Hunsford is not Pemberley; the room and desk are teaching staging."
+      ],
+      "lessons": [
+        {
+          "id": "austen-letter-01",
+          "title": "A letter is a claim",
+          "inquiry": "How should a reader evaluate a persuasive private letter?",
+          "sourceRange": "Chapter 35: opening and selected explanations",
+          "evidenceActivity": "Tag assertions, offered support, and appeals to the recipient.",
+          "teacherChallenge": "What could this writer have an interest in emphasizing?",
+          "revisionTask": "Replace automatic acceptance or rejection with a passage-supported assessment.",
+          "mode": "close-reading",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "literature"
+        },
+        {
+          "id": "austen-letter-02",
+          "title": "Reading again",
+          "inquiry": "How does the narration represent Elizabeth’s reconsideration?",
+          "sourceRange": "Chapter 36: first reading, rereading, and self-assessment; no direct Chapter 35 letter passage in this packet",
+          "evidenceActivity": "Compare the narration of Elizabeth’s first reading, rereading, and self-assessment; distinguish her changing interpretation from independent proof.",
+          "teacherChallenge": "Which phrase supports your account of the change, rather than just naming it?",
+          "revisionTask": "Explain a change in interpretation through wording and acknowledge an alternative reading.",
+          "mode": "close-reading",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "literature"
+        },
+        {
+          "id": "austen-letter-03",
+          "title": "How far should judgment change?",
+          "inquiry": "What remains uncertain after rereading?",
+          "sourceRange": "Chapters 35–36; no later corroborating events",
+          "evidenceActivity": "Build a claim/support/remaining-question table using only assigned passages.",
+          "teacherChallenge": "Which conclusion goes beyond what this packet allows you to know?",
+          "revisionTask": "Narrow one overconfident conclusion and identify evidence that could change it.",
+          "mode": "close-reading",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "literature"
+        }
+      ]
+    },
+    {
+      "id": "macbeth",
+      "title": "Macbeth: persuasion and responsibility",
+      "subject": "literature",
+      "priority": 4,
+      "contentStatus": "draft",
+      "runtimeStatus": "prepared-local; classroom review required",
+      "proposedScene": "archive prototype; castle threshold kit proposed",
+      "places": [
+        "Prophecy station",
+        "Letter desk",
+        "Decision threshold"
+      ],
+      "source": {
+        "title": "William Shakespeare, Macbeth",
+        "url": "https://www.gutenberg.org/ebooks/1533",
+        "edition": "Project Gutenberg #1533; act/scene locators until edition-specific lines are checked",
+        "verification": "selected excerpts and bounded context matched to pinned normalized source; teacher review required",
+        "checkedAt": "2026-09-10"
+      },
+      "readingBoundary": "Act 1 scenes 3, 5, and 7; no later outcome in tutor context",
+      "rationale": "A compact comparison of multiple speakers supports close reading and defensible disagreement.",
+      "cautions": [
+        "Supernatural staging must not assert that destiny removes responsibility.",
+        "Planned violence is discussed through the text, not a game action."
+      ],
+      "lessons": [
+        {
+          "id": "macbeth-01",
+          "title": "Hearing a prophecy",
+          "inquiry": "How does Macbeth interpret what he hears?",
+          "sourceRange": "1.3",
+          "evidenceActivity": "Separate the reported prediction from the listener’s inference.",
+          "teacherChallenge": "Which words belong to the speakers, and which belong to his response?",
+          "revisionTask": "Revise a fate claim to account for interpretive choice.",
+          "mode": "close-reading",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "literature"
+        },
+        {
+          "id": "macbeth-02",
+          "title": "Pressure in language",
+          "inquiry": "How does persuasion work through appeals to identity?",
+          "sourceRange": "1.5 and 1.7",
+          "evidenceActivity": "Compare two appeals and explain a specific rhetorical choice.",
+          "teacherChallenge": "Does forceful language prove that persuasion succeeded?",
+          "revisionTask": "Distinguish rhetorical strategy from an inferred effect.",
+          "mode": "close-reading",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "literature"
+        },
+        {
+          "id": "macbeth-03",
+          "title": "Reasons at the threshold",
+          "inquiry": "How does a soliloquy complicate responsibility?",
+          "sourceRange": "1.7",
+          "evidenceActivity": "Pair an expressed objection with the subsequent decision language.",
+          "teacherChallenge": "Can your interpretation account for the strongest objection?",
+          "revisionTask": "Defend a reading that addresses both agency and pressure.",
+          "mode": "close-reading",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "literature"
+        }
+      ]
+    },
+    {
+      "id": "frankenstein",
+      "title": "Frankenstein: ambition and responsibility",
+      "subject": "literature",
+      "priority": 5,
+      "contentStatus": "draft",
+      "runtimeStatus": "prepared-local; classroom review required",
+      "proposedScene": "archive prototype; workshop and writing room proposed",
+      "places": [
+        "Walton’s writing desk",
+        "Research station",
+        "Creation threshold"
+      ],
+      "source": {
+        "title": "Mary Shelley, Frankenstein",
+        "url": "https://www.gutenberg.org/ebooks/42324",
+        "edition": "1831 edition, Project Gutenberg #42324; do not mix 1818 chapter divisions",
+        "verification": "selected excerpts and bounded context matched to pinned normalized source; teacher review required",
+        "checkedAt": "2026-09-10"
+      },
+      "readingBoundary": "Selected Letters I–II and Chapters 4–5 in the 1831 edition; each lesson uses only its saved excerpts and bounded context",
+      "rationale": "Pairs a framing voice with a narrated act, enabling analysis of ambition and selective explanation.",
+      "cautions": [
+        "Do not import film machinery or later plot as evidence.",
+        "Prepared excerpts match saved text; activity coverage and teacher approval remain separate checks."
+      ],
+      "lessons": [
+        {
+          "id": "frankenstein-01",
+          "title": "Ambition in a letter",
+          "inquiry": "How does a writer make an ambition seem worthwhile?",
+          "sourceRange": "Letters I–II: selected passages only",
+          "evidenceActivity": "Mark an aspiration and a qualification in the same speaker’s account.",
+          "teacherChallenge": "Who is being persuaded by this account?",
+          "revisionTask": "Reframe the claim to include audience and a complicating detail.",
+          "mode": "close-reading",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "literature"
+        },
+        {
+          "id": "frankenstein-02",
+          "title": "The work and the telling",
+          "inquiry": "How does retrospective narration shape a reader’s judgment?",
+          "sourceRange": "Chapters 4–5",
+          "evidenceActivity": "Distinguish described action from later evaluative language.",
+          "teacherChallenge": "Are you attributing hindsight to the earlier moment?",
+          "revisionTask": "Separate the narrator’s retrospective stance from the character’s reported understanding.",
+          "mode": "close-reading",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "literature"
+        },
+        {
+          "id": "frankenstein-03",
+          "title": "Responsibility at the threshold",
+          "inquiry": "What obligations does the creation episode invite readers to consider?",
+          "sourceRange": "Chapter 5: selected creation and response passages",
+          "evidenceActivity": "Compare the creator’s recalled goal in Chapter 5 with his response after creation, then argue from wording.",
+          "teacherChallenge": "What alternative reading could explain the same passage?",
+          "revisionTask": "Address that reading without inventing later testimony.",
+          "mode": "close-reading",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "literature"
+        }
+      ]
+    },
+    {
+      "id": "christmas-carol",
+      "title": "A Christmas Carol: learning to see others",
+      "subject": "literature",
+      "priority": 6,
+      "contentStatus": "draft",
+      "runtimeStatus": "prepared-local; classroom review required",
+      "proposedScene": "archive prototype; counting house and domestic stations proposed",
+      "places": [
+        "Counting-house desk",
+        "Memory station",
+        "Household reading station"
+      ],
+      "source": {
+        "title": "Charles Dickens, A Christmas Carol",
+        "url": "https://www.gutenberg.org/ebooks/46",
+        "edition": "Project Gutenberg #46; selected prose text, illustrations excluded from evidence packet",
+        "verification": "selected excerpts and bounded context matched to pinned normalized source; teacher review required",
+        "checkedAt": "2026-09-10"
+      },
+      "readingBoundary": "Staves 1–3; no Staves 4–5 in character or tutor context",
+      "rationale": "Recurring language and contrasting settings offer a manageable secondary literature pack.",
+      "cautions": [
+        "Visual poverty is not evidence of a universal Victorian experience.",
+        "No ending spoilers or compulsory personal disclosure."
+      ],
+      "lessons": [
+        {
+          "id": "christmas-carol-01",
+          "title": "Distance in description",
+          "inquiry": "How does narration establish distance or sympathy?",
+          "sourceRange": "Stave 1",
+          "evidenceActivity": "Compare a descriptive choice with dialogue and explain their effects.",
+          "teacherChallenge": "Would the dialogue alone support the same reading?",
+          "revisionTask": "Make the narrator’s contribution explicit.",
+          "mode": "close-reading",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "literature"
+        },
+        {
+          "id": "christmas-carol-02",
+          "title": "The use of memory",
+          "inquiry": "How does a remembered scene challenge an earlier judgment?",
+          "sourceRange": "Staves 1–2",
+          "evidenceActivity": "Link a memory passage to an initial interpretation.",
+          "teacherChallenge": "What specifically changes in your evidence, not just the atmosphere?",
+          "revisionTask": "Revise using the contrast while retaining an unresolved question.",
+          "mode": "close-reading",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "literature"
+        },
+        {
+          "id": "christmas-carol-03",
+          "title": "A change of viewpoint",
+          "inquiry": "How does a domestic scene redirect the reader’s attention?",
+          "sourceRange": "Stave 3 with selected Stave 1 comparison",
+          "evidenceActivity": "Compare focal details and whose perspective receives attention.",
+          "teacherChallenge": "Does sympathy establish every claim you made about the character?",
+          "revisionTask": "Narrow the interpretation and support it with two details.",
+          "mode": "close-reading",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "literature"
+        }
+      ]
+    },
+    {
+      "id": "tempest",
+      "title": "The Tempest: who tells the island’s story?",
+      "subject": "literature",
+      "priority": 7,
+      "contentStatus": "draft",
+      "runtimeStatus": "prepared-local; classroom review required",
+      "proposedScene": "coast prototype; three narrative stations proposed",
+      "places": [
+        "Storm shore",
+        "Prospero’s account station",
+        "Competing claims station"
+      ],
+      "source": {
+        "title": "William Shakespeare, The Tempest",
+        "url": "https://www.gutenberg.org/ebooks/1540",
+        "edition": "Project Gutenberg #1540; act/scene locators, no invented line numbering",
+        "verification": "selected excerpts and bounded context matched to pinned normalized source; teacher review required",
+        "checkedAt": "2026-09-10"
+      },
+      "readingBoundary": "Act 1 scenes 1–2 only",
+      "rationale": "Reuses a coast concept while assessing voice and competing accounts rather than escape.",
+      "cautions": [
+        "Power and coercion require contextual discussion; dialogue does not make a speaker authoritative.",
+        "Island scenery cannot settle competing claims of ownership.",
+        "The selected edition attributes a speech to Prospero that Folger attributes to Miranda; flag this editorial difference before comparing speakers."
+      ],
+      "lessons": [
+        {
+          "id": "tempest-01",
+          "title": "Authority in a storm",
+          "inquiry": "How does crisis alter the language of authority?",
+          "sourceRange": "1.1",
+          "evidenceActivity": "Compare commands from different speakers and the grounds they offer.",
+          "teacherChallenge": "Who claims authority, and what makes it effective within this scene?",
+          "revisionTask": "Distinguish claimed status from demonstrated control.",
+          "mode": "close-reading",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "literature"
+        },
+        {
+          "id": "tempest-02",
+          "title": "A story with a listener",
+          "inquiry": "How does Prospero direct Miranda’s attention?",
+          "sourceRange": "1.2: their conversation",
+          "evidenceActivity": "Annotate a prompt, interruption, or emphasis alongside the story it frames.",
+          "teacherChallenge": "How might the telling shape what the listener accepts?",
+          "revisionTask": "Explain narrative control through a specific language choice.",
+          "mode": "close-reading",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "literature"
+        },
+        {
+          "id": "tempest-03",
+          "title": "Competing claims",
+          "inquiry": "How should a reader weigh incompatible accounts of the island?",
+          "sourceRange": "1.2: approved Prospero, Ariel, and Caliban exchanges",
+          "evidenceActivity": "Make a speaker/claim/support table without choosing by character prestige.",
+          "teacherChallenge": "What can the scene establish, and what remains contested?",
+          "revisionTask": "Address a competing account and the limits of the available text.",
+          "mode": "close-reading",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "literature"
+        }
+      ]
+    },
+    {
+      "id": "declaration",
+      "title": "Philadelphia: the case for independence",
+      "subject": "history",
+      "priority": 8,
+      "contentStatus": "draft",
+      "runtimeStatus": "prepared-local; classroom review required",
+      "proposedScene": "archive prototype; document workshop proposed",
+      "places": [
+        "Principles desk",
+        "Grievance wall",
+        "Declaration table"
+      ],
+      "source": {
+        "title": "Declaration of Independence transcription",
+        "url": "https://www.archives.gov/founding-docs/declaration-transcript",
+        "edition": "National Archives transcription of the adopted Declaration",
+        "verification": "selected excerpts and bounded context matched to pinned normalized source; teacher review required",
+        "checkedAt": "2026-09-10"
+      },
+      "readingBoundary": "Approved selections from principles, grievances, and conclusion; contextual claims need additional sources",
+      "rationale": "Document structure provides three meaningful stations without inventing eyewitness testimony.",
+      "cautions": [
+        "A grievance is an allegation in an advocacy document, not independently verified by its presence.",
+        "Universal language does not establish universal participation or rights in practice.",
+        "Distinguish the independence vote (July 2, 1776), adoption (July 4), and most signatures on the engrossed copy (August 2)."
+      ],
+      "lessons": [
+        {
+          "id": "declaration-01",
+          "title": "Principles and conclusions",
+          "inquiry": "How does the document connect its principles to political action?",
+          "sourceRange": "Opening, principles, and conclusion selections",
+          "evidenceActivity": "Map a premise and conclusion to their exact textual support.",
+          "teacherChallenge": "Does the passage state a principle or describe existing practice?",
+          "revisionTask": "Separate the document’s argument from a claim about lived conditions.",
+          "mode": "source-investigation",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "history"
+        },
+        {
+          "id": "declaration-02",
+          "title": "What a grievance can prove",
+          "inquiry": "How do accumulated grievances support persuasion?",
+          "sourceRange": "Teacher-selected grievance paragraphs",
+          "evidenceActivity": "Group allegations and identify the external evidence needed to test one.",
+          "teacherChallenge": "Is repetition corroboration?",
+          "revisionTask": "Qualify one historical claim by naming the source’s purpose and limits.",
+          "mode": "source-investigation",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "history"
+        },
+        {
+          "id": "declaration-03",
+          "title": "The declaration as an action",
+          "inquiry": "What changes when an argument becomes a collective declaration?",
+          "sourceRange": "Conclusion with approved opening comparison",
+          "evidenceActivity": "Compare descriptive, justificatory, and declarative language.",
+          "teacherChallenge": "Does announcing an outcome prove that it has been secured?",
+          "revisionTask": "Distinguish an asserted political act from its unverified consequences.",
+          "mode": "source-investigation",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "history"
+        }
+      ]
+    },
+    {
+      "id": "douglass-literacy",
+      "title": "Douglass: literacy, power, and testimony",
+      "subject": "history",
+      "priority": 9,
+      "contentStatus": "draft",
+      "runtimeStatus": "prepared-local; classroom review required",
+      "proposedScene": "archive prototype; documentary reading room proposed",
+      "places": [
+        "Testimony desk",
+        "Literacy passage station",
+        "Context and limits desk"
+      ],
+      "source": {
+        "title": "Frederick Douglass, Narrative of the Life of Frederick Douglass, an American Slave",
+        "url": "https://www.gutenberg.org/ebooks/23",
+        "edition": "1845 Narrative, Project Gutenberg #23; retain author and autobiographical context",
+        "verification": "selected excerpts and bounded context matched to pinned normalized source; teacher review required",
+        "checkedAt": "2026-09-10"
+      },
+      "readingBoundary": "Chapters VI–VII; no invented escape scenes or later events",
+      "rationale": "Extends source inquiry to authored testimony and the limits of historical generalization.",
+      "cautions": [
+        "No slavery role-play, purchase mechanics, or simulated victim testimony.",
+        "Teacher previews discriminatory language and violence in the assigned text.",
+        "One narrative must not stand in for every enslaved person’s experience.",
+        "Auld’s claim that instruction was unlawful is reported speech, not proof of a Maryland statutory ban; distinguish household coercion from law."
+      ],
+      "lessons": [
+        {
+          "id": "douglass-literacy-01",
+          "title": "Why restrict learning?",
+          "inquiry": "How does the narrative connect control of literacy with power?",
+          "sourceRange": "Chapter VI",
+          "evidenceActivity": "Separate reported speech, narrated experience, and the author’s interpretation.",
+          "teacherChallenge": "Whose words support this claim, and who is reporting them?",
+          "revisionTask": "Specify the chain of testimony and limit the generalization.",
+          "mode": "source-investigation",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "history"
+        },
+        {
+          "id": "douglass-literacy-02",
+          "title": "Learning under constraint",
+          "inquiry": "What does the account show about agency within coercion?",
+          "sourceRange": "Chapter VII",
+          "evidenceActivity": "Trace an action and its constraint with two textual references.",
+          "teacherChallenge": "Does recognizing agency diminish the constraint described?",
+          "revisionTask": "Account for both without presenting coercion as a game challenge.",
+          "mode": "source-investigation",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "history"
+        },
+        {
+          "id": "douglass-literacy-03",
+          "title": "Knowledge and its costs",
+          "inquiry": "How does testimony complicate a simple story of progress?",
+          "sourceRange": "Chapter VII: selected learning, argument, and distress passages",
+          "evidenceActivity": "Compare an opportunity and a cost described by the narrator.",
+          "teacherChallenge": "What does this account establish about this experience, and what needs corroboration?",
+          "revisionTask": "Refine the explanation and identify a question for a second source.",
+          "mode": "source-investigation",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "history"
+        }
+      ]
+    },
+    {
+      "id": "seneca-falls",
+      "title": "Seneca Falls: rewriting a declaration",
+      "subject": "history",
+      "priority": 10,
+      "contentStatus": "draft",
+      "runtimeStatus": "prepared-local; classroom review required",
+      "proposedScene": "archive prototype; declaration comparison room proposed",
+      "places": [
+        "Model text desk",
+        "Sentiments station",
+        "Claims and action desk"
+      ],
+      "source": {
+        "title": "Declaration of Sentiments",
+        "url": "https://www.nps.gov/wori/learn/historyculture/declaration-of-sentiments.htm",
+        "edition": "National Park Service transcription; pair with National Archives Declaration transcription",
+        "verification": "selected excerpts and bounded context matched to pinned normalized source; teacher review required",
+        "checkedAt": "2026-09-10"
+      },
+      "readingBoundary": "Selected Sentiments opening, grievances, and conclusion; approved 1776 parallel passages only",
+      "rationale": "Reuses a documentary setting for comparison across sources and historical contexts.",
+      "cautions": [
+        "Shared language does not mean identical circumstances.",
+        "Document signatories or authors do not represent all women’s experiences.",
+        "Text alone cannot establish policy implementation or movement outcomes.",
+        "The claim that all colleges excluded women needs qualification: Oberlin admitted women to its baccalaureate program in 1837."
+      ],
+      "lessons": [
+        {
+          "id": "seneca-falls-01",
+          "title": "Borrowing a public form",
+          "inquiry": "How does adapting a familiar declaration strengthen a claim?",
+          "sourceRange": "Opening compared with approved 1776 opening",
+          "evidenceActivity": "Align retained and altered wording and explain the significance.",
+          "teacherChallenge": "Which inference comes from the wording, and which needs context?",
+          "revisionTask": "Revise the comparison to acknowledge a difference in purpose or position.",
+          "mode": "source-investigation",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "history"
+        },
+        {
+          "id": "seneca-falls-02",
+          "title": "Naming an injustice",
+          "inquiry": "How do particular grievances support a general rights claim?",
+          "sourceRange": "Teacher-selected Sentiments grievances",
+          "evidenceActivity": "Connect one allegation to a principle and identify a corroborating-source need.",
+          "teacherChallenge": "What additional record would help test the allegation historically?",
+          "revisionTask": "Separate documentary assertion from independent confirmation.",
+          "mode": "source-investigation",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "history"
+        },
+        {
+          "id": "seneca-falls-03",
+          "title": "From declaration to change",
+          "inquiry": "What can a declaration tell us about a movement’s aims?",
+          "sourceRange": "Sentiments conclusion and selected grievances",
+          "evidenceActivity": "Distinguish stated aims, proposed action, and outcomes not in the packet.",
+          "teacherChallenge": "What would be an unsupported claim of success?",
+          "revisionTask": "State an evidence-bounded conclusion and a next research question.",
+          "mode": "source-investigation",
+          "durationMinutes": 45,
+          "readiness": "draft",
+          "rubric": "history"
+        }
+      ]
+    }
+  ],
+  "runtimeImplementation": "Prepared local world library; see docs/curriculum/IMPLEMENTATION.md. Planning data is adapted through prepareCatalogLesson, not directly imported as a World.",
+  "accuracyReview": {
+    "date": "2026-09-10",
+    "report": "docs/curriculum/HISTORICAL-ACCURACY-REVIEW.md",
+    "scope": "Applied in runtime packet version 2026-09-10.3; new drafts use corrected ranges, activities, excerpts, and contextual notes. Existing saved classrooms retain their original packet."
+  }
+}

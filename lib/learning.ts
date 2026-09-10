@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { initialWorld, type Evidence, type StudentState, type Turn, type World } from './world';
+import { type Evidence, type StudentState, type Turn, type World } from './world';
 
 export const CitationSchema=z.object({evidenceId:z.string().min(1).max(60),material:z.enum(['text','excerpt']),sourceVersion:z.string().regex(/^[a-f0-9]{64}$/),start:z.number().int().nonnegative(),end:z.number().int().positive(),quote:z.string().min(1).max(700),relevance:z.string().trim().min(3).max(400)});
 export type Citation=z.infer<typeof CitationSchema>;
@@ -10,12 +10,18 @@ export const reflectionSchema=z.string().trim().min(10).max(600);
 const straboExcerpt='The Museum is also a part of the royal palaces';
 
 export function materials(evidence:Evidence){
- const original=initialWorld.evidence.find(e=>e.id==='strabo')!;
- const verified=evidence.id===original.id&&evidence.kind==='source'&&evidence.source===original.source&&evidence.text===original.text;
+ const verified=!evidence.context&&evidence.id==='strabo'&&evidence.kind==='source'&&evidence.source==='Strabo, Geography 17.1.8 · https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A1*.html'&&evidence.text==='Strabo describes a shared dining hall and a learned community at the Museum, within the royal palaces. This supports an institutional context; it does not establish trade as its only source of funding.';
  return verified?[{id:'excerpt' as const,label:'Verified source excerpt',text:straboExcerpt},{id:'text' as const,label:'Reading note · paraphrase',text:evidence.text}]:[{id:'text' as const,label:evidence.kind==='source'?'Reviewed source excerpt':evidence.kind==='assumption'?'Scenario assumption':'Invented teaching prop',text:evidence.text}];
 }
+function contextIdentity(evidence:Evidence){
+ const c=evidence.context;
+ return c?[c.text,c.locator,c.sourceVersion,c.start,c.end,c.editorialNote??null,c.readingNote??null,(c.references??[]).map(r=>[r.title,r.url])]:null;
+}
 export async function sourceVersion(evidence:Evidence){
- const text=JSON.stringify([evidence.id,evidence.title,evidence.text,evidence.kind,evidence.source,evidence.zone,materials(evidence)]);
+ // Keep previously saved citations valid for unchanged legacy cards.
+ const fields:unknown[]=[evidence.id,evidence.title,evidence.text,evidence.kind,evidence.source,evidence.zone,materials(evidence)];
+ if(evidence.context)fields.push(contextIdentity(evidence));
+ const text=JSON.stringify(fields);
  return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text))),b=>b.toString(16).padStart(2,'0')).join('');
 }
 // Ranges use JS UTF-16 offsets. Sentence choices make passage selection keyboard-operable.
@@ -54,7 +60,7 @@ export function previousSubmission(input:ArgumentInput,student:StudentState){
 }
 export function preserveReviewedSources(generated:World,reviewed:World){
  const required=reviewed.evidence.filter(e=>e.kind==='source');
- for(const old of required){const e=generated.evidence.find(e=>e.id===old.id);if(!e||(['id','title','text','kind','source','zone'] as const).some(k=>e[k]!==old[k]))throw new Error('Every reviewed source must remain present and unchanged.');}
+ for(const old of required){const e=generated.evidence.find(e=>e.id===old.id);if(!e||(['id','title','text','kind','source','zone'] as const).some(k=>e[k]!==old[k])||JSON.stringify(contextIdentity(e))!==JSON.stringify(contextIdentity(old)))throw new Error('Every reviewed source must remain present and unchanged.');}
  if(generated.evidence.some(e=>e.kind==='source'&&!required.some(old=>old.id===e.id)))throw new Error('Unreviewed source material cannot be added by generation.');
  return generated;
 }

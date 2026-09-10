@@ -10,7 +10,21 @@ import {alexandriaHintPositions,generatedHintPositions,visibleAtActivity} from '
 
 const student=():StudentState=>({name:'B',evidence:['strabo','funding','ledger'],turns:[],zone:'library',unlocked:false});
 async function citation(id='strabo'):Promise<Citation>{const e=initialWorld.evidence.find(e=>e.id===id)!,m=materials(e)[0],p=passages(m.text)[0];return {evidenceId:id,material:m.id,sourceVersion:await sourceVersion(e),...p,relevance:'This supports institutional support, but not an exclusive source of income.'};}
-test('primary excerpt and reading note are separate authoritative materials',async()=>{const c=await citation();assert.equal(c.material,'excerpt');assert.match(c.quote,/royal palaces/);assert.deepEqual(await validateCitations([c],student(),initialWorld),[c]);assert.equal(materials(initialWorld.evidence[0])[1].label,'Reading note · paraphrase');});
+test('new contextual sources cite their exact excerpt while legacy paraphrases keep the verified short quotation',async()=>{
+ const current=initialWorld.evidence[0],c=await citation();assert.equal(c.material,'text');assert.equal(materials(current).length,1);assert.equal(materials(current)[0].text,current.text);assert.deepEqual(await validateCitations([c],student(),initialWorld),[c]);
+ const legacy={...current,context:undefined,source:'Strabo, Geography 17.1.8 · https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A1*.html',text:'Strabo describes a shared dining hall and a learned community at the Museum, within the royal palaces. This supports an institutional context; it does not establish trade as its only source of funding.'};
+ assert.equal(materials(legacy)[0].id,'excerpt');assert.equal(materials(legacy)[1].label,'Reading note · paraphrase');
+ const oldFields=JSON.stringify([legacy.id,legacy.title,legacy.text,legacy.kind,legacy.source,legacy.zone,materials(legacy)]);
+ const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(oldFields))),b=>b.toString(16).padStart(2,'0')).join('');assert.equal(await sourceVersion(legacy),hash);
+});
+test('context and editorial provenance changes invalidate citations and cannot replace reviewed sources',async()=>{
+ const e=initialWorld.evidence[0],v=await sourceVersion(e),c=await citation();
+ for(const field of ['text','locator','sourceVersion','start','end','editorialNote','readingNote','references'] as const){
+  const w=structuredClone(initialWorld),context=w.evidence[0].context!;
+  Object.assign(context,{[field]:field==='start'||field==='end'?context[field]+1:field==='references'?[{title:'Changed',url:'https://example.org/changed'}]:String(context[field]??'')+' changed'});
+  assert.notEqual(await sourceVersion(w.evidence[0]),v);await assert.rejects(validateCitations([c],student(),w));assert.throws(()=>preserveReviewedSources(w,initialWorld));
+ }
+});
 test('quotation forgery, unavailable material, stale version and duplicate citation reject',async()=>{const c=await citation();for(const forged of [{...c,quote:'invented quote'},{...c,start:1},{...c,end:9000},{...c,sourceVersion:'0'.repeat(64)},{...c,evidenceId:'unknown'},{...c,material:'other'}])await assert.rejects(validateCitations([forged],student(),initialWorld));await assert.rejects(validateCitations([c,c],student(),initialWorld));await assert.rejects(validateCitations([c],{...student(),evidence:[]},initialWorld));});
 test('source version tracks content and provenance but not hints or scenario state',async()=>{const e=initialWorld.evidence[0],v=await sourceVersion(e);assert.equal(v,await sourceVersion({...e}));for(const field of ['text','source','title'] as const)assert.notEqual(v,await sourceVersion({...e,[field]:e[field]+' changed'}));});
 test('sentence selection uses exact UTF-16 offsets including emoji and whitespace',()=>{const text='  An 🦉 watches.\nA second view challenges it! What follows?';for(const p of passages(text))assert.equal(text.slice(p.start,p.end),p.quote);assert.equal(passages(text).length,3);});

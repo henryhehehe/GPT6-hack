@@ -1,0 +1,25 @@
+{
+  "alexandria": {
+    "readingNote": "The Mouseion (Museum) was a scholarly institution, not a modern exhibition museum. Strabo describes communal facilities, property, and a priest appointed under royal and then Roman authority. Distinguish this institution from the Library's book collections and the illustrated building. This passage does not establish a trade-funded budget or explain a destruction. The trade disruption, replacement patron, and ship counts remain exercise assumptions.",
+    "references": [{"title":"Strabo, Geography 17.1.8 · Jones translation","url":"https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A1*.html"}]
+  },
+  "declaration": {
+    "readingNote": "Congress voted for independence on July 2, 1776, adopted the Declaration on July 4, and most delegates signed the engrossed parchment on August 2; others signed later. This is the adopted document, not Jefferson's unamended draft. Distinguish a political declaration from its later effects, a grievance from independent corroboration, and a stated equality principle from rights in practice.",
+    "references": [{"title":"National Archives · Declaration history","url":"https://www.archives.gov/founding-docs/declaration-history"}]
+  },
+  "douglass-literacy": {
+    "readingNote": "Douglass's 1845 Narrative retrospectively describes literacy learning in Baltimore. Chapter VI reports Hugh Auld calling instruction unlawful; this is Auld's assertion as reported by Douglass, not a statute. Maryland State Archives notes no legislation specifically banning enslaved people from reading and writing, although literacy was strongly discouraged. Distinguish household coercion from law. An abolitionist purpose does not automatically discredit testimony, and literacy did not itself bring immediate freedom.",
+    "references": [{"title":"Maryland State Archives · Literacy and slavery FAQ","url":"https://slavery.msa.maryland.gov/html/research/frequently-asked-questions.html"}]
+  },
+  "seneca-falls": {
+    "readingNote": "The Seneca Falls convention met July 19–20, 1848. This declaration states demands, not legislation implementing them. Its claim that all colleges excluded women is not literally nationwide: Oberlin admitted women to its baccalaureate program in 1837, and three graduated in 1841. That exception does not erase broader exclusion. Property and voting claims need a date, jurisdiction, and affected group. These context notes are separate from the declaration's wording.",
+    "references": [
+      {"title":"National Park Service · Convention history","url":"https://www.nps.gov/wori/learn/historyculture/the-first-womens-rights-convention.htm"},
+      {"title":"Oberlin College · Institutional history","url":"https://www.oberlin.edu/about-oberlin/oberlin-history"}
+    ]
+  },
+  "tempest": {
+    "readingNote": "Speaker assignments can differ between editions. Gutenberg #1540 assigns the speech beginning “Abhorred slave” to Prospero; Folger assigns it to Miranda and explains the editorial change. Preserve the selected edition's quoted wording and name the edition when comparing interpretations. A different edition's attribution is not automatically a fabricated quotation. Verse line breaks are normalized here; do not assess meter or line breaks from this display.",
+    "references": [{"title":"Folger · The Tempest and editorial introduction","url":"https://www.folgerdigitaltexts.org/Tmp/"}]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "id": "strabo",
+  "title": "A community of scholars",
+  "text": "The Museum is also a part of the royal palaces; it has a public walk, an Exedra with seats, and a large house, in which is the common mess-hall of the men of learning who share the Museum. This group of men not only hold property in common, but also have a priest in charge of the Museum, who formerly was appointed by the kings, but is now appointed by Caesar.",
+  "kind": "source",
+  "source": "Strabo, Geography 17.1.8 · H. L. Jones translation (1932) · https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A1*.html",
+  "zone": "library",
+  "context": {
+    "text": "The Museum is also a part of the royal palaces; it has a public walk, an Exedra with seats, and a large house, in which is the common mess-hall of the men of learning who share the Museum. This group of men not only hold property in common, but also have a priest in charge of the Museum, who formerly was appointed by the kings, but is now appointed by Caesar.",
+    "locator": "Geography 17.1.8 (Mouseion passage) · page and footnote markers omitted",
+    "sourceVersion": "cef096c06e0f48ae9059cd2093774737e3478c9140e73112ad6177775608b16f",
+    "start": 0,
+    "end": 361
+  }
+}
