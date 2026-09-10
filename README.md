@@ -105,3 +105,11 @@ Architecture is illustrative. Ship counts and funding links are explicitly hypot
 The application currently uses bearer classroom/invitation tokens and is intended for a private hackathon demonstration. A classroom-scale release needs identity management, teacher-reviewed lesson packs, stronger quota controls, fuller rubric evaluation, and accessibility/performance testing. Private Sites hosting requires the owner to sign in; an invitation does not bypass hosting access restrictions.
 
 Original concept materials remain in `counterfactual-worlds-handoff/`; the reviewed plan supersedes their conflicting claims and the one-minute storyboard supersedes the three-minute script. The original prototype is reference material and uses an optional Claude interface; the new application explicitly calls Astra.
+
+### Book-specific setting illustrations
+
+Lesson preparation now asks GPT-6 Astra to direct its `image_generation` tool after the evidence-grounded lesson is saved. The image tool defaults to `gpt-image-2.5-flare`, using the existing server API key; `OPENAI_IMAGE_MODEL` may override that tool model. Generated PNGs remain private in R2. The teacher reviews the exact image revision before launch; students can switch between the illustrated setting and the walkable learning view and inspect the image in the source reader. Illustrations depict the baseline and are labeled interpretations, never source evidence. Image errors preserve the lesson and allow a retry or image-less launch. Successful images are reused, not regenerated on refresh.
+
+A real upload fixture is included at `public/samples/pride-and-prejudice-chapter-3.pdf`, downloadable inside the builder. It contains Jane Austen's complete Chapter III, reformatted from the public-domain Project Gutenberg edition, plus a clearly separated editorial note. Select PDF pages 1–4. A TXT alternative and upload guide are under `output/pdf/`. The complete illustrated source edition is https://www.gutenberg.org/ebooks/1342.
+
+Run `node scripts/smoke-book-images.mjs --images` for a paid end-to-end check of the real PDF, lesson generation, illustration, cached replay, and teacher/student image access. Use `--resume --images` to retry the saved private test draft without repeating PDF extraction.

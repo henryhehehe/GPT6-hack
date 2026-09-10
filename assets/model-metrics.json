@@ -1,0 +1,226 @@
+{
+  "assets": [
+    {
+      "id": "amphora",
+      "bytes": 119340,
+      "triangles": 4800,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.743,
+        1.085,
+        0.62
+      ],
+      "clips": []
+    },
+    {
+      "id": "cargo-crate",
+      "bytes": 351732,
+      "triangles": 4096,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        1.02,
+        0.828,
+        1.055
+      ],
+      "clips": []
+    },
+    {
+      "id": "ceramic-bowl",
+      "bytes": 74740,
+      "triangles": 2944,
+      "primitives": 2,
+      "materials": 2,
+      "size": [
+        0.68,
+        0.275,
+        0.68
+      ],
+      "clips": []
+    },
+    {
+      "id": "dorian",
+      "bytes": 596572,
+      "triangles": 11664,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.906,
+        0.475
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
+      "id": "ione",
+      "bytes": 628720,
+      "triangles": 12776,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.911,
+        0.461
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
+      "id": "market-stall",
+      "bytes": 420732,
+      "triangles": 7016,
+      "primitives": 2,
+      "materials": 2,
+      "size": [
+        2.705,
+        2.465,
+        1.444
+      ],
+      "clips": []
+    },
+    {
+      "id": "open-scroll",
+      "bytes": 11828,
+      "triangles": 328,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.782,
+        0.102,
+        0.57
+      ],
+      "clips": []
+    },
+    {
+      "id": "reading-table",
+      "bytes": 174200,
+      "triangles": 1836,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        1.549,
+        0.903,
+        0.87
+      ],
+      "clips": []
+    },
+    {
+      "id": "rolled-scroll",
+      "bytes": 35756,
+      "triangles": 1392,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.59,
+        0.178,
+        0.178
+      ],
+      "clips": []
+    },
+    {
+      "id": "rope-coil",
+      "bytes": 79712,
+      "triangles": 3256,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.889,
+        0.064,
+        0.695
+      ],
+      "clips": []
+    },
+    {
+      "id": "scroll-rack",
+      "bytes": 199420,
+      "triangles": 4980,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        1.21,
+        1.42,
+        0.43
+      ],
+      "clips": []
+    },
+    {
+      "id": "storage-jar",
+      "bytes": 114104,
+      "triangles": 3808,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.912,
+        0.843,
+        0.75
+      ],
+      "clips": []
+    },
+    {
+      "id": "thaleia",
+      "bytes": 711072,
+      "triangles": 14300,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.911,
+        0.461
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
+      "id": "tied-sack",
+      "bytes": 53776,
+      "triangles": 2122,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.745,
+        0.79,
+        0.755
+      ],
+      "clips": []
+    },
+    {
+      "id": "woven-basket",
+      "bytes": 191280,
+      "triangles": 7788,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.71,
+        0.875,
+        0.706
+      ],
+      "clips": []
+    },
+    {
+      "id": "writing-tablet",
+      "bytes": 37928,
+      "triangles": 492,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.597,
+        0.057,
+        0.6
+      ],
+      "clips": []
+    }
+  ],
+  "totalBytes": 3800912,
+  "withLandmarksBytes": 8360124
+}
