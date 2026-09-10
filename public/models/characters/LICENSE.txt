@@ -22,3 +22,10 @@ SOFTWARE.
 
 Third-party libraries, bundled components, fonts, and reference content retain
 their respective licenses.
+
+
+Regency character component notice
+Regency coat, gown and dress: head, eyes and parted hair adapted from Quaternius Universal Base Characters Kit (CC0 1.0 Universal).
+Source: https://quaternius.com
+License: https://creativecommons.org/publicdomain/zero/1.0/
+The original wardrobe, shared rig and gesture clips remain MIT licensed. These fictional readers are not historical portraits.

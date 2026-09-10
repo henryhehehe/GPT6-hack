@@ -977,20 +977,20 @@
     "id": "regency-coat",
     "title": "Regency-informed reader: coat",
     "family": "regency-readers",
-    "creator": "Counterfactual Worlds",
+    "creator": "Counterfactual Worlds; Quaternius (CC0 head, eyes and hair)",
     "sourceUrl": "/model-catalog?collection=characters",
     "license": "MIT",
     "licenseUrl": "/models/characters/LICENSE.txt",
     "url": "/models/characters/regency-coat.glb",
-    "bytes": 555208,
-    "sha256": "7480ca419befc7ceea642a214c95e3ea8d4a5400349ce2fef1864ec1e4b45a65",
+    "bytes": 1409136,
+    "sha256": "3bdbb52be8c52b8c2bdc9606364ebdb351ca8697f1316f14f9c45053af94de2b",
     "dimensions": [
       0.968,
-      1.8999,
+      1.7452,
       0.4869
     ],
-    "triangles": 10580,
-    "materials": 3,
+    "triangles": 13219,
+    "materials": 6,
     "skins": 1,
     "category": "teaching-character",
     "classroomStatus": "authored-character",
@@ -1005,15 +1005,15 @@
       "regency-coat__Anchor_Label"
     ],
     "modifications": [
-      "Original project-authored mesh, rig and gesture clips.",
+      "Original wardrobe, rig and gestures with fitted CC0 Quaternius head, eyes and hair.",
       "Runtime loader centers, grounds and scales each independent character instance."
     ],
     "usage": {
       "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
-      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "cautions": "Period-informed fictional companion; original clothing, rig and gestures with adapted CC0 Quaternius head, eyes and hair. Not a historical portrait or primary evidence.",
       "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
       "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
-      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+      "rights": "Original wardrobe, rig and gestures: MIT. Adapted Quaternius components: CC0 1.0. See the combined character notice."
     },
     "assignments": [
       {
@@ -1036,20 +1036,20 @@
     "id": "regency-dress",
     "title": "Regency-informed reader: dress",
     "family": "regency-readers",
-    "creator": "Counterfactual Worlds",
+    "creator": "Counterfactual Worlds; Quaternius (CC0 head, eyes and hair)",
     "sourceUrl": "/model-catalog?collection=characters",
     "license": "MIT",
     "licenseUrl": "/models/characters/LICENSE.txt",
     "url": "/models/characters/regency-dress.glb",
-    "bytes": 569396,
-    "sha256": "e60cf89d21220fa3d8301cfef9206c79f93c64800e82d647977a45f03e9cba78",
+    "bytes": 1601336,
+    "sha256": "d1acd4e13cf9c3987f9a94a657261ff84b4dec46ec8a5ee6a21dd77943cea025",
     "dimensions": [
       0.968,
-      1.9047,
-      0.482
+      1.7655,
+      0.4792
     ],
-    "triangles": 11092,
-    "materials": 2,
+    "triangles": 14437,
+    "materials": 5,
     "skins": 1,
     "category": "teaching-character",
     "classroomStatus": "authored-character",
@@ -1064,15 +1064,15 @@
       "regency-dress__Anchor_Label"
     ],
     "modifications": [
-      "Original project-authored mesh, rig and gesture clips.",
+      "Original wardrobe, rig and gestures with fitted CC0 Quaternius head, eyes and hair.",
       "Runtime loader centers, grounds and scales each independent character instance."
     ],
     "usage": {
       "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
-      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "cautions": "Period-informed fictional companion; original clothing, rig and gestures with adapted CC0 Quaternius head, eyes and hair. Not a historical portrait or primary evidence.",
       "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
       "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
-      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+      "rights": "Original wardrobe, rig and gestures: MIT. Adapted Quaternius components: CC0 1.0. See the combined character notice."
     },
     "assignments": [
       {
@@ -1095,20 +1095,20 @@
     "id": "regency-gown",
     "title": "Regency-informed reader: gown",
     "family": "regency-readers",
-    "creator": "Counterfactual Worlds",
+    "creator": "Counterfactual Worlds; Quaternius (CC0 head, eyes and hair)",
     "sourceUrl": "/model-catalog?collection=characters",
     "license": "MIT",
     "licenseUrl": "/models/characters/LICENSE.txt",
     "url": "/models/characters/regency-gown.glb",
-    "bytes": 655024,
-    "sha256": "673c4f3e5428fabc46ee989e46262e903f5f651b3ca3e9f05d14a14acd18793e",
+    "bytes": 1601300,
+    "sha256": "82d7469e0a2323a3b64d12f0323dfc5ee314aeaecbbd420598505466f182d409",
     "dimensions": [
       0.968,
-      1.9047,
-      0.482
+      1.7655,
+      0.4792
     ],
-    "triangles": 12948,
-    "materials": 3,
+    "triangles": 14437,
+    "materials": 5,
     "skins": 1,
     "category": "teaching-character",
     "classroomStatus": "authored-character",
@@ -1123,15 +1123,15 @@
       "regency-gown__Anchor_Label"
     ],
     "modifications": [
-      "Original project-authored mesh, rig and gesture clips.",
+      "Original wardrobe, rig and gestures with fitted CC0 Quaternius head, eyes and hair.",
       "Runtime loader centers, grounds and scales each independent character instance."
     ],
     "usage": {
       "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
-      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "cautions": "Period-informed fictional companion; original clothing, rig and gestures with adapted CC0 Quaternius head, eyes and hair. Not a historical portrait or primary evidence.",
       "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
       "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
-      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+      "rights": "Original wardrobe, rig and gestures: MIT. Adapted Quaternius components: CC0 1.0. See the combined character notice."
     },
     "assignments": [
       {

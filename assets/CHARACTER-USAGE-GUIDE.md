@@ -9,7 +9,7 @@ Generated with `node --import tsx scripts/catalog-characters.ts` from the author
 - Preserve independently loaded skeletons, the existing fallback groups, source/talk picking and scene cleanup.
 - Themed scenes use `loadThemedCharacters`; Alexandria uses `loadTeachingCharacters`. Their update and readiness APIs differ.
 - Preview dimensions describe source geometry. The runtime applies its own grounding/centering and character-height normalization.
-- Keep the MIT copyright and permission notice when redistributing these original assets.
+- Keep the MIT copyright and permission notice when redistributing the original wardrobe and animation assets. Regency head, eye and parted-hair components are adapted from the CC0 Quaternius kit; see the combined notice.
 
 ## Dorian · harbor merchant
 
@@ -722,11 +722,11 @@ export function attachCast(anchors: Record<ZoneId, Group>) {
 
 ## Regency-informed reader: coat
 
-ID: `regency-coat` · 555,208 bytes · 10,580 triangles · 3 materials · 1 skins.
-Source dimensions X/Y/Z: 0.968 / 1.8999 / 0.4869 m. Clips: Idle, Greeting, Talk.
+ID: `regency-coat` · 1,409,136 bytes · 13,219 triangles · 6 materials · 1 skins.
+Source dimensions X/Y/Z: 0.968 / 1.7452 / 0.4869 m. Clips: Idle, Greeting, Talk.
 Editable source: `assets/blender/characters/regency-readers.blend`. Anchors: regency-coat__Anchor_Talk, regency-coat__Anchor_Label.
 [Runtime GLB](../public/models/characters/regency-coat.glb) · [MIT notice](../public/models/characters/LICENSE.txt)
-SHA-256: `7480ca419befc7ceea642a214c95e3ea8d4a5400349ce2fef1864ec1e4b45a65`
+SHA-256: `3bdbb52be8c52b8c2bdc9606364ebdb351ca8697f1316f14f9c45053af94de2b`
 
 ### Near Hunsford · a garden for reading · Evidence editor
 Regency clothing interpretation
@@ -757,11 +757,11 @@ export function attachCast(anchors: Record<ZoneId, Group>) {
 
 ## Regency-informed reader: dress
 
-ID: `regency-dress` · 569,396 bytes · 11,092 triangles · 2 materials · 1 skins.
-Source dimensions X/Y/Z: 0.968 / 1.9047 / 0.482 m. Clips: Idle, Greeting, Talk.
+ID: `regency-dress` · 1,601,336 bytes · 14,437 triangles · 5 materials · 1 skins.
+Source dimensions X/Y/Z: 0.968 / 1.7655 / 0.4792 m. Clips: Idle, Greeting, Talk.
 Editable source: `assets/blender/characters/regency-readers.blend`. Anchors: regency-dress__Anchor_Talk, regency-dress__Anchor_Label.
 [Runtime GLB](../public/models/characters/regency-dress.glb) · [MIT notice](../public/models/characters/LICENSE.txt)
-SHA-256: `e60cf89d21220fa3d8301cfef9206c79f93c64800e82d647977a45f03e9cba78`
+SHA-256: `d1acd4e13cf9c3987f9a94a657261ff84b4dec46ec8a5ee6a21dd77943cea025`
 
 ### Near Hunsford · a garden for reading · Reading companion
 Regency clothing interpretation
@@ -792,11 +792,11 @@ export function attachCast(anchors: Record<ZoneId, Group>) {
 
 ## Regency-informed reader: gown
 
-ID: `regency-gown` · 655,024 bytes · 12,948 triangles · 3 materials · 1 skins.
-Source dimensions X/Y/Z: 0.968 / 1.9047 / 0.482 m. Clips: Idle, Greeting, Talk.
+ID: `regency-gown` · 1,601,300 bytes · 14,437 triangles · 5 materials · 1 skins.
+Source dimensions X/Y/Z: 0.968 / 1.7655 / 0.4792 m. Clips: Idle, Greeting, Talk.
 Editable source: `assets/blender/characters/regency-readers.blend`. Anchors: regency-gown__Anchor_Talk, regency-gown__Anchor_Label.
 [Runtime GLB](../public/models/characters/regency-gown.glb) · [MIT notice](../public/models/characters/LICENSE.txt)
-SHA-256: `673c4f3e5428fabc46ee989e46262e903f5f651b3ca3e9f05d14a14acd18793e`
+SHA-256: `82d7469e0a2323a3b64d12f0323dfc5ee314aeaecbbd420598505466f182d409`
 
 ### Near Hunsford · a garden for reading · Letter reader
 Regency clothing interpretation
