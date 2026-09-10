@@ -5,7 +5,7 @@ import {themeLayout} from './themeLayouts';
 export type ArchitectureBounds=readonly[number,number,number,number];
 
 /** Cutaway architecture: visible walls and planting use the same footprints as walking. */
-export function addThemeArchitecture(scene:THREE.Scene,theme:WorldTheme){
+export function addThemeArchitecture(scene:THREE.Scene,theme:WorldTheme,includeTrees=true){
   const layout=themeLayout(theme),root=new THREE.Group();root.name=`Architecture: ${layout.kind}`;scene.add(root);
   const materials=new Set<THREE.Material>(),geometries=new Set<THREE.BufferGeometry>(),obstacles:ArchitectureBounds[]=[];
   const material=(color:string)=>{const m=new THREE.MeshStandardMaterial({color,roughness:.9});materials.add(m);return m;};
@@ -19,6 +19,7 @@ export function addThemeArchitecture(scene:THREE.Scene,theme:WorldTheme){
     const mesh=shape(cube,m,x,y,z,w,h,d);if(solid)obstacles.push([x-w/2,x+w/2,z-d/2,z+d/2]);return mesh;
   }
   function tree(x:number,z:number,height=6,bare=false){
+    if(!includeTrees)return;
     box(wood,x,height/2,z,.35,height,.35,true);
     if(!bare)shape(sphere,leaf,x,height,z,2.4,2.2,2.4);
     else for(const sign of [-1,1]){const branch=box(wood,x+sign*.6,height*.75,z,.15,height*.55,.15);branch.rotation.z=-sign*.5;}
@@ -127,7 +128,8 @@ export function addThemeArchitecture(scene:THREE.Scene,theme:WorldTheme){
 
   // Each stop has an unobstructed arrival apron; furniture owns its individual collisions.
   for(const p of Object.values(layout.spots)){
-    box(interior?wood:stone,p.x,.11,p.z,8,.22,7);
+    // Outdoor reading places blend into the landscape, not three white stages.
+    box(interior?wood:layout.kind==='street'?stone:ground,p.x,.11,p.z,8,.22,7);
     if(!interior&&layout.kind!=='street'){
       const length=Math.hypot(p.x,p.z),path=box(stone,p.x/2,.025,p.z/2,1.8,.05,length);path.rotation.y=Math.atan2(p.x,p.z);
     }
