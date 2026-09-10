@@ -72,3 +72,6 @@ A live test was not completed. The first connection attempt found the previous l
 ## Live historical evaluation completed
 
 After user approval, all 20 historical cases completed through the integrated review API with no model errors or retries. See [HISTORICAL-LIVE-EVALUATION.md](HISTORICAL-LIVE-EVALUATION.md) for the actual feedback review, saved run identifiers, and one claim-credit caveat. This supersedes the earlier historical-suite approval block; human/teacher approval remains separate.
+
+
+Claim-credit review now also flags a claim point in deliberately fabricated-quotation or context-misattribution fixtures. It does not change recorded scores. See the [post-run clarification](HISTORICAL-LIVE-EVALUATION.md#claim-credit-clarification-after-the-live-run) for the offline regression and its limits.

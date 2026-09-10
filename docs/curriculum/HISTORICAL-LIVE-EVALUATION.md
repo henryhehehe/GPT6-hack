@@ -54,3 +54,16 @@ Full JSON responses and HTML worksheets are stored privately in both the main an
 - Run `898c6e6f-d973-4757-a89d-e19c3703e2cb`: 19 captured response(s), report SHA-256 `8f9898965e590c084d419dc8a97bc0cc6ff774b20aaed72778d3527bbed17697`.
 
 Next: a teacher should review the feedback and decide whether a clearly stated but unsupported claim should earn a claim point. Further model runs need a new bounded purpose; do not keep rerunning this sample to obtain preferred scores.
+
+
+## Claim-credit clarification after the live run
+
+The subsequent continuation clarified claim credit in both the working app and the integrated review checkout. A clear position is insufficient when its conclusion depends on invented quotations, fabricated facts, or words falsely attributed to the original source. The model is instructed to explain that premise and invite revision. This does not make claim credit depend automatically on evidence credit: a conditional hypothesis, supported disagreement, or warranted uncertainty may still earn a claim point.
+
+The student checklist and assessment prompt share the same policy module, `lib/claimAssessment.ts`; future evaluation reports also fingerprint that module. The evaluator now flags claim credit in intentionally fabricated-quotation or context-misattribution cases for review. This is a review flag, not a deterministic assertion that every such response must receive zero in every dimension.
+
+An offline reanalysis of all 20 saved responses flagged exactly `tempest-03-history-invented-consent`. Its original 1/4 score and the full live reports remain unchanged. The captured response is retained as a regression fixture; tests also verify that legitimate uncertainty and edition-aware disagreement do not receive this flag. Private reanalysis output is in `artifacts/private/historical-claim-review/reanalysis.json` in both checkouts.
+
+No new model calls were made. The prompt correction has not yet had a live semantic retest, so this change establishes clearer instructions and detection of the recorded inconsistency, not proof that future model grading will always follow the policy. Teacher review remains appropriate.
+
+Validation: all 102 tests in the integrated review checkout passed, as did its TypeScript check and production build. TypeScript also passed in the shared main checkout. The existing large-bundle warning remains.

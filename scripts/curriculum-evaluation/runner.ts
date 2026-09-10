@@ -47,6 +47,7 @@ export function checkEvaluation(value:unknown,example:Example){
  if(feedback.evidenceIds.some(id=>!example.evidenceIds.includes(id)))throw new Error('Response credits evidence unavailable to this student.');
  if(feedback.score!==feedback.items.filter(i=>i.earned).length)throw new Error('Inconsistent assessment score.');
  const flags:string[]=[];
+ if(['fabricated-quotation','context-misattribution'].includes(example.kind)&&feedback.items.some(i=>i.key==='claim'&&i.earned))flags.push('Claim credit for an answer containing invented or misattributed wording; review whether its conclusion depends on that wording.');
  if(example.kind==='fabricated-quotation'&&feedback.items.some(i=>i.key==='evidence'&&i.earned))flags.push('Evidence credit for an answer containing an intentionally fabricated quotation; review its justification.');
  if(example.kind==='context-misattribution'&&feedback.items.some(i=>i.key==='evidence'&&i.earned))flags.push('Evidence credit for an answer attributing a modern note to the original source; review its justification.');
  if(example.kind==='out-of-range'&&feedback.items.some(i=>i.earned))flags.push('Credit awarded to an out-of-range question; inspect the rationale.');

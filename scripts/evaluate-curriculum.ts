@@ -19,7 +19,7 @@ async function main(){
  const classId=process.env.CURRICULUM_EVAL_CLASS_ID,teacherToken=process.env.CURRICULUM_EVAL_TEACHER_TOKEN;
  if(!!classId!==!!teacherToken)throw new Error('Supply both evaluation classroom ID and teacher token, or neither.');
  let gitCommit='unavailable';try{gitCommit=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();}catch{}
- const paths=['app/api/classroom/route.ts','lib/server.ts','lib/world.ts','lib/curriculum.ts'];
+ const paths=['app/api/classroom/route.ts','lib/server.ts','lib/world.ts','lib/curriculum.ts','lib/claimAssessment.ts'];
  const localCodeHashes=Object.fromEntries(await Promise.all(paths.map(async path=>[path,hash(await readFile(path,'utf8'))])));
  try{localCodeHashes['lib/learning.ts']=hash(await readFile('lib/learning.ts','utf8'));}catch{localCodeHashes['lib/learning.ts']='not present';}
  let directory='';

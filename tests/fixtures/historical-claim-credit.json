@@ -1,0 +1,39 @@
+{
+  "origin": "Captured before claim-criterion clarification; retained unchanged as a regression example, not a new model result.",
+  "exampleId": "tempest-03-history-invented-consent",
+  "evaluation": {
+    "reply": "Provisionally, your position is clear, but that quotation is absent from the packet. Caliban instead says “Which thou tak’st from me.” Earlier affection does not establish permanent consent.",
+    "items": [
+      {
+        "key": "claim",
+        "earned": true,
+        "excerpt": "he consented to permanent rule",
+        "reason": "Clear interpretive position."
+      },
+      {
+        "key": "evidence",
+        "earned": false,
+        "excerpt": "",
+        "reason": "The attributed quotation is not in the selected passage."
+      },
+      {
+        "key": "mechanism",
+        "earned": false,
+        "excerpt": "",
+        "reason": "The inference rests on invented wording, not close analysis."
+      },
+      {
+        "key": "limitation",
+        "earned": false,
+        "excerpt": "",
+        "reason": "No uncertainty or alternative reading is considered."
+      }
+    ],
+    "evidenceIds": [],
+    "nextQuestion": "How does Caliban’s regret complicate interpreting his earlier affection as consent?",
+    "score": 1,
+    "unlocked": false,
+    "responseId": "resp_0c635ba771abbe62006aa2fcaf4b2487d29862df199ac07203",
+    "latencyMs": 8765
+  }
+}
