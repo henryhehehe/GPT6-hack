@@ -39,10 +39,11 @@ export function loadLandmarks(
     }
   }
 
-  void load('library', '/models/library.glb?v=1', [0, 2.9, -13], libraryFallback);
-  void load('lighthouse', '/models/lighthouse.glb?v=1', [-24, 1, 16], lighthouseFallback);
+  const loaded=Promise.all([load('library', '/models/library.glb?v=1', [0, 2.9, -13], libraryFallback),
+   load('lighthouse', '/models/lighthouse.glb?v=1', [-24, 1, 16], lighthouseFallback)]);
 
   return {
+    loaded,
     update(unlocked: boolean, dt: number, reducedMotion: boolean) {
       for (const { object, angle, direction } of doors) {
         const target = angle + (unlocked ? direction * Math.PI * .44 : 0);

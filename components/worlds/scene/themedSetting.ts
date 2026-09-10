@@ -3,7 +3,7 @@ import type {WorldTheme} from '@/lib/worldThemes';
 import {settingPlacements,SETTING_SPOTS,SETTING_ASSETS,type SettingPlacement} from './settingLayout';
 import {themeLayout} from './themeLayouts';
 import {externalPlacements} from './externalLayout';
-import {themeExternalDetails} from './themeExternalDetails';
+import {themeExternalDetails,linkSupportStations} from './themeExternalDetails';
 import {themeExternalActivityAreas} from './themeExternalActivityAreas';
 
 export function themedPlacements(theme:WorldTheme){
@@ -75,7 +75,7 @@ export function themedExternalPlacements(theme:WorldTheme){
   result.push({key:'storm-east-shelf',asset:'polyhaven-coast_rocks_01',at:[31,-.4,-8],turn:.4,scale:1.7});
   result.push({key:'storm-rock-shelf',asset:'polyhaven-coast_rocks_01',at:[-31,-.15,10],turn:1.2,scale:1.5});
  }
- return [...result,...themeExternalDetails(theme,result),...themeExternalActivityAreas(theme)];
+ return linkSupportStations([...result,...themeExternalDetails(theme,result),...themeExternalActivityAreas(theme)]);
 }
 
 /** Distant scenery is outside the walking boundary; local furniture owns its collisions. */

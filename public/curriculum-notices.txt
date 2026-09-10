@@ -2048,3 +2048,9 @@ Declaration of Sentiments (1848): National Park Service transcription. https://w
 Strabo: existing Alexandria paraphrase and short separately displayed Jones-translation quotation, Geography 17.1.8, LacusCurtius. https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A1*.html
 
 Alexandria funding and patron replacement are explicit teaching assumptions. The 12-to-4 ship ledger is invented, not an ancient record.
+
+
+STRABO — GEOGRAPHY 17.1.8
+H. L. Jones English translation, Loeb Classical Library volume VIII (1932), hosted by LacusCurtius:
+https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A1*.html
+The hosting page identifies the reproduced text as public domain. The selected Mouseion passage preserves wording and punctuation; HTML, section/page numbers, footnote-reference markers, and extra whitespace are removed. The saved source and its provenance are recorded in docs/curriculum/sources/. Explanatory historical and edition notes are separately authored teaching material with linked references, not quotations from the primary texts.

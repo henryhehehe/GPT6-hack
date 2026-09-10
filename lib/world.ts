@@ -1,4 +1,11 @@
+import type {MuseumNote} from './museumNotes';
+import type {SceneChange} from './sceneIntervention';
+import type {SceneUndo} from './sceneRecovery';
+import {SceneAppearanceSchema} from './sceneAppearance';
 import { z } from 'zod';
+import {MuseumSelectionSchema} from './museums';
+import type { Citation } from './learning';
+import type { DirectorBasis } from './directorContext';
 import alexandriaSource from './curriculum/alexandria.json';
 import sourceNotes from './curriculum/sourceNotes.json';
 
@@ -13,6 +20,8 @@ export const WorldSchema = z.object({
   nodes:z.array(z.object({ id:Zone, title:z.string().max(80), baseline:z.string().max(200), consequence:z.string().max(240), mechanism:z.string().max(350), evidenceIds:z.array(z.string()).min(1).max(3), activity:z.number().min(0).max(1) })).length(3),
   evidence:z.array(EvidenceSchema).min(3).max(6),
   lessonPack:LessonPackSchema.optional(),
+  museumObjectIds:MuseumSelectionSchema.optional(),
+  sceneAppearance:SceneAppearanceSchema.optional(),
   settingImage:z.object({draftId:z.string().uuid(),caption:z.string().max(250),model:z.string().max(80),responseId:z.string().max(150)}).optional(),
 });
 export type World = z.infer<typeof WorldSchema>;
@@ -23,12 +32,12 @@ export const RubricSchema = z.object({
   evidenceIds:z.array(z.string()).max(6), nextQuestion:z.string().max(250),
 });
 export type Evaluation=z.infer<typeof RubricSchema> & {score:number;unlocked:boolean;responseId:string;latencyMs:number};
-export type Turn={claim:string;npc:ZoneId;result:Evaluation;at:string;worldVersion:number;scenario:boolean};
+export type Turn={requestId?:string;id?:string;submission?:string;citations?:Citation[];revisesTurnId?:string;reflection?:string;revisionChanged?:boolean;hintId?:string;claim:string;npc:ZoneId;result:Evaluation;at:string;worldVersion:number;scenario:boolean};
 export const DialogueSchema=z.object({reply:z.string().min(1).max(900),evidenceIds:z.array(z.string().max(60)).max(3),followUp:z.string().max(200)});
 export type DialogueTurn={id:string;message:string;npc:ZoneId;result:z.infer<typeof DialogueSchema>;at:string;worldVersion:number;scenario:boolean;responseId:string;latencyMs:number};
-export type StudentState={name:string;evidence:string[];turns:Turn[];zone:ZoneId;unlocked:boolean;dialogue?:DialogueTurn[]};
-export type Intervention={id:string;title:string;text:string;question:string;zone:ZoneId;responseId:string;latencyMs:number;request:string;kind:'teaching-prop'};
-export type ClassroomState={scenario:boolean;hint:Intervention|null;run:{responseId:string;latencyMs:number}|null};
+export type StudentState={name:string;evidence:string[];turns:Turn[];zone:ZoneId;unlocked:boolean;dialogue?:DialogueTurn[];museumNotes?:MuseumNote[];museumNoteSequence?:number;prediction?:{text:string;at:string;worldVersion:number};archiveReflection?:{text:string;at:string;worldVersion:number}};
+export type Intervention={id:string;title:string;text:string;question:string;zone:ZoneId;responseId:string;latencyMs:number;request:string;kind:'teaching-prop';basis?:DirectorBasis;scene?:SceneChange};
+export type ClassroomState={scenario:boolean;hint:Intervention|null;run:{responseId:string;latencyMs:number}|null;sceneRevision?:string;sceneUndo?:SceneUndo;sceneRecoveryRequest?:{id:string;operation:'undo'|'reset-atmosphere'}};
 export const HintSchema=z.object({title:z.string().max(80),text:z.string().max(650),question:z.string().max(250),zone:Zone});
 export const lesson = `Alexandria: knowledge and the systems that sustain it.
 
@@ -79,7 +88,7 @@ export function gradeArgument(value:unknown,claim:string,available:string[],worl
  r.items=r.items.map(i=>({...i,earned:i.earned&&i.excerpt.trim().length>0&&text.includes(i.excerpt.toLowerCase().replace(/\s+/g,' ').trim())}));
  const e=r.items.find(i=>i.key==='evidence')!;if(!r.evidenceIds.length)e.earned=false;
  const score=r.items.filter(i=>i.earned).length;
- return {...r,score,unlocked:score>=3&&e.earned&&!!r.items.find(i=>i.key==='mechanism')?.earned};
+ return {...r,score,unlocked:score===4&&e.earned};
 }
 export const zoneNames:Record<ZoneId,string>={harbor:'Harbor',market:'Market',library:'Library'};
 export const npcNames:Record<ZoneId,string>={harbor:'Dorian, the merchant',market:'Thaleia, the market trader',library:'Ione, the archivist'};

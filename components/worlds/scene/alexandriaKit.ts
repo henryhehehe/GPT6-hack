@@ -58,7 +58,7 @@ export function loadAlexandriaKit(parent: THREE.Object3D, fallback: Fallbacks) {
   const replacements: { target: THREE.Group; model: THREE.Object3D; hidden: THREE.Object3D[] }[] = [];
   const instanceMeshes: THREE.InstancedMesh[] = [];
 
-  void new GLTFLoader().loadAsync('/models/alexandria/alexandria-kit.glb?v=2').then(gltf => {
+  const loaded = new GLTFLoader().loadAsync('/models/alexandria/alexandria-kit.glb?v=2').then(gltf => {
     source = gltf.scene;
     if (disposed) { disposeSource(source); return; }
     const templates = new Map<AssetId, THREE.Object3D>();
@@ -139,6 +139,7 @@ export function loadAlexandriaKit(parent: THREE.Object3D, fallback: Fallbacks) {
   });
 
   return {
+    loaded,
     get ready() { return ready; },
     getPlantTemplate() { return ready ? source?.getObjectByName('date-palm') : undefined; },
     update(blend: number, harborActivity: number, marketActivity: number) {

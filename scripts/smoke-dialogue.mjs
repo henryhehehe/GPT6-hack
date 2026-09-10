@@ -1,6 +1,8 @@
+import {smokeTeacherHeaders} from './smoke-teacher.mjs';
 import assert from 'node:assert/strict';
 const base=process.env.APP_URL||'http://localhost:5173';
-async function request(body,token){const r=await fetch(base+'/api/classroom',{method:'POST',headers:{'Content-Type':'application/json',...(token?{Authorization:`Bearer ${token}`}:{})},body:JSON.stringify(body)});return {status:r.status,data:await r.json()};}
+const teacherHeaders=await smokeTeacherHeaders(base);
+async function request(body,token){const r=await fetch(base+'/api/classroom',{method:'POST',headers:{...teacherHeaders,'Content-Type':'application/json',...(token?{Authorization:`Bearer ${token}`}:{})},body:JSON.stringify(body)});return {status:r.status,data:await r.json()};}
 async function post(body,token){const r=await request(body,token);assert.equal(r.status,200,r.data.error);return r.data;}
 const c=await post({action:'create'}),s=await post({action:'join',id:c.id,name:'Dialogue check'},c.inviteToken);
 const talk={action:'talk',id:c.id,studentId:s.studentId,npc:'harbor',scenario:false,message:'What does the harbor ledger tell us? Are those numbers real historical records?',requestId:crypto.randomUUID()};

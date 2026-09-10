@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {classroomLearners,learnerSummary,learningReportHtml,lessonKitHtml,teachingPlan,type Learner} from '../lib/teachingKit';
+import {classroomLearners,learnerSummary,learningReportHtml,lessonKitHtml,teachingPlan,matchesReviewFocus,reviewFocusCounts,investigationDownloadHtml,type Learner} from '../lib/teachingKit';
 import {initialWorld,type Turn} from '../lib/world';
 import {prepareCatalogLesson} from '../lib/curriculum';
 import catalog from '../lib/curriculum/catalog.json';
@@ -9,6 +9,18 @@ function turn(claim:string,scenario=false,worldVersion=1):Turn {
   return {claim,scenario,worldVersion,npc:'library',at:'2026-09-10T18:00:00Z',result:{reply:'Consider an alternative.',score:0,unlocked:false,responseId:'test',latencyMs:0,evidenceIds:['strabo'],nextQuestion:'What could change?',items:[{key:'claim',earned:false,excerpt:'',reason:'Explain the claim.'},{key:'evidence',earned:false,excerpt:'',reason:'Read the source.'},{key:'mechanism',earned:false,excerpt:'',reason:'Connect cause and effect.'},{key:'limitation',earned:false,excerpt:'',reason:'Consider a patron.'}]}};
 }
 function learner(id:string,turns:Turn[]=[]):Learner {return {id,name:id,turns,zone:'library',evidence:[],unlocked:false};}
+
+test('review focus counts latest feedback only, excludes the preview, and separates missing work',()=>{
+  const first=turn('Initial answer'),latest=turn('Revised answer');
+  latest.result.items=latest.result.items.map(item=>({...item,earned:item.key!=='limitation'}));
+  const revised=learner('revised',[first,latest]),unsubmitted=learner('waiting'),preview=learner('preview',[first]);
+  const counts=reviewFocusCounts([revised,unsubmitted,preview],'preview');
+  assert.deepEqual(counts,{unsubmitted:1,claim:0,evidence:0,mechanism:0,limitation:1});
+  assert.equal(matchesReviewFocus(unsubmitted,'evidence'),false);
+  assert.equal(matchesReviewFocus(unsubmitted,'review'),true);
+  assert.equal(matchesReviewFocus(revised,'limitation'),true);
+  assert.equal(matchesReviewFocus(revised,'evidence'),false);
+});
 
 test('teaching sequence fits each chosen duration across all catalog lessons',()=>{
   for(const world of catalog.worlds)for(const entry of world.lessons){
@@ -42,6 +54,26 @@ test('reports exclude the teacher preview by identity and include all actual sub
   assert.ok(report.includes('1 joined learners'));
   assert.ok(report.includes('not proof of student-selected citations'));
 });
+test('demo reports can include actual practice work without inventing a joined learner',()=>{
+  const practice=learner('practice',[turn('My own practice answer')]);
+  const report=learningReportHtml(initialWorld,[practice],practice.id,'now',true);
+  assert.ok(report.includes('0 joined learners'));
+  assert.ok(report.includes('Your practice learner'));
+  assert.ok(report.includes('My own practice answer'));
+  assert.ok(!learningReportHtml(initialWorld,[practice],practice.id,'now').includes('My own practice answer'));
+});
+test('writing download works without submitted work and distinguishes drafts from submissions',()=>{
+  const student=learner('student');student.evidence=['strabo'];
+  const draft='<script>alert("draft")</script>';
+  const html=investigationDownloadHtml(initialWorld,student,draft,true,'now');
+  assert.ok(html.includes('My current draft — not submitted'));
+  assert.ok(html.includes('No submitted explanations'));
+  assert.ok(html.includes('does not submit your draft'));
+  assert.ok(html.includes('&lt;script&gt;'));
+  assert.ok(!html.includes('<script>'));
+  assert.ok(html.includes(initialWorld.evidence.find(e=>e.id==='strabo')!.title));
+  assert.ok(!html.includes(initialWorld.evidence.find(e=>e.id==='ledger')!.title));
+});
 test('standalone downloads escape hostile learner and source text and load no remote assets',()=>{
   const attack='<script src="https://attacker.invalid/x">&</script>';
   const student=learner('student',[turn(attack)]);student.name=attack;
@@ -53,4 +85,13 @@ test('standalone downloads escape hostile learner and source text and load no re
     assert.ok(!html.includes('<iframe'));
     assert.ok(!html.includes('<link'));
   }
+});
+
+test('learning reports retain exact selected quotes, prediction and linked revision reflection safely',()=>{
+ const first={...turn('A patron can support learning.'),id:'first'};
+ const revised={...turn('A patron may help if the support continues.'),id:'second',revisesTurnId:'first',revisionChanged:true,reflection:'I added a condition after reading the source.',citations:[{evidenceId:'strabo',material:'text' as const,sourceVersion:'a'.repeat(64),start:0,end:24,quote:'<script>selected</script>',relevance:'The source supports <b>conditional</b> reasoning.'}]};
+ const student={...learner('B',[first,revised]),prediction:{text:'My original prediction',at:'now',worldVersion:1},archiveReflection:{text:'Another interpretation remains possible.',at:'later',worldVersion:1}};
+ const html=learningReportHtml(initialWorld,[student],undefined,'now');
+ for(const text of ['My original prediction','Revises submission 1','I added a condition','Another interpretation','Student-selected passages','a'.repeat(64),'&lt;script&gt;selected&lt;/script&gt;','&lt;b&gt;conditional&lt;/b&gt;'])assert.ok(html.includes(text),text);
+ assert.ok(!html.includes('<script>'));assert.equal(learnerSummary(learner('B',[turn('Same words.'),turn('SAME WORDS!!!')])).status,'Same wording');
 });

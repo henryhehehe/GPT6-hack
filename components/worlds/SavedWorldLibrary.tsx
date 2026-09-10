@@ -13,7 +13,8 @@ export default function SavedWorldLibrary({open,current,onClose,onResume,onDraft
  const trigger=useRef<HTMLElement|null>(null);
  const search=useRef<HTMLInputElement>(null);
  useEffect(()=>{if(!open)return;let active=true;setBusy('loading');setError('');setEntries([]);
-  const access=rememberedTeacherClasses(localStorage,current);
+  let access:ClassroomAccess[];
+  try{access=rememberedTeacherClasses(localStorage,current);}catch{access=current?.teacherToken?[current]:[];}
   Promise.allSettled(access.map(async c=>{const r=await fetch(`/api/saved-worlds?id=${encodeURIComponent(c.id)}`,{headers:{Authorization:`Bearer ${c.teacherToken}`}});const d=await r.json() as SavedWorldGroup&{error?:string};if(!r.ok)throw new Error(d.error);return {access:c,data:d};})).then(results=>{
    if(!active)return;const found=new Map<string,Entry>();let failures=0;
    for(const result of results){if(result.status==='rejected'){failures++;continue;}const {access,data}=result.value;found.set(`classroom:${data.classroom.id}`,{...data.classroom,kind:'classroom',access});for(const d of data.drafts)if(!found.has(`draft:${d.id}`))found.set(`draft:${d.id}`,{...d,kind:'draft',access});}

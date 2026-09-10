@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {DatabaseSync} from 'node:sqlite';
 import {initialWorld,type DialogueTurn} from '../lib/world';
 import {validateDialogue,dialogueHistory} from '../lib/characters';
-import {replaceWorldSql,saveStudentSql} from '../lib/classroomWrites';
+import {replaceWorldSql,saveStudentSql,visitStudentSql} from '../lib/classroomWrites';
 
 test('dialogue rejects invented and duplicate evidence references',()=>{
  for(const evidenceIds of [['fake'],['strabo','strabo']])assert.throws(()=>validateDialogue({reply:'Look at the account.',evidenceIds,followUp:''},initialWorld));
@@ -27,4 +27,16 @@ test('student reply cannot persist after world replacement wins the race',()=>{
 });
 test('concurrent student writes cannot erase a saved conversation',()=>{
  const db=database();try{assert.equal(db.prepare(saveStudentSql).run(JSON.stringify({dialogue:['reply']}),'student',1,1).changes,1);assert.equal(db.prepare(saveStudentSql).run(JSON.stringify({evidence:['ledger']}),'student',1,1).changes,0);}finally{db.close();}
+});
+
+test('location changes do not invalidate pending feedback or get reverted by its save',()=>{
+ const db=database();try{
+  const progress=JSON.stringify({zone:'library',evidence:['ledger'],turns:[{claim:'Saved answer'}]});
+  assert.equal(db.prepare(visitStudentSql).run('harbor','student',1).changes,1);
+  assert.equal(db.prepare(saveStudentSql).run(progress,'student',1,1).changes,1);
+  const row=db.prepare('SELECT state,revision FROM students').get() as {state:string;revision:number};
+  assert.equal(JSON.parse(row.state).zone,'harbor');assert.equal(JSON.parse(row.state).turns.length,1);assert.equal(row.revision,2);
+  assert.equal(db.prepare(saveStudentSql).run(progress,'student',1,1).changes,0);
+  assert.equal(db.prepare(visitStudentSql).run('market','student',999).changes,0);
+ }finally{db.close();}
 });

@@ -1,6 +1,6 @@
 # Literature worlds: English alongside history
 
-September 10, 2026. User-directed expansion of the product scope. This is an implementation specification; the running app currently supports the Alexandria lesson only. The Odyssey and Pride and Prejudice packs are not implemented yet.
+September 10, 2026. User-directed expansion specification, originally written before literature packet implementation. The local World Library now provides prepared Odyssey and Pride and Prejudice lessons in symbolic settings; see [implementation scope](curriculum/IMPLEMENTATION.md). Bespoke environments and several learning-loop features below remain planned. The [historical accuracy review](curriculum/HISTORICAL-ACCURACY-REVIEW.md) identifies edition and packet-coverage issues still requiring correction; prepared does not mean fully reviewed.
 
 ## Product direction
 
@@ -51,7 +51,7 @@ Literature needs distinct settings, not the Alexandria library renamed for every
 
 ## Required architecture refactor
 
-The current code hardcodes harbor/market/library, merchant/archivist names, historical author prompts, activity values, and a causal rubric. Changing labels alone would misrepresent support.
+At the original specification baseline, code hardcoded harbor/market/library, merchant/archivist names, historical author prompts, activity values, and a causal rubric. The later implementation adds subject-aware lessons and fictional reading guides while retaining legacy zone IDs. Treat the refactor below as the design target, not an audit of the current code; changing labels alone would misrepresent support.
 
 Coordinator owns a versioned `LessonPack` contract containing subject, work/edition metadata, approved passages, reading boundary, places, characters, objectives, rubric, allowed branch settings, and scene-template ID. Place and character IDs come from the selected pack; a registry restricts templates and assets to authored implementations. Astra cannot supply arbitrary scripts or asset URLs.
 

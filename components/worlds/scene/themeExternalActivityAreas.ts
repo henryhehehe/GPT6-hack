@@ -11,6 +11,7 @@ export function themeExternalActivityAreas(theme:WorldTheme):ExternalPlacement[]
  ];
  if(theme.id==='tempest')return [
   {key:'island-camp-pot',asset:prop('pot-1'),at:[17,0,5],zone:'market',solid:true},
+  {key:'island-camp-bucket',asset:prop('bucket-wooden-1'),at:[17.9,0,5],zone:'market',solid:true},
  ];
  if(theme.id==='frankenstein')return [
   {key:'study-low-shelf',asset:prop('shelf-simple'),at:[-7,0,-14],zone:'library',solid:true},

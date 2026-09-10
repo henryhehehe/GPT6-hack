@@ -1,0 +1,9 @@
+[
+  {"start":0,"end":7,"image":"01-teacher.png","label":"TEACHER · PREPARED ALEXANDRIA LESSON","text":"What if a history lesson became a place you could investigate? This is Counterfactual Worlds."},
+  {"start":7,"end":17,"image":"02-world.png","alternate":"03-what-if.png","label":"STUDENT · CHANGE ONE ASSUMPTION","text":"The teacher starts with a prepared Alexandria lesson. Students explore the city, then change one assumption: what if harbor trade collapsed?"},
+  {"start":17,"end":26,"image":"04-feedback.png","label":"STUDENT · REAL ASTRA FEEDBACK","text":"A student predicts the library will definitely close. Astra challenges that certainty and asks what the evidence supports."},
+  {"start":26,"end":38,"image":"05-teacher-hint.png","alternate":"06-applied-hint.png","label":"TEACHER · PREVIEW AND APPLY","text":"The teacher adds a new challenge: could another patron support the scholars? We preview the question, then add it to the same student world."},
+  {"start":38,"end":46,"image":"07-source.png","label":"STUDENT · READ AND CITE","text":"Students read Strabo inside the app, distinguish historical evidence from invented teaching props, and cite the source."},
+  {"start":46,"end":56,"image":"08-revision.png","alternate":"09-result.png","label":"STUDENT · REVISE THE EXPLANATION","text":"The revised explanation connects trade, income, and scholar support, while recognizing that another patron could change the outcome."},
+  {"start":56,"end":60,"image":"10-closing.png","label":"COUNTERFACTUAL WORLDS","text":"Counterfactual Worlds makes reasoning visible."}
+]

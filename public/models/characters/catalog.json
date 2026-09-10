@@ -1,0 +1,1415 @@
+[
+  {
+    "id": "dorian",
+    "title": "Dorian · harbor merchant",
+    "family": "alexandria-cast",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/dorian.glb",
+    "bytes": 596572,
+    "sha256": "6f55f3f255017bd2e5b03d0c3af70b82fb87933a37830ed3a34771d9dc4c9764",
+    "dimensions": [
+      0.968,
+      1.9059,
+      0.4745
+    ],
+    "triangles": 11664,
+    "materials": 3,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/alexandria-cast.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "dorian__Anchor_Talk",
+      "dorian__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "alexandria",
+        "worldLabel": "The scholarly waterfront",
+        "zone": "harbor",
+        "role": "Harbor guide",
+        "period": "Ancient Mediterranean interpretation",
+        "interpretation": "Tunic and mantle companions; Strabo’s passage does not specify their clothing.",
+        "references": [
+          {
+            "title": "The Met · Ancient Greek dress",
+            "url": "https://www.metmuseum.org/es/essays/ancient-greek-dress"
+          }
+        ]
+      },
+      {
+        "worldId": "odyssey-ix",
+        "worldLabel": "The Cyclops episode · Aegean shore",
+        "zone": "market",
+        "role": "Cave observer",
+        "period": "Greek literary interpretation",
+        "interpretation": "Greek-inspired tunics and mantles illustrate a mythic story; they are not a verified Bronze Age reconstruction.",
+        "references": [
+          {
+            "title": "The Met · Ancient Greek dress",
+            "url": "https://www.metmuseum.org/es/essays/ancient-greek-dress"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earlymodern-doublet",
+    "title": "Earlymodern-informed reader: doublet",
+    "family": "earlymodern-readers",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/earlymodern-doublet.glb",
+    "bytes": 540336,
+    "sha256": "602b165979ca911e4fa4b0f2bb1811ebcc6649a3780b2e283610c0c3e2c8a0f2",
+    "dimensions": [
+      0.968,
+      1.8999,
+      0.4751
+    ],
+    "triangles": 10524,
+    "materials": 3,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/earlymodern-readers.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "earlymodern-doublet__Anchor_Talk",
+      "earlymodern-doublet__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "tempest",
+        "worldLabel": "An island after the storm",
+        "zone": "market",
+        "role": "Account examiner",
+        "period": "Early seventeenth-century stage inspiration",
+        "interpretation": "Doublet, gown and jerkin evoke Shakespeare’s theatre period. The fictional island has no verified local wardrobe.",
+        "references": [
+          {
+            "title": "V&A · Shakespeare trail, doublet 1615–20",
+            "url": "https://www.vam.ac.uk/articles/vampa-trail-shakespeares-magic"
+          },
+          {
+            "title": "Folger · The Tempest performance record",
+            "url": "https://shakespearedocumented.folger.edu/plays-poetry/tempest"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earlymodern-gown",
+    "title": "Earlymodern-informed reader: gown",
+    "family": "earlymodern-readers",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/earlymodern-gown.glb",
+    "bytes": 512604,
+    "sha256": "fb4a1404a407b6bd419e4ffabd8f470c9963050868c119749ed46f2e22c514d3",
+    "dimensions": [
+      0.968,
+      1.904,
+      0.6262
+    ],
+    "triangles": 9900,
+    "materials": 2,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/earlymodern-readers.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "earlymodern-gown__Anchor_Talk",
+      "earlymodern-gown__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "tempest",
+        "worldLabel": "An island after the storm",
+        "zone": "harbor",
+        "role": "Storm reader",
+        "period": "Early seventeenth-century stage inspiration",
+        "interpretation": "Doublet, gown and jerkin evoke Shakespeare’s theatre period. The fictional island has no verified local wardrobe.",
+        "references": [
+          {
+            "title": "V&A · Shakespeare trail, doublet 1615–20",
+            "url": "https://www.vam.ac.uk/articles/vampa-trail-shakespeares-magic"
+          },
+          {
+            "title": "Folger · The Tempest performance record",
+            "url": "https://shakespearedocumented.folger.edu/plays-poetry/tempest"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "earlymodern-jerkin",
+    "title": "Earlymodern-informed reader: jerkin",
+    "family": "earlymodern-readers",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/earlymodern-jerkin.glb",
+    "bytes": 561996,
+    "sha256": "17d8622983eeb620e1c60ebca3d5ca2efcc95cfa8a7aa353ea83ed41be94146e",
+    "dimensions": [
+      0.968,
+      1.8999,
+      0.4751
+    ],
+    "triangles": 10956,
+    "materials": 3,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/earlymodern-readers.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "earlymodern-jerkin__Anchor_Talk",
+      "earlymodern-jerkin__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "tempest",
+        "worldLabel": "An island after the storm",
+        "zone": "library",
+        "role": "Dialogue reader",
+        "period": "Early seventeenth-century stage inspiration",
+        "interpretation": "Doublet, gown and jerkin evoke Shakespeare’s theatre period. The fictional island has no verified local wardrobe.",
+        "references": [
+          {
+            "title": "V&A · Shakespeare trail, doublet 1615–20",
+            "url": "https://www.vam.ac.uk/articles/vampa-trail-shakespeares-magic"
+          },
+          {
+            "title": "Folger · The Tempest performance record",
+            "url": "https://shakespearedocumented.folger.edu/plays-poetry/tempest"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "georgian-coat",
+    "title": "Georgian-informed reader: coat",
+    "family": "georgian-readers",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/georgian-coat.glb",
+    "bytes": 593836,
+    "sha256": "ab9064510680a82206fa3b11977bac6dbda85f21cd4c6f9583648ec26537cf45",
+    "dimensions": [
+      0.968,
+      1.8999,
+      0.4869
+    ],
+    "triangles": 11044,
+    "materials": 3,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/georgian-readers.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "georgian-coat__Anchor_Talk",
+      "georgian-coat__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "declaration",
+        "worldLabel": "Philadelphia · a document workshop",
+        "zone": "harbor",
+        "role": "Principles reader",
+        "period": "Philadelphia, 1776 · clothing interpretation",
+        "interpretation": "Curved-front coats, waistcoats, knee breeches and a full-length gown draw on eighteenth-century garments. These readers are not convention delegates.",
+        "references": [
+          {
+            "title": "The Met · Suit, 1770–80",
+            "url": "https://www.metmuseum.org/art/collection/search/623325"
+          }
+        ]
+      },
+      {
+        "worldId": "frankenstein",
+        "worldLabel": "Letters and the study",
+        "zone": "library",
+        "role": "Narrative examiner",
+        "period": "Eighteenth-century narrative frame",
+        "interpretation": "Walton dates his letters 17—. The wardrobe uses a late-eighteenth-century analogy, with no exact decade asserted; 1831 is the edition date.",
+        "references": [
+          {
+            "title": "The Met · Suit, 1770–80",
+            "url": "https://www.metmuseum.org/art/collection/search/623325"
+          },
+          {
+            "title": "Frankenstein · Letter I",
+            "url": "https://www.gutenberg.org/files/42324/42324-h/42324-h.htm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "georgian-gown",
+    "title": "Georgian-informed reader: gown",
+    "family": "georgian-readers",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/georgian-gown.glb",
+    "bytes": 512580,
+    "sha256": "4d7452fb7824ac0b540f2c83779ed1a4bf1a643de58ccb623e0587f9bb347ddb",
+    "dimensions": [
+      0.968,
+      1.904,
+      0.6262
+    ],
+    "triangles": 9900,
+    "materials": 2,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/georgian-readers.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "georgian-gown__Anchor_Talk",
+      "georgian-gown__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "declaration",
+        "worldLabel": "Philadelphia · a document workshop",
+        "zone": "market",
+        "role": "Grievance examiner",
+        "period": "Philadelphia, 1776 · clothing interpretation",
+        "interpretation": "Curved-front coats, waistcoats, knee breeches and a full-length gown draw on eighteenth-century garments. These readers are not convention delegates.",
+        "references": [
+          {
+            "title": "The Met · Suit, 1770–80",
+            "url": "https://www.metmuseum.org/art/collection/search/623325"
+          }
+        ]
+      },
+      {
+        "worldId": "frankenstein",
+        "worldLabel": "Letters and the study",
+        "zone": "harbor",
+        "role": "Correspondence reader",
+        "period": "Eighteenth-century narrative frame",
+        "interpretation": "Walton dates his letters 17—. The wardrobe uses a late-eighteenth-century analogy, with no exact decade asserted; 1831 is the edition date.",
+        "references": [
+          {
+            "title": "The Met · Suit, 1770–80",
+            "url": "https://www.metmuseum.org/art/collection/search/623325"
+          },
+          {
+            "title": "Frankenstein · Letter I",
+            "url": "https://www.gutenberg.org/files/42324/42324-h/42324-h.htm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "georgian-waistcoat",
+    "title": "Georgian-informed reader: waistcoat",
+    "family": "georgian-readers",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/georgian-waistcoat.glb",
+    "bytes": 583744,
+    "sha256": "928fc459c7647839f93ea804d544f32f33fe16adcf8fa517279d85505d63ea6b",
+    "dimensions": [
+      0.968,
+      1.8999,
+      0.4751
+    ],
+    "triangles": 10848,
+    "materials": 3,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/georgian-readers.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "georgian-waistcoat__Anchor_Talk",
+      "georgian-waistcoat__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "declaration",
+        "worldLabel": "Philadelphia · a document workshop",
+        "zone": "library",
+        "role": "Document reader",
+        "period": "Philadelphia, 1776 · clothing interpretation",
+        "interpretation": "Curved-front coats, waistcoats, knee breeches and a full-length gown draw on eighteenth-century garments. These readers are not convention delegates.",
+        "references": [
+          {
+            "title": "The Met · Suit, 1770–80",
+            "url": "https://www.metmuseum.org/art/collection/search/623325"
+          }
+        ]
+      },
+      {
+        "worldId": "frankenstein",
+        "worldLabel": "Letters and the study",
+        "zone": "market",
+        "role": "Research reader",
+        "period": "Eighteenth-century narrative frame",
+        "interpretation": "Walton dates his letters 17—. The wardrobe uses a late-eighteenth-century analogy, with no exact decade asserted; 1831 is the edition date.",
+        "references": [
+          {
+            "title": "The Met · Suit, 1770–80",
+            "url": "https://www.metmuseum.org/art/collection/search/623325"
+          },
+          {
+            "title": "Frankenstein · Letter I",
+            "url": "https://www.gutenberg.org/files/42324/42324-h/42324-h.htm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "ione",
+    "title": "Ione · archivist",
+    "family": "alexandria-cast",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/ione.glb",
+    "bytes": 628720,
+    "sha256": "93433421f8c966e5979a1bd61785481dcceb1e5ff5c9d92939fd71b08c5f7244",
+    "dimensions": [
+      0.968,
+      1.9107,
+      0.461
+    ],
+    "triangles": 12776,
+    "materials": 3,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/alexandria-cast.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "ione__Anchor_Talk",
+      "ione__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "alexandria",
+        "worldLabel": "The scholarly waterfront",
+        "zone": "library",
+        "role": "Archive guide",
+        "period": "Ancient Mediterranean interpretation",
+        "interpretation": "Tunic and mantle companions; Strabo’s passage does not specify their clothing.",
+        "references": [
+          {
+            "title": "The Met · Ancient Greek dress",
+            "url": "https://www.metmuseum.org/es/essays/ancient-greek-dress"
+          }
+        ]
+      },
+      {
+        "worldId": "odyssey-ix",
+        "worldLabel": "The Cyclops episode · Aegean shore",
+        "zone": "library",
+        "role": "Voyage reader",
+        "period": "Greek literary interpretation",
+        "interpretation": "Greek-inspired tunics and mantles illustrate a mythic story; they are not a verified Bronze Age reconstruction.",
+        "references": [
+          {
+            "title": "The Met · Ancient Greek dress",
+            "url": "https://www.metmuseum.org/es/essays/ancient-greek-dress"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "medieval-cloak",
+    "title": "Medieval-informed reader: cloak",
+    "family": "medieval-readers",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/medieval-cloak.glb",
+    "bytes": 526372,
+    "sha256": "6c9657688b5365b107af4e0aecd08d204cf4c9b24728e335ee74323d3f340ccf",
+    "dimensions": [
+      0.968,
+      1.8999,
+      0.5143
+    ],
+    "triangles": 10052,
+    "materials": 3,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/medieval-readers.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "medieval-cloak__Anchor_Talk",
+      "medieval-cloak__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "macbeth",
+        "worldLabel": "A heath and a threshold",
+        "zone": "library",
+        "role": "Decision guide",
+        "period": "Eleventh-century-inspired clothing",
+        "interpretation": "Plain tunics, a gown and a mantle use broad medieval analogies. Exact Scottish dress is not established by these models.",
+        "references": [
+          {
+            "title": "Reading Museum · Bayeux costume guide",
+            "url": "https://collections.readingmuseum.org.uk/pdfs/H193B.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "medieval-gown",
+    "title": "Medieval-informed reader: gown",
+    "family": "medieval-readers",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/medieval-gown.glb",
+    "bytes": 508944,
+    "sha256": "8cd9b330266008c9911ae6fd3a75deefa3565fb611c587741c7bc863cc6ba995",
+    "dimensions": [
+      0.968,
+      1.904,
+      0.5588
+    ],
+    "triangles": 9740,
+    "materials": 2,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/medieval-readers.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "medieval-gown__Anchor_Talk",
+      "medieval-gown__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "macbeth",
+        "worldLabel": "A heath and a threshold",
+        "zone": "market",
+        "role": "Letter examiner",
+        "period": "Eleventh-century-inspired clothing",
+        "interpretation": "Plain tunics, a gown and a mantle use broad medieval analogies. Exact Scottish dress is not established by these models.",
+        "references": [
+          {
+            "title": "Reading Museum · Bayeux costume guide",
+            "url": "https://collections.readingmuseum.org.uk/pdfs/H193B.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "medieval-tunic",
+    "title": "Medieval-informed reader: tunic",
+    "family": "medieval-readers",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/medieval-tunic.glb",
+    "bytes": 487664,
+    "sha256": "f95802baffbb268ca01d01dc0f1a0f49b756bcfb973871352ee284385125d699",
+    "dimensions": [
+      0.968,
+      1.8999,
+      0.4238
+    ],
+    "triangles": 9308,
+    "materials": 2,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/medieval-readers.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "medieval-tunic__Anchor_Talk",
+      "medieval-tunic__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "macbeth",
+        "worldLabel": "A heath and a threshold",
+        "zone": "harbor",
+        "role": "Theatre reader",
+        "period": "Eleventh-century-inspired clothing",
+        "interpretation": "Plain tunics, a gown and a mantle use broad medieval analogies. Exact Scottish dress is not established by these models.",
+        "references": [
+          {
+            "title": "Reading Museum · Bayeux costume guide",
+            "url": "https://collections.readingmuseum.org.uk/pdfs/H193B.pdf"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "reader-coat",
+    "title": "Reader in a tailored coat",
+    "family": "reader-cast",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/reader-coat.glb",
+    "bytes": 538864,
+    "sha256": "808dee51dcecad826c0a0daec87f8777eefaf7aa590004e29304b5a293ade976",
+    "dimensions": [
+      0.968,
+      1.9009,
+      0.4472
+    ],
+    "triangles": 10434,
+    "materials": 3,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/reader-cast.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "reader-coat__Anchor_Talk",
+      "reader-coat__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "christmas-carol",
+        "worldLabel": "A winter street · three reading rooms",
+        "zone": "library",
+        "role": "Household reader",
+        "period": "1840s reading companions",
+        "interpretation": "Coats, trousers and a natural-waist gown frame the 1843 story. They do not reconstruct every time visited by the ghosts.",
+        "references": [
+          {
+            "title": "The Met · Morning dress, 1840–45",
+            "url": "https://www.metmuseum.org/art/collection/search/108064"
+          }
+        ]
+      },
+      {
+        "worldId": "seneca-falls",
+        "worldLabel": "Seneca Falls · a declaration workshop",
+        "zone": "market",
+        "role": "Sentiments reader",
+        "period": "Seneca Falls, 1848 · clothing interpretation",
+        "interpretation": "Natural-waist dress, full skirt and tailored separates. The later 1851 Bloomer reform costume is not used.",
+        "references": [
+          {
+            "title": "The Met · American afternoon dress, c.1845",
+            "url": "https://www.metmuseum.org/art/collection/search/159519"
+          },
+          {
+            "title": "National Park Service · Bloomers on the Trail",
+            "url": "https://www.nps.gov/articles/000/bloomers-on-the-trail.htm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "reader-dress",
+    "title": "Reader in a dress and shoulder shawl",
+    "family": "reader-cast",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/reader-dress.glb",
+    "bytes": 662868,
+    "sha256": "9f8b218f9055ca1cb3ed8a514765fc4c8e06219ff69f710f8bbd53823feda246",
+    "dimensions": [
+      0.968,
+      1.9057,
+      0.493
+    ],
+    "triangles": 13134,
+    "materials": 3,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/reader-cast.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "reader-dress__Anchor_Talk",
+      "reader-dress__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "christmas-carol",
+        "worldLabel": "A winter street · three reading rooms",
+        "zone": "market",
+        "role": "Memory reader",
+        "period": "1840s reading companions",
+        "interpretation": "Coats, trousers and a natural-waist gown frame the 1843 story. They do not reconstruct every time visited by the ghosts.",
+        "references": [
+          {
+            "title": "The Met · Morning dress, 1840–45",
+            "url": "https://www.metmuseum.org/art/collection/search/108064"
+          }
+        ]
+      },
+      {
+        "worldId": "seneca-falls",
+        "worldLabel": "Seneca Falls · a declaration workshop",
+        "zone": "harbor",
+        "role": "Comparison reader",
+        "period": "Seneca Falls, 1848 · clothing interpretation",
+        "interpretation": "Natural-waist dress, full skirt and tailored separates. The later 1851 Bloomer reform costume is not used.",
+        "references": [
+          {
+            "title": "The Met · American afternoon dress, c.1845",
+            "url": "https://www.metmuseum.org/art/collection/search/159519"
+          },
+          {
+            "title": "National Park Service · Bloomers on the Trail",
+            "url": "https://www.nps.gov/articles/000/bloomers-on-the-trail.htm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "reader-waistcoat",
+    "title": "Reader in a waistcoat and long sleeves",
+    "family": "reader-cast",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/reader-waistcoat.glb",
+    "bytes": 569648,
+    "sha256": "0aba444a9e532e2d5a0836dd2c441c2d43cdff275b9df599511ca3978879fb87",
+    "dimensions": [
+      0.968,
+      1.9057,
+      0.476
+    ],
+    "triangles": 11098,
+    "materials": 3,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/reader-cast.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "reader-waistcoat__Anchor_Talk",
+      "reader-waistcoat__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "christmas-carol",
+        "worldLabel": "A winter street · three reading rooms",
+        "zone": "harbor",
+        "role": "Counting-house reader",
+        "period": "1840s reading companions",
+        "interpretation": "Coats, trousers and a natural-waist gown frame the 1843 story. They do not reconstruct every time visited by the ghosts.",
+        "references": [
+          {
+            "title": "The Met · Morning dress, 1840–45",
+            "url": "https://www.metmuseum.org/art/collection/search/108064"
+          }
+        ]
+      },
+      {
+        "worldId": "seneca-falls",
+        "worldLabel": "Seneca Falls · a declaration workshop",
+        "zone": "library",
+        "role": "Claims examiner",
+        "period": "Seneca Falls, 1848 · clothing interpretation",
+        "interpretation": "Natural-waist dress, full skirt and tailored separates. The later 1851 Bloomer reform costume is not used.",
+        "references": [
+          {
+            "title": "The Met · American afternoon dress, c.1845",
+            "url": "https://www.metmuseum.org/art/collection/search/159519"
+          },
+          {
+            "title": "National Park Service · Bloomers on the Trail",
+            "url": "https://www.nps.gov/articles/000/bloomers-on-the-trail.htm"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "regency-coat",
+    "title": "Regency-informed reader: coat",
+    "family": "regency-readers",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/regency-coat.glb",
+    "bytes": 555208,
+    "sha256": "7480ca419befc7ceea642a214c95e3ea8d4a5400349ce2fef1864ec1e4b45a65",
+    "dimensions": [
+      0.968,
+      1.8999,
+      0.4869
+    ],
+    "triangles": 10580,
+    "materials": 3,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/regency-readers.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "regency-coat__Anchor_Talk",
+      "regency-coat__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "austen-letter",
+        "worldLabel": "Near Hunsford · a garden for reading",
+        "zone": "market",
+        "role": "Evidence editor",
+        "period": "Regency clothing interpretation",
+        "interpretation": "Raised-waist gowns and a cutaway coat replace the later silhouettes. An 1810–12 museum gown informs the shape, not an exact daywear replica.",
+        "references": [
+          {
+            "title": "The Met · Evening dress, 1810–12",
+            "url": "https://www.metmuseum.org/art/collection/search/157539"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "regency-dress",
+    "title": "Regency-informed reader: dress",
+    "family": "regency-readers",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/regency-dress.glb",
+    "bytes": 569396,
+    "sha256": "e60cf89d21220fa3d8301cfef9206c79f93c64800e82d647977a45f03e9cba78",
+    "dimensions": [
+      0.968,
+      1.9047,
+      0.482
+    ],
+    "triangles": 11092,
+    "materials": 2,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/regency-readers.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "regency-dress__Anchor_Talk",
+      "regency-dress__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "austen-letter",
+        "worldLabel": "Near Hunsford · a garden for reading",
+        "zone": "library",
+        "role": "Reading companion",
+        "period": "Regency clothing interpretation",
+        "interpretation": "Raised-waist gowns and a cutaway coat replace the later silhouettes. An 1810–12 museum gown informs the shape, not an exact daywear replica.",
+        "references": [
+          {
+            "title": "The Met · Evening dress, 1810–12",
+            "url": "https://www.metmuseum.org/art/collection/search/157539"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "regency-gown",
+    "title": "Regency-informed reader: gown",
+    "family": "regency-readers",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/regency-gown.glb",
+    "bytes": 655024,
+    "sha256": "673c4f3e5428fabc46ee989e46262e903f5f651b3ca3e9f05d14a14acd18793e",
+    "dimensions": [
+      0.968,
+      1.9047,
+      0.482
+    ],
+    "triangles": 12948,
+    "materials": 3,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/regency-readers.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "regency-gown__Anchor_Talk",
+      "regency-gown__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "austen-letter",
+        "worldLabel": "Near Hunsford · a garden for reading",
+        "zone": "harbor",
+        "role": "Letter reader",
+        "period": "Regency clothing interpretation",
+        "interpretation": "Raised-waist gowns and a cutaway coat replace the later silhouettes. An 1810–12 museum gown informs the shape, not an exact daywear replica.",
+        "references": [
+          {
+            "title": "The Met · Evening dress, 1810–12",
+            "url": "https://www.metmuseum.org/art/collection/search/157539"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "romantic-coat",
+    "title": "Romantic-informed reader: coat",
+    "family": "romantic-readers",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/romantic-coat.glb",
+    "bytes": 540748,
+    "sha256": "ae89172e35df4a418ee9f2073728f646903107f60df6fb6a3839ad7a4b0035a9",
+    "dimensions": [
+      0.968,
+      1.8999,
+      0.4869
+    ],
+    "triangles": 10472,
+    "materials": 3,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/romantic-readers.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "romantic-coat__Anchor_Talk",
+      "romantic-coat__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "douglass-literacy",
+        "worldLabel": "Baltimore · a testimony reading space",
+        "zone": "market",
+        "role": "Literacy reader",
+        "period": "Baltimore, 1826–1833 · clothing interpretation",
+        "interpretation": "A transitional gown, coat and trousers follow the narrated literacy years, not the 1845 publication date. These companions do not portray Douglass or the Auld family.",
+        "references": [
+          {
+            "title": "National Park Service · Douglass chronology",
+            "url": "https://www.nps.gov/frdo/learn/kidsyouth/chronology.htm"
+          },
+          {
+            "title": "The Met · American morning dress, 1825–30",
+            "url": "https://www.metmuseum.org/art/collection/search/174272"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "romantic-gown",
+    "title": "Romantic-informed reader: gown",
+    "family": "romantic-readers",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/romantic-gown.glb",
+    "bytes": 655040,
+    "sha256": "5c7d5863fb8ef538b322bac20c02f34d48ac1010e961235c1449e72e0981ad01",
+    "dimensions": [
+      0.968,
+      1.9047,
+      0.6262
+    ],
+    "triangles": 12948,
+    "materials": 3,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/romantic-readers.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "romantic-gown__Anchor_Talk",
+      "romantic-gown__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "douglass-literacy",
+        "worldLabel": "Baltimore · a testimony reading space",
+        "zone": "harbor",
+        "role": "Testimony reader",
+        "period": "Baltimore, 1826–1833 · clothing interpretation",
+        "interpretation": "A transitional gown, coat and trousers follow the narrated literacy years, not the 1845 publication date. These companions do not portray Douglass or the Auld family.",
+        "references": [
+          {
+            "title": "National Park Service · Douglass chronology",
+            "url": "https://www.nps.gov/frdo/learn/kidsyouth/chronology.htm"
+          },
+          {
+            "title": "The Met · American morning dress, 1825–30",
+            "url": "https://www.metmuseum.org/art/collection/search/174272"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "romantic-waistcoat",
+    "title": "Romantic-informed reader: waistcoat",
+    "family": "romantic-readers",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/romantic-waistcoat.glb",
+    "bytes": 530656,
+    "sha256": "e4c643c0570469d0ca762d7171639c420cbafbcdd9aa3baa9aa56c1e5cb46981",
+    "dimensions": [
+      0.968,
+      1.8999,
+      0.4751
+    ],
+    "triangles": 10276,
+    "materials": 3,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/romantic-readers.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "romantic-waistcoat__Anchor_Talk",
+      "romantic-waistcoat__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "douglass-literacy",
+        "worldLabel": "Baltimore · a testimony reading space",
+        "zone": "library",
+        "role": "Context examiner",
+        "period": "Baltimore, 1826–1833 · clothing interpretation",
+        "interpretation": "A transitional gown, coat and trousers follow the narrated literacy years, not the 1845 publication date. These companions do not portray Douglass or the Auld family.",
+        "references": [
+          {
+            "title": "National Park Service · Douglass chronology",
+            "url": "https://www.nps.gov/frdo/learn/kidsyouth/chronology.htm"
+          },
+          {
+            "title": "The Met · American morning dress, 1825–30",
+            "url": "https://www.metmuseum.org/art/collection/search/174272"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "thaleia",
+    "title": "Thaleia · market trader",
+    "family": "alexandria-cast",
+    "creator": "Counterfactual Worlds",
+    "sourceUrl": "/model-catalog?collection=characters",
+    "license": "MIT",
+    "licenseUrl": "/models/characters/LICENSE.txt",
+    "url": "/models/characters/thaleia.glb",
+    "bytes": 711072,
+    "sha256": "190ff713c5ade2c9c61c34a4d88e2e0d5643d6da2947d9eafc1ea11789ed8ba4",
+    "dimensions": [
+      0.968,
+      1.9107,
+      0.461
+    ],
+    "triangles": 14300,
+    "materials": 3,
+    "skins": 1,
+    "category": "teaching-character",
+    "classroomStatus": "authored-character",
+    "sourcePath": "assets/blender/characters/alexandria-cast.blend",
+    "clips": [
+      "Idle",
+      "Greeting",
+      "Talk"
+    ],
+    "anchors": [
+      "thaleia__Anchor_Talk",
+      "thaleia__Anchor_Label"
+    ],
+    "modifications": [
+      "Original project-authored mesh, rig and gesture clips.",
+      "Runtime loader centers, grounds and scales each independent character instance."
+    ],
+    "usage": {
+      "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
+      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
+      "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
+      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+    },
+    "assignments": [
+      {
+        "worldId": "alexandria",
+        "worldLabel": "The scholarly waterfront",
+        "zone": "market",
+        "role": "Market guide",
+        "period": "Ancient Mediterranean interpretation",
+        "interpretation": "Tunic and mantle companions; Strabo’s passage does not specify their clothing.",
+        "references": [
+          {
+            "title": "The Met · Ancient Greek dress",
+            "url": "https://www.metmuseum.org/es/essays/ancient-greek-dress"
+          }
+        ]
+      },
+      {
+        "worldId": "odyssey-ix",
+        "worldLabel": "The Cyclops episode · Aegean shore",
+        "zone": "harbor",
+        "role": "Shore reader",
+        "period": "Greek literary interpretation",
+        "interpretation": "Greek-inspired tunics and mantles illustrate a mythic story; they are not a verified Bronze Age reconstruction.",
+        "references": [
+          {
+            "title": "The Met · Ancient Greek dress",
+            "url": "https://www.metmuseum.org/es/essays/ancient-greek-dress"
+          }
+        ]
+      }
+    ]
+  }
+]

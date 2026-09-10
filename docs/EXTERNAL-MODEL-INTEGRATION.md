@@ -1,6 +1,6 @@
 # External model integration
 
-September 10, 2026. The acquired CC0 library now has **69 self-contained local GLBs**, a searchable **`/model-catalog`** route, and a [detailed usage guide for every item](../assets/external/USAGE-GUIDE.md). **47 distinct external models appear in 117 placements across the ten lesson worlds**. Including the three reusable templates, the catalog records 49 models in 201 placements. The latest follow-up below describes the current scene additions and runtime checks.
+September 10, 2026. The acquired CC0 library now has **69 self-contained local GLBs**, a searchable **`/model-catalog`** route, and a [detailed usage guide for every item](../assets/external/USAGE-GUIDE.md). **47 distinct external models appear in 121 placements across the ten lesson worlds**. Including the three reusable templates, the catalog records 49 models in 205 placements. The latest follow-up below describes the current scene additions and runtime checks.
 
 The catalog provides an actual GLB preview, optional animation playback, downloads, original source links, creators/licenses, measured geometry/file sizes, dimensions, readiness, placement and collision instructions, animation/retargeting notes, current coordinates, code examples and preparation history. It loads one selected model at a time. Model preview does not automatically play animations.
 
@@ -130,3 +130,36 @@ The new `themeExternalActivityAreas.ts` entries join `themedExternalPlacements`,
 `loadExternalModels` now exposes `ready` and per-asset `status` (`loading`, `ready`, `failed`, `disposed`) for integration checks, and accepts the same optional fetch-adapter pattern as the authored loader. Normal renderers continue to use its local allowlisted GLB URLs. Empty GLB scenes retain their source-selectable fallback. Scene disposal clears the detached object hierarchy, and models completing after disposal cannot reattach.
 
 Runtime verification loads the actual local GLB geometry for every lesson world, confirms placeholder replacement and placement transforms, raycasts the new source links and supporting surfaces, verifies one request per unique asset, and checks shared-resource disposal. Separate failure/empty/late-completion cases preserve source access and prevent reattachment. These tests exclude browser texture decoding and WebGL appearance. The combined 41 focused tests pass, including navigation with the current vegetation and architecture. All 69 catalog GLBs were revalidated; the regenerated per-item guide and budgets match the scene registry.
+
+## Follow-up — reading-first loading and open furniture fallbacks
+
+The external loader now schedules supporting furniture first, then source-linked objects, then untagged scenery. It resolves support dependencies before starting a child's asset request, retains the three-request limit, and still fetches each unique model once. Scene object order, placements and navigation are unchanged; the fallback objects are all attached immediately before requests begin. This is a request-priority improvement, not a measured network-speed claim.
+
+The large reading table, scanned tea table and market stall now use simple furniture-shaped fallbacks with legs and a measured tabletop. The stall retains corner posts and a canopy with an open counter space, so its apple crate remains visible and selectable if the stall GLB fails. Other models retain their existing bounded fallback. Each multi-part fallback shares one material, released once when replaced or when the scene closes. Navigation remains conservative around the existing furniture footprint.
+
+The standalone `external.inspect(ray)` helper now considers the nearest visible surface in its parent scene, so a wall or untagged object prevents selecting a source behind it. It resolves only this external layer's own wrapper tags. The production renderers retain their existing common `pickSceneSelection` path.
+
+The 32 focused external-loading, real-mesh scene-integration and source-picking tests pass, including request order, failed-stall produce visibility, counter height, blocked selection and shared fallback cleanup. Scoped TypeScript passes. Model counts, GLB bytes and placement coordinates did not change. Browser visual review and device performance were not tested.
+
+## Follow-up — individual composition and source access in all ten scenes
+
+The supported displays now have scene-specific arrangements rather than repeating the same three-object row in every room. Four placements were added and existing objects were rearranged or exchanged using already retained CC0 assets. Current totals are **47 distinct external models in 121 lesson placements**, or 49 models in 205 placements including the three base templates. No GLB file or license changed.
+
+| Scene | Improvement |
+| --- | --- |
+| Alexandria | The existing market bag opens the market source while retaining its scenario visibility behavior. No new geometry or obstacle. |
+| Odyssey | A scaled rope coil joins the existing workbench scroll, grounded on the measured work surface. The bench remains a harbor source target. |
+| Pride and Prejudice | A second, oppositely turned mug completes the two-sided tea arrangement without moving furniture or overlapping the plate and first mug. |
+| Macbeth | A small candlestick sits within the existing crate's recessed top; the crate and candle open the same harbor reading station. |
+| Frankenstein | The study cabinet combines stacked books, a closed book and a raised bookstand. The cabinet becomes a larger library source target. |
+| A Christmas Carol | A mug, book and candlestick replace the repeated book-stack arrangement on the counting-house cabinet. The cabinet opens its harbor source. |
+| The Tempest | A bucket sits beside the camp pot, clear of its footprint and the source arrival area. Both open the market source. |
+| Declaration | Opposing book arrangements distinguish the two comparison tables; one has a candlestick, the other a raised stand. Both tables open the library source. |
+| Douglass: literacy | The book, stacked books and candlestick are spaced across the work desk; clicking the desk also opens the library source. |
+| Seneca Falls | A raised bookstand with a book and stack marks the meeting desk as a reading display. The desk itself opens the library source. |
+
+`themeExternalDetails.ts` holds per-world display recipes relative to the final support transform. The additional rope uses a 0.6 model scale; the Macbeth candle uses 0.8. The existing tea table remains at 0.5 scale. The helper distinguishes model scale from support-relative spacing and supports individual item yaw.
+
+`linkSupportStations` assigns a station only to previously unassigned furniture whose supported objects all agree on one station. Explicit parent choices are preserved; mixed-source displays remain unassigned. It does not mutate the input registry. The generated catalog and copied support bundles include these resolved source links.
+
+The changed displays pass actual-mesh support raycasts, footprint containment, and overlap checks against both new and existing tabletop items. Navigation with current architecture and vegetation remains connected in all ten worlds. The objects remain interpreted scene dressing, not authenticated period furnishings, textual evidence, or proof of an event in a work.

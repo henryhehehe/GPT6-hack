@@ -351,6 +351,114 @@
       "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
     },
     {
+      "id": "earlymodern-doublet",
+      "title": "Earlymodern-informed reader: doublet",
+      "pack": "earlymodern-readers",
+      "category": "characters",
+      "url": "/models/characters/earlymodern-doublet.glb",
+      "source": "assets/blender/characters/earlymodern-readers.blend",
+      "bytes": 540336,
+      "sha256": "602b165979ca911e4fa4b0f2bb1811ebcc6649a3780b2e283610c0c3e2c8a0f2",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.006,
+          -0.1941
+        ],
+        "max": [
+          0.484,
+          1.9059,
+          0.281
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "earlymodern-doublet__Anchor_Talk",
+        "Anchor_Label": "earlymodern-doublet__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "earlymodern-gown",
+      "title": "Earlymodern-informed reader: gown",
+      "pack": "earlymodern-readers",
+      "category": "characters",
+      "url": "/models/characters/earlymodern-gown.glb",
+      "source": "assets/blender/characters/earlymodern-readers.blend",
+      "bytes": 512604,
+      "sha256": "fb4a1404a407b6bd419e4ffabd8f470c9963050868c119749ed46f2e22c514d3",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.006,
+          -0.3131
+        ],
+        "max": [
+          0.484,
+          1.91,
+          0.3131
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "earlymodern-gown__Anchor_Talk",
+        "Anchor_Label": "earlymodern-gown__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "earlymodern-jerkin",
+      "title": "Earlymodern-informed reader: jerkin",
+      "pack": "earlymodern-readers",
+      "category": "characters",
+      "url": "/models/characters/earlymodern-jerkin.glb",
+      "source": "assets/blender/characters/earlymodern-readers.blend",
+      "bytes": 561996,
+      "sha256": "17d8622983eeb620e1c60ebca3d5ca2efcc95cfa8a7aa353ea83ed41be94146e",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.006,
+          -0.1941
+        ],
+        "max": [
+          0.484,
+          1.9059,
+          0.281
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "earlymodern-jerkin__Anchor_Talk",
+        "Anchor_Label": "earlymodern-jerkin__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
       "id": "folded-letter",
       "title": "Sealed folded letter",
       "pack": "austen",
@@ -444,6 +552,114 @@
       "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
     },
     {
+      "id": "georgian-coat",
+      "title": "Georgian-informed reader: coat",
+      "pack": "georgian-readers",
+      "category": "characters",
+      "url": "/models/characters/georgian-coat.glb",
+      "source": "assets/blender/characters/georgian-readers.blend",
+      "bytes": 593836,
+      "sha256": "ab9064510680a82206fa3b11977bac6dbda85f21cd4c6f9583648ec26537cf45",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.006,
+          -0.2059
+        ],
+        "max": [
+          0.484,
+          1.9059,
+          0.281
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "georgian-coat__Anchor_Talk",
+        "Anchor_Label": "georgian-coat__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "georgian-gown",
+      "title": "Georgian-informed reader: gown",
+      "pack": "georgian-readers",
+      "category": "characters",
+      "url": "/models/characters/georgian-gown.glb",
+      "source": "assets/blender/characters/georgian-readers.blend",
+      "bytes": 512580,
+      "sha256": "4d7452fb7824ac0b540f2c83779ed1a4bf1a643de58ccb623e0587f9bb347ddb",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.006,
+          -0.3131
+        ],
+        "max": [
+          0.484,
+          1.91,
+          0.3131
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "georgian-gown__Anchor_Talk",
+        "Anchor_Label": "georgian-gown__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "georgian-waistcoat",
+      "title": "Georgian-informed reader: waistcoat",
+      "pack": "georgian-readers",
+      "category": "characters",
+      "url": "/models/characters/georgian-waistcoat.glb",
+      "source": "assets/blender/characters/georgian-readers.blend",
+      "bytes": 583744,
+      "sha256": "928fc459c7647839f93ea804d544f32f33fe16adcf8fa517279d85505d63ea6b",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.006,
+          -0.1941
+        ],
+        "max": [
+          0.484,
+          1.9059,
+          0.281
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "georgian-waistcoat__Anchor_Talk",
+        "Anchor_Label": "georgian-waistcoat__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
       "id": "ione",
       "title": "Ione \u00b7 archivist",
       "pack": "alexandria-cast",
@@ -504,6 +720,114 @@
         "Anchor_Inspect": "market-stall__Anchor_Inspect"
       },
       "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "medieval-cloak",
+      "title": "Medieval-informed reader: cloak",
+      "pack": "medieval-readers",
+      "category": "characters",
+      "url": "/models/characters/medieval-cloak.glb",
+      "source": "assets/blender/characters/medieval-readers.blend",
+      "bytes": 526372,
+      "sha256": "6c9657688b5365b107af4e0aecd08d204cf4c9b24728e335ee74323d3f340ccf",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.006,
+          -0.3024
+        ],
+        "max": [
+          0.484,
+          1.9059,
+          0.2119
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "medieval-cloak__Anchor_Talk",
+        "Anchor_Label": "medieval-cloak__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "medieval-gown",
+      "title": "Medieval-informed reader: gown",
+      "pack": "medieval-readers",
+      "category": "characters",
+      "url": "/models/characters/medieval-gown.glb",
+      "source": "assets/blender/characters/medieval-readers.blend",
+      "bytes": 508944,
+      "sha256": "8cd9b330266008c9911ae6fd3a75deefa3565fb611c587741c7bc863cc6ba995",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.006,
+          -0.2794
+        ],
+        "max": [
+          0.484,
+          1.91,
+          0.2794
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "medieval-gown__Anchor_Talk",
+        "Anchor_Label": "medieval-gown__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "medieval-tunic",
+      "title": "Medieval-informed reader: tunic",
+      "pack": "medieval-readers",
+      "category": "characters",
+      "url": "/models/characters/medieval-tunic.glb",
+      "source": "assets/blender/characters/medieval-readers.blend",
+      "bytes": 487664,
+      "sha256": "f95802baffbb268ca01d01dc0f1a0f49b756bcfb973871352ee284385125d699",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.006,
+          -0.2119
+        ],
+        "max": [
+          0.484,
+          1.9059,
+          0.2119
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "medieval-tunic__Anchor_Talk",
+        "Anchor_Label": "medieval-tunic__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
       "provenance": "Original interpretive teaching asset; not primary evidence",
       "creator": "Counterfactual Worlds",
       "license": "MIT",
@@ -697,6 +1021,114 @@
       "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
     },
     {
+      "id": "reader-coat",
+      "title": "Reader in a tailored coat",
+      "pack": "reader-cast",
+      "category": "characters",
+      "url": "/models/characters/reader-coat.glb",
+      "source": "assets/blender/characters/reader-cast.blend",
+      "bytes": 538864,
+      "sha256": "808dee51dcecad826c0a0daec87f8777eefaf7aa590004e29304b5a293ade976",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.005,
+          -0.1972
+        ],
+        "max": [
+          0.484,
+          1.9059,
+          0.25
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "reader-coat__Anchor_Talk",
+        "Anchor_Label": "reader-coat__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "reader-dress",
+      "title": "Reader in a dress and shoulder shawl",
+      "pack": "reader-cast",
+      "category": "characters",
+      "url": "/models/characters/reader-dress.glb",
+      "source": "assets/blender/characters/reader-cast.blend",
+      "bytes": 662868,
+      "sha256": "9f8b218f9055ca1cb3ed8a514765fc4c8e06219ff69f710f8bbd53823feda246",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.005,
+          -0.245
+        ],
+        "max": [
+          0.484,
+          1.9107,
+          0.248
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "reader-dress__Anchor_Talk",
+        "Anchor_Label": "reader-dress__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "reader-waistcoat",
+      "title": "Reader in a waistcoat and long sleeves",
+      "pack": "reader-cast",
+      "category": "characters",
+      "url": "/models/characters/reader-waistcoat.glb",
+      "source": "assets/blender/characters/reader-cast.blend",
+      "bytes": 569648,
+      "sha256": "0aba444a9e532e2d5a0836dd2c441c2d43cdff275b9df599511ca3978879fb87",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.005,
+          -0.226
+        ],
+        "max": [
+          0.484,
+          1.9107,
+          0.25
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "reader-waistcoat__Anchor_Talk",
+        "Anchor_Label": "reader-waistcoat__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
       "id": "reading-table",
       "title": "Wooden reading table",
       "pack": "archive",
@@ -728,6 +1160,114 @@
       "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
     },
     {
+      "id": "regency-coat",
+      "title": "Regency-informed reader: coat",
+      "pack": "regency-readers",
+      "category": "characters",
+      "url": "/models/characters/regency-coat.glb",
+      "source": "assets/blender/characters/regency-readers.blend",
+      "bytes": 555208,
+      "sha256": "7480ca419befc7ceea642a214c95e3ea8d4a5400349ce2fef1864ec1e4b45a65",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.006,
+          -0.2059
+        ],
+        "max": [
+          0.484,
+          1.9059,
+          0.281
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "regency-coat__Anchor_Talk",
+        "Anchor_Label": "regency-coat__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "regency-dress",
+      "title": "Regency-informed reader: dress",
+      "pack": "regency-readers",
+      "category": "characters",
+      "url": "/models/characters/regency-dress.glb",
+      "source": "assets/blender/characters/regency-readers.blend",
+      "bytes": 569396,
+      "sha256": "e60cf89d21220fa3d8301cfef9206c79f93c64800e82d647977a45f03e9cba78",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.006,
+          -0.226
+        ],
+        "max": [
+          0.484,
+          1.9107,
+          0.256
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "regency-dress__Anchor_Talk",
+        "Anchor_Label": "regency-dress__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "regency-gown",
+      "title": "Regency-informed reader: gown",
+      "pack": "regency-readers",
+      "category": "characters",
+      "url": "/models/characters/regency-gown.glb",
+      "source": "assets/blender/characters/regency-readers.blend",
+      "bytes": 655024,
+      "sha256": "673c4f3e5428fabc46ee989e46262e903f5f651b3ca3e9f05d14a14acd18793e",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.006,
+          -0.226
+        ],
+        "max": [
+          0.484,
+          1.9107,
+          0.256
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "regency-gown__Anchor_Talk",
+        "Anchor_Label": "regency-gown__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
       "id": "rolled-scroll",
       "title": "Bound papyrus roll",
       "pack": "archive",
@@ -752,6 +1292,114 @@
         "Anchor_Inspect": "rolled-scroll__Anchor_Inspect"
       },
       "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "romantic-coat",
+      "title": "Romantic-informed reader: coat",
+      "pack": "romantic-readers",
+      "category": "characters",
+      "url": "/models/characters/romantic-coat.glb",
+      "source": "assets/blender/characters/romantic-readers.blend",
+      "bytes": 540748,
+      "sha256": "ae89172e35df4a418ee9f2073728f646903107f60df6fb6a3839ad7a4b0035a9",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.006,
+          -0.2059
+        ],
+        "max": [
+          0.484,
+          1.9059,
+          0.281
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "romantic-coat__Anchor_Talk",
+        "Anchor_Label": "romantic-coat__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "romantic-gown",
+      "title": "Romantic-informed reader: gown",
+      "pack": "romantic-readers",
+      "category": "characters",
+      "url": "/models/characters/romantic-gown.glb",
+      "source": "assets/blender/characters/romantic-readers.blend",
+      "bytes": 655040,
+      "sha256": "5c7d5863fb8ef538b322bac20c02f34d48ac1010e961235c1449e72e0981ad01",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.006,
+          -0.3131
+        ],
+        "max": [
+          0.484,
+          1.9107,
+          0.3131
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "romantic-gown__Anchor_Talk",
+        "Anchor_Label": "romantic-gown__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "romantic-waistcoat",
+      "title": "Romantic-informed reader: waistcoat",
+      "pack": "romantic-readers",
+      "category": "characters",
+      "url": "/models/characters/romantic-waistcoat.glb",
+      "source": "assets/blender/characters/romantic-readers.blend",
+      "bytes": 530656,
+      "sha256": "e4c643c0570469d0ca762d7171639c420cbafbcdd9aa3baa9aa56c1e5cb46981",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.006,
+          -0.1941
+        ],
+        "max": [
+          0.484,
+          1.9059,
+          0.281
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "romantic-waistcoat__Anchor_Talk",
+        "Anchor_Label": "romantic-waistcoat__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
       "provenance": "Original interpretive teaching asset; not primary evidence",
       "creator": "Counterfactual Worlds",
       "license": "MIT",

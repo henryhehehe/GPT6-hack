@@ -11,15 +11,15 @@
     "setting": "odyssey-ix",
     "label": "The Odyssey",
     "kind": "world",
-    "placements": 25,
-    "uniqueAssets": 20,
-    "bytes": 4981628
+    "placements": 26,
+    "uniqueAssets": 21,
+    "bytes": 5124096
   },
   {
     "setting": "austen-letter",
     "label": "Pride and Prejudice",
     "kind": "world",
-    "placements": 13,
+    "placements": 14,
     "uniqueAssets": 7,
     "bytes": 1136972
   },
@@ -27,9 +27,9 @@
     "setting": "macbeth",
     "label": "Macbeth",
     "kind": "world",
-    "placements": 5,
-    "uniqueAssets": 3,
-    "bytes": 530288
+    "placements": 6,
+    "uniqueAssets": 4,
+    "bytes": 635968
   },
   {
     "setting": "frankenstein",
@@ -37,7 +37,7 @@
     "kind": "world",
     "placements": 12,
     "uniqueAssets": 8,
-    "bytes": 1492032
+    "bytes": 1558756
   },
   {
     "setting": "christmas-carol",
@@ -45,13 +45,13 @@
     "kind": "world",
     "placements": 11,
     "uniqueAssets": 9,
-    "bytes": 2368304
+    "bytes": 2436472
   },
   {
     "setting": "tempest",
     "label": "The Tempest",
     "kind": "world",
-    "placements": 17,
+    "placements": 18,
     "uniqueAssets": 10,
     "bytes": 3670392
   },
@@ -60,8 +60,8 @@
     "label": "Declaration of Independence",
     "kind": "world",
     "placements": 11,
-    "uniqueAssets": 5,
-    "bytes": 745752
+    "uniqueAssets": 6,
+    "bytes": 918156
   },
   {
     "setting": "douglass-literacy",
@@ -76,8 +76,8 @@
     "label": "Seneca Falls",
     "kind": "world",
     "placements": 8,
-    "uniqueAssets": 6,
-    "bytes": 918156
+    "uniqueAssets": 5,
+    "bytes": 812476
   },
   {
     "setting": "coast",

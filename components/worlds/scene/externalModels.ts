@@ -3,6 +3,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import index from '@/lib/externalAssetIndex.json';
 import type { ExternalPlacement } from './externalLayout';
 import type { ZoneId } from '@/lib/world';
+import {externalFallback} from './externalFallbacks';
 
 const assets = new Map(index.map(a => [a.id,a]));
 type FetchModel = (url:string) => Promise<{scene:THREE.Group}>;
@@ -67,43 +68,50 @@ export class ExternalModelDepot {
 /** Optional dressing is immediately represented by bounded, inspectable fallbacks. */
 export function loadExternalModels(parent:THREE.Object3D,placements:readonly ExternalPlacement[],fetchModel?:FetchModel){
   const depot=new ExternalModelDepot(fetchModel),root=new THREE.Group();root.name='ExternalSceneArt';parent.add(root);
-  const interactables:THREE.Object3D[]=[],stock:{object:THREE.Group;zone:'harbor'|'market'}[]=[];
-  const placeholders=new Set<THREE.Mesh>();
+  const stock:{object:THREE.Group;zone:'harbor'|'market'}[]=[];
+  const placeholders=new Set<THREE.Object3D>();
+  const attachments=new Map<ExternalPlacement,()=>void>();
   const status=new Map<string,'loading'|'ready'|'failed'|'disposed'>(),pending:Promise<void>[]=[];
   let disposed=false;
   for(const placement of placements){
     const asset=assets.get(placement.asset);if(!asset||asset.classroomStatus!=='scene-eligible')continue;
     const group=new THREE.Group();group.name=placement.key;group.position.set(...placement.at);group.rotation.y=placement.turn??0;group.scale.setScalar(placement.scale??1);
     group.userData.assetId=asset.id;group.userData.externalZone=placement.zone;root.add(group);
-    const [w,h,d]=asset.dimensions;
-    // A trunk-sized fallback matches navigation while the broad canopy loads.
-    const trunk=placement.trunkRadius;
-    const fallback=new THREE.Mesh(new THREE.BoxGeometry(trunk ? trunk*2 :Math.max(.06,w),Math.max(.025,h),trunk ? trunk*2 :Math.max(.06,d)),
-      new THREE.MeshStandardMaterial({color:asset.category==='rock'?'#7f8277':'#997953',roughness:.95}));
-    fallback.position.y=h/2;fallback.castShadow=true;fallback.receiveShadow=true;
+    const fallback=externalFallback(asset,placement);
     group.add(fallback);placeholders.add(fallback);
-    if(placement.zone)interactables.push(group);
     if(placement.activity)stock.push({object:group,zone:placement.activity});
     status.set(asset.id,'loading');
-    pending.push(depot.load(asset.id).then(source=>{
+    attachments.set(placement,()=>pending.push(depot.load(asset.id).then(source=>{
       if(disposed)return;
       if(!source){status.set(asset.id,'failed');return;}
       status.set(asset.id,'ready');
       const clone=source.clone(true);
       clone.traverse(object=>{if(object instanceof THREE.Mesh){object.castShadow=true;object.receiveShadow=true;}});
       group.add(clone);group.remove(fallback);disposeModelResources(fallback);placeholders.delete(fallback);
-    }));
+    })));
   }
+  // Queue source objects ahead of distant scenery, with their furniture first.
+  // All placeholders already exist, regardless of the resulting request order.
+  const supports=new Set(placements.flatMap(p=>p.support?[p.support]:[]));
+  const byKey=new Map(placements.map(p=>[p.key,p])),scheduled=new Set<ExternalPlacement>();
+  const priority=(p:ExternalPlacement)=>supports.has(p.key)?0:p.zone?1:2;
+  const schedule=(p:ExternalPlacement)=>{
+    if(scheduled.has(p))return;scheduled.add(p);
+    const support=p.support?byKey.get(p.support):undefined;if(support)schedule(support);
+    attachments.get(p)?.();
+  };
+  [...placements].sort((a,b)=>priority(a)-priority(b)).forEach(schedule);
+  attachments.clear();
   return {
     root,status,ready:Promise.all(pending).then(()=>status),
-    /** Raycast groups recursively, then resolve parents. This also works on fallbacks. */
+    /** Resolve the nearest visible surface; walls and untagged props occlude sources. */
     inspect(ray:THREE.Raycaster):ZoneId|null{
-      const hit=ray.intersectObjects(interactables,true).find(h=>{
+      const hit=ray.intersectObject(parent,true).find(h=>{
         for(let o:THREE.Object3D|null=h.object;o;o=o.parent)if(!o.visible)return false;
         return true;
       });
       for(let object:THREE.Object3D|null=hit?.object??null;object&&object!==root;object=object.parent)
-        if(object.userData.externalZone)return object.userData.externalZone as ZoneId;
+        if(object.parent===root&&object.userData.externalZone)return object.userData.externalZone as ZoneId;
       return null;
     },
     update(blend:number,harbor:number,market:number){

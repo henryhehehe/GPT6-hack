@@ -13,8 +13,8 @@ export function loadStreetCrowd(parent:THREE.Object3D){
  const people:Person[]=[],sources:THREE.Object3D[]=[];let disposed=false;
  const loader=new GLTFLoader();
  const release=(source:THREE.Object3D)=>{const gs=new Set<THREE.BufferGeometry>(),ms=new Set<THREE.Material>(),ts=new Set<THREE.Texture>();source.traverse(o=>{if(!(o instanceof THREE.Mesh))return;gs.add(o.geometry);for(const m of Array.isArray(o.material)?o.material:[o.material]){ms.add(m);Object.values(m).forEach(v=>{if(v instanceof THREE.Texture)ts.add(v);});}});gs.forEach(g=>g.dispose());ms.forEach(m=>m.dispose());ts.forEach(t=>t.dispose());};
- ['ochre','teal','indigo','rose'].forEach((variant,variantIndex)=>{
-  void loader.loadAsync(`/models/characters/citizen-${variant}.glb`).then(gltf=>{
+ const loaded=Promise.all(['ochre','teal','indigo','rose'].map((variant,variantIndex)=>
+  loader.loadAsync(`/models/characters/citizen-${variant}.glb`).then(gltf=>{
    if(disposed){release(gltf.scene);return;}sources.push(gltf.scene);
    const bounds=new THREE.Box3().setFromObject(gltf.scene),height=bounds.max.y-bounds.min.y;
    const walkingClip=gltf.animations.find(c=>/walk/i.test(c.name)),idleClip=gltf.animations.find(c=>/idle|stand/i.test(c.name));
@@ -27,9 +27,9 @@ export function loadStreetCrowd(parent:THREE.Object3D){
     const walk=walkingClip&&mixer?mixer.clipAction(walkingClip):null,idle=idleClip&&mixer?mixer.clipAction(idleClip):null;idle?.play();
     people.push({rig,root:person,route,index,mixer,walk,idle,travel:0,direction:1,pause:2+index%5,clock:0});
    });
-  }).catch(()=>{/* A decorative character load cannot interrupt the lesson. */});
- });
- return {update(dt:number,t:number,camera:THREE.Camera,world:World,blend:number,reduced:boolean){
+  }).catch(()=>{/* A decorative character load cannot interrupt the lesson. */})
+ ));
+ return {loaded,update(dt:number,t:number,camera:THREE.Camera,world:World,blend:number,reduced:boolean){
   const delta=Math.min(.05,Math.max(0,dt));
   for(const p of people){
    const group=CROWD_ROUTES.filter(r=>r.zone===p.route.zone),rank=group.indexOf(p.route),activity=world.nodes.find(n=>n.id===p.route.zone)?.activity??1;

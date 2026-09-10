@@ -1,15 +1,17 @@
+import {reserveAi,requireImages} from './pilot';
 import { env } from 'cloudflare:workers';
 import { z } from 'zod';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 export function db(){const binding=(env as unknown as {DB:D1Database}).DB;if(!binding)throw new Error('Classroom storage is not configured');return binding;}
 export function serverEnv(name:string){return (env as unknown as Record<string,string>)[name] || process.env[name];}
-export async function astra<T>(name:string,schema:z.ZodType<T>,instructions:string,input:unknown,file?:{filename:string;file_data:string}|{file_url:string},timeoutMs=65000){
+export async function astra<T>(name:string,schema:z.ZodType<T>,instructions:string,input:unknown,file?:{filename:string;file_data:string}|{file_url:string},timeoutMs=65000,options:{imageUrl?:string;effort?:'low'|'medium'}={}){
  const key=serverEnv('OPENAI_API_KEY');if(!key)throw new Error('Add OPENAI_API_KEY to the server environment to use Astra. Your work is preserved.');
+ await reserveAi();
  const started=Date.now();const jsonSchema=zodToJsonSchema(schema,{$refStrategy:'none'});delete jsonSchema.$schema;
- const res=await fetch('https://api.openai.com/v1/responses',{method:'POST',headers:{Authorization:`Bearer ${key}`,'Content-Type':'application/json'},body:JSON.stringify({model:serverEnv('OPENAI_MODEL')||'gpt-6-astra',reasoning:{effort:'low'},instructions,input:file?[{role:'user',content:[{type:'input_text',text:JSON.stringify(input)},{type:'input_file',...file}]}]:JSON.stringify(input),max_output_tokens:file?9000:7000,text:{format:{type:'json_schema',name,strict:true,schema:jsonSchema}}}),signal:AbortSignal.timeout(timeoutMs)});
- const data=await res.json() as {id:string;error?:{message:string};status:string;output?:{content?:{type:string;text?:string}[]}[]};
+ const res=await fetch('https://api.openai.com/v1/responses',{method:'POST',headers:{Authorization:`Bearer ${key}`,'Content-Type':'application/json'},body:JSON.stringify({model:serverEnv('OPENAI_MODEL')||'gpt-6-astra',reasoning:{effort:options.effort??'low'},instructions,input:file||options.imageUrl?[{role:'user',content:[{type:'input_text',text:JSON.stringify(input)},...(file?[{type:'input_file',...file}]:[]),...(options.imageUrl?[{type:'input_image',image_url:options.imageUrl,detail:'auto'}]:[])]}]:JSON.stringify(input),max_output_tokens:name==='complete_lesson'?12000:file?9000:name==='scene_intervention'?4000:['argument','character_dialogue','intervention','museum_feedback'].includes(name)?1800:7000,text:{format:{type:'json_schema',name,strict:true,schema:jsonSchema}}}),signal:AbortSignal.timeout(timeoutMs)});
+ const data=await res.json() as {id:string;error?:{message:string};status:string;incomplete_details?:{reason?:string};output?:{content?:{type:string;text?:string}[]}[]};
  if(!res.ok)throw new Error(`Astra request failed (${res.status}). Please retry; no progress was changed.`);
- if(data.status!=='completed')throw new Error('Astra did not finish. Please retry; your work is preserved.');
+ if(data.status!=='completed')throw new Error(data.incomplete_details?.reason==='max_output_tokens'?'Astra reached its response limit. Your work is preserved; retry with a shorter request.':'Astra did not finish. Please retry; your work is preserved.');
  const text=data.output?.flatMap(i=>i.content??[]).filter(c=>c.type==='output_text').map(c=>c.text).join('');if(!text)throw new Error('Astra returned no answer. Please retry.');
  return {value:schema.parse(JSON.parse(text)),responseId:data.id,latencyMs:Date.now()-started};
 }
@@ -20,10 +22,11 @@ export async function astraSettingImage(world:import('./world').World){
  return astraImage(settingImageInstructions,settingImageInput(world),'1536x1024');
 }
 export async function astraImage(instructions:string,input:unknown,size:'1536x1024'|'1024x1536'){
+ requireImages();
  const key=serverEnv('OPENAI_API_KEY');if(!key)throw new Error('Image generation needs the server API connection.');
  const model=serverEnv('OPENAI_IMAGE_MODEL')||'gpt-image-2.5-flare',started=Date.now();
  const response=await fetch('https://api.openai.com/v1/responses',{method:'POST',headers:{Authorization:`Bearer ${key}`,'Content-Type':'application/json'},body:JSON.stringify({model:serverEnv('OPENAI_MODEL')||'gpt-6-astra',instructions,input:JSON.stringify(input),tools:[{type:'image_generation',model,size,quality:'medium',output_format:'png'}],tool_choice:{type:'image_generation'}}),signal:AbortSignal.timeout(240000)});
- const data=await response.json() as {id:string;status:string;output?:{type:string;result?:string}[]};
+ const data=await response.json() as {id:string;status:string;incomplete_details?:{reason?:string};output?:{type:string;result?:string}[]};
  if(!response.ok)throw new Error(`Image generation is unavailable (${response.status}). The lesson is saved; retry or launch without an illustration.`);
  const encoded=data.output?.find(item=>item.type==='image_generation_call')?.result;
  if(data.status!=='completed'||!encoded)throw new Error('The illustration did not finish. Retry or continue with the saved lesson.');

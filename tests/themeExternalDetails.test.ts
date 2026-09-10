@@ -5,7 +5,7 @@ import * as THREE from 'three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import {WORLD_THEMES} from '../lib/worldThemes';
 import {themedExternalPlacements} from '../components/worlds/scene/themedSetting';
-import {themeExternalDetails} from '../components/worlds/scene/themeExternalDetails';
+import {themeExternalDetails,linkSupportStations} from '../components/worlds/scene/themeExternalDetails';
 import {placementBounds} from '../components/worlds/scene/externalLayout';
 import index from '../lib/externalAssetIndex.json';
 
@@ -35,6 +35,11 @@ test('themed reading details rest on their actual scaled support mesh without ov
    assert.ok(base);assert.equal(placements.filter(p=>p.key===item.key).length,1);
    assert.equal(item.solid,false);assert.ok(item.zone);
    const footprint=placementBounds(item),support=placementBounds(base);
+   assert.equal(base.zone,item.zone,`${base.key}: furniture opens the same source as its display`);
+   for(const other of placements.filter(p=>p.support===item.support&&p.key!==item.key)){
+    const a=placementBounds(item),b=placementBounds(other);
+    assert.ok(a[1]<=b[0]||a[0]>=b[1]||a[3]<=b[2]||a[2]>=b[3],`${item.key} overlaps existing ${other.key}`);
+   }
    assert.ok(footprint[0]>=support[0]&&footprint[1]<=support[1]&&footprint[2]>=support[2]&&footprint[3]<=support[3],`${theme.id}/${item.key}: overhang`);
    const model=(await geometry(base.asset)).clone(true);model.position.set(...base.at);model.rotation.y=base.turn??0;model.scale.setScalar(base.scale??1);model.updateMatrixWorld(true);
    const ray=new THREE.Raycaster(new THREE.Vector3(item.at[0],10,item.at[2]),new THREE.Vector3(0,-1,0)),hit=ray.intersectObject(model,true)[0];
@@ -45,11 +50,20 @@ test('themed reading details rest on their actual scaled support mesh without ov
    assert.ok(a[1]<=b[0]||a[0]>=b[1]||a[3]<=b[2]||a[2]>=b[3],`${details[i].key} overlaps ${details[j].key}`);
   }
  }
- assert.equal(count,18);
+ assert.equal(count,21);
 });
 
 test('detail placement follows an already translated and rotated support exactly once',()=>{
  const theme=WORLD_THEMES['douglass-literacy'],base={key:'courtyard-table',asset:'quaternius-fantasy-props-workbench-drawers',at:[20,2,30] as [number,number,number],turn:Math.PI/2,scale:2};
  const before=JSON.stringify(base),details=themeExternalDetails(theme,[base]);
- assert.equal(JSON.stringify(base),before);assert.equal(details[0].at[0],20);assert.equal(details[0].at[2],30.9);assert.equal(details[0].at[1],2+1.14553*2+.003);assert.equal(details[0].support,base.key);
+ assert.equal(JSON.stringify(base),before);assert.equal(details[0].at[0],20);assert.equal(details[0].at[2],30.8);assert.equal(details[0].at[1],2+1.14553*2+.003);assert.equal(details[0].support,base.key);
+});
+
+test('support source links preserve explicit choices and leave mixed displays unassigned',()=>{
+ const base={key:'table',asset:'quaternius-fantasy-props-table-large',at:[0,0,0] as [number,number,number]},book={key:'book',asset:'quaternius-fantasy-props-book-5',at:[0,.631,0] as [number,number,number],support:'table',zone:'library' as const};
+ const original=[base,book],before=JSON.stringify(original),linked=linkSupportStations(original);
+ assert.equal(linked[0].zone,'library');assert.equal(JSON.stringify(original),before);
+ assert.equal(linkSupportStations([{...base,zone:'harbor'},book])[0].zone,'harbor');
+ assert.equal(linkSupportStations([base,book,{...book,key:'other',zone:'market'}])[0].zone,undefined);
+ assert.equal(linkSupportStations([base])[0].zone,undefined);
 });

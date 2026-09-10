@@ -1,26 +1,33 @@
 'use client';
-import {useEffect,useRef,useState} from 'react';
+import {useEffect,useMemo,useRef,useState,useSyncExternalStore} from 'react';
 import {BookOpen,LoaderCircle,Send} from 'lucide-react';
 import {Dialog,DialogContent,DialogTitle,DialogDescription} from '@/components/ui/dialog';
 import {worldCharacters} from '@/lib/characters';
 import type {DialogueTurn,World,ZoneId} from '@/lib/world';
 import type {BuilderAccess} from '@/lib/lessonBuilder';
 import CharacterPortrait from './CharacterPortrait';
+import {createDialogueDraftStore} from '@/lib/dialogueDraftStore';
 
-type Props={access:BuilderAccess|null;npc:ZoneId;open:boolean;scenario:boolean;sessionKey:string;world:World;turns:DialogueTurn[];onClose:()=>void;onSend:(message:string,requestId:string)=>Promise<void>;onEvidence:(id:string)=>void;onArgument:()=>void};
-export default function CharacterDialogue({access,npc,open,scenario,sessionKey,world,turns,onClose,onSend,onEvidence,onArgument}:Props){
+type Props={rethink?:boolean;hasArgument?:boolean;access:BuilderAccess|null;npc:ZoneId;open:boolean;scenario:boolean;sessionKey:string;world:World;turns:DialogueTurn[];onClose:()=>void;onSend:(message:string,requestId:string)=>Promise<void>;onEvidence:(id:string)=>void;onArgument:()=>void};
+export default function CharacterDialogue(props:Props){
+ return <CharacterConversation key={JSON.stringify([props.sessionKey,props.npc,props.scenario,props.world.evidence])} {...props}/>;
+}
+function CharacterConversation({rethink=false,hasArgument=false,access,npc,open,scenario,sessionKey,world,turns,onClose,onSend,onEvidence,onArgument}:Props){
  const character=worldCharacters(world)[npc],draftKey=`cw-dialogue-draft:${sessionKey}:${npc}:${scenario}`;
- const [message,setMessage]=useState(()=>{try{return localStorage.getItem(draftKey)??'';}catch{return '';}}),[sending,setSending]=useState(false),[error,setError]=useState('');
+ const sourceIdentity=JSON.stringify(world.evidence);
+ const store=useMemo(()=>createDialogueDraftStore(draftKey,sourceIdentity,()=>localStorage),[draftKey,sourceIdentity]);
+ const {message,warning}=useSyncExternalStore(store.subscribe,store.getSnapshot,store.getServerSnapshot);
+ const setMessage=store.edit;
+ const [sending,setSending]=useState(false),[error,setError]=useState('');
  const end=useRef<HTMLDivElement>(null),sendingRef=useRef(false);
- const pending=useRef<{message:string;id:string}|null>(null);
- useEffect(()=>{try{const saved=localStorage.getItem(draftKey+':pending');if(saved){const value=JSON.parse(saved);if(typeof value.message==='string'&&typeof value.id==='string')pending.current=value;}}catch{}},[draftKey]);
+ useEffect(()=>{if(rethink&&!store.read().message.trim())store.edit('Help me rethink my latest saved answer. Ask me one question about the evidence or reasoning I should reconsider.');},[rethink,store]);
  const conversation=turns.filter(turn=>turn.npc===npc&&turn.scenario===scenario);
- useEffect(()=>{try{if(message)localStorage.setItem(draftKey,message);else localStorage.removeItem(draftKey);}catch{}},[draftKey,message]);
  useEffect(()=>{if(open)end.current?.scrollIntoView({block:'nearest',behavior:'instant'});},[conversation.length,open,sending]);
- async function send(){if(sendingRef.current||message.trim().length<2)return;const submitted=message.trim();if(pending.current?.message!==submitted)pending.current={message:submitted,id:crypto.randomUUID()};try{localStorage.setItem(draftKey+':pending',JSON.stringify(pending.current));}catch{}const requestId=pending.current!.id;sendingRef.current=true;setSending(true);setError('');try{await onSend(submitted,requestId);pending.current=null;try{const saved=localStorage.getItem(draftKey+':pending');if(saved&&JSON.parse(saved).id===requestId){localStorage.removeItem(draftKey+':pending');if(localStorage.getItem(draftKey)?.trim()===submitted)localStorage.removeItem(draftKey);}}catch{}setMessage(current=>current.trim()===submitted?'':current);}catch(e){setError(e instanceof Error?e.message:'The conversation could not continue. Your question is saved; try again.');}finally{sendingRef.current=false;setSending(false);}}
+ async function send(){if(sendingRef.current||store.read().message.trim().length<2)return;const submitted=store.prepare(()=>crypto.randomUUID());sendingRef.current=true;setSending(true);setError('');try{await onSend(submitted.message,submitted.id);store.complete(submitted);}catch(e){setError(e instanceof Error?e.message:'The conversation could not continue. Your question remains in this tab; try again.');}finally{sendingRef.current=false;setSending(false);}}
  return <Dialog open={open} onOpenChange={value=>{if(!value)onClose();}}><DialogContent className="character-dialogue with-portrait"><div className="character-layout">
   <CharacterPortrait access={access} world={world} npc={npc}/><div className="character-conversation">
   <header className="character-heading"><div><span className="eyebrow">{character.role} · {scenario?'WHAT-IF':'BASELINE'}</span><DialogTitle>{character.name}</DialogTitle><DialogDescription>Simulated dialogue generated by Astra. Check the source material before using a claim.</DialogDescription></div></header>
+  {hasArgument&&<p className="character-learning-context">{character.name} can use your latest saved explanation and feedback to help you reconsider it. Your unsent draft stays private.</p>}
   <div className="character-messages" aria-label={`Conversation with ${character.name}`}>
    {!conversation.length&&<div className="character-welcome"><p>Ask {character.name} about this place, question an assumption, or follow the evidence.</p><div className="character-starters">{character.starters.map(question=><button key={question} disabled={sending} onClick={()=>setMessage(question)}>{question}</button>)}</div></div>}
    {conversation.map(turn=><article key={turn.id}><p className="character-student"><span>You</span>{turn.message}</p><div className="character-reply"><span>{character.name} · Astra-generated</span><p>{turn.result.reply}</p>{turn.result.evidenceIds.length>0&&<div className="character-sources" aria-label="Check the supporting material">{turn.result.evidenceIds.map(id=>{const evidence=world.evidence.find(e=>e.id===id);return evidence?<button key={id} onClick={()=>onEvidence(id)}><BookOpen size={14}/><span>{evidence.title}<small>{evidence.kind==='source'?'Source excerpt':evidence.kind==='assumption'?'Scenario assumption':'Invented teaching prop'}</small></span></button>:null;})}</div>}{turn.result.followUp&&<p className="character-followup">{turn.result.followUp}</p>}</div></article>)}
@@ -29,6 +36,7 @@ export default function CharacterDialogue({access,npc,open,scenario,sessionKey,w
   </div>
   <form className="character-compose" onSubmit={event=>{event.preventDefault();void send();}}>
    {error&&<p className="character-error" role="alert">{error}</p>}
+   {warning&&<p className="helper" role="status">{warning}</p>}
    <label htmlFor="character-question">Ask {character.name}</label><div><textarea id="character-question" placeholder="What do you think about…?" value={message} onChange={event=>setMessage(event.target.value)} maxLength={1200} rows={2}/><button className="primary-button" type="submit" disabled={sending||message.trim().length<2||turns.length>=40} aria-label={`Send question to ${character.name}`}><Send size={18}/></button></div>
    <footer><span>{turns.length>=40?'Conversation limit reached. Your messages remain available.':'Conversation helps you explore; your own argument is assessed separately.'}</span><button type="button" onClick={onArgument}>Make your case →</button></footer>
   </form>

@@ -1,51 +1,282 @@
 [
   {
     "start": 0,
-    "end": 7,
-    "label": "COLD OPEN · THE FIRST CLAIM",
-    "direction": "Open on the actual initial claim. Enlarge its exact excerpt. Let the quote land before the cut.",
-    "text": "“The library would definitely close.” That’s our student’s first answer. Let’s put it to the test."
+    "end": 6.5,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 442,
+    "sourceDuration": 6.5,
+    "zoom": 1.2,
+    "focus": [
+      0.82,
+      0.44
+    ],
+    "label": "PRACTICE LEARNER \u00b7 THE FIRST ANSWER",
+    "transitionIn": "cut"
   },
   {
-    "start": 7,
-    "end": 17,
-    "label": "TEACHER → STUDENT · ENTER THE INVESTIGATION",
-    "direction": "Teacher studio and Preview as student, then ground-level movement and the harbor-trade toggle. Keep Prepared Alexandria lesson visible.",
-    "text": "This is Counterfactual Worlds: a history lesson you can walk into. In our prepared Alexandria lesson, we collapse harbor trade."
-  },
-  {
-    "start": 17,
-    "end": 25,
-    "label": "ASTRA · CHALLENGE CERTAINTY",
-    "direction": "Show changed harbor, then actual initial feedback. On-screen excerpt: Closure is not certain. Keep the 1/4 incidental.",
-    "text": "Fewer ships. Less income. But does that mean the scholars disappear? Astra challenges the student’s certainty."
-  },
-  {
-    "start": 25,
-    "end": 37,
-    "label": "TEACHER · CHANGE THE CHALLENGE",
-    "direction": "Teacher prompt, actual Astra preview, apply, and student view. Give the apply action a distinct visual beat. Label omitted waiting.",
-    "text": "Now the teacher changes the challenge: could a new patron help? Astra turns that instruction into a question we preview and add to the student’s world."
-  },
-  {
-    "start": 37,
-    "end": 45,
-    "label": "STUDENT · FIND THE EVIDENCE",
-    "direction": "Read Strabo, show source/provenance labels beside the invented ledger in the journal, then insert the citation.",
-    "text": "The student reads Strabo, cites the source, and separates historical evidence from our invented ledger."
-  },
-  {
-    "start": 45,
-    "end": 54,
-    "label": "PAYOFF · A DIFFERENT EXPLANATION",
-    "direction": "Show exact revised-claim excerpt: Closure is possible, not inevitable. Then actual mechanism/limitation feedback. Keep the student’s words larger than the score.",
-    "text": "The answer changes: “Closure is possible, not inevitable.” Now the student explains the mechanism, cites evidence, and considers another outcome."
-  },
-  {
-    "start": 54,
-    "end": 60,
+    "start": 6.5,
+    "end": 9.5,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 22,
+    "sourceDuration": 3.2,
+    "zoom": 1.035,
+    "focus": [
+      0.48,
+      0.35
+    ],
     "label": "COUNTERFACTUAL WORLDS",
-    "direction": "Return to moving world overview. Closing text: Step inside a question. Come back with an argument. Small proof line: Built with Astra · Astra-powered feedback and teacher challenges.",
-    "text": "Counterfactual Worlds. Step inside a question. Come back with an argument."
+    "transitionIn": "200 ms dissolve"
+  },
+  {
+    "start": 9.5,
+    "end": 12.0,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 267,
+    "sourceDuration": 2.7,
+    "zoom": 1.035,
+    "focus": [
+      0.5,
+      0.5
+    ],
+    "label": "STUDENT \u00b7 EXPLORE THE WORLD",
+    "transitionIn": "200 ms dissolve"
+  },
+  {
+    "start": 12.0,
+    "end": 14.4,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 86,
+    "sourceDuration": 2.6,
+    "zoom": 1.12,
+    "focus": [
+      0.5,
+      0.42
+    ],
+    "label": "TEACHER \u00b7 THIRTY PREPARED LESSONS",
+    "transitionIn": "200 ms dissolve"
+  },
+  {
+    "start": 14.4,
+    "end": 16.0,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 100,
+    "sourceDuration": 1.8,
+    "zoom": 1.1,
+    "focus": [
+      0.5,
+      0.45
+    ],
+    "label": "TEACHER \u00b7 REVIEW THE SOURCES",
+    "transitionIn": "200 ms dissolve"
+  },
+  {
+    "start": 16.0,
+    "end": 19.0,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 134,
+    "sourceDuration": 3.2,
+    "zoom": 1.12,
+    "focus": [
+      0.5,
+      0.5
+    ],
+    "label": "TEACHER \u00b7 REAL MUSEUM OBJECTS",
+    "transitionIn": "200 ms dissolve"
+  },
+  {
+    "start": 19.0,
+    "end": 21.5,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 258.2,
+    "sourceDuration": 2.7,
+    "zoom": 1.04,
+    "focus": [
+      0.5,
+      0.5
+    ],
+    "label": "STUDENT \u00b7 CHANGE AN ASSUMPTION",
+    "transitionIn": "200 ms dissolve"
+  },
+  {
+    "start": 21.5,
+    "end": 24.0,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 266.7,
+    "sourceDuration": 2.7,
+    "zoom": 1.035,
+    "focus": [
+      0.5,
+      0.5
+    ],
+    "label": "STUDENT \u00b7 WALK THROUGH ALEXANDRIA",
+    "transitionIn": "200 ms dissolve"
+  },
+  {
+    "start": 24.0,
+    "end": 26.5,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 283,
+    "sourceDuration": 2.7,
+    "zoom": 1.12,
+    "focus": [
+      0.35,
+      0.5
+    ],
+    "label": "STUDENT \u00b7 COMPARE THE SCENARIOS",
+    "transitionIn": "200 ms dissolve"
+  },
+  {
+    "start": 26.5,
+    "end": 29.3,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 324,
+    "sourceDuration": 3.0,
+    "zoom": 1.18,
+    "focus": [
+      0.5,
+      0.1
+    ],
+    "label": "STUDENT \u00b7 READ STRABO",
+    "transitionIn": "200 ms dissolve"
+  },
+  {
+    "start": 29.3,
+    "end": 31.8,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 365,
+    "sourceDuration": 2.7,
+    "zoom": 1.25,
+    "focus": [
+      0.84,
+      0.43
+    ],
+    "label": "STUDENT \u00b7 SAVE EVIDENCE AND BUILD A CLAIM",
+    "transitionIn": "200 ms dissolve"
+  },
+  {
+    "start": 31.8,
+    "end": 35.0,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 451,
+    "sourceDuration": 3.4000000000000004,
+    "zoom": 1.24,
+    "focus": [
+      0.84,
+      0.45
+    ],
+    "label": "ASTRA \u00b7 CHALLENGE UNSUPPORTED CERTAINTY",
+    "transitionIn": "200 ms dissolve"
+  },
+  {
+    "start": 35.0,
+    "end": 38.0,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 568,
+    "sourceDuration": 3.2,
+    "zoom": 1.35,
+    "focus": [
+      0.5,
+      0.56
+    ],
+    "label": "TEACHER \u00b7 ADD A NEW QUESTION",
+    "transitionIn": "200 ms dissolve"
+  },
+  {
+    "start": 38.0,
+    "end": 40.0,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 577,
+    "sourceDuration": 2.2,
+    "zoom": 1.35,
+    "focus": [
+      0.5,
+      0.56
+    ],
+    "label": "TEACHER \u00b7 REVIEW BEFORE SHARING",
+    "transitionIn": "200 ms dissolve"
+  },
+  {
+    "start": 40.0,
+    "end": 43.0,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 704,
+    "sourceDuration": 3.2,
+    "zoom": 1.24,
+    "focus": [
+      0.84,
+      0.46
+    ],
+    "label": "STUDENT \u00b7 KEEP THE WORK AND REVISE",
+    "transitionIn": "200 ms dissolve"
+  },
+  {
+    "start": 43.0,
+    "end": 47.2,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 727.5,
+    "sourceDuration": 4.4,
+    "zoom": 1.25,
+    "focus": [
+      0.84,
+      0.5
+    ],
+    "label": "PRACTICE LEARNER \u00b7 THE REVISED ANSWER",
+    "transitionIn": "200 ms dissolve"
+  },
+  {
+    "start": 47.2,
+    "end": 48.6,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 1052,
+    "sourceDuration": 1.5999999999999999,
+    "zoom": 1.16,
+    "focus": [
+      0.5,
+      0.5
+    ],
+    "label": "TEACHER \u00b7 DOWNLOADED LEARNING REPORT",
+    "transitionIn": "200 ms dissolve"
+  },
+  {
+    "start": 48.6,
+    "end": 50.1,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 1299,
+    "sourceDuration": 1.7,
+    "zoom": 1.16,
+    "focus": [
+      0.5,
+      0.54
+    ],
+    "label": "TEACHER \u00b7 BOTH SUBMISSIONS PRESERVED",
+    "transitionIn": "200 ms dissolve"
+  },
+  {
+    "start": 50.1,
+    "end": 53.7,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 1329,
+    "sourceDuration": 3.8000000000000003,
+    "zoom": 1.1,
+    "focus": [
+      0.5,
+      0.43
+    ],
+    "label": "ACCESS \u00b7 PRINTABLE SOURCES AND WORKSHEET",
+    "transitionIn": "200 ms dissolve"
+  },
+  {
+    "start": 53.7,
+    "end": 60.0,
+    "source": "page@264304625789616f833bb4705126647a.webm",
+    "sourceIn": 1365,
+    "sourceDuration": 6.5,
+    "zoom": 1.04,
+    "focus": [
+      0.57,
+      0.48
+    ],
+    "label": "COUNTERFACTUAL WORLDS \u00b7 BUILT WITH ASTRA",
+    "transitionIn": "200 ms dissolve"
   }
 ]

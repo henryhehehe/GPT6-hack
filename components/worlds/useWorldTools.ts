@@ -4,7 +4,8 @@ import {Zone,type ZoneId} from '@/lib/world';
 type Tool={name:string;description:string;inputSchema:object;annotations:{readOnlyHint:boolean;untrustedContentHint:boolean};execute:(input:unknown)=>unknown|Promise<unknown>};
 type ModelContext={registerTool:(tool:Tool,options:{signal:AbortSignal})=>void|Promise<void>};
 export function useWorldTools(actions:{read:()=>unknown;inspect:(zone:ZoneId)=>void;collect:(id:string)=>Promise<void>;evidenceIds:()=>string[]}){
- const current=useRef(actions);current.current=actions;
+ const current=useRef(actions);
+ useEffect(()=>{current.current=actions;},[actions]);
  useEffect(()=>{const context=(document as Document&{modelContext?:ModelContext}).modelContext;if(!context)return;const lifecycle=new AbortController();
  const tools:Tool[]=[
   {name:'read_world_state',description:'Read the displayed world, scenario, selected place, and current student evidence. Contains no access credentials.',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true,untrustedContentHint:true},execute:()=>current.current.read()},

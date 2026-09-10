@@ -1,45 +1,37 @@
-# Recording and rebuilding the demo
+# Record or rebuild version 5
 
-Version 3 is finished in `output/demo/v3/`. It re-edits the actual version-2 screen recordings and adds fresh narration and captions. It does not capture the latest local UI. Preserve both versions; make new recordings when the product changes materially.
+Current deliverable: `output/demo/v5/counterfactual-worlds-60s.mp4`.
 
-## How I recorded it
+## Capture
 
-I operated the published app through computer-use browser controls in a dedicated Chrome tab. After Screenshot and QuickTime control repeatedly timed out, the user explicitly approved macOS `screencapture`. Window capture succeeded without changing system permissions. The first long capture ended early at 122.11 seconds, so teacher/source/result pickups were captured in short clips. All included screen imagery comes from these actual moving recordings.
+V5 used a fresh, isolated Playwright browser context in headless Chrome, recording its own 1728×972 viewport continuously. All actions used the app’s ordinary interface. The recording used no signed-in browser profile, recovered credentials, or substituted model responses. This keeps the capture independent of the user’s other Chrome windows. Native computer-use control was unavailable during this session; macOS window capture remains a previously authorized fallback.
 
-Capture only the dedicated demo window. Resolve its current window ID from the visible app/window inventory; the recorded ID 517 is session-specific. Do not reuse it blindly or capture another agent's development window. Start each capture before acting and verify the file duration afterward.
+The source was frozen in `/private/tmp/cw-demo-v5` at approximately 19:07 UTC on September 10, 2026, and served at `http://127.0.0.1:5179`. Ongoing product edits after that snapshot are not represented automatically. A fresh classroom was created from the first Alexandria catalog lesson. The existing teacher preview was used as a clearly labeled practice learner. Three real model requests produced the initial feedback, teaching-help preview, and revised feedback.
 
-```sh
-python3 scripts/demo/capture.py --window VERIFIED_WINDOW_ID --seconds 45 --name UNIQUE_CLIP_NAME
-```
+`scripts/demo/capture-browser.mjs` contains the isolated recorder used here. Use `--output` with a new version directory; `--url`, `--playwright`, `--chrome`, and `--command-dir` configure another machine. Launch it with Node, then submit ordinary Playwright UI operations with `send-browser-command.py`. Its `--close` flag finalizes the recording. Example: `node scripts/demo/capture-browser.mjs --output output/demo/v6 --url http://127.0.0.1:5179/`. Finish with `python3 scripts/demo/send-browser-command.py "page.demoMark('end'); return page.url();" --close`. Capture pauses around each useful state and mark their times; inspect actual video frames before choosing cuts.
 
-Use a unique name for every take. The script records into `output/demo/v2/raw/` and stores timing metadata. Keep clips under a minute and allow the process to finish before starting another. Record narration separately.
+## Rehearsal
 
-## Manual recording sequence
+1. Show the landing page, browse the thirty prepared lessons, review the first Alexandria lesson’s sources, and launch.
+2. Open Museum objects and add the real Arsinoe II coin to the class. Show the museum imagery and attribution.
+3. Preview as a student, explore Overview and Walk around, switch the scenario, and open the investigation journal.
+4. Read Strabo and the invented ledger, save evidence, and submit the first answer in SCRIPT.md. Wait for actual feedback.
+5. Return to Teacher studio → Lesson notes → Teaching help. Select the practice learner, enter the request, use the standard request path, review the generated preview, and share it with the class.
+6. Return to the practice learner’s preserved work, revise, and submit. Wait for actual feedback.
+7. Open the learning report and include practice work. Download the report. Also download the teaching guide and worksheet. Record those actual local documents and finish on the city.
 
-1. Open one fresh prepared Alexandria classroom. Keep its provenance visible. Start in Teacher studio, then Preview as student.
-2. Capture the overview, a short Walk around movement, and the harbor-trade hypothesis switch.
-3. Paste the initial claim from SCRIPT.md and submit. Wait for the real reply; capture the claim and actual rubric feedback.
-4. Return to Teacher studio, enter the scripted patron challenge, use **Use standard request**, inspect the generated preview, then **Add to student world**. Use native steering only after it actually works in a new rehearsal.
-5. Return to the same student world. Open the harbor ledger and Strabo reader, save evidence, and use the citation action.
-6. Submit the revised explanation and capture its actual feedback. Expand Mechanism and Limitation so the reasoning is legible. A score other than 4/4 is acceptable; never replace real results to match a script.
-7. Close the conversation and return to the overview for the closing shot.
+This build repeatedly remounted open dialogs during classroom polling, making the on-screen report unstable. The film therefore shows the app’s actual exported report, labeled as downloaded; both submissions and the context-change marker are preserved. Exported text documents work offline. They do not establish offline support for live AI or the 3D app.
 
-Record 2 seconds of breathing room around actions. Keep generation waits in the raw take, then remove them with a labeled cut. The finished minute is edited time, not elapsed model latency. Crop browser tabs, address bars, and unrelated windows out of the export.
+## Voice and music
 
-## Voiceover
+The main narration and mission pickup use OpenAI speech generation with Marin. A verified v4 closing pickup supplies the complete final line, which the first v5 main take omitted. The editor preserves natural delivery within paragraphs and positions the mission at 50.1 seconds and the closing at 53.7 seconds.
 
-Version 3 uses a new OpenAI Marin main take and a separate closing pickup, generated with conversational delivery instructions. Astra generates the app's reasoning; it does not directly emit this audio. The film explicitly discloses AI narration. Do not use `say` for the finished film.
-
-Use the [version-3 package](v3/README.md) to regenerate narration and timestamp transcripts. The version-2 narration scripts remain archival and write to the version-2 folder; do not run them for this edit.
-
-For your own voice: record two takes in QuickTime → New Audio Recording. Use a quiet room, microphone 15–20 cm away and slightly off-axis. Speak to one person, pause after the opening question, and keep the final phrase relaxed. Replace the speech track and retime captions from that recording.
-
-## Rebuild the current edit
+For a personal voice take, record in a quiet room, microphone 15–20 cm away and slightly off-axis. Read `voiceover.txt` conversationally, pause after the opening test, and give the revised claim emphasis. Keep a little silence between paragraphs for editing.
 
 ```sh
-python3 scripts/demo/render-v3.py --ffmpeg /path/to/ffmpeg
+node scripts/demo/narrate.mjs output/demo/v5 output/demo/v5/voiceover-main.txt
+python3 scripts/demo/music-v5.py
+python3 scripts/demo/edit-v5.py --ffmpeg /path/to/ffmpeg
 ```
 
-See [the version-3 package](v3/README.md) for source dependencies. The renderer uses the original moving recordings, crops browser chrome, assembles 13 cuts, places seven narration sections into exact sample-length slots, and burns synchronized captions into a separate footer. Quoted claims are editorial excerpts of the actual submitted text, not simulated UI. Export is H.264/AAC, 1920×1080, 30 fps, exactly 60 seconds.
-
-Check a new export for real clicks and movement, source labels, readable text, caption timing, and complete narration before 60 seconds. Technical audio checks do not constitute an independent listening review.
+Preserve the verified WAVs before regenerating. Narration commands use existing local API configuration. The edit reads `edit-input.json`, uses actual source offsets, and writes a full edit decision list, SRT/ASS captions, mixed audio, and an H.264/AAC 1080p film. Use `--reuse-shots --reuse-picture` when only captions or mixing change; these flags require the existing prepared shots and picture edit. Never infer a model result from an expected script: review actual submissions and feedback before using a take.

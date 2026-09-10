@@ -4,7 +4,7 @@ Generated from source usage records, measured published GLBs, and the actual pla
 
 Open /model-catalog in the running application for search, one-at-a-time 3D previews, clip playback and downloads. All 69 entries have local self-contained GLBs; only reviewed static selections load in lessons.
 
-The ten lesson worlds use **47 distinct external models** in **117 placements**. Including the three reusable base templates, the catalog indexes **49 models in 201 placements**. Template-only models are not presented as lesson usage. Character bases/accessories and animation sources remain adaptation references. Scene-eligible means permitted for reviewed placement, not historically authenticated or device-benchmarked.
+The ten lesson worlds use **47 distinct external models** in **121 placements**. Including the three reusable base templates, the catalog indexes **49 models in 205 placements**. Template-only models are not presented as lesson usage. Character bases/accessories and animation sources remain adaptation references. Scene-eligible means permitted for reviewed placement, not historically authenticated or device-benchmarked.
 
 ## Scene payloads
 
@@ -13,15 +13,15 @@ These are uncompressed GLB transfer bytes for external additions only, deduplica
 | Lesson scene / template | Placements | Unique models | Extra GLB bytes |
 | --- | ---: | ---: | ---: |
 | Alexandria (world) | 7 | 7 | 1,026,416 |
-| The Odyssey (world) | 25 | 20 | 4,981,628 |
-| Pride and Prejudice (world) | 13 | 7 | 1,136,972 |
-| Macbeth (world) | 5 | 3 | 530,288 |
-| Frankenstein (world) | 12 | 8 | 1,492,032 |
-| A Christmas Carol (world) | 11 | 9 | 2,368,304 |
-| The Tempest (world) | 17 | 10 | 3,670,392 |
-| Declaration of Independence (world) | 11 | 5 | 745,752 |
+| The Odyssey (world) | 26 | 21 | 5,124,096 |
+| Pride and Prejudice (world) | 14 | 7 | 1,136,972 |
+| Macbeth (world) | 6 | 4 | 635,968 |
+| Frankenstein (world) | 12 | 8 | 1,558,756 |
+| A Christmas Carol (world) | 11 | 9 | 2,436,472 |
+| The Tempest (world) | 18 | 10 | 3,670,392 |
+| Declaration of Independence (world) | 11 | 6 | 918,156 |
 | Douglass: literacy (world) | 8 | 6 | 914,700 |
-| Seneca Falls (world) | 8 | 6 | 918,156 |
+| Seneca Falls (world) | 8 | 5 | 812,476 |
 | Coast template (template) | 47 | 22 | 5,066,440 |
 | Garden template (template) | 19 | 13 | 3,034,500 |
 | Archive template (template) | 18 | 15 | 2,793,756 |
@@ -30,7 +30,7 @@ These are uncompressed GLB transfer bytes for external additions only, deduplica
 
 - Base placements live in `components/worlds/scene/externalLayout.ts`. Lesson worlds resolve them through `themedSetting.ts`; supported reading details use `themeExternalDetails.ts`, and scene-specific props use `themeExternalActivityAreas.ts`. The catalog indexes the final translated placements from the same runtime functions. Only IDs from `lib/externalAssetIndex.json` are accepted. Never turn generated lesson text into a URL.
 - Static exports use meters, Y-up, X/Z centered, and a ground origin. Scale defaults to 1; an explicit uniform placement scale also transforms collision bounds. The garden tea table uses 0.5 for a seated height. `Anchor_Inspect` is 65% up the bounds; `Anchor_Label` is above the top. The bounds describe the whole object, not the usable tabletop or hull waterline.
-- Use `loadExternalModels(parent, placements)` for lessons. It deduplicates requests, allows three concurrent loads, shares static geometry/materials, and retains a box fallback on failure. Call `dispose()` before traversing the parent for cleanup. Late results are disposed instead of attached.
+- Use `loadExternalModels(parent, placements)` for lessons. It deduplicates requests, allows three concurrent loads, shares static geometry/materials, and retains an inspectable fallback on failure. Supporting furniture and source-linked objects load before distant scenery. The market stall and two table models use open furniture fallbacks so supported props stay visible. Call `dispose()` before traversing the parent for cleanup. Late results are disposed instead of attached.
 - `zone` opens the corresponding source station through the existing `onSelect` callback. It does not collect evidence, alter claim text, award points, or replace primary sources. Untagged objects are scenery.
 - `solid` adds a conservative rotated ground footprint to generated-setting navigation; `trunkRadius` limits palm blockers to the low trunk region instead of the canopy. Small tabletop objects inherit their supporting furniture blocker. Alexandria uses separate navigation: update that registry when adding ground-level obstacles.
 - Authored furniture, buildings, cave, sheep and teaching characters remain in place. External additions supplement them; generic ships/bodies do not replace reviewed period art.
@@ -989,7 +989,7 @@ Import this GLB in a standalone viewer or Blender. Assemble the matching compone
 
 **Current use:**
 
-- Alexandria / `market-bag`: position [14.65, 1.808, 4.35], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- Alexandria / `market-bag`: position [14.65, 1.808, 4.35], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
@@ -1181,7 +1181,10 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `th
 
 **Current use:**
 
+- Frankenstein / `study-cabinet-bookstand`: position [-7.35, 1.4311930000000002, -16], yaw 0 rad, uniform scale 1; opens library; supported by study-cabinet.
+- Declaration of Independence / `assembly-table-right-bookstand`: position [6.2, 1.008216, -6], yaw 0 rad, uniform scale 1; opens library; supported by assembly-table-right.
 - Seneca Falls / `meeting-lectern`: position [0, 0, -15], yaw 0 rad, uniform scale 1.4; scenery only; solid ground footprint.
+- Seneca Falls / `meeting-desk-bookstand`: position [-9.3, 0.882564, -13], yaw 0 rad, uniform scale 1; opens library; supported by meeting-desk.
 - Archive template / `reading-bookstand`: position [-7.65, 0.631, -12.05], yaw 0 rad, uniform scale 1; opens library; supported by reading-table.
 
 **How to reuse:**
@@ -1233,9 +1236,9 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `th
 - Frankenstein / `study-shelf-book`: position [-7, 0.394, -14], yaw 0 rad, uniform scale 1; opens library; supported by study-low-shelf.
 - A Christmas Carol / `counting-house-cabinet-book-5`: position [-12.92, 1.10161, 15], yaw 0 rad, uniform scale 1; opens harbor; supported by counting-house-cabinet.
 - Declaration of Independence / `assembly-table-left-book-5`: position [-6.872, 1.008216, -6], yaw 0 rad, uniform scale 1; opens library; supported by assembly-table-left.
-- Declaration of Independence / `assembly-table-right-book-5`: position [7.128, 1.008216, -6], yaw 0 rad, uniform scale 1; opens library; supported by assembly-table-right.
-- Douglass: literacy / `courtyard-table-book-5`: position [11.08, 1.1485299999999998, -10], yaw 0 rad, uniform scale 1; opens library; supported by courtyard-table.
-- Seneca Falls / `meeting-desk-book-5`: position [-9.888, 0.882564, -13], yaw 0 rad, uniform scale 1; opens library; supported by meeting-desk.
+- Declaration of Independence / `assembly-table-right-book-5`: position [6.872, 1.008216, -6], yaw 3.141592653589793 rad, uniform scale 1; opens library; supported by assembly-table-right.
+- Douglass: literacy / `courtyard-table-book-5`: position [10.6, 1.1485299999999998, -10], yaw 0 rad, uniform scale 1; opens library; supported by courtyard-table.
+- Seneca Falls / `meeting-desk-book-5`: position [-10.63, 0.882564, -13], yaw 0 rad, uniform scale 1; opens library; supported by meeting-desk.
 - Archive template / `reading-book`: position [-7.05, 0.631, -12.05], yaw 0 rad, uniform scale 1; opens library; supported by reading-table.
 
 **How to reuse:**
@@ -1284,11 +1287,10 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `th
 **Current use:**
 
 - Frankenstein / `study-cabinet-book-stack-1`: position [-8.585, 1.4311930000000002, -16], yaw 0 rad, uniform scale 1; opens library; supported by study-cabinet.
-- A Christmas Carol / `counting-house-cabinet-book-stack-1`: position [-13.45, 1.10161, 15], yaw 0 rad, uniform scale 1; opens harbor; supported by counting-house-cabinet.
 - Declaration of Independence / `assembly-table-left-book-stack-1`: position [-7.72, 1.008216, -6], yaw 0 rad, uniform scale 1; opens library; supported by assembly-table-left.
-- Declaration of Independence / `assembly-table-right-book-stack-1`: position [6.28, 1.008216, -6], yaw 0 rad, uniform scale 1; opens library; supported by assembly-table-right.
-- Douglass: literacy / `courtyard-table-book-stack-1`: position [10.55, 1.1485299999999998, -10], yaw 0 rad, uniform scale 1; opens library; supported by courtyard-table.
-- Seneca Falls / `meeting-desk-book-stack-1`: position [-10.63, 0.882564, -13], yaw 0 rad, uniform scale 1; opens library; supported by meeting-desk.
+- Declaration of Independence / `assembly-table-right-book-stack-1`: position [7.72, 1.008216, -6], yaw 0 rad, uniform scale 1; opens library; supported by assembly-table-right.
+- Douglass: literacy / `courtyard-table-book-stack-1`: position [11.15, 1.1485299999999998, -10], yaw 0 rad, uniform scale 1; opens library; supported by courtyard-table.
+- Seneca Falls / `meeting-desk-book-stack-1`: position [-10, 0.882564, -13], yaw 0 rad, uniform scale 1; opens library; supported by meeting-desk.
 - Archive template / `reading-book-stack`: position [-6.45, 0.631, -12.05], yaw 0 rad, uniform scale 1; opens library; supported by reading-table.
 
 **How to reuse:**
@@ -1342,6 +1344,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `th
 - The Tempest / `harbor-bucket`: position [-8.95, 0.22, 5.699999999999999], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 - The Tempest / `market-bucket`: position [14.05, 0.22, -0.2999999999999998], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 - The Tempest / `library-bucket`: position [3.05, 0.22, -12.3], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- The Tempest / `island-camp-bucket`: position [17.9, 0, 5], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 - Coast template / `harbor-bucket`: position [-9.95, 0.22, 4.7], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 - Coast template / `market-bucket`: position [14.05, 0.22, 4.7], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 - Coast template / `library-bucket`: position [2.05, 0.22, -12.3], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
@@ -1391,8 +1394,8 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `th
 
 **Current use:**
 
-- Frankenstein / `study-cabinet`: position [-8, 0, -16], yaw 0 rad, uniform scale 1.3; scenery only; solid ground footprint.
-- A Christmas Carol / `counting-house-cabinet`: position [-13, 0, 15], yaw 0 rad, uniform scale 1; scenery only; solid ground footprint.
+- Frankenstein / `study-cabinet`: position [-8, 0, -16], yaw 0 rad, uniform scale 1.3; opens library; solid ground footprint.
+- A Christmas Carol / `counting-house-cabinet`: position [-13, 0, 15], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 - Archive template / `reading-cabinet`: position [-7, 0, -15], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
@@ -1440,12 +1443,10 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `th
 
 **Current use:**
 
-- Frankenstein / `study-cabinet-candlestick`: position [-7.35, 1.4311930000000002, -16], yaw 0 rad, uniform scale 1; opens library; supported by study-cabinet.
+- Macbeth / `ruin-crate-candlestick`: position [-13, 0.707, -7], yaw 0 rad, uniform scale 0.8; opens harbor; supported by ruin-crate.
 - A Christmas Carol / `counting-house-cabinet-candlestick`: position [-12.5, 1.10161, 15], yaw 0 rad, uniform scale 1; opens harbor; supported by counting-house-cabinet.
 - Declaration of Independence / `assembly-table-left-candlestick`: position [-6.2, 1.008216, -6], yaw 0 rad, uniform scale 1; opens library; supported by assembly-table-left.
-- Declaration of Independence / `assembly-table-right-candlestick`: position [7.8, 1.008216, -6], yaw 0 rad, uniform scale 1; opens library; supported by assembly-table-right.
-- Douglass: literacy / `courtyard-table-candlestick`: position [11.5, 1.1485299999999998, -10], yaw 0 rad, uniform scale 1; opens library; supported by courtyard-table.
-- Seneca Falls / `meeting-desk-candlestick`: position [-9.3, 0.882564, -13], yaw 0 rad, uniform scale 1; opens library; supported by meeting-desk.
+- Douglass: literacy / `courtyard-table-candlestick`: position [11.65, 1.1485299999999998, -10], yaw 0 rad, uniform scale 1; opens library; supported by courtyard-table.
 - Archive template / `reading-candlestick`: position [-7.65, 0.631, -11.77], yaw 0 rad, uniform scale 1; opens library; supported by reading-table.
 
 **How to reuse:**
@@ -1616,7 +1617,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `th
 **Current use:**
 
 - The Odyssey / `coastal-wood-crate`: position [-19.4, 0, -1], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
-- Macbeth / `ruin-crate`: position [-13, 0, -7], yaw 0 rad, uniform scale 1; scenery only; solid ground footprint.
+- Macbeth / `ruin-crate`: position [-13, 0, -7], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 - Coast template / `coastal-wood-crate`: position [-19.4, 0, 2], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 
 **How to reuse:**
@@ -1761,6 +1762,8 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `th
 **Current use:**
 
 - Pride and Prejudice / `garden-tea-mug`: position [5.77, 0.778, 4.85], yaw 0 rad, uniform scale 1; opens market; supported by garden-tea-table.
+- Pride and Prejudice / `garden-tea-table-second-mug`: position [5.77, 0.778285, 5.2], yaw 3.141592653589793 rad, uniform scale 1; opens market; supported by garden-tea-table.
+- A Christmas Carol / `counting-house-cabinet-mug`: position [-13.45, 1.10161, 15], yaw 0 rad, uniform scale 1; opens harbor; supported by counting-house-cabinet.
 - Garden template / `garden-tea-mug`: position [6.77, 0.778, 11.85], yaw 0 rad, uniform scale 1; opens market; supported by garden-tea-table.
 
 **How to reuse:**
@@ -2004,6 +2007,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `th
 **Current use:**
 
 - Alexandria / `quay-rope`: position [-5.05, 1.28, 20], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
+- The Odyssey / `coastal-workbench-rope-2`: position [-17.6, 0.879, 2], yaw 0 rad, uniform scale 0.6; opens harbor; supported by coastal-workbench.
 
 **How to reuse:**
 
@@ -2434,9 +2438,9 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `th
 
 **Current use:**
 
-- Declaration of Independence / `assembly-table-left`: position [-7, 0, -6], yaw 0 rad, uniform scale 1.6; scenery only; solid ground footprint.
-- Declaration of Independence / `assembly-table-right`: position [7, 0, -6], yaw 0 rad, uniform scale 1.6; scenery only; solid ground footprint.
-- Seneca Falls / `meeting-desk`: position [-10, 0, -13], yaw 0 rad, uniform scale 1.4; scenery only; solid ground footprint.
+- Declaration of Independence / `assembly-table-left`: position [-7, 0, -6], yaw 0 rad, uniform scale 1.6; opens library; solid ground footprint.
+- Declaration of Independence / `assembly-table-right`: position [7, 0, -6], yaw 0 rad, uniform scale 1.6; opens library; solid ground footprint.
+- Seneca Falls / `meeting-desk`: position [-10, 0, -13], yaw 0 rad, uniform scale 1.4; opens library; solid ground footprint.
 - Archive template / `reading-table`: position [-7, 0, -12], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
@@ -2687,7 +2691,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `th
 
 **Current use:**
 
-- Douglass: literacy / `courtyard-table`: position [11, 0, -10], yaw 0 rad, uniform scale 1; scenery only; solid ground footprint.
+- Douglass: literacy / `courtyard-table`: position [11, 0, -10], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 - Archive template / `archive-comparison-desk`: position [7, 0, -12], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**

@@ -148,6 +148,57 @@
       ]
     },
     {
+      "id": "earlymodern-doublet",
+      "bytes": 540336,
+      "triangles": 10524,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.9,
+        0.475
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
+      "id": "earlymodern-gown",
+      "bytes": 512604,
+      "triangles": 9900,
+      "primitives": 2,
+      "materials": 2,
+      "size": [
+        0.968,
+        1.904,
+        0.626
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
+      "id": "earlymodern-jerkin",
+      "bytes": 561996,
+      "triangles": 10956,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.9,
+        0.475
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
       "id": "folded-letter",
       "bytes": 22852,
       "triangles": 389,
@@ -187,6 +238,57 @@
       "clips": []
     },
     {
+      "id": "georgian-coat",
+      "bytes": 593836,
+      "triangles": 11044,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.9,
+        0.487
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
+      "id": "georgian-gown",
+      "bytes": 512580,
+      "triangles": 9900,
+      "primitives": 2,
+      "materials": 2,
+      "size": [
+        0.968,
+        1.904,
+        0.626
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
+      "id": "georgian-waistcoat",
+      "bytes": 583744,
+      "triangles": 10848,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.9,
+        0.475
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
       "id": "ione",
       "bytes": 628720,
       "triangles": 12776,
@@ -215,6 +317,57 @@
         1.444
       ],
       "clips": []
+    },
+    {
+      "id": "medieval-cloak",
+      "bytes": 526372,
+      "triangles": 10052,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.9,
+        0.514
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
+      "id": "medieval-gown",
+      "bytes": 508944,
+      "triangles": 9740,
+      "primitives": 2,
+      "materials": 2,
+      "size": [
+        0.968,
+        1.904,
+        0.559
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
+      "id": "medieval-tunic",
+      "bytes": 487664,
+      "triangles": 9308,
+      "primitives": 2,
+      "materials": 2,
+      "size": [
+        0.968,
+        1.9,
+        0.424
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
     },
     {
       "id": "merchant-ship",
@@ -295,6 +448,57 @@
       "clips": []
     },
     {
+      "id": "reader-coat",
+      "bytes": 538864,
+      "triangles": 10434,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.901,
+        0.447
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
+      "id": "reader-dress",
+      "bytes": 662868,
+      "triangles": 13134,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.906,
+        0.493
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
+      "id": "reader-waistcoat",
+      "bytes": 569648,
+      "triangles": 11098,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.906,
+        0.476
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
       "id": "reading-table",
       "bytes": 174200,
       "triangles": 1836,
@@ -308,6 +512,57 @@
       "clips": []
     },
     {
+      "id": "regency-coat",
+      "bytes": 555208,
+      "triangles": 10580,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.9,
+        0.487
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
+      "id": "regency-dress",
+      "bytes": 569396,
+      "triangles": 11092,
+      "primitives": 2,
+      "materials": 2,
+      "size": [
+        0.968,
+        1.905,
+        0.482
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
+      "id": "regency-gown",
+      "bytes": 655024,
+      "triangles": 12948,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.905,
+        0.482
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
       "id": "rolled-scroll",
       "bytes": 35756,
       "triangles": 1392,
@@ -319,6 +574,57 @@
         0.178
       ],
       "clips": []
+    },
+    {
+      "id": "romantic-coat",
+      "bytes": 540748,
+      "triangles": 10472,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.9,
+        0.487
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
+      "id": "romantic-gown",
+      "bytes": 655040,
+      "triangles": 12948,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.905,
+        0.626
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
+      "id": "romantic-waistcoat",
+      "bytes": 530656,
+      "triangles": 10276,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.9,
+        0.475
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
     },
     {
       "id": "rope-coil",
@@ -455,6 +761,7 @@
       "clips": []
     }
   ],
-  "totalBytes": 6378088,
-  "withLandmarksBytes": 10937300
+  "totalBytes": 16483616,
+  "conservativeSceneBytes": 11029916,
+  "withLandmarksBytes": 21042828
 }

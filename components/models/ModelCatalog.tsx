@@ -45,7 +45,7 @@ export default function ModelCatalog(){
  function reset(){setSearch('');setCategory('all');setStatus('all');setSetting('all');}
  return <main className="model-catalog">
   <PageHeader />
-  <header className="model-catalog-header"><div><span className="model-kicker">COUNTERFACTUAL WORLDS · DEVELOPMENT LIBRARY</span><h1>Model catalog</h1><p>Find a model, inspect its scene placement, and copy the code to reuse it.</p></div><nav aria-label="Catalog resources"><a href="/models/external/catalog.json" download>Export catalog</a></nav></header>
+  <header className="model-catalog-header"><div><span className="model-kicker">COUNTERFACTUAL WORLDS · DEVELOPMENT LIBRARY</span><h1>Model catalog</h1><p>Find a model, inspect its scene placement, and copy the code to reuse it.</p></div><nav aria-label="Catalog resources"><a href="/model-catalog?collection=characters">Teaching characters</a><a href="/models/external/catalog.json" download>Export catalog</a></nav></header>
   <div className="model-status-bar" aria-live="polite">{assets.length?<><strong>{assets.length} verified records</strong><span>{new Set(catalogWorldPlacements.map(p=>p.asset)).size} models in lessons</span><span>{catalogWorldPlacements.length} lesson placements · {catalogScenes.filter(s=>s.kind==='world').length} worlds</span><span className="model-verified">Metadata matches this app’s registry</span></>:<span>{error?'Catalog needs attention':'Loading the local model registry…'}</span>}</div>
   {error&&<div role="alert" className="model-error"><p>{error}</p><button onClick={()=>{setError('');setAttempt(n=>n+1);}}>Retry catalog</button></div>}
   <div className="model-catalog-body">

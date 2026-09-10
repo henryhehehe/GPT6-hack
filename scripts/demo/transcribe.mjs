@@ -1,0 +1,10 @@
+import {loadEnvFile} from 'node:process';
+import {readFile,writeFile} from 'node:fs/promises';
+loadEnvFile('.env.local');
+const output=process.argv[2] || 'output/demo/v2';
+const file=await readFile(`${output}/voiceover-natural.wav`);
+const form=new FormData();form.set('file',new Blob([file],{type:'audio/wav'}),'voiceover.wav');
+form.set('model','whisper-1');form.set('response_format','verbose_json');form.append('timestamp_granularities[]','word');form.append('timestamp_granularities[]','segment');form.set('language','en');
+const response=await fetch('https://api.openai.com/v1/audio/transcriptions',{method:'POST',headers:{Authorization:`Bearer ${process.env.OPENAI_API_KEY}`},body:form,signal:AbortSignal.timeout(90000)});
+if(!response.ok)throw new Error(`Transcription HTTP ${response.status}`);
+const data=await response.json();await writeFile(`${output}/transcript.json`,JSON.stringify(data,null,2));console.log(JSON.stringify({duration:data.duration,text:data.text,segments:data.segments?.map(s=>({start:s.start,end:s.end,text:s.text}))}));

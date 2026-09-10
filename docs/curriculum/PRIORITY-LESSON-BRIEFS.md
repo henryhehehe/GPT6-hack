@@ -2,7 +2,7 @@
 
 September 10, 2026. Authored teaching designs for the first three catalog worlds. These teaching briefs remain drafts requiring teacher review. A subsequent implementation added locally launchable prepared packets; see [implementation scope and verification](IMPLEMENTATION.md). The station maps below are teaching designs checked against current packet coverage, not evidence of a classroom trial. See [the catalog](../WORLDS-AND-LESSONS.md) for all 30 lessons and shared readiness requirements.
 
-**Content review update:** the Odyssey and Austen sequences below now distinguish supplied passages from proposed extensions. These documentation corrections do not change the pinned runtime activities. See [historical accuracy review](HISTORICAL-ACCURACY-REVIEW.md) for sources and remaining packet work.
+**Content review update:** the Odyssey and Austen sequences below now distinguish supplied passages from proposed extensions. These corrected activities are now in runtime version `2026-09-10.3`; older saved lessons retain their original packet. See [historical accuracy review](HISTORICAL-ACCURACY-REVIEW.md) for sources and implementation verification.
 
 ## 1. Alexandria — Could knowledge survive a trade collapse?
 
@@ -16,9 +16,9 @@ The existing app provides the setting and three cards. The new teaching sequence
 | --- | --- | --- | --- |
 | Harbor | Existing `ledger` card: invented ship counts | Record the change and label it an invented teaching prop | The counts cannot establish an ancient event |
 | Market | Existing `funding` card: explicit teaching assumption | Draw the proposed connection between revenue and support; mark it conditional | The mechanism is stipulated rather than established by the source |
-| House of knowledge | Existing `strabo` paraphrase; compare the approved excerpt of Geography 17.1.8 | Identify what the description supports about an institution | It does not quantify a library budget or make trade its sole support |
+| House of knowledge | Saved `strabo` quotation from Geography 17.1.8; explanatory reading note kept separate | Identify what the description supports about an institution | It does not quantify a library budget or make trade its sole support |
 
-Source: [Strabo, Geography 17.1.8, Jones translation](https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A1*.html). The source card and the client’s separate excerpt are not interchangeable canonical text. Resolve the authoritative passage before enabling exact quotation selections, as required by the implementation plan.
+Source: [Strabo, Geography 17.1.8, Jones translation](https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A1*.html). New lessons use the saved Mouseion passage as canonical source text, with verified offsets and a separate reading note. The reader preserves legacy paraphrase labeling in old saved classrooms. Structured per-claim quotation selection remains separate product work.
 
 **Historical framing:** identify the Mouseion as a scholarly institution, distinguish it from the Library/book collections, and situate Strabo's account under Roman rule. The scene is illustrative. The [source review](HISTORICAL-ACCURACY-REVIEW.md) explains the distinction and its evidence limits.
 

@@ -1,0 +1,372 @@
+/* Shared identity. Public reading surfaces are paper; immersive tools are ink. */
+:root {
+  --brand-paper: #fff;
+  --brand-ink: #171717;
+  --brand-accent: #d8321c;
+  --brand-accent-hover: #bd2816;
+  --brand-on-dark: #ff927f;
+  --brand-muted: #595959;
+  --brand-rule: #d7d7d7;
+  --brand-surface: #f5f5f5;
+  --control-radius: 2px;
+  --radius: 2px;
+  --page-width: 1160px;
+  --page-gutter: 48px;
+  --workspace-surface: #222;
+  --workspace-inset: #171717;
+  --workspace-rule: #454545;
+  --workspace-text: #f5f5f5;
+  --workspace-muted: #bdbdbd;
+  --dialog-title-size: 28px;
+}
+
+/* A shared wordmark and header prevent route-specific branding drift. */
+body .site-header {
+  width: min(var(--page-width), calc(100% - var(--page-gutter) * 2));
+  min-height: 94px;
+  margin-inline: auto;
+  padding-block: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 2px solid var(--brand-ink);
+  color: var(--brand-ink);
+}
+body .site-header .site-brand.site-brand, body .app-header .site-brand {
+  display: block;
+  flex-shrink: 0;
+  max-width: none;
+  font: 750 23px/.98 var(--font-sans);
+  letter-spacing: -1px;
+  text-decoration: none;
+}
+body .site-brand span { display: block; color: var(--brand-accent); }
+body .site-header .site-header-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 400;
+  border-bottom: 1px solid var(--brand-ink);
+  text-decoration: none;
+}
+body .site-header .site-header-link:hover { color: var(--brand-accent); }
+body .site-header :is(a, button):focus-visible { outline: 3px solid var(--brand-accent); outline-offset: 5px; }
+body .app-header .site-brand { color: #f5f5f5; font-size: 21px; }
+body .app-header .site-brand span { color: var(--brand-on-dark); }
+
+/* Consistent type, corners, focus, and actions across workspace portals. */
+body, body select, body [data-slot=dialog-content] { font-family: var(--font-sans); }
+body select { color-scheme: dark; }
+body [data-slot=dialog-content] { border-radius: var(--control-radius); }
+body :is(.cw-app, .studio-notes, .lesson-builder, .character-dialogue, .evidence-reader, .invitation-dialog, .saved-world-library, .join-card) :is(h1,h2,h3) {
+  font-family: var(--font-sans);
+  font-weight: 650;
+  letter-spacing: -.025em;
+}
+body .primary-button {
+  background: var(--brand-accent);
+  border-color: var(--brand-accent);
+  color: #fff;
+  border-radius: var(--control-radius);
+  min-height: 44px;
+  font-size: 14px;
+}
+body .primary-button:hover { background: var(--brand-accent-hover); border-color: var(--brand-accent-hover); }
+body .primary-button:disabled { opacity: .5; }
+body :is(button, a, input, textarea, select, summary):focus-visible { outline: 2px solid var(--brand-on-dark); outline-offset: 4px; }
+body input, body textarea, body select { accent-color: var(--brand-accent); }
+body :is(input,textarea)::placeholder { color: #a3a3a3; opacity: 1; }
+body .cw-app :is(.role-tabs, .section-tabs) [data-state=active]::after { background: var(--brand-on-dark); }
+body .cw-app .role-tabs [data-state=active] { box-shadow: inset 0 -2px var(--brand-on-dark) !important; }
+body .cw-app .powered { color: #bdbdbd; }
+body .cw-app .powered svg { color: var(--brand-on-dark); }
+body .cw-app .lesson-actions { border-color: #454545; }
+body .cw-app :is(.left-panel,.right-panel) { scrollbar-color: #737373 transparent; }
+body .cw-app .rubric-result .earned { color: #a8d8b6; }
+body .cw-app .world-panel { background: #222; }
+body .cw-app :is(.location-nav button,.student-dock button,.icon-button) { border-radius: var(--control-radius); }
+body .cw-app .world-status { white-space: normal; }
+body .cw-app.immersive-student:has(.pilot-notice) { height: auto; overflow: visible; }
+body .cw-app.immersive-student:has(.pilot-notice) .workspace.student-layout { flex: none; height: max(700px, calc(100dvh - 64px)); min-height: 700px; }
+body .cw-app.immersive-student .student-dock button:last-child { background: var(--brand-accent); color: white; border-color: var(--brand-accent); }
+body .cw-app.immersive-student .student-dock button:last-child:hover { background: var(--brand-accent-hover); }
+body .cw-app:not(.immersive-student) .heading-actions button { min-height: 44px; }
+
+/* Public pages share the homepage's measure, spacing and heading hierarchy. */
+body :is(.world-atlas,.model-catalog,.museum-page,.teacher-access) {
+  min-height: 100dvh;
+  padding: 0 max(var(--page-gutter), calc((100% - var(--page-width)) / 2)) 40px;
+  background: var(--brand-paper);
+  color: var(--brand-ink);
+  font-family: var(--font-sans);
+  --primary: var(--brand-accent);
+}
+body :is(.world-atlas,.model-catalog,.museum-page,.teacher-access) > .site-header { width: 100%; padding-block: 18px; border-bottom: 2px solid var(--brand-ink); }
+body :is(.world-atlas,.model-catalog,.museum-page,.teacher-access,.lesson-catalog,.teaching-kit,.museum-dialog) :is(a,button,input,textarea,select,summary):focus-visible {
+  outline-color: var(--brand-accent);
+}
+body :is(.world-atlas,.model-catalog,.teacher-access,.teaching-kit) :is(input,textarea,select) {
+  color-scheme: light;
+  background: #fff;
+  color: var(--brand-ink);
+  border: 1px solid #8a8a8a;
+  border-radius: var(--control-radius);
+  min-height: 44px;
+  font-size: 16px;
+}
+body :is(.model-catalog,.teacher-access,.lesson-catalog,.museum-page,.museum-dialog) input::placeholder { color: var(--brand-muted); }
+body .atlas-heading, body .model-catalog-header, body .museum-page-heading { padding: 36px 0 28px; margin: 0; }
+body .atlas-heading h1, body .model-catalog h1 { font-size: clamp(32px,4vw,48px); font-weight: 750; line-height: 1.08; letter-spacing: -.04em; margin: 12px 0; }
+body .museum-page-heading h1 { font-size: clamp(48px,5.6vw,76px); font-weight: 750; }
+body .atlas-heading > span, body .model-kicker, body .museum-page-heading > p:first-child { font-size: 12px; letter-spacing: .1em; color: var(--brand-accent-hover); font-weight: 600; }
+body .atlas-heading p, body .model-catalog-header > p { font-size: 16px; line-height: 1.6; color: var(--brand-muted); }
+body .model-catalog-header, body .model-catalog-body { max-width: none; }
+body .model-catalog-body { grid-template-columns: 260px minmax(0,1fr); gap: 24px; }
+body .model-stats { padding-block: 18px; margin-top: 24px; gap: 24px; border-block: 1px solid var(--brand-rule); font-size: 14px; }
+body .model-stats b { font-weight: 650; }
+body .model-detail { padding: 24px; border-top: 3px solid var(--brand-ink); }
+body .model-detail h2 { font-weight: 650; font-size: 30px; letter-spacing: -.03em; }
+body .model-catalog { --mc-ink: var(--brand-ink); --mc-muted: var(--brand-muted); --mc-line: var(--brand-rule); --mc-paper: var(--brand-paper); --mc-accent: var(--brand-ink); }
+body .model-catalog :is(h1,h2) { font-family: var(--font-sans); }
+body .model-catalog-header p { font-size: 16px; }
+body .model-catalog :is(.model-detail,.model-preview,.model-integrate,.model-readiness,.model-code,.model-section summary span,.model-preview-tools button,.model-download,.model-copy button,.model-empty,.model-error) { border-radius: var(--control-radius); }
+body .model-integrate { background: var(--brand-surface); }
+body .model-readiness { color: var(--brand-ink); background: #eee; border-color: var(--brand-rule); }
+body .model-preview-tools button { background: white; border-color: #8a8a8a; min-height: 44px; min-width: 44px; }
+body .model-section summary span { background: #eee; }
+body .model-orbit-hint { color: var(--brand-muted); }
+body .model-catalog .model-code { background: var(--brand-ink); color: #f5f5f5; font-size: 14px !important; }
+body .model-catalog .model-library select { font-size: 14px; padding: 10px 8px; }
+body .model-catalog .model-copy button:hover, body .model-download:hover { background: var(--brand-accent-hover); border-color: var(--brand-accent-hover); color: #fff; }
+body .model-preview { background: var(--brand-surface); border: 1px solid var(--brand-rule); }
+body .model-animation { background: #eee; }
+body .model-animation button { min-height: 44px; }
+body .model-detail pre { background: var(--brand-ink); color: #f5f5f5; }
+body .model-caution { border-color: var(--brand-accent); }
+body .model-list button { background: var(--brand-surface); border-radius: var(--control-radius); }
+body .model-list button.selected { background: var(--brand-ink); color: #fff; border-color: var(--brand-ink); }
+body .model-list button:hover:not(.selected) { border-color: var(--brand-muted); }
+body .model-library > label, body .model-filters label, body .model-download { font-size: 14px; }
+body .model-download { min-height: 44px; display: inline-flex; align-items: center; }
+body .atlas-layout nav button { padding: 14px; }
+body .atlas-layout nav button[aria-pressed=true] { background: var(--brand-ink); color: #fff; border-color: var(--brand-ink); }
+body .atlas-layout nav button[aria-pressed=true] small { color: #ddd; }
+body .atlas-layout nav button:hover:not([aria-pressed=true]) { background: var(--brand-surface); }
+body .atlas-layout nav small { font-size: 12px; }
+body .atlas-layout nav strong { font-size: 16px; }
+body .atlas-lessons { flex-wrap: wrap; }
+body .atlas-lessons button { min-height: 44px; font-size: 14px; border-color: #8a8a8a; }
+body .atlas-lessons button[aria-pressed=true] { background: var(--brand-ink); border-color: var(--brand-ink); }
+body .atlas-content h2 { font-weight: 650; letter-spacing: -.025em; }
+body .atlas-question { font-size: 16px; line-height: 1.6; }
+body .atlas-scene { border-radius: var(--control-radius); border-color: var(--brand-rule); }
+body .atlas-stations button { border-top: 3px solid var(--brand-ink); }
+body .atlas-stations button:hover { border-color: var(--brand-accent); }
+body .atlas-stations strong { font-size: 16px; }
+body .atlas-stations :is(small,span),body .atlas-scope,body .atlas-guide small { font-size: 12px; }
+body .atlas-reading { font-size: 16px; }
+body .atlas-guide { background: var(--brand-surface); border-left: 3px solid var(--brand-accent); }
+body .atlas-guide h3, body .atlas-guide p { font-size: 16px; }
+body .atlas-guide > button { min-width: 40px; min-height: 40px; }
+body .atlas-guide h3 { padding-right: 32px; }
+body .museum-page-heading > p:last-child { font-size: 18px; color: var(--brand-muted); }
+body .museum-filters button, body .museum-object summary, body .museum-object-actions :is(a,button) { font-size: 14px; min-height: 44px; }
+body .museum-object-kicker, body .museum-credit, body .museum-teaching > span, body .museum-record-date { font-size: 12px; }
+body .museum-teaching p { font-size: 16px; }
+body .museum-citation textarea { font-size: 14px; }
+body .museum-object-kicker { gap: 12px; flex-wrap: wrap; }
+body .museum-demo-intro > span, body .museum-demo-trail small { font-size: 12px; }
+body .museum-demo-intro p, body .museum-demo-trail strong { font-size: 14px; }
+body .teaching-kit[data-slot=dialog-content] { background: #fff; color: var(--brand-ink); border: 1px solid var(--brand-ink); border-top: 3px solid var(--brand-accent); border-radius: var(--control-radius); }
+body .teaching-kit [data-slot=dialog-description] { color: var(--brand-muted); }
+body .teaching-kit .eyebrow { color: var(--brand-accent-hover); }
+body .teaching-kit .primary-button { background: var(--brand-ink); color: #fff; border-color: var(--brand-ink); }
+body .teaching-kit .kit-practice-toggle input { min-height: 18px; }
+body .teaching-kit .kit-review-focus button[aria-pressed=true] { background: var(--brand-ink); color: #fff; }
+body .teaching-kit [data-slot=dialog-close] { color: var(--brand-ink); }
+body .lesson-catalog :is(h2,h3) { font-weight: 650; }
+body .lesson-catalog .catalog-explore-link { color: var(--brand-accent-hover); font-size: 14px; min-height: 44px; padding-block: 12px; }
+body .lesson-catalog .catalog-filters button { min-height: 44px; }
+body .lesson-catalog[data-slot=dialog-content] { box-shadow: 0 24px 90px #0006; }
+body .lesson-catalog .catalog-search input:focus-visible { outline: 0; box-shadow: none; border-radius: 0; }
+body [data-slot=dialog-content] > [data-slot=dialog-close] {
+  display: grid; place-items: center; width: 40px; height: 40px;
+  top: 10px; right: 10px; border-radius: var(--control-radius); opacity: 1;
+}
+body .lesson-catalog[data-slot=dialog-content] > [data-slot=dialog-close] { background: var(--brand-ink); color: white; }
+
+body .teacher-access-card { max-width: 480px; margin: 64px auto; border-top: 3px solid var(--brand-accent); padding-top: 24px; }
+body .teacher-access-card h1 { font-size: 36px; font-weight: 750; letter-spacing: -.04em; margin-bottom: 16px; }
+body .teacher-access-card p { font-size: 16px; line-height: 1.6; color: var(--brand-muted); }
+body .teacher-access-card form { margin: 28px 0; }
+body .teacher-access-card label { font-size: 14px; font-weight: 600; }
+body .teacher-access-card input { display: block; width: 100%; padding: 12px; margin: 8px 0 16px; }
+body .teacher-access-card .primary-button { width: 100%; }
+body .teacher-access-card p a { text-decoration: underline; text-underline-offset: 4px; }
+body .teacher-access-card [role=alert] { padding: 12px; margin-top: 16px; border-left: 3px solid var(--brand-accent); background: var(--brand-surface); color: var(--brand-accent-hover); }
+
+@media (max-width: 900px) {
+  :root { --page-gutter: 24px; }
+  body .model-catalog-body { grid-template-columns: 1fr; }
+  body .model-library { position: static; }
+  body .model-list { max-height: 230px; grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 600px) {
+  :root { --page-gutter: 18px; }
+  body .site-header { min-height: 79px; gap: 16px; }
+  body .site-header .site-brand.site-brand { font-size: 21px; }
+  body .site-header .site-header-link { gap: 8px; }
+  body .atlas-heading, body .model-catalog-header, body .museum-page-heading { padding: 28px 0 24px; }
+  body .app-header .site-brand { font-size: 17px; letter-spacing: -.7px; }
+  body .cw-app .app-header { flex-wrap: wrap; height: auto; min-height: 68px; }
+  body .cw-app .role-tabs [data-slot=tabs-trigger] { padding: 8px; }
+  body .cw-app .header-right { margin-left: auto; }
+  body .cw-app:not(.immersive-student) .heading-actions button { font-size: 14px; }
+  body .model-detail { padding: 16px; }
+  body .model-stats { gap: 12px 24px; }
+  body .model-metrics { grid-template-columns: 1fr; }
+  body .teacher-access-card { margin-block: 36px; }
+}
+
+/* Secondary workflows share the same surfaces, hierarchy and control rhythm. */
+body :is(.lesson-builder,.studio-notes,.saved-world-library,.invitation-dialog,.inspector)[data-slot=dialog-content] {
+  background: var(--workspace-surface);
+  color: var(--workspace-text);
+  border-color: var(--workspace-rule);
+  border-top: 3px solid var(--brand-accent);
+  max-height: calc(100dvh - 32px);
+}
+body :is(.lesson-builder,.studio-notes,.saved-world-library,.invitation-dialog,.character-dialogue,.evidence-reader,.teaching-kit,.museum-dialog)[data-slot=dialog-content] [data-slot=dialog-title] {
+  font-family: var(--font-sans);
+  font-size: var(--dialog-title-size);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -.025em;
+}
+body :is(.lesson-builder,.studio-notes,.saved-world-library,.invitation-dialog,.character-dialogue,.evidence-reader)[data-slot=dialog-content] [data-slot=dialog-description] {
+  color: var(--workspace-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+body :is(.lesson-builder,.studio-notes,.saved-world-library,.invitation-dialog,.character-dialogue,.evidence-reader) .eyebrow {
+  font-size: 12px;
+  line-height: 1.5;
+}
+body :is(.studio-notes,.saved-world-library,.invitation-dialog,.lesson-builder)[data-slot=dialog-content] > [data-slot=dialog-close] {
+  background: var(--workspace-inset);
+  border: 1px solid var(--workspace-rule);
+  color: var(--workspace-text);
+}
+body :is(.studio-notes,.saved-world-library,.invitation-dialog,.lesson-builder)[data-slot=dialog-content] > [data-slot=dialog-close]:hover {
+  background: #383838;
+}
+body :is(.saved-world-library,.invitation-dialog,.studio-notes) :is(.text-button,.quiet-button) {
+  min-height: 44px;
+  font-size: 14px;
+}
+body .saved-world-search { border-radius: var(--control-radius); }
+body .saved-world-search input { min-height: 44px; }
+body .saved-world-search button { width: 44px; height: 44px; }
+body .saved-world-library .saved-world-actions .primary-button {
+  min-height: 44px;
+  background: var(--brand-accent);
+  border-color: var(--brand-accent);
+  color: #fff;
+}
+body .saved-world-library .saved-world-actions .primary-button:hover { background: var(--brand-accent-hover); border-color: var(--brand-accent-hover); }
+body :is(.saved-world-empty,.saved-world-loading) { padding-block: 28px; }
+body .saved-world-empty h3 { font-size: 22px; }
+body .saved-world-empty p { max-width: 52ch; margin-top: 10px; font-size: 16px; }
+
+/* Keep the source review visible; its footer is an action row, not another panel. */
+body .lesson-builder[data-slot=dialog-content] > footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 20px;
+  padding: 16px 28px;
+  border-color: var(--workspace-rule);
+  background: var(--workspace-inset);
+}
+body .lesson-builder[data-slot=dialog-content] > footer .builder-next-step {
+  order: -1;
+  flex-basis: 100%;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 4px;
+}
+body .lesson-builder[data-slot=dialog-content] > footer :is(.quiet-button,.text-button) {
+  min-height: 44px;
+  margin: 0;
+  padding: 8px 0;
+  font-size: 14px;
+  color: var(--workspace-muted);
+}
+body .lesson-builder[data-slot=dialog-content] > footer .primary-button { margin-left: auto; flex: none; }
+body .lesson-builder[data-slot=dialog-content] .builder-modes button { min-height: 44px; }
+body .lesson-builder[data-slot=dialog-content] .builder-modes button[aria-pressed=true] {
+  background: var(--workspace-text);
+  color: var(--workspace-inset);
+}
+body .lesson-builder .builder-body :is(.builder-setting > p,.builder-sources > p,.builder-places p,.builder-promise p) {
+  font-size: 16px;
+  line-height: 1.6;
+}
+body .lesson-builder .builder-body :is(.builder-setting,.builder-places article,.builder-sources details) { border-color: var(--workspace-rule); }
+
+body .character-dialogue .character-compose footer button { min-height: 44px; font-size: 14px; }
+body .character-dialogue .character-compose footer span { font-size: 12px; line-height: 1.6; }
+body .character-dialogue .character-compose .primary-button { min-width: 48px; align-self: flex-end; height: 48px; }
+body .character-dialogue .portrait-placeholder { background: var(--workspace-inset); }
+body .character-dialogue .portrait-placeholder > span { color: var(--brand-on-dark); opacity: 1; font-weight: 650; }
+body .character-dialogue .portrait-placeholder button { min-height: 44px; font-size: 14px; }
+body .character-dialogue .portrait-caption > span, body .character-dialogue .portrait-caption small { font-size: 12px; }
+body .character-dialogue .portrait-caption strong { color: var(--workspace-text); font-weight: 650; }
+body .cw-app.immersive-student .student-dock > button:nth-child(2) small { color: #fff; }
+body .cw-app.immersive-student .student-dock > button:nth-child(2)[aria-expanded=true] {
+  background: var(--workspace-text);
+  border-color: var(--workspace-text);
+  color: var(--workspace-inset);
+}
+body .cw-app.immersive-student .student-dock > button:nth-child(2)[aria-expanded=true] small { color: var(--brand-muted); }
+
+/* Museum inspection and comparison use the public control and reading scale. */
+body .museum-dialog[data-slot=dialog-content] > [data-slot=dialog-title] { padding-right: 36px; }
+body :is(.museum-dialog,.museum-page) .museum-zoom-controls { gap: 8px; flex-wrap: wrap; font-size: 14px; }
+body :is(.museum-dialog,.museum-page) .museum-zoom-controls button { min-width: 44px; height: 44px; border-radius: var(--control-radius); }
+body :is(.museum-dialog,.museum-page) .museum-zoom-controls .museum-zoom-reset { font-size: 14px; padding-inline: 10px; }
+body :is(.museum-dialog,.museum-page) :is(.museum-study-switch button,.museum-study-actions button,.museum-compare-tray button) {
+  min-height: 44px;
+  font-size: 14px;
+  border-radius: var(--control-radius);
+}
+body :is(.museum-dialog,.museum-page) :is(.museum-record-fact,.museum-study-intro,.museum-investigation-copy li) { font-size: 16px; line-height: 1.65; }
+body :is(.museum-dialog,.museum-page) :is(.museum-photo-caption,.museum-boundary,.museum-comparison-question small) { font-size: 12px; line-height: 1.65; }
+body :is(.museum-dialog,.museum-page) :is(.museum-study-grid dl,.museum-study-citation,.museum-study-citation textarea,.museum-study-record,.museum-investigation-copy > a,.museum-investigation-copy details) { font-size: 14px; }
+body :is(.museum-dialog,.museum-page) :is(.museum-study-citation summary,.museum-investigation-copy summary) { min-height: 44px; padding-block: 10px; }
+body :is(.museum-dialog,.museum-page) .museum-zoom-image:focus-visible { outline: 2px solid var(--brand-accent); outline-offset: 4px; }
+body :is(.museum-dialog,.museum-page) .museum-investigation-next button { min-height: 44px; font-size: 14px; }
+
+@media (max-width: 600px) {
+  :root { --dialog-title-size: 24px; }
+  body .lesson-builder[data-slot=dialog-content] > footer { padding: 14px 20px; gap: 6px 20px; }
+  body .lesson-builder[data-slot=dialog-content] > footer .primary-button { flex-basis: 100%; margin-left: 0; }
+  body .character-dialogue .character-compose footer { flex-wrap: wrap; gap: 4px; }
+  body .character-dialogue .character-compose footer span { max-width: none; }
+  body .character-dialogue .character-compose footer button { margin-left: auto; }
+  body :is(.museum-dialog,.museum-page) .museum-zoom-controls > span { flex-basis: 100%; }
+  body :is(.museum-dialog,.museum-page) .museum-zoom-controls .museum-zoom-reset { margin-left: auto; }
+}
+
+body :is(.lesson-builder,.studio-notes,.saved-world-library,.invitation-dialog,.share-invitation,.character-dialogue,.evidence-reader,.teaching-kit,.museum-dialog,.inspector)[data-slot=dialog-content] > [data-slot=dialog-close] {
+  width: 44px;
+  height: 44px;
+}
+body .character-dialogue .character-heading { padding-right: 60px; }
+body :is(.museum-dialog,.museum-page) :is(.museum-zoom-controls,.museum-study-switch,.museum-study-actions) button:not(:disabled):not([aria-pressed=true]):hover {
+  background: var(--brand-surface);
+  border-color: var(--brand-ink);
+}

@@ -3,3 +3,5 @@ export const classrooms=sqliteTable('classrooms',{id:text('id').primaryKey(),tea
 export const students=sqliteTable('students',{id:text('id').primaryKey(),classId:text('class_id').notNull().references(()=>classrooms.id),token:text('token').notNull(),state:text('state').notNull(),revision:integer('revision').notNull().default(1)},t=>[index('students_class_idx').on(t.classId)]);
 export const lessonDrafts=sqliteTable('lesson_drafts',{id:text('id').primaryKey(),classId:text('class_id').notNull().references(()=>classrooms.id),state:text('state').notNull(),createdAt:text('created_at').notNull()},t=>[index('lesson_drafts_class_idx').on(t.classId)]);
 export const characterPortraits=sqliteTable('character_portraits',{id:text('id').primaryKey(),classId:text('class_id').notNull().references(()=>classrooms.id),status:text('status').notNull(),lease:text('lease').notNull(),updatedAt:integer('updated_at').notNull(),blobKey:text('blob_key'),responseId:text('response_id'),model:text('model')});
+
+export const pilotUsage=sqliteTable('pilot_usage',{id:text('id').primaryKey(),used:integer('used').notNull().default(0)});

@@ -25,7 +25,7 @@ export function loadAlexandriaDetails(parent: THREE.Object3D) {
     });
     geometries.forEach(g => g.dispose()); materials.forEach(m => m.dispose()); source = undefined;
   };
-  void new GLTFLoader().loadAsync('/models/alexandria-details/alexandria-details.glb?v=3').then(gltf => {
+  const loaded = new GLTFLoader().loadAsync('/models/alexandria-details/alexandria-details.glb?v=3').then(gltf => {
     source = gltf.scene;
     if (disposed) { disposeSource(); return; }
     for (const id of ALEXANDRIA_DETAIL_IDS) if (!source.getObjectByName(id)) throw new Error(`Missing detail: ${id}`);
@@ -54,6 +54,7 @@ export function loadAlexandriaDetails(parent: THREE.Object3D) {
     if (!disposed) console.warn('Alexandria detail pack unavailable; keeping scene fallbacks.',error);
   });
   return {
+    loaded,
     get ready() { return ready; },
     update(blend: number, harbor: number, market: number) {
       for (const zone of ['harbor','market'] as const) {

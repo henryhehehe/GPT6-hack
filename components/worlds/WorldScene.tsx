@@ -9,9 +9,13 @@ import { loadAlexandriaKit } from './scene/alexandriaKit';
 import { loadAlexandriaDetails } from './scene/alexandriaDetails';
 import { loadExternalModels } from './scene/externalModels';
 import { ALEXANDRIA_EXTERNAL } from './scene/externalLayout';
+import SceneLoading from './SceneLoading';
+import {activeSceneAppearance,appearanceLighting} from '@/lib/sceneAppearance';
+import {trackSceneLoading} from './scene/sceneLoading';
 import { SceneArtCredits } from './SceneArtCredits';
 import LandmarkPreview from './LandmarkPreview';
 import type { LandmarkId } from '@/lib/landmarkReferences';
+import {alexandriaHintPositions,visibleAtActivity} from './scene/lessonEffects';
 import { characters } from '@/lib/characters';
 import {createHarborEnvironment} from './scene/harborEnvironment';
 import {HUMAN_SCALE,MARKET_COUNTER_Y} from './scene/humanScale';
@@ -22,7 +26,7 @@ import {loadTeachingCharacters} from './scene/teachingCharacters';
 import {loadStreetCrowd} from './scene/streetCrowd';
 import {CITY_OUTLINE,CITY_DESTINATIONS,DISTRICT_BUILDINGS} from './scene/cityLayout';
 
-type Props={world:World;scenario:boolean;focus:ZoneId|null;focusRevision?:number;unlocked:boolean;hint:boolean;onSelect:(zone:ZoneId)=>void;onTalk:(zone:ZoneId)=>void};
+type Props={world:World;scenario:boolean;focus:ZoneId|null;focusRevision?:number;unlocked:boolean;hint:{id:string;zone:ZoneId}|null;onSelect:(zone:ZoneId)=>void;onTalk:(zone:ZoneId)=>void};
 const positions:Record<ZoneId,[number,number,number]>={harbor:[-14,1,12],market:[8,2,7],library:[0,5,-12]};
 export default function WorldScene(props:Props){
  const characterButtons=useRef<Partial<Record<ZoneId,HTMLButtonElement|null>>>({});
@@ -37,13 +41,13 @@ export default function WorldScene(props:Props){
  useEffect(()=>{const escape=(event:KeyboardEvent)=>{if(event.key==='Escape')referenceEvents.current.closeReference();};window.addEventListener('keydown',escape);return()=>{window.removeEventListener('keydown',escape);if(closeTimer.current)clearTimeout(closeTimer.current);};},[]);
  const explorerRef=useRef<ReturnType<typeof createExplorer>|null>(null);
  const [walking,setWalking]=useState(false),[nearby,setNearby]=useState<ZoneId|null>(null);
- const host=useRef<HTMLDivElement>(null);const latest=useRef(props);const [error,setError]=useState('');
+ const host=useRef<HTMLDivElement>(null);const latest=useRef(props);const [error,setError]=useState(''),[loading,setLoading]=useState(true),[sceneRendered,setSceneRendered]=useState(false);
  useEffect(()=>{latest.current=props;},[props]);
  useEffect(()=>{
   if(!host.current)return;
-  setError('');
+  setError('');setLoading(true);setSceneRendered(false);
   const el=host.current; let renderer:THREE.WebGLRenderer;
-  try{renderer=new THREE.WebGLRenderer({antialias:true,alpha:true,powerPreference:'high-performance'});}catch{setError('This browser cannot display the 3D world. You can still explore every place using the location buttons.');return;}
+  try{renderer=new THREE.WebGLRenderer({antialias:true,alpha:true,powerPreference:'high-performance'});}catch{setLoading(false);setError('This browser cannot display the 3D world. You can still explore every place using the location buttons.');return;}
   renderer.setPixelRatio(Math.min(devicePixelRatio,1.5));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.info.autoReset=false;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=.60;el.appendChild(renderer.domElement);
   const scene=new THREE.Scene();const atmosphere=createHarborEnvironment(scene,renderer);
   const camera=new THREE.PerspectiveCamera(37,1,.3,5000);camera.position.set(87,65,98);
@@ -79,11 +83,11 @@ export default function WorldScene(props:Props){
   const flame=mesh(new THREE.SphereGeometry(.6,12,8),mats.amber,beacon,-24,14.1,16);
   const landmarks=loadLandmarks(land,library.group,beacon,()=>setError('Detailed architecture could not load. The simplified world remains playable.'),id=>setReady(ids=>ids.includes(id)?ids:[...ids,id]));
   for(const x of [-12,-4,5]){box(land,3,.5,17.8,x,.7,20.6,mats.wood);for(let j=0;j<7;j++)box(land,3.1,.08,.12,x,1.21,14+j*2.2,mats.edge);for(const side of [-1,1])for(const z of [14,22,28])cylinder(land,.22,2.7,x+side*1.35,-.1,z,mats.wood);}
-  const goods:THREE.Object3D[]=[];const stalls:THREE.Group[]=[];
+  const goods:THREE.Object3D[]=[],harborCrates:THREE.Object3D[]=[];const stalls:THREE.Group[]=[];
   for(let i=0;i<5;i++){const g=new THREE.Group();g.position.set(13+(i%2)*8,1,5+Math.floor(i/2)*5);land.add(g);stalls.push(g);box(g,5,MARKET_COUNTER_Y-1,2.8,0,0,0,mats.wood);for(const x of [-2.4,2.4])for(const z of [-1.3,1.3])cylinder(g,.09,3.5*HUMAN_SCALE.marketVertical,x,0,z,mats.wood,6);const roof=box(g,5.8,.16,3.5,0,3.5*HUMAN_SCALE.marketVertical,0,i%2?mats.cloth:mats.teal);roof.rotation.z=.08;
    for(let j=0;j<5;j++){const fruit=mesh(new THREE.SphereGeometry(.16,8,6),j%2?mats.gold:mats.roof,g,-1.8+j*.9,MARKET_COUNTER_Y-1+.18,0);goods.push(fruit);}
   }
-  for(let i=0;i<14;i++){const crate=box(land,1.1,1.1,1.1,-18+(i%3)*1.3,1+Math.floor(i/6)*1.1,7+Math.floor(i/3)*1.1,mats.wood);goods.push(crate);}
+  for(let i=0;i<14;i++){const crate=box(land,1.1,1.1,1.1,-18+(i%3)*1.3,1+Math.floor(i/6)*1.1,7+Math.floor(i/3)*1.1,mats.wood);harborCrates.push(crate);}
   const palms:THREE.Group[]=[];
   function palm(x:number,z:number,s=1){const g=new THREE.Group();g.position.set(x,.8,z);g.scale.setScalar(s);land.add(g);palms.push(g);cylinder(g,.22,5,x*0,0,0,mats.wood,7);for(let j=0;j<7;j++){const leaf=mesh(new THREE.ConeGeometry(.75,3.7,4),mats.green,g,Math.sin(j)*1.25,5.1,Math.cos(j)*1.25);leaf.rotation.set(Math.cos(j)*1.2,0,-Math.sin(j)*1.2);}}
   [[-17,-5],[17,-8],[26,12],[-27,7],[-15,-18],[17,-19]].forEach(([x,z],i)=>palm(x,z,.8+i%3*.1));
@@ -100,9 +104,10 @@ export default function WorldScene(props:Props){
   cylinder(courtyardFallback,1.35,.25,-9,.95,0,mats.stone,8);cylinder(courtyardFallback,1.05,.5,-9,1.2,0,mats.light,24);cylinder(courtyardFallback,.91,.025,-9,1.7,0,mats.teal,24);cylinder(courtyardFallback,.18,.8,-9,1.45,0,mats.light);cylinder(courtyardFallback,.57,.12,-9,2.25,0,mats.light,24);
   for(const x of [-12,-6]){box(courtyardFallback,.68,.16,2.35,x,1.29,0,mats.light);for(const z of [-.83,.83])box(courtyardFallback,.46,.34,.28,x,.95,z,mats.stone);}
   for(const x of [-12,-4,5])for(const z of [16,25]){cylinder(courtyardFallback,.13,.38,x-1.14,1.28,z,mats.stone);cylinder(courtyardFallback,.21,.12,x-1.14,1.66,z,mats.light);}
-  const scenery=loadAlexandriaKit(land,{houses,palms,stalls,ships,goods,decor:[courtyardFallback]});
+  const scenery=loadAlexandriaKit(land,{houses,palms,stalls,ships,goods:[...goods,...harborCrates],decor:[courtyardFallback]});
   const details=loadAlexandriaDetails(land);
   const external=loadExternalModels(land,ALEXANDRIA_EXTERNAL);
+  const loadingTracker=trackSceneLoading([landmarks.loaded,scenery.loaded,details.loaded,teachingCharacters.loaded,crowd.loaded,external.ready],()=>setLoading(false),()=>setSceneRendered(true));
   const markers:THREE.Mesh[]=[];const ringMats:THREE.MeshBasicMaterial[]=[];
   for(const id of ['harbor','market','library'] as ZoneId[]){const [x,y,z]=positions[id];const m=new THREE.MeshBasicMaterial({color:'#6adeca',transparent:true,depthWrite:false,opacity:.45,side:THREE.DoubleSide});ringMats.push(m);const ring=mesh(new THREE.RingGeometry(1.2,1.4,40),m,scene,x,y,z);ring.rotation.x=-Math.PI/2;ring.userData.zone=id;ring.castShadow=false;markers.push(ring);const p=mesh(new THREE.OctahedronGeometry(.48),mats.teal,scene,x,y+2,z);p.userData.zone=id;markers.push(p);}
   const hint=box(scene,1.6,.16,1.1,-13,2.2,11,mats.gold);hint.visible=false;
@@ -128,23 +133,28 @@ export default function WorldScene(props:Props){
   let measuredFrames=0,measuredAt=performance.now(),peakCalls=0,peakTriangles=0;let frame=0,t=0,last=performance.now(),blend=0,oldFocus:ZoneId|null=null,oldFocusRevision=props.focusRevision;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const target=new THREE.Vector3(0,0,-22),cameraTarget=new THREE.Vector3(87,65,98);let focusing=false;
   const cameraViews:Record<ZoneId,[number,number,number]>={library:[27,23,23],harbor:[23,25,51],market:[40,29,39]};
+  let lastViewpoint='';
   const interruptFocus=()=>{focusing=false;};controls.addEventListener('start',interruptFocus);
   function animate(now:number){const dt=Number.isFinite(now-last)?Math.max(0,Math.min((now-last)/1000,.05)):0;last=now;t+=dt;const p=latest.current;
-   blend=THREE.MathUtils.damp(blend,p.scenario?1:0,reduced?100:2,dt);atmosphere.update(t,reduced);teachingCharacters.update(dt,reduced);crowd.update(dt,t,camera,p.world,blend,reduced);district.upgradeFoliage(scenery.getPlantTemplate());
+   const appearance=activeSceneAppearance(p.world,p.scenario),waterBob=appearanceLighting(appearance).bob;
+   if(lastViewpoint!==appearance.viewpoint){const initial=lastViewpoint==='';lastViewpoint=appearance.viewpoint;if(!explorer.walking&&(!initial||appearance.viewpoint!=='overview')){const zone=appearance.viewpoint==='overview'?null:appearance.viewpoint;const point=zone?positions[zone]:[0,0,-22];target.set(point[0],point[1],point[2]);cameraTarget.set(...(zone?cameraViews[zone]:[87,65,98] as [number,number,number]));focusing=true;}}
+   blend=THREE.MathUtils.damp(blend,p.scenario?1:0,reduced?100:2,dt);atmosphere.update(t,reduced,appearance);teachingCharacters.update(dt,reduced);crowd.update(dt,t,camera,p.world,blend,reduced);district.upgradeFoliage(scenery.getPlantTemplate());
    if(oldFocus!==p.focus||oldFocusRevision!==p.focusRevision){oldFocus=p.focus;oldFocusRevision=p.focusRevision;if(explorer.walking){explorer.focus(p.focus);}else{const point=p.focus?positions[p.focus]:[0,0,-22];target.set(point[0],point[1],point[2]);cameraTarget.set(...(p.focus?cameraViews[p.focus]:[87,65,98] as [number,number,number]));focusing=true;}}
    if(focusing&&!explorer.walking){const alpha=reduced?1:1-Math.exp(-3*dt);controls.target.lerp(target,alpha);camera.position.lerp(cameraTarget,alpha);if(controls.target.distanceTo(target)<.1&&camera.position.distanceTo(cameraTarget)<.1)focusing=false;}
-   ships.forEach((s,i)=>{s.position.y=.25+(reduced?0:Math.sin(t*1.1+i)*.16);s.rotation.z=reduced?0:Math.sin(t*.7+i)*.025;const activity=p.world.nodes.find(n=>n.id==='harbor')?.activity??.22;const visible=i/ships.length<1-blend*(1-activity);s.visible=visible;if(i>=2&&!reduced){s.position.x=[13,-20,23,-4][i-2]+Math.sin(t*.055+i)*2.5;}});
-   const market=p.world.nodes.find(n=>n.id==='market')?.activity??.35;if(!scenery.ready)goods.forEach((g,i)=>g.visible=i/goods.length<1-blend*(1-market));scenery.update(blend,p.world.nodes.find(n=>n.id==='harbor')?.activity??.22,market);details.update(blend,p.world.nodes.find(n=>n.id==='harbor')?.activity??.22,market);external.update(blend,p.world.nodes.find(n=>n.id==='harbor')?.activity??.22,market);
-   landmarks.update(p.unlocked,dt,reduced);door.scale.x=THREE.MathUtils.damp(door.scale.x,p.unlocked?.06:1,4,dt);hint.visible=p.hint;hint.rotation.y=reduced?0:Math.sin(t)*.06;
+   ships.forEach((s,i)=>{s.position.y=.25+(reduced?0:Math.sin(t*1.1+i)*waterBob);s.rotation.z=reduced?0:Math.sin(t*.7+i)*waterBob*.16;const visible=visibleAtActivity(p.world,'harbor',i,ships.length,blend);s.visible=visible;if(i>=2&&!reduced){s.position.x=[13,-20,23,-4][i-2]+Math.sin(t*.055+i)*2.5;}});
+   if(!scenery.ready){goods.forEach((g,i)=>g.visible=visibleAtActivity(p.world,'market',i,goods.length,blend));harborCrates.forEach((g,i)=>g.visible=visibleAtActivity(p.world,'harbor',i,harborCrates.length,blend));}
+   const harbor=p.world.nodes.find(n=>n.id==='harbor')?.activity??.22,market=p.world.nodes.find(n=>n.id==='market')?.activity??.35;scenery.update(blend,harbor,market);details.update(blend,harbor,market);external.update(blend,harbor,market);
+   landmarks.update(p.unlocked,dt,reduced);door.scale.x=THREE.MathUtils.damp(door.scale.x,p.unlocked?.06:1,4,dt);hint.visible=!!p.hint;if(p.hint)hint.position.set(...alexandriaHintPositions[p.hint.zone]);hint.rotation.y=reduced?0:Math.sin(t)*.06;
    ringMats.forEach(m=>m.color.set(p.scenario?'#ffc574':'#6adeca'));pathMat.opacity=blend*.38;path.visible=blend>.01;particle.visible=blend>.2;if(!reduced)particle.position.copy(curve.getPoint((t*.13)%1));flame.scale.setScalar(1);
    explorer.update(dt);if(!explorer.walking)controls.update();
    for(const npc of npcs){const id=npc.userData.character as ZoneId,button=characterButtons.current[id];const facingDistance=Math.hypot(camera.position.x-npc.position.x,camera.position.z-npc.position.z);if(facingDistance<5){const desired=Math.atan2(camera.position.x-npc.position.x,camera.position.z-npc.position.z);const delta=Math.atan2(Math.sin(desired-npc.rotation.y),Math.cos(desired-npc.rotation.y));npc.rotation.y+=delta*(reduced?1:1-Math.exp(-2*dt));}if(button){labelPoint.copy(npc.position);labelPoint.y+=2.4;const distance=camera.position.distanceTo(labelPoint);labelPoint.project(camera);const visible=labelPoint.z>-1&&labelPoint.z<1&&Math.abs(labelPoint.x)<.95&&Math.abs(labelPoint.y)<.85&&(!explorer.walking||distance<14);button.style.display=visible?'flex':'none';if(visible){button.style.left=`${(labelPoint.x+1)*.5*el.clientWidth}px`;button.style.top=`${(1-labelPoint.y)*.5*el.clientHeight}px`;}}}
-   renderer.info.reset();renderer.render(scene,camera);measuredFrames++;peakCalls=Math.max(peakCalls,renderer.info.render.calls);peakTriangles=Math.max(peakTriangles,renderer.info.render.triangles);if(now-measuredAt>1000){el.dataset.renderFps=String(Math.round(measuredFrames*1000/(now-measuredAt)));el.dataset.drawCalls=String(peakCalls);el.dataset.triangles=String(peakTriangles);measuredFrames=0;measuredAt=now;peakCalls=0;peakTriangles=0;}frame=requestAnimationFrame(animate);
+   renderer.info.reset();renderer.render(scene,camera);loadingTracker.rendered();measuredFrames++;peakCalls=Math.max(peakCalls,renderer.info.render.calls);peakTriangles=Math.max(peakTriangles,renderer.info.render.triangles);if(now-measuredAt>1000){el.dataset.renderFps=String(Math.round(measuredFrames*1000/(now-measuredAt)));el.dataset.drawCalls=String(peakCalls);el.dataset.triangles=String(peakTriangles);measuredFrames=0;measuredAt=now;peakCalls=0;peakTriangles=0;}frame=requestAnimationFrame(animate);
   }frame=requestAnimationFrame(animate);
-  return()=>{cancelAnimationFrame(frame);explorer.dispose();explorerRef.current=null;landmarks.dispose();teachingCharacters.dispose();crowd.dispose();scenery.dispose();district.dispose();atmosphere.dispose();details.dispose();external.dispose();observer.disconnect();controls.removeEventListener('start',interruptFocus);controls.dispose();el.removeEventListener('pointerdown',onDown);el.removeEventListener('pointerup',onUp);el.removeEventListener('pointermove',onMove);el.removeEventListener('pointerleave',onLeave);scene.traverse(o=>{if(o instanceof THREE.Mesh){o.geometry.dispose();const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>m.dispose());}});renderer.dispose();renderer.domElement.remove();};
+  return()=>{loadingTracker.dispose();cancelAnimationFrame(frame);explorer.dispose();explorerRef.current=null;landmarks.dispose();teachingCharacters.dispose();crowd.dispose();scenery.dispose();district.dispose();atmosphere.dispose();details.dispose();external.dispose();observer.disconnect();controls.removeEventListener('start',interruptFocus);controls.dispose();el.removeEventListener('pointerdown',onDown);el.removeEventListener('pointerup',onUp);el.removeEventListener('pointermove',onMove);el.removeEventListener('pointerleave',onLeave);scene.traverse(o=>{if(o instanceof THREE.Mesh){o.geometry.dispose();const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>m.dispose());}});renderer.dispose();renderer.domElement.remove();};
  },[]);
  return <>
-  <div ref={host} className="world-canvas" role="group" aria-label="Interactive harbor, market, and library">{error&&<p className="world-error">{error}</p>}</div>
+  <SceneLoading loading={loading} hasFrame={sceneRendered} sceneName={'Alexandria'}/>
+  <div ref={host} className="world-canvas" role="group" aria-label="Interactive harbor, market, and library" aria-busy={loading}>{error&&<p className="world-error">{error}</p>}</div>
   {(['harbor','market','library'] as ZoneId[]).map(id=><button key={id} ref={element=>{characterButtons.current[id]=element;}} className="character-world-label" style={{display:'none'}} onClick={()=>props.onTalk(id)} aria-label={`Talk to ${characters[id].name}, ${characters[id].role}`}><span>◌</span>{characters[id].name}<small>Talk</small></button>)}
   <div className="explorer-controls">
    <div className="explorer-modes" aria-label="Exploration mode"><button aria-pressed={!walking} onClick={()=>explorerRef.current?.mode(false)}>Overview</button><button aria-pressed={walking} onClick={()=>explorerRef.current?.mode(true)}>Walk around</button></div>
