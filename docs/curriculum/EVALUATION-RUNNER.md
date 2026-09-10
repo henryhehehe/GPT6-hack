@@ -62,3 +62,12 @@ Next: after the reviewed contract is integrated and the local pilot is configure
 ## Integrated live follow-up
 
 The review integration subsequently ran all twelve cases against its actual built application using fresh synthetic learners and the documented local Node egress harness. All twelve responses were captured with the selected-citation contract intact. The exact output and implementation-agent observations are in [the integrated results report](../CURRICULUM-EVALUATION-RESULTS.md). This supersedes the integration-unavailable block for that isolated build; human review remains pending and production pilot configuration was not evaluated by this run.
+
+
+## Historical suite integration — September 10, 2026
+
+The 20 historical cases are now integrated into `codex/review-fixes`, which contains the working selected-citation assessment flow (`lib/learning.ts`, prediction handling, canonical passage validation, and saved citation receipts). Integration commit: `be283ee`; the corresponding historical-suite commit on shared main is `8aacd8e`. The existing main checkout still has its older assessment flow; this integration does not replace unrelated active UI or deployment work.
+
+The integrated review checkout passed all 100 automated tests, TypeScript, and the production build. The build retains the existing large-chunk warning. Its historical preflight prepared all 20 cases with zero model responses. These checks include canonical Strabo versus legacy paraphrase handling, invalidation after provenance/context changes, exact quotation validation, and synthetic runner orchestration.
+
+A live test was not completed. The first connection attempt found the previous local review server stopped. After the server restarted, automatic approval review rejected the model test because sending lesson excerpts and synthetic learner answers to the configured OpenAI service requires explicit user approval. No historical-suite model request was sent. The suite is ready for a bounded live run after that approval; no quotas, access controls, or model settings were changed to work around the rejection.
