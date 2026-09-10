@@ -1,0 +1,7 @@
+import {loadEnvFile} from 'node:process';import WebSocket from 'ws';
+loadEnvFile('.env.local');
+const socket=new WebSocket('wss://api.openai.com/v1/responses',{headers:{Authorization:`Bearer ${process.env.OPENAI_API_KEY}`}});let original='',successor='',accepted=false;
+const timer=setTimeout(()=>{console.log('Steering timed out');socket.close();process.exitCode=1},60000);
+socket.on('open',()=>socket.send(JSON.stringify({type:'response.create',model:'gpt-6-astra',reasoning:{effort:'low'},input:'Write two sentences helping a student understand harbor trade and library support.',max_output_tokens:600})));
+socket.on('message',raw=>{const e=JSON.parse(String(raw));if(e.type==='response.created'){if(!original){original=e.response.id;socket.send(JSON.stringify({type:'response.steer',previous_response_id:original,input:'Use simpler language and include the exact phrase: follow the ships'}));}else successor=e.response.id;}if(e.type==='response.steer.accepted')accepted=true;if(e.type==='error'||e.type==='response.steer.failed'){console.log(JSON.stringify({type:e.type,error:e.error?.code||e.steer?.error?.code}));clearTimeout(timer);socket.close();process.exitCode=1;}if(e.type==='response.completed'&&e.response.id===successor){console.log(JSON.stringify({accepted,responseId:e.response.id,text:e.response.output?.flatMap(i=>i.content??[]).filter(c=>c.type==='output_text').map(c=>c.text).join('')}));clearTimeout(timer);socket.close();}});
+socket.on('error',e=>{console.log('Steering connection failed: '+e.message);clearTimeout(timer);process.exitCode=1});

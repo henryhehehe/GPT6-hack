@@ -1,0 +1,10 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {initialWorld,validateWorld,gradeArgument} from '../lib/world';
+const claim='Trade supports scholars, but another patron could help.';
+const result={reply:'Let us examine that.',items:['claim','evidence','mechanism','limitation'].map(key=>({key,earned:true,excerpt:claim,reason:'Supported'})),evidenceIds:['funding'],nextQuestion:'What is your assumption?'};
+test('duplicate zones are rejected',()=>{const w=structuredClone(initialWorld);w.nodes[2].id='harbor';assert.throws(()=>validateWorld(w));});
+test('dangling causal evidence is rejected',()=>{const w=structuredClone(initialWorld);w.nodes[0].evidenceIds=['invented'];assert.throws(()=>validateWorld(w));});
+test('uncollected evidence cannot earn a score',()=>assert.throws(()=>gradeArgument(result,claim,[],initialWorld)));
+test('fabricated student excerpts cannot earn points',()=>{const r=structuredClone(result);r.items.forEach(i=>i.excerpt='The student never said this');assert.equal(gradeArgument(r,claim,['funding'],initialWorld).score,0);});
+test('duplicate rubric keys cannot award multiple points',()=>{const r=structuredClone(result);r.items[1].key='claim';assert.throws(()=>gradeArgument(r,claim,['funding'],initialWorld));});
+test('high total without evidence cannot unlock',()=>{const r=structuredClone(result);r.evidenceIds=[];assert.equal(gradeArgument(r,claim,[],initialWorld).unlocked,false);});
+test('supported evidence and mechanism can unlock',()=>assert.equal(gradeArgument(result,claim,['funding'],initialWorld).unlocked,true));
