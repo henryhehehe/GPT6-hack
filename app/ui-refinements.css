@@ -115,6 +115,18 @@
 .invitation-error { border: 1px solid #e8b39750; background: #56362c66; border-radius: 9px; padding: 14px; margin-bottom: 18px; color: #f4c5ac; font-size: .875rem; }
 .invitation-dialog .invitation-error p { color: #efc9b5; margin: 8px 0; font-size: .875rem; overflow-wrap: anywhere; }
 .invitation-error small { font-size: .8125rem; color: #d9beb0; line-height: 1.6; display: block; }
+.share-invitation .invitation-mark { width: 46px; height: 46px; margin-bottom: 18px; }
+.share-invitation .invited-lesson { padding: 14px; margin-bottom: 22px; border: 1px solid #83e0cd30; border-radius: 9px; background: #83e0cd08; }
+.share-invitation .invited-lesson span { display: block; color: #9cb8c4; font-size: .75rem; margin-bottom: 5px; }
+.share-invitation .invited-lesson strong { font-size: .9375rem; font-weight: 500; line-height: 1.5; }
+.share-invitation input { width: 100%; font-size: 1rem; }
+.share-invitation .primary-button { margin-top: 12px; }
+.share-invitation .invitation-copy-status { font-size: .8125rem; color: #a9c6cd; line-height: 1.6; margin-top: 12px; }
+.share-invitation .invitation-copy-status.manual { color: #efd2ac; }
+.share-invitation .invitation-next { margin-top: 20px; border-top: 1px solid #9bbfca26; padding-top: 16px; font-size: .8125rem; }
+.share-invitation .invitation-next strong { font-weight: 500; color: #d7e8e3; }
+.share-invitation .invitation-next p { margin-top: 5px; color: #9ebbc5; line-height: 1.6; }
+.share-invitation[data-slot=dialog-content] > [data-slot=dialog-close] { width: 36px; height: 36px; display: grid; place-items: center; top: 10px; right: 10px; border-radius: 7px; background: #203b48; opacity: 1; }
 .inspector[data-slot=dialog-content] { top: 50%; left: 50%; right: auto; width: min(440px,calc(100vw - 32px)); max-width: 440px; max-height: calc(100dvh - 32px); gap: 0; padding: 28px; color: #dce9ee; }
 .inspector[data-slot=dialog-content] h2 { font-size: 1.25rem; padding-right: 24px; }
 .inspector[data-slot=dialog-content] p { font-size: .875rem; }
@@ -124,6 +136,7 @@
 .character-dialogue[data-slot=dialog-content] .character-heading,.character-dialogue[data-slot=dialog-content] .character-compose { flex-shrink: 0; }
 .character-dialogue[data-slot=dialog-content] .character-messages { flex: 1; min-height: 0; }
 @media (max-height: 700px) {
+  .share-invitation .invitation-mark { display: none; }
   .invitation-dialog[data-slot=dialog-content] { padding: 24px; }
   .invitation-dialog .invitation-mark { width: 44px; height: 44px; margin-bottom: 16px; }
   .invitation-dialog[data-slot=dialog-content] h2 { font-size: 1.75rem; }
