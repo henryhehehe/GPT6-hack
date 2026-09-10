@@ -36,3 +36,5 @@ Local visual evidence: `output/lighting-review/alexandria-life/`, `alexandria-mo
 Crowd activities, fictional companions and architecture are teaching interpretations. Existing clothing provenance and source notices remain the authority for what is evidenced versus inferred. The scene still uses stylized bodies, hands and props; detailed faces alone do not make it photorealistic.
 
 The central library entrance and reading hall are now accessible; see [Alexandria interior](ALEXANDRIA-INTERIOR.md) for the current geometry, navigation and validation.
+
+For applying this method to other worlds, use the [Scene craft toolkit](SCENE-CRAFT.md), its ten scene briefs and the new-world template.

@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "worldId": "new-world",
+  "context": {
+    "mode": "literature",
+    "region": "Specify region; do not infer it from a palette",
+    "locality": "Specify the depicted locality or fictional place",
+    "geography": "interpretive",
+    "narrativeFrame": "Specify the depicted period, or explicitly retain an unknown date",
+    "sourceFrame": "Specify source title, edition, date and relevant passage",
+    "uncertainty": "Unverified template: replace placeholders and distinguish source evidence from artistic interpretation."
+  },
+  "direction": {
+    "signature": "Describe the one spatial feature that distinguishes this world",
+    "composition": "Place people beside meaningful tasks, work surfaces and paths",
+    "wardrobe": "Specify garment construction, role, layers, fabric and source limitations",
+    "materialDetail": "Specify local construction, surface response and wear from use"
+  },
+  "life": {
+    "activities": ["Specify one purposeful human activity and its still/rest phase"],
+    "creatures": [],
+    "creatureRestraint": "No creatures selected; add only after a habitat and source review"
+  },
+  "space": {
+    "interiorTarget": "Specify one structure and room function, or choose no interior",
+    "access": "needs-review",
+    "review": "Check doorway, floor, steps, furniture footprints, fallback and return route"
+  },
+  "atmosphere": {
+    "lighting": "Specify key light, readable face/prop values and interior bounce",
+    "motion": "Specify flexible surfaces, purposeful gestures, phases and reduced motion",
+    "sound": "Specify quiet opt-in ambience and where silence is intentional"
+  },
+  "avoid": ["List an inappropriate period, prop, creature or repeated composition to exclude"],
+  "nextPasses": ["Name one bounded improvement with a concrete validation result"],
+  "references": []
+}
