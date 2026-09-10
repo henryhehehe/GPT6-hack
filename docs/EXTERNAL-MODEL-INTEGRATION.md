@@ -86,3 +86,11 @@ Reproduce with `blender --background --factory-startup --python scripts/blender/
 ## Compatibility with the human-scale scene pass
 
 The Alexandria scroll follows `LIBRARY_DESK_Y`; its pouch sits on the exposed wood corner using the same `HUMAN_SCALE.deskVertical`. Market vessels and the bag use `MARKET_COUNTER_Y`. The vessels moved to the left ends of their counters to clear the authored balance scales. A regression raycasts the actual scaled Alexandria kit and checks the vessel/bag footprints against those scales. This follow-up depends on the committed `humanScale.ts` from `1e60897`, but still has no dependency on the theme modules. All fourteen external tests pass after the correction.
+
+## Catalog integration workflow
+
+The catalog now verifies fetched metadata against the bundled runtime registry and requests fresh metadata rather than using a stale cached copy. It offers setting/readiness/category filters, name or file-size sorting, an explicit empty state, and retry on incomplete or mismatched records. The selected detail always belongs to the current results.
+
+The preview and integration panel sit together. Pick a current placement, then copy valid JSON or a scene-setup function with cleanup. Tabletop copies include their supporting external table/crate and preserve its scale. Current coordinates assume the named base layout; when making another instance, update keys, support references and placement together. Existing scenes already attach this art, so the setup example is for a new scene.
+
+Individual assets have shareable `?asset=` links. On narrow screens, choosing an item brings its detail into view. The viewer provides Fit and keyboard-accessible zoom buttons, and pausing an animation preserves its playback position. Full placement tables, deeper loading notes and provenance remain available in expandable sections. Four catalog checks cover registry freshness, combined filters, copyable support bundles and setup-code parsing/cleanup.

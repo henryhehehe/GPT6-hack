@@ -1,80 +1,66 @@
 'use client';
-
-import {useEffect,useMemo,useRef,useState} from 'react';
-import * as THREE from 'three';
-import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
-import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
-import {disposeModelResources} from '@/components/worlds/scene/externalModels';
-import {externalPlacements,type ExternalSetting} from '@/components/worlds/scene/externalLayout';
+import PageHeader from '@/components/PageHeader';
+import {useEffect,useMemo,useState} from 'react';
+import ModelPreview from './ModelPreview';
+import {catalogLabel as label,catalogSize as size,readinessLabel,verifyCatalog,filterCatalog,catalogPlacements as placements,catalogSettings,placementCode,loaderCode,placementBundle,type CatalogAsset,type CatalogPlacement} from '@/lib/modelCatalog';
 import './model-catalog.css';
 
-type Asset={id:string;title:string;creator:string;sourceUrl:string;license:string;licenseUrl:string;url:string;bytes:number;sha256:string;dimensions:number[];triangles:number;materials:number;skins:number;category:string;classroomStatus:string;sourcePath:string;clips:string[];modifications:string[];anchors:string[];usage:Record<string,string|number|null>};
-const settings:ExternalSetting[]=['alexandria','coast','garden','archive'];
-const placements=settings.flatMap(setting=>externalPlacements(setting).map(p=>({...p,setting})));
-const label=(text:string)=>text.replaceAll('-',' ').replaceAll('_',' ');
-const size=(bytes:number)=>bytes>=1000000?`${(bytes/1000000).toFixed(2)} MB`:`${(bytes/1000).toFixed(1)} kB`;
-const statusLabel=(status:string)=>status==='scene-eligible'?'Scene eligible':status==='adaptation-required'?'Adaptation required':'Assembly / context review';
+function CopyButton({value,label:buttonLabel='Copy code'}:{value:string;label?:string}){
+ const [message,setMessage]=useState('');
+ return <div className="model-copy"><button onClick={async()=>{try{await navigator.clipboard.writeText(value);setMessage('Copied');}catch{setMessage('Clipboard unavailable. Select the text below to copy.');}}}>{buttonLabel}</button><span role="status">{message}</span></div>;
+}
 
-function ModelPreview({asset}:{asset:Asset}) {
-  const host=useRef<HTMLDivElement>(null),control=useRef<{play:(name:string,playing:boolean)=>void}|null>(null);
-  const [state,setState]=useState('Loading preview…'),[clip,setClip]=useState(asset.clips[0]??''),[playing,setPlaying]=useState(false);
-  useEffect(()=>{
-    const el=host.current;if(!el)return;
-    let renderer:THREE.WebGLRenderer;
-    try{renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});}
-    catch{setState('3D is unavailable on this device. The metadata and GLB download remain available.');return;}
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio,1.5));renderer.outputColorSpace=THREE.SRGBColorSpace;
-    renderer.toneMapping=THREE.ACESFilmicToneMapping;el.appendChild(renderer.domElement);
-    const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(40,1,.01,2000);
-    scene.add(new THREE.HemisphereLight('#edf4ff','#716652',3));
-    const light=new THREE.DirectionalLight('#fff3df',3);light.position.set(4,8,6);scene.add(light);
-    const orbit=new OrbitControls(camera,renderer.domElement);orbit.enableDamping=true;
-    let disposed=false,model:THREE.Group|undefined,mixer:THREE.AnimationMixer|undefined,frame=0,last=performance.now();
-    const resize=new ResizeObserver(()=>{const width=Math.max(1,el.clientWidth),height=Math.max(1,el.clientHeight);renderer.setSize(width,height);camera.aspect=width/height;camera.updateProjectionMatrix();});resize.observe(el);
-    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
-    new GLTFLoader().loadAsync(`${asset.url}?v=${asset.sha256.slice(0,12)}`).then(gltf=>{
-      if(disposed){disposeModelResources(gltf.scene);return;}
-      model=gltf.scene;scene.add(model);
-      const bounds=new THREE.Box3().setFromObject(model),center=bounds.getCenter(new THREE.Vector3()),dimensions=bounds.getSize(new THREE.Vector3());
-      const extent=Math.max(...dimensions.toArray(),.1),distance=extent*1.9;
-      orbit.target.copy(center);camera.position.copy(center).add(new THREE.Vector3(distance*.8,distance*.5,distance));
-      camera.near=Math.max(.001,extent/1000);camera.far=extent*100;camera.updateProjectionMatrix();orbit.minDistance=extent*.15;orbit.maxDistance=extent*8;
-      if(gltf.animations.length)mixer=new THREE.AnimationMixer(model);
-      control.current={play:(name,play)=>{if(!mixer)return;mixer.stopAllAction();const selected=THREE.AnimationClip.findByName(gltf.animations,name);if(selected){const action=mixer.clipAction(selected);action.reset().play();action.paused=!play;mixer.update(0);}}};
-      setState('');
-    }).catch(()=>{if(!disposed)setState('Preview could not load. Download the GLB or reload this page to retry.');});
-    const render=(now:number)=>{const dt=Math.min(.05,(now-last)/1000);last=now;mixer?.update(dt);orbit.enableDamping=!reduced.matches;orbit.update();renderer.render(scene,camera);frame=requestAnimationFrame(render);};frame=requestAnimationFrame(render);
-    return()=>{disposed=true;cancelAnimationFrame(frame);resize.disconnect();control.current=null;mixer?.stopAllAction();if(model){mixer?.uncacheRoot(model);disposeModelResources(model);}orbit.dispose();renderer.dispose();renderer.domElement.remove();};
-  },[asset]);
-  function changeClip(name:string){setClip(name);control.current?.play(name,playing);}
-  return <section className="model-preview" aria-label={`${asset.title} 3D preview`}>
-    <div className="model-viewport" ref={host}/>
-    {state&&<p role="status" className="model-preview-state">{state}</p>}
-    <p className="model-orbit-hint">Drag to orbit · scroll to zoom · right-drag to pan</p>
-    {asset.clips.length>0&&<div className="model-animation"><label>Animation <select value={clip} onChange={e=>changeClip(e.target.value)}>{asset.clips.map(name=><option key={name}>{name}</option>)}</select></label><button disabled={!!state} onClick={()=>{control.current?.play(clip,!playing);setPlaying(!playing);}}>{playing?'Pause':'Play'}</button><span>Motion previews run only after you press Play. Root motion may move the figure out of view.</span></div>}
-  </section>;
+function IntegrationPanel({asset,used}:{asset:CatalogAsset;used:CatalogPlacement[]}){
+ const [key,setKey]=useState(''),[example,setExample]=useState('placement');
+ const placement=used.find(p=>`${p.setting}:${p.key}`===key)??used[0];
+ const ready=asset.classroomStatus==='scene-eligible';
+ const code=placement?(example==='placement'?placementCode(placement):loaderCode(placement)):'';
+ return <section className="model-integrate" aria-label="Integration instructions">
+  <span className={`model-readiness ${ready?'ready':'review'}`}>{readinessLabel(asset.classroomStatus)}</span>
+  <h3>{ready?'Reuse an existing placement':'Prepare this reference first'}</h3>
+  {ready&&placement?<>
+   <label>Scene placement<select value={`${placement.setting}:${placement.key}`} onChange={e=>setKey(e.target.value)}>{used.map(p=><option key={`${p.setting}:${p.key}`} value={`${p.setting}:${p.key}`}>{label(p.setting)} · {label(p.key)}</option>)}</select></label>
+   <div className="model-placement-facts"><span>Scale <b>{placement.scale??1}×</b></span><span>{placement.zone?`Opens ${placement.zone} station`:'Scenery only'}</span><span>{placement.trunkRadius?`${placement.trunkRadius} m trunk blocker`:placement.solid?'Solid footprint':'Uses an existing support'}</span></div>
+   <label>Code example<select value={example} onChange={e=>setExample(e.target.value)}><option value="placement">Existing placement JSON</option><option value="loader">Scene setup and cleanup</option></select></label>
+   <CopyButton key={code} value={code} label={example==='placement'?'Copy placement JSON':'Copy setup code'}/>
+   <textarea className="model-code" readOnly spellCheck={false} aria-label={example==='placement'?'Placement JSON':'Scene setup code'} value={code} onFocus={e=>e.currentTarget.select()}/>
+   <p className="model-help">{example==='placement'?<>Edit this entry in <code>externalLayout.ts</code>. For another instance, update keys and support references together, and choose a supported location. {placement.support&&`${placementBundle(placement).length} entries included so the supporting table or crate comes with it.`}</>:<>Use this when building a new scene. Existing lessons already load their art; keep their navigation, selection and cleanup hooks.</>}</p>
+   {placement.setting==='alexandria'&&<p className="model-help">These coordinates use Alexandria’s calibrated furniture. New ground obstacles also need an entry in <code>walkGeometry.ts</code>.</p>}
+  </>:<><p>{asset.usage.cautions}</p><p>{asset.classroomStatus==='assembly-or-context-review'?'Assemble the companion pieces and review their scale, support and period context. Register the reviewed derivative before adding it to a lesson.':'Fit garments and accessories, confirm the rest pose and retarget any animation to the teaching character. Export a reviewed derivative with its own asset ID.'}</p><p className="model-help">The classroom loader blocks this readiness status. You can preview and download the source here.</p></>}
+ </section>;
 }
 
 export default function ModelCatalog(){
-  const [assets,setAssets]=useState<Asset[]>([]),[error,setError]=useState(''),[search,setSearch]=useState(''),[category,setCategory]=useState('all'),[status,setStatus]=useState('all'),[selected,setSelected]=useState('quaternius-fantasy-props-vase-2');
-  useEffect(()=>{const abort=new AbortController();fetch('/models/external/catalog.json',{signal:abort.signal}).then(r=>{if(!r.ok)throw new Error('Catalog unavailable');return r.json();}).then(data=>{if(!Array.isArray(data))throw new Error("Invalid catalog");setAssets(data as Asset[]);}).catch(e=>{if(e.name!=='AbortError')setError('The catalog could not load. Reload this page to retry.');});return()=>abort.abort();},[]);
-  const filtered=useMemo(()=>assets.filter(a=>(category==='all'||a.category===category)&&(status==='all'||a.classroomStatus===status)&&`${a.title} ${a.id} ${a.creator} ${a.usage.placement}`.toLowerCase().includes(search.toLowerCase())),[assets,search,category,status]);
-  const asset=assets.find(a=>a.id===selected)??assets[0],used=asset?placements.filter(p=>p.asset===asset.id):[];
-  return <main className="model-catalog">
-    <header className="model-catalog-header"><a href="/studio">← Teacher studio</a><span className="model-kicker">COUNTERFACTUAL WORLDS · ASSET LIBRARY</span><h1>Model catalog</h1><p>69 local CC0 models, with provenance, measured files and guidance for reuse. This is a development reference; scene art does not establish historical facts.</p><div className="model-stats"><span><b>{assets.length||69}</b> catalog entries</span><span><b>{new Set(placements.map(p=>p.asset)).size}</b> models used in scenes</span><span><b>{placements.length}</b> placements across 4 settings</span></div></header>
-    {error&&<p role="alert">{error}</p>}
-    <div className="model-catalog-body">
-      <aside className="model-library"><label htmlFor="model-search">Find an asset</label><input id="model-search" type="search" placeholder="Scroll, basket, creator…" value={search} onChange={e=>setSearch(e.target.value)}/><div className="model-filters"><label>Category<select value={category} onChange={e=>setCategory(e.target.value)}><option value="all">All categories</option>{[...new Set(assets.map(a=>a.category))].sort().map(c=><option key={c} value={c}>{label(c)}</option>)}</select></label><label>Readiness<select value={status} onChange={e=>setStatus(e.target.value)}><option value="all">All statuses</option>{[...new Set(assets.map(a=>a.classroomStatus))].sort().map(s=><option key={s} value={s}>{statusLabel(s)}</option>)}</select></label></div><p aria-live="polite">{filtered.length} matching items</p><div className="model-list">{filtered.map(a=><button className={a.id===asset?.id?'selected':''} aria-pressed={a.id===asset?.id} key={a.id} onClick={()=>setSelected(a.id)}><strong>{label(a.title)}</strong><span>{a.creator} · {size(a.bytes)}</span><small>{statusLabel(a.classroomStatus)}{placements.some(p=>p.asset===a.id)?' · In scene':''}</small></button>)}</div></aside>
-      {asset&&<article className="model-detail" key={asset.id}>
-        <div className="model-detail-heading"><div><span className="model-kicker">{label(asset.category)} · {statusLabel(asset.classroomStatus)}</span><h2>{label(asset.title)}</h2></div><a className="model-download" href={asset.url} download>Download GLB ↗</a></div>
-        <ModelPreview asset={asset}/>
-        <dl className="model-metrics"><div><dt>Transfer</dt><dd>{size(asset.bytes)}</dd></div><div><dt>Triangles</dt><dd>{asset.triangles.toLocaleString()}</dd></div><div><dt>Dimensions · X / Y / Z</dt><dd>{asset.dimensions.map(n=>n.toFixed(2)).join(' / ')} m</dd></div><div><dt>Materials / skins / clips</dt><dd>{asset.materials} / {asset.skins} / {asset.clips.length}</dd></div></dl>
-        <h3>Use this object</h3><p>{asset.usage.placement}</p><p className="model-caution">{asset.usage.cautions}</p>
-        <h3>Current integration</h3>{used.length?<ul>{used.map(p=><li key={`${p.setting}-${p.key}`}><b>{label(p.setting)} · {label(p.key)}</b> — position [{p.at.join(', ')}], yaw {(p.turn??0).toFixed(2)} rad, scale {p.scale??1}. {p.zone?`Opens ${p.zone} source station.`:'Scenery only.'} {p.solid?'Ground footprint blocks walking.':'Uses a supporting surface, existing trunk blocker or an offshore position.'}</li>)}</ul>:<p>{asset.classroomStatus==='scene-eligible'?'Available for future placements; currently loaded only in this catalog.':'Reference preview only. Complete the adaptation or assembly review before placing it in a lesson.'}</p>}
-        <h3>Implementation notes</h3><dl className="model-usage">{['loading','collision','interaction','animation'].map(key=><div key={key}><dt>{label(key)}</dt><dd>{asset.usage[key]}</dd></div>)}</dl>
-        {asset.classroomStatus==='scene-eligible'?<><p>Add a reviewed placement to <code>components/worlds/scene/externalLayout.ts</code>. Coordinates are meters, Y is up, and yaw is in radians. Static files are centered in X/Z and grounded at Y = 0; scale defaults to 1. An explicit uniform scale also updates collision bounds; the garden tea table uses 0.5.</p><pre>{`{\n  key: 'unique-placement-name',\n  asset: '${asset.id}',\n  at: [0, 0, 0], // choose a clear, supported location\n  turn: 0,\n  // zone: 'library', // only if it should open this station\n  // solid: true,    // add its footprint to navigation\n}`}</pre><p>The scene loader caches one template per asset, clones static meshes, retains a fallback on failure, and owns disposal. For Alexandria, update its navigation separately before adding new ground obstacles.</p></>:asset.classroomStatus==='assembly-or-context-review'?<p>Load the registered GLB in a standalone viewer, assemble its companion pieces, and check scale, support, silhouette and period context. Keep ship decorations and rigging out of ancient settings until adapted. Change readiness only after reviewing the completed object; the lesson loader currently rejects it.</p>:<p>For a standalone preview, load the GLB with Three.js <code>GLTFLoader.loadAsync</code>. Clone skinned characters with <code>SkeletonUtils.clone</code>, give each instance an <code>AnimationMixer</code>, and retarget source clips against the destination skeleton. Confirm joints, rest pose, foot contact, root motion and clothing before classroom use. The lesson loader rejects this readiness status.</p>}
-        <h3>Preparation and provenance</h3><ul>{asset.modifications.map(m=><li key={m}>{m}</li>)}</ul><p>Anchors: {asset.anchors.join(', ')||'source transforms retained; no generated anchors'}.</p><p><a href={asset.sourceUrl} target="_blank" rel="noreferrer">{asset.creator} · original source</a> · <a href={asset.licenseUrl} target="_blank" rel="noreferrer">{asset.license}</a></p><p>{asset.usage.rights}</p><p>Retained original: <code>{asset.sourcePath}</code></p><details><summary>File identity</summary><code className="model-hash">{asset.sha256}</code><a href="/models/external/catalog.json" download>Download the full machine-readable catalog</a></details>
-      </article>}
-    </div>
-  </main>;
+ const [assets,setAssets]=useState<CatalogAsset[]>([]),[error,setError]=useState(''),[attempt,setAttempt]=useState(0);
+ const [search,setSearch]=useState(''),[category,setCategory]=useState('all'),[status,setStatus]=useState('all'),[setting,setSetting]=useState('all'),[sort,setSort]=useState('name');
+ const [selected,setSelected]=useState('quaternius-fantasy-props-vase-2');
+ useEffect(()=>{const read=()=>{const id=new URL(window.location.href).searchParams.get('asset');if(id)setSelected(id);};read();window.addEventListener('popstate',read);return()=>window.removeEventListener('popstate',read);},[]);
+ useEffect(()=>{const abort=new AbortController();setError('');fetch('/models/external/catalog.json',{signal:abort.signal,cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('The catalog could not load.');return r.json();}).then(data=>setAssets(verifyCatalog(data))).catch(e=>{if(e.name!=='AbortError'){setAssets([]);setError(`${e.message} Retry, or reload the page if the app was just updated.`);}});return()=>abort.abort();},[attempt]);
+ const filtered=useMemo(()=>filterCatalog(assets,{search,category,status,setting,sort}),[assets,search,category,status,setting,sort]);
+ const asset=filtered.find(a=>a.id===selected)??filtered[0],used=asset?placements.filter(p=>p.asset===asset.id):[];
+ useEffect(()=>{if(!asset)return;setSelected(asset.id);const url=new URL(window.location.href);url.searchParams.set('asset',asset.id);window.history.replaceState(window.history.state,'',url);},[asset]);
+ function selectAsset(id:string){setSelected(id);if(window.matchMedia('(max-width: 760px)').matches)requestAnimationFrame(()=>document.getElementById('selected-model')?.scrollIntoView({block:'start',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}));}
+ function reset(){setSearch('');setCategory('all');setStatus('all');setSetting('all');}
+ return <main className="model-catalog">
+  <PageHeader />
+  <header className="model-catalog-header"><div><span className="model-kicker">COUNTERFACTUAL WORLDS · DEVELOPMENT LIBRARY</span><h1>Model catalog</h1><p>Find a model, inspect its scene placement, and copy the code to reuse it.</p></div><nav aria-label="Catalog resources"><a href="/models/external/catalog.json" download>Export catalog</a></nav></header>
+  <div className="model-status-bar" aria-live="polite">{assets.length?<><strong>{assets.length} verified records</strong><span>{new Set(placements.map(p=>p.asset)).size} models placed</span><span>{placements.length} placements · {catalogSettings.length} base settings</span><span className="model-verified">Metadata matches this app’s registry</span></>:<span>{error?'Catalog needs attention':'Loading the local model registry…'}</span>}</div>
+  {error&&<div role="alert" className="model-error"><p>{error}</p><button onClick={()=>setAttempt(n=>n+1)}>Retry catalog</button></div>}
+  <div className="model-catalog-body">
+   <aside className="model-library" aria-label="Find models"><label htmlFor="model-search">Search models</label><input id="model-search" type="search" placeholder="Name, creator, purpose…" value={search} onChange={e=>setSearch(e.target.value)}/>
+    <div className="model-filters"><label>Setting<select value={setting} onChange={e=>setSetting(e.target.value)}><option value="all">All settings</option>{catalogSettings.map(s=><option value={s} key={s}>{label(s)}</option>)}</select></label><label>Readiness<select value={status} onChange={e=>setStatus(e.target.value)}><option value="all">All models</option>{[...new Set(assets.map(a=>a.classroomStatus))].sort().map(s=><option key={s} value={s}>{readinessLabel(s)}</option>)}</select></label><label>Category<select value={category} onChange={e=>setCategory(e.target.value)}><option value="all">All categories</option>{[...new Set(assets.map(a=>a.category))].sort().map(c=><option key={c} value={c}>{label(c)}</option>)}</select></label><label>Sort<select value={sort} onChange={e=>setSort(e.target.value)}><option value="name">Name</option><option value="size">Smallest file first</option></select></label></div>
+    <div className="model-results"><span aria-live="polite">{filtered.length} results</span><button onClick={reset}>Clear filters</button></div>
+    <div className="model-list">{filtered.map(a=><button className={a.id===asset?.id?'selected':''} aria-pressed={a.id===asset?.id} key={a.id} onClick={()=>selectAsset(a.id)}><strong>{label(a.title)}</strong><span>{a.creator} · {size(a.bytes)}</span><small>{placements.some(p=>p.asset===a.id)?'In scene':a.classroomStatus==='scene-eligible'?'Available':'Reference only'} · {label(a.category)}</small></button>)}</div>
+   </aside>
+   {!asset&&assets.length>0&&<section className="model-empty"><h2>No matching models</h2><p>Try another name or clear the filters to browse the library.</p><button onClick={reset}>Show all models</button></section>}
+   {asset&&<article id="selected-model" className="model-detail" key={asset.id}>
+    <div className="model-detail-heading"><div><span className="model-kicker">{label(asset.category)} · {asset.creator}</span><h2>{label(asset.title)}</h2><code className="model-id">{asset.id}</code></div><div className="model-actions"><a className="model-download" href={asset.url} download>Download GLB · {size(asset.bytes)}</a><CopyButton value={`${typeof window==='undefined'?'':window.location.origin}/model-catalog?asset=${encodeURIComponent(asset.id)}`} label="Copy asset link"/></div></div>
+    <div className="model-workspace"><div><ModelPreview asset={asset}/><dl className="model-metrics"><div><dt>File size</dt><dd>{size(asset.bytes)}</dd></div><div><dt>Triangles</dt><dd>{asset.triangles.toLocaleString()}</dd></div><div><dt>Source dimensions · X / Y / Z</dt><dd>{asset.dimensions.map(n=>n.toFixed(2)).join(' / ')} m</dd></div><div><dt>Materials / skins / clips</dt><dd>{asset.materials} / {asset.skins} / {asset.clips.length}</dd></div></dl></div><IntegrationPanel asset={asset} used={used}/></div>
+    <section className="model-guidance"><h3>Placement guidance</h3><p>{asset.usage.placement}</p><p className="model-caution">{asset.usage.cautions}</p><p className="model-help">The preview shows the exported model at its original size. Placement scale is shown in the integration panel. Base layouts may be filtered by a lesson’s theme; scenery is illustrative, not primary evidence.</p></section>
+    <details className="model-section"><summary>All current placements <span>{used.length}</span></summary>{used.length?<div className="model-table-wrap"><table><thead><tr><th>Setting / entry</th><th>Position · meters</th><th>Scale</th><th>Interaction</th></tr></thead><tbody>{used.map(p=><tr key={`${p.setting}:${p.key}`}><td><strong>{label(p.setting)}</strong><code>{p.key}</code></td><td>{p.at.map(n=>Number(n.toFixed(4))).join(', ')}</td><td>{p.scale??1}×</td><td>{p.zone?`Open ${p.zone}`:'Scenery'}</td></tr>)}</tbody></table></div>:<p>No lesson placements. Complete adaptation or assembly before using this reference.</p>}</details>
+    <details className="model-section"><summary>Loading, collision and animation notes</summary><dl className="model-usage">{['loading','collision','interaction','animation'].map(key=><div key={key}><dt>{label(key)}</dt><dd>{asset.usage[key]}</dd></div>)}</dl><p>Static exports use meters, Y-up and a grounded, centered origin. Uniform scale updates collision bounds. The loader shares geometry/materials, retains fallbacks, and disposes late results. Independent skinned instances need <code>SkeletonUtils.clone</code> and their own <code>AnimationMixer</code>.</p></details>
+    <details className="model-section"><summary>License, preparation and file identity</summary><p><a href={asset.sourceUrl} target="_blank" rel="noreferrer">{asset.creator} · publisher source</a> · <a href={asset.licenseUrl} target="_blank" rel="noreferrer">{asset.license}</a></p><p>{asset.usage.rights}</p><ul>{asset.modifications.map(m=><li key={m}>{m}</li>)}</ul><p>Anchors: {asset.anchors.join(', ')||'source transforms retained; no added anchors'}.</p><p>Retained original: <code>{asset.sourcePath}</code></p><p>SHA-256</p><code className="model-hash">{asset.sha256}</code></details>
+   </article>}
+  </div>
+ </main>;
 }
