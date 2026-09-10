@@ -1,3 +1,4 @@
+import {distanceToSegment} from './stationTransform';
 import * as THREE from 'three';
 import type {WorldTheme} from '@/lib/worldThemes';
 import {themeLayout} from './themeLayouts';
@@ -53,9 +54,8 @@ export function addThemeNature(scene:THREE.Scene,theme:WorldTheme,isWalkable:(p:
   if(Math.hypot(p.x-1,p.z-8)<2.5+padding)return false;
   for(const s of Object.values(layout.spots)){
    if(Math.abs(p.x-s.x)<5+padding&&Math.abs(p.z-s.z)<5+padding)return false;
-   const length=Math.hypot(s.x,s.z),along=(p.x*s.x+p.z*s.z)/length,across=Math.abs(p.x*s.z-p.z*s.x)/length;
-   if(along>-2&&along<length+2&&across<2+padding)return false;
   }
+  for(const route of layout.paths??[])for(let i=1;i<route.length;i++)if(distanceToSegment(p,route[i-1],route[i])<1.4+padding)return false;
   return true;
  }
  const planted:Point[]=[];

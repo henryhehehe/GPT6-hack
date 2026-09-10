@@ -24,7 +24,7 @@ test('vegetation preserves all reading routes, keeps islands off the sea, and re
    const p={x:queue[i].x+dx,z:queue[i].z+dz},key=`${p.x},${p.z}`;
    if(!seen.has(key)&&nav.isWalkable(p)){seen.add(key);queue.push(p);}
   }
-  for(const p of [...Object.values(nav.spawns),...Object.values(nav.approach)])assert.ok(seen.has(`${p.x},${p.z}`),`${theme.id}: reachable ${p.x},${p.z}`);
+  for(const p of [...Object.values(nav.spawns),...Object.values(nav.approach)])assert.ok(nav.isWalkable(p)&&queue.some(q=>Math.hypot(q.x-p.x,q.z-p.z)<.75&&Math.hypot(nav.moveWalker(q,{x:p.x-q.x,z:p.z-q.z}).x-p.x,nav.moveWalker(q,{x:p.x-q.x,z:p.z-q.z}).z-p.z)<.01),`${theme.id}: reachable ${p.x},${p.z}`);
   nature.update(4,true);const frozen=nature.root.getObjectByName('Distant birds')!.children.map(o=>o.position.toArray());
   nature.update(9,true);assert.deepEqual(nature.root.getObjectByName('Distant birds')!.children.map(o=>o.position.toArray()),frozen);
   const resources=new Map<THREE.BufferGeometry|THREE.Material,number>();

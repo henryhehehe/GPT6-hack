@@ -1,3 +1,4 @@
+import {stationPoint,distanceToSegment,type StationLayout} from './stationTransform';
 import manifest from '@/assets/model-manifest.json';
 import type { ZoneId } from '@/lib/world';
 
@@ -113,10 +114,10 @@ export function settingObstacles(placements: SettingPlacement[], legacyScenery =
   return obstacles;
 }
 
-export function createSettingNavigation(placements: SettingPlacement[], extraObstacles: readonly Bounds[] = [], layout?: {spots:Record<ZoneId,Point>}) {
+export function createSettingNavigation(placements: SettingPlacement[], extraObstacles: readonly Bounds[] = [], layout?: StationLayout) {
   const spots = layout?.spots ?? SETTING_SPOTS;
   const obstacles = [...settingObstacles(placements, !layout), ...extraObstacles];
-  if (layout) for (const p of Object.values(spots)) obstacles.push([p.x+1,p.x+1.6,p.z+.2,p.z+.8]);
+  if(layout)for(const zone of Object.keys(spots) as ZoneId[]){const p=stationPoint(layout,zone,1.3,.5);obstacles.push([p.x-.3,p.x+.3,p.z-.3,p.z+.3]);}
   const paving = placements.filter(p => p.id === 'garden-path').map(placementBounds);
   const finite = (p: Point) => Number.isFinite(p.x) && Number.isFinite(p.z);
   function isWalkable(p: Point, radius = .28) {
@@ -124,6 +125,10 @@ export function createSettingNavigation(placements: SettingPlacement[], extraObs
     return obstacles.every(([x0, x1, z0, z1]) => Math.hypot(Math.max(x0 - p.x, 0, p.x - x1), Math.max(z0 - p.z, 0, p.z - z1)) > radius);
   }
   function groundHeight(p: Point) {
+    if(layout?.floor!==undefined){
+      for(const route of layout.paths??[])for(let i=1;i<route.length;i++)if(distanceToSegment(p,route[i-1],route[i])<=.9)return .05;
+      return layout.floor;
+    }
     if (Object.values(spots).some(s => layout ? Math.abs(p.x-s.x)<=4 && Math.abs(p.z-s.z)<=3.5 : Math.hypot(p.x - s.x, p.z - s.z) <= 4)) return .22;
     if (paving.some(([x0, x1, z0, z1]) => p.x >= x0 && p.x <= x1 && p.z >= z0 && p.z <= z1)) return .09;
     if (!layout && Math.hypot(p.x, p.z) <= 5.5) return .095;
@@ -147,6 +152,7 @@ export function createSettingNavigation(placements: SettingPlacement[], extraObs
     }
     return result;
   }
-  return { groundHeight, moveWalker, isWalkable, approach: spots,
-    spawns: layout ? Object.fromEntries(Object.entries(spots).map(([id,p])=>[id,{x:p.x,z:p.z+4}])) as Record<ZoneId,Point> : { harbor: { x: -12, z: 9 }, market: { x: 12, z: 9 }, library: { x: 0, z: -7 } } };
+  return { groundHeight, moveWalker, isWalkable, approach: layout?Object.fromEntries(Object.keys(spots).map(zone=>[zone,stationPoint(layout,zone as ZoneId,1.3,2)])) as Record<ZoneId,Point>:spots,
+    facing:layout?Object.fromEntries(Object.keys(spots).map(zone=>[zone,layout.turns?.[zone as ZoneId]??0])) as Record<ZoneId,number>:undefined,
+    spawns: layout ? Object.fromEntries(Object.keys(spots).map(id=>[id,stationPoint(layout,id as ZoneId,1.3,3.8)])) as Record<ZoneId,Point> : { harbor: { x: -12, z: 9 }, market: { x: 12, z: 9 }, library: { x: 0, z: -7 } } };
 }

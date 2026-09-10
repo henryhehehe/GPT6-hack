@@ -131,14 +131,11 @@ export function addThemeArchitecture(scene:THREE.Scene,theme:WorldTheme,includeT
     // Scanned rock shelves provide the windward edge; no Cyclops cave in this work.
   }
 
-  // Each stop has an unobstructed arrival apron; furniture owns its individual collisions.
+  // Continuous walks connect activities; readers stand on the existing scene floor.
   const paths:SurfaceRectangle[]=[];
-  for(const p of Object.values(layout.spots)){
-    // Outdoor reading places blend into the landscape, not three white stages.
-    box(interior?wood:layout.kind==='street'?stone:ground,p.x,.11,p.z,8,.22,7);
-    if(!interior&&!['street','courtyard','ruin'].includes(layout.kind)){
-      paths.push({x:p.x/2,z:p.z/2,width:1.8,depth:Math.hypot(p.x,p.z),turn:Math.atan2(p.x,p.z)});
-    }
+  for(const route of layout.paths??[])for(let i=1;i<route.length;i++){
+    const a=route[i-1],b=route[i],dx=b.x-a.x,dz=b.z-a.z;
+    paths.push({x:(a.x+b.x)/2,z:(a.z+b.z)/2,width:1.8,depth:Math.hypot(dx,dz)+.2,turn:Math.atan2(dx,dz)});
   }
   if(paths.length){const geometry=surfaceUnionGeometry(paths,.05);geometries.add(geometry);const path=shape(geometry,stone,0,0,0,1,1,1);path.name='Joined reading paths';path.castShadow=false;}
   return {root,obstacles,dispose(){root.removeFromParent();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());}};

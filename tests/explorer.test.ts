@@ -44,3 +44,13 @@ test('invalid and stalled frame deltas cannot cause a movement jump',()=>{
 test('disposing the controller removes keyboard handlers',()=>{
   const {c,key,canvas}=setup();c.mode(true);c.dispose();assert.equal(canvas.tabIndex,-1);assert.equal(key('keydown','KeyW'),true);
 });
+
+test('authored arrival direction faces the relocated companion instead of a harbor-specific angle',()=>{
+ const {canvas,win,c:legacy}=setup();legacy.dispose();
+ const camera=new PerspectiveCamera(),orbit={enabled:true,target:new Vector3(),update(){}};
+ const points={harbor:{x:4,z:2},market:{x:1,z:2},library:{x:1,z:1}};
+ const c=createExplorer(camera,orbit as unknown as OrbitControls,canvas as unknown as HTMLCanvasElement,{mode(){},nearby(){},inspect(){}},{groundHeight:()=>0,moveWalker:p=>p,spawns:points,approach:points,facing:{harbor:Math.PI/2,market:Math.PI,library:0}});
+ c.mode(true);c.focus('harbor');assert.ok(camera.getWorldDirection(new Vector3()).distanceTo(new Vector3(-1,0,0))<1e-8);
+ c.focus('market');assert.ok(camera.getWorldDirection(new Vector3()).distanceTo(new Vector3(0,0,1))<1e-8);
+ assert.deepEqual(camera.position.toArray().filter((_,i)=>i!==1),[1,2]);c.dispose();void win;
+});

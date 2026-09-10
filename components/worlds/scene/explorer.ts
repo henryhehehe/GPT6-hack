@@ -9,7 +9,7 @@ const keys = new Set(['KeyW','KeyA','KeyS','KeyD','ArrowUp','ArrowLeft','ArrowDo
 const approach: Record<ZoneId, {x:number;z:number}> = { harbor:{x:-14,z:8},market:{x:8,z:8},library:{x:0,z:-2} };
 
 /** Ground-level navigation, local to this viewer; never sends per-frame classroom writes. */
-export function createExplorer(camera: THREE.PerspectiveCamera, orbit: OrbitControls, canvas: HTMLCanvasElement, callbacks: Callbacks, navigation:{groundHeight:typeof groundHeight;moveWalker:typeof moveWalker;spawns:Record<ZoneId,{x:number;z:number}>;approach:Record<ZoneId,{x:number;z:number}>}={groundHeight,moveWalker,spawns:WALK_SPAWNS,approach}) {
+export function createExplorer(camera: THREE.PerspectiveCamera, orbit: OrbitControls, canvas: HTMLCanvasElement, callbacks: Callbacks, navigation:{groundHeight:typeof groundHeight;moveWalker:typeof moveWalker;spawns:Record<ZoneId,{x:number;z:number}>;approach:Record<ZoneId,{x:number;z:number}>;facing?:Record<ZoneId,number>}={groundHeight,moveWalker,spawns:WALK_SPAWNS,approach}) {
   let walking=false,point={x:1,z:8},yaw=0,pitch=0,nearby:ZoneId|null=null,skipFocus:ZoneId|null=null;
   let drag: {id:number;x:number;y:number}|null=null;
   const held=new Set<string>(),touch=new Set<string>();
@@ -51,7 +51,7 @@ export function createExplorer(camera: THREE.PerspectiveCamera, orbit: OrbitCont
     focus(zone:ZoneId|null){
       if(zone===skipFocus){skipFocus=null;return;}skipFocus=null;
       if(!zone){mode(false);return;}
-      point={...navigation.spawns[zone]};yaw=zone==='harbor'?Math.PI*.45:zone==='market'?-Math.PI*.4:0;pitch=0;clear();view();
+      point={...navigation.spawns[zone]};yaw=navigation.facing?.[zone]??(zone==='harbor'?Math.PI*.45:zone==='market'?-Math.PI*.4:0);pitch=0;clear();view();
     },
     update(delta:number){
       if(!walking)return;

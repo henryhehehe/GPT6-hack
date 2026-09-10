@@ -38,7 +38,7 @@ test('each themed arrangement preserves all safe arrivals and reachable reading 
     if(!visited.has(id)&&nav.isWalkable(next)){visited.add(id);queue.push(next);}
    }
   }
-  for(const p of [...Object.values(nav.spawns),...Object.values(nav.approach)]){assert.ok(nav.isWalkable(p),theme.id);assert.ok(visited.has(key(p.x,p.z)),theme.id);}
+  for(const p of [...Object.values(nav.spawns),...Object.values(nav.approach)]){assert.ok(nav.isWalkable(p),theme.id);assert.ok(queue.some(q=>Math.hypot(q.x-p.x,q.z-p.z)<.75&&Math.hypot(nav.moveWalker(q,{x:p.x-q.x,z:p.z-q.z}).x-p.x,nav.moveWalker(q,{x:p.x-q.x,z:p.z-q.z}).z-p.z)<.01),`${theme.id}: reachable ${p.x},${p.z}`);}
   for(const p of extras)if(p.support)assert.ok(extras.some(parent=>parent.key===p.support));
   for(const p of extras)assert.equal(externalAssets.find(a=>a.id===p.asset)?.classroomStatus,'scene-eligible',p.key);
   architecture.dispose();
@@ -53,7 +53,7 @@ test('works have distinct architecture and route compositions, with no invisible
  for(const theme of Object.values(WORLD_THEMES)){
   const layout=themeLayout(theme),scene=new THREE.Scene(),a=addThemeArchitecture(scene,theme);
   const nav=createSettingNavigation([],a.obstacles,layout);
-  for(const p of Object.values(layout.spots))assert.equal(nav.groundHeight(p),.22);
+  for(const p of Object.values(layout.spots))assert.equal(nav.groundHeight(p),layout.floor??.22);
   const resources=new Set<THREE.BufferGeometry|THREE.Material>();
   scene.traverse(o=>{if(o instanceof THREE.Mesh){resources.add(o.geometry);(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>resources.add(m));}});
   const disposal=new Map([...resources].map(r=>[r,0]));resources.forEach(r=>r.addEventListener('dispose',()=>disposal.set(r,disposal.get(r)!+1)));

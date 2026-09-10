@@ -1,3 +1,5 @@
+import {stationPoint} from './stationTransform';
+import type {ZoneId} from '@/lib/world';
 import * as THREE from 'three';
 import type {WorldTheme} from '@/lib/worldThemes';
 import type {ThemeLayout} from './themeLayouts';
@@ -31,8 +33,9 @@ export function addThemeLights(scene:THREE.Scene,theme:WorldTheme,layout:ThemeLa
   const bounce=new THREE.DirectionalLight(settings.bounceColor,settings.bounce);bounce.name='Open-front sky bounce';bounce.position.set(-8,12,24);bounce.target.position.set(0,1,-5);
   root.add(fill,sun,sun.target,bounce,bounce.target);
   const lamps:THREE.PointLight[]=[];
-  if(['study','assembly','meeting'].includes(layout.kind)||theme.id==='christmas-carol')for(const p of Object.values(layout.spots)){
-    const light=new THREE.PointLight('#ffcc86',settings.lamp,8,2);light.name='Reading lamp';light.position.set(p.x-.48,1.45,p.z-1.5);root.add(light);lamps.push(light);
+  if(['study','assembly','meeting'].includes(layout.kind)||theme.id==='christmas-carol')for(const zone of Object.keys(layout.spots) as ZoneId[]){
+    const p=stationPoint(layout,zone,-.48,-1.5);
+    const light=new THREE.PointLight('#ffcc86',settings.lamp,8,2);light.name='Reading lamp';light.position.set(p.x,1.23+(layout.floor??.22),p.z);root.add(light);lamps.push(light);
   }
   let disposed=false;
   return {root,sun,bounce,fill,lamps,

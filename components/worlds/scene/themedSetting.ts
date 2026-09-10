@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import type {WorldTheme} from '@/lib/worldThemes';
 import {settingPlacements,SETTING_SPOTS,SETTING_ASSETS,type SettingPlacement} from './settingLayout';
+import {stationPoint} from './stationTransform';
 import {themeLayout} from './themeLayouts';
 import {createDistantTerrain} from './themeTerrain';
 import {externalPlacements} from './externalLayout';
@@ -8,7 +9,7 @@ import {themeExternalDetails,linkSupportStations} from './themeExternalDetails';
 import {themeExternalActivityAreas} from './themeExternalActivityAreas';
 
 export function themedPlacements(theme:WorldTheme){
- const spots=themeLayout(theme).spots;
+ const layout=themeLayout(theme);
  const result=settingPlacements(theme.furniture).filter(p=>{
   if(theme.id==='custom')return true;
   if(theme.id==='tempest'&&['sheep','cave-module','merchant-ship','amphora','storage-jar'].includes(p.id))return false;
@@ -16,7 +17,8 @@ export function themedPlacements(theme:WorldTheme){
   if(p.id==='garden-bench'&&theme.id!=='austen-letter')return false;
   if(p.id==='coast-rocks'&&theme.id==='tempest'&&Number(p.key.split('-').at(-1))%2===0)return false;
   return true;
- }).map(p=>p.zone?{...p,at:[p.at[0]+spots[p.zone].x-SETTING_SPOTS[p.zone].x,p.at[1],p.at[2]+spots[p.zone].z-SETTING_SPOTS[p.zone].z] as [number,number,number]}:p);
+ }).map(p=>{if(!p.zone)return p;const point=stationPoint(layout,p.zone,p.at[0]-SETTING_SPOTS[p.zone].x,p.at[2]-SETTING_SPOTS[p.zone].z);
+  return {...p,at:[point.x,p.at[1]+(layout.floor??.22)-.22,point.z] as [number,number,number],turn:(p.turn??0)+(layout.turns?.[p.zone]??0)};});
  // Existing detailed joinery is shared at the model level, arranged per building.
  const add=(id:SettingPlacement['id'],x:number,y:number,z:number,scale=1,turn=0)=>result.push({key:`architecture-${id}-${result.length}`,id,at:[x,y-SETTING_ASSETS[id].bounds.min[1]*scale,z],scale,turn,collision:'none'});
  const kind=themeLayout(theme).kind;
@@ -41,14 +43,15 @@ export function themedPlacements(theme:WorldTheme){
 }
 export function themedExternalPlacements(theme:WorldTheme){
  if(theme.id==='custom')return externalPlacements(theme.furniture);
- const spots=themeLayout(theme).spots;
+ const layout=themeLayout(theme);
  // Reuse curated Kenney, Quaternius and Poly Haven objects without repeating full kits.
  const all=externalPlacements(theme.furniture).filter(p=>{
   if(p.key.startsWith('coastal-palm'))return false;
   if(theme.furniture==='coast')return theme.id==='odyssey-ix'||(!p.key.startsWith('coastal-')&&!p.key.startsWith('shore-rowboat'));
   return p.key.endsWith('-candle')||(theme.id==='austen-letter'&&(p.key.endsWith('-planter')||p.key.endsWith('-basket')||p.key.startsWith('garden-tea')));
  });
- const result=all.map(p=>p.zone?{...p,at:[p.at[0]+spots[p.zone].x-SETTING_SPOTS[p.zone].x,p.at[1],p.at[2]+spots[p.zone].z-SETTING_SPOTS[p.zone].z] as [number,number,number]}:p);
+ const result=all.map(p=>{if(!p.zone)return p;const point=stationPoint(layout,p.zone,p.at[0]-SETTING_SPOTS[p.zone].x,p.at[2]-SETTING_SPOTS[p.zone].z);
+  return {...p,at:[point.x,p.at[1]+(p.key.startsWith(`${p.zone}-`)?(layout.floor??.22)-.22:0),point.z] as [number,number,number],turn:(p.turn??0)+(layout.turns?.[p.zone]??0)};});
  const prop=(name:string)=>`quaternius-fantasy-props-${name}`;
  const add=(key:string,asset:string,x:number,z:number,scale=1,turn=0)=>result.push({key,asset,at:[x,0,z],scale,turn,solid:true});
  if(theme.id==='frankenstein'){

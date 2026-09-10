@@ -54,3 +54,21 @@ All ten prepared worlds now have an original synthesized ambience profile: harbo
 The scene's top-right Sound off button starts playback only after an explicit click. The volume slider remembers its setting locally, but the app does not persist consent to autoplay. A generated-world switch crossfades profiles in one AudioContext; switching renderer families or leaving the scene closes the context. Hidden tabs suspend playback. Unsupported audio shows a small status message without disabling the lesson. A master compressor, bounded levels and short event lookahead limit the mix; retiring layers and timers are cleaned up, including during rapid switches.
 
 Three unit tests cover every world's profile, safe fallback/volume bounds, bounded scheduling and layer/timer disposal. The actual browser check covers opt-in, play/pause, volume persistence, one-context world changes, visibility pause/resume, unmount cleanup, and desktop/mobile controls. All ten profiles were rendered through OfflineAudioContext at maximum master gain for nine seconds; samples were finite and non-silent, with peak values from 0.024 to 0.512 before the master compressor. Browser checks recorded no page errors. Evidence is under `output/ambience-review`. This is signal and behavior verification, not a listening-panel evaluation or a device loudness guarantee.
+
+
+## Scene composition: replacing the repeated triangle
+
+The nine generated worlds no longer place three isolated reading platforms around a central hub. All three raised 8 × 7 m pads are removed; furniture and companions meet the existing floor. Outdoor connecting paths now follow the sequence of reading areas instead of radiating from the origin. Their joined geometry retains the single-surface depth rule.
+
+- Odyssey and The Tempest follow a shoreline sequence with angled furniture.
+- Austen follows a garden walk with varied desk and bench orientations.
+- Macbeth brings its readers into a closer line within the castle courtyard.
+- Frankenstein gathers its readers into a compact L-shaped study group.
+- Dickens places readers along one street frontage, facing the lane.
+- Philadelphia groups its document desks near the existing worktables.
+- Douglass uses the courtyard edge and a turn toward the rear reading area.
+- Seneca Falls follows the central meeting aisle between the benches.
+
+One station transform now controls furniture, props, character positions, light positions, collision blockers, approach points and camera arrival direction. The visit action faces the relocated reader instead of using a hard-coded harbor angle. Source IDs and period costumes are preserved. The separate Alexandria harbor renderer is unchanged.
+
+The updated composition was inspected at overview and companion eye level in all nine worlds (`output/lighting-review/composition`), followed by a closer-group pass for Macbeth, Frankenstein and Philadelphia (`composition-groups`). Both browser runs recorded no page errors. The focused suite passes 48 tests, including rotated alignment, furniture ground contact, safe reachable approaches through actual furniture and vegetation, legacy navigation, model loading/disposal, source support placement, and floor/path depth. TypeScript and the production build pass. These are arranged teaching scenes, not historical reconstructions of specific room occupancy.
