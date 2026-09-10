@@ -32,11 +32,13 @@ export default function WorldScene(props:Props){
  const closeReference=()=>{keepReference();pinRef.current=false;setPinned(false);setReference(null);};
  const showReference=(id:LandmarkId,pin=false)=>{keepReference();if(pin){pinRef.current=true;setPinned(true);}if(pin||!pinRef.current)setReference(id);};
  const leaveReference=()=>{keepReference();if(!pinRef.current)closeTimer.current=setTimeout(()=>setReference(null),450);};
- const referenceEvents=useRef({showReference,leaveReference,closeReference});referenceEvents.current={showReference,leaveReference,closeReference};
+ const referenceEvents=useRef({showReference,leaveReference,closeReference});
+ useEffect(()=>{referenceEvents.current={showReference,leaveReference,closeReference};});
  useEffect(()=>{const escape=(event:KeyboardEvent)=>{if(event.key==='Escape')referenceEvents.current.closeReference();};window.addEventListener('keydown',escape);return()=>{window.removeEventListener('keydown',escape);if(closeTimer.current)clearTimeout(closeTimer.current);};},[]);
  const explorerRef=useRef<ReturnType<typeof createExplorer>|null>(null);
  const [walking,setWalking]=useState(false),[nearby,setNearby]=useState<ZoneId|null>(null);
- const host=useRef<HTMLDivElement>(null);const latest=useRef(props);latest.current=props;const [error,setError]=useState('');
+ const host=useRef<HTMLDivElement>(null);const latest=useRef(props);const [error,setError]=useState('');
+ useEffect(()=>{latest.current=props;},[props]);
  useEffect(()=>{
   if(!host.current)return;
   setError('');
@@ -68,9 +70,9 @@ export default function WorldScene(props:Props){
    const door=box(g,2.8,4.7,.25,0,0,d/2+.13,mats.dark);return {group:g,door};
   }
   const library=temple(0,-13);const door=library.door;
+  // All surrounding homes now share the detailed, four-sided district model.
+  // Keep this empty replacement list for the rest of the optional asset kit.
   const houses:THREE.Group[]=[];
-  function house(x:number,z:number,w:number,d:number,h:number){const group=new THREE.Group();group.position.set(x,1,z);land.add(group);houses.push(group);x=0;z=0;box(group,w,h,d,x,1,z);box(group,w+.4,.4,d+.4,x,h+1,z,mats.light);box(group,1.1,2,.2,x,1,z+d/2+.1,mats.dark);for(let dx=-w/3;dx<=w/3;dx+=w/1.5)box(group,.7,.9,.2,x+dx,3,z+d/2+.12,mats.wood);group.children.forEach(child=>child.position.y-=1);}
-  house(-21,-13,8,8,5);house(22,-14,8,10,7);house(23,-3,7,6,4);house(-23,-3,6,7,4);
   // Keep the lightweight beacon until its authored model is ready.
   const beacon=new THREE.Group();land.add(beacon);
   box(beacon,5,1,5,-24,1,16,mats.light);box(beacon,3.8,9,3.8,-24,2,16,mats.light);box(beacon,4.5,.55,4.5,-24,11,16,mats.edge);cylinder(beacon,1.35,3,-24,11.5,16);mesh(new THREE.ConeGeometry(1.9,1.5,8),mats.roof,beacon,-24,15.2,16);

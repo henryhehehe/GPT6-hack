@@ -1,5 +1,6 @@
 import * as THREE from 'three';
-import {CITY_COLUMNS,CITY_TREES,DISTRICT_BUILDINGS} from './cityLayout';
+import {CITY_COLUMNS,CITY_TREES} from './cityLayout';
+import {createDistrictHouses} from './districtHouses';
 
 function stoneTexture(){
  const canvas=document.createElement('canvas');canvas.width=canvas.height=512;const c=canvas.getContext('2d')!;
@@ -11,6 +12,19 @@ function stoneTexture(){
  }
  for(let i=0;i<19000;i++){const light=random()>.5;c.fillStyle=light?'#ffffff0c':'#382a1710';const s=1+random()*2;c.fillRect(random()*512,random()*512,s,s);}
  const texture=new THREE.CanvasTexture(canvas);texture.wrapS=texture.wrapT=THREE.RepeatWrapping;texture.colorSpace=THREE.SRGBColorSpace;texture.anisotropy=4;return texture;
+}
+
+function plasterTexture(){
+ const canvas=document.createElement('canvas');canvas.width=canvas.height=512;
+ const context=canvas.getContext('2d')!,pixels=context.createImageData(512,512);
+ let seed=83;const random=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};
+ for(let y=0;y<512;y++)for(let x=0;x<512;x++){
+  const i=(y*512+x)*4,value=237+Math.floor(random()*14+Math.sin(x*.07)*2+Math.sin(y*.045)*2);
+  pixels.data[i]=value;pixels.data[i+1]=value;pixels.data[i+2]=value;pixels.data[i+3]=255;
+ }
+ context.putImageData(pixels,0,0);
+ const texture=new THREE.CanvasTexture(canvas);texture.colorSpace=THREE.SRGBColorSpace;texture.anisotropy=4;
+ return texture;
 }
 
 /** Repeated architecture is instanced: district size does not multiply draw calls. */
@@ -44,18 +58,7 @@ export function createCityDistrict(parent:THREE.Object3D){
   for(let i=0;i<7;i++){const a=i/7*Math.PI*2,leaf=new THREE.Mesh(sphere,i%2?leaves:darkLeaves);leaf.position.set(x+Math.cos(a)*1.05*scale,5.6+Math.sin(i*3)*.35,z+Math.sin(a)*1.05*scale);leaf.scale.set(1.5*scale,.45*scale,.62*scale);leaf.rotation.y=-a;foliageFallback.add(leaf);}
  }
  // WorldScene joins the plaza and streets into one non-overlapping paving mesh.
- for(const b of DISTRICT_BUILDINGS){
-  box(b.style===1?stone:plaster,b.x,.94,b.z,b.w,b.h,b.d);
-  box(stone,b.x,.94,b.z,b.w+.18,.55,b.d+.18);
-  box(trim,b.x,.94+b.h,b.z,b.w+.55,.3,b.d+.55);
-  box(terracotta,b.x,1.25+b.h,b.z,b.w-.2,.18,b.d-.2);
-  // Parapet perimeter, shaded doors and inset shutters retain depth at walking scale.
-  for(const side of [-1,1]){box(trim,b.x,1.3+b.h,b.z+side*(b.d/2-.14),b.w,.55,.28);box(trim,b.x+side*(b.w/2-.14),1.3+b.h,b.z,.28,.55,b.d);}
-  box(shadow,b.x,1,b.z+b.d/2+.025,1.7,2.5,.06,0,false);box(wood,b.x,1,b.z+b.d/2+.075,1.35,2.35,.06,0,false);
-  for(const side of [-1,1])for(const level of [2.7,5.2]){if(level+1>b.h)continue;const x=b.x+side*b.w*.29,z=b.z+b.d/2+.1;box(shadow,x,level,z,1.25,1.45,.09,0,false);box(wood,x-.34,level+.08,z+.09,.5,1.25,.1,0,false);box(trim,x,level-.14,z+.12,1.5,.15,.35,0,false);}
-  if(b.style===2){box(wood,b.x,3.4,b.z+b.d/2+1.25,b.w*.72,.18,2.4);box(cloth,b.x,3.58,b.z+b.d/2+1.25,b.w*.76,.08,2.5);for(const side of [-1,1])put(column,wood,b.x+side*b.w*.33,2.225,b.z+b.d/2+2.25,.07,2.55,.07);}
-  put(column,terracotta,b.x+b.w*.3,1.5,b.z+b.d/2+.7,.38,1.1,.38,0,false);
- }
+ const plasterFinish=plasterTexture(),houses=createDistrictHouses(root,plasterFinish);
  // An open colonnade: tall columns, layered capitals, overhead beams.
  for(const p of CITY_COLUMNS){
   box(trim,p.x,.95,p.z,1.25,.3,1.25);put(column,stone,p.x,4.1,p.z,.42,5.7,.42);
@@ -83,5 +86,5 @@ export function createCityDistrict(parent:THREE.Object3D){
   const foliageBatches=new Map<string,{mesh:THREE.Mesh;matrices:THREE.Matrix4[]}>();
   for(const p of treePositions){const group=new THREE.Group();group.add(template.clone(true));group.position.set(p.x,.95,p.z);group.scale.setScalar(p.scale);group.rotation.y=(p.x+p.z)*.37;group.updateMatrixWorld(true);group.traverse(child=>{if(!(child instanceof THREE.Mesh))return;const key=child.geometry.uuid+':'+(Array.isArray(child.material)?child.material.map(m=>m.uuid).join(':'):child.material.uuid);const batch=foliageBatches.get(key)??{mesh:child,matrices:[] as THREE.Matrix4[]};batch.matrices.push(child.matrixWorld.clone());foliageBatches.set(key,batch);});}
   for(const {mesh,matrices} of foliageBatches.values()){const instance=new THREE.InstancedMesh(mesh.geometry,mesh.material,matrices.length);matrices.forEach((matrix,i)=>instance.setMatrixAt(i,matrix));instance.castShadow=false;instance.receiveShadow=true;instance.computeBoundingSphere();root.add(instance);instances.push(instance);}foliageFallback.visible=false;
- },dispose(){parent.remove(root);instances.forEach(m=>m.dispose());geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());masonry.dispose();paving.dispose();}};
+ },dispose(){houses.dispose();plasterFinish.dispose();parent.remove(root);instances.forEach(m=>m.dispose());geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());masonry.dispose();paving.dispose();}};
 }
