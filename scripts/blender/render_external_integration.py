@@ -14,7 +14,7 @@ external = json.loads((REPO / 'assets/external/placements.json').read_text())
 for setting in ['archive', 'garden', 'coast']:
     for p in external:
         if p['setting'] == setting:
-            layout[setting]['placements'].append({**p, 'url': '/models/external/'+p['asset']+'.glb', 'turn': p.get('turn',0), 'scale': 1})
+            layout[setting]['placements'].append({**p, 'url': '/models/external/'+p['asset']+'.glb', 'turn': p.get('turn',0), 'scale': p.get('scale',1)})
 bpy.ops.object.select_all(action='SELECT')
 bpy.ops.object.delete(use_global=False)
 scene = bpy.context.scene

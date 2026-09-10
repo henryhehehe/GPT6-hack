@@ -72,10 +72,12 @@ export function loadExternalModels(parent:THREE.Object3D,placements:readonly Ext
   let disposed=false;
   for(const placement of placements){
     const asset=assets.get(placement.asset);if(!asset||asset.classroomStatus!=='scene-eligible')continue;
-    const group=new THREE.Group();group.name=placement.key;group.position.set(...placement.at);group.rotation.y=placement.turn??0;
+    const group=new THREE.Group();group.name=placement.key;group.position.set(...placement.at);group.rotation.y=placement.turn??0;group.scale.setScalar(placement.scale??1);
     group.userData.assetId=asset.id;group.userData.externalZone=placement.zone;root.add(group);
     const [w,h,d]=asset.dimensions;
-    const fallback=new THREE.Mesh(new THREE.BoxGeometry(Math.max(.06,w),Math.max(.025,h),Math.max(.06,d)),
+    // A trunk-sized fallback matches navigation while the broad canopy loads.
+    const trunk=placement.trunkRadius;
+    const fallback=new THREE.Mesh(new THREE.BoxGeometry(trunk ? trunk*2 :Math.max(.06,w),Math.max(.025,h),trunk ? trunk*2 :Math.max(.06,d)),
       new THREE.MeshStandardMaterial({color:asset.category==='rock'?'#7f8277':'#997953',roughness:.95}));
     fallback.position.y=h/2;fallback.castShadow=true;fallback.receiveShadow=true;
     group.add(fallback);placeholders.add(fallback);

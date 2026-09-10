@@ -1,6 +1,6 @@
 # Open-model acquisition handoff
 
-**Subsequent integration:** [17 models now appear in 37 scene placements](EXTERNAL-MODEL-INTEGRATION.md), with a live `/model-catalog` and [usage instructions for all 69 entries](../assets/external/USAGE-GUIDE.md). The acquisition-only statements below describe the earlier checkpoint.
+**Subsequent integration:** [49 models now appear in 91 scene placements](EXTERNAL-MODEL-INTEGRATION.md), with a live `/model-catalog` and [usage instructions for all 69 entries](../assets/external/USAGE-GUIDE.md). The acquisition-only statements below describe the earlier checkpoint.
 
 September 10, 2026. Completed research and offline acquisition for Counterfactual Worlds, using the existing object/character plan, literature expansion, current authored assets, and ten-world curriculum catalog to select reusable 3D geometry.
 

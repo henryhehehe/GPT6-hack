@@ -181,7 +181,7 @@
       "download_bytes": 485316,
       "acquired_on": "2026-09-10",
       "status": "downloaded",
-      "runtime_integrated": false
+      "runtime_integrated": true
     },
     {
       "id": "polyhaven-planter_pot_clay",
