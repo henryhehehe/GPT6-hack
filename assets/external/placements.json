@@ -4,7 +4,7 @@
     "asset": "quaternius-fantasy-props-scroll-1",
     "at": [
       -4.65,
-      5.1,
+      4.7947999999999995,
       -8.45
     ],
     "zone": "library",
@@ -16,8 +16,8 @@
     "asset": "quaternius-fantasy-props-pouch-large",
     "at": [
       -4.15,
-      5.1,
-      -8.55
+      4.7806,
+      -8.8
     ],
     "zone": "library",
     "setting": "alexandria"
@@ -26,9 +26,9 @@
     "key": "market-vessel",
     "asset": "quaternius-fantasy-props-vase-2",
     "at": [
-      14.65,
-      2.01,
-      5.55
+      11.15,
+      1.808,
+      5.65
     ],
     "zone": "market",
     "setting": "alexandria"
@@ -37,9 +37,9 @@
     "key": "market-vessel-tall",
     "asset": "quaternius-fantasy-props-vase-4",
     "at": [
-      22.65,
-      2.01,
-      5.55
+      19.15,
+      1.808,
+      5.65
     ],
     "zone": "market",
     "setting": "alexandria"
@@ -49,7 +49,7 @@
     "asset": "quaternius-fantasy-props-bag",
     "at": [
       14.65,
-      1.32,
+      1.808,
       4.35
     ],
     "activity": "market",

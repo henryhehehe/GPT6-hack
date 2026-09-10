@@ -1,4 +1,5 @@
 import index from '@/lib/externalAssetIndex.json';
+import {HUMAN_SCALE,LIBRARY_DESK_Y,MARKET_COUNTER_Y} from './humanScale';
 import type { ZoneId } from '@/lib/world';
 
 export type ExternalSetting = 'alexandria' | 'coast' | 'garden' | 'archive';
@@ -25,11 +26,11 @@ export function placementBounds(p: ExternalPlacement): ExternalBounds {
 
 /** Keep original landmarks/cast; these objects sit on existing blocked furniture or quay edges. */
 export const ALEXANDRIA_EXTERNAL: ExternalPlacement[] = [
-  { key:'archive-scroll',asset:prop('scroll-1'),at:[-4.65,5.1,-8.45],zone:'library',turn:.12 },
-  { key:'archive-pouch',asset:prop('pouch-large'),at:[-4.15,5.1,-8.55],zone:'library' },
-  { key:'market-vessel',asset:prop('vase-2'),at:[14.65,2.01,5.55],zone:'market' },
-  { key:'market-vessel-tall',asset:prop('vase-4'),at:[22.65,2.01,5.55],zone:'market' },
-  { key:'market-bag',asset:prop('bag'),at:[14.65,1.32,4.35],activity:'market' },
+  { key:'archive-scroll',asset:prop('scroll-1'),at:[-4.65,LIBRARY_DESK_Y+.01,-8.45],zone:'library',turn:.12 },
+  { key:'archive-pouch',asset:prop('pouch-large'),at:[-4.15,4+1.08*HUMAN_SCALE.deskVertical+.003,-8.8],zone:'library' },
+  { key:'market-vessel',asset:prop('vase-2'),at:[11.15,MARKET_COUNTER_Y,5.65],zone:'market' },
+  { key:'market-vessel-tall',asset:prop('vase-4'),at:[19.15,MARKET_COUNTER_Y,5.65],zone:'market' },
+  { key:'market-bag',asset:prop('bag'),at:[14.65,MARKET_COUNTER_Y,4.35],activity:'market' },
   { key:'quay-rope',asset:prop('rope-2'),at:[-5.05,1.28,20],zone:'harbor' },
   { key:'quay-paddle',asset:kenney('tool-paddle'),at:[-10.9,1.28,21.9],turn:Math.PI/2,zone:'harbor' },
 ];
