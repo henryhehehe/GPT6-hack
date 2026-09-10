@@ -1,0 +1,544 @@
+<title>Counterfactual Worlds Mockups</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#ECEAE3; --panel:#F7F6F1; --ink:#1B2233; --ink-2:#4A5163; --ink-3:#8A8F9C;
+  --line:#C9C7BE; --line-2:#DEDCD3;
+  --sea:#1F6F8B; --sea-soft:#D6E6EC; --amber:#B8781F; --amber-soft:#F1E2C6;
+  --heat-1:#F3D9B0; --heat-2:#E39A5A; --heat-3:#B84A2E;
+  --stone:#D9D3C2; --stone-dark:#B9B2A0; --water:#9EC1CE;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#14171F; --panel:#1C2029; --ink:#E8E6DF; --ink-2:#B4B7C0; --ink-3:#7C818E;
+    --line:#333846; --line-2:#272B36;
+    --sea:#5FB3CF; --sea-soft:#1D3641; --amber:#E0A44A; --amber-soft:#3A2F1B;
+    --heat-1:#4A3A28; --heat-2:#B8672E; --heat-3:#E0563A;
+    --stone:#4A4A55; --stone-dark:#33333D; --water:#2E5566;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#14171F; --panel:#1C2029; --ink:#E8E6DF; --ink-2:#B4B7C0; --ink-3:#7C818E;
+  --line:#333846; --line-2:#272B36;
+  --sea:#5FB3CF; --sea-soft:#1D3641; --amber:#E0A44A; --amber-soft:#3A2F1B;
+  --heat-1:#4A3A28; --heat-2:#B8672E; --heat-3:#E0563A;
+  --stone:#4A4A55; --stone-dark:#33333D; --water:#2E5566;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:15px;line-height:1.55;padding-inline:clamp(16px,4vw,48px);padding-block:40px 72px;margin:0}
+.wrap{max-width:1080px;margin:0 auto}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(30px,4.5vw,44px);font-weight:700;line-height:1.05;letter-spacing:-0.01em}
+h2{font-size:22px;font-weight:600;margin-top:64px}
+h3{font-size:16px;font-weight:600}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.lede{max-width:62ch;color:var(--ink-2);margin-top:12px}
+header{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;padding-bottom:20px;border-bottom:1px solid var(--line)}
+.meta{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink-3);text-align:right;line-height:1.7}
+.meta b{color:var(--ink);font-weight:500}
+figure{margin:20px 0 0;background:var(--panel);border:1px solid var(--line-2);padding:18px}
+figure svg{display:block;width:100%;height:auto;color:var(--ink)}
+figcaption{margin-top:12px;font-size:13.5px;color:var(--ink-2);max-width:78ch}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:20px}
+.grid2 figure{margin:0}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-top:20px}
+.panel{background:var(--panel);border:1px solid var(--line-2);padding:16px}
+.panel svg{display:block;width:100%;height:auto;color:var(--ink)}
+.panel .t{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.panel h3{margin-bottom:8px}
+.panel p{margin:10px 0 0;font-size:13.5px;color:var(--ink-2)}
+.tag{display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;padding:2px 7px;border:1px solid var(--line);color:var(--ink-2);margin-left:8px;vertical-align:middle}
+.tag.live{border-color:var(--sea);color:var(--sea)}
+.legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:14px;font-size:13px;color:var(--ink-2)}
+.legend span::before{content:"";display:inline-block;width:12px;height:12px;margin-right:7px;vertical-align:-2px;border:1px solid var(--line)}
+.legend .a::before{background:var(--sea)}
+.legend .b::before{background:var(--amber)}
+.legend .c::before{background:var(--stone)}
+.note{margin-top:16px;padding:14px 16px;border-left:3px solid var(--amber);background:var(--amber-soft);font-size:14px;max-width:70ch}
+@media (max-width:640px){header{grid-template-columns:1fr}.meta{text-align:left}}
+</style>
+
+<div class="wrap">
+<header>
+  <div>
+    <div class="eyebrow">Design mockups · v1 · for implementation</div>
+    <h1 style="margin-top:8px">Counterfactual Worlds</h1>
+    <p class="lede">Lesson plan in, playable world out. These are the screens and the flow Astra should build toward. Wireframes are proportional; copy is real content from the Alexandria hero lesson.</p>
+  </div>
+  <div class="meta">Runtime <b>three.js · browser</b><br>Model <b>gpt-6-astra</b><br>Budget <b>13 h · team ≤ 4</b><br>Fidelity <b>low-poly diorama</b></div>
+</header>
+
+<!-- ============ 1. ARCHITECTURE ============ -->
+<h2>1 · How a lesson becomes a world</h2>
+<p class="lede">Generation happens once, at authoring time. Everything the student touches is cached. The only live model call during class is the teacher's director patch, which is a diff — not a regen.</p>
+
+<figure>
+<svg viewBox="0 0 1040 330" role="img" aria-label="Flow: teacher pastes a lesson, Astra generates a WorldSpec and per-student variants into a cache, the browser runtime and teacher board read from the cache; the director patch is the only live call during class.">
+<defs>
+  <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5 0 10z" fill="currentColor"/></marker>
+  <marker id="ar-sea" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0L10 5 0 10z" fill="var(--sea)"/></marker>
+</defs>
+<g font-family="IBM Plex Sans, sans-serif" font-size="12.5">
+  <!-- lane labels -->
+  <text x="20" y="28" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink-3)" letter-spacing="1">NIGHT BEFORE · 60–120 s</text>
+  <text x="700" y="28" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink-3)" letter-spacing="1">IN CLASS · INSTANT</text>
+  <line x1="660" y1="14" x2="660" y2="316" stroke="var(--line)" stroke-dasharray="4 5"/>
+
+  <!-- Teacher -->
+  <rect x="20" y="60" width="150" height="74" rx="3" fill="var(--panel)" stroke="currentColor" stroke-width="1.2"/>
+  <text x="95" y="88" text-anchor="middle" font-weight="600">Teacher</text>
+  <text x="95" y="107" text-anchor="middle" fill="var(--ink-2)" font-size="11.5">pastes lesson,</text>
+  <text x="95" y="122" text-anchor="middle" fill="var(--ink-2)" font-size="11.5">picks structural lever</text>
+
+  <!-- Astra -->
+  <rect x="240" y="48" width="180" height="98" rx="3" fill="var(--sea-soft)" stroke="var(--sea)" stroke-width="1.4"/>
+  <text x="330" y="78" text-anchor="middle" font-weight="600" fill="var(--sea)">gpt-6-astra</text>
+  <text x="330" y="98" text-anchor="middle" font-size="11.5" fill="var(--ink-2)">call 1 → WorldSpec</text>
+  <text x="330" y="114" text-anchor="middle" font-size="11.5" fill="var(--ink-2)">call 2 → StudentVariants</text>
+  <text x="330" y="130" text-anchor="middle" font-size="11.5" fill="var(--ink-2)">call 3 → hero glTF (optional)</text>
+
+  <!-- Cache -->
+  <path d="M490 62 h150 a6 6 0 0 1 6 6 v58 a6 6 0 0 1 -6 6 h-150 a6 6 0 0 1 -6 -6 v-58 a6 6 0 0 1 6 -6z" fill="var(--panel)" stroke="currentColor" stroke-width="1.2"/>
+  <line x1="484" y1="76" x2="646" y2="76" stroke="currentColor" stroke-width="1"/>
+  <text x="565" y="52" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="var(--ink-3)">spec cache · keyed by lesson hash</text>
+  <text x="565" y="100" text-anchor="middle" font-weight="600">WorldSpec.json</text>
+  <text x="565" y="118" text-anchor="middle" font-size="11.5" fill="var(--ink-2)">+ 30 variants · + telemetry</text>
+
+  <!-- Runtime -->
+  <rect x="720" y="48" width="140" height="62" rx="3" fill="var(--panel)" stroke="currentColor" stroke-width="1.2"/>
+  <text x="790" y="74" text-anchor="middle" font-weight="600">Student runtime</text>
+  <text x="790" y="92" text-anchor="middle" font-size="11.5" fill="var(--ink-2)">three.js · one link</text>
+
+  <!-- Board -->
+  <rect x="720" y="150" width="140" height="62" rx="3" fill="var(--panel)" stroke="currentColor" stroke-width="1.2"/>
+  <text x="790" y="176" text-anchor="middle" font-weight="600">Teacher board</text>
+  <text x="790" y="194" text-anchor="middle" font-size="11.5" fill="var(--ink-2)">heatmap · stuck · director</text>
+
+  <!-- NPC proxy -->
+  <rect x="900" y="48" width="120" height="62" rx="3" fill="var(--sea-soft)" stroke="var(--sea)" stroke-width="1.2"/>
+  <text x="960" y="74" text-anchor="middle" font-weight="600" fill="var(--sea)">NPC argue</text>
+  <text x="960" y="92" text-anchor="middle" font-size="11.5" fill="var(--ink-2)">≤60 words + tags</text>
+
+  <!-- arrows -->
+  <line x1="170" y1="97" x2="238" y2="97" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"/>
+  <text x="204" y="90" text-anchor="middle" font-size="10.5" fill="var(--ink-2)">lesson text</text>
+  <line x1="420" y1="97" x2="482" y2="97" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"/>
+  <text x="451" y="90" text-anchor="middle" font-size="10.5" fill="var(--ink-2)">writes</text>
+  <line x1="646" y1="86" x2="718" y2="79" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"/>
+  <text x="682" y="72" text-anchor="middle" font-size="10.5" fill="var(--ink-2)">reads</text>
+  <line x1="646" y1="112" x2="718" y2="176" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"/>
+  <text x="662" y="152" text-anchor="start" font-size="10.5" fill="var(--ink-2)">reads</text>
+  <line x1="860" y1="79" x2="898" y2="79" stroke="var(--sea)" stroke-width="1.2" marker-end="url(#ar-sea)"/>
+  <!-- telemetry -->
+  <path d="M790 110 V138" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"/>
+  <text x="798" y="128" font-size="10.5" fill="var(--ink-2)">telemetry · SSE</text>
+
+  <!-- director loop -->
+  <path d="M720 195 H600 V190 Q600 180 590 180 H430 Q420 180 420 170 V150" fill="none" stroke="var(--amber)" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#ar)"/>
+  <text x="510" y="200" text-anchor="middle" font-size="11" fill="var(--amber)" font-weight="600">director patch → spec diff (live, ~5–10 s)</text>
+  <path d="M330 146 V232 H790 V214" fill="none" stroke="var(--amber)" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <path d="M700 232 H760 V112" fill="none" stroke="var(--amber)" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#ar)"/>
+  <text x="560" y="250" text-anchor="middle" font-size="11" fill="var(--amber)">diff broadcast → every student hot-reloads</text>
+
+  <!-- footer boxes -->
+  <rect x="20" y="272" width="620" height="40" fill="none" stroke="var(--line)"/>
+  <text x="330" y="297" text-anchor="middle" font-size="11.5" fill="var(--ink-2)">Fallback: if any generation fails, runtime swaps the primitive kit (5 structure kinds) — no hole in the floor</text>
+</g>
+</svg>
+<figcaption>Solid arrows are the authoring path (once per lesson). The amber dashed loop is the only model call during class: the teacher's instruction becomes a small diff against the cached spec and is pushed to every open student world.</figcaption>
+</figure>
+
+<!-- ============ 2. SCREENS ============ -->
+<h2>2 · The three screens</h2>
+<p class="lede">Teacher authoring, student world, teacher director board. Each is one screen — no navigation, no settings pages.</p>
+
+<div class="grid2">
+
+<!-- Authoring -->
+<figure>
+<svg viewBox="0 0 520 380" role="img" aria-label="Wireframe of the teacher authoring screen: lesson paste area on the left, three Astra-proposed structural counterfactuals on the right, learning target field, and a Generate world button.">
+<g font-family="IBM Plex Sans, sans-serif" font-size="11.5">
+  <rect x="0.5" y="0.5" width="519" height="379" rx="4" fill="var(--panel)" stroke="var(--line)"/>
+  <rect x="0.5" y="0.5" width="519" height="30" rx="4" fill="var(--bg)" stroke="var(--line)"/>
+  <text x="14" y="20" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="var(--ink-3)">AUTHOR · Grade 10 · World History</text>
+  <text x="506" y="20" text-anchor="end" font-size="10.5" fill="var(--ink-3)">Preview  ·  Share</text>
+
+  <!-- left: lesson -->
+  <text x="18" y="54" font-weight="600" font-size="12">1  Paste tomorrow's lesson</text>
+  <rect x="18" y="64" width="236" height="150" fill="var(--bg)" stroke="var(--line)"/>
+  <g fill="var(--ink-2)" font-size="10.5">
+    <text x="28" y="84">Unit 4.2 — Alexandria and the Hellenistic</text>
+    <text x="28" y="100">world. The Library as an institution</text>
+    <text x="28" y="116">depended on Ptolemaic grain revenue</text>
+    <text x="28" y="132">and the harbor trade. In 48 BCE, fire</text>
+    <text x="28" y="148">during Caesar's siege destroyed…</text>
+    <text x="28" y="180" fill="var(--ink-3)">2,140 words · reading level 9.8</text>
+  </g>
+
+  <text x="18" y="240" font-weight="600" font-size="12">3  Learning target</text>
+  <rect x="18" y="250" width="236" height="46" fill="var(--bg)" stroke="var(--line)"/>
+  <text x="28" y="268" font-size="10.5" fill="var(--ink-2)">Students can defend: "The Library's survival</text>
+  <text x="28" y="283" font-size="10.5" fill="var(--ink-2)">depended more on trade than on any ruler."</text>
+
+  <!-- right: levers -->
+  <text x="276" y="54" font-weight="600" font-size="12">2  Choose a structural lever</text>
+  <text x="506" y="54" text-anchor="end" font-size="10" fill="var(--sea)">Astra-proposed</text>
+
+  <rect x="276" y="64" width="226" height="56" fill="var(--sea-soft)" stroke="var(--sea)" stroke-width="1.4"/>
+  <circle cx="290" cy="80" r="5" fill="var(--sea)"/>
+  <text x="302" y="84" font-weight="600" font-size="11.5">Grain trade collapses, 60 BCE</text>
+  <text x="302" y="100" font-size="10.5" fill="var(--ink-2)">Tests: institutions vs. rulers</text>
+  <text x="302" y="113" font-size="10.5" fill="var(--ink-2)">Ripple: harbor, scholars' stipends, Rome</text>
+
+  <rect x="276" y="128" width="226" height="56" fill="var(--bg)" stroke="var(--line)"/>
+  <circle cx="290" cy="144" r="5" fill="none" stroke="var(--ink-3)"/>
+  <text x="302" y="148" font-weight="600" font-size="11.5" fill="var(--ink-2)">Pergamon builds a rival library</text>
+  <text x="302" y="164" font-size="10.5" fill="var(--ink-3)">Tests: competition and patronage</text>
+
+  <rect x="276" y="192" width="226" height="56" fill="var(--bg)" stroke="var(--line)"/>
+  <circle cx="290" cy="208" r="5" fill="none" stroke="var(--ink-3)"/>
+  <text x="302" y="212" font-weight="600" font-size="11.5" fill="var(--ink-2)">Papyrus export banned</text>
+  <text x="302" y="228" font-size="10.5" fill="var(--ink-3)">Tests: material supply and knowledge</text>
+
+  <text x="276" y="272" font-size="10.5" fill="var(--ink-3)">Actor-focused levers ("Caesar dies") are hidden</text>
+  <text x="276" y="286" font-size="10.5" fill="var(--ink-3)">by default — weaker causal arguments (Wendell 2020).</text>
+
+  <!-- footer -->
+  <line x1="18" y1="316" x2="502" y2="316" stroke="var(--line)"/>
+  <text x="18" y="342" font-size="10.5" fill="var(--ink-2)">Roster: 28 students · 21 with interest tags</text>
+  <text x="18" y="358" font-size="10.5" fill="var(--ink-3)">Variants: reading level 7–11 · surface hooks default</text>
+  <rect x="372" y="330" width="130" height="34" rx="3" fill="var(--sea)"/>
+  <text x="437" y="352" text-anchor="middle" fill="#fff" font-weight="600" font-size="12">Generate world  →</text>
+</g>
+</svg>
+<figcaption><strong>Teacher · authoring.</strong> Three fields, one button. Levers are proposed by the model and pre-filtered to structural causes; the learning target becomes the claim students must defend.</figcaption>
+</figure>
+
+<!-- Director board -->
+<figure>
+<svg viewBox="0 0 520 380" role="img" aria-label="Wireframe of the teacher director board: top-down heatmap of student positions over the world, a stuck-students list, a director prompt box, and nudge, patch, freeze controls.">
+<g font-family="IBM Plex Sans, sans-serif" font-size="11.5">
+  <rect x="0.5" y="0.5" width="519" height="379" rx="4" fill="var(--panel)" stroke="var(--line)"/>
+  <rect x="0.5" y="0.5" width="519" height="30" rx="4" fill="var(--bg)" stroke="var(--line)"/>
+  <text x="14" y="20" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="var(--ink-3)">DIRECTOR · Alexandria, 48 BCE · 26 / 28 in world</text>
+  <circle cx="500" cy="15" r="4" fill="var(--sea)"/>
+  <text x="492" y="19" text-anchor="end" font-size="10.5" fill="var(--sea)">live</text>
+
+  <!-- heatmap -->
+  <rect x="18" y="44" width="300" height="230" fill="var(--bg)" stroke="var(--line)"/>
+  <!-- water -->
+  <path d="M18 44 H318 V96 Q260 110 200 90 T18 100 Z" fill="var(--water)" opacity=".6"/>
+  <text x="300" y="60" text-anchor="end" font-size="9.5" fill="var(--ink-2)">Great Harbor</text>
+  <!-- street grid -->
+  <g stroke="var(--line)" stroke-width="1">
+    <line x1="18" y1="150" x2="318" y2="150"/><line x1="18" y1="215" x2="318" y2="215"/>
+    <line x1="90" y1="100" x2="90" y2="274"/><line x1="170" y1="100" x2="170" y2="274"/><line x1="250" y1="100" x2="250" y2="274"/>
+  </g>
+  <!-- buildings -->
+  <g fill="var(--stone)" stroke="var(--stone-dark)">
+    <rect x="100" y="160" width="60" height="44"/>
+    <rect x="180" y="160" width="60" height="44"/>
+    <rect x="30" y="225" width="50" height="38"/>
+    <rect x="260" y="112" width="48" height="28"/>
+    <rect x="180" y="225" width="60" height="38"/>
+  </g>
+  <text x="130" y="185" text-anchor="middle" font-size="9.5">Library</text>
+  <text x="210" y="185" text-anchor="middle" font-size="9.5">Archive</text>
+  <text x="284" y="130" text-anchor="middle" font-size="9.5">Merchant</text>
+  <text x="55" y="247" text-anchor="middle" font-size="9.5">Cook</text>
+  <text x="210" y="247" text-anchor="middle" font-size="9.5">Museion</text>
+  <!-- heat -->
+  <circle cx="284" cy="118" r="26" fill="var(--heat-3)" opacity=".35"/>
+  <circle cx="284" cy="118" r="14" fill="var(--heat-3)" opacity=".55"/>
+  <circle cx="130" cy="200" r="18" fill="var(--heat-2)" opacity=".45"/>
+  <circle cx="60" cy="130" r="14" fill="var(--heat-1)" opacity=".8"/>
+  <!-- dots -->
+  <g fill="var(--ink)">
+    <circle cx="280" cy="112" r="2.2"/><circle cx="290" cy="120" r="2.2"/><circle cx="276" cy="124" r="2.2"/><circle cx="292" cy="110" r="2.2"/><circle cx="286" cy="128" r="2.2"/>
+    <circle cx="126" cy="196" r="2.2"/><circle cx="136" cy="204" r="2.2"/><circle cx="130" cy="210" r="2.2"/>
+    <circle cx="58" cy="128" r="2.2"/><circle cx="64" cy="134" r="2.2"/>
+    <circle cx="200" cy="130" r="2.2"/><circle cx="230" cy="240" r="2.2"/><circle cx="150" cy="120" r="2.2"/>
+  </g>
+  <text x="26" y="266" font-size="9.5" fill="var(--ink-3)">● student · heat = time at NPC</text>
+
+  <!-- stuck list -->
+  <text x="334" y="56" font-weight="600" font-size="12">Stuck · 5</text>
+  <text x="502" y="56" text-anchor="end" font-size="10" fill="var(--ink-3)">idle &gt; 45 s</text>
+  <g font-size="10.5">
+    <rect x="334" y="66" width="168" height="30" fill="var(--bg)" stroke="var(--line)"/>
+    <text x="342" y="79" font-weight="600">Maya R. · Merchant</text>
+    <text x="342" y="91" fill="var(--ink-2)">3 failed claims · no ledger</text>
+    <rect x="334" y="100" width="168" height="30" fill="var(--bg)" stroke="var(--line)"/>
+    <text x="342" y="113" font-weight="600">Devon K. · Merchant</text>
+    <text x="342" y="125" fill="var(--ink-2)">asked about Caesar twice</text>
+    <rect x="334" y="134" width="168" height="30" fill="var(--bg)" stroke="var(--line)"/>
+    <text x="342" y="147" font-weight="600">Priya S. · Library</text>
+    <text x="342" y="159" fill="var(--ink-2)">actor-only argument</text>
+    <text x="342" y="184" fill="var(--ink-3)">+ 2 more</text>
+  </g>
+  <!-- verbs -->
+  <g font-size="10.5" font-weight="600">
+    <rect x="334" y="196" width="52" height="24" rx="2" fill="none" stroke="var(--ink-2)"/><text x="360" y="212" text-anchor="middle">Nudge</text>
+    <rect x="392" y="196" width="52" height="24" rx="2" fill="none" stroke="var(--ink-2)"/><text x="418" y="212" text-anchor="middle">Freeze</text>
+    <rect x="450" y="196" width="52" height="24" rx="2" fill="var(--amber)"/><text x="476" y="212" text-anchor="middle" fill="#fff">Patch</text>
+  </g>
+  <!-- argument delta -->
+  <text x="334" y="246" font-size="10.5" fill="var(--ink-3)">Argument quality · class</text>
+  <rect x="334" y="252" width="168" height="8" fill="var(--bg)" stroke="var(--line)"/>
+  <rect x="334" y="252" width="62" height="8" fill="var(--ink-3)"/>
+  <rect x="334" y="252" width="118" height="8" fill="var(--sea)" opacity=".85"/>
+  <text x="334" y="274" font-size="10" fill="var(--ink-2)">first claim 1.4 → latest 2.7 / 4</text>
+
+  <!-- director box -->
+  <rect x="18" y="290" width="484" height="40" fill="var(--amber-soft)" stroke="var(--amber)"/>
+  <text x="30" y="314" font-size="11.5" fill="var(--ink)">Give the merchant a ledger the students can read, showing grain arrivals by year</text>
+  <text x="494" y="314" text-anchor="end" font-size="10.5" fill="var(--amber)" font-weight="600">⏎ patch</text>
+  <text x="18" y="352" font-size="10.5" fill="var(--ink-3)">Last patch 2 min ago · "add a rival faction" · applied to 26 worlds in 6.8 s</text>
+  <text x="18" y="368" font-size="10.5" fill="var(--ink-3)">Export evidence report after class →</text>
+</g>
+</svg>
+<figcaption><strong>Teacher · director board.</strong> The heatmap says where the class is stuck without opening a single game view. One text box patches every world; the class-level argument-quality bar is the demo's number.</figcaption>
+</figure>
+
+</div>
+
+<!-- Student world -->
+<figure>
+<svg viewBox="0 0 1040 420" role="img" aria-label="Wireframe of the student view: a low-poly isometric diorama of Alexandria with a colonnade, library, harbor and three NPCs; a dialogue panel where the student defends a claim to the librarian; evidence tokens collected; the archive door opening after a strong claim.">
+<defs>
+  <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--sea-soft)"/><stop offset="1" stop-color="var(--bg)"/></linearGradient>
+</defs>
+<g font-family="IBM Plex Sans, sans-serif" font-size="12">
+  <rect x="0.5" y="0.5" width="1039" height="419" rx="4" fill="url(#sky)" stroke="var(--line)"/>
+  <!-- HUD top -->
+  <text x="16" y="24" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink-2)">ALEXANDRIA · 48 BCE · the Library survives</text>
+  <text x="700" y="24" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="var(--ink-2)">You are Theon, harbor courier · evidence 2 / 3</text>
+
+  <!-- ground plane isometric -->
+  <polygon points="80,300 420,150 760,300 420,400" fill="var(--stone)" opacity=".55"/>
+  <!-- water -->
+  <polygon points="420,150 760,300 820,270 480,120" fill="var(--water)" opacity=".7"/>
+  <!-- library (big box) -->
+  <g stroke="var(--stone-dark)" stroke-width="1">
+    <polygon points="250,230 330,195 330,120 250,155" fill="var(--stone)"/>
+    <polygon points="330,195 420,235 420,160 330,120" fill="var(--stone-dark)"/>
+    <polygon points="250,155 330,120 420,160 340,195" fill="var(--panel)"/>
+    <!-- colonnade -->
+    <g fill="var(--panel)" stroke="var(--stone-dark)">
+      <rect x="262" y="185" width="6" height="40"/><rect x="280" y="177" width="6" height="40"/><rect x="298" y="169" width="6" height="40"/><rect x="316" y="161" width="6" height="40"/>
+    </g>
+    <!-- new wing (counterfactual) -->
+    <polygon points="420,235 480,262 480,196 420,160" fill="var(--amber-soft)" stroke="var(--amber)"/>
+    <polygon points="420,160 480,196 540,170 480,134" fill="var(--amber-soft)" stroke="var(--amber)"/>
+    <text x="500" y="250" font-size="10" fill="var(--amber)" font-weight="600">+ second wing</text>
+    <!-- archive with door -->
+    <polygon points="150,290 210,262 210,220 150,248" fill="var(--stone)"/>
+    <polygon points="210,262 250,280 250,238 210,220" fill="var(--stone-dark)"/>
+    <rect x="176" y="255" width="14" height="24" fill="var(--sea)"/>
+    <text x="160" y="310" font-size="10" fill="var(--sea)" font-weight="600">archive door: opens on strong claim</text>
+    <!-- merchant stall -->
+    <polygon points="560,320 620,292 620,272 560,300" fill="var(--stone)"/>
+    <polygon points="620,292 660,310 660,290 620,272" fill="var(--stone-dark)"/>
+    <!-- ships -->
+    <polygon points="600,200 640,200 632,212 608,212" fill="var(--ink-2)"/><line x1="620" y1="200" x2="620" y2="178" stroke="var(--ink-2)"/>
+    <polygon points="690,240 730,240 722,252 698,252" fill="var(--ink-2)"/><line x1="710" y1="240" x2="710" y2="218" stroke="var(--ink-2)"/>
+  </g>
+  <!-- NPCs -->
+  <g>
+    <circle cx="300" cy="248" r="6" fill="var(--sea)"/><rect x="296" y="254" width="8" height="16" fill="var(--sea)"/>
+    <text x="300" y="288" text-anchor="middle" font-size="10.5" font-weight="600">Librarian</text>
+    <circle cx="600" cy="330" r="6" fill="var(--ink)"/><rect x="596" y="336" width="8" height="16" fill="var(--ink)"/>
+    <text x="600" y="370" text-anchor="middle" font-size="10.5">Merchant</text>
+    <circle cx="470" cy="360" r="6" fill="var(--ink)"/><rect x="466" y="366" width="8" height="16" fill="var(--ink)"/>
+    <text x="470" y="398" text-anchor="middle" font-size="10.5">Cook</text>
+    <!-- player -->
+    <circle cx="380" cy="300" r="6" fill="var(--amber)"/><rect x="376" y="306" width="8" height="16" fill="var(--amber)"/>
+    <text x="380" y="340" text-anchor="middle" font-size="10.5" fill="var(--amber)" font-weight="600">you</text>
+  </g>
+
+  <!-- dialogue panel -->
+  <rect x="740" y="44" width="284" height="360" rx="4" fill="var(--panel)" stroke="var(--line)"/>
+  <text x="756" y="68" font-weight="600" font-size="13">Librarian · Callimachus</text>
+  <text x="1010" y="68" text-anchor="end" font-size="10" fill="var(--ink-3)">argues from: structure</text>
+  <rect x="756" y="80" width="252" height="66" fill="var(--sea-soft)"/>
+  <g font-size="11" fill="var(--ink)">
+    <text x="766" y="98">"Rulers come and go. Tell me why</text>
+    <text x="766" y="113">the scrolls are still here when the</text>
+    <text x="766" y="128">Ptolemies are not. And bring proof,</text>
+    <text x="766" y="141">courier — not opinion."</text>
+  </g>
+  <rect x="756" y="156" width="252" height="52" fill="var(--bg)" stroke="var(--line)"/>
+  <g font-size="11" fill="var(--ink-2)">
+    <text x="766" y="174">You: The Library kept its stipends</text>
+    <text x="766" y="189">because grain revenue never collapsed —</text>
+    <text x="766" y="203">the harbor ledger shows 3 ships a week.</text>
+  </g>
+  <g font-size="10.5">
+    <rect x="756" y="216" width="112" height="20" rx="10" fill="var(--sea)"/><text x="812" y="230" text-anchor="middle" fill="#fff" font-weight="600">✓ structural factor</text>
+    <rect x="874" y="216" width="92" height="20" rx="10" fill="var(--sea)"/><text x="920" y="230" text-anchor="middle" fill="#fff" font-weight="600">✓ cites evidence</text>
+  </g>
+  <rect x="756" y="246" width="252" height="40" fill="var(--sea-soft)"/>
+  <text x="766" y="263" font-size="11">"…Then the archive is yours. Go on."</text>
+  <text x="766" y="278" font-size="10.5" fill="var(--sea)" font-weight="600">concedes · door unlocked</text>
+
+  <text x="756" y="310" font-size="10.5" fill="var(--ink-3)" font-family="IBM Plex Mono, monospace">EVIDENCE</text>
+  <g font-size="10.5">
+    <rect x="756" y="318" width="76" height="24" fill="var(--amber-soft)" stroke="var(--amber)"/><text x="794" y="334" text-anchor="middle">harbor ledger</text>
+    <rect x="838" y="318" width="76" height="24" fill="var(--amber-soft)" stroke="var(--amber)"/><text x="876" y="334" text-anchor="middle">cook's letter</text>
+    <rect x="920" y="318" width="88" height="24" fill="none" stroke="var(--line)" stroke-dasharray="3 3"/><text x="964" y="334" text-anchor="middle" fill="var(--ink-3)">inscription ?</text>
+  </g>
+  <rect x="756" y="358" width="252" height="32" rx="3" fill="var(--bg)" stroke="var(--line)"/>
+  <text x="766" y="378" font-size="11" fill="var(--ink-3)">Say something…</text>
+
+  <!-- target strip -->
+  <rect x="16" y="380" width="700" height="28" fill="var(--panel)" stroke="var(--line)" opacity=".92"/>
+  <text x="28" y="399" font-size="11" fill="var(--ink-2)">Defend to 2 of 3: <tspan font-weight="600" fill="var(--ink)">"The Library's survival depended more on trade than on any ruler."</tspan> · Librarian ✓ · Merchant · Cook</text>
+</g>
+</svg>
+<figcaption><strong>Student · world view.</strong> Isometric low-poly diorama, one interaction verb (talk). The counterfactual is visible as geometry — the amber second wing exists only in this timeline. A claim that passes the evidence rules is answered by the world: the archive door opens.</figcaption>
+</figure>
+
+<div class="legend"><span class="a">generated by Astra / live model</span><span class="b">counterfactual delta · director action</span><span class="c">cached world geometry</span></div>
+
+<!-- ============ 3. SPEC → GEOMETRY ============ -->
+<h2>3 · What the model emits vs. what the runtime draws</h2>
+<p class="lede">The contract that keeps the demo safe. Astra writes declarative primitives; the runtime owns the meshes. Five structure kinds cover a Hellenistic city, a market square, or a physics playground.</p>
+
+<figure>
+<svg viewBox="0 0 1040 250" role="img" aria-label="Mapping from WorldSpec JSON fields to three.js primitives: footprint plus height becomes an extruded box, colonnade becomes a row of cylinders under a slab, dome becomes a hemisphere, steps become stacked boxes, and NPC belief and concedes_if fields become the argument prompt.">
+<g font-family="IBM Plex Mono, monospace" font-size="11.5">
+  <text x="20" y="26" fill="var(--ink-3)" font-size="10.5" letter-spacing="1">WORLDSPEC (ASTRA)</text>
+  <text x="620" y="26" fill="var(--ink-3)" font-size="10.5" letter-spacing="1">RUNTIME (THREE.JS, HAND-WRITTEN TODAY)</text>
+  <g fill="var(--sea)">
+    <text x="20" y="62">{ kind: "box", footprint, height }</text>
+    <text x="20" y="102">{ kind: "colonnade", n: 6, span }</text>
+    <text x="20" y="142">{ kind: "dome", r }  ·  { kind: "steps", n }</text>
+    <text x="20" y="182">npc.belief · npc.argues_from · concedes_if[]</text>
+    <text x="20" y="222">evidence_rules[]  ·  win.min_evidence</text>
+  </g>
+  <g stroke="currentColor" stroke-width="1.1" fill="none">
+    <line x1="430" y1="58" x2="600" y2="58" marker-end="url(#ar)"/>
+    <line x1="430" y1="98" x2="600" y2="98" marker-end="url(#ar)"/>
+    <line x1="430" y1="138" x2="600" y2="138" marker-end="url(#ar)"/>
+    <line x1="430" y1="178" x2="600" y2="178" marker-end="url(#ar)"/>
+    <line x1="430" y1="218" x2="600" y2="218" marker-end="url(#ar)"/>
+  </g>
+  <!-- mini glyphs -->
+  <g stroke="var(--stone-dark)" fill="var(--stone)">
+    <polygon points="620,64 640,54 660,64 640,74"/><polygon points="620,64 640,74 640,50 620,40" fill="var(--stone-dark)"/>
+    <rect x="622" y="90" width="4" height="14"/><rect x="630" y="90" width="4" height="14"/><rect x="638" y="90" width="4" height="14"/><rect x="646" y="90" width="4" height="14"/><rect x="620" y="86" width="34" height="4"/>
+    <path d="M620 146 a16 16 0 0 1 32 0z"/>
+    <rect x="620" y="220" width="30" height="5"/><rect x="624" y="215" width="22" height="5"/><rect x="628" y="210" width="14" height="5"/>
+  </g>
+  <g font-family="IBM Plex Sans, sans-serif" font-size="12" fill="var(--ink)">
+    <text x="680" y="62">ExtrudeGeometry from footprint · flat-shaded MeshLambert</text>
+    <text x="680" y="102">CylinderGeometry × n under a slab · shared material</text>
+    <text x="680" y="142">SphereGeometry(θ=π/2) · BoxGeometry stack</text>
+    <text x="680" y="182">NPC system prompt + JSON tags {concedes, evidence_tags}</text>
+    <text x="680" y="222">Telemetry scorer → heatmap + argument-quality bar</text>
+  </g>
+</g>
+</svg>
+<figcaption>Every field on the left is validated against a JSON schema before it reaches the runtime; a failed field falls back to a default primitive rather than a retry. Generated three.js <em>code</em> is the riskier alternative — decide in hour one.</figcaption>
+</figure>
+
+<!-- ============ 4. STORYBOARD ============ -->
+<h2>4 · Demo storyboard · 3 minutes</h2>
+<p class="lede">Three live beats, three from video. Every beat is something an investor can see from the back of the room without reading a word.</p>
+
+<div class="grid3">
+
+<div class="panel">
+  <div class="t">0:00 – 0:20 · live</div>
+  <h3>Paste-to-world reveal <span class="tag live">streams</span></h3>
+  <svg viewBox="0 0 280 120" role="img" aria-label="Top-down wireframe of a city drawing itself in as the spec streams: footprints appear first, then walls, then a colonnade.">
+    <rect x="0.5" y="0.5" width="279" height="119" fill="var(--bg)" stroke="var(--line)"/>
+    <g stroke="var(--sea)" fill="none" stroke-width="1.2">
+      <rect x="30" y="30" width="60" height="40"/><rect x="110" y="30" width="60" height="40"/><rect x="30" y="80" width="40" height="26"/>
+    </g>
+    <g stroke="var(--sea)" fill="var(--sea-soft)" stroke-width="1.2"><rect x="190" y="30" width="50" height="30"/></g>
+    <g stroke="var(--line)" stroke-dasharray="3 3" fill="none"><rect x="190" y="72" width="60" height="34"/><rect x="110" y="80" width="60" height="26"/></g>
+    <text x="30" y="20" font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--ink-3)">spec 62% · 7 / 11 structures</text>
+  </svg>
+  <p>Wireframe footprints fill in as JSON tokens arrive; walls rise a second later. Build incrementally — never wait for the full spec.</p>
+</div>
+
+<div class="panel">
+  <div class="t">0:20 – 1:00 · video</div>
+  <h3>Two worlds, one lever</h3>
+  <svg viewBox="0 0 280 120" role="img" aria-label="Split screen: the recorded history on the left, the counterfactual on the right with an extra library wing and busier harbor highlighted in amber.">
+    <rect x="0.5" y="0.5" width="279" height="119" fill="var(--bg)" stroke="var(--line)"/>
+    <line x1="140" y1="0" x2="140" y2="120" stroke="var(--line)"/>
+    <g fill="var(--stone)" stroke="var(--stone-dark)"><rect x="30" y="50" width="50" height="30"/><rect x="170" y="50" width="50" height="30"/></g>
+    <rect x="220" y="50" width="26" height="30" fill="var(--amber-soft)" stroke="var(--amber)"/>
+    <g fill="var(--ink-2)"><rect x="40" y="24" width="14" height="6"/><rect x="180" y="24" width="14" height="6"/><rect x="204" y="24" width="14" height="6"/><rect x="228" y="24" width="14" height="6"/></g>
+    <text x="30" y="104" font-size="9.5">as recorded</text><text x="170" y="104" font-size="9.5" fill="var(--amber)">Library survives</text>
+  </svg>
+  <p>Same street grid; toggle the lever and watch buildings and ships appear. The thesis with no narration.</p>
+</div>
+
+<div class="panel">
+  <div class="t">1:00 – 2:00 · live</div>
+  <h3>The argument opens a door <span class="tag live">model call</span></h3>
+  <svg viewBox="0 0 280 120" role="img" aria-label="A weak claim leaves the archive door shut; a structural claim makes the librarian concede and the door swings open.">
+    <rect x="0.5" y="0.5" width="279" height="119" fill="var(--bg)" stroke="var(--line)"/>
+    <g fill="var(--stone)" stroke="var(--stone-dark)"><rect x="40" y="40" width="60" height="50"/><rect x="180" y="40" width="60" height="50"/></g>
+    <rect x="62" y="62" width="16" height="28" fill="var(--stone-dark)"/>
+    <polygon points="202,62 218,58 218,90 202,90" fill="var(--sea)"/>
+    <text x="40" y="106" font-size="9.5" fill="var(--ink-2)">"Caesar was bad" ✕</text>
+    <text x="180" y="106" font-size="9.5" fill="var(--sea)">"grain revenue…" ✓</text>
+  </svg>
+  <p>Argument quality made physical. Weak claim, shut door. Structural claim with evidence, the librarian concedes and the archive unlocks.</p>
+</div>
+
+<div class="panel">
+  <div class="t">2:00 – 2:40 · live</div>
+  <h3>Heatmap to patch <span class="tag live">director</span></h3>
+  <svg viewBox="0 0 280 120" role="img" aria-label="Teacher board shows students clustered at the merchant; teacher types a patch; a ledger appears on the merchant's table in the student view.">
+    <rect x="0.5" y="0.5" width="279" height="119" fill="var(--bg)" stroke="var(--line)"/>
+    <circle cx="70" cy="50" r="22" fill="var(--heat-3)" opacity=".4"/>
+    <g fill="var(--ink)"><circle cx="66" cy="46" r="2"/><circle cx="74" cy="54" r="2"/><circle cx="62" cy="56" r="2"/><circle cx="76" cy="44" r="2"/></g>
+    <text x="40" y="92" font-size="9.5" fill="var(--ink-2)">5 stuck · Merchant</text>
+    <line x1="120" y1="60" x2="160" y2="60" stroke="var(--amber)" stroke-width="1.4" stroke-dasharray="4 3"/>
+    <text x="140" y="52" text-anchor="middle" font-size="9" fill="var(--amber)">6.8 s</text>
+    <rect x="180" y="40" width="70" height="40" fill="var(--stone)" stroke="var(--stone-dark)"/>
+    <rect x="200" y="52" width="30" height="16" fill="var(--amber-soft)" stroke="var(--amber)"/>
+    <text x="180" y="92" font-size="9.5" fill="var(--amber)">ledger appears</text>
+  </svg>
+  <p>"Give the merchant a ledger." Cut to a student screen: scroll on the table, merchant turns. Under ten seconds, round trip.</p>
+</div>
+
+<div class="panel">
+  <div class="t">2:40 – 2:50 · video</div>
+  <h3>Thirty students, thirty framings</h3>
+  <svg viewBox="0 0 280 120" role="img" aria-label="A grid of thirty opening-screen thumbnails, each with a different name and interest hook, all the same world.">
+    <rect x="0.5" y="0.5" width="279" height="119" fill="var(--bg)" stroke="var(--line)"/>
+    <g fill="var(--panel)" stroke="var(--line)">
+      <rect x="14" y="14" width="40" height="26"/><rect x="60" y="14" width="40" height="26"/><rect x="106" y="14" width="40" height="26"/><rect x="152" y="14" width="40" height="26"/><rect x="198" y="14" width="40" height="26"/>
+      <rect x="14" y="46" width="40" height="26"/><rect x="60" y="46" width="40" height="26"/><rect x="106" y="46" width="40" height="26"/><rect x="152" y="46" width="40" height="26"/><rect x="198" y="46" width="40" height="26"/>
+      <rect x="14" y="78" width="40" height="26"/><rect x="60" y="78" width="40" height="26"/><rect x="106" y="78" width="40" height="26"/><rect x="152" y="78" width="40" height="26"/><rect x="198" y="78" width="40" height="26"/>
+    </g>
+    <g fill="var(--amber)"><rect x="18" y="30" width="20" height="3"/><rect x="64" y="30" width="26" height="3"/><rect x="110" y="30" width="16" height="3"/><rect x="156" y="30" width="24" height="3"/><rect x="202" y="30" width="20" height="3"/><rect x="18" y="62" width="22" height="3"/><rect x="64" y="62" width="18" height="3"/><rect x="110" y="62" width="28" height="3"/><rect x="156" y="62" width="14" height="3"/><rect x="202" y="62" width="24" height="3"/><rect x="18" y="94" width="26" height="3"/><rect x="64" y="94" width="16" height="3"/><rect x="110" y="94" width="20" height="3"/><rect x="156" y="94" width="26" height="3"/><rect x="202" y="94" width="18" height="3"/></g>
+    <text x="248" y="64" font-size="9.5" fill="var(--ink-3)">+15</text>
+  </svg>
+  <p>Courier, cook, dockhand, scribe — one world, personalized framing per student. Personalization at a glance, free to render.</p>
+</div>
+
+<div class="panel">
+  <div class="t">2:50 – 3:00 · video · if time</div>
+  <h3>Break the universe</h3>
+  <svg viewBox="0 0 280 120" role="img" aria-label="Same runtime, physics lesson: gravity set to 3 meters per second squared, a ball arcs impossibly high over the colonnade.">
+    <rect x="0.5" y="0.5" width="279" height="119" fill="var(--bg)" stroke="var(--line)"/>
+    <g fill="var(--panel)" stroke="var(--stone-dark)"><rect x="120" y="70" width="5" height="30"/><rect x="134" y="70" width="5" height="30"/><rect x="148" y="70" width="5" height="30"/><rect x="162" y="70" width="5" height="30"/><rect x="116" y="66" width="56" height="4"/></g>
+    <path d="M40 100 Q140 -40 240 100" fill="none" stroke="var(--sea)" stroke-width="1.4" stroke-dasharray="3 3"/>
+    <circle cx="140" cy="30" r="5" fill="var(--sea)"/>
+    <text x="40" y="24" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="var(--ink-2)">g = 3.0 m/s²</text>
+  </svg>
+  <p>Ten seconds of the same engine running a physics lesson. Says "platform," then stop talking.</p>
+</div>
+
+</div>
+
+<div class="note"><strong>Visual direction for the runtime.</strong> Flat-shaded low-poly, one warm directional light plus soft fog, a limestone-and-Aegean palette; the counterfactual delta is always amber so the audience can find it. Camera: third-person isometric orbit, click-to-move. Target 5–8 structures, 3–4 NPCs, 30–60 s of walking. Anything beyond this is cut.</div>
+
+</div>

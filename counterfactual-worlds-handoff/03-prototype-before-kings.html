@@ -1,0 +1,512 @@
+<title>Before Kings</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#EDE9DF; --panel:#F8F6F0; --panel-a:rgba(248,246,240,.92); --ink:#1C2130; --ink-2:#4B5264; --ink-3:#858B98;
+  --line:#CDC9BE; --sea:#1F6F8B; --sea-soft:#D9E7EC; --amber:#B8781F; --amber-soft:#F3E4C8; --ok:#3B7D4F; --ok-soft:#DCEBDF;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141720; --panel:#1D212B; --panel-a:rgba(29,33,43,.92); --ink:#E9E6DE; --ink-2:#B5B8C1; --ink-3:#7E838F;
+  --line:#343947; --sea:#63B6D1; --sea-soft:#1E3641; --amber:#E2A64D; --amber-soft:#3B301C; --ok:#7CC48F; --ok-soft:#1F3626;
+}}
+:root[data-theme="dark"]{
+  --bg:#141720; --panel:#1D212B; --panel-a:rgba(29,33,43,.92); --ink:#E9E6DE; --ink-2:#B5B8C1; --ink-3:#7E838F;
+  --line:#343947; --sea:#63B6D1; --sea-soft:#1E3641; --amber:#E2A64D; --amber-soft:#3B301C; --ok:#7CC48F; --ok-soft:#1F3626;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:14px;line-height:1.5;overflow:hidden}
+#app{position:relative;width:100%;height:100vh;height:100dvh;overflow:hidden}
+#c{position:absolute;inset:0;display:block;width:100%;height:100%;cursor:crosshair}
+.mono{font-family:"IBM Plex Mono",monospace}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;margin:0;text-wrap:balance}
+button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:6px 12px;border-radius:3px}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:2px solid var(--sea);outline-offset:2px}
+button.primary{background:var(--sea);border-color:var(--sea);color:#fff;font-weight:600}
+button.amberb{background:var(--amber);border-color:var(--amber);color:#fff;font-weight:600}
+button:disabled{opacity:.5;cursor:default}
+
+/* top bar */
+#top{position:absolute;top:0;left:0;right:0;display:flex;gap:12px;align-items:center;padding:10px 16px;background:var(--panel-a);border-bottom:1px solid var(--line);backdrop-filter:blur(6px);z-index:5;flex-wrap:wrap}
+#top .title{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17px;letter-spacing:-.01em}
+#top .sub{font-size:12px;color:var(--ink-3)}
+#top .spacer{flex:1}
+.lever{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-2)}
+.lever input{appearance:none;width:34px;height:18px;border-radius:9px;background:var(--line);position:relative;cursor:pointer;margin:0}
+.lever input::after{content:"";position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;transition:left .15s}
+.lever input:checked{background:var(--amber)}
+.lever input:checked::after{left:18px}
+.pill{font-size:11px;padding:2px 8px;border:1px solid var(--line);border-radius:10px;color:var(--ink-2)}
+.pill.live{border-color:var(--sea);color:var(--sea)}
+
+/* left: target + evidence */
+#left{position:absolute;left:16px;top:70px;width:270px;display:flex;flex-direction:column;gap:10px;z-index:4}
+.card{background:var(--panel-a);border:1px solid var(--line);border-radius:4px;padding:12px 14px;backdrop-filter:blur(6px)}
+.card .lab{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+.target{font-weight:600;font-size:13.5px}
+.npcs{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.npcs span{font-size:11.5px;padding:2px 8px;border:1px solid var(--line);border-radius:10px;color:var(--ink-2)}
+.npcs span.done{border-color:var(--ok);color:var(--ok);background:var(--ok-soft)}
+.ev{display:flex;flex-direction:column;gap:6px}
+.ev div{font-size:12.5px;padding:6px 8px;border:1px solid var(--line);border-radius:3px;color:var(--ink-3);border-style:dashed}
+.ev div.got{border-style:solid;border-color:var(--amber);background:var(--amber-soft);color:var(--ink)}
+.ev b{display:block;font-weight:600;font-size:12.5px}
+.bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden;position:relative;margin-top:6px}
+.bar i{position:absolute;left:0;top:0;bottom:0;background:var(--ink-3)}
+.bar b{position:absolute;left:0;top:0;bottom:0;background:var(--sea);opacity:.9}
+.small{font-size:12px;color:var(--ink-2)}
+
+/* right: dialogue */
+#dlg{position:absolute;right:16px;top:70px;width:330px;max-height:calc(100% - 150px);display:flex;flex-direction:column;z-index:4}
+#dlg .card{display:flex;flex-direction:column;gap:10px;max-height:100%}
+#dlg h3{font-size:15px}
+#dlg .who{font-size:11.5px;color:var(--ink-3)}
+.thread{display:flex;flex-direction:column;gap:8px;overflow:auto;max-height:38vh;padding-right:2px}
+.msg{padding:8px 10px;border-radius:4px;font-size:13px;max-width:95%}
+.msg.npc{background:var(--sea-soft);align-self:flex-start}
+.msg.you{background:var(--bg);border:1px solid var(--line);align-self:flex-end}
+.msg.sys{font-size:11.5px;color:var(--ink-3);align-self:center;background:none}
+.tags{display:flex;gap:5px;flex-wrap:wrap}
+.tags span{font-size:10.5px;padding:2px 7px;border-radius:9px;background:var(--sea);color:#fff;font-weight:600}
+.tags span.miss{background:none;border:1px solid var(--line);color:var(--ink-3);font-weight:400}
+.compose{display:flex;gap:6px}
+.compose input{flex:1;font:inherit;padding:7px 9px;border:1px solid var(--line);border-radius:3px;background:var(--panel);color:var(--ink);min-width:0}
+.hint{font-size:11.5px;color:var(--ink-3)}
+.hint button{padding:2px 7px;font-size:11px;margin:2px 2px 0 0}
+
+/* bottom: timeline + controls */
+#bottom{position:absolute;left:16px;right:16px;bottom:12px;z-index:4;display:flex;gap:10px;align-items:flex-end;flex-wrap:wrap}
+#timeline{flex:1;min-width:260px}
+#timeline svg{display:block;width:100%;height:auto;color:var(--ink)}
+#help{font-size:11.5px;color:var(--ink-3);background:var(--panel-a);border:1px solid var(--line);border-radius:4px;padding:6px 10px}
+
+/* 3D labels */
+.lbl{position:absolute;transform:translate(-50%,-100%);pointer-events:none;white-space:nowrap;font-size:11.5px;font-weight:600;color:var(--ink);background:var(--panel-a);border:1px solid var(--line);padding:2px 7px;border-radius:3px;z-index:3}
+.lbl small{display:block;font-weight:400;color:var(--ink-3);font-size:10.5px}
+.lbl.pred{border-color:var(--amber);color:var(--amber);background:var(--amber-soft)}
+.lbl.talk{pointer-events:auto;cursor:pointer;border-color:var(--sea);color:var(--sea)}
+.lbl.relic{border-color:var(--amber);color:var(--amber)}
+
+/* intro */
+#intro{position:absolute;inset:0;z-index:20;display:grid;place-items:center;background:rgba(20,23,32,.45);padding:16px}
+#intro .card{max-width:560px;width:100%;padding:22px 24px;background:var(--panel);display:flex;flex-direction:column;gap:14px}
+#intro h1{font-size:28px;line-height:1.1}
+#intro .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+.roles{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.roles button{text-align:left;padding:10px;display:flex;flex-direction:column;gap:2px;border-radius:4px}
+.roles button b{font-size:13px}
+.roles button span{font-size:11.5px;color:var(--ink-3)}
+.roles button.sel{border-color:var(--sea);background:var(--sea-soft)}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+#brief{font-size:13.5px;color:var(--ink-2)}
+
+/* toast + win */
+#toast{position:absolute;left:50%;top:76px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 14px;border-radius:4px;font-size:13px;z-index:9;opacity:0;transition:opacity .2s;pointer-events:none}
+#toast.on{opacity:1}
+#win{position:absolute;inset:0;z-index:15;display:none;place-items:center;background:rgba(20,23,32,.35);padding:16px}
+#win .card{max-width:520px;background:var(--panel);padding:22px 24px;display:flex;flex-direction:column;gap:12px}
+
+@media (max-width:820px){
+  #left{width:210px;top:96px}
+  #dlg{width:min(330px,calc(100% - 32px));top:auto;bottom:70px;max-height:48vh}
+  #timeline{display:none}
+  .roles{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion: reduce){.lever input::after{transition:none}}
+</style>
+
+<div id="app">
+<canvas id="c" aria-label="Explorable low-poly diorama of four prehistoric sites"></canvas>
+
+<div id="top">
+  <div><div class="title">Before Kings</div><div class="sub">Lesson 8 · <em>The Dawn of Everything</em>, ch. 8–9 · four sites, one claim</div></div>
+  <div class="spacer"></div>
+  <label class="lever" title="Structural counterfactual: what the world would contain if the textbook story were true">
+    <input type="checkbox" id="lever"> <span>Textbook story: <b>farming → surplus → kings</b></span>
+  </label>
+  <span class="pill" id="modepill">scripted NPCs</span>
+  <button id="simpler" title="Shorter sentences, fewer terms">Simpler text</button>
+</div>
+
+<div id="left">
+  <div class="card">
+    <div class="lab">Your claim to defend</div>
+    <div class="target">"Large, monumental societies existed for thousands of years without kings — and farming did not automatically create rulers."</div>
+    <div class="npcs" id="npcstatus"></div>
+  </div>
+  <div class="card">
+    <div class="lab">Evidence · walk to the amber relics</div>
+    <div class="ev" id="evlist"></div>
+  </div>
+  <div class="card">
+    <div class="lab">Argument quality</div>
+    <div class="bar"><i id="barfirst" style="width:0%"></i><b id="barlast" style="width:0%"></b></div>
+    <div class="small" id="bartext">No claims yet · first vs. latest, out of 4</div>
+  </div>
+</div>
+
+<div id="dlg" hidden>
+  <div class="card">
+    <div><h3 id="npcname">—</h3><div class="who" id="npcwho"></div></div>
+    <div class="thread" id="thread"></div>
+    <div class="tags" id="tags"></div>
+    <div class="compose"><input id="say" placeholder="Make your claim… cite something you've found" maxlength="400" aria-label="Your claim"><button class="primary" id="send">Say</button></div>
+    <div class="hint" id="hint"></div>
+    <div class="row"><button id="leave">Walk away</button><span class="small" id="dlgstate"></span></div>
+  </div>
+</div>
+
+<div id="bottom">
+  <div id="timeline" class="card">
+    <div class="lab">When · years before present</div>
+    <svg viewBox="0 0 640 64" role="img" aria-label="Timeline of the four sites from 11,500 to 3,000 years ago, with the earliest kings marked around 5,000 years ago">
+      <line x1="20" y1="34" x2="620" y2="34" stroke="currentColor" stroke-width="1"/>
+      <g font-family="IBM Plex Mono, monospace" font-size="9.5" fill="currentColor" text-anchor="middle">
+        <text x="20" y="54">12,000</text><text x="170" y="54">9,000</text><text x="320" y="54">6,000</text><text x="470" y="54">3,000</text><text x="620" y="54">now</text>
+      </g>
+      <g font-family="IBM Plex Sans, sans-serif" font-size="10" fill="currentColor" text-anchor="middle">
+        <rect x="42" y="28" width="66" height="12" fill="var(--sea)" opacity=".85"/><text x="75" y="20">Göbekli Tepe</text>
+        <rect x="150" y="28" width="60" height="12" fill="var(--sea)" opacity=".85"/><text x="180" y="20">Çatalhöyük</text>
+        <rect x="290" y="28" width="40" height="12" fill="var(--sea)" opacity=".85"/><text x="310" y="20">Nebelivka</text>
+        <rect x="425" y="28" width="30" height="12" fill="var(--sea)" opacity=".85"/><text x="440" y="20">Poverty Point</text>
+        <line x1="370" y1="22" x2="370" y2="46" stroke="var(--amber)" stroke-width="1.5" stroke-dasharray="3 2"/><text x="370" y="12" fill="var(--amber)" font-size="9.5">first kings</text>
+      </g>
+    </svg>
+  </div>
+  <div id="help">Click ground to walk · WASD also works · drag to orbit · scroll to zoom</div>
+</div>
+
+<div id="toast" role="status"></div>
+
+<div id="intro">
+  <div class="card">
+    <div class="eyebrow">Student view · World History · variant preview</div>
+    <h1>Before Kings</h1>
+    <p id="brief"></p>
+    <div class="lab" style="font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)">Who are you in this world?</div>
+    <div class="roles" id="roles"></div>
+    <div class="row"><button class="primary" id="start">Enter the world →</button><span class="small">Defend the claim to 2 of 4 people. Collect 3 relics first.</span></div>
+  </div>
+</div>
+
+<div id="win"><div class="card">
+  <h2 style="font-size:22px">The claim holds — for now</h2>
+  <p id="wintext" class="small"></p>
+  <p class="small">Try the lever in the top bar: it shows what the textbook story <em>predicts</em> should be at each site — palaces, granaries, royal tombs. None have been found. That gap is your argument.</p>
+  <div class="row"><button class="primary" id="winclose">Keep exploring</button></div>
+</div></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(() => {
+'use strict';
+if(!window.THREE){ document.getElementById('brief').textContent='The 3D library did not load. Reload the page to try again.'; document.getElementById('start').disabled=true; return; }
+// ---------------------------------------------------------------- content
+const ROLES = [
+  {id:'courier', name:'Courier', hook:'you carry messages and obsidian between settlements', addr:'courier'},
+  {id:'potter',  name:'Apprentice potter', hook:'you read a place by its clay and its kilns', addr:'potter'},
+  {id:'cook',    name:'Feast cook', hook:'you know who eats with whom, and who never has to', addr:'cook'},
+];
+const BRIEF = {
+  std: role => `Your teacher's claim: for most of the last twelve thousand years, people built big things and lived in big places without kings. You are a ${role.name.toLowerCase()} — ${role.hook}. Walk four real sites, pick up what the diggers actually found, and make the argument to the people who live there. They will not accept opinion.`,
+  simple: role => `Big towns and big monuments came long before kings. You are a ${role.name.toLowerCase()} — ${role.hook}. Visit four real places. Pick up three objects. Then explain to two people why no king was needed. Use what you found.`,
+};
+const SITES = [
+  { id:'gobekli', name:'Göbekli Tepe', when:'c. 9500–8000 BCE · Anatolia', pos:[-46,0,-38],
+    facts:[
+      'Rings of T-shaped limestone pillars up to 5.5 m tall, some weighing over ten tonnes, carved with foxes, boars, snakes and vultures.',
+      'Built by people who hunted gazelle and gathered wild cereals — monumental architecture before, or at the very start of, farming.',
+      'Huge quantities of animal bone and grinding stones suggest seasonal gatherings and feasting rather than a resident elite.',
+    ],
+    npc:{ name:'Pillar-carver', who:'argues from labour and feasting', pos:[-40,0,-30],
+      open:{std:'You want to know who ordered these stones raised, {addr}? No one did. Ask me why a thousand people would haul ten tonnes uphill with no king to make them — and bring something better than a guess.',
+            simple:'No one ordered these stones, {addr}. So why did a thousand people carry them up the hill? Tell me — and show me proof.'},
+      concedes:['seasonal','feast','gather','wild','before farming','hunt','forag','no ruler','volunt','ritual'] },
+    relic:{ id:'pillar', name:'Carved T-pillar fragment', pos:[-52,0,-46], text:'Limestone, fox in low relief. Quarried a few hundred metres away and carved on site — skilled work, but no sign of a workshop compound or an overseer\'s house.' },
+    predicted:[{kind:'palace',pos:[-34,0,-48],label:'Chief\'s compound'},{kind:'tomb',pos:[-58,0,-28],label:'Royal tomb'}] },
+  { id:'catal', name:'Çatalhöyük', when:'c. 7100–5900 BCE · Anatolia', pos:[44,0,-40],
+    facts:[
+      'Up to ~8,000 people in tightly packed mudbrick houses entered by ladder through the roof — no streets, no walls, no gates.',
+      'Houses are strikingly similar in size and plan across 1,200 years; no palace, temple or public building has been found.',
+      'The dead were buried under house floors; walls carried paintings and plastered wild-bull skulls. Obsidian was worked in nearly every house.',
+    ],
+    npc:{ name:'Household elder', who:'argues from equality of houses', pos:[36,0,-30],
+      open:{std:'Eight thousand of us, {addr}, and you have walked our roofs looking for the big house. There is none. Tell me why a town this size never grew a lord — and show me something you have actually picked up.',
+            simple:'Eight thousand people live here, {addr}. You looked for the big house. There is none. Why did such a big town never get a lord? Show me proof.'},
+      concedes:['same size','similar','no palace','no temple','under the floor','burial','every house','equal','obsidian','no public'] },
+    relic:{ id:'skull', name:'Plastered aurochs skull', pos:[54,0,-50], text:'A wild bull\'s skull, plastered and painted, set into an ordinary house wall. Found in many houses, not one — ritual was domestic, not centralised.' },
+    predicted:[{kind:'palace',pos:[30,0,-52],label:'Palace'},{kind:'granary',pos:[58,0,-30],label:'Central granary'}] },
+  { id:'nebel', name:'Nebelivka', when:'c. 4000 BCE · Ukraine (Trypillia mega-site)', pos:[-44,0,40],
+    facts:[
+      'Over 1,000 houses arranged in two great concentric rings around an open centre, spanning some 240 hectares — larger than early Uruk.',
+      'No central administrative building, no fortification, no rich burials. Neighbourhood "assembly houses" are spaced evenly around the rings.',
+      'Houses were deliberately burned, apparently at the end of their use — a shared custom across the mega-sites.',
+    ],
+    npc:{ name:'Potter', who:'argues from the empty centre', pos:[-36,0,48],
+      open:{std:'Look at the middle of our town, {addr}. Empty. Ten thousand people arranged in rings around nothing. If we needed a ruler, where would he sit? Explain the empty centre to me — with evidence.',
+            simple:'Look at the middle of our town, {addr}. It is empty. Ten thousand people live in rings around nothing. If we needed a ruler, where would he live? Explain — with proof.'},
+      concedes:['empty cent','ring','no admin','assembly','neighbo','burn','no wall','no rich','spaced','even'] },
+    relic:{ id:'pot', name:'Painted Trypillia vessel', pos:[-56,0,50], text:'Spiral-painted pottery, fired in neighbourhood kilns. Every ring of houses had its own — no single production centre, no palace ware.' },
+    predicted:[{kind:'palace',pos:[-44,0,40],label:'Ruler\'s hall (in the empty centre)'},{kind:'wall',pos:[-44,0,40],label:'City wall'}] },
+  { id:'poverty', name:'Poverty Point', when:'c. 1700–1100 BCE · Louisiana', pos:[46,0,42],
+    facts:[
+      'Six concentric earthen ridges over a kilometre across, plus a mound 22 m high — raised by hunter-fisher-gatherers with no farming at all.',
+      'Stone arrived from over 1,000 km away: copper from the Great Lakes, soapstone from the Appalachians. People converged here seasonally.',
+      'The mound may have been built in a matter of months by a large gathering — and then people dispersed again.',
+    ],
+    npc:{ name:'Long-distance trader', who:'argues from seasonal gathering', pos:[38,0,32],
+      open:{std:'You see the mound, {addr}. Twenty-two metres, hauled in baskets, by people who plant nothing. We come together for a season and go home. So who is the king of a town that empties every winter? Convince me — with what you carry.',
+            simple:'See the mound, {addr}? Twenty-two metres high, carried in baskets by people who grow no crops. We meet here for a season, then go home. Who could be king of a town that empties every winter? Convince me with proof.'},
+      concedes:['season','disperse','gather','no farm','hunter','fish','trade','1,000','far away','basket','months','empties'] },
+    relic:{ id:'balls', name:'Poverty Point objects', pos:[58,0,52], text:'Hand-moulded baked-clay cooking balls, in millions. Portable heat for people who came and went — the kitchen of a seasonal city.' },
+    predicted:[{kind:'tomb',pos:[56,0,30],label:'Royal tomb in the mound'},{kind:'granary',pos:[32,0,54],label:'Tax storehouse'}] },
+];
+const STRUCTURAL = ['season','feast','gather','trade','equal','same size','similar','burial','under the floor','empty cent','ring','assembly','no palace','no temple','no wall','no admin','no rich','disperse','no farm','hunter','forag','wild','basket','every house','neighbo','custom','ritual','volunt','before farming','months'];
+const ACTOR_ONLY = ['a great leader','strong man','the chief decided','a king ordered','one man','hero','genius','one leader'];
+
+// ---------------------------------------------------------------- state
+const S = { role:ROLES[0], simple:false, lever:false, evidence:new Set(), conceded:new Set(), firstScore:null, lastScore:null, claims:0, talking:null, turns:{}, sample:null };
+
+// ---------------------------------------------------------------- three setup
+const canvas = document.getElementById('c');
+const renderer = new THREE.WebGLRenderer({canvas, antialias:true});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.shadowMap.enabled = true;
+const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xDCE6EA);
+scene.fog = new THREE.Fog(0xDCE6EA, 110, 220);
+const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 500);
+const hemi = new THREE.HemisphereLight(0xEAF2F5, 0x8C7A5A, 0.75); scene.add(hemi);
+const sun = new THREE.DirectionalLight(0xFFF1D6, 1.1); sun.position.set(60, 90, 30); sun.castShadow = true;
+sun.shadow.mapSize.set(2048,2048); sun.shadow.camera.left=-120; sun.shadow.camera.right=120; sun.shadow.camera.top=120; sun.shadow.camera.bottom=-120; sun.shadow.camera.far=300;
+scene.add(sun);
+
+const M = {
+  stone: new THREE.MeshLambertMaterial({color:0xD8D0BC}),
+  stoneDark: new THREE.MeshLambertMaterial({color:0xB8AE97}),
+  mud: new THREE.MeshLambertMaterial({color:0xC9A97A}),
+  mudDark: new THREE.MeshLambertMaterial({color:0xA88A5E}),
+  earth: new THREE.MeshLambertMaterial({color:0x9A7B57}),
+  grass: new THREE.MeshLambertMaterial({color:0x9DB27A}),
+  wood: new THREE.MeshLambertMaterial({color:0x8A6A45}),
+  water: new THREE.MeshLambertMaterial({color:0x7FB3C4, transparent:true, opacity:.85}),
+  npc: new THREE.MeshLambertMaterial({color:0x1F6F8B}),
+  player: new THREE.MeshLambertMaterial({color:0xB8781F}),
+  relic: new THREE.MeshLambertMaterial({color:0xE2A64D, emissive:0x8A5A10}),
+  pred: new THREE.MeshLambertMaterial({color:0xE2A64D, transparent:true, opacity:.55}),
+  roof: new THREE.MeshLambertMaterial({color:0x7A5A3A}),
+};
+function box(w,h,d,mat,x,y,z,ry=0){const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),mat);m.position.set(x,y+h/2,z);m.rotation.y=ry;m.castShadow=true;m.receiveShadow=true;return m;}
+
+// terrain: gentle hills, flattened under sites
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(260,260,64,64), M.grass);
+ground.rotation.x=-Math.PI/2; ground.receiveShadow=true;
+{
+  const p = ground.geometry.attributes.position;
+  for(let i=0;i<p.count;i++){
+    const x=p.getX(i), y=p.getY(i); // plane coords (y -> -z)
+    let h = Math.sin(x*0.07)*1.4 + Math.cos(y*0.05)*1.2 + Math.sin((x+y)*0.03)*1.8;
+    for(const s of SITES){ const d=Math.hypot(x-s.pos[0], -y-s.pos[2]); if(d<26) h*= Math.min(1, Math.max(0,(d-16)/10)); }
+    const dc=Math.hypot(x,y); if(dc<10) h*=dc/10;
+    p.setZ(i,h);
+  }
+  ground.geometry.computeVertexNormals();
+}
+scene.add(ground);
+// bayou near Poverty Point
+const water = new THREE.Mesh(new THREE.CircleGeometry(22,24), M.water); water.rotation.x=-Math.PI/2; water.position.set(70,0.15,66); scene.add(water);
+// paths from centre to each site
+for(const s of SITES){ const len=Math.hypot(s.pos[0],s.pos[2]); const path=new THREE.Mesh(new THREE.PlaneGeometry(2.2,len), M.earth); path.rotation.x=-Math.PI/2; path.rotation.z=-Math.atan2(s.pos[0],s.pos[2]); path.position.set(s.pos[0]/2,0.06,s.pos[2]/2); path.receiveShadow=true; scene.add(path); }
+// centre marker: the lesson's 'now' — a simple stone circle
+for(let i=0;i<8;i++){ const a=i/8*Math.PI*2; scene.add(box(0.8,0.6,0.8,M.stoneDark,Math.cos(a)*4,0,Math.sin(a)*4)); }
+
+// -------- site builders
+function buildGobekli(g,[x,,z]){
+  const R=9;
+  for(let i=0;i<22;i++){const a=i/22*Math.PI*2; g.add(box(1.6,1.2,0.8,M.stoneDark,x+Math.cos(a)*R,0,z+Math.sin(a)*R,-a));}
+  for(let i=0;i<10;i++){const a=i/10*Math.PI*2+0.3; const px=x+Math.cos(a)*(R-1.6), pz=z+Math.sin(a)*(R-1.6); g.add(box(0.7,3.6,0.5,M.stone,px,0,pz,-a)); g.add(box(1.6,0.6,0.7,M.stone,px,3.6,pz,-a));}
+  for(const dx of [-1.4,1.4]){ g.add(box(0.9,5.2,0.6,M.stone,x+dx,0,z)); g.add(box(2.2,0.7,0.8,M.stone,x+dx,5.2,z)); }
+  const R2=6; const ox=x-16, oz=z+8;
+  for(let i=0;i<14;i++){const a=i/14*Math.PI*2; g.add(box(1.4,1,0.7,M.stoneDark,ox+Math.cos(a)*R2,0,oz+Math.sin(a)*R2,-a));}
+  for(let i=0;i<6;i++){const a=i/6*Math.PI*2; const px=ox+Math.cos(a)*(R2-1.3), pz=oz+Math.sin(a)*(R2-1.3); g.add(box(0.6,2.8,0.4,M.stone,px,0,pz,-a)); g.add(box(1.3,0.5,0.6,M.stone,px,2.8,pz,-a));}
+}
+function buildCatal(g,[x,,z]){
+  let seed=7; const rnd=()=>{seed=(seed*9301+49297)%233280;return seed/233280;};
+  for(let i=-4;i<=4;i++)for(let j=-4;j<=4;j++){
+    if(Math.hypot(i,j)>4.6) continue;
+    const h=2.4+Math.floor(rnd()*3)*0.9; const w=3.4, d=3.4;
+    const hx=x+i*3.5, hz=z+j*3.5;
+    g.add(box(w,h,d,(i+j)%2?M.mud:M.mudDark,hx,0,hz));
+    if(rnd()<0.45){ g.add(box(0.5,0.5,0.5,M.stoneDark,hx+0.9,h,hz-0.9)); } // roof hatch
+    if(rnd()<0.3){ const l=box(0.15,1.6,0.6,M.wood,hx-1.2,h,hz+1.2); l.rotation.z=0.25; g.add(l);} // ladder
+  }
+}
+function buildNebelivka(g,[x,,z]){
+  for(const [R,n] of [[19,34],[14,26]]){
+    for(let i=0;i<n;i++){const a=i/n*Math.PI*2+(R===14?0.1:0); const hx=x+Math.cos(a)*R, hz=z+Math.sin(a)*R;
+      const big = i%7===0; const w=big?3.2:2.2, d=big?2:1.5, h=big?2.2:1.7;
+      g.add(box(w,h,d,big?M.mudDark:M.mud,hx,0,hz,-a));
+      const roof=new THREE.Mesh(new THREE.ConeGeometry(Math.max(w,d)*0.72,1.1,4),M.roof); roof.position.set(hx,h+0.55,hz); roof.rotation.y=-a+Math.PI/4; roof.castShadow=true; g.add(roof);
+    }
+  }
+  // burnt house
+  g.add(box(2.2,0.5,1.5,new THREE.MeshLambertMaterial({color:0x3A3330}),x+8,0,z-3));
+}
+function buildPoverty(g,[x,,z]){
+  for(let k=0;k<6;k++){ const r=6+k*2.6; const t=new THREE.Mesh(new THREE.TorusGeometry(r,0.9,6,40,Math.PI),M.earth); t.rotation.x=-Math.PI/2; t.rotation.z=Math.PI/2; t.scale.set(1,1,0.45); t.position.set(x+6,0.2,z); t.castShadow=true; t.receiveShadow=true; g.add(t); }
+  const mound=new THREE.Mesh(new THREE.ConeGeometry(7,9,6),M.earth); mound.position.set(x-10,4.5,z-6); mound.castShadow=true; g.add(mound);
+  const small=new THREE.Mesh(new THREE.ConeGeometry(3,2.4,6),M.earth); small.position.set(x+20,1.2,z+14); small.castShadow=true; g.add(small);
+  // hearths
+  for(let i=0;i<6;i++){ g.add(box(0.8,0.3,0.8,M.stoneDark,x+2+i*2.4,0,z+8+(i%2))); }
+}
+const siteGroups = {};
+const predGroup = new THREE.Group(); predGroup.visible=false; scene.add(predGroup);
+const predLabels = [];
+for(const s of SITES){
+  const g=new THREE.Group(); scene.add(g); siteGroups[s.id]=g;
+  ({gobekli:buildGobekli,catal:buildCatal,nebel:buildNebelivka,poverty:buildPoverty})[s.id](g,s.pos);
+  // predicted structures (counterfactual)
+  for(const p of s.predicted){
+    const [px,,pz]=p.pos; let m;
+    if(p.kind==='palace'){ m=box(9,6,7,M.pred,px,0,pz); predGroup.add(m); predGroup.add(box(3,3,3,M.pred,px,6,pz)); }
+    else if(p.kind==='tomb'){ m=new THREE.Mesh(new THREE.ConeGeometry(4.5,6,4),M.pred); m.position.set(px,3,pz); m.rotation.y=Math.PI/4; predGroup.add(m); }
+    else if(p.kind==='granary'){ m=new THREE.Mesh(new THREE.CylinderGeometry(3,3,6,10),M.pred); m.position.set(px,3,pz); predGroup.add(m); const cap=new THREE.Mesh(new THREE.ConeGeometry(3.4,2,10),M.pred); cap.position.set(px,7,pz); predGroup.add(cap); }
+    else if(p.kind==='wall'){ m=new THREE.Mesh(new THREE.TorusGeometry(23,0.7,4,48),M.pred); m.rotation.x=-Math.PI/2; m.scale.set(1,1,2.2); m.position.set(px,0.8,pz); predGroup.add(m); }
+    predLabels.push({pos:new THREE.Vector3(px, p.kind==='wall'?3:8, pz), text:p.label, sub:'predicted · not found', cls:'pred'});
+  }
+}
+// NPCs, relics, player
+function person(mat,x,z){ const g=new THREE.Group(); const b=new THREE.Mesh(new THREE.CylinderGeometry(0.45,0.5,1.5,10),mat); b.position.y=0.75; b.castShadow=true; const h=new THREE.Mesh(new THREE.SphereGeometry(0.38,12,10),mat); h.position.y=1.85; h.castShadow=true; g.add(b,h); g.position.set(x,0,z); return g; }
+const npcObjs = SITES.map(s=>{ const o=person(M.npc,s.npc.pos[0],s.npc.pos[2]); o.userData.site=s; scene.add(o); return o; });
+const relicObjs = SITES.map(s=>{ const o=new THREE.Mesh(new THREE.OctahedronGeometry(0.7),M.relic); o.position.set(s.relic.pos[0],1.2,s.relic.pos[2]); o.castShadow=true; o.userData.site=s; scene.add(o); return o; });
+const player = person(M.player,0,6); scene.add(player);
+const target = new THREE.Vector3(0,0,6);
+const marker = new THREE.Mesh(new THREE.RingGeometry(0.6,0.8,24), new THREE.MeshBasicMaterial({color:0xB8781F,side:THREE.DoubleSide})); marker.rotation.x=-Math.PI/2; marker.visible=false; scene.add(marker);
+
+// camera orbit
+let yaw=Math.PI*0.25, pitch=0.62, dist=46;
+function updateCamera(){ const cx=player.position.x+Math.sin(yaw)*Math.cos(pitch)*dist, cz=player.position.z+Math.cos(yaw)*Math.cos(pitch)*dist, cy=player.position.y+Math.sin(pitch)*dist; camera.position.lerp(new THREE.Vector3(cx,cy,cz),0.12); camera.lookAt(player.position.x,player.position.y+1,player.position.z); }
+function resize(){ const w=canvas.clientWidth,h=canvas.clientHeight; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix(); }
+window.addEventListener('resize',resize); resize();
+
+// input
+const ray=new THREE.Raycaster(); const mouse=new THREE.Vector2(); let down=null, dragged=false;
+canvas.addEventListener('pointerdown',e=>{down={x:e.clientX,y:e.clientY,yaw,pitch};dragged=false;});
+canvas.addEventListener('pointermove',e=>{ if(!down) return; const dx=e.clientX-down.x, dy=e.clientY-down.y; if(Math.hypot(dx,dy)>4) dragged=true; if(dragged){ yaw=down.yaw-dx*0.006; pitch=Math.min(1.2,Math.max(0.25,down.pitch+dy*0.005)); }});
+canvas.addEventListener('pointerup',e=>{ if(down&&!dragged) clickAt(e.clientX,e.clientY); down=null; });
+canvas.addEventListener('wheel',e=>{ dist=Math.min(90,Math.max(18,dist+e.deltaY*0.03)); },{passive:true});
+function clickAt(cx,cy){ const r=canvas.getBoundingClientRect(); mouse.set(((cx-r.left)/r.width)*2-1, -((cy-r.top)/r.height)*2+1); ray.setFromCamera(mouse,camera);
+  const hitN=ray.intersectObjects(npcObjs,true)[0]; if(hitN){ let o=hitN.object; while(o&&!o.userData.site) o=o.parent; goTo(o.position.x,o.position.z,()=>talk(o.userData.site)); return; }
+  const hitR=ray.intersectObjects(relicObjs)[0]; if(hitR){ goTo(hitR.object.position.x,hitR.object.position.z,()=>collect(hitR.object.userData.site)); return; }
+  const hitG=ray.intersectObject(ground)[0]; if(hitG){ goTo(hitG.point.x,hitG.point.z); } }
+let arrive=null;
+function goTo(x,z,cb){ target.set(x,0,z); marker.position.set(x,0.1,z); marker.visible=true; arrive=cb||null; }
+const keys={}; window.addEventListener('keydown',e=>{ if(e.target.tagName==='INPUT') return; keys[e.key.toLowerCase()]=true; }); window.addEventListener('keyup',e=>{keys[e.key.toLowerCase()]=false;});
+
+// ---------------------------------------------------------------- labels
+const labelLayer=document.getElementById('app'); const labels=[];
+function mkLabel(pos,text,sub,cls,onclick){ const el=document.createElement('div'); el.className='lbl '+(cls||''); el.innerHTML=text+(sub?`<small>${sub}</small>`:''); if(onclick){el.addEventListener('click',onclick);} labelLayer.appendChild(el); const L={pos,el}; labels.push(L); return L; }
+for(const s of SITES){ mkLabel(new THREE.Vector3(s.pos[0],9,s.pos[2]),s.name,s.when,''); }
+const npcLabels = SITES.map(s=>mkLabel(new THREE.Vector3(s.npc.pos[0],2.8,s.npc.pos[2]),s.npc.name,'click to talk','talk',()=>goTo(s.npc.pos[0],s.npc.pos[2],()=>talk(s))));
+const relicLabels = SITES.map(s=>mkLabel(new THREE.Vector3(s.relic.pos[0],2.4,s.relic.pos[2]),s.relic.name,'relic','relic'));
+const predLabelEls = predLabels.map(p=>{ const L=mkLabel(p.pos,p.text,p.sub,p.cls); L.el.hidden=true; return L; });
+const v=new THREE.Vector3();
+function placeLabels(){ const r=canvas.getBoundingClientRect(); for(const L of labels){ if(L.el.hidden){continue;} v.copy(L.pos).project(camera); const behind=v.z>1; const x=(v.x*0.5+0.5)*r.width, y=(-v.y*0.5+0.5)*r.height; L.el.style.display=(behind||x<0||x>r.width||y<0||y>r.height)?'none':'block'; L.el.style.left=x+'px'; L.el.style.top=y+'px'; } }
+
+// ---------------------------------------------------------------- UI: intro
+const $=id=>document.getElementById(id);
+const rolesEl=$('roles');
+ROLES.forEach((r,i)=>{ const b=document.createElement('button'); b.innerHTML=`<b>${r.name}</b><span>${r.hook}</span>`; if(i===0) b.classList.add('sel'); b.addEventListener('click',()=>{S.role=r; [...rolesEl.children].forEach(c=>c.classList.remove('sel')); b.classList.add('sel'); renderBrief();}); rolesEl.appendChild(b); });
+function renderBrief(){ $('brief').textContent=(S.simple?BRIEF.simple:BRIEF.std)(S.role); }
+renderBrief();
+$('start').addEventListener('click',()=>{ $('intro').style.display='none'; toast(`You are the ${S.role.name.toLowerCase()}. Walk to a site — the amber relics come first.`); });
+$('simpler').addEventListener('click',()=>{ S.simple=!S.simple; $('simpler').textContent=S.simple?'Standard text':'Simpler text'; renderBrief(); if(S.talking) openLine(S.talking,true); });
+$('lever').addEventListener('change',e=>{ S.lever=e.target.checked; predGroup.visible=S.lever; predLabelEls.forEach(L=>L.el.hidden=!S.lever); toast(S.lever?'Textbook story applied: amber = what it predicts at each site. None of it has been excavated.':'Back to what was actually found.'); });
+
+// ---------------------------------------------------------------- UI: evidence + status
+function renderStatus(){
+  $('npcstatus').innerHTML=SITES.map(s=>`<span class="${S.conceded.has(s.id)?'done':''}">${s.npc.name}${S.conceded.has(s.id)?' ✓':''}</span>`).join('');
+  $('evlist').innerHTML=SITES.map(s=>S.evidence.has(s.id)?`<div class="got"><b>${s.relic.name}</b>${s.relic.text}</div>`:`<div>${s.relic.name} · ${s.name}</div>`).join('');
+  if(S.firstScore!=null){ $('barfirst').style.width=(S.firstScore/4*100)+'%'; $('barlast').style.width=(S.lastScore/4*100)+'%'; $('bartext').textContent=`first claim ${S.firstScore.toFixed(1)} → latest ${S.lastScore.toFixed(1)} / 4 · ${S.claims} claims`; }
+}
+function collect(s){ if(S.evidence.has(s.id)) return; S.evidence.add(s.id); const o=relicObjs.find(r=>r.userData.site===s); o.visible=false; relicLabels[SITES.indexOf(s)].el.hidden=true; toast(`Picked up: ${s.relic.name}`); renderStatus(); }
+let toastT; function toast(t){ const el=$('toast'); el.textContent=t; el.classList.add('on'); clearTimeout(toastT); toastT=setTimeout(()=>el.classList.remove('on'),3800); }
+
+// ---------------------------------------------------------------- dialogue
+function talk(s){ S.talking=s; $('dlg').hidden=false; $('npcname').textContent=`${s.npc.name} · ${s.name}`; $('npcwho').textContent=s.npc.who+(S.conceded.has(s.id)?' · already conceded':''); $('thread').innerHTML=''; $('tags').innerHTML=''; $('dlgstate').textContent=''; S.turns[s.id]=S.turns[s.id]||[]; openLine(s,false); renderHint(s); $('say').focus(); }
+function openLine(s,replace){ const t=$('thread'); if(replace) t.innerHTML=''; addMsg('npc',(S.simple?s.npc.open.simple:s.npc.open.std).replace('{addr}',S.role.addr)); for(const turn of S.turns[s.id]) addMsg(turn.role==='user'?'you':'npc',turn.content); }
+function addMsg(cls,text){ const d=document.createElement('div'); d.className='msg '+cls; d.textContent=text; $('thread').appendChild(d); $('thread').scrollTop=1e6; return d; }
+function renderHint(s){ const have=[...S.evidence].map(id=>SITES.find(x=>x.id===id).relic.name); $('hint').innerHTML = have.length? `Cite: ${have.map(n=>`<button data-cite="${n}">${n}</button>`).join('')}` : 'You hold no evidence yet. Pick up a relic first — claims without evidence score low.'; $('hint').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{ const i=$('say'); i.value=(i.value+' the '+b.dataset.cite).trim(); i.focus(); })); }
+$('leave').addEventListener('click',()=>{ $('dlg').hidden=true; S.talking=null; });
+$('send').addEventListener('click',submit); $('say').addEventListener('keydown',e=>{ if(e.key==='Enter') submit(); });
+
+function heuristic(s,text){
+  const t=text.toLowerCase(); let score=0; const tags=[];
+  const structural=STRUCTURAL.filter(k=>t.includes(k)); if(structural.length){score+=1.5; tags.push('structural factor');}
+  const RELIC_KEYS={pillar:['pillar','t-pillar','fox','limestone','carved'],skull:['skull','aurochs','bull','plaster'],pot:['pot','vessel','pottery','painted','clay','kiln'],balls:['ball','object','baked','cooking','clay']};
+  const cites=[...S.evidence].filter(id=>{const x=SITES.find(q=>q.id===id); return RELIC_KEYS[x.relic.id].some(k=>t.includes(k))||t.includes(x.relic.name.toLowerCase());}); if(cites.length){score+=1.5; tags.push('cites evidence');}
+  const local=s.npc.concedes.some(k=>t.includes(k)); if(local){score+=1; tags.push('site-specific');}
+  if(ACTOR_ONLY.some(k=>t.includes(k))&&!structural.length){score=Math.min(score,0.5); tags.push('actor-only');}
+  if(t.length<25) score=Math.min(score,1);
+  const concedes = score>=3;
+  let reply;
+  if(concedes) reply = {gobekli:'…Yes. Feasting and the season, not a master. Take that with you, and say it the same way to the others.', catal:'…That is the answer. Same houses, same dead beneath them, no big house. You looked properly.', nebel:'…The rings and the empty centre. You read our town as we built it. Go on.', poverty:'…A town that empties every winter has no throne. You carry the right things. Go on.'}[s.id];
+  else if(tags.includes('actor-only')) reply = 'A great man? Point to his house, his grave, his store. You cannot — because there is none. Try again with something you can hold.';
+  else if(!tags.includes('cites evidence')) reply = 'Words. What have you picked up? Name it, and say what it proves about how we lived.';
+  else if(!tags.includes('structural factor')) reply = 'You show me the object but not the reason. Why does it mean no ruler was needed? Say how we organised ourselves.';
+  else reply = 'Closer. But make it about this place — what here, in front of you, says the same thing?';
+  return {reply, concedes, tags, score};
+}
+async function submit(){
+  const s=S.talking; if(!s) return; const text=$('say').value.trim(); if(!text) return; $('say').value='';
+  addMsg('you',text); S.turns[s.id].push({role:'user',content:text}); $('send').disabled=true; $('dlgstate').textContent='thinking…';
+  let r;
+  if(S.sample){
+    const evidence=[...S.evidence].map(id=>{const x=SITES.find(q=>q.id===id); return `${x.relic.name} (${x.name}): ${x.relic.text}`;}).join('\n');
+    const rules = `You are role-playing ${s.npc.name} at ${s.name} (${s.when}) inside a history lesson based on Graeber & Wengrow, The Dawn of Everything. You ${s.npc.who}. Stay strictly in character and in period. Use ONLY these facts about your site — never invent finds:\n- ${s.facts.join('\n- ')}\nThe student is a ${S.role.name.toLowerCase()} defending the claim: "Large, monumental societies existed for thousands of years without kings, and farming did not automatically create rulers."\nEvidence the student currently holds:\n${evidence||'(none)'}\nScoring rules: score 0-4. Give +1.5 if the claim names a STRUCTURAL factor (seasonal gathering, equal house sizes, shared ritual, trade networks, absence of palaces/storehouses/rich burials, deliberate house burning, voluntary labour). Give +1.5 if it correctly cites a relic they hold and what it shows. Give +1 if it is specific to this site. Cap at 0.5 if it explains things by a single great leader without structure. Concede ONLY if score >= 3. Push back hard but fairly on weak claims and demand something they can hold. Reply in at most 55 words${S.simple?', in short plain sentences a 12-year-old can follow':''}.\nReply with ONLY JSON: {"reply": string, "concedes": boolean, "tags": string[] (from: "structural factor","cites evidence","site-specific","actor-only"), "score": number}`;
+    const turns=[{role:'user',content:rules},...S.turns[s.id].map(t=>({role:t.role,content:t.content}))];
+    try{ r=await S.sample.json(turns,{modelTier:'quick',cache:false}); if(typeof r?.reply!=='string') throw {code:'invalid_json'}; r.score=Math.max(0,Math.min(4,Number(r.score)||0)); r.tags=Array.isArray(r.tags)?r.tags:[]; r.concedes=!!r.concedes&&r.score>=3; }
+    catch(e){ if(e&&(e.code==='not_granted'||e.code==='sampling_disabled'||e.code==='not_declared')){ S.sample=null; $('modepill').textContent='scripted NPCs'; $('modepill').classList.remove('live'); } r=heuristic(s,text); }
+  } else r=heuristic(s,text);
+  S.turns[s.id].push({role:'assistant',content:r.reply});
+  addMsg('npc',r.reply);
+  $('tags').innerHTML=['structural factor','cites evidence','site-specific'].map(t=>`<span class="${r.tags.includes(t)?'':'miss'}">${r.tags.includes(t)?'✓ ':''}${t}</span>`).join('')+(r.tags.includes('actor-only')?'<span style="background:var(--amber)">actor-only</span>':'');
+  S.claims++; if(S.firstScore==null) S.firstScore=r.score; S.lastScore=r.score;
+  if(r.concedes&&!S.conceded.has(s.id)){ S.conceded.add(s.id); $('npcwho').textContent=s.npc.who+' · conceded'; addMsg('sys','concedes · this site now supports your claim'); toast(`${s.npc.name} concedes.`); pulse(npcObjs[SITES.indexOf(s)]); }
+  $('dlgstate').textContent=r.concedes?'✓ conceded':`score ${r.score.toFixed(1)} / 4`;
+  $('send').disabled=false; renderStatus(); renderHint(s);
+  if(S.conceded.size>=2&&S.evidence.size>=3&&!S.won){ S.won=true; setTimeout(()=>{ $('wintext').textContent=`Two people who live in these places accepted your argument, and you did it with ${S.evidence.size} objects the diggers actually found. Your argument quality moved from ${S.firstScore.toFixed(1)} to ${S.lastScore.toFixed(1)} out of 4 across ${S.claims} claims.`; $('win').style.display='grid'; },900); }
+}
+$('winclose').addEventListener('click',()=>{ $('win').style.display='none'; });
+let pulses=[]; function pulse(o){ pulses.push({o,t:0}); }
+
+// ---------------------------------------------------------------- live NPCs via Claude (optional)
+(async()=>{ try{ if(window.claude?.use){ const smp=await window.claude.use('sample'); if(smp){ S.sample=smp; $('modepill').textContent='live NPCs · Claude'; $('modepill').classList.add('live'); } } }catch(e){} })();
+
+// ---------------------------------------------------------------- loop
+const clock=new THREE.Clock();
+function groundHeight(x,z){ return 0; } // sites are flattened; small hills are cosmetic
+function tick(){
+  const dt=Math.min(0.05,clock.getDelta()); const t=clock.elapsedTime;
+  // keyboard
+  const kx=(keys['d']?1:0)-(keys['a']?1:0), kz=(keys['s']?1:0)-(keys['w']?1:0);
+  if(kx||kz){ const f=new THREE.Vector3(Math.sin(yaw),0,Math.cos(yaw)).negate(); const rgt=new THREE.Vector3().crossVectors(f,new THREE.Vector3(0,1,0)); const mv=f.multiplyScalar(-kz).add(rgt.multiplyScalar(kx)).normalize().multiplyScalar(14*dt); target.copy(player.position).add(mv); marker.visible=false; arrive=null; }
+  // move
+  const d=new THREE.Vector3().subVectors(target,player.position); d.y=0; const len=d.length();
+  if(len>0.2){ d.normalize().multiplyScalar(Math.min(len,13*dt)); player.position.add(d); player.rotation.y=Math.atan2(d.x,d.z); const lim=120; player.position.x=Math.max(-lim,Math.min(lim,player.position.x)); player.position.z=Math.max(-lim,Math.min(lim,player.position.z)); }
+  else if(arrive){ const cb=arrive; arrive=null; marker.visible=false; cb(); }
+  else marker.visible=false;
+  // relics float
+  relicObjs.forEach((r,i)=>{ r.position.y=1.2+Math.sin(t*2+i)*0.25; r.rotation.y=t*0.8; });
+  // npc face player when near
+  npcObjs.forEach(o=>{ if(o.position.distanceTo(player.position)<9){ o.rotation.y=Math.atan2(player.position.x-o.position.x,player.position.z-o.position.z); } });
+  pulses=pulses.filter(p=>{ p.t+=dt; const s=1+Math.sin(p.t*8)*0.12*(1-p.t/1.5); p.o.scale.set(s,s,s); if(p.t>1.5){p.o.scale.set(1,1,1);return false;} return true; });
+  // predicted structures pulse gently
+  if(predGroup.visible){ M.pred.opacity=0.45+Math.sin(t*2)*0.12; }
+  updateCamera(); placeLabels(); renderer.render(scene,camera); requestAnimationFrame(tick);
+}
+renderStatus(); tick();
+})();
+</script>
