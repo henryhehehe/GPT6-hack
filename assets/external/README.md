@@ -1,6 +1,6 @@
 # External model library
 
-Acquired September 10, 2026 for **Counterfactual Worlds**. This is a reusable **3D asset** library matched to the scene requirements in `docs/OBJECT-AND-CHARACTER-MODELING-PLAN.md` and the world catalog. **All 69 entries now have local published GLBs and detailed usage instructions; 17 are integrated in 37 placements across Alexandria, coast, garden and archive.** Open `/model-catalog` in the running app for searchable entries, a 3D viewer, clip playback and downloads. Start with [USAGE-GUIDE.md](USAGE-GUIDE.md), [runtime-catalog.json](runtime-catalog.json), and [the integration handoff](../../docs/EXTERNAL-MODEL-INTEGRATION.md). Original source geometry and earlier prepared samples remain preserved.
+Acquired September 10, 2026 for **Counterfactual Worlds**. This is a reusable **3D asset** library matched to the scene requirements in `docs/OBJECT-AND-CHARACTER-MODELING-PLAN.md` and the world catalog. **All 69 entries now have local published GLBs and detailed usage instructions; 49 are integrated in 91 placements across Alexandria, coast, garden and archive.** Open `/model-catalog` in the running app for searchable entries, a 3D viewer, clip playback and downloads. Start with [USAGE-GUIDE.md](USAGE-GUIDE.md), [runtime-catalog.json](runtime-catalog.json), and [the integration handoff](../../docs/EXTERNAL-MODEL-INTEGRATION.md). Original source geometry and earlier prepared samples remain preserved.
 
 Start with [the visual contact sheet](previews/contact-sheet.jpg), [the asset catalog](catalog.json), and [measured file/geometry data](metrics.json). The catalog contains **69 selected source assets** from **eight acquired collections**. Original publisher ZIPs are saved locally in `archives/`; selected models and their dependencies are extracted in `models/`. Twelve representative assets also have portable GLB derivatives in `prepared/`.
 
@@ -24,12 +24,12 @@ Counts above come from downloaded files, not the larger paid editions advertised
 ## Use the files
 
 1. Find any of the 69 items in `/model-catalog` or [USAGE-GUIDE.md](USAGE-GUIDE.md). Each has placement instructions, cautions, collision/interaction guidance, rights, a download and exact current scene uses.
-2. Use `url` in [runtime-catalog.json](runtime-catalog.json) for the self-contained GLB under `public/models/external/`. Static files are grounded, centered and scaled in meters; rigged references retain source transforms.
+2. Use `url` in [runtime-catalog.json](runtime-catalog.json) for the self-contained GLB under `public/models/external/`. Static files are grounded, centered and scaled in meters; placements may specify a uniform scale that also updates collisions. Rigged references retain source transforms.
 3. Add reviewed static placements through `components/worlds/scene/externalLayout.ts`. The loader caches templates, bounds concurrency, retains fallbacks and cleans up late loads. Generated-setting solid props join the existing navigation; Alexandria obstacles need its separate registry updated.
 4. Assembly/context and character-adaptation statuses remain blocked by the lesson loader. The catalog can preview them for development. Add clothes, retarget motion and review historical context before making new teaching-character derivatives.
 5. Originals in `models/` retain dependencies and original quality. Copy the complete directory if using an original glTF or Kenney GLB. `prepared/` contains the earlier 12 acquisition examples, not the runtime exports.
 
-Current external transfer additions are 1.03 MB for Alexandria, 3.51 MB for coast, .97 MB for garden and .41 MB for archive (decimal MB; unique GLBs per scene). These exclude authored assets and decoded GPU memory. The 69-file public library totals 30.05 MB, but scenes only request their selected subset and the catalog loads one model at a time. No device frame-rate acceptance is claimed.
+Current external transfer additions are 1.03 MB for Alexandria, 5.07 MB for coast, 3.03 MB for garden and 2.79 MB for archive (decimal MB; unique GLBs per scene). These exclude authored assets and decoded GPU memory. The 69-file public library totals 30.05 MB, but scenes only request their selected subset and the catalog loads one model at a time. No device frame-rate acceptance is claimed.
 
 To reproduce the published derivatives and usage guide:
 

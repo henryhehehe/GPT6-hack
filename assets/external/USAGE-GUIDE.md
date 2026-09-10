@@ -4,7 +4,7 @@ Generated from source usage records, measured published GLBs, and the actual pla
 
 Open `/model-catalog` in the running application for search, one-at-a-time 3D previews, clip playback and downloads. All 69 entries have local self-contained GLBs; only reviewed static selections load in lessons.
 
-Currently **17 distinct external models** appear in **37 placements across four settings**. Character bases/accessories and animation sources remain adaptation references. Scene-eligible means permitted for reviewed placement, not historically authenticated or device-benchmarked.
+Currently **49 distinct external models** appear in **91 placements across four settings**. Character bases/accessories and animation sources remain adaptation references. Scene-eligible means permitted for reviewed placement, not historically authenticated or device-benchmarked.
 
 ## Scene payloads
 
@@ -13,17 +13,17 @@ These are uncompressed GLB transfer bytes for external additions only, deduplica
 | Setting | Placements | Unique models | Extra GLB bytes |
 | --- | ---: | ---: | ---: |
 | alexandria | 7 | 7 | 1,026,416 |
-| coast | 14 | 9 | 3,514,904 |
-| garden | 10 | 4 | 974,852 |
-| archive | 6 | 3 | 408,292 |
+| coast | 47 | 22 | 5,066,440 |
+| garden | 19 | 13 | 3,034,500 |
+| archive | 18 | 15 | 2,793,756 |
 
 ## Integration contract
 
 - Runtime placements live in `components/worlds/scene/externalLayout.ts`; only IDs from `lib/externalAssetIndex.json` are accepted. Never turn generated lesson text into a URL.
-- Static exports use meters, Y-up, X/Z centered, and a ground origin. Place at scale 1. `Anchor_Inspect` is halfway up the bounds; `Anchor_Label` is above the top. The bounds describe the whole object, not the usable tabletop or hull waterline.
+- Static exports use meters, Y-up, X/Z centered, and a ground origin. Scale defaults to 1; an explicit uniform placement scale also transforms collision bounds. The garden tea table uses 0.5 for a seated height. `Anchor_Inspect` is 65% up the bounds; `Anchor_Label` is above the top. The bounds describe the whole object, not the usable tabletop or hull waterline.
 - Use `loadExternalModels(parent, placements)` for lessons. It deduplicates requests, allows three concurrent loads, shares static geometry/materials, and retains a box fallback on failure. Call `dispose()` before traversing the parent for cleanup. Late results are disposed instead of attached.
 - `zone` opens the corresponding source station through the existing `onSelect` callback. It does not collect evidence, alter claim text, award points, or replace primary sources. Untagged objects are scenery.
-- `solid` adds a conservative rotated ground footprint to generated-setting navigation. Small tabletop objects inherit their supporting furniture blocker. Alexandria uses separate navigation: update that registry when adding ground-level obstacles.
+- `solid` adds a conservative rotated ground footprint to generated-setting navigation; `trunkRadius` limits palm blockers to the low trunk region instead of the canopy. Small tabletop objects inherit their supporting furniture blocker. Alexandria uses separate navigation: update that registry when adding ground-level obstacles.
 - Authored furniture, buildings, cave, sheep and teaching characters remain in place. External additions supplement them; generic ships/bodies do not replace reviewed period art.
 - The public catalog intentionally permits reference previews of all assets; assembly and adaptation statuses are rejected by the classroom loader.
 - Skinned references require `SkeletonUtils.clone`, one `AnimationMixer` per instance, and explicit retargeting/rest-pose/root-motion checks. Never use ordinary `Object3D.clone` for independent skeletons.
@@ -130,7 +130,7 @@ These are uncompressed GLB transfer bytes for external additions only, deduplica
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- coast / `coastal-small-barrel`: position [-16.5, 0, 2], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 
 **How to reuse:**
 
@@ -177,7 +177,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- coast / `coastal-small-crate`: position [-16.5, 0, 3.2], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 
 **How to reuse:**
 
@@ -224,7 +224,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `shore-rowboat`: position [-23, -2.75, 24], yaw 0.6 rad; scenery only; existing support or outside walking route.
+- coast / `shore-rowboat`: position [-23, -2.75, 24], yaw 0.6 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
@@ -271,7 +271,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `shore-rowboat-large`: position [24, -2.75, 25], yaw -0.4 rad; scenery only; existing support or outside walking route.
+- coast / `shore-rowboat-large`: position [24, -2.75, 25], yaw -0.4 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
@@ -318,7 +318,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- alexandria / `quay-paddle`: position [-10.9, 1.28, 21.9], yaw 1.5707963267948966 rad; opens harbor; existing support or outside walking route.
+- alexandria / `quay-paddle`: position [-10.9, 1.28, 21.9], yaw 1.5707963267948966 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
@@ -580,7 +580,17 @@ Import this GLB in a standalone viewer or Blender. Assemble the matching compone
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- coast / `coastal-palm-1`: position [22.06833839313344, 0, 6.479848807352883], yaw 0.28559933214452665 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-3`: position [15.061796880741557, 0, 17.38224021014794], yaw 0.8567979964335799 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-5`: position [3.273241280285563, 0, 22.765893163261453], yaw 1.427996660722633 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-7`: position [-9.554545299043385, 0, 20.921535893153923], yaw 1.9991953250116865 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-9`: position [-19.34883125511717, 0, 12.43473880147874], yaw 2.57039398930074 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-11`: position [-23, 0, 2.8166876380389124e-15], yaw 3.141592653589793 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-13`: position [-19.34883125511717, 0, -12.434738801478744], yaw 3.7127913178788465 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-15`: position [-9.554545299043404, 0, -20.921535893153916], yaw 4.283989982167899 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-17`: position [3.2732412802855517, 0, -22.765893163261453], yaw 4.855188646456953 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-19`: position [15.061796880741563, 0, -17.382240210147938], yaw 5.426387310746007 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-21`: position [22.06833839313344, 0, -6.479848807352885], yaw 5.99758597503506 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
 
 **How to reuse:**
 
@@ -627,7 +637,17 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- coast / `coastal-palm-0`: position [23, 0, 0], yaw 0 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-2`: position [19.34883125511717, 0, 12.434738801478744], yaw 0.5711986642890533 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-4`: position [9.554545299043388, 0, 20.921535893153923], yaw 1.1423973285781066 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-6`: position [-3.2732412802855553, 0, 22.765893163261453], yaw 1.7135959928671598 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-8`: position [-15.061796880741555, 0, 17.38224021014794], yaw 2.284794657156213 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-10`: position [-22.068338393133438, 0, 6.479848807352892], yaw 2.855993321445266 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-12`: position [-22.06833839313344, 0, -6.479848807352876], yaw 3.4271919857343196 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-14`: position [-15.06179688074156, 0, -17.382240210147938], yaw 3.998390650023373 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-16`: position [-3.27324128028556, 0, -22.765893163261453], yaw 4.569589314312426 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-18`: position [9.554545299043397, 0, -20.92153589315392], yaw 5.14078797860148 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- coast / `coastal-palm-20`: position [19.348831255117158, 0, -12.434738801478758], yaw 5.711986642890532 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
 
 **How to reuse:**
 
@@ -674,7 +694,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- coast / `offshore-rocks-a`: position [16, -2.65, -28], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
@@ -721,7 +741,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `shore-rocks-b`: position [30, -2.65, -13], yaw 0.8 rad; scenery only; existing support or outside walking route.
+- coast / `shore-rocks-b`: position [30, -2.65, -13], yaw 0.8 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
@@ -768,7 +788,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `shore-rocks-c`: position [-12, -2.65, -31], yaw 0 rad; scenery only; existing support or outside walking route.
+- coast / `shore-rocks-c`: position [-12, -2.65, -31], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
@@ -815,7 +835,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- coast / `offshore-sand-bank`: position [-28, -2.7, 21], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
@@ -948,7 +968,7 @@ Import this GLB in a standalone viewer or Blender. Assemble the matching compone
 
 **Current use:**
 
-- alexandria / `market-bag`: position [14.65, 1.32, 4.35], yaw 0 rad; scenery only; existing support or outside walking route.
+- alexandria / `market-bag`: position [14.65, 1.32, 4.35], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
@@ -995,7 +1015,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- coast / `coastal-tall-barrel`: position [-18, 0, 2], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 
 **How to reuse:**
 
@@ -1042,7 +1062,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- garden / `garden-reading-bench`: position [4.8, 0, 12.2], yaw 1.5707963267948966 rad, uniform scale 1.3; opens market; solid ground footprint.
 
 **How to reuse:**
 
@@ -1089,7 +1109,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- archive / `reading-bookcase`: position [-5, 0, -15], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
@@ -1136,7 +1156,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- archive / `reading-bookstand`: position [-7.65, 0.631, -12.05], yaw 0 rad, uniform scale 1; opens library; supported by reading-table.
 
 **How to reuse:**
 
@@ -1183,7 +1203,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- archive / `reading-book`: position [-7.05, 0.631, -12.05], yaw 0 rad, uniform scale 1; opens library; supported by reading-table.
 
 **How to reuse:**
 
@@ -1230,7 +1250,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- archive / `reading-book-stack`: position [-6.45, 0.631, -12.05], yaw 0 rad, uniform scale 1; opens library; supported by reading-table.
 
 **How to reuse:**
 
@@ -1277,9 +1297,9 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `harbor-bucket`: position [-9.95, 0.22, 4.7], yaw 0 rad; opens harbor; solid ground footprint.
-- coast / `market-bucket`: position [14.05, 0.22, 4.7], yaw 0 rad; opens market; solid ground footprint.
-- coast / `library-bucket`: position [2.05, 0.22, -12.3], yaw 0 rad; opens library; solid ground footprint.
+- coast / `harbor-bucket`: position [-9.95, 0.22, 4.7], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- coast / `market-bucket`: position [14.05, 0.22, 4.7], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- coast / `library-bucket`: position [2.05, 0.22, -12.3], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
@@ -1326,7 +1346,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- archive / `reading-cabinet`: position [-7, 0, -15], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
@@ -1373,7 +1393,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- archive / `reading-candlestick`: position [-7.65, 0.631, -11.77], yaw 0 rad, uniform scale 1; opens library; supported by reading-table.
 
 **How to reuse:**
 
@@ -1420,12 +1440,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- garden / `harbor-candle`: position [-12.48, 1.055, 3.5], yaw 0 rad; opens harbor; existing support or outside walking route.
-- garden / `market-candle`: position [11.52, 1.055, 3.5], yaw 0 rad; opens market; existing support or outside walking route.
-- garden / `library-candle`: position [-0.48, 1.055, -13.5], yaw 0 rad; opens library; existing support or outside walking route.
-- archive / `harbor-candle`: position [-11.37, 1.125, 3.55], yaw 0 rad; opens harbor; existing support or outside walking route.
-- archive / `market-candle`: position [12.63, 1.125, 3.55], yaw 0 rad; opens market; existing support or outside walking route.
-- archive / `library-candle`: position [0.63, 1.125, -13.45], yaw 0 rad; opens library; existing support or outside walking route.
+- garden / `harbor-candle`: position [-12.48, 1.055, 3.5], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
+- garden / `market-candle`: position [11.52, 1.055, 3.5], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- garden / `library-candle`: position [-0.48, 1.055, -13.5], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- archive / `harbor-candle`: position [-11.37, 1.125, 3.55], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
+- archive / `market-candle`: position [12.63, 1.125, 3.55], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- archive / `library-candle`: position [0.63, 1.125, -13.45], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
@@ -1472,7 +1492,8 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- garden / `garden-tea-chair`: position [6.5, 0, 13.15], yaw 3.141592653589793 rad, uniform scale 1; opens market; solid ground footprint.
+- archive / `archive-comparison-chair`: position [7, 0, -10.7], yaw 3.141592653589793 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
@@ -1519,7 +1540,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- coast / `coastal-wood-crate`: position [-19.4, 0, 2], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 
 **How to reuse:**
 
@@ -1566,7 +1587,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- garden / `garden-empty-produce-box`: position [16, 0, 6.2], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 
 **How to reuse:**
 
@@ -1613,7 +1634,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- garden / `garden-produce`: position [16, 0, 5], yaw 0 rad; opens market; solid ground footprint.
+- garden / `garden-produce`: position [16, 0, 5], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 
 **How to reuse:**
 
@@ -1660,7 +1681,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- garden / `garden-tea-mug`: position [6.77, 0.778, 11.85], yaw 0 rad, uniform scale 1; opens market; supported by garden-tea-table.
 
 **How to reuse:**
 
@@ -1707,7 +1728,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- garden / `garden-cooking-pot`: position [16.5, 0, 8], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 
 **How to reuse:**
 
@@ -1797,10 +1818,10 @@ Import this GLB in a standalone viewer or Blender. Assemble the matching compone
 
 **Current use:**
 
-- alexandria / `archive-pouch`: position [-4.15, 5.1, -8.55], yaw 0 rad; opens library; existing support or outside walking route.
-- coast / `harbor-pouch`: position [-12.65, 1.125, 3.6], yaw 0 rad; opens harbor; existing support or outside walking route.
-- coast / `market-pouch`: position [11.35, 1.125, 3.6], yaw 0 rad; opens market; existing support or outside walking route.
-- coast / `library-pouch`: position [-0.65, 1.125, -13.4], yaw 0 rad; opens library; existing support or outside walking route.
+- alexandria / `archive-pouch`: position [-4.15, 5.1, -8.55], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- coast / `harbor-pouch`: position [-12.65, 1.125, 3.6], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
+- coast / `market-pouch`: position [11.35, 1.125, 3.6], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- coast / `library-pouch`: position [-0.65, 1.125, -13.4], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
@@ -1847,7 +1868,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- coast / `coastal-rope-coil`: position [-19.4, 0.707, 2], yaw 0 rad, uniform scale 0.65; opens harbor; supported by coastal-wood-crate.
 
 **How to reuse:**
 
@@ -1894,7 +1915,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- alexandria / `quay-rope`: position [-5.05, 1.28, 20], yaw 0 rad; opens harbor; existing support or outside walking route.
+- alexandria / `quay-rope`: position [-5.05, 1.28, 20], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
@@ -1941,7 +1962,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- coast / `coastal-spare-rope`: position [-20, 0, 5], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 
 **How to reuse:**
 
@@ -1988,7 +2009,8 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- alexandria / `archive-scroll`: position [-4.65, 5.1, -8.45], yaw 0.12 rad; opens library; existing support or outside walking route.
+- alexandria / `archive-scroll`: position [-4.65, 5.1, -8.45], yaw 0.12 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- archive / `archive-comparison-scroll`: position [6.7, 1.149, -12], yaw 0 rad, uniform scale 1; opens library; supported by archive-comparison-desk.
 
 **How to reuse:**
 
@@ -2035,7 +2057,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- coast / `coastal-work-scroll`: position [-18.45, 0.879, 5], yaw 0 rad, uniform scale 1; opens harbor; supported by coastal-workbench.
 
 **How to reuse:**
 
@@ -2082,7 +2104,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- archive / `reading-arch-shelf`: position [-9, 0, -15], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
@@ -2129,7 +2151,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- archive / `reading-low-shelf`: position [-9, 0, -13.5], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
@@ -2176,7 +2198,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- garden / `garden-display-cart`: position [18, 0, 8], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 
 **How to reuse:**
 
@@ -2223,7 +2245,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- garden / `garden-display-stall`: position [18, 0, 4], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 
 **How to reuse:**
 
@@ -2270,7 +2292,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- coast / `coastal-work-stool`: position [-18, 0, 6.25], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 
 **How to reuse:**
 
@@ -2317,7 +2339,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- archive / `reading-table`: position [-7, 0, -12], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
@@ -2364,7 +2386,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- garden / `garden-tea-plate`: position [6.25, 0.778, 12.02], yaw 0 rad, uniform scale 1; opens market; supported by garden-tea-table.
 
 **How to reuse:**
 
@@ -2411,11 +2433,11 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- alexandria / `market-vessel`: position [14.65, 2.01, 5.55], yaw 0 rad; opens market; existing support or outside walking route.
-- coast / `harbor-vessel`: position [-9.35, 0.22, 5.9], yaw 0 rad; opens harbor; solid ground footprint.
-- coast / `library-vessel`: position [2.65, 0.22, -11.1], yaw 0 rad; opens library; solid ground footprint.
-- archive / `harbor-vessel`: position [-9.7, 0.22, 3.9], yaw 0 rad; opens harbor; solid ground footprint.
-- archive / `market-vessel`: position [14.3, 0.22, 3.9], yaw 0 rad; opens market; solid ground footprint.
+- alexandria / `market-vessel`: position [14.65, 2.01, 5.55], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- coast / `harbor-vessel`: position [-9.35, 0.22, 5.9], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- coast / `library-vessel`: position [2.65, 0.22, -11.1], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- archive / `harbor-vessel`: position [-9.7, 0.22, 3.9], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- archive / `market-vessel`: position [14.3, 0.22, 3.9], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 
 **How to reuse:**
 
@@ -2462,9 +2484,9 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- alexandria / `market-vessel-tall`: position [22.65, 2.01, 5.55], yaw 0 rad; opens market; existing support or outside walking route.
-- coast / `market-vessel`: position [14.65, 0.22, 5.9], yaw 0 rad; opens market; solid ground footprint.
-- archive / `library-vessel`: position [2.3, 0.22, -13.1], yaw 0 rad; opens library; solid ground footprint.
+- alexandria / `market-vessel-tall`: position [22.65, 2.01, 5.55], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- coast / `market-vessel`: position [14.65, 0.22, 5.9], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- archive / `library-vessel`: position [2.3, 0.22, -13.1], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
@@ -2511,7 +2533,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- coast / `coastal-workbench`: position [-18, 0, 5], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 
 **How to reuse:**
 
@@ -2558,7 +2580,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- archive / `archive-comparison-desk`: position [7, 0, -12], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
@@ -3111,7 +3133,7 @@ Use the local GLB as a reference in Blender or a standalone Three.js viewer. Fit
 
 **Current use:**
 
-- coast / `shore-rock-scan`: position [-32, -2.7, -14], yaw 0.4 rad; scenery only; existing support or outside walking route.
+- coast / `shore-rock-scan`: position [-32, -2.7, -14], yaw 0.4 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
@@ -3159,7 +3181,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-Catalog preview only; no current lesson placement.
+- garden / `garden-tea-table`: position [6.5, 0, 12], yaw 0 rad, uniform scale 0.5; opens market; solid ground footprint.
 
 **How to reuse:**
 
@@ -3206,9 +3228,9 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- garden / `harbor-planter`: position [-9.85, 0.22, 2.8], yaw 0 rad; opens harbor; solid ground footprint.
-- garden / `market-planter`: position [14.15, 0.22, 2.8], yaw 0 rad; opens market; solid ground footprint.
-- garden / `library-planter`: position [2.15, 0.22, -14.2], yaw 0 rad; opens library; solid ground footprint.
+- garden / `harbor-planter`: position [-9.85, 0.22, 2.8], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- garden / `market-planter`: position [14.15, 0.22, 2.8], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- garden / `library-planter`: position [2.15, 0.22, -14.2], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
@@ -3255,9 +3277,9 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- garden / `harbor-basket`: position [-14.15, 0.22, 2.8], yaw 0 rad; opens harbor; solid ground footprint.
-- garden / `market-basket`: position [9.85, 0.22, 2.8], yaw 0 rad; opens market; solid ground footprint.
-- garden / `library-basket`: position [-2.15, 0.22, -14.2], yaw 0 rad; opens library; solid ground footprint.
+- garden / `harbor-basket`: position [-14.15, 0.22, 2.8], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- garden / `market-basket`: position [9.85, 0.22, 2.8], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- garden / `library-basket`: position [-2.15, 0.22, -14.2], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 

@@ -7,20 +7,20 @@
   },
   {
     "setting": "coast",
-    "placements": 14,
-    "uniqueAssets": 9,
-    "bytes": 3514904
+    "placements": 47,
+    "uniqueAssets": 22,
+    "bytes": 5066440
   },
   {
     "setting": "garden",
-    "placements": 10,
-    "uniqueAssets": 4,
-    "bytes": 974852
+    "placements": 19,
+    "uniqueAssets": 13,
+    "bytes": 3034500
   },
   {
     "setting": "archive",
-    "placements": 6,
-    "uniqueAssets": 3,
-    "bytes": 408292
+    "placements": 18,
+    "uniqueAssets": 15,
+    "bytes": 2793756
   }
 ]

@@ -4,7 +4,7 @@ import type { ZoneId } from '@/lib/world';
 export type ExternalSetting = 'alexandria' | 'coast' | 'garden' | 'archive';
 export type ExternalPlacement = {
   key: string; asset: string; at: [number, number, number]; turn?: number;
-  zone?: ZoneId; activity?: 'harbor' | 'market'; solid?: boolean;
+  scale?: number; support?: string; trunkRadius?: number; zone?: ZoneId; activity?: 'harbor' | 'market'; solid?: boolean;
 };
 export type ExternalBounds = readonly [number, number, number, number];
 const prop = (name: string) => `quaternius-fantasy-props-${name}`;
@@ -16,7 +16,8 @@ const assets = new Map(index.map(a => [a.id, a]));
 export function placementBounds(p: ExternalPlacement): ExternalBounds {
   const asset = assets.get(p.asset);
   if (!asset) throw new Error(`Unregistered external asset: ${p.asset}`);
-  const [width,,depth] = asset.dimensions;
+  if(p.trunkRadius){const r=p.trunkRadius*(p.scale??1);return [p.at[0]-r,p.at[0]+r,p.at[2]-r,p.at[2]+r];}
+  const [width,,depth] = asset.dimensions.map(n=>n*(p.scale??1));
   const c = Math.abs(Math.cos(p.turn ?? 0)), s = Math.abs(Math.sin(p.turn ?? 0));
   const x = (width*c+depth*s)/2, z = (width*s+depth*c)/2;
   return [p.at[0]-x,p.at[0]+x,p.at[2]-z,p.at[2]+z];
@@ -69,5 +70,55 @@ export function externalPlacements(setting: ExternalSetting): ExternalPlacement[
   if (setting === 'garden') result.push(
     {key:'garden-produce',asset:prop('farmcrate-apple'),at:[16,0,5],solid:true,zone:'market'},
   );
+  // Complete, bounded activity areas use the remaining eligible props. They sit
+  // outside pavilion footprints and leave the central plaza and radial paths clear.
+  const add=(key:string,asset:string,x:number,z:number,zone:ZoneId,y=0,solid=true,turn=0,scale=1,support?:string)=>
+    result.push({key,asset,at:[x,y,z],zone,solid,turn,scale,support});
+  if(setting==='archive') {
+    add('reading-table',prop('table-large'),-7,-12,'library');
+    add('reading-bookstand',prop('bookstand'),-7.65,-12.05,'library',.631,false,0,1,'reading-table');
+    add('reading-book',prop('book-5'),-7.05,-12.05,'library',.631,false,0,1,'reading-table');
+    add('reading-book-stack',prop('book-stack-1'),-6.45,-12.05,'library',.631,false,0,1,'reading-table');
+    add('reading-candlestick',prop('candlestick'),-7.65,-11.77,'library',.631,false,0,1,'reading-table');
+    add('reading-cabinet',prop('cabinet'),-7,-15,'library');
+    add('reading-bookcase',prop('bookcase-2'),-5,-15,'library');
+    add('reading-arch-shelf',prop('shelf-arch'),-9,-15,'library');
+    add('reading-low-shelf',prop('shelf-simple'),-9,-13.5,'library');
+    add('archive-comparison-desk',prop('workbench-drawers'),7,-12,'library');
+    add('archive-comparison-scroll',prop('scroll-1'),6.7,-12,'library',1.149,false,0,1,'archive-comparison-desk');
+    add('archive-comparison-chair',prop('chair-1'),7,-10.7,'library',0,true,Math.PI);
+  }
+  if(setting==='garden') {
+    // Half scale gives this scan a 0.775 m tabletop and a 1.1 m width.
+    add('garden-tea-table',ph('wooden_table_02'),6.5,12,'market',0,true,0,.5);
+    add('garden-tea-mug',prop('mug'),6.77,11.85,'market',.778,false,0,1,'garden-tea-table');
+    add('garden-tea-plate',prop('table-plate'),6.25,12.02,'market',.778,false,0,1,'garden-tea-table');
+    add('garden-tea-chair',prop('chair-1'),6.5,13.15,'market',0,true,Math.PI);
+    add('garden-reading-bench',prop('bench'),4.8,12.2,'market',0,true,Math.PI/2,1.3);
+    add('garden-display-stall',prop('stall-empty'),18,4,'market');
+    add('garden-display-cart',prop('stall-cart-empty'),18,8,'market');
+    add('garden-empty-produce-box',prop('farmcrate-empty'),16,6.2,'market');
+    add('garden-cooking-pot',prop('pot-1'),16.5,8,'market');
+  }
+  if(setting==='coast') {
+    add('coastal-workbench',prop('workbench'),-18,5,'harbor');
+    add('coastal-work-scroll',prop('scroll-2'),-18.45,5,'harbor',.879,false,0,1,'coastal-workbench');
+    add('coastal-work-stool',prop('stool'),-18,6.25,'harbor');
+    add('coastal-tall-barrel',prop('barrel'),-18,2,'harbor');
+    add('coastal-wood-crate',prop('crate-wooden'),-19.4,2,'harbor');
+    add('coastal-rope-coil',prop('rope-1'),-19.4,2,'harbor',.707,false,0,.65,'coastal-wood-crate');
+    add('coastal-spare-rope',prop('rope-3'),-20,5,'harbor');
+    add('coastal-small-barrel',kenney('barrel'),-16.5,2,'harbor');
+    add('coastal-small-crate',kenney('crate'),-16.5,3.2,'harbor');
+    result.push({key:'offshore-rocks-a',asset:kenney('rocks-a'),at:[16,-2.65,-28]},
+      {key:'offshore-sand-bank',asset:kenney('rocks-sand-a'),at:[-28,-2.7,21]});
+    // Replace the 22 procedural coast trees. Supplement the old trunk blockers
+    // with a conservative low-trunk footprint, leaving the canopy walkable.
+    for(let i=0;i<22;i++) {
+      const a=i/22*Math.PI*2;
+      result.push({key:`coastal-palm-${i}`,asset:kenney(i%2?'palm-detailed-bend':'palm-detailed-straight'),
+        at:[Math.cos(a)*23,0,Math.sin(a)*23],turn:a,solid:true,trunkRadius:1.5});
+    }
+  }
   return result;
 }
