@@ -111,7 +111,8 @@ const baseKitBytes=await size('../public/models/alexandria/alexandria-kit.glb');
 const landmarks=await size('../public/models/library.glb')+await size('../public/models/lighthouse.glb');
 let characters=0;for(const name of ['dorian','ione','thaleia'])characters+=await size(`../public/models/characters/${name}.glb`);
 const initialModels=baseKitBytes+bytes.length+landmarks;
-assert(initialModels+characters<15_000_000,'Keep the full model budget including three authored characters below 15 MB');
+// The clothing detail pass explicitly expands the original 15 MB core-model target.
+assert(initialModels+characters<20_000_000,'Keep the core architecture/detail/guide model budget below 20 MB');
 const report={models:rows,bundleBytes:bytes.length,uniqueTriangles:rows.reduce((n,r)=>n+r.triangles,0),placedTriangles,drawCalls,
   initialSceneModelBytes:initialModels,withAuthoredCharacterReserveBytes:initialModels+characters,
   checks:[`${rows.length} individual exports and bundle`,'Every model placed','Exact Y-up bounds and finite vertices','500 KB and 10k triangles per detail','Actual footprints fit collisions','New tabletop props supported at all four footprint corners','Independent stock activity','Fallback on download failure','Late-load resource disposal','Connected primary walking route','Total download budget including character reserve'],

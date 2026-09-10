@@ -27,5 +27,6 @@ test('detailed Greek cast stays within its download allocation with portable mat
    }
   }
  }
- assert.ok(total<2_100_000,'retain the cast allocation within Alexandria’s existing 15 MB initial model budget');
+ // Expanded deliberately for the requested higher-detail draped clothing.
+ assert.ok(total<6_000_000,'the three detailed companions stay below the 6 MB cast budget');
 });

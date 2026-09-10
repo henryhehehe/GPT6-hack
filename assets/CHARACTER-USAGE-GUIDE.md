@@ -13,11 +13,11 @@ Generated with `node --import tsx scripts/catalog-characters.ts` from the author
 
 ## Dorian · harbor merchant
 
-ID: `dorian` · 650,920 bytes · 17,577 triangles · 7 materials · 1 skins.
-Source dimensions X/Y/Z: 0.968 / 1.7512 / 0.4745 m. Clips: Idle, Greeting, Talk.
+ID: `dorian` · 1,705,052 bytes · 66,277 triangles · 9 materials · 1 skins.
+Source dimensions X/Y/Z: 0.968 / 1.7512 / 0.3494 m. Clips: Idle, Greeting, Talk.
 Editable source: `assets/blender/characters/alexandria-cast.blend`. Anchors: dorian__Anchor_Talk, dorian__Anchor_Label.
 [Runtime GLB](../public/models/characters/dorian.glb) · [MIT notice](../public/models/characters/LICENSE.txt)
-SHA-256: `c3f0d901d78b8d27b0e97655457fb633aaaa958e8f27ee71fde013f31e1b7cc2`
+SHA-256: `77759da858a6469d8299c2c703ec3ff0a47fc1ec3418ab9d1f171bee07c1cc33`
 
 ### The scholarly waterfront · Harbor guide
 Ancient Mediterranean interpretation
@@ -369,11 +369,11 @@ export function attachCast(anchors: Record<ZoneId, Group>) {
 
 ## Ione · archivist
 
-ID: `ione` · 695,684 bytes · 20,053 triangles · 6 materials · 1 skins.
-Source dimensions X/Y/Z: 0.968 / 1.7715 / 0.461 m. Clips: Idle, Greeting, Talk.
+ID: `ione` · 2,077,588 bytes · 83,097 triangles · 9 materials · 1 skins.
+Source dimensions X/Y/Z: 0.968 / 1.7715 / 0.383 m. Clips: Idle, Greeting, Talk.
 Editable source: `assets/blender/characters/alexandria-cast.blend`. Anchors: ione__Anchor_Talk, ione__Anchor_Label.
 [Runtime GLB](../public/models/characters/ione.glb) · [MIT notice](../public/models/characters/LICENSE.txt)
-SHA-256: `fdedce52165da0ada0f915f2aefc60bcf9db97eba26f12c27fd92c9f5398e497`
+SHA-256: `ae4a144cafb6118b0b459f26c36fd0b91a8849f549b1002a657415e7494505c3`
 
 ### The scholarly waterfront · Archive guide
 Ancient Mediterranean interpretation
@@ -935,11 +935,11 @@ export function attachCast(anchors: Record<ZoneId, Group>) {
 
 ## Thaleia · market trader
 
-ID: `thaleia` · 692,556 bytes · 19,721 triangles · 6 materials · 1 skins.
-Source dimensions X/Y/Z: 0.968 / 1.7715 / 0.461 m. Clips: Idle, Greeting, Talk.
+ID: `thaleia` · 1,720,684 bytes · 67,057 triangles · 7 materials · 1 skins.
+Source dimensions X/Y/Z: 0.968 / 1.7715 / 0.365 m. Clips: Idle, Greeting, Talk.
 Editable source: `assets/blender/characters/alexandria-cast.blend`. Anchors: thaleia__Anchor_Talk, thaleia__Anchor_Label.
 [Runtime GLB](../public/models/characters/thaleia.glb) · [MIT notice](../public/models/characters/LICENSE.txt)
-SHA-256: `3a605f3e14d9f8aee50b41fb7511e6e3c3f40896ec5767af701d91a0638a3a0a`
+SHA-256: `21c9d7a81d6399eee59705c59e91304a5a03556ff0de608eb8fd778773e113af`
 
 ### The scholarly waterfront · Market guide
 Ancient Mediterranean interpretation

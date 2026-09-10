@@ -12,6 +12,7 @@ sys.path.insert(0,str(ROOT/'scripts/blender'))
 import asset_utils as a
 import build_characters as greek
 import upgrade_regency_characters as upgrade
+import alexandria_clothing as clothing
 def face(identity,c):
  upgrade.detailed_face(identity,c)
  if identity=='dorian':
@@ -72,7 +73,7 @@ def integrated_body(identity,c):
  greek.body(identity,c)
  # Continuous skin surface across the elbow; mixed weights replace separate caps.
  for o in list(a.ROOT.children):
-  if any(o.name.split('__')[-1].startswith(n) for n in ['Upper arm','Forearm','Elbow','Short sleeve']):bpy.data.objects.remove(o,do_unlink=True)
+  if any(o.name.split('__')[-1].startswith(n) for n in ['Upper arm','Forearm','Elbow','Short sleeve','Small folded market cloth']):bpy.data.objects.remove(o,do_unlink=True)
  def tube(name,points,radii,color,suffix,skin=False):
   rows=25 if skin else 14;segments=28;verts=[];faces=[]
   for row in range(rows):
@@ -81,6 +82,9 @@ def integrated_body(identity,c):
     section=min(1,int(t*2));fraction=t*2-section
     center=points[section].lerp(points[section+1],fraction);r=radii[section]*(1-fraction)+radii[section+1]*fraction
    else:center=points[0].lerp(points[-1],t);r=(radii[0]*(1-t)+radii[-1]*t)*(.62+.38*min(1,t/.14))
+   # The buried upper cap must stay inside the soft sleeve; restore full
+   # anatomical radius before the cuff so the visible arm is unchanged.
+   if skin:r*=.4+.6*clothing.smooth(t/.28)
    axis=(points[-1]-points[0]).normalized();u=axis.cross(Vector((0,1,0))).normalized();v=axis.cross(u)
    for k in range(segments):
     theta=k*2*math.pi/segments
@@ -96,7 +100,6 @@ def integrated_body(identity,c):
    if w<1:upper.add(ids,1-w,'REPLACE')
    if w:fore.add(ids,w,'REPLACE')
  for side,suffix in [(-1,'L'),(1,'R')]:
-  tube('Soft folded sleeve '+suffix,[Vector((side*.225,0,1.365)),Vector((side*.343,-.008,1.205))],[.09,.084],c['cloth'],suffix)
   tube('Continuous exposed arm '+suffix,[Vector((side*.318,-.006,1.255)),Vector((side*.37,-.012,1.13)),Vector((side*.434,-.04,.919))],[.058,.052,.038],c['skin'],suffix,True)
  # A thin anatomical collar transition covers the extracted neck's lower rim.
  a.BONE='Neck';a.ellipsoid('Neck root transition',(0,.005,1.419),(.064,.057,.014),c['skin'],24,12)
@@ -186,10 +189,10 @@ def compact_vertex_data(path):
  path.write_bytes(struct.pack('<III',0x46546c67,2,28+len(encoded)+len(output))+struct.pack('<II',len(encoded),0x4e4f534a)+encoded+struct.pack('<II',len(output),0x004e4942)+output)
 
 def build(output_root=ROOT):
- previous_face,previous_repo=greek.face,a.REPO
+ previous_face,previous_clothes,previous_repo=greek.face,greek.clothes,a.REPO
  try:
   a.REPO=Path(output_root).resolve();(a.REPO/'assets').mkdir(parents=True,exist_ok=True)
-  a.reset();greek.face=face;models=[]
+  a.reset();greek.face=face;greek.clothes=clothing.clothes;models=[]
   for identity in ['dorian','thaleia','ione']:
    c=greek.CAST[identity];r=a.root(identity)
    r['provenance']='Fictional Greek-informed companion; original interpretive wardrobe and gestures with fitted CC0 Quaternius head, eyes and hair. Not a historical portrait.'
@@ -217,7 +220,7 @@ def build(output_root=ROOT):
   for i,r in enumerate(models):r.location.x=(i-1)*1.05
   a.studio('alexandria-cast','characters',(0,0,1.0),3.65,1500,1100,view=(.3,-12,1.6))
  finally:
-  greek.face,a.REPO=previous_face,previous_repo
+  greek.face,greek.clothes,a.REPO=previous_face,previous_clothes,previous_repo
 
 if __name__=='__main__':
  parser=argparse.ArgumentParser(description=__doc__)

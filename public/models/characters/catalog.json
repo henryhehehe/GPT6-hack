@@ -8,15 +8,15 @@
     "license": "MIT",
     "licenseUrl": "/models/characters/LICENSE.txt",
     "url": "/models/characters/dorian.glb",
-    "bytes": 650920,
-    "sha256": "c3f0d901d78b8d27b0e97655457fb633aaaa958e8f27ee71fde013f31e1b7cc2",
+    "bytes": 1705052,
+    "sha256": "77759da858a6469d8299c2c703ec3ff0a47fc1ec3418ab9d1f171bee07c1cc33",
     "dimensions": [
       0.968,
       1.7512,
-      0.4745
+      0.3494
     ],
-    "triangles": 17577,
-    "materials": 7,
+    "triangles": 66277,
+    "materials": 9,
     "skins": 1,
     "category": "teaching-character",
     "classroomStatus": "authored-character",
@@ -501,15 +501,15 @@
     "license": "MIT",
     "licenseUrl": "/models/characters/LICENSE.txt",
     "url": "/models/characters/ione.glb",
-    "bytes": 695684,
-    "sha256": "fdedce52165da0ada0f915f2aefc60bcf9db97eba26f12c27fd92c9f5398e497",
+    "bytes": 2077588,
+    "sha256": "ae4a144cafb6118b0b459f26c36fd0b91a8849f549b1002a657415e7494505c3",
     "dimensions": [
       0.968,
       1.7715,
-      0.461
+      0.383
     ],
-    "triangles": 20053,
-    "materials": 6,
+    "triangles": 83097,
+    "materials": 9,
     "skins": 1,
     "category": "teaching-character",
     "classroomStatus": "authored-character",
@@ -1348,15 +1348,15 @@
     "license": "MIT",
     "licenseUrl": "/models/characters/LICENSE.txt",
     "url": "/models/characters/thaleia.glb",
-    "bytes": 692556,
-    "sha256": "3a605f3e14d9f8aee50b41fb7511e6e3c3f40896ec5767af701d91a0638a3a0a",
+    "bytes": 1720684,
+    "sha256": "21c9d7a81d6399eee59705c59e91304a5a03556ff0de608eb8fd778773e113af",
     "dimensions": [
       0.968,
       1.7715,
-      0.461
+      0.365
     ],
-    "triangles": 19721,
-    "materials": 6,
+    "triangles": 67057,
+    "materials": 7,
     "skins": 1,
     "category": "teaching-character",
     "classroomStatus": "authored-character",

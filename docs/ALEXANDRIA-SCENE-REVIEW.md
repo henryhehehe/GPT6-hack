@@ -13,6 +13,8 @@ This pass makes the existing interpretive Alexandria more active and easier to e
 
 ## Character replacement
 
+The subsequent [clothing redesign](ALEXANDRIA-CLOTHING.md) supersedes the garment shapes and download figures in this original pass.
+
 Dorian, Thaleia and Ione now use fitted detailed heads, eyes and hair from the existing CC0 Quaternius kit, with Dorian’s fitted beard and the original interpretive Greek wardrobes. Continuous weighted arms replace separate elbow segments, and the gathered hair joins and skin palettes were adjusted. Idle, Greeting, Talk, interaction anchors and runtime heights remain intact.
 
 The three exports total 2,039,160 bytes. Removing unused UV/color attributes, packing standard normalized vertex weights/colors, and resizing textures kept the complete Alexandria model load at 14,936,504 bytes, below the existing 15 MB ceiling. Face geometry was not decimated, and no runtime decoder was added. Editable Blender source, a reproducible upgrade script and mixed-source notices are included.
