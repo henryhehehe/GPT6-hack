@@ -42,7 +42,8 @@
   .cw-app :is(.primary-button,.icon-button):not(:disabled):active,
   [data-slot=dialog-content] :is(.primary-button,[data-slot=dialog-close]):not(:disabled):active { scale: .98; }
 
-  .landing :is(.home-subject-icon,.home-preview-arrow),
+  .landing :is(.home-lesson-index,.home-preview-arrow),
+  .landing .home-lesson-row > svg,
   .landing :is(.home-header,.home-teacher-note,.home-section-heading,.home-primary) svg,
   .cw-app :is(.lesson-actions,.teaching-entry) button svg {
     transition: transform 260ms var(--ui-ease), background-color 180ms ease;
@@ -63,7 +64,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
-  .landing .home-lesson-row:hover .home-subject-icon { transform: translateY(-2px); }
+  .landing .home-lesson-row:hover > svg { transform: translate(2px,-2px); }
   .landing .home-world-preview:hover .home-preview-arrow { transform: translate(2px,-2px); }
   .landing .home-primary:hover svg { transform: translate(2px,-2px); }
   .landing :is(.home-header,.home-teacher-note,.home-section-heading) :is(a,button):hover > svg { transform: translateX(3px); }

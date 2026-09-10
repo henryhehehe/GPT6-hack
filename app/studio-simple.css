@@ -1,33 +1,46 @@
 /* A compact workspace: lesson actions beside the world, notes on demand. */
-.cw-app:not(.immersive-student) { background: #171f22; }
+.cw-app:not(.immersive-student) { background: #171717; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif; }
 .cw-app:not(.immersive-student) .powered,
 .cw-app:not(.immersive-student) .brand-mark,
 .cw-app:not(.immersive-student) .workspace-heading > div > .eyebrow,
 .cw-app:not(.immersive-student) .current-lesson > .eyebrow,
 .cw-app:not(.immersive-student) .lesson-ready,
 .cw-app:not(.immersive-student) .app-footer { display: none; }
-.cw-app:not(.immersive-student) .brand { font: 23px/1.1 Georgia,serif; letter-spacing: -.5px; }
-.cw-app:not(.immersive-student) .brand-sub { display: inline; font: inherit; letter-spacing: inherit; padding: 0 0 0 5px; text-transform: lowercase; color: #a2b3b3; }
+.cw-app:not(.immersive-student) .brand { font: 750 21px/.98 'Helvetica Neue',Helvetica,Arial,sans-serif; letter-spacing: -.8px; }
+.cw-app:not(.immersive-student) .brand-sub { display: block; font: inherit; letter-spacing: inherit; padding: 2px 0 0; text-transform: none; color: #ff7963; }
 .cw-app:not(.immersive-student) .workspace-heading h1 { font-size: 20px; margin: 0; font-weight: 500; letter-spacing: -.4px; }
 .cw-app:not(.immersive-student) .workspace-heading { padding: 16px 20px; }
 .cw-app:not(.immersive-student) .heading-actions { gap: 16px; }
 .cw-app:not(.immersive-student) .heading-actions .text-button { border: 0; padding: 8px 0; }
-.cw-app:not(.immersive-student) :is(.left-panel,.world-panel) { border-radius: 6px; }
-.cw-app:not(.immersive-student) .left-panel { background: #1b272d; }
+.cw-app:not(.immersive-student) :is(.left-panel,.world-panel) { border-radius: 2px; border-color: #41413e; }
+.cw-app:not(.immersive-student) .left-panel { background: #222220; }
 .cw-app:not(.immersive-student) .right-panel { display: contents; }
 .cw-app:not(.immersive-student) .current-lesson { padding: 0 0 18px; }
-.cw-app:not(.immersive-student) .current-lesson h2 { font-size: 23px; line-height: 1.25; margin: 0 0 12px; }
-.cw-app:not(.immersive-student) .current-lesson p { font-size: 14px; line-height: 1.6; }
+.cw-app:not(.immersive-student) .current-lesson h2 { font: 600 24px/1.2 'Helvetica Neue',Helvetica,Arial,sans-serif; letter-spacing: -.65px; margin: 0 0 12px; color: #f5f5f0; }
+.cw-app:not(.immersive-student) .current-lesson p { font-size: 14px; line-height: 1.6; color: #c2c2ba; }
 .cw-app:not(.immersive-student) .lesson-facts { margin-top: 12px; gap: 14px; }
-.cw-app:not(.immersive-student) .lesson-facts span { border: 0; padding: 0; color: #9eb2bc; }
+.cw-app:not(.immersive-student) .lesson-facts span { border: 0; padding: 0; color: #b4b4aa; font-family: 'SFMono-Regular',Consolas,monospace; font-size: 12px; }
 .cw-app .lesson-actions,.cw-app:not(.immersive-student) .teaching-entry { display: flex; flex-direction: column; gap: 0; margin: 0; }
 .cw-app .lesson-actions { border-top: 1px solid #9cb0b229; border-bottom: 1px solid #9cb0b229; margin: 8px 0 14px; padding: 6px 0; }
 .cw-app .lesson-actions button,.cw-app:not(.immersive-student) .teaching-entry button { display: flex; align-items: center; gap: 10px; min-height: 40px; width: 100%; text-align: left; border: 0; border-radius: 3px; padding: 8px 4px; font-size: 14px; background: transparent; color: #c5d3d5; }
-.cw-app .lesson-actions button:hover,.cw-app:not(.immersive-student) .teaching-entry button:hover { background: #34433f; color: #edf2e8; }
-.cw-app:not(.immersive-student) .primary-button { border-radius: 4px; background: #bbd7c8; border-color: #bbd7c8; color: #1a3429; }
+.cw-app .lesson-actions button:hover,.cw-app:not(.immersive-student) .teaching-entry button:hover { background: #343431; color: #fff; }
+.cw-app:not(.immersive-student) .primary-button { border-radius: 2px; background: #d8321c; border-color: #d8321c; color: #fff; }
+.cw-app:not(.immersive-student) .primary-button:hover { background: #b92a18; border-color: #b92a18; }
 .cw-app:not(.immersive-student) .sample-lesson { margin: 12px 0; }
 .cw-app:not(.immersive-student) .sample-lesson > summary { font-size: 13px; }
 .cw-app:not(.immersive-student) .quiet-button { font-size: 12px; }
+.cw-app:not(.immersive-student) .app-header { border-bottom: 1px solid #41413e; }
+.cw-app:not(.immersive-student) .workspace-heading h1 { font-family: inherit; font-weight: 600; color: #f5f5f0; }
+.cw-app:not(.immersive-student) :is(.role-tabs,.lesson-workspace > .section-tabs) { background: transparent !important; border: 0; border-radius: 0 !important; }
+.cw-app:not(.immersive-student) :is(.role-tabs,.lesson-workspace > .section-tabs) [data-slot=tabs-trigger] { position: relative; border-radius: 0 !important; background: transparent !important; color: #b9b9b1 !important; }
+.cw-app:not(.immersive-student) :is(.role-tabs,.lesson-workspace > .section-tabs) [data-state=active] { color: #fff !important; }
+.cw-app:not(.immersive-student) :is(.role-tabs,.lesson-workspace > .section-tabs) [data-state=active]::after { content: ''; position: absolute; bottom: 0; left: 10px; right: 10px; height: 2px; background: #ff7963; opacity: 1; }
+.cw-app:not(.immersive-student) .lesson-workspace > .section-tabs { border-bottom: 1px solid #41413e; }
+.cw-app:not(.immersive-student) :is(.lesson-actions,.teaching-entry) button { color: #d6d6ce; border-radius: 0; }
+.cw-app:not(.immersive-student) :is(.lesson-actions,.teaching-entry) button svg { color: #ff927f; }
+.cw-app:not(.immersive-student) .heading-actions .text-button { color: #c2c2ba; }
+.cw-app:not(.immersive-student) .heading-actions .text-button:hover { color: #ff927f; }
+.cw-app:not(.immersive-student) :is(button,a,summary):focus-visible { outline-color: #ff927f; }
 .studio-notes[data-slot=dialog-content] { width: min(490px,calc(100vw - 24px)); max-height: calc(100dvh - 32px); display: flex; flex-direction: column; gap: 0; padding: 24px 0 0; background: #172932; color: #d9e5e7; border: 1px solid #7a9ba548; border-radius: 9px; }
 .studio-notes > [data-slot=dialog-title] { padding: 0 52px 0 22px; font-size: 20px; font-weight: 500; }
 .studio-notes > [data-slot=dialog-description] { padding: 10px 52px 20px 22px; font-size: 14px; line-height: 1.6; color: #a8bfc8; }
