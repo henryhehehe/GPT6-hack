@@ -43,7 +43,7 @@ New findings: Mouseion/Library distinctions need explicit framing; the Tempest s
 
 This pass changes documentation only. Existing source text files, manifest, runtime snapshots, and application code were preserved. It does not claim a new classroom trial, teacher approval, deployment, or live grading evaluation, and does not change any automation.
 
-## Current next work
+## Earlier next-work list (completed in the follow-up below)
 
 1. Apply the exact packet/metadata corrections listed in the historical accuracy review to a deliberately versioned runtime update: Dickens sentence boundary; Tempest edition note; Austen activity; Frankenstein, Declaration, and Douglass ranges. Preserve original source wording and saved provenance.
 2. Add teacher-visible historical context for Alexandria, Douglass, and Seneca Falls. Keep corroborating-source extensions separate from current student evidence, and do not assess students on sources they cannot access.
@@ -70,3 +70,20 @@ Check structured JSON parsing, unique world/lesson IDs, source references, requi
 Applied the reviewed packet/range/activity corrections, added visible editorial and teacher notes, and authored 12 formative review examples. The historical-review task concurrently supplied canonical Strabo and linked notes in packet version 2026-09-10.3; preserved that work. The combined checkout passed 62 tests, TypeScript, production build, and local API checks for six representative lessons. See [REVIEW-VALIDATION.md](REVIEW-VALIDATION.md) for exact scope and limitations. No deployment or live model grading was performed.
 
 The four items in the earlier Current next work list have now advanced: packet corrections, teaching context, canonical Strabo, and formative examples exist locally. Next priority is a separately recorded semantic evaluation of the examples; do not label the static fixtures as evaluated model performance. Preserve existing saved classrooms and the teacher review gate.
+
+
+## Current next work after accuracy integration
+
+Packet `2026-09-10.3` includes the canonical Strabo passage, all reviewed activity/range corrections, editorial notes, and separately linked historical context. The historical-accuracy follow-up verified 70 automated tests, TypeScript, and ten local HTTP lesson flows; the [review record](HISTORICAL-ACCURACY-REVIEW.md) gives the scope. Existing source selections and classrooms remain preserved.
+
+Next: conduct a separately recorded semantic evaluation using the authored formative examples, then teacher review and an applicable classroom pilot. Optional additional corroborating documents and lineated verse require their own reviewed source selections before assessment. Do not repeat the completed packet repairs or label static examples as evaluated model performance.
+
+## September 10, 2026 — evaluation runner implementation
+
+Implemented the local, bounded runner in `scripts/evaluate-curriculum.ts`, with eight tests, offline preflight, isolated synthetic students, exact packet matching, canonical selected passages, incremental JSON/HTML reports, and explicit human-review status. Full shared checks: 95 tests and TypeScript passed. See [EVALUATION-RUNNER.md](EVALUATION-RUNNER.md). The real live invocation stopped before requests because shared main does not yet contain the reviewed `lib/learning.ts` integration. No actual model responses were generated; local teacher/AI configuration is also pending.
+
+## Current next work
+
+1. After the selected-citation release is integrated and the local server has authorized teacher/AI configuration, run one formative case and inspect its actual output before completing the remaining cases. Do not bypass pilot limits or present the current blocked/stub runs as model evaluation.
+2. Record human judgments of source use, interpretation, uncertainty, and revision guidance. Preserve failed cases and unexpected feedback; do not change expectations merely to make results pass.
+3. Extend the predeclared cases to source-investigation lessons after the first three lessons have an actual evaluation record. Keep teacher approval and classroom trials as distinct gates.
