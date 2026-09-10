@@ -55,6 +55,20 @@
 .cw-app.immersive-student .learning-path { display: none; }
 .cw-app.immersive-student .world-panel .scene-header h2 { font-size: clamp(18px,2vw,23px); line-height: 1.35; }
 .cw-app.immersive-student .world-panel .scene-header { max-width: min(430px,calc(100% - 76px)); }
+/* Secondary world menus share one disclosure, leaving the scene unobstructed. */
+.explorer-controls .world-tools { pointer-events: auto; width: 240px; max-width: 100%; margin-top: 8px; color: #eee; font-size: 14px; }
+.explorer-controls .world-tools > summary { cursor: pointer; width: fit-content; padding: 9px 12px; background: #20201fed; border: 1px solid #ffffff35; border-radius: 2px; }
+.explorer-controls .world-tools[open] { background: #20201ff5; border: 1px solid #ffffff35; border-radius: 2px; }
+.explorer-controls .world-tools[open] > summary { width: 100%; border: 0; border-bottom: 1px solid #ffffff25; color: #ff927f; }
+.world-tools-body { max-height: min(300px,40dvh); overflow-y: auto; overscroll-behavior: contain; padding: 4px 10px 10px; scrollbar-width: thin; scrollbar-color: #888 transparent; }
+.explorer-controls .world-tools-body > p { background: transparent; padding: 4px 0 9px; margin: 0; color: #c5c5be; font-size: 13px; }
+.cw-app .explorer-controls .world-tools-body > details { width: 100%; max-width: none; margin-top: 0; background: transparent; border: 0; border-radius: 0; padding: 0; }
+.cw-app .explorer-controls .world-tools-body > details > summary { width: 100%; padding: 10px 0; border: 0; border-top: 1px solid #ffffff20; border-radius: 0; background: transparent; color: #eee; font-size: 14px; }
+.cw-app .explorer-controls .world-tools-body > details[open] > summary { color: #ff927f; }
+.world-tools-body :is(button,a,summary):focus-visible { outline-color: #ff927f; }
+.cw-app:not(.immersive-student) .explorer-modes { background: #20201fed; border-color: #ffffff35; border-radius: 2px; }
+.cw-app:not(.immersive-student) .explorer-modes button { color: #ccc; border-radius: 0; }
+.cw-app:not(.immersive-student) .explorer-modes button[aria-pressed=true] { background: #eee; color: #202020; }
 @media (min-width: 701px) {
  .cw-app:not(.immersive-student) { height: 100dvh; min-height: 600px; }
  .cw-app:not(.immersive-student) .app-header { height: 64px; min-height: 64px; padding: 0 20px; }
