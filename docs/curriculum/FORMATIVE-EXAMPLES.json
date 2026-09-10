@@ -1,0 +1,147 @@
+{
+  "packetVersion": "2026-09-10.3",
+  "status": "authored review fixtures; not live model evaluation",
+  "gradingNote": "Feedback expectations are qualitative. These examples do not prescribe exact scores or one mandatory interpretation. Fabricated-quotation cases intentionally contain false quotations.",
+  "examples": [
+    {
+      "id": "alexandria-01-supported",
+      "lessonId": "alexandria-01",
+      "kind": "supported",
+      "learnerText": "Trade loss could reduce scholar support if support depends on trade-linked revenue and no patron replaces it. Strabo’s description of shared scholarly facilities does not prove that funding link.",
+      "evidenceIds": [
+        "strabo",
+        "funding"
+      ],
+      "quotedPhrases": [],
+      "expectedFeedback": "Recognize the conditional mechanism and the distinction between Strabo’s supplied institutional description and the scenario assumption. Do not require agreement that closure is inevitable."
+    },
+    {
+      "id": "alexandria-01-uncertain",
+      "lessonId": "alexandria-01",
+      "kind": "uncertain",
+      "learnerText": "The invented ledger shows fewer ships in this exercise, but I cannot infer an actual ancient budget from it. I would need evidence of how scholars were supported.",
+      "evidenceIds": [
+        "ledger",
+        "strabo"
+      ],
+      "quotedPhrases": [],
+      "expectedFeedback": "Recognize the source limit; ask the learner to explain a conditional mechanism using the funding assumption. Uncertainty is defensible but does not by itself supply the mechanism."
+    },
+    {
+      "id": "alexandria-01-fabricated-quotation",
+      "lessonId": "alexandria-01",
+      "kind": "fabricated-quotation",
+      "learnerText": "Strabo writes, “Twelve ships paid every scholar’s salary,” so losing eight ships proves the Library closed.",
+      "evidenceIds": [
+        "strabo"
+      ],
+      "quotedPhrases": [
+        "Twelve ships paid every scholar’s salary"
+      ],
+      "expectedFeedback": "Identify the invented quotation and the unsupported closure claim. Check against the supplied source wording and invite a corrected conditional argument."
+    },
+    {
+      "id": "alexandria-01-out-of-range",
+      "lessonId": "alexandria-01",
+      "kind": "out-of-range",
+      "learnerText": "Which precise year did the Library burn down, and which building in this scene was destroyed?",
+      "evidenceIds": [],
+      "quotedPhrases": [],
+      "expectedFeedback": "Explain that neither the packet nor the symbolic scene establishes a destruction date or building identification. Return to the supplied institutional description and scenario assumptions."
+    },
+    {
+      "id": "odyssey-ix-01-supported",
+      "lessonId": "odyssey-ix-01",
+      "kind": "supported",
+      "learnerText": "Ulysses invites admiration when he says he “schemed and schemed” to save himself and his companions. The account presents careful planning, but it is also his own story about his cleverness.",
+      "evidenceIds": [
+        "1727-420-0"
+      ],
+      "quotedPhrases": [
+        "schemed and schemed"
+      ],
+      "expectedFeedback": "Recognize the connection between repeated wording, planning, and self-presentation. Invite a competing reading rather than demanding unqualified admiration."
+    },
+    {
+      "id": "odyssey-ix-01-uncertain",
+      "lessonId": "odyssey-ix-01",
+      "kind": "uncertain",
+      "learnerText": "Calling himself “renowned among mankind for all manner of subtlety” is self-praise. It tells me how Ulysses presents himself; it is not independent proof that everyone admired him.",
+      "evidenceIds": [
+        "1727-391-0"
+      ],
+      "quotedPhrases": [
+        "renowned among mankind for all manner of subtlety"
+      ],
+      "expectedFeedback": "Recognize the narrator/source distinction. Ask for a decision in another supplied card to develop or complicate the interpretation."
+    },
+    {
+      "id": "odyssey-ix-01-fabricated-quotation",
+      "lessonId": "odyssey-ix-01",
+      "kind": "fabricated-quotation",
+      "learnerText": "He says “I escaped without a single plan,” which proves his success was accidental.",
+      "evidenceIds": [
+        "1727-420-0"
+      ],
+      "quotedPhrases": [
+        "I escaped without a single plan"
+      ],
+      "expectedFeedback": "Flag the quotation as absent from the assigned evidence. Ask the learner to reread the planning passage and revise using actual wording."
+    },
+    {
+      "id": "odyssey-ix-01-out-of-range",
+      "lessonId": "odyssey-ix-01",
+      "kind": "out-of-range",
+      "learnerText": "Does the ending of Book XXIV prove this narrator is always reliable?",
+      "evidenceIds": [],
+      "quotedPhrases": [],
+      "expectedFeedback": "State that Book XXIV is outside this packet. Invite analysis of the supplied introduction, assumed name, or escape plan without supplying later events."
+    },
+    {
+      "id": "austen-letter-01-supported",
+      "lessonId": "austen-letter-01",
+      "kind": "supported",
+      "learnerText": "Darcy admits he was “desirous of believing her indifferent,” then insists his judgment was impartial. The tension gives a reader reason to examine his argument carefully, without proving that everything in the letter is false.",
+      "evidenceIds": [
+        "1342-1193-2835"
+      ],
+      "quotedPhrases": [
+        "desirous of believing her indifferent"
+      ],
+      "expectedFeedback": "Recognize the analysis of an admission and a claim to impartiality. Accept qualified skepticism without treating it as automatic rejection."
+    },
+    {
+      "id": "austen-letter-01-uncertain",
+      "lessonId": "austen-letter-01",
+      "kind": "uncertain",
+      "learnerText": "Darcy’s appeal to Colonel Fitzwilliam offers a way to check his account, but the packet gives me Darcy’s appeal, not Fitzwilliam’s own testimony. I would suspend judgment on the claims that need that witness.",
+      "evidenceIds": [
+        "1342-1193-13451"
+      ],
+      "quotedPhrases": [],
+      "expectedFeedback": "Recognize the difference between an offered witness and independent corroboration. Do not require the learner to know testimony or later chapters absent from this packet."
+    },
+    {
+      "id": "austen-letter-01-fabricated-quotation",
+      "lessonId": "austen-letter-01",
+      "kind": "fabricated-quotation",
+      "learnerText": "Colonel Fitzwilliam writes, “I certify every detail of Darcy’s letter,” so we have two independent witnesses.",
+      "evidenceIds": [
+        "1342-1193-13451"
+      ],
+      "quotedPhrases": [
+        "I certify every detail of Darcy’s letter"
+      ],
+      "expectedFeedback": "Identify the absent quotation and false attribution. Ask the learner to distinguish Darcy’s reference to his cousin from a supplied statement by that cousin."
+    },
+    {
+      "id": "austen-letter-01-out-of-range",
+      "lessonId": "austen-letter-01",
+      "kind": "out-of-range",
+      "learnerText": "How does the final marriage prove that every statement in this letter is accurate?",
+      "evidenceIds": [],
+      "quotedPhrases": [],
+      "expectedFeedback": "Do not use the ending to adjudicate this selected Chapter 35 packet. Return to the letter’s assertions, offered support, and rhetorical purpose."
+    }
+  ]
+}

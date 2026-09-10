@@ -1,0 +1,1488 @@
+{
+  "version": "2026-09-10.3",
+  "offsetConvention": "Zero-based UTF-16 code units; end exclusive; relative to normalized source text.",
+  "sources": {
+    "1727-391": {
+      "id": "1727-391",
+      "locator": "Book IX",
+      "url": "https://www.gutenberg.org/cache/epub/1727/pg1727-images.html",
+      "text": "“Firstly, then, I will tell you my name that you too may know it, and one day, if I outlive this time of sorrow, may become my guests though I live so far away from all of you. I am Ulysses son of Laertes, renowned among mankind for all manner of subtlety, so that my fame ascends to heaven. I live in Ithaca, where there is a high mountain called Neritum, covered with forests; and not far from it there is a group of islands very near to one another—Dulichium, Same, and the wooded island of Zacynthus. It lies squat on the horizon, all highest up in the sea towards the sunset, while the others lie away from it towards dawn.[75] It is a rugged island, but it breeds brave men, and my eyes know none that they better love to look upon. The goddess Calypso kept me with her in her cave, and wanted me to marry her, as did also the cunning Aeaean goddess Circe; but they could neither of them persuade me, for there is nothing dearer to a man than his own country and his parents, and however splendid a home he may have in a foreign country, if it be far from father or mother, he does not care about it. Now, however, I will tell you of the many hazardous adventures which by Jove’s will I met with on my return from Troy.",
+      "sha256": "052410601949c39438cf72fd3a6777311a5716b071ef79a257f322e3e3b4cf71",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1727-413": {
+      "id": "1727-413",
+      "locator": "Book IX",
+      "url": "https://www.gutenberg.org/cache/epub/1727/pg1727-images.html",
+      "text": "“I then gave him some more; three times did I fill the bowl for him, and three times did he drain it without thought or heed; then, when I saw that the wine had got into his head, I said to him as plausibly as I could: ‘Cyclops, you ask my name and I will tell it you; give me, therefore, the present you promised me; my name is Noman; this is what my father and mother and my friends have always called me.’",
+      "sha256": "0d82f47a10dd4821da88813d76aa70f18c6cac5d7d2f4edb7f7450340dac3e4e",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1727-420": {
+      "id": "1727-420",
+      "locator": "Book IX",
+      "url": "https://www.gutenberg.org/cache/epub/1727/pg1727-images.html",
+      "text": "“As for myself I kept on puzzling to think how I could best save my own life and those of my companions; I schemed and schemed, as one who knows that his life depends upon it, for the danger was very great. In the end I deemed that this plan would be the best; the male sheep were well grown, and carried a heavy black fleece, so I bound them noiselessly in threes together, with some of the withies on which the wicked monster used to sleep. There was to be a man under the middle sheep, and the two on either side were to cover him, so that there were three sheep to each man. As for myself there was a ram finer than any of the others, so I caught hold of him by the back, esconced myself in the thick wool under his belly, and hung on patiently to his fleece, face upwards, keeping a firm hold on it all the time.",
+      "sha256": "5fb8fa83d695a0bb11ba2952275353d03e8a2f2f3b08ab57e67f1e0099bfbb8b",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1727-419": {
+      "id": "1727-419",
+      "locator": "Book IX",
+      "url": "https://www.gutenberg.org/cache/epub/1727/pg1727-images.html",
+      "text": "“Then they went away, and I laughed inwardly at the success of my clever stratagem, but the Cyclops, groaning and in an agony of pain, felt about with his hands till he found the stone and took it from the door; then he sat in the doorway and stretched his hands in front of it to catch anyone going out with the sheep, for he thought I might be foolish enough to attempt this.",
+      "sha256": "122f7e3d642da7f3a4267040d0fb35e37c23b66d2b7c43c8d3669428d699d7f7",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1727-426": {
+      "id": "1727-426",
+      "locator": "Book IX",
+      "url": "https://www.gutenberg.org/cache/epub/1727/pg1727-images.html",
+      "text": "“‘Do not,’ they exclaimed, ‘be mad enough to provoke this savage creature further; he has thrown one rock at us already which drove us back again to the mainland, and we made sure it had been the death of us; if he had then heard any further sound of voices he would have pounded our heads and our ship’s timbers into a jelly with the rugged rocks he would have heaved at us, for he can throw them a long way.’",
+      "sha256": "75c1784d00cc97acce41408b28aa1525da4010c7b4c483c1d769c7379c64809f",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1727-427": {
+      "id": "1727-427",
+      "locator": "Book IX",
+      "url": "https://www.gutenberg.org/cache/epub/1727/pg1727-images.html",
+      "text": "“But I would not listen to them, and shouted out to him in my rage, ‘Cyclops, if any one asks you who it was that put your eye out and spoiled your beauty, say it was the valiant warrior Ulysses, son of Laertes, who lives in Ithaca.’",
+      "sha256": "a7ea89ff97f5f3141d90d6f96ffa4092ddb59ef5003991d8c6939e39dd240810",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1727-430": {
+      "id": "1727-430",
+      "locator": "Book IX",
+      "url": "https://www.gutenberg.org/cache/epub/1727/pg1727-images.html",
+      "text": "“On this he lifted up his hands to the firmament of heaven and prayed, saying, ‘Hear me, great Neptune; if I am indeed your own true begotten son, grant that Ulysses may never reach his home alive; or if he must get back to his friends at last, let him do so late and in sore plight after losing all his men [let him reach his home in another man’s ship and find trouble in his house.’[82]",
+      "sha256": "2d0fefb954995ccd5b754d011c7c05ba3be6b97a80d045b019e24f0b3c02b13a",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1342-1192": {
+      "id": "1342-1192",
+      "locator": "Chapter 35",
+      "url": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html",
+      "text": "“Be not alarmed, madam, on receiving this letter, by the apprehension of its containing any repetition of those sentiments, or renewal of those offers, which were last night so disgusting to you. I write without any intention of paining you, or humbling myself, by dwelling on wishes, which, for the happiness of both, cannot be too soon forgotten; and the effort which the formation and the perusal of this letter must occasion, should have been spared, had not my character required it to be written{245} and read. You must, therefore, pardon the freedom with which I demand your attention; your feelings, I know, will bestow it unwillingly, but I demand it of your justice.",
+      "sha256": "b5952b7d2439bdf7a0a760c1ab7a538e78699789c1866bf075b0f60d00137859",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1342-1193": {
+      "id": "1342-1193",
+      "locator": "Chapter 35",
+      "url": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html",
+      "text": "“Two offences of a very different nature, and by no means of equal magnitude, you last night laid to my charge. The first mentioned was, that, regardless of the sentiments of either, I had detached Mr. Bingley from your sister,—and the other, that I had, in defiance of various claims, in defiance of honour and humanity, ruined the immediate prosperity and blasted the prospects of Mr. Wickham. Wilfully and wantonly to have thrown off the companion of my youth, the acknowledged favourite of my father, a young man who had scarcely any other dependence than on our patronage, and who had been brought up to expect its exertion, would be a depravity, to which the separation of two young persons whose affection could be the growth of only a few weeks, could bear no comparison. But from the severity of that blame which was last night so liberally bestowed, respecting each circumstance, I shall hope to be in future secured, when the following account of my actions and their motives has been read. If, in the explanation of them which is due to myself, I am under the necessity of relating feelings which may be offensive to yours, I can only say that I am sorry. The necessity must be obeyed, and further apology would be absurd. I had not been long in Hertfordshire before I saw, in common with others, that Bingley preferred your elder sister to any other young woman in the country. But it was not till the evening of the dance at Netherfield that I had any apprehension of his feeling a serious attachment. I had often seen him in love before. At that ball, while I had{246} the honour of dancing with you, I was first made acquainted, by Sir William Lucas’s accidental information, that Bingley’s attentions to your sister had given rise to a general expectation of their marriage. He spoke of it as a certain event, of which the time alone could be undecided. From that moment I observed my friend’s behaviour attentively; and I could then perceive that his partiality for Miss Bennet was beyond what I had ever witnessed in him. Your sister I also watched. Her look and manners were open, cheerful, and engaging as ever, but without any symptom of peculiar regard; and I remained convinced, from the evening’s scrutiny, that though she received his attentions with pleasure, she did not invite them by any participation of sentiment. If you have not been mistaken here, I must have been in an error. Your superior knowledge of your sister must make the latter probable. If it be so, if I have been misled by such error to inflict pain on her, your resentment has not been unreasonable. But I shall not scruple to assert, that the serenity of your sister’s countenance and air was such as might have given the most acute observer a conviction that, however amiable her temper, her heart was not likely to be easily touched. That I was desirous of believing her indifferent is certain; but I will venture to say that my investigations and decisions are not usually influenced by my hopes or fears. I did not believe her to be indifferent because I wished it; I believed it on impartial conviction, as truly as I wished it in reason. My objections to the marriage were not merely those which I last night acknowledged to have required the utmost force of passion to put aside in my own case; the want of connection could not be so great an evil to my friend as to me. But there were{247} other causes of repugnance; causes which, though still existing, and existing to an equal degree in both instances, I had myself endeavoured to forget, because they were not immediately before me. These causes must be stated, though briefly. The situation of your mother’s family, though objectionable, was nothing in comparison of that total want of propriety so frequently, so almost uniformly betrayed by herself, by your three younger sisters, and occasionally even by your father:—pardon me,—it pains me to offend you. But amidst your concern for the defects of your nearest relations, and your displeasure at this representation of them, let it give you consolation to consider that to have conducted yourselves so as to avoid any share of the like censure is praise no less generally bestowed on you and your eldest sister than it is honourable to the sense and disposition of both. I will only say, farther, that from what passed that evening my opinion of all parties was confirmed, and every inducement heightened, which could have led me before to preserve my friend from what I esteemed a most unhappy connection. He left Netherfield for London on the day following, as you, I am certain, remember, with the design of soon returning. The part which I acted is now to be explained. His sisters’ uneasiness had been equally excited with my own: our coincidence of feeling was soon discovered; and, alike sensible that no time was to be lost in detaching their brother, we shortly resolved on joining him directly in London. We accordingly went—and there I readily engaged in the office of pointing out to my friend the certain evils of such a choice. I described and enforced them earnestly. But however this remonstrance might have staggered or delayed his determination, I do not{248} suppose that it would ultimately have prevented the marriage, had it not been seconded by the assurance, which I hesitated not in giving, of your sister’s indifference. He had before believed her to return his affection with sincere, if not with equal, regard. But Bingley has great natural modesty, with a stronger dependence on my judgment than on his own. To convince him, therefore, that he had deceived himself was no very difficult point. To persuade him against returning into Hertfordshire, when that conviction had been given, was scarcely the work of a moment. I cannot blame myself for having done thus much. There is but one part of my conduct, in the whole affair, on which I do not reflect with satisfaction; it is that I condescended to adopt the measures of art so far as to conceal from him your sister’s being in town. I knew it myself, as it was known to Miss Bingley; but her brother is even yet ignorant of it. That they might have met without ill consequence is, perhaps, probable; but his regard did not appear to me enough extinguished for him to see her without some danger. Perhaps this concealment, this disguise, was beneath me. It is done, however, and it was done for the best. On this subject I have nothing more to say, no other apology to offer. If I have wounded your sister’s feelings, it was unknowingly done; and though the motives which governed me may to you very naturally appear insufficient, I have not yet learnt to condemn them.—With respect to that other, more weighty accusation, of having injured Mr. Wickham, I can only refute it by laying before you the whole of his connection with my family. Of what he has particularly accused me I am ignorant; but of the truth of what I shall relate I can summon more than one witness of undoubted veracity.{249} Mr. Wickham is the son of a very respectable man, who had for many years the management of all the Pemberley estates, and whose good conduct in the discharge of his trust naturally inclined my father to be of service to him; and on George Wickham, who was his godson, his kindness was therefore liberally bestowed. My father supported him at school, and afterwards at Cambridge; most important assistance, as his own father, always poor from the extravagance of his wife, would have been unable to give him a gentleman’s education. My father was not only fond of this young man’s society, whose manners were always engaging, he had also the highest opinion of him, and hoping the church would be his profession, intended to provide for him in it. As for myself, it is many, many years since I first began to think of him in a very different manner. The vicious propensities, the want of principle, which he was careful to guard from the knowledge of his best friend, could not escape the observation of a young man of nearly the same age with himself, and who had opportunities of seeing him in unguarded moments, which Mr. Darcy could not have. Here again I shall give you pain—to what degree you only can tell. But whatever may be the sentiments which Mr. Wickham has created, a suspicion of their nature shall not prevent me from unfolding his real character. It adds even another motive. My excellent father died about five years ago; and his attachment to Mr. Wickham was to the last so steady, that in his will he particularly recommended it to me to promote his advancement in the best manner that his profession might allow, and if he took orders, desired that a valuable family living might be his as soon as it became vacant. There was also a legacy of one{250} thousand pounds. His own father did not long survive mine; and within half a year from these events Mr. Wickham wrote to inform me that, having finally resolved against taking orders, he hoped I should not think it unreasonable for him to expect some more immediate pecuniary advantage, in lieu of the preferment, by which he could not be benefited. He had some intention, he added, of studying the law, and I must be aware that the interest of one thousand pounds would be a very insufficient support therein. I rather wished than believed him to be sincere; but, at any rate, was perfectly ready to accede to his proposal. I knew that Mr. Wickham ought not to be a clergyman. The business was therefore soon settled. He resigned all claim to assistance in the church, were it possible that he could ever be in a situation to receive it, and accepted in return three thousand pounds. All connection between us seemed now dissolved. I thought too ill of him to invite him to Pemberley, or admit his society in town. In town, I believe, he chiefly lived, but his studying the law was a mere pretence; and being now free from all restraint, his life was a life of idleness and dissipation. For about three years I heard little of him; but on the decease of the incumbent of the living which had been designed for him, he applied to me again by letter for the presentation. His circumstances, he assured me, and I had no difficulty in believing it, were exceedingly bad. He had found the law a most unprofitable study, and was now absolutely resolved on being ordained, if I would present him to the living in question—of which he trusted there could be little doubt, as he was well assured that I had no other person to provide for, and I could not have forgotten my revered father’s intentions. You will hardly blame me{251} for refusing to comply with this entreaty, or for resisting every repetition of it. His resentment was in proportion to the distress of his circumstances—and he was doubtless as violent in his abuse of me to others as in his reproaches to myself. After this period, every appearance of acquaintance was dropped. How he lived, I know not. But last summer he was again most painfully obtruded on my notice. I must now mention a circumstance which I would wish to forget myself, and which no obligation less than the present should induce me to unfold to any human being. Having said thus much, I feel no doubt of your secrecy. My sister, who is more than ten years my junior, was left to the guardianship of my mother’s nephew, Colonel Fitzwilliam, and myself. About a year ago, she was taken from school, and an establishment formed for her in London; and last summer she went with the lady who presided over it to Ramsgate; and thither also went Mr. Wickham, undoubtedly by design; for there proved to have been a prior acquaintance between him and Mrs. Younge, in whose character we were most unhappily deceived; and by her connivance and aid he so far recommended himself to Georgiana, whose affectionate heart retained a strong impression of his kindness to her as a child, that she was persuaded to believe herself in love and to consent to an elopement. She was then but fifteen, which must be her excuse; and after stating her imprudence, I am happy to add, that I owed the knowledge of it to herself. I joined them unexpectedly a day or two before the intended elopement; and then Georgiana, unable to support the idea of grieving and offending a brother whom she almost looked up to as a father, acknowledged the whole to me. You may imagine what{252} I felt and how I acted. Regard for my sister’s credit and feelings prevented any public exposure; but I wrote to Mr. Wickham, who left the place immediately, and Mrs. Younge was of course removed from her charge. Mr. Wickham’s chief object was unquestionably my sister’s fortune, which is thirty thousand pounds; but I cannot help supposing that the hope of revenging himself on me was a strong inducement. His revenge would have been complete indeed. This, madam, is a faithful narrative of every event in which we have been concerned together; and if you do not absolutely reject it as false, you will, I hope, acquit me henceforth of cruelty towards Mr. Wickham. I know not in what manner, under what form of falsehood, he has imposed on you; but his success is not perhaps to be wondered at, ignorant as you previously were of everything concerning either. Detection could not be in your power, and suspicion certainly not in your inclination. You may possibly wonder why all this was not told you last night. But I was not then master enough of myself to know what could or ought to be revealed. For the truth of everything here related, I can appeal more particularly to the testimony of Colonel Fitzwilliam, who, from our near relationship and constant intimacy, and still more as one of the executors of my father’s will, has been unavoidably acquainted with every particular of these transactions. If your abhorrence of me should make my assertions valueless, you cannot be prevented by the same cause from confiding in my cousin; and that there may be the possibility of consulting him, I shall endeavour to find some opportunity of putting this letter in your hands in the course of the morning. I will only add, God bless you.",
+      "sha256": "6f2dee7828c8a3efd78aa7bcdba0ae5e1b1fe146fafe2a4d20feafea84069044",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1342-1196": {
+      "id": "1342-1196",
+      "locator": "Chapter 36",
+      "url": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html",
+      "text": "ELIZABETH, when Mr. Darcy gave her the letter, did not expect it to contain a renewal of his offers, she had formed no expectation at all of its contents. But such as they were, it may be well supposed how eagerly she went through them, and what a contrariety of emotion they excited. Her feelings as she read were scarcely to be defined. With amazement did she first understand that he believed any apology to be in his power; and steadfastly was she persuaded, that he could have no explanation to give, which a just sense of shame would not conceal. With a strong prejudice{254} against everything he might say, she began his account of what had happened at Netherfield. She read with an eagerness which hardly left her power of comprehension; and from impatience of knowing what the next sentence might bring, was incapable of attending to the sense of the one before her eyes. His belief of her sister’s insensibility she instantly resolved to be false; and his account of the real, the worst objections to the match, made her too angry to have any wish of doing him justice. He expressed no regret for what he had done which satisfied her; his style was not penitent, but haughty. It was all pride and insolence.",
+      "sha256": "9c70ed42ffe94090bd14e5960bde979845f45d4ebe719e9b9e9f149b57e4646b",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1342-1198": {
+      "id": "1342-1198",
+      "locator": "Chapter 36",
+      "url": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html",
+      "text": "In this perturbed state of mind, with thoughts that could rest on nothing, she walked on; but it would not do: in half a minute the letter was unfolded again; and collecting herself as well as she could, she again began the mortifying perusal of all that related to Wickham, and commanded herself so far as to examine the meaning of every sentence. The account of his connection with{255} the Pemberley family was exactly what he had related himself; and the kindness of the late Mr. Darcy, though she had not before known its extent, agreed equally well with his own words. So far each recital confirmed the other; but when she came to the will, the difference was great. What Wickham had said of the living was fresh in her memory; and as she recalled his very words, it was impossible not to feel that there was gross duplicity on one side or the other, and, for a few moments, she flattered herself that her wishes did not err. But when she read and re-read, with the closest attention, the particulars immediately following of Wickham’s resigning all pretensions to the living, of his receiving in lieu so considerable a sum as three thousand pounds, again was she forced to hesitate. She put down the letter, weighed every circumstance with what she meant to be impartiality—deliberated on the probability of each statement—but with little success. On both sides it was only assertion. Again she read on. But every line proved more clearly that the affair, which she had believed it impossible that any contrivance could so represent as to render Mr. Darcy’s conduct in it less than infamous, was capable of a turn which must make him entirely blameless throughout the whole.",
+      "sha256": "ea7af15cef9cd23d8a24460df1dbddcafc45d10e47e4f2a5283a7c0b77a0460b",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1342-1205": {
+      "id": "1342-1205",
+      "locator": "Chapter 36",
+      "url": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html",
+      "text": "She grew absolutely ashamed of herself. Of neither{259} Darcy nor Wickham could she think, without feeling that she had been blind, partial, prejudiced, absurd.",
+      "sha256": "d6c9215e64c9915f3c95936748938d5ee9da61fbb34011c15e6ebaf341d41d2e",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1342-1199": {
+      "id": "1342-1199",
+      "locator": "Chapter 36",
+      "url": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html",
+      "text": "The extravagance and general profligacy which he scrupled not to lay to Mr. Wickham’s charge exceedingly shocked her; the more so, as she could bring no proof of its injustice. She had never heard of him before his entrance into the ——shire militia, in which he had engaged at the persuasion of the young man, who, on meeting him accidentally in town, had there renewed a slight acquaintance. Of his former way of life, nothing had been known in Hertfordshire but what he told{256}",
+      "sha256": "dbb3b0aebdd3669b312b5a34a183e3d2eb4bb6f9fd6a6169d4ef1d4e8573816a",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1342-1202": {
+      "id": "1342-1202",
+      "locator": "Chapter 36",
+      "url": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html",
+      "text": "himself. As to his real character, had information been in her power, she had never felt a wish of inquiring. His countenance, voice, and manner, had established him at once in the possession of every virtue. She tried to recollect some instance of goodness, some distinguished trait of integrity or benevolence, that might rescue him from the attacks of Mr. Darcy; or at least, by the predominance of virtue, atone for those casual errors, under which she would endeavour to class what Mr. Darcy had described as the idleness and vice of many years’ continuance. But no such recollection befriended her. She could see him instantly before her, in every charm of air and address, but she could remember no more substantial good than the general approbation of the neighbourhood, and the regard which his social powers had{257} gained him in the mess. After pausing on this point a considerable while, she once more continued to read. But, alas! the story which followed, of his designs on Miss Darcy, received some confirmation from what had passed between Colonel Fitzwilliam and herself only the morning before; and at last she was referred for the truth of every particular to Colonel Fitzwilliam himself—from whom she had previously received the information of his near concern in all his cousin’s affairs and whose character she had no reason to question. At one time she had almost resolved on applying to him, but the idea was checked by the awkwardness of the application, and at length wholly banished by the conviction that Mr. Darcy would never have hazarded such a proposal, if he had not been well assured of his cousin’s corroboration.",
+      "sha256": "3910b423296b526817e6eec2c0e06de160cd39570b70f17ec289693e656354db",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1533-75": {
+      "id": "1533-75",
+      "locator": "Act 1, Scene 3",
+      "url": "https://www.gutenberg.org/cache/epub/1533/pg1533-images.html",
+      "text": "THIRD WITCH. All hail, Macbeth! that shalt be king hereafter!",
+      "sha256": "04894f9b810b88e299330a43b78983d012a1225c30d4a14c18580a4ea4e6af62",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1533-102": {
+      "id": "1533-102",
+      "locator": "Act 1, Scene 3",
+      "url": "https://www.gutenberg.org/cache/epub/1533/pg1533-images.html",
+      "text": "MACBETH. [Aside.] Two truths are told, As happy prologues to the swelling act Of the imperial theme.—I thank you, gentlemen.— [Aside.] This supernatural soliciting Cannot be ill; cannot be good. If ill, Why hath it given me earnest of success, Commencing in a truth? I am Thane of Cawdor: If good, why do I yield to that suggestion Whose horrid image doth unfix my hair, And make my seated heart knock at my ribs, Against the use of nature? Present fears Are less than horrible imaginings. My thought, whose murder yet is but fantastical, Shakes so my single state of man That function is smother’d in surmise, And nothing is but what is not.",
+      "sha256": "06bf921f6a0b27a3f081ea846fcd57ef6493f82e72065f6e639bd4f52a31359e",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1533-104": {
+      "id": "1533-104",
+      "locator": "Act 1, Scene 3",
+      "url": "https://www.gutenberg.org/cache/epub/1533/pg1533-images.html",
+      "text": "MACBETH. [Aside.] If chance will have me king, why, chance may crown me Without my stir.",
+      "sha256": "4b035d8e10f85ac59e96bc18c7dbefb899c8df0418fd7d62118fb1eae19d99fa",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1533-132": {
+      "id": "1533-132",
+      "locator": "Act 1, Scene 5",
+      "url": "https://www.gutenberg.org/cache/epub/1533/pg1533-images.html",
+      "text": "Glamis thou art, and Cawdor; and shalt be What thou art promis’d. Yet do I fear thy nature; It is too full o’ th’ milk of human kindness To catch the nearest way. Thou wouldst be great; Art not without ambition, but without The illness should attend it. What thou wouldst highly, That wouldst thou holily; wouldst not play false, And yet wouldst wrongly win. Thou’dst have, great Glamis, That which cries, “Thus thou must do,” if thou have it; And that which rather thou dost fear to do, Than wishest should be undone. Hie thee hither, That I may pour my spirits in thine ear, And chastise with the valour of my tongue All that impedes thee from the golden round, Which fate and metaphysical aid doth seem To have thee crown’d withal.",
+      "sha256": "8d3870b2f8bf083e3c5ef6c05349cbaacee393d4c1b1e90968b12fa8d9bdf45f",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1533-171": {
+      "id": "1533-171",
+      "locator": "Act 1, Scene 7",
+      "url": "https://www.gutenberg.org/cache/epub/1533/pg1533-images.html",
+      "text": "LADY MACBETH. Was the hope drunk Wherein you dress’d yourself? Hath it slept since? And wakes it now, to look so green and pale At what it did so freely? From this time Such I account thy love. Art thou afeard To be the same in thine own act and valour As thou art in desire? Wouldst thou have that Which thou esteem’st the ornament of life, And live a coward in thine own esteem, Letting “I dare not” wait upon “I would,” Like the poor cat i’ th’ adage?",
+      "sha256": "2d17c02ab009df73b6175f5b4f8ad666dec58df057b7dbc68a721de338f620c2",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1533-173": {
+      "id": "1533-173",
+      "locator": "Act 1, Scene 7",
+      "url": "https://www.gutenberg.org/cache/epub/1533/pg1533-images.html",
+      "text": "LADY MACBETH. What beast was’t, then, That made you break this enterprise to me? When you durst do it, then you were a man; And, to be more than what you were, you would Be so much more the man. Nor time nor place Did then adhere, and yet you would make both: They have made themselves, and that their fitness now Does unmake you. I have given suck, and know How tender ’tis to love the babe that milks me: I would, while it was smiling in my face, Have pluck’d my nipple from his boneless gums And dash’d the brains out, had I so sworn as you Have done to this.",
+      "sha256": "aec04a8f215532687bd9f0557d0f551695897f162aa671201d59eba48c8c7bc2",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1533-164": {
+      "id": "1533-164",
+      "locator": "Act 1, Scene 7",
+      "url": "https://www.gutenberg.org/cache/epub/1533/pg1533-images.html",
+      "text": "MACBETH. If it were done when ’tis done, then ’twere well It were done quickly. If th’ assassination Could trammel up the consequence, and catch With his surcease success; that but this blow Might be the be-all and the end-all—here, But here, upon this bank and shoal of time, We’d jump the life to come. But in these cases We still have judgement here; that we but teach Bloody instructions, which being taught, return To plague th’ inventor. This even-handed justice Commends th’ ingredience of our poison’d chalice To our own lips. He’s here in double trust: First, as I am his kinsman and his subject, Strong both against the deed; then, as his host, Who should against his murderer shut the door, Not bear the knife myself. Besides, this Duncan Hath borne his faculties so meek, hath been So clear in his great office, that his virtues Will plead like angels, trumpet-tongued, against The deep damnation of his taking-off; And pity, like a naked new-born babe, Striding the blast, or heaven’s cherubin, hors’d Upon the sightless couriers of the air, Shall blow the horrid deed in every eye, That tears shall drown the wind.—I have no spur To prick the sides of my intent, but only Vaulting ambition, which o’erleaps itself And falls on th’ other—",
+      "sha256": "4fc7938f93085db40437494f6e0ece1d7889bc50a3b65264b3607cde8642bba0",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1533-170": {
+      "id": "1533-170",
+      "locator": "Act 1, Scene 7",
+      "url": "https://www.gutenberg.org/cache/epub/1533/pg1533-images.html",
+      "text": "MACBETH. We will proceed no further in this business: He hath honour’d me of late; and I have bought Golden opinions from all sorts of people, Which would be worn now in their newest gloss, Not cast aside so soon.",
+      "sha256": "a69c973cb767e6ed6e88dad8c0f690ad5e8b6375f36d61097d87faead1dffbfa",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1533-178": {
+      "id": "1533-178",
+      "locator": "Act 1, Scene 7",
+      "url": "https://www.gutenberg.org/cache/epub/1533/pg1533-images.html",
+      "text": "MACBETH. I am settled, and bend up Each corporal agent to this terrible feat. Away, and mock the time with fairest show: False face must hide what the false heart doth know.",
+      "sha256": "57946f5774465781242fb8532bab0186a1d82a5b2601648c7ead15ed27f8eab5",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "42324-48": {
+      "id": "42324-48",
+      "locator": "Letter I",
+      "url": "https://www.gutenberg.org/cache/epub/42324/pg42324-images.html",
+      "text": "You will rejoice to hear that no disaster has accompanied the commencement of an enterprise which you have regarded with such evil forebodings. I arrived here yesterday; and my first task is to assure my dear sister of my welfare, and increasing confidence in the success of my undertaking.",
+      "sha256": "0247599886009b62eed8bc698b2237855843a4c600cda2e50e46631a5c0d50ef",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "42324-53": {
+      "id": "42324-53",
+      "locator": "Letter I",
+      "url": "https://www.gutenberg.org/cache/epub/42324/pg42324-images.html",
+      "text": "And now, dear Margaret, do I not deserve to accomplish some great purpose? My life might have been passed in ease and luxury; but I preferred glory to every enticement that wealth placed in my path. Oh, that some encouraging voice would answer in the affirmative! My courage and my resolution is firm; but my hopes fluctuate, and my spirits are often depressed. I am about to proceed on a long and difficult voyage, the emergencies of which will demand all my fortitude: I am required not only to raise the spirits of others, but sometimes to sustain my own, when theirs are failing.",
+      "sha256": "c577e51a1db01385142fd999829a6f241adcde1ad6161ce40f54387f396ea1cb",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "42324-66": {
+      "id": "42324-66",
+      "locator": "Letter II",
+      "url": "https://www.gutenberg.org/cache/epub/42324/pg42324-images.html",
+      "text": "Yet do not suppose, because I complain a little, or because I can conceive a consolation for my toils which I may never know, that I am wavering in my resolutions. Those are as fixed as fate; and my voyage is only now delayed until the weather shall permit my embarkation. The winter has been dreadfully severe; but the spring promises well, and it is considered as a remarkably early season; so that perhaps I may sail sooner than I expected. I shall do nothing rashly: you know me sufficiently to confide in my prudence and considerateness, whenever the safety of others is committed to my care.",
+      "sha256": "a604f414365aab8ce034bc6088515d4e05f16af4b806abbb1403e0cdb418908a",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "42324-180": {
+      "id": "42324-180",
+      "locator": "Chapter 4",
+      "url": "https://www.gutenberg.org/cache/epub/42324/pg42324-images.html",
+      "text": "No one can conceive the variety of feelings which bore me onwards, like a hurricane, in the first enthusiasm of success. Life and death appeared to me ideal bounds, which I should first break through, and pour a torrent of light into our dark world. A new species would bless me as its creator and source; many happy and excellent natures would owe their being to me. No father could claim the gratitude of his child so completely as I should deserve theirs. Pursuing these reflections, I thought, that if I could bestow animation upon lifeless matter, I might in process of time (although I now found it impossible) renew life where death had apparently devoted the body to corruption.",
+      "sha256": "7384fa6c98eb075ee5b9ba3fb240ab1e265a2dfc24f4c8d907ef416b9703f3dd",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "42324-184": {
+      "id": "42324-184",
+      "locator": "Chapter 4",
+      "url": "https://www.gutenberg.org/cache/epub/42324/pg42324-images.html",
+      "text": "I then thought that my father would be unjust if he ascribed my neglect to vice, or faultiness on my part; but I am now convinced that he was justified in conceiving that I should not be altogether free from blame. A human being in perfection ought always to preserve a calm and peaceful mind, and never to allow passion or a transitory desire to disturb his tranquillity. I do not think that the pursuit of knowledge is an exception to this rule. If the study to which you apply yourself has a tendency to weaken your affections, and to destroy your taste for those simple pleasures in which no alloy can possibly mix, then that study is certainly unlawful, that is to say, not befitting the human mind. If this rule were always observed; if no man allowed any pursuit whatsoever to interfere with the tranquillity of his domestic affections, Greece had not been enslaved; Cæsar would have spared his country; America would have been discovered more gradually; and the empires of Mexico and Peru had not been destroyed.",
+      "sha256": "2c3ae66f626d4f34c9e8417cc2781bd67ce27aaa05eb0fac2bfeafe1390965c4",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "42324-191": {
+      "id": "42324-191",
+      "locator": "Chapter 5",
+      "url": "https://www.gutenberg.org/cache/epub/42324/pg42324-images.html",
+      "text": "The different accidents of life are not so changeable as the feelings of human nature. I had worked hard for nearly two years, for the sole purpose of infusing life into an inanimate body. For this I had deprived myself of rest and health. I had desired it with an ardour that far exceeded moderation; but now that I had finished, the beauty of the dream vanished, and breathless horror and disgust filled my heart. Unable to endure the aspect of the being I had created, I rushed out of the room, and continued a long time traversing my bedchamber, unable to compose my mind to sleep. At length lassitude succeeded to the tumult I had before endured; and I threw myself on the bed in my clothes, endeavouring to seek a few moments of forgetfulness. But it was in vain: I slept, indeed, but I was disturbed by the wildest dreams. I thought I saw Elizabeth, in the bloom of health, walking in the streets of Ingolstadt. Delighted and surprised, I embraced her; but as I imprinted the first kiss on her lips, they became livid with the hue of death; her features appeared to change, and I thought that I held the corpse of my dead mother in my arms; a shroud enveloped her form, and I saw the grave-worms crawling in the folds of the flannel. I started from my sleep with horror; a cold dew covered my forehead, my teeth chattered, and every limb became convulsed: when, by the dim and yellow light of the moon, as it forced its way through the window shutters, I beheld the wretch—the miserable monster whom I had created. He held up the curtain of the bed; and his eyes, if eyes they may be called, were fixed on me. His jaws opened, and he muttered some inarticulate sounds, while a grin wrinkled his cheeks. He might have spoken, but I did not hear; one hand was stretched out, seemingly to detain me, but I escaped, and rushed down stairs. I took refuge in the courtyard belonging to the house which I inhabited; where I remained during the rest of the night, walking up and down in the greatest agitation, listening attentively, catching and fearing each sound as if it were to announce the approach of the demoniacal corpse to which I had so miserably given life.",
+      "sha256": "5528f09de67c17fa226f1ec562eb07725de842948808636d0fc0ee36a1deddc8",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "42324-188": {
+      "id": "42324-188",
+      "locator": "Chapter 5",
+      "url": "https://www.gutenberg.org/cache/epub/42324/pg42324-images.html",
+      "text": "It was on a dreary night of November, that I beheld the accomplishment of my toils. With an anxiety that almost amounted to agony, I collected the instruments of life around me, that I might infuse a spark of being into the lifeless thing that lay at my feet. It was already one in the morning; the rain pattered dismally against the panes, and my candle was nearly burnt out, when, by the glimmer of the half-extinguished light, I saw the dull yellow eye of the creature open; it breathed hard, and a convulsive motion agitated its limbs.",
+      "sha256": "de2ed41ce95610af396db30ce5659447dc07a5409b1f315fbf7ec824b52da2f9",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "42324-190": {
+      "id": "42324-190",
+      "locator": "Chapter 5",
+      "url": "https://www.gutenberg.org/cache/epub/42324/pg42324-images.html",
+      "text": "How can I describe my emotions at this catastrophe, or how delineate the wretch whom with such infinite pains and care I had endeavoured to form? His limbs were in proportion, and I had selected his features as beautiful. Beautiful!—Great God! His yellow skin scarcely covered the work of muscles and arteries beneath; his hair was of a lustrous black, and flowing; his teeth of a pearly whiteness; but these luxuriances only formed a more horrid contrast with his watery eyes, that seemed almost of the same colour as the dun white sockets in which they were set, his shrivelled complexion and straight black lips.",
+      "sha256": "798d60cb9a50cadfec4b3d97aa1a64d3c9815c9eaf72da27bff376424b4ae0e4",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "46-36": {
+      "id": "46-36",
+      "locator": "Stave 1",
+      "url": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
+      "text": "Oh! But he was a tight-fisted hand at the grindstone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner! Hard and sharp as flint, from which no steel had ever struck out generous fire; secret, and self-contained, and solitary as an oyster. The cold within him froze his old features, nipped his pointed nose, shrivelled his cheek, stiffened his gait; made his eyes red, his thin lips blue; and spoke out shrewdly in his grating voice. A frosty rime was on his head, and on his eyebrows, and his wiry chin. He carried his own low temperature always about with him; he iced his office in the dog-days; and didn’t thaw it one degree at Christmas.",
+      "sha256": "701a8ac1f7ee31d32ca06a4a47c473eae7ad3a4b329cd74e8a9293a71a003e70",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "46-46": {
+      "id": "46-46",
+      "locator": "Stave 1",
+      "url": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
+      "text": "“I do,” said Scrooge. “Merry Christmas! What right have you to be merry? What reason have you to be merry? You’re poor enough.”",
+      "sha256": "77c5a9614c73dee0a370c491c7a5f170d07aa950179cb2bad96696c441e4182d",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "46-48": {
+      "id": "46-48",
+      "locator": "Stave 1",
+      "url": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
+      "text": "Scrooge having no better answer ready on the spur of the moment, said, “Bah!” again; and followed it up with “Humbug.”",
+      "sha256": "39736319cf93a57219f7c22d12fc0a79646c0dca38ede69ed555bc33153e476d",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "46-259": {
+      "id": "46-259",
+      "locator": "Stave 2",
+      "url": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
+      "text": "They went, the Ghost and Scrooge, across the hall, to a door at the back of the house. It opened before them, and disclosed a long, bare, melancholy room, made barer still by lines of plain deal forms and desks. At one of these a lonely boy was reading near a feeble fire; and Scrooge sat down upon a form, and wept to see his poor forgotten self as he used to be.",
+      "sha256": "eb784673f6fc2f5b5dec46e22368d04571268b0098b8917bef0977b3de77504a",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "46-308": {
+      "id": "46-308",
+      "locator": "Stave 2",
+      "url": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
+      "text": "“It isn’t that,” said Scrooge, heated by the remark, and speaking unconsciously like his former, not his latter, self. “It isn’t that, Spirit. He has the power to render us happy or unhappy; to make our service light or burdensome; a pleasure or a toil. Say that his power lies in words and looks; in things so slight and insignificant that it is impossible to add and count ’em up: what then? The happiness he gives, is quite as great as if it cost a fortune.”",
+      "sha256": "16794af0c1a804ff17a28c99124e79064b29609d3f03f400e669144ea62ed734",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "46-38": {
+      "id": "46-38",
+      "locator": "Stave 1",
+      "url": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
+      "text": "Nobody ever stopped him in the street to say, with gladsome looks, “My dear Scrooge, how are you? When will you come to see me?” No beggars implored him to bestow a trifle, no children asked him what it was o’clock, no man or woman ever once in all his life inquired the way to such and such a place, of Scrooge. Even the blind men’s dogs appeared to know him; and when they saw him coming on, would tug their owners into doorways and up courts; and then would wag their tails as though they said, “No eye at all is better than an evil eye, dark master!”",
+      "sha256": "4d1d3354618ac0537b0e2250cb5f4f9b3d18f573837de91b918b70db4fb19de7",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "46-402": {
+      "id": "46-402",
+      "locator": "Stave 3",
+      "url": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
+      "text": "Then up rose Mrs. Cratchit, Cratchit’s wife, dressed out but poorly in a twice-turned gown, but brave in ribbons, which are cheap and make a goodly show for sixpence; and she laid the cloth, assisted by Belinda Cratchit, second of her daughters, also brave in ribbons; while Master Peter Cratchit plunged a fork into the saucepan of potatoes, and getting the corners of his monstrous shirt collar (Bob’s private property, conferred upon his son and heir in honour of the day) into his mouth, rejoiced to find himself so gallantly attired, and yearned to show his linen in the fashionable Parks. And now two smaller Cratchits, boy and girl, came tearing in, screaming that outside the baker’s they had smelt the goose, and known it for their own; and basking in luxurious thoughts of sage and onion, these young Cratchits danced about the table, and exalted Master Peter Cratchit to the skies, while he (not proud, although his collars nearly choked him) blew the fire, until the slow potatoes bubbling up, knocked loudly at the saucepan-lid to be let out and peeled.",
+      "sha256": "fffe0bea879f4ec4d927227a97779f4553042924bb893614260de5f6f4c6d738",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "46-420": {
+      "id": "46-420",
+      "locator": "Stave 3",
+      "url": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
+      "text": "There never was such a goose. Bob said he didn’t believe there ever was such a goose cooked. Its tenderness and flavour, size and cheapness, were the themes of universal admiration. Eked out by apple-sauce and mashed potatoes, it was a sufficient dinner for the whole family; indeed, as Mrs. Cratchit said with great delight (surveying one small atom of a bone upon the dish), they hadn’t ate it all at last! Yet every one had had enough, and the youngest Cratchits in particular, were steeped in sage and onion to the eyebrows! But now, the plates being changed by Miss Belinda, Mrs. Cratchit left the room alone—too nervous to bear witnesses—to take the pudding up and bring it in.",
+      "sha256": "31b8653916e254b73443f6cf8f0bcb641328d621d48ae57ce970decd650cd881",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1540-22": {
+      "id": "1540-22",
+      "locator": "Act 1, Scene 1",
+      "url": "https://www.gutenberg.org/cache/epub/1540/pg1540-images.html",
+      "text": "MASTER. Good! Speak to the mariners: fall to ’t yarely, or we run ourselves aground: bestir, bestir.",
+      "sha256": "c8de16f88e97a8f5fa71564f1ed03b86c6e1af04264899e2f1442dbf21eab855",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1540-32": {
+      "id": "1540-32",
+      "locator": "Act 1, Scene 1",
+      "url": "https://www.gutenberg.org/cache/epub/1540/pg1540-images.html",
+      "text": "BOATSWAIN. When the sea is. Hence! What cares these roarers for the name of king? To cabin! silence! Trouble us not.",
+      "sha256": "9457b452a8ccc729ba240e8927fd05649c756f0c25e20b0d7fcc4b65ee3a9395",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1540-34": {
+      "id": "1540-34",
+      "locator": "Act 1, Scene 1",
+      "url": "https://www.gutenberg.org/cache/epub/1540/pg1540-images.html",
+      "text": "BOATSWAIN. None that I more love than myself. You are a counsellor: if you can command these elements to silence, and work the peace of the present, we will not hand a rope more. Use your authority: if you cannot, give thanks you have lived so long, and make yourself ready in your cabin for the mischance of the hour, if it so hap.—Cheerly, good hearts!—Out of our way, I say.",
+      "sha256": "6abff6682e212533ff106379698a6e619154b558287364a14ea8dc5965f229bf",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1540-74": {
+      "id": "1540-74",
+      "locator": "Act 1, Scene 2",
+      "url": "https://www.gutenberg.org/cache/epub/1540/pg1540-images.html",
+      "text": "MIRANDA. You have often Begun to tell me what I am, but stopp’d, And left me to a bootless inquisition, Concluding “Stay; not yet.”",
+      "sha256": "9eeab7130e271e1f2b233cd9c8ae4ddfedf4e8bdde1831d9ac78184da2ccc1f5",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1540-75": {
+      "id": "1540-75",
+      "locator": "Act 1, Scene 2",
+      "url": "https://www.gutenberg.org/cache/epub/1540/pg1540-images.html",
+      "text": "PROSPERO. The hour’s now come, The very minute bids thee ope thine ear; Obey, and be attentive. Canst thou remember A time before we came unto this cell? I do not think thou canst, for then thou wast not Out three years old.",
+      "sha256": "6559496acccebd84453ae380226abfbbf8c0bea679d305275a4ae2747d6beec0",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1540-95": {
+      "id": "1540-95",
+      "locator": "Act 1, Scene 2",
+      "url": "https://www.gutenberg.org/cache/epub/1540/pg1540-images.html",
+      "text": "PROSPERO. Mark his condition, and the event; then tell me If this might be a brother.",
+      "sha256": "2cd98bc613b5175457eb0834dd62e2c6d3312c8728c527210d537c4f2563583a",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1540-131": {
+      "id": "1540-131",
+      "locator": "Act 1, Scene 2",
+      "url": "https://www.gutenberg.org/cache/epub/1540/pg1540-images.html",
+      "text": "ARIEL. I prithee, Remember I have done thee worthy service; Told thee no lies, made no mistakings, serv’d Without or grudge or grumblings: thou didst promise To bate me a full year.",
+      "sha256": "a8c1a19590338f33656cc303df77edb581627de3a821c4322d3a2d046b042a6e",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1540-167": {
+      "id": "1540-167",
+      "locator": "Act 1, Scene 2",
+      "url": "https://www.gutenberg.org/cache/epub/1540/pg1540-images.html",
+      "text": "CALIBAN. I must eat my dinner. This island’s mine, by Sycorax my mother, Which thou tak’st from me. When thou cam’st first, Thou strok’st me and made much of me; wouldst give me Water with berries in ’t; and teach me how To name the bigger light, and how the less, That burn by day and night: and then I lov’d thee, And show’d thee all the qualities o’ th’ isle, The fresh springs, brine-pits, barren place, and fertile. Curs’d be I that did so! All the charms Of Sycorax, toads, beetles, bats, light on you! For I am all the subjects that you have, Which first was mine own King; and here you sty me In this hard rock, whiles you do keep from me The rest o’ th’ island.",
+      "sha256": "547b13a9d6d9fe99a7e0d45989cf7e56955bf087542f7c7fd986caff605f0cb4",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "1540-170": {
+      "id": "1540-170",
+      "locator": "Act 1, Scene 2",
+      "url": "https://www.gutenberg.org/cache/epub/1540/pg1540-images.html",
+      "text": "PROSPERO. Abhorred slave, Which any print of goodness wilt not take, Being capable of all ill! I pitied thee, Took pains to make thee speak, taught thee each hour One thing or other: when thou didst not, savage, Know thine own meaning, but wouldst gabble like A thing most brutish, I endow’d thy purposes With words that made them known. But thy vile race, Though thou didst learn, had that in ’t which good natures Could not abide to be with; therefore wast thou Deservedly confin’d into this rock, Who hadst deserv’d more than a prison.",
+      "sha256": "b9000dc6b2cacecdcdceccc4acbc70ac2ee526c0deb4f8d315afe01c6e582b53",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "declaration-9": {
+      "id": "declaration-9",
+      "locator": "Opening",
+      "url": "https://www.archives.gov/founding-docs/declaration-transcript",
+      "text": "The unanimous Declaration of the thirteen united States of America, When in the Course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.",
+      "sha256": "e01ad94ac6288c41356f84c0f8995817cda6d6d05ce01c2490fdbc97c95bf711",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "declaration-10": {
+      "id": "declaration-10",
+      "locator": "Principles",
+      "url": "https://www.archives.gov/founding-docs/declaration-transcript",
+      "text": "We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.--Such has been the patient sufferance of these Colonies; and such is now the necessity which constrains them to alter their former Systems of Government. The history of the present King of Great Britain is a history of repeated injuries and usurpations, all having in direct object the establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a candid world.",
+      "sha256": "cbab713becb1bc10d47e26e22ad82f3beffcea037992d23ceb695daccab064d4",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "declaration-40": {
+      "id": "declaration-40",
+      "locator": "Conclusion",
+      "url": "https://www.archives.gov/founding-docs/declaration-transcript",
+      "text": "We, therefore, the Representatives of the united States of America, in General Congress, Assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of these Colonies, solemnly publish and declare, That these United Colonies are, and of Right ought to be Free and Independent States; that they are Absolved from all Allegiance to the British Crown, and that all political connection between them and the State of Great Britain, is and ought to be totally dissolved; and that as Free and Independent States, they have full Power to levy War, conclude Peace, contract Alliances, establish Commerce, and to do all other Acts and Things which Independent States may of right do. And for the support of this Declaration, with a firm reliance on the protection of divine Providence, we mutually pledge to each other our Lives, our Fortunes and our sacred Honor.",
+      "sha256": "6be83676473f8f1c9f01924f8e616634690597e193ae14fc9d9889ec8c519031",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "declaration-11": {
+      "id": "declaration-11",
+      "locator": "Grievances and redress",
+      "url": "https://www.archives.gov/founding-docs/declaration-transcript",
+      "text": "He has refused his Assent to Laws, the most wholesome and necessary for the public good.",
+      "sha256": "6b13d9599df82f0ad1fb987e8377d46461f996916127e7403deeee0577168270",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "declaration-19": {
+      "id": "declaration-19",
+      "locator": "Grievances and redress",
+      "url": "https://www.archives.gov/founding-docs/declaration-transcript",
+      "text": "He has made Judges dependent on his Will alone, for the tenure of their offices, and the amount and payment of their salaries.",
+      "sha256": "f8500c602848cc9a8ddecef72f4307a0d9273708a7143b179af4c4acfa39b91a",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "declaration-38": {
+      "id": "declaration-38",
+      "locator": "Grievances and redress",
+      "url": "https://www.archives.gov/founding-docs/declaration-transcript",
+      "text": "In every stage of these Oppressions We have Petitioned for Redress in the most humble terms: Our repeated Petitions have been answered only by repeated injury. A Prince, whose character is thus marked by every act which may define a Tyrant, is unfit to be the ruler of a free people.",
+      "sha256": "460e72fafd4371d30ab6f949ccee4732996bcd9de02cc9522df2d4f646e88898",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "23-99": {
+      "id": "23-99",
+      "locator": "Chapter VI",
+      "url": "https://www.gutenberg.org/cache/epub/23/pg23-images.html",
+      "text": "Very soon after I went to live with Mr. and Mrs. Auld, she very kindly commenced to teach me the A, B, C. After I had learned this, she assisted me in learning to spell words of three or four letters. Just at this point of my progress, Mr. Auld found out what was going on, and at once forbade Mrs. Auld to instruct me further, telling her, among other things, that it was unlawful, as well as unsafe, to teach a slave to read. To use his own words, further, he said, “If you give a nigger an inch, he will take an ell. A nigger should know nothing but to obey his master—to do as he is told to do. Learning would spoil the best nigger in the world. Now,” said he, “if you teach that nigger (speaking of myself) how to read, there would be no keeping him. It would forever unfit him to be a slave. He would at once become unmanageable, and of no value to his master. As to himself, it could do him no good, but a great deal of harm. It would make him discontented and unhappy.” These words sank deep into my heart, stirred up sentiments within that lay slumbering, and called into existence an entirely new train of thought. It was a new and special revelation, explaining dark and mysterious things, with which my youthful understanding had struggled, but struggled in vain. I now understood what had been to me a most perplexing difficulty—to wit, the white man’s power to enslave the black man. It was a grand achievement, and I prized it highly. From that moment, I understood the pathway from slavery to freedom. It was just what I wanted, and I got it at a time when I the least expected it. Whilst I was saddened by the thought of losing the aid of my kind mistress, I was gladdened by the invaluable instruction which, by the merest accident, I had gained from my master. Though conscious of the difficulty of learning without a teacher, I set out with high hope, and a fixed purpose, at whatever cost of trouble, to learn how to read. The very decided manner with which he spoke, and strove to impress his wife with the evil consequences of giving me instruction, served to convince me that he was deeply sensible of the truths he was uttering. It gave me the best assurance that I might rely with the utmost confidence on the results which, he said, would flow from teaching me to read. What he most dreaded, that I most desired. What he most loved, that I most hated. That which to him was a great evil, to be carefully shunned, was to me a great good, to be diligently sought; and the argument which he so warmly urged, against my learning to read, only served to inspire me with a desire and determination to learn. In learning to read, I owe almost as much to the bitter opposition of my master, as to the kindly aid of my mistress. I acknowledge the benefit of both.",
+      "sha256": "8cd5acc0122d1980b64cd186a439778afa9a59ba4f30c87ceac0a6fdb39c7684",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "23-102": {
+      "id": "23-102",
+      "locator": "Chapter VII",
+      "url": "https://www.gutenberg.org/cache/epub/23/pg23-images.html",
+      "text": "I lived in Master Hugh’s family about seven years. During this time, I succeeded in learning to read and write. In accomplishing this, I was compelled to resort to various stratagems. I had no regular teacher. My mistress, who had kindly commenced to instruct me, had, in compliance with the advice and direction of her husband, not only ceased to instruct, but had set her face against my being instructed by any one else. It is due, however, to my mistress to say of her, that she did not adopt this course of treatment immediately. She at first lacked the depravity indispensable to shutting me up in mental darkness. It was at least necessary for her to have some training in the exercise of irresponsible power, to make her equal to the task of treating me as though I were a brute.",
+      "sha256": "7c68a2299a6391fc66c1200d5f192bae2bee63b33f83bb5d6b3d97cb24f41781",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "23-104": {
+      "id": "23-104",
+      "locator": "Chapter VII",
+      "url": "https://www.gutenberg.org/cache/epub/23/pg23-images.html",
+      "text": "From this time I was most narrowly watched. If I was in a separate room any considerable length of time, I was sure to be suspected of having a book, and was at once called to give an account of myself. All this, however, was too late. The first step had been taken. Mistress, in teaching me the alphabet, had given me the inch, and no precaution could prevent me from taking the ell.",
+      "sha256": "1936dda4c6088f04ef59f580959cca395dac395384cb4d7a7c96babfa8fca536",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "23-105": {
+      "id": "23-105",
+      "locator": "Chapter VII",
+      "url": "https://www.gutenberg.org/cache/epub/23/pg23-images.html",
+      "text": "The plan which I adopted, and the one by which I was most successful, was that of making friends of all the little white boys whom I met in the street. As many of these as I could, I converted into teachers. With their kindly aid, obtained at different times and in different places, I finally succeeded in learning to read. When I was sent of errands, I always took my book with me, and by going one part of my errand quickly, I found time to get a lesson before my return. I used also to carry bread with me, enough of which was always in the house, and to which I was always welcome; for I was much better off in this regard than many of the poor white children in our neighborhood. This bread I used to bestow upon the hungry little urchins, who, in return, would give me that more valuable bread of knowledge. I am strongly tempted to give the names of two or three of those little boys, as a testimonial of the gratitude and affection I bear them; but prudence forbids;—not that it would injure me, but it might embarrass them; for it is almost an unpardonable offence to teach slaves to read in this Christian country. It is enough to say of the dear little fellows, that they lived on Philpot Street, very near Durgin and Bailey’s ship-yard. I used to talk this matter of slavery over with them. I would sometimes say to them, I wished I could be as free as they would be when they got to be men. “You will be free as soon as you are twenty-one, but I am a slave for life! Have not I as good a right to be free as you have?” These words used to trouble them; they would express for me the liveliest sympathy, and console me with the hope that something would occur by which I might be free.",
+      "sha256": "5d63adb1b714cf696a7a41bc65f10940c4209fe8daa1b6dca98eb08bc8775cf2",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "23-107": {
+      "id": "23-107",
+      "locator": "Chapter VII",
+      "url": "https://www.gutenberg.org/cache/epub/23/pg23-images.html",
+      "text": "In the same book, I met with one of Sheridan’s mighty speeches on and in behalf of Catholic emancipation. These were choice documents to me. I read them over and over again with unabated interest. They gave tongue to interesting thoughts of my own soul, which had frequently flashed through my mind, and died away for want of utterance. The moral which I gained from the dialogue was the power of truth over the conscience of even a slaveholder. What I got from Sheridan was a bold denunciation of slavery, and a powerful vindication of human rights. The reading of these documents enabled me to utter my thoughts, and to meet the arguments brought forward to sustain slavery; but while they relieved me of one difficulty, they brought on another even more painful than the one of which I was relieved. The more I read, the more I was led to abhor and detest my enslavers. I could regard them in no other light than a band of successful robbers, who had left their homes, and gone to Africa, and stolen us from our homes, and in a strange land reduced us to slavery. I loathed them as being the meanest as well as the most wicked of men. As I read and contemplated the subject, behold! that very discontentment which Master Hugh had predicted would follow my learning to read had already come, to torment and sting my soul to unutterable anguish. As I writhed under it, I would at times feel that learning to read had been a curse rather than a blessing. It had given me a view of my wretched condition, without the remedy. It opened my eyes to the horrible pit, but to no ladder upon which to get out. In moments of agony, I envied my fellow-slaves for their stupidity. I have often wished myself a beast. I preferred the condition of the meanest reptile to my own. Any thing, no matter what, to get rid of thinking! It was this everlasting thinking of my condition that tormented me. There was no getting rid of it. It was pressed upon me by every object within sight or hearing, animate or inanimate. The silver trump of freedom had roused my soul to eternal wakefulness. Freedom now appeared, to disappear no more forever. It was heard in every sound, and seen in every thing. It was ever present to torment me with a sense of my wretched condition. I saw nothing without seeing it, I heard nothing without hearing it, and felt nothing without feeling it. It looked from every star, it smiled in every calm, breathed in every wind, and moved in every storm.",
+      "sha256": "71450b6c414af41d1e7738662d2a4359f9f11fff04bc6e6c61d1e37c21385252",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "sentiments-document": {
+      "id": "sentiments-document",
+      "locator": "Declaration of Sentiments (1848)",
+      "url": "https://www.nps.gov/wori/learn/historyculture/declaration-of-sentiments.htm",
+      "text": "When, in the course of human events, it becomes necessary for one portion of the family of man to assume among the people of the earth a position different from that which they have hitherto occupied, but one to which the laws of nature and of nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes that impel them to such a course. We hold these truths to be self-evident; that all men and women are created equal; that they are endowed by their Creator with certain inalienable rights; that among these are life, liberty, and the pursuit of happiness; that to secure these rights governments are instituted, deriving their just powers from the consent of the governed. Whenever any form of Government becomes destructive of these ends, it is the right of those who suffer from it to refuse allegiance to it, and to insist upon the institution of a new government, laying its foundation on such principles, and organizing its powers in such form as to them shall seem most likely to effect their safety and happiness. Prudence, indeed, will dictate that governments long established should not be changed for light and transient causes; and accordingly, all experience hath shown that mankind are more disposed to suffer, while evils are sufferable, than to right themselves, by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same object, evinces a design to reduce them under absolute despotism, it is their duty to throw off such government, and to provide new guards for their future security. Such has been the patient sufferance of the women under this government, and such is now the necessity which constrains them to demand the equal station to which they are entitled. The history of mankind is a history of repeated injuries and usurpations on the part of man toward woman, having in direct object the establishment of an absolute tyranny over her. To prove this, let facts be submitted to a candid world. He has never permitted her to exercise her inalienable right to the elective franchise. He has compelled her to submit to laws, in the formation of which she had no voice. He has withheld from her rights which are given to the most ignorant and degraded men - both natives and foreigners. Having deprived her of this first right of a citizen, the elective franchise, thereby leaving her without representation in the halls of legislation, he has oppressed her on all sides. He has made her, if married, in the eye of the law, civilly dead. He has taken from her all right in property, even to the wages she earns. He has made her, morally, an irresponsible being, as she can commit many crimes, with impunity, provided they be done in the presence of her husband. In the covenant of marriage, she is compelled to promise obedience to her husband, he becoming, to all intents and purposes, her master - the law giving him power to deprive her of her liberty, and to administer chastisement. He has so framed the laws of divorce, as to what shall be the proper causes of divorce; in case of separation, to whom the guardianship of the children shall be given, as to be wholly regardless of the happiness of women - the law, in all cases, going upon the false supposition of the supremacy of man, and giving all power into his hands. After depriving her of all rights as a married woman, if single and the owner of property, he has taxed her to support a government which recognizes her only when her property can be made profitable to it. He has monopolized nearly all the profitable employments, and from those she is permitted to follow, she receives but a scanty remuneration. He closes against her all the avenues to wealth and distinction, which he considers most honorable to himself. As a teacher of theology, medicine, or law, she is not known. He has denied her the facilities for obtaining a thorough education - all colleges being closed against her. He allows her in Church as well as State, but a subordinate position, claiming Apostolic authority for her exclusion from the ministry, and with some exceptions, from any public participation in the affairs of the Church. He has created a false public sentiment, by giving to the world a different code of morals for men and women, by which moral delinquencies which exclude women from society, are not only tolerated but deemed of little account in man. He has usurped the prerogative of Jehovah himself, claiming it as his right to assign for her a sphere of action, when that belongs to her conscience and her God. He has endeavored, in every way that he could to destroy her confidence in her own powers, to lessen her self-respect, and to make her willing to lead a dependent and abject life. Now, in view of this entire disfranchisement of one-half the people of this country, their social and religious degradation, - in view of the unjust laws above mentioned, and because women do feel themselves aggrieved, oppressed, and fraudulently deprived of their most sacred rights, we insist that they have immediate admission to all the rights and privileges which belong to them as citizens of these United States. In entering upon the great work before us, we anticipate no small amount of misconception, misrepresentation, and ridicule; but we shall use every instrumentality within our power to effect our object. We shall employ agents, circulate tracts, petition the State and national Legislatures, and endeavor to enlist the pulpit and the press in our behalf. We hope this Convention will be followed by a series of Conventions, embracing every part of the country. Firmly relying upon the final triumph of the Right and the True, we do this day affix our signatures to this declaration. ",
+      "sha256": "1535028ddb189c476ee8c0fed2deb6b0d67c57d5f80c9c07b94a5be9eff951e7",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained."
+    },
+    "strabo-17-1-8": {
+      "id": "strabo-17-1-8",
+      "locator": "Geography 17.1.8 (Mouseion passage)",
+      "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A1*.html",
+      "text": "The Museum is also a part of the royal palaces; it has a public walk, an Exedra with seats, and a large house, in which is the common mess-hall of the men of learning who share the Museum. This group of men not only hold property in common, but also have a priest in charge of the Museum, who formerly was appointed by the kings, but is now appointed by Caesar.",
+      "sha256": "cef096c06e0f48ae9059cd2093774737e3478c9140e73112ad6177775608b16f",
+      "retrievedAt": "2026-09-10",
+      "normalization": "HTML decoded; whitespace collapsed; page/section and footnote reference markers omitted; wording and punctuation retained. Bounded Mouseion passage only."
+    }
+  },
+  "cards": {
+    "1727-391-0": {
+      "id": "1727-391-0",
+      "sourceId": "1727-391",
+      "title": "The storyteller introduces himself",
+      "locator": "Book IX",
+      "text": "“Firstly, then, I will tell you my name that you too may know it, and one day, if I outlive this time of sorrow, may become my guests though I live so far away from all of you. I am Ulysses son of Laertes, renowned among mankind for all manner of subtlety, so that my fame ascends to heaven. I live in Ithaca, where there is a high mountain called Neritum, covered with forests; and not far from it there is a group of islands very near to one another—Dulichium, Same, and the wooded island of Zacynthus.",
+      "start": 0,
+      "end": 504,
+      "contextStart": 0,
+      "contextEnd": 1225
+    },
+    "1727-413-0": {
+      "id": "1727-413-0",
+      "sourceId": "1727-413",
+      "title": "The assumed name",
+      "locator": "Book IX",
+      "text": "“I then gave him some more; three times did I fill the bowl for him, and three times did he drain it without thought or heed; then, when I saw that the wine had got into his head, I said to him as plausibly as I could: ‘Cyclops, you ask my name and I will tell it you; give me, therefore, the present you promised me; my name is Noman; this is what my father and mother and my friends have always called me.’",
+      "start": 0,
+      "end": 408,
+      "contextStart": 0,
+      "contextEnd": 408
+    },
+    "1727-420-0": {
+      "id": "1727-420-0",
+      "sourceId": "1727-420",
+      "title": "Planning an escape",
+      "locator": "Book IX",
+      "text": "“As for myself I kept on puzzling to think how I could best save my own life and those of my companions; I schemed and schemed, as one who knows that his life depends upon it, for the danger was very great. In the end I deemed that this plan would be the best; the male sheep were well grown, and carried a heavy black fleece, so I bound them noiselessly in threes together, with some of the withies on which the wicked monster used to sleep. There was to be a man under the middle sheep, and the two on either side were to cover him, so that there were three sheep to each man.",
+      "start": 0,
+      "end": 578,
+      "contextStart": 0,
+      "contextEnd": 817
+    },
+    "1727-419-0": {
+      "id": "1727-419-0",
+      "sourceId": "1727-419",
+      "title": "A successful stratagem",
+      "locator": "Book IX",
+      "text": "“Then they went away, and I laughed inwardly at the success of my clever stratagem, but the Cyclops, groaning and in an agony of pain, felt about with his hands till he found the stone and took it from the door; then he sat in the doorway and stretched his hands in front of it to catch anyone going out with the sheep, for he thought I might be foolish enough to attempt this.",
+      "start": 0,
+      "end": 377,
+      "contextStart": 0,
+      "contextEnd": 377
+    },
+    "1727-426-0": {
+      "id": "1727-426-0",
+      "sourceId": "1727-426",
+      "title": "The crew’s warning",
+      "locator": "Book IX",
+      "text": "“‘Do not,’ they exclaimed, ‘be mad enough to provoke this savage creature further; he has thrown one rock at us already which drove us back again to the mainland, and we made sure it had been the death of us; if he had then heard any further sound of voices he would have pounded our heads and our ship’s timbers into a jelly with the rugged rocks he would have heaved at us, for he can throw them a long way.’",
+      "start": 0,
+      "end": 410,
+      "contextStart": 0,
+      "contextEnd": 410
+    },
+    "1727-427-0": {
+      "id": "1727-427-0",
+      "sourceId": "1727-427",
+      "title": "The choice to speak",
+      "locator": "Book IX",
+      "text": "“But I would not listen to them, and shouted out to him in my rage, ‘Cyclops, if any one asks you who it was that put your eye out and spoiled your beauty, say it was the valiant warrior Ulysses, son of Laertes, who lives in Ithaca.’",
+      "start": 0,
+      "end": 233,
+      "contextStart": 0,
+      "contextEnd": 233
+    },
+    "1727-430-0": {
+      "id": "1727-430-0",
+      "sourceId": "1727-430",
+      "title": "The Cyclops’ prayer",
+      "locator": "Book IX",
+      "text": "“On this he lifted up his hands to the firmament of heaven and prayed, saying, ‘Hear me, great Neptune; if I am indeed your own true begotten son, grant that Ulysses may never reach his home alive; or if he must get back to his friends at last, let him do so late and in sore plight after losing all his men [let him reach his home in another man’s ship and find trouble in his house.’[82]",
+      "start": 0,
+      "end": 389,
+      "contextStart": 0,
+      "contextEnd": 389,
+      "editorialNote": "Bracketed text and footnote markers belong to the selected Butler edition. Footnote bodies are not included in this packet; do not use them as unseen evidence."
+    },
+    "1342-1192-0": {
+      "id": "1342-1192-0",
+      "sourceId": "1342-1192",
+      "title": "The letter’s opening",
+      "locator": "Chapter 35",
+      "text": "“Be not alarmed, madam, on receiving this letter, by the apprehension of its containing any repetition of those sentiments, or renewal of those offers, which were last night so disgusting to you. I write without any intention of paining you, or humbling myself, by dwelling on wishes, which, for the happiness of both, cannot be too soon forgotten; and the effort which the formation and the perusal of this letter must occasion, should have been spared, had not my character required it to be written{245} and read.",
+      "start": 0,
+      "end": 516,
+      "contextStart": 0,
+      "contextEnd": 676
+    },
+    "1342-1193-2835": {
+      "id": "1342-1193-2835",
+      "sourceId": "1342-1193",
+      "title": "Darcy’s judgment of Jane",
+      "locator": "Chapter 35",
+      "text": "That I was desirous of believing her indifferent is certain; but I will venture to say that my investigations and decisions are not usually influenced by my hopes or fears. I did not believe her to be indifferent because I wished it; I believed it on impartial conviction, as truly as I wished it in reason. My objections to the marriage were not merely those which I last night acknowledged to have required the utmost force of passion to put aside in my own case; the want of connection could not be so great an evil to my friend as to me.",
+      "start": 2835,
+      "end": 3376,
+      "contextStart": 2346,
+      "contextEnd": 4522
+    },
+    "1342-1193-13451": {
+      "id": "1342-1193-13451",
+      "sourceId": "1342-1193",
+      "title": "An offered witness",
+      "locator": "Chapter 35",
+      "text": "For the truth of everything here related, I can appeal more particularly to the testimony of Colonel Fitzwilliam, who, from our near relationship and constant intimacy, and still more as one of the executors of my father’s will, has been unavoidably acquainted with every particular of these transactions. If your abhorrence of me should make my assertions valueless, you cannot be prevented by the same cause from confiding in my cousin; and that there may be the possibility of consulting him, I shall endeavour to find some opportunity of putting this letter in your hands in the course of the morning. I will only add, God bless you.",
+      "start": 13451,
+      "end": 14088,
+      "contextStart": 13007,
+      "contextEnd": 14088
+    },
+    "1342-1196-0": {
+      "id": "1342-1196-0",
+      "sourceId": "1342-1196",
+      "title": "First reading",
+      "locator": "Chapter 36",
+      "text": "ELIZABETH, when Mr. Darcy gave her the letter, did not expect it to contain a renewal of his offers, she had formed no expectation at all of its contents. But such as they were, it may be well supposed how eagerly she went through them, and what a contrariety of emotion they excited. Her feelings as she read were scarcely to be defined. With amazement did she first understand that he believed any apology to be in his power; and steadfastly was she persuaded, that he could have no explanation to give, which a just sense of shame would not conceal.",
+      "start": 0,
+      "end": 552,
+      "contextStart": 0,
+      "contextEnd": 1218
+    },
+    "1342-1198-0": {
+      "id": "1342-1198-0",
+      "sourceId": "1342-1198",
+      "title": "The letter unfolded again",
+      "locator": "Chapter 36",
+      "text": "In this perturbed state of mind, with thoughts that could rest on nothing, she walked on; but it would not do: in half a minute the letter was unfolded again; and collecting herself as well as she could, she again began the mortifying perusal of all that related to Wickham, and commanded herself so far as to examine the meaning of every sentence. The account of his connection with{255} the Pemberley family was exactly what he had related himself; and the kindness of the late Mr. Darcy, though she had not before known its extent, agreed equally well with his own words.",
+      "start": 0,
+      "end": 574,
+      "contextStart": 0,
+      "contextEnd": 1681
+    },
+    "1342-1205-0": {
+      "id": "1342-1205-0",
+      "sourceId": "1342-1205",
+      "title": "A reconsidered self-image",
+      "locator": "Chapter 36",
+      "text": "She grew absolutely ashamed of herself. Of neither{259} Darcy nor Wickham could she think, without feeling that she had been blind, partial, prejudiced, absurd.",
+      "start": 0,
+      "end": 160,
+      "contextStart": 0,
+      "contextEnd": 160
+    },
+    "1342-1199-0": {
+      "id": "1342-1199-0",
+      "sourceId": "1342-1199",
+      "title": "What Elizabeth can verify",
+      "locator": "Chapter 36",
+      "text": "The extravagance and general profligacy which he scrupled not to lay to Mr. Wickham’s charge exceedingly shocked her; the more so, as she could bring no proof of its injustice. She had never heard of him before his entrance into the ——shire militia, in which he had engaged at the persuasion of the young man, who, on meeting him accidentally in town, had there renewed a slight acquaintance.",
+      "start": 0,
+      "end": 392,
+      "contextStart": 0,
+      "contextEnd": 481
+    },
+    "1342-1202-9": {
+      "id": "1342-1202-9",
+      "sourceId": "1342-1202",
+      "title": "The grounds of an earlier judgment",
+      "locator": "Chapter 36",
+      "text": "As to his real character, had information been in her power, she had never felt a wish of inquiring. His countenance, voice, and manner, had established him at once in the possession of every virtue. She tried to recollect some instance of goodness, some distinguished trait of integrity or benevolence, that might rescue him from the attacks of Mr. Darcy; or at least, by the predominance of virtue, atone for those casual errors, under which she would endeavour to class what Mr. Darcy had described as the idleness and vice of many years’ continuance. But no such recollection befriended her.",
+      "start": 9,
+      "end": 604,
+      "contextStart": 0,
+      "contextEnd": 1649
+    },
+    "1533-75-0": {
+      "id": "1533-75-0",
+      "sourceId": "1533-75",
+      "title": "The prediction",
+      "locator": "Act 1, Scene 3",
+      "text": "THIRD WITCH. All hail, Macbeth! that shalt be king hereafter!",
+      "start": 0,
+      "end": 61,
+      "contextStart": 0,
+      "contextEnd": 61
+    },
+    "1533-102-0": {
+      "id": "1533-102-0",
+      "sourceId": "1533-102",
+      "title": "An unsettled response",
+      "locator": "Act 1, Scene 3",
+      "text": "MACBETH. [Aside.] Two truths are told, As happy prologues to the swelling act Of the imperial theme.—I thank you, gentlemen.— [Aside.] This supernatural soliciting Cannot be ill; cannot be good. If ill, Why hath it given me earnest of success, Commencing in a truth? I am Thane of Cawdor: If good, why do I yield to that suggestion Whose horrid image doth unfix my hair, And make my seated heart knock at my ribs, Against the use of nature? Present fears Are less than horrible imaginings. My thought, whose murder yet is but fantastical, Shakes so my single state of man That function is smother’d in surmise, And nothing is but what is not.",
+      "start": 0,
+      "end": 642,
+      "contextStart": 0,
+      "contextEnd": 642
+    },
+    "1533-104-0": {
+      "id": "1533-104-0",
+      "sourceId": "1533-104",
+      "title": "Chance and action",
+      "locator": "Act 1, Scene 3",
+      "text": "MACBETH. [Aside.] If chance will have me king, why, chance may crown me Without my stir.",
+      "start": 0,
+      "end": 88,
+      "contextStart": 0,
+      "contextEnd": 88
+    },
+    "1533-132-0": {
+      "id": "1533-132-0",
+      "sourceId": "1533-132",
+      "title": "A judgment of character",
+      "locator": "Act 1, Scene 5",
+      "text": "Glamis thou art, and Cawdor; and shalt be What thou art promis’d. Yet do I fear thy nature; It is too full o’ th’ milk of human kindness To catch the nearest way. Thou wouldst be great; Art not without ambition, but without The illness should attend it. What thou wouldst highly, That wouldst thou holily; wouldst not play false, And yet wouldst wrongly win. Thou’dst have, great Glamis, That which cries, “Thus thou must do,” if thou have it; And that which rather thou dost fear to do, Than wishest should be undone.",
+      "start": 0,
+      "end": 518,
+      "contextStart": 0,
+      "contextEnd": 734
+    },
+    "1533-171-0": {
+      "id": "1533-171-0",
+      "sourceId": "1533-171",
+      "title": "Pressure through questioning",
+      "locator": "Act 1, Scene 7",
+      "text": "LADY MACBETH. Was the hope drunk Wherein you dress’d yourself? Hath it slept since? And wakes it now, to look so green and pale At what it did so freely? From this time Such I account thy love. Art thou afeard To be the same in thine own act and valour As thou art in desire? Wouldst thou have that Which thou esteem’st the ornament of life, And live a coward in thine own esteem, Letting “I dare not” wait upon “I would,” Like the poor cat i’ th’ adage?",
+      "start": 0,
+      "end": 454,
+      "contextStart": 0,
+      "contextEnd": 454
+    },
+    "1533-173-0": {
+      "id": "1533-173-0",
+      "sourceId": "1533-173",
+      "title": "An appeal to manhood",
+      "locator": "Act 1, Scene 7",
+      "text": "LADY MACBETH. What beast was’t, then, That made you break this enterprise to me? When you durst do it, then you were a man; And, to be more than what you were, you would Be so much more the man. Nor time nor place Did then adhere, and yet you would make both: They have made themselves, and that their fitness now Does unmake you. I have given suck, and know How tender ’tis to love the babe that milks me: I would, while it was smiling in my face, Have pluck’d my nipple from his boneless gums And dash’d the brains out, had I so sworn as you Have done to this.",
+      "start": 0,
+      "end": 562,
+      "contextStart": 0,
+      "contextEnd": 562
+    },
+    "1533-164-0": {
+      "id": "1533-164-0",
+      "sourceId": "1533-164",
+      "title": "Reasons against the act",
+      "locator": "Act 1, Scene 7",
+      "text": "MACBETH. If it were done when ’tis done, then ’twere well It were done quickly. If th’ assassination Could trammel up the consequence, and catch With his surcease success; that but this blow Might be the be-all and the end-all—here, But here, upon this bank and shoal of time, We’d jump the life to come. But in these cases We still have judgement here; that we but teach Bloody instructions, which being taught, return To plague th’ inventor. This even-handed justice Commends th’ ingredience of our poison’d chalice To our own lips.",
+      "start": 0,
+      "end": 534,
+      "contextStart": 0,
+      "contextEnd": 1251
+    },
+    "1533-170-0": {
+      "id": "1533-170-0",
+      "sourceId": "1533-170",
+      "title": "A stated refusal",
+      "locator": "Act 1, Scene 7",
+      "text": "MACBETH. We will proceed no further in this business: He hath honour’d me of late; and I have bought Golden opinions from all sorts of people, Which would be worn now in their newest gloss, Not cast aside so soon.",
+      "start": 0,
+      "end": 213,
+      "contextStart": 0,
+      "contextEnd": 213
+    },
+    "1533-178-0": {
+      "id": "1533-178-0",
+      "sourceId": "1533-178",
+      "title": "A decision announced",
+      "locator": "Act 1, Scene 7",
+      "text": "MACBETH. I am settled, and bend up Each corporal agent to this terrible feat. Away, and mock the time with fairest show: False face must hide what the false heart doth know.",
+      "start": 0,
+      "end": 173,
+      "contextStart": 0,
+      "contextEnd": 173
+    },
+    "42324-48-0": {
+      "id": "42324-48-0",
+      "sourceId": "42324-48",
+      "title": "Reassuring a reader",
+      "locator": "Letter I",
+      "text": "You will rejoice to hear that no disaster has accompanied the commencement of an enterprise which you have regarded with such evil forebodings. I arrived here yesterday; and my first task is to assure my dear sister of my welfare, and increasing confidence in the success of my undertaking.",
+      "start": 0,
+      "end": 290,
+      "contextStart": 0,
+      "contextEnd": 290
+    },
+    "42324-53-0": {
+      "id": "42324-53-0",
+      "sourceId": "42324-53",
+      "title": "Glory and doubt",
+      "locator": "Letter I",
+      "text": "And now, dear Margaret, do I not deserve to accomplish some great purpose? My life might have been passed in ease and luxury; but I preferred glory to every enticement that wealth placed in my path. Oh, that some encouraging voice would answer in the affirmative! My courage and my resolution is firm; but my hopes fluctuate, and my spirits are often depressed. I am about to proceed on a long and difficult voyage, the emergencies of which will demand all my fortitude: I am required not only to raise the spirits of others, but sometimes to sustain my own, when theirs are failing.",
+      "start": 0,
+      "end": 583,
+      "contextStart": 0,
+      "contextEnd": 583
+    },
+    "42324-66-0": {
+      "id": "42324-66-0",
+      "sourceId": "42324-66",
+      "title": "A promise of prudence",
+      "locator": "Letter II",
+      "text": "Yet do not suppose, because I complain a little, or because I can conceive a consolation for my toils which I may never know, that I am wavering in my resolutions. Those are as fixed as fate; and my voyage is only now delayed until the weather shall permit my embarkation. The winter has been dreadfully severe; but the spring promises well, and it is considered as a remarkably early season; so that perhaps I may sail sooner than I expected. I shall do nothing rashly: you know me sufficiently to confide in my prudence and considerateness, whenever the safety of others is committed to my care.",
+      "start": 0,
+      "end": 597,
+      "contextStart": 0,
+      "contextEnd": 597
+    },
+    "42324-180-0": {
+      "id": "42324-180-0",
+      "sourceId": "42324-180",
+      "title": "Imagining success",
+      "locator": "Chapter 4",
+      "text": "No one can conceive the variety of feelings which bore me onwards, like a hurricane, in the first enthusiasm of success. Life and death appeared to me ideal bounds, which I should first break through, and pour a torrent of light into our dark world. A new species would bless me as its creator and source; many happy and excellent natures would owe their being to me. No father could claim the gratitude of his child so completely as I should deserve theirs.",
+      "start": 0,
+      "end": 458,
+      "contextStart": 0,
+      "contextEnd": 686
+    },
+    "42324-184-0": {
+      "id": "42324-184-0",
+      "sourceId": "42324-184",
+      "title": "A retrospective judgment",
+      "locator": "Chapter 4",
+      "text": "I then thought that my father would be unjust if he ascribed my neglect to vice, or faultiness on my part; but I am now convinced that he was justified in conceiving that I should not be altogether free from blame. A human being in perfection ought always to preserve a calm and peaceful mind, and never to allow passion or a transitory desire to disturb his tranquillity. I do not think that the pursuit of knowledge is an exception to this rule.",
+      "start": 0,
+      "end": 447,
+      "contextStart": 0,
+      "contextEnd": 1020
+    },
+    "42324-191-0": {
+      "id": "42324-191-0",
+      "sourceId": "42324-191",
+      "title": "The creator’s response",
+      "locator": "Chapter 5",
+      "text": "The different accidents of life are not so changeable as the feelings of human nature. I had worked hard for nearly two years, for the sole purpose of infusing life into an inanimate body. For this I had deprived myself of rest and health. I had desired it with an ardour that far exceeded moderation; but now that I had finished, the beauty of the dream vanished, and breathless horror and disgust filled my heart. Unable to endure the aspect of the being I had created, I rushed out of the room, and continued a long time traversing my bedchamber, unable to compose my mind to sleep.",
+      "start": 0,
+      "end": 585,
+      "contextStart": 0,
+      "contextEnd": 1709
+    },
+    "42324-188-0": {
+      "id": "42324-188-0",
+      "sourceId": "42324-188",
+      "title": "The moment of creation",
+      "locator": "Chapter 5",
+      "text": "It was on a dreary night of November, that I beheld the accomplishment of my toils. With an anxiety that almost amounted to agony, I collected the instruments of life around me, that I might infuse a spark of being into the lifeless thing that lay at my feet. It was already one in the morning; the rain pattered dismally against the panes, and my candle was nearly burnt out, when, by the glimmer of the half-extinguished light, I saw the dull yellow eye of the creature open; it breathed hard, and a convulsive motion agitated its limbs.",
+      "start": 0,
+      "end": 539,
+      "contextStart": 0,
+      "contextEnd": 539
+    },
+    "42324-190-0": {
+      "id": "42324-190-0",
+      "sourceId": "42324-190",
+      "title": "Describing the result",
+      "locator": "Chapter 5",
+      "text": "How can I describe my emotions at this catastrophe, or how delineate the wretch whom with such infinite pains and care I had endeavoured to form? His limbs were in proportion, and I had selected his features as beautiful. Beautiful!—Great God! His yellow skin scarcely covered the work of muscles and arteries beneath; his hair was of a lustrous black, and flowing; his teeth of a pearly whiteness; but these luxuriances only formed a more horrid contrast with his watery eyes, that seemed almost of the same colour as the dun white sockets in which they were set, his shrivelled complexion and straight black lips.",
+      "start": 0,
+      "end": 615,
+      "contextStart": 0,
+      "contextEnd": 615
+    },
+    "46-36-0": {
+      "id": "46-36-0",
+      "sourceId": "46-36",
+      "title": "An initial portrait",
+      "locator": "Stave 1",
+      "text": "Oh! But he was a tight-fisted hand at the grindstone, Scrooge! a squeezing, wrenching, grasping, scraping, clutching, covetous, old sinner! Hard and sharp as flint, from which no steel had ever struck out generous fire; secret, and self-contained, and solitary as an oyster. The cold within him froze his old features, nipped his pointed nose, shrivelled his cheek, stiffened his gait; made his eyes red, his thin lips blue; and spoke out shrewdly in his grating voice. A frosty rime was on his head, and on his eyebrows, and his wiry chin.",
+      "start": 0,
+      "end": 540,
+      "contextStart": 0,
+      "contextEnd": 678
+    },
+    "46-46-0": {
+      "id": "46-46-0",
+      "sourceId": "46-46",
+      "title": "Scrooge’s question",
+      "locator": "Stave 1",
+      "text": "“I do,” said Scrooge. “Merry Christmas! What right have you to be merry? What reason have you to be merry? You’re poor enough.”",
+      "start": 0,
+      "end": 127,
+      "contextStart": 0,
+      "contextEnd": 127
+    },
+    "46-48-0": {
+      "id": "46-48-0",
+      "sourceId": "46-48",
+      "title": "The narrator frames a reply",
+      "locator": "Stave 1",
+      "text": "Scrooge having no better answer ready on the spur of the moment, said, “Bah!” again; and followed it up with “Humbug.”",
+      "start": 0,
+      "end": 118,
+      "contextStart": 0,
+      "contextEnd": 118
+    },
+    "46-259-0": {
+      "id": "46-259-0",
+      "sourceId": "46-259",
+      "title": "The remembered schoolroom",
+      "locator": "Stave 2",
+      "text": "They went, the Ghost and Scrooge, across the hall, to a door at the back of the house. It opened before them, and disclosed a long, bare, melancholy room, made barer still by lines of plain deal forms and desks. At one of these a lonely boy was reading near a feeble fire; and Scrooge sat down upon a form, and wept to see his poor forgotten self as he used to be.",
+      "start": 0,
+      "end": 364,
+      "contextStart": 0,
+      "contextEnd": 364
+    },
+    "46-308-0": {
+      "id": "46-308-0",
+      "sourceId": "46-308",
+      "title": "What generosity can do",
+      "locator": "Stave 2",
+      "text": "“It isn’t that,” said Scrooge, heated by the remark, and speaking unconsciously like his former, not his latter, self. “It isn’t that, Spirit. He has the power to render us happy or unhappy; to make our service light or burdensome; a pleasure or a toil. Say that his power lies in words and looks; in things so slight and insignificant that it is impossible to add and count ’em up: what then? The happiness he gives, is quite as great as if it cost a fortune.”",
+      "start": 0,
+      "end": 461,
+      "contextStart": 0,
+      "contextEnd": 461
+    },
+    "46-38-0": {
+      "id": "46-38-0",
+      "sourceId": "46-38",
+      "title": "A public distance",
+      "locator": "Stave 1",
+      "text": "Nobody ever stopped him in the street to say, with gladsome looks, “My dear Scrooge, how are you? When will you come to see me?” No beggars implored him to bestow a trifle, no children asked him what it was o’clock, no man or woman ever once in all his life inquired the way to such and such a place, of Scrooge. Even the blind men’s dogs appeared to know him; and when they saw him coming on, would tug their owners into doorways and up courts; and then would wag their tails as though they said, “No eye at all is better than an evil eye, dark master!”",
+      "start": 0,
+      "end": 554,
+      "contextStart": 0,
+      "contextEnd": 554
+    },
+    "46-402-0": {
+      "id": "46-402-0",
+      "sourceId": "46-402",
+      "title": "Preparing a household meal",
+      "locator": "Stave 3",
+      "text": "Then up rose Mrs. Cratchit, Cratchit’s wife, dressed out but poorly in a twice-turned gown, but brave in ribbons, which are cheap and make a goodly show for sixpence; and she laid the cloth, assisted by Belinda Cratchit, second of her daughters, also brave in ribbons; while Master Peter Cratchit plunged a fork into the saucepan of potatoes, and getting the corners of his monstrous shirt collar (Bob’s private property, conferred upon his son and heir in honour of the day) into his mouth, rejoiced to find himself so gallantly attired, and yearned to show his linen in the fashionable Parks.",
+      "start": 0,
+      "end": 594,
+      "contextStart": 0,
+      "contextEnd": 1066
+    },
+    "46-420-0": {
+      "id": "46-420-0",
+      "sourceId": "46-420",
+      "title": "A shared judgment of abundance",
+      "locator": "Stave 3",
+      "text": "There never was such a goose. Bob said he didn’t believe there ever was such a goose cooked. Its tenderness and flavour, size and cheapness, were the themes of universal admiration. Eked out by apple-sauce and mashed potatoes, it was a sufficient dinner for the whole family; indeed, as Mrs. Cratchit said with great delight (surveying one small atom of a bone upon the dish), they hadn’t ate it all at last! Yet every one had had enough, and the youngest Cratchits in particular, were steeped in sage and onion to the eyebrows!",
+      "start": 0,
+      "end": 528,
+      "contextStart": 0,
+      "contextEnd": 683
+    },
+    "1540-22-0": {
+      "id": "1540-22-0",
+      "sourceId": "1540-22",
+      "title": "A command at sea",
+      "locator": "Act 1, Scene 1",
+      "text": "MASTER. Good! Speak to the mariners: fall to ’t yarely, or we run ourselves aground: bestir, bestir.",
+      "start": 0,
+      "end": 100,
+      "contextStart": 0,
+      "contextEnd": 100
+    },
+    "1540-32-0": {
+      "id": "1540-32-0",
+      "sourceId": "1540-32",
+      "title": "The name of king",
+      "locator": "Act 1, Scene 1",
+      "text": "BOATSWAIN. When the sea is. Hence! What cares these roarers for the name of king? To cabin! silence! Trouble us not.",
+      "start": 0,
+      "end": 116,
+      "contextStart": 0,
+      "contextEnd": 116
+    },
+    "1540-34-0": {
+      "id": "1540-34-0",
+      "sourceId": "1540-34",
+      "title": "Authority and the elements",
+      "locator": "Act 1, Scene 1",
+      "text": "BOATSWAIN. None that I more love than myself. You are a counsellor: if you can command these elements to silence, and work the peace of the present, we will not hand a rope more. Use your authority: if you cannot, give thanks you have lived so long, and make yourself ready in your cabin for the mischance of the hour, if it so hap.—Cheerly, good hearts!—Out of our way, I say.",
+      "start": 0,
+      "end": 377,
+      "contextStart": 0,
+      "contextEnd": 377
+    },
+    "1540-74-0": {
+      "id": "1540-74-0",
+      "sourceId": "1540-74",
+      "title": "A story deferred",
+      "locator": "Act 1, Scene 2",
+      "text": "MIRANDA. You have often Begun to tell me what I am, but stopp’d, And left me to a bootless inquisition, Concluding “Stay; not yet.”",
+      "start": 0,
+      "end": 131,
+      "contextStart": 0,
+      "contextEnd": 131
+    },
+    "1540-75-0": {
+      "id": "1540-75-0",
+      "sourceId": "1540-75",
+      "title": "A demand for attention",
+      "locator": "Act 1, Scene 2",
+      "text": "PROSPERO. The hour’s now come, The very minute bids thee ope thine ear; Obey, and be attentive. Canst thou remember A time before we came unto this cell? I do not think thou canst, for then thou wast not Out three years old.",
+      "start": 0,
+      "end": 224,
+      "contextStart": 0,
+      "contextEnd": 224
+    },
+    "1540-95-0": {
+      "id": "1540-95-0",
+      "sourceId": "1540-95",
+      "title": "Directing the listener’s judgment",
+      "locator": "Act 1, Scene 2",
+      "text": "PROSPERO. Mark his condition, and the event; then tell me If this might be a brother.",
+      "start": 0,
+      "end": 85,
+      "contextStart": 0,
+      "contextEnd": 85
+    },
+    "1540-131-0": {
+      "id": "1540-131-0",
+      "sourceId": "1540-131",
+      "title": "Ariel’s account of service",
+      "locator": "Act 1, Scene 2",
+      "text": "ARIEL. I prithee, Remember I have done thee worthy service; Told thee no lies, made no mistakings, serv’d Without or grudge or grumblings: thou didst promise To bate me a full year.",
+      "start": 0,
+      "end": 181,
+      "contextStart": 0,
+      "contextEnd": 181
+    },
+    "1540-167-0": {
+      "id": "1540-167-0",
+      "sourceId": "1540-167",
+      "title": "Caliban’s claim",
+      "locator": "Act 1, Scene 2",
+      "text": "CALIBAN. I must eat my dinner. This island’s mine, by Sycorax my mother, Which thou tak’st from me. When thou cam’st first, Thou strok’st me and made much of me; wouldst give me Water with berries in ’t; and teach me how To name the bigger light, and how the less, That burn by day and night: and then I lov’d thee, And show’d thee all the qualities o’ th’ isle, The fresh springs, brine-pits, barren place, and fertile. Curs’d be I that did so! All the charms Of Sycorax, toads, beetles, bats, light on you!",
+      "start": 0,
+      "end": 508,
+      "contextStart": 0,
+      "contextEnd": 670
+    },
+    "1540-170-0": {
+      "id": "1540-170-0",
+      "sourceId": "1540-170",
+      "title": "Prospero’s account (this edition)",
+      "locator": "Act 1, Scene 2",
+      "text": "PROSPERO. Abhorred slave, Which any print of goodness wilt not take, Being capable of all ill! I pitied thee, Took pains to make thee speak, taught thee each hour One thing or other: when thou didst not, savage, Know thine own meaning, but wouldst gabble like A thing most brutish, I endow’d thy purposes With words that made them known. But thy vile race, Though thou didst learn, had that in ’t which good natures Could not abide to be with; therefore wast thou Deservedly confin’d into this rock, Who hadst deserv’d more than a prison.",
+      "start": 0,
+      "end": 538,
+      "contextStart": 0,
+      "contextEnd": 538,
+      "editorialNote": "Edition note: Gutenberg #1540 assigns this speech to Prospero; Folger assigns it to Miranda. The quoted speaker label is preserved from the selected edition. Name your edition when comparing speakers."
+    },
+    "declaration-9-0": {
+      "id": "declaration-9-0",
+      "sourceId": "declaration-9",
+      "title": "Explaining a separation",
+      "locator": "Opening",
+      "text": "The unanimous Declaration of the thirteen united States of America, When in the Course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.",
+      "start": 0,
+      "end": 474,
+      "contextStart": 0,
+      "contextEnd": 474
+    },
+    "declaration-10-0": {
+      "id": "declaration-10-0",
+      "sourceId": "declaration-10",
+      "title": "The 1776 formulation",
+      "locator": "Principles",
+      "text": "We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness.",
+      "start": 0,
+      "end": 655,
+      "contextStart": 0,
+      "contextEnd": 1628
+    },
+    "declaration-40-0": {
+      "id": "declaration-40-0",
+      "sourceId": "declaration-40",
+      "title": "A collective declaration",
+      "locator": "Conclusion",
+      "text": "We, therefore, the Representatives of the united States of America, in General Congress, Assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of these Colonies, solemnly publish and declare, That these United Colonies are, and of Right ought to be Free and Independent States; that they are Absolved from all Allegiance to the British Crown, and that all political connection between them and the State of Great Britain, is and ought to be totally dissolved;",
+      "start": 0,
+      "end": 550,
+      "contextStart": 0,
+      "contextEnd": 940
+    },
+    "declaration-11-0": {
+      "id": "declaration-11-0",
+      "sourceId": "declaration-11",
+      "title": "An allegation about laws",
+      "locator": "Grievances and redress",
+      "text": "He has refused his Assent to Laws, the most wholesome and necessary for the public good.",
+      "start": 0,
+      "end": 88,
+      "contextStart": 0,
+      "contextEnd": 88
+    },
+    "declaration-19-0": {
+      "id": "declaration-19-0",
+      "sourceId": "declaration-19",
+      "title": "An allegation about judges",
+      "locator": "Grievances and redress",
+      "text": "He has made Judges dependent on his Will alone, for the tenure of their offices, and the amount and payment of their salaries.",
+      "start": 0,
+      "end": 126,
+      "contextStart": 0,
+      "contextEnd": 126
+    },
+    "declaration-38-0": {
+      "id": "declaration-38-0",
+      "sourceId": "declaration-38",
+      "title": "The account of petitions",
+      "locator": "Grievances and redress",
+      "text": "In every stage of these Oppressions We have Petitioned for Redress in the most humble terms: Our repeated Petitions have been answered only by repeated injury. A Prince, whose character is thus marked by every act which may define a Tyrant, is unfit to be the ruler of a free people.",
+      "start": 0,
+      "end": 283,
+      "contextStart": 0,
+      "contextEnd": 283
+    },
+    "declaration-40-760": {
+      "id": "declaration-40-760",
+      "sourceId": "declaration-40",
+      "title": "A pledge",
+      "locator": "Conclusion",
+      "text": "And for the support of this Declaration, with a firm reliance on the protection of divine Providence, we mutually pledge to each other our Lives, our Fortunes and our sacred Honor.",
+      "start": 760,
+      "end": 940,
+      "contextStart": 760,
+      "contextEnd": 940
+    },
+    "23-99-0": {
+      "id": "23-99-0",
+      "sourceId": "23-99",
+      "title": "Learning interrupted",
+      "locator": "Chapter VI",
+      "text": "Very soon after I went to live with Mr. and Mrs. Auld, she very kindly commenced to teach me the A, B, C. After I had learned this, she assisted me in learning to spell words of three or four letters. Just at this point of my progress, Mr. Auld found out what was going on, and at once forbade Mrs. Auld to instruct me further, telling her, among other things, that it was unlawful, as well as unsafe, to teach a slave to read. To use his own words, further, he said, “If you give a nigger an inch, he will take an ell. A nigger should know nothing but to obey his master—to do as he is told to do. Learning would spoil the best nigger in the world.",
+      "start": 0,
+      "end": 649,
+      "contextStart": 0,
+      "contextEnd": 1779
+    },
+    "23-99-1450": {
+      "id": "23-99-1450",
+      "sourceId": "23-99",
+      "title": "The narrator’s inference",
+      "locator": "Chapter VI",
+      "text": "From that moment, I understood the pathway from slavery to freedom. It was just what I wanted, and I got it at a time when I the least expected it. Whilst I was saddened by the thought of losing the aid of my kind mistress, I was gladdened by the invaluable instruction which, by the merest accident, I had gained from my master. Though conscious of the difficulty of learning without a teacher, I set out with high hope, and a fixed purpose, at whatever cost of trouble, to learn how to read.",
+      "start": 1450,
+      "end": 1943,
+      "contextStart": 867,
+      "contextEnd": 2781
+    },
+    "23-99-756": {
+      "id": "23-99-756",
+      "sourceId": "23-99",
+      "title": "A reported fear",
+      "locator": "Chapter VI",
+      "text": "It would forever unfit him to be a slave. He would at once become unmanageable, and of no value to his master. As to himself, it could do him no good, but a great deal of harm. It would make him discontented and unhappy.” These words sank deep into my heart, stirred up sentiments within that lay slumbering, and called into existence an entirely new train of thought. It was a new and special revelation, explaining dark and mysterious things, with which my youthful understanding had struggled, but struggled in vain. I now understood what had been to me a most perplexing difficulty—to wit, the white man’s power to enslave the black man.",
+      "start": 756,
+      "end": 1397,
+      "contextStart": 201,
+      "contextEnd": 2378
+    },
+    "23-102-0": {
+      "id": "23-102-0",
+      "sourceId": "23-102",
+      "title": "Learning under constraint",
+      "locator": "Chapter VII",
+      "text": "I lived in Master Hugh’s family about seven years. During this time, I succeeded in learning to read and write. In accomplishing this, I was compelled to resort to various stratagems. I had no regular teacher. My mistress, who had kindly commenced to instruct me, had, in compliance with the advice and direction of her husband, not only ceased to instruct, but had set her face against my being instructed by any one else. It is due, however, to my mistress to say of her, that she did not adopt this course of treatment immediately. She at first lacked the depravity indispensable to shutting me up in mental darkness.",
+      "start": 0,
+      "end": 620,
+      "contextStart": 0,
+      "contextEnd": 787
+    },
+    "23-104-0": {
+      "id": "23-104-0",
+      "sourceId": "23-104",
+      "title": "Surveillance and reading",
+      "locator": "Chapter VII",
+      "text": "From this time I was most narrowly watched. If I was in a separate room any considerable length of time, I was sure to be suspected of having a book, and was at once called to give an account of myself. All this, however, was too late. The first step had been taken. Mistress, in teaching me the alphabet, had given me the inch, and no precaution could prevent me from taking the ell.",
+      "start": 0,
+      "end": 384,
+      "contextStart": 0,
+      "contextEnd": 384
+    },
+    "23-105-0": {
+      "id": "23-105-0",
+      "sourceId": "23-105",
+      "title": "The value of learning",
+      "locator": "Chapter VII",
+      "text": "The plan which I adopted, and the one by which I was most successful, was that of making friends of all the little white boys whom I met in the street. As many of these as I could, I converted into teachers. With their kindly aid, obtained at different times and in different places, I finally succeeded in learning to read. When I was sent of errands, I always took my book with me, and by going one part of my errand quickly, I found time to get a lesson before my return.",
+      "start": 0,
+      "end": 474,
+      "contextStart": 0,
+      "contextEnd": 1532
+    },
+    "23-107-0": {
+      "id": "23-107-0",
+      "sourceId": "23-107",
+      "title": "Words for an argument",
+      "locator": "Chapter VII",
+      "text": "In the same book, I met with one of Sheridan’s mighty speeches on and in behalf of Catholic emancipation. These were choice documents to me. I read them over and over again with unabated interest. They gave tongue to interesting thoughts of my own soul, which had frequently flashed through my mind, and died away for want of utterance. The moral which I gained from the dialogue was the power of truth over the conscience of even a slaveholder. What I got from Sheridan was a bold denunciation of slavery, and a powerful vindication of human rights.",
+      "start": 0,
+      "end": 550,
+      "contextStart": 0,
+      "contextEnd": 1706
+    },
+    "23-107-1455": {
+      "id": "23-107-1455",
+      "sourceId": "23-107",
+      "title": "Knowledge without a remedy",
+      "locator": "Chapter VII",
+      "text": "It had given me a view of my wretched condition, without the remedy. It opened my eyes to the horrible pit, but to no ladder upon which to get out. In moments of agony, I envied my fellow-slaves for their stupidity. I have often wished myself a beast. I preferred the condition of the meanest reptile to my own. Any thing, no matter what, to get rid of thinking! It was this everlasting thinking of my condition that tormented me. There was no getting rid of it. It was pressed upon me by every object within sight or hearing, animate or inanimate. The silver trump of freedom had roused my soul to eternal wakefulness.",
+      "start": 1455,
+      "end": 2074,
+      "contextStart": 873,
+      "contextEnd": 2461
+    },
+    "sentiments-document-394": {
+      "id": "sentiments-document-394",
+      "sourceId": "sentiments-document",
+      "title": "The 1848 formulation",
+      "locator": "Declaration of Sentiments (1848)",
+      "text": "We hold these truths to be self-evident; that all men and women are created equal; that they are endowed by their Creator with certain inalienable rights; that among these are life, liberty, and the pursuit of happiness; that to secure these rights governments are instituted, deriving their just powers from the consent of the governed.",
+      "start": 394,
+      "end": 731,
+      "contextStart": 0,
+      "contextEnd": 1816
+    },
+    "sentiments-document-0": {
+      "id": "sentiments-document-0",
+      "sourceId": "sentiments-document",
+      "title": "A stated purpose",
+      "locator": "Declaration of Sentiments (1848)",
+      "text": "When, in the course of human events, it becomes necessary for one portion of the family of man to assume among the people of the earth a position different from that which they have hitherto occupied, but one to which the laws of nature and of nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes that impel them to such a course.",
+      "start": 0,
+      "end": 393,
+      "contextStart": 0,
+      "contextEnd": 1391
+    },
+    "sentiments-document-2055": {
+      "id": "sentiments-document-2055",
+      "sourceId": "sentiments-document",
+      "title": "An account of exclusion",
+      "locator": "Declaration of Sentiments (1848)",
+      "text": "He has never permitted her to exercise her inalienable right to the elective franchise. He has compelled her to submit to laws, in the formation of which she had no voice. He has withheld from her rights which are given to the most ignorant and degraded men - both natives and foreigners. Having deprived her of this first right of a citizen, the elective franchise, thereby leaving her without representation in the halls of legislation, he has oppressed her on all sides. He has made her, if married, in the eye of the law, civilly dead. He has taken from her all right in property, even to the wages she earns.",
+      "start": 2055,
+      "end": 2668,
+      "contextStart": 1636,
+      "contextEnd": 3843
+    },
+    "sentiments-document-2529": {
+      "id": "sentiments-document-2529",
+      "sourceId": "sentiments-document",
+      "title": "A claim about property",
+      "locator": "Declaration of Sentiments (1848)",
+      "text": "He has made her, if married, in the eye of the law, civilly dead. He has taken from her all right in property, even to the wages she earns. He has made her, morally, an irresponsible being, as she can commit many crimes, with impunity, provided they be done in the presence of her husband. In the covenant of marriage, she is compelled to promise obedience to her husband, he becoming, to all intents and purposes, her master - the law giving him power to deprive her of her liberty, and to administer chastisement.",
+      "start": 2529,
+      "end": 3044,
+      "contextStart": 1998,
+      "contextEnd": 4236
+    },
+    "sentiments-document-3906": {
+      "id": "sentiments-document-3906",
+      "sourceId": "sentiments-document",
+      "title": "A claim about education",
+      "locator": "Declaration of Sentiments (1848)",
+      "text": "He has denied her the facilities for obtaining a thorough education - all colleges being closed against her. He allows her in Church as well as State, but a subordinate position, claiming Apostolic authority for her exclusion from the ministry, and with some exceptions, from any public participation in the affairs of the Church. He has created a false public sentiment, by giving to the world a different code of morals for men and women, by which moral delinquencies which exclude women from society, are not only tolerated but deemed of little account in man.",
+      "start": 3906,
+      "end": 4469,
+      "contextStart": 3386,
+      "contextEnd": 5585
+    },
+    "sentiments-document-4813": {
+      "id": "sentiments-document-4813",
+      "sourceId": "sentiments-document",
+      "title": "The stated demand",
+      "locator": "Declaration of Sentiments (1848)",
+      "text": "Now, in view of this entire disfranchisement of one-half the people of this country, their social and religious degradation, - in view of the unjust laws above mentioned, and because women do feel themselves aggrieved, oppressed, and fraudulently deprived of their most sacred rights, we insist that they have immediate admission to all the rights and privileges which belong to them as citizens of these United States. In entering upon the great work before us, we anticipate no small amount of misconception, misrepresentation, and ridicule; but we shall use every instrumentality within our power to effect our object.",
+      "start": 4813,
+      "end": 5434,
+      "contextStart": 4237,
+      "contextEnd": 5814
+    },
+    "sentiments-document-5233": {
+      "id": "sentiments-document-5233",
+      "sourceId": "sentiments-document",
+      "title": "Proposed action",
+      "locator": "Declaration of Sentiments (1848)",
+      "text": "In entering upon the great work before us, we anticipate no small amount of misconception, misrepresentation, and ridicule; but we shall use every instrumentality within our power to effect our object. We shall employ agents, circulate tracts, petition the State and national Legislatures, and endeavor to enlist the pulpit and the press in our behalf. We hope this Convention will be followed by a series of Conventions, embracing every part of the country. Firmly relying upon the final triumph of the Right and the True, we do this day affix our signatures to this declaration.",
+      "start": 5233,
+      "end": 5813,
+      "contextStart": 4813,
+      "contextEnd": 5814
+    },
+    "strabo": {
+      "id": "strabo",
+      "sourceId": "strabo-17-1-8",
+      "title": "A community of scholars",
+      "locator": "Geography 17.1.8 (Mouseion passage)",
+      "text": "The Museum is also a part of the royal palaces; it has a public walk, an Exedra with seats, and a large house, in which is the common mess-hall of the men of learning who share the Museum. This group of men not only hold property in common, but also have a priest in charge of the Museum, who formerly was appointed by the kings, but is now appointed by Caesar.",
+      "start": 0,
+      "end": 361,
+      "contextStart": 0,
+      "contextEnd": 361
+    }
+  },
+  "lessons": {
+    "odyssey-ix-01": [
+      "1727-391-0",
+      "1727-413-0",
+      "1727-420-0"
+    ],
+    "odyssey-ix-02": [
+      "1727-419-0",
+      "1727-426-0",
+      "1727-427-0"
+    ],
+    "odyssey-ix-03": [
+      "1727-426-0",
+      "1727-427-0",
+      "1727-430-0"
+    ],
+    "austen-letter-01": [
+      "1342-1192-0",
+      "1342-1193-2835",
+      "1342-1193-13451"
+    ],
+    "austen-letter-02": [
+      "1342-1196-0",
+      "1342-1198-0",
+      "1342-1205-0"
+    ],
+    "austen-letter-03": [
+      "1342-1193-13451",
+      "1342-1199-0",
+      "1342-1202-9"
+    ],
+    "macbeth-01": [
+      "1533-75-0",
+      "1533-102-0",
+      "1533-104-0"
+    ],
+    "macbeth-02": [
+      "1533-132-0",
+      "1533-171-0",
+      "1533-173-0"
+    ],
+    "macbeth-03": [
+      "1533-164-0",
+      "1533-170-0",
+      "1533-178-0"
+    ],
+    "frankenstein-01": [
+      "42324-48-0",
+      "42324-53-0",
+      "42324-66-0"
+    ],
+    "frankenstein-02": [
+      "42324-180-0",
+      "42324-184-0",
+      "42324-191-0"
+    ],
+    "frankenstein-03": [
+      "42324-188-0",
+      "42324-190-0",
+      "42324-191-0"
+    ],
+    "christmas-carol-01": [
+      "46-36-0",
+      "46-46-0",
+      "46-48-0"
+    ],
+    "christmas-carol-02": [
+      "46-36-0",
+      "46-259-0",
+      "46-308-0"
+    ],
+    "christmas-carol-03": [
+      "46-38-0",
+      "46-402-0",
+      "46-420-0"
+    ],
+    "tempest-01": [
+      "1540-22-0",
+      "1540-32-0",
+      "1540-34-0"
+    ],
+    "tempest-02": [
+      "1540-74-0",
+      "1540-75-0",
+      "1540-95-0"
+    ],
+    "tempest-03": [
+      "1540-131-0",
+      "1540-167-0",
+      "1540-170-0"
+    ],
+    "declaration-01": [
+      "declaration-9-0",
+      "declaration-10-0",
+      "declaration-40-0"
+    ],
+    "declaration-02": [
+      "declaration-11-0",
+      "declaration-19-0",
+      "declaration-38-0"
+    ],
+    "declaration-03": [
+      "declaration-9-0",
+      "declaration-40-0",
+      "declaration-40-760"
+    ],
+    "douglass-literacy-01": [
+      "23-99-0",
+      "23-99-1450",
+      "23-99-756"
+    ],
+    "douglass-literacy-02": [
+      "23-102-0",
+      "23-104-0",
+      "23-105-0"
+    ],
+    "douglass-literacy-03": [
+      "23-105-0",
+      "23-107-0",
+      "23-107-1455"
+    ],
+    "seneca-falls-01": [
+      "declaration-10-0",
+      "sentiments-document-394",
+      "sentiments-document-0"
+    ],
+    "seneca-falls-02": [
+      "sentiments-document-2055",
+      "sentiments-document-2529",
+      "sentiments-document-3906"
+    ],
+    "seneca-falls-03": [
+      "sentiments-document-2055",
+      "sentiments-document-4813",
+      "sentiments-document-5233"
+    ]
+  }
+}

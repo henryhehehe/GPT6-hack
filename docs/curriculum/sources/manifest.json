@@ -1,0 +1,551 @@
+{
+  "1727-391": {
+    "id": "1727-391",
+    "locator": "Book IX",
+    "url": "https://www.gutenberg.org/cache/epub/1727/pg1727-images.html",
+    "sha256": "052410601949c39438cf72fd3a6777311a5716b071ef79a257f322e3e3b4cf71",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "16ecc8e7d62f6000190b2573bcc5201ba7731732f11cbb49508e63781281ac7e"
+  },
+  "1727-413": {
+    "id": "1727-413",
+    "locator": "Book IX",
+    "url": "https://www.gutenberg.org/cache/epub/1727/pg1727-images.html",
+    "sha256": "0d82f47a10dd4821da88813d76aa70f18c6cac5d7d2f4edb7f7450340dac3e4e",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "16ecc8e7d62f6000190b2573bcc5201ba7731732f11cbb49508e63781281ac7e"
+  },
+  "1727-420": {
+    "id": "1727-420",
+    "locator": "Book IX",
+    "url": "https://www.gutenberg.org/cache/epub/1727/pg1727-images.html",
+    "sha256": "5fb8fa83d695a0bb11ba2952275353d03e8a2f2f3b08ab57e67f1e0099bfbb8b",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "16ecc8e7d62f6000190b2573bcc5201ba7731732f11cbb49508e63781281ac7e"
+  },
+  "1727-419": {
+    "id": "1727-419",
+    "locator": "Book IX",
+    "url": "https://www.gutenberg.org/cache/epub/1727/pg1727-images.html",
+    "sha256": "122f7e3d642da7f3a4267040d0fb35e37c23b66d2b7c43c8d3669428d699d7f7",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "16ecc8e7d62f6000190b2573bcc5201ba7731732f11cbb49508e63781281ac7e"
+  },
+  "1727-426": {
+    "id": "1727-426",
+    "locator": "Book IX",
+    "url": "https://www.gutenberg.org/cache/epub/1727/pg1727-images.html",
+    "sha256": "75c1784d00cc97acce41408b28aa1525da4010c7b4c483c1d769c7379c64809f",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "16ecc8e7d62f6000190b2573bcc5201ba7731732f11cbb49508e63781281ac7e"
+  },
+  "1727-427": {
+    "id": "1727-427",
+    "locator": "Book IX",
+    "url": "https://www.gutenberg.org/cache/epub/1727/pg1727-images.html",
+    "sha256": "a7ea89ff97f5f3141d90d6f96ffa4092ddb59ef5003991d8c6939e39dd240810",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "16ecc8e7d62f6000190b2573bcc5201ba7731732f11cbb49508e63781281ac7e"
+  },
+  "1727-430": {
+    "id": "1727-430",
+    "locator": "Book IX",
+    "url": "https://www.gutenberg.org/cache/epub/1727/pg1727-images.html",
+    "sha256": "2d0fefb954995ccd5b754d011c7c05ba3be6b97a80d045b019e24f0b3c02b13a",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "16ecc8e7d62f6000190b2573bcc5201ba7731732f11cbb49508e63781281ac7e"
+  },
+  "1342-1192": {
+    "id": "1342-1192",
+    "locator": "Chapter 35",
+    "url": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html",
+    "sha256": "b5952b7d2439bdf7a0a760c1ab7a538e78699789c1866bf075b0f60d00137859",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "0f87b1c25c3ca7dd259e5381ed7757fccc25b6d2be26bff92f0f7c589395790b"
+  },
+  "1342-1193": {
+    "id": "1342-1193",
+    "locator": "Chapter 35",
+    "url": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html",
+    "sha256": "6f2dee7828c8a3efd78aa7bcdba0ae5e1b1fe146fafe2a4d20feafea84069044",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "0f87b1c25c3ca7dd259e5381ed7757fccc25b6d2be26bff92f0f7c589395790b"
+  },
+  "1342-1196": {
+    "id": "1342-1196",
+    "locator": "Chapter 36",
+    "url": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html",
+    "sha256": "9c70ed42ffe94090bd14e5960bde979845f45d4ebe719e9b9e9f149b57e4646b",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "0f87b1c25c3ca7dd259e5381ed7757fccc25b6d2be26bff92f0f7c589395790b"
+  },
+  "1342-1198": {
+    "id": "1342-1198",
+    "locator": "Chapter 36",
+    "url": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html",
+    "sha256": "ea7af15cef9cd23d8a24460df1dbddcafc45d10e47e4f2a5283a7c0b77a0460b",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "0f87b1c25c3ca7dd259e5381ed7757fccc25b6d2be26bff92f0f7c589395790b"
+  },
+  "1342-1205": {
+    "id": "1342-1205",
+    "locator": "Chapter 36",
+    "url": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html",
+    "sha256": "d6c9215e64c9915f3c95936748938d5ee9da61fbb34011c15e6ebaf341d41d2e",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "0f87b1c25c3ca7dd259e5381ed7757fccc25b6d2be26bff92f0f7c589395790b"
+  },
+  "1342-1199": {
+    "id": "1342-1199",
+    "locator": "Chapter 36",
+    "url": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html",
+    "sha256": "dbb3b0aebdd3669b312b5a34a183e3d2eb4bb6f9fd6a6169d4ef1d4e8573816a",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "0f87b1c25c3ca7dd259e5381ed7757fccc25b6d2be26bff92f0f7c589395790b"
+  },
+  "1342-1202": {
+    "id": "1342-1202",
+    "locator": "Chapter 36",
+    "url": "https://www.gutenberg.org/cache/epub/1342/pg1342-images.html",
+    "sha256": "3910b423296b526817e6eec2c0e06de160cd39570b70f17ec289693e656354db",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "0f87b1c25c3ca7dd259e5381ed7757fccc25b6d2be26bff92f0f7c589395790b"
+  },
+  "1533-75": {
+    "id": "1533-75",
+    "locator": "Act 1, Scene 3",
+    "url": "https://www.gutenberg.org/cache/epub/1533/pg1533-images.html",
+    "sha256": "04894f9b810b88e299330a43b78983d012a1225c30d4a14c18580a4ea4e6af62",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "645d334984351a40ba1f6df7400ee06abc2a659f0cdc4d643591fe318516e45a"
+  },
+  "1533-102": {
+    "id": "1533-102",
+    "locator": "Act 1, Scene 3",
+    "url": "https://www.gutenberg.org/cache/epub/1533/pg1533-images.html",
+    "sha256": "06bf921f6a0b27a3f081ea846fcd57ef6493f82e72065f6e639bd4f52a31359e",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "645d334984351a40ba1f6df7400ee06abc2a659f0cdc4d643591fe318516e45a"
+  },
+  "1533-104": {
+    "id": "1533-104",
+    "locator": "Act 1, Scene 3",
+    "url": "https://www.gutenberg.org/cache/epub/1533/pg1533-images.html",
+    "sha256": "4b035d8e10f85ac59e96bc18c7dbefb899c8df0418fd7d62118fb1eae19d99fa",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "645d334984351a40ba1f6df7400ee06abc2a659f0cdc4d643591fe318516e45a"
+  },
+  "1533-132": {
+    "id": "1533-132",
+    "locator": "Act 1, Scene 5",
+    "url": "https://www.gutenberg.org/cache/epub/1533/pg1533-images.html",
+    "sha256": "8d3870b2f8bf083e3c5ef6c05349cbaacee393d4c1b1e90968b12fa8d9bdf45f",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "645d334984351a40ba1f6df7400ee06abc2a659f0cdc4d643591fe318516e45a"
+  },
+  "1533-171": {
+    "id": "1533-171",
+    "locator": "Act 1, Scene 7",
+    "url": "https://www.gutenberg.org/cache/epub/1533/pg1533-images.html",
+    "sha256": "2d17c02ab009df73b6175f5b4f8ad666dec58df057b7dbc68a721de338f620c2",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "645d334984351a40ba1f6df7400ee06abc2a659f0cdc4d643591fe318516e45a"
+  },
+  "1533-173": {
+    "id": "1533-173",
+    "locator": "Act 1, Scene 7",
+    "url": "https://www.gutenberg.org/cache/epub/1533/pg1533-images.html",
+    "sha256": "aec04a8f215532687bd9f0557d0f551695897f162aa671201d59eba48c8c7bc2",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "645d334984351a40ba1f6df7400ee06abc2a659f0cdc4d643591fe318516e45a"
+  },
+  "1533-164": {
+    "id": "1533-164",
+    "locator": "Act 1, Scene 7",
+    "url": "https://www.gutenberg.org/cache/epub/1533/pg1533-images.html",
+    "sha256": "4fc7938f93085db40437494f6e0ece1d7889bc50a3b65264b3607cde8642bba0",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "645d334984351a40ba1f6df7400ee06abc2a659f0cdc4d643591fe318516e45a"
+  },
+  "1533-170": {
+    "id": "1533-170",
+    "locator": "Act 1, Scene 7",
+    "url": "https://www.gutenberg.org/cache/epub/1533/pg1533-images.html",
+    "sha256": "a69c973cb767e6ed6e88dad8c0f690ad5e8b6375f36d61097d87faead1dffbfa",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "645d334984351a40ba1f6df7400ee06abc2a659f0cdc4d643591fe318516e45a"
+  },
+  "1533-178": {
+    "id": "1533-178",
+    "locator": "Act 1, Scene 7",
+    "url": "https://www.gutenberg.org/cache/epub/1533/pg1533-images.html",
+    "sha256": "57946f5774465781242fb8532bab0186a1d82a5b2601648c7ead15ed27f8eab5",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "645d334984351a40ba1f6df7400ee06abc2a659f0cdc4d643591fe318516e45a"
+  },
+  "42324-48": {
+    "id": "42324-48",
+    "locator": "Letter I",
+    "url": "https://www.gutenberg.org/cache/epub/42324/pg42324-images.html",
+    "sha256": "0247599886009b62eed8bc698b2237855843a4c600cda2e50e46631a5c0d50ef",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "408161e92f02946cf0c7d9c686817ba22d9ee9fc0b058b2b62982592eab5b34e"
+  },
+  "42324-53": {
+    "id": "42324-53",
+    "locator": "Letter I",
+    "url": "https://www.gutenberg.org/cache/epub/42324/pg42324-images.html",
+    "sha256": "c577e51a1db01385142fd999829a6f241adcde1ad6161ce40f54387f396ea1cb",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "408161e92f02946cf0c7d9c686817ba22d9ee9fc0b058b2b62982592eab5b34e"
+  },
+  "42324-66": {
+    "id": "42324-66",
+    "locator": "Letter II",
+    "url": "https://www.gutenberg.org/cache/epub/42324/pg42324-images.html",
+    "sha256": "a604f414365aab8ce034bc6088515d4e05f16af4b806abbb1403e0cdb418908a",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "408161e92f02946cf0c7d9c686817ba22d9ee9fc0b058b2b62982592eab5b34e"
+  },
+  "42324-180": {
+    "id": "42324-180",
+    "locator": "Chapter 4",
+    "url": "https://www.gutenberg.org/cache/epub/42324/pg42324-images.html",
+    "sha256": "7384fa6c98eb075ee5b9ba3fb240ab1e265a2dfc24f4c8d907ef416b9703f3dd",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "408161e92f02946cf0c7d9c686817ba22d9ee9fc0b058b2b62982592eab5b34e"
+  },
+  "42324-184": {
+    "id": "42324-184",
+    "locator": "Chapter 4",
+    "url": "https://www.gutenberg.org/cache/epub/42324/pg42324-images.html",
+    "sha256": "2c3ae66f626d4f34c9e8417cc2781bd67ce27aaa05eb0fac2bfeafe1390965c4",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "408161e92f02946cf0c7d9c686817ba22d9ee9fc0b058b2b62982592eab5b34e"
+  },
+  "42324-191": {
+    "id": "42324-191",
+    "locator": "Chapter 5",
+    "url": "https://www.gutenberg.org/cache/epub/42324/pg42324-images.html",
+    "sha256": "5528f09de67c17fa226f1ec562eb07725de842948808636d0fc0ee36a1deddc8",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "408161e92f02946cf0c7d9c686817ba22d9ee9fc0b058b2b62982592eab5b34e"
+  },
+  "42324-188": {
+    "id": "42324-188",
+    "locator": "Chapter 5",
+    "url": "https://www.gutenberg.org/cache/epub/42324/pg42324-images.html",
+    "sha256": "de2ed41ce95610af396db30ce5659447dc07a5409b1f315fbf7ec824b52da2f9",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "408161e92f02946cf0c7d9c686817ba22d9ee9fc0b058b2b62982592eab5b34e"
+  },
+  "42324-190": {
+    "id": "42324-190",
+    "locator": "Chapter 5",
+    "url": "https://www.gutenberg.org/cache/epub/42324/pg42324-images.html",
+    "sha256": "798d60cb9a50cadfec4b3d97aa1a64d3c9815c9eaf72da27bff376424b4ae0e4",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "408161e92f02946cf0c7d9c686817ba22d9ee9fc0b058b2b62982592eab5b34e"
+  },
+  "46-36": {
+    "id": "46-36",
+    "locator": "Stave 1",
+    "url": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
+    "sha256": "701a8ac1f7ee31d32ca06a4a47c473eae7ad3a4b329cd74e8a9293a71a003e70",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "a51929778533d6219715acee120ddad46f2b515236146256c8cf84c5ac339211"
+  },
+  "46-46": {
+    "id": "46-46",
+    "locator": "Stave 1",
+    "url": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
+    "sha256": "77c5a9614c73dee0a370c491c7a5f170d07aa950179cb2bad96696c441e4182d",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "a51929778533d6219715acee120ddad46f2b515236146256c8cf84c5ac339211"
+  },
+  "46-48": {
+    "id": "46-48",
+    "locator": "Stave 1",
+    "url": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
+    "sha256": "39736319cf93a57219f7c22d12fc0a79646c0dca38ede69ed555bc33153e476d",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "a51929778533d6219715acee120ddad46f2b515236146256c8cf84c5ac339211"
+  },
+  "46-259": {
+    "id": "46-259",
+    "locator": "Stave 2",
+    "url": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
+    "sha256": "eb784673f6fc2f5b5dec46e22368d04571268b0098b8917bef0977b3de77504a",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "a51929778533d6219715acee120ddad46f2b515236146256c8cf84c5ac339211"
+  },
+  "46-308": {
+    "id": "46-308",
+    "locator": "Stave 2",
+    "url": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
+    "sha256": "16794af0c1a804ff17a28c99124e79064b29609d3f03f400e669144ea62ed734",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "a51929778533d6219715acee120ddad46f2b515236146256c8cf84c5ac339211"
+  },
+  "46-38": {
+    "id": "46-38",
+    "locator": "Stave 1",
+    "url": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
+    "sha256": "4d1d3354618ac0537b0e2250cb5f4f9b3d18f573837de91b918b70db4fb19de7",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "a51929778533d6219715acee120ddad46f2b515236146256c8cf84c5ac339211"
+  },
+  "46-402": {
+    "id": "46-402",
+    "locator": "Stave 3",
+    "url": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
+    "sha256": "fffe0bea879f4ec4d927227a97779f4553042924bb893614260de5f6f4c6d738",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "a51929778533d6219715acee120ddad46f2b515236146256c8cf84c5ac339211"
+  },
+  "46-420": {
+    "id": "46-420",
+    "locator": "Stave 3",
+    "url": "https://www.gutenberg.org/cache/epub/46/pg46-images.html",
+    "sha256": "31b8653916e254b73443f6cf8f0bcb641328d621d48ae57ce970decd650cd881",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "a51929778533d6219715acee120ddad46f2b515236146256c8cf84c5ac339211"
+  },
+  "1540-22": {
+    "id": "1540-22",
+    "locator": "Act 1, Scene 1",
+    "url": "https://www.gutenberg.org/cache/epub/1540/pg1540-images.html",
+    "sha256": "c8de16f88e97a8f5fa71564f1ed03b86c6e1af04264899e2f1442dbf21eab855",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "fe58360ab3c2e6950bbe879c4fe3bba39686ca064e222db4b753efbcbf716487"
+  },
+  "1540-32": {
+    "id": "1540-32",
+    "locator": "Act 1, Scene 1",
+    "url": "https://www.gutenberg.org/cache/epub/1540/pg1540-images.html",
+    "sha256": "9457b452a8ccc729ba240e8927fd05649c756f0c25e20b0d7fcc4b65ee3a9395",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "fe58360ab3c2e6950bbe879c4fe3bba39686ca064e222db4b753efbcbf716487"
+  },
+  "1540-34": {
+    "id": "1540-34",
+    "locator": "Act 1, Scene 1",
+    "url": "https://www.gutenberg.org/cache/epub/1540/pg1540-images.html",
+    "sha256": "6abff6682e212533ff106379698a6e619154b558287364a14ea8dc5965f229bf",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "fe58360ab3c2e6950bbe879c4fe3bba39686ca064e222db4b753efbcbf716487"
+  },
+  "1540-74": {
+    "id": "1540-74",
+    "locator": "Act 1, Scene 2",
+    "url": "https://www.gutenberg.org/cache/epub/1540/pg1540-images.html",
+    "sha256": "9eeab7130e271e1f2b233cd9c8ae4ddfedf4e8bdde1831d9ac78184da2ccc1f5",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "fe58360ab3c2e6950bbe879c4fe3bba39686ca064e222db4b753efbcbf716487"
+  },
+  "1540-75": {
+    "id": "1540-75",
+    "locator": "Act 1, Scene 2",
+    "url": "https://www.gutenberg.org/cache/epub/1540/pg1540-images.html",
+    "sha256": "6559496acccebd84453ae380226abfbbf8c0bea679d305275a4ae2747d6beec0",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "fe58360ab3c2e6950bbe879c4fe3bba39686ca064e222db4b753efbcbf716487"
+  },
+  "1540-95": {
+    "id": "1540-95",
+    "locator": "Act 1, Scene 2",
+    "url": "https://www.gutenberg.org/cache/epub/1540/pg1540-images.html",
+    "sha256": "2cd98bc613b5175457eb0834dd62e2c6d3312c8728c527210d537c4f2563583a",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "fe58360ab3c2e6950bbe879c4fe3bba39686ca064e222db4b753efbcbf716487"
+  },
+  "1540-131": {
+    "id": "1540-131",
+    "locator": "Act 1, Scene 2",
+    "url": "https://www.gutenberg.org/cache/epub/1540/pg1540-images.html",
+    "sha256": "a8c1a19590338f33656cc303df77edb581627de3a821c4322d3a2d046b042a6e",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "fe58360ab3c2e6950bbe879c4fe3bba39686ca064e222db4b753efbcbf716487"
+  },
+  "1540-167": {
+    "id": "1540-167",
+    "locator": "Act 1, Scene 2",
+    "url": "https://www.gutenberg.org/cache/epub/1540/pg1540-images.html",
+    "sha256": "547b13a9d6d9fe99a7e0d45989cf7e56955bf087542f7c7fd986caff605f0cb4",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "fe58360ab3c2e6950bbe879c4fe3bba39686ca064e222db4b753efbcbf716487"
+  },
+  "1540-170": {
+    "id": "1540-170",
+    "locator": "Act 1, Scene 2",
+    "url": "https://www.gutenberg.org/cache/epub/1540/pg1540-images.html",
+    "sha256": "b9000dc6b2cacecdcdceccc4acbc70ac2ee526c0deb4f8d315afe01c6e582b53",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "fe58360ab3c2e6950bbe879c4fe3bba39686ca064e222db4b753efbcbf716487"
+  },
+  "declaration-9": {
+    "id": "declaration-9",
+    "locator": "Opening",
+    "url": "https://www.archives.gov/founding-docs/declaration-transcript",
+    "sha256": "e01ad94ac6288c41356f84c0f8995817cda6d6d05ce01c2490fdbc97c95bf711",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "427a03cb861cb3bd4f3ea41631dbaef1cd8c6a3eef09849f1c7597d73d63bdcd"
+  },
+  "declaration-10": {
+    "id": "declaration-10",
+    "locator": "Principles",
+    "url": "https://www.archives.gov/founding-docs/declaration-transcript",
+    "sha256": "cbab713becb1bc10d47e26e22ad82f3beffcea037992d23ceb695daccab064d4",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "427a03cb861cb3bd4f3ea41631dbaef1cd8c6a3eef09849f1c7597d73d63bdcd"
+  },
+  "declaration-40": {
+    "id": "declaration-40",
+    "locator": "Conclusion",
+    "url": "https://www.archives.gov/founding-docs/declaration-transcript",
+    "sha256": "6be83676473f8f1c9f01924f8e616634690597e193ae14fc9d9889ec8c519031",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "427a03cb861cb3bd4f3ea41631dbaef1cd8c6a3eef09849f1c7597d73d63bdcd"
+  },
+  "declaration-11": {
+    "id": "declaration-11",
+    "locator": "Grievances and redress",
+    "url": "https://www.archives.gov/founding-docs/declaration-transcript",
+    "sha256": "6b13d9599df82f0ad1fb987e8377d46461f996916127e7403deeee0577168270",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "427a03cb861cb3bd4f3ea41631dbaef1cd8c6a3eef09849f1c7597d73d63bdcd"
+  },
+  "declaration-19": {
+    "id": "declaration-19",
+    "locator": "Grievances and redress",
+    "url": "https://www.archives.gov/founding-docs/declaration-transcript",
+    "sha256": "f8500c602848cc9a8ddecef72f4307a0d9273708a7143b179af4c4acfa39b91a",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "427a03cb861cb3bd4f3ea41631dbaef1cd8c6a3eef09849f1c7597d73d63bdcd"
+  },
+  "declaration-38": {
+    "id": "declaration-38",
+    "locator": "Grievances and redress",
+    "url": "https://www.archives.gov/founding-docs/declaration-transcript",
+    "sha256": "460e72fafd4371d30ab6f949ccee4732996bcd9de02cc9522df2d4f646e88898",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "427a03cb861cb3bd4f3ea41631dbaef1cd8c6a3eef09849f1c7597d73d63bdcd"
+  },
+  "23-99": {
+    "id": "23-99",
+    "locator": "Chapter VI",
+    "url": "https://www.gutenberg.org/cache/epub/23/pg23-images.html",
+    "sha256": "8cd5acc0122d1980b64cd186a439778afa9a59ba4f30c87ceac0a6fdb39c7684",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "a2dd63f1c05c536036eee9fa3e341bf63ba6f07d17594f03ecbb780823bc6243"
+  },
+  "23-102": {
+    "id": "23-102",
+    "locator": "Chapter VII",
+    "url": "https://www.gutenberg.org/cache/epub/23/pg23-images.html",
+    "sha256": "7c68a2299a6391fc66c1200d5f192bae2bee63b33f83bb5d6b3d97cb24f41781",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "a2dd63f1c05c536036eee9fa3e341bf63ba6f07d17594f03ecbb780823bc6243"
+  },
+  "23-104": {
+    "id": "23-104",
+    "locator": "Chapter VII",
+    "url": "https://www.gutenberg.org/cache/epub/23/pg23-images.html",
+    "sha256": "1936dda4c6088f04ef59f580959cca395dac395384cb4d7a7c96babfa8fca536",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "a2dd63f1c05c536036eee9fa3e341bf63ba6f07d17594f03ecbb780823bc6243"
+  },
+  "23-105": {
+    "id": "23-105",
+    "locator": "Chapter VII",
+    "url": "https://www.gutenberg.org/cache/epub/23/pg23-images.html",
+    "sha256": "5d63adb1b714cf696a7a41bc65f10940c4209fe8daa1b6dca98eb08bc8775cf2",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "a2dd63f1c05c536036eee9fa3e341bf63ba6f07d17594f03ecbb780823bc6243"
+  },
+  "23-107": {
+    "id": "23-107",
+    "locator": "Chapter VII",
+    "url": "https://www.gutenberg.org/cache/epub/23/pg23-images.html",
+    "sha256": "71450b6c414af41d1e7738662d2a4359f9f11fff04bc6e6c61d1e37c21385252",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "a2dd63f1c05c536036eee9fa3e341bf63ba6f07d17594f03ecbb780823bc6243"
+  },
+  "sentiments-document": {
+    "id": "sentiments-document",
+    "locator": "Declaration of Sentiments (1848)",
+    "url": "https://www.nps.gov/wori/learn/historyculture/declaration-of-sentiments.htm",
+    "sha256": "1535028ddb189c476ee8c0fed2deb6b0d67c57d5f80c9c07b94a5be9eff951e7",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML text decoded; whitespace collapsed to single spaces. Edition page/footnote markers retained.",
+    "retrievedHtmlSha256": "a862dbf0cc3a03caf38b8594c6e0fb3244d5e686571e30256083bd5d499ac10b"
+  },
+  "strabo-17-1-8": {
+    "id": "strabo-17-1-8",
+    "locator": "Geography 17.1.8 (Mouseion passage)",
+    "url": "https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A1*.html",
+    "sha256": "cef096c06e0f48ae9059cd2093774737e3478c9140e73112ad6177775608b16f",
+    "retrievedAt": "2026-09-10",
+    "normalization": "HTML decoded; whitespace collapsed; page/section and footnote reference markers omitted; wording and punctuation retained. Bounded Mouseion passage only.",
+    "retrievedHtmlSha256": "09ad6fd0bc1bd219194155206e0eaeeaa52f5984878f5025823ed12b3b5b0ce9"
+  }
+}

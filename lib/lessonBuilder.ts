@@ -3,8 +3,8 @@ import {WorldSchema,EvidenceSchema,LessonPackSchema,validateWorld,type World} fr
 export const PassageSchema=z.object({id:z.string().max(60),text:z.string().min(20).max(700),locator:z.string().min(1).max(160)});
 export type Passage=z.infer<typeof PassageSchema>;
 export const ExtractionSchema=z.object({passages:z.array(PassageSchema).min(3).max(12)});
-export const GeneratedLessonSchema=WorldSchema.omit({settingImage:true}).extend({lessonPack:LessonPackSchema});
-export function lessonGenerationSchema(passages:Passage[]){const ids=z.enum(passages.map(p=>p.id) as [string,...string[]]);return GeneratedLessonSchema.extend({intervention:z.string().min(5).max(120),objective:z.string().min(5).max(180),evidence:z.array(EvidenceSchema.omit({text:true,source:true}).extend({id:ids,kind:z.literal('source')})).min(3).max(Math.min(6,passages.length)),nodes:z.array(WorldSchema.shape.nodes.element.extend({evidenceIds:z.array(ids).min(1).max(3)})).length(3)});}
+export const GeneratedLessonSchema=WorldSchema.omit({settingImage:true}).extend({lessonPack:LessonPackSchema.omit({curriculum:true})});
+export function lessonGenerationSchema(passages:Passage[]){const ids=z.enum(passages.map(p=>p.id) as [string,...string[]]);return GeneratedLessonSchema.extend({intervention:z.string().min(5).max(120),objective:z.string().min(5).max(180),evidence:z.array(EvidenceSchema.omit({text:true,source:true,context:true}).extend({id:ids,kind:z.literal('source')})).min(3).max(Math.min(6,passages.length)),nodes:z.array(WorldSchema.shape.nodes.element.extend({evidenceIds:z.array(ids).min(1).max(3)})).length(3)});}
 export function textPassages(text:string):Passage[]{
  if(text.trim().length<200||text.length>60000)throw new Error('Provide between 200 and 60,000 characters of source text.');
  const paragraphs=[...text.matchAll(/\S[\s\S]*?(?=\n\s*\n|$)/g)];

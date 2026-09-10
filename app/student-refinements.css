@@ -1,4 +1,29 @@
 /* Keep student tools usable while reading and writing on smaller screens. */
+.join-card .returning-student { margin: 18px 0; padding: 16px; border: 1px solid #83e0cd40; border-radius: 10px; background: #83e0cd09; }
+.join-card .returning-student strong { display: block; color: #c5efdf; overflow-wrap: anywhere; }
+.join-card .returning-student p { font-size: .875rem; margin: 10px 0; }
+.join-card .returning-student button { white-space: normal; overflow-wrap: anywhere; }
+.cw-app .investigation-guide,
+.cw-app .revision-guidance {
+  padding: 16px;
+  margin: 16px 0;
+  border: 1px solid #83e0cd40;
+  border-radius: 10px;
+  background: #83e0cd09;
+}
+.cw-app :is(.investigation-guide,.revision-guidance) :is(h3,strong) { font-size: .875rem; color: #c5efdf; }
+.cw-app :is(.investigation-guide,.revision-guidance) p { font-size: 1rem; line-height: 1.6; margin: 8px 0; color: #c4d6df; }
+.cw-app :is(.investigation-guide,.revision-guidance) button { min-height: 44px; justify-content: flex-start; text-align: left; padding: 6px 0; }
+.cw-app .revision-guidance small { display: block; font-size: .875rem; color: #afc4ce; }
+.cw-app .argument-checklist { border-bottom: 1px solid #83b7c833; padding: 12px 0; margin-bottom: 12px; font-size: .875rem; color: #bed1da; }
+.cw-app .argument-checklist summary { cursor: pointer; min-height: 32px; color: #c5efdf; }
+.cw-app .argument-checklist ul { padding-left: 20px; margin: 8px 0; }
+.cw-app .argument-checklist li { margin: 8px 0; line-height: 1.6; }
+.cw-app .argument-checklist li strong { text-transform: capitalize; }
+.cw-app .argument-checklist p { line-height: 1.6; }
+.cw-app :is(.argument-scenario,.draft-status,.argument-attempt) { font-size: .875rem; color: #afc4ce; line-height: 1.5; margin: 8px 0; }
+.cw-app .argument-scenario strong { color: #f0d09d; }
+.evidence-reader .citation-help { flex-basis: 100%; font-size: .875rem; color: #afc4ce; line-height: 1.5; margin: 0; }
 .cw-app.immersive-student :is(.left-panel,.right-panel) {
   overscroll-behavior: contain;
   scroll-padding: 64px 16px 20px;
