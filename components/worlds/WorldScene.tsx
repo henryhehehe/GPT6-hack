@@ -2,12 +2,15 @@
 import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
-import type { World, ZoneId } from '@/lib/world';
+import { zoneNames, type World, type ZoneId } from '@/lib/world';
+import { createExplorer } from './scene/explorer';
 import { loadLandmarks } from './scene/landmarks';
 
-type Props={world:World;scenario:boolean;focus:ZoneId|null;unlocked:boolean;hint:boolean;onSelect:(zone:ZoneId)=>void};
+type Props={world:World;scenario:boolean;focus:ZoneId|null;focusRevision?:number;unlocked:boolean;hint:boolean;onSelect:(zone:ZoneId)=>void};
 const positions:Record<ZoneId,[number,number,number]>={harbor:[-14,1,12],market:[8,2,7],library:[0,5,-12]};
 export default function WorldScene(props:Props){
+ const explorerRef=useRef<ReturnType<typeof createExplorer>|null>(null);
+ const [walking,setWalking]=useState(false),[nearby,setNearby]=useState<ZoneId|null>(null);
  const host=useRef<HTMLDivElement>(null);const latest=useRef(props);latest.current=props;const [error,setError]=useState('');
  useEffect(()=>{
   if(!host.current)return;
@@ -32,7 +35,8 @@ export default function WorldScene(props:Props){
   // Plaza, paved paths and raised library terrace.
   box(land,27,.2,7,0,.7,0,mats.light);box(land,5,.18,34,1,.7,0,mats.light);
   box(land,29,1.8,18,0,.7,-12,mats.edge);box(land,29,.35,18,0,2.5,-12,mats.light);
-  for(let i=0;i<6;i++)box(land,12,.32,1.1,0,.75+i*.31,-1-i*1.0,mats.light);
+  // Eight shallow treads match the navigable ramp from street to terrace.
+  for(let i=0;i<8;i++)box(land,11,.95+(i+1)*1.9/8-.7,2.5/8,0,.7,-.5-(i+.5)*2.5/8,mats.light);
   for(let x=-24;x<28;x+=3.5)for(let z=-18;z<14;z+=3.5){if(Math.abs(x)<3||Math.abs(z)<2)box(land,3.3,.04,3.3,x,.91,z,mats.stone);}
   function temple(x:number,z:number,w=19,d=10,h=7){const g=new THREE.Group();g.position.set(x,2.9,z);land.add(g);box(g,w,h,d,0,0,0,mats.light);box(g,w+2,.55,d+2,0,h,0,mats.light);box(g,w+3,.35,d+3,0,h+.6,0,mats.edge);
    for(let i=0;i<8;i++){const cx=-w/2+.9+i*(w-1.8)/7;cylinder(g,.38,h,cx,0,d/2+1.25);box(g,.95,.3,.95,cx,h-.25,d/2+1.25,mats.light);box(g,.9,.25,.9,cx,0,d/2+1.25,mats.light);}
@@ -52,7 +56,7 @@ export default function WorldScene(props:Props){
   // Water ripples, restrained enough that the world remains readable.
   const waterMat=new THREE.ShaderMaterial({transparent:true,uniforms:{time:{value:0}},vertexShader:`varying vec2 vUv; uniform float time; void main(){vUv=uv;vec3 p=position;p.z+=sin(p.x*.22+time)*.10+sin(p.y*.3-time*.8)*.08;gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.);}`,fragmentShader:`varying vec2 vUv;uniform float time;void main(){float a=sin(vUv.x*160.+sin(vUv.y*80.+time)*2.+time)*sin(vUv.y*150.-time);float foam=smoothstep(.84,1.,a);vec3 c=mix(vec3(.035,.24,.30),vec3(.12,.46,.49),vUv.y);c+=foam*.12;gl_FragColor=vec4(c,.92);}`});
   const water=mesh(new THREE.PlaneGeometry(150,140,50,50),waterMat,scene,0,-.1,0);water.rotation.x=-Math.PI/2;water.receiveShadow=false;water.castShadow=false;
-  for(const x of [-12,-4,5]){box(land,3,.5,17,x,.7,21,mats.wood);for(let j=0;j<7;j++)box(land,3.1,.08,.12,x,1.21,14+j*2.2,mats.edge);for(const side of [-1,1])for(const z of [14,22,28])cylinder(land,.22,2.7,x+side*1.35,-.1,z,mats.wood);}
+  for(const x of [-12,-4,5]){box(land,3,.5,17.8,x,.7,20.6,mats.wood);for(let j=0;j<7;j++)box(land,3.1,.08,.12,x,1.21,14+j*2.2,mats.edge);for(const side of [-1,1])for(const z of [14,22,28])cylinder(land,.22,2.7,x+side*1.35,-.1,z,mats.wood);}
   const goods:THREE.Object3D[]=[];const stalls:THREE.Object3D[]=[];
   for(let i=0;i<5;i++){const g=new THREE.Group();g.position.set(13+(i%2)*8,1,5+Math.floor(i/2)*5);land.add(g);stalls.push(g);box(g,5,.65,2.8,0,0,0,mats.wood);for(const x of [-2.4,2.4])for(const z of [-1.3,1.3])cylinder(g,.09,3.5,x,0,z,mats.wood,6);const roof=box(g,5.8,.16,3.5,0,3.5,0,i%2?mats.cloth:mats.teal);roof.rotation.z=.08;
    for(let j=0;j<5;j++){const fruit=mesh(new THREE.SphereGeometry(.36,8,6),j%2?mats.gold:mats.roof,g,-1.8+j*.9,1,0);goods.push(fruit);}
@@ -72,26 +76,37 @@ export default function WorldScene(props:Props){
   const curve=new THREE.CatmullRomCurve3([new THREE.Vector3(-14,2,12),new THREE.Vector3(-2,5,9),new THREE.Vector3(12,4,5),new THREE.Vector3(9,7,-6),new THREE.Vector3(0,7,-12)]);
   const pathMat=new THREE.MeshBasicMaterial({color:'#ffc574',transparent:true,opacity:0});const path=mesh(new THREE.TubeGeometry(curve,70,.055,5,false),pathMat,scene);path.castShadow=false;
   const particle=mesh(new THREE.SphereGeometry(.2,8,6),mats.amber,scene);particle.visible=false;
+  const explorer=createExplorer(camera,controls,renderer.domElement,{mode:value=>{focusing=false;setWalking(value);},nearby:setNearby,inspect:zone=>latest.current.onSelect(zone)});explorerRef.current=explorer;
   const ray=new THREE.Raycaster();const pointer=new THREE.Vector2();let down:[number,number]|null=null;
-  const onDown=(e:PointerEvent)=>{down=[e.clientX,e.clientY]};const onUp=(e:PointerEvent)=>{if(!down||Math.hypot(e.clientX-down[0],e.clientY-down[1])>5)return;const rect=el.getBoundingClientRect();pointer.set((e.clientX-rect.left)/rect.width*2-1,-(e.clientY-rect.top)/rect.height*2+1);ray.setFromCamera(pointer,camera);const hit=ray.intersectObjects(markers)[0];if(hit)latest.current.onSelect(hit.object.userData.zone);};
+  const onDown=(e:PointerEvent)=>{down=[e.clientX,e.clientY]};const onUp=(e:PointerEvent)=>{if(explorer.walking)return;if(!down||Math.hypot(e.clientX-down[0],e.clientY-down[1])>5)return;const rect=el.getBoundingClientRect();pointer.set((e.clientX-rect.left)/rect.width*2-1,-(e.clientY-rect.top)/rect.height*2+1);ray.setFromCamera(pointer,camera);const hit=ray.intersectObjects(markers)[0];if(hit)latest.current.onSelect(hit.object.userData.zone);};
   el.addEventListener('pointerdown',onDown);el.addEventListener('pointerup',onUp);
   const resize=()=>{const w=Math.max(1,el.clientWidth),h=Math.max(1,el.clientHeight);renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();};const observer=new ResizeObserver(resize);observer.observe(el);resize();
-  let frame=0,t=0,last=performance.now(),blend=0,oldFocus:ZoneId|null=null;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let frame=0,t=0,last=performance.now(),blend=0,oldFocus:ZoneId|null=null,oldFocusRevision=props.focusRevision;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const target=new THREE.Vector3(0,0,0),cameraTarget=new THREE.Vector3(55,43,63);let focusing=false;
   const cameraViews:Record<ZoneId,[number,number,number]>={library:[27,23,23],harbor:[23,25,51],market:[40,29,39]};
   const interruptFocus=()=>{focusing=false;};controls.addEventListener('start',interruptFocus);
   function animate(now:number){const dt=Number.isFinite(now-last)?Math.max(0,Math.min((now-last)/1000,.05)):0;last=now;t+=dt;const p=latest.current;
    blend=THREE.MathUtils.damp(blend,p.scenario?1:0,reduced?100:2,dt);waterMat.uniforms.time.value=reduced?0:t;
-   if(oldFocus!==p.focus){oldFocus=p.focus;const point=p.focus?positions[p.focus]:[0,0,0];target.set(point[0],point[1],point[2]);cameraTarget.set(...(p.focus?cameraViews[p.focus]:[55,43,63] as [number,number,number]));focusing=true;}
-   if(focusing){const alpha=reduced?1:1-Math.exp(-3*dt);controls.target.lerp(target,alpha);camera.position.lerp(cameraTarget,alpha);if(controls.target.distanceTo(target)<.1&&camera.position.distanceTo(cameraTarget)<.1)focusing=false;}
+   if(oldFocus!==p.focus||oldFocusRevision!==p.focusRevision){oldFocus=p.focus;oldFocusRevision=p.focusRevision;if(explorer.walking){explorer.focus(p.focus);}else{const point=p.focus?positions[p.focus]:[0,0,0];target.set(point[0],point[1],point[2]);cameraTarget.set(...(p.focus?cameraViews[p.focus]:[55,43,63] as [number,number,number]));focusing=true;}}
+   if(focusing&&!explorer.walking){const alpha=reduced?1:1-Math.exp(-3*dt);controls.target.lerp(target,alpha);camera.position.lerp(cameraTarget,alpha);if(controls.target.distanceTo(target)<.1&&camera.position.distanceTo(cameraTarget)<.1)focusing=false;}
    ships.forEach((s,i)=>{s.position.y=.25+(reduced?0:Math.sin(t*1.1+i)*.16);s.rotation.z=reduced?0:Math.sin(t*.7+i)*.025;const activity=p.world.nodes.find(n=>n.id==='harbor')?.activity??.22;const visible=i/ships.length<1-blend*(1-activity);s.visible=visible;if(i>=2&&!reduced){s.position.x=[13,-20,23,-4][i-2]+Math.sin(t*.055+i)*2.5;}});
    const market=p.world.nodes.find(n=>n.id==='market')?.activity??.35;goods.forEach((g,i)=>g.visible=i/goods.length<1-blend*(1-market));
    citizens.forEach((c,i)=>{const active=p.world.nodes.find(n=>n.id==='library')?.activity??.3;c.visible=i/citizens.length<1-blend*(1-active);c.position.x=-12+i%9*3+(reduced?0:Math.sin(t*.2+i)*.8);});
    landmarks.update(p.unlocked,dt,reduced);door.scale.x=THREE.MathUtils.damp(door.scale.x,p.unlocked?.06:1,4,dt);hint.visible=p.hint;hint.rotation.y=reduced?0:Math.sin(t)*.06;
    ringMats.forEach(m=>m.color.set(p.scenario?'#ffc574':'#6adeca'));pathMat.opacity=blend*.55;particle.visible=blend>.2;if(!reduced)particle.position.copy(curve.getPoint((t*.13)%1));flame.scale.setScalar(1+(reduced?0:Math.sin(t*5)*.12));
-   controls.update();renderer.render(scene,camera);frame=requestAnimationFrame(animate);
+   explorer.update(dt);if(!explorer.walking)controls.update();renderer.render(scene,camera);frame=requestAnimationFrame(animate);
   }frame=requestAnimationFrame(animate);
-  return()=>{cancelAnimationFrame(frame);landmarks.dispose();observer.disconnect();controls.removeEventListener('start',interruptFocus);controls.dispose();el.removeEventListener('pointerdown',onDown);el.removeEventListener('pointerup',onUp);scene.traverse(o=>{if(o instanceof THREE.Mesh){o.geometry.dispose();const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>m.dispose());}});renderer.dispose();renderer.domElement.remove();};
+  return()=>{cancelAnimationFrame(frame);explorer.dispose();explorerRef.current=null;landmarks.dispose();observer.disconnect();controls.removeEventListener('start',interruptFocus);controls.dispose();el.removeEventListener('pointerdown',onDown);el.removeEventListener('pointerup',onUp);scene.traverse(o=>{if(o instanceof THREE.Mesh){o.geometry.dispose();const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>m.dispose());}});renderer.dispose();renderer.domElement.remove();};
  },[]);
- return <div ref={host} className="world-canvas" role="img" aria-label="Interactive 3D harbor, market, and library. Use the location buttons to inspect evidence.">{error&&<p className="world-error">{error}</p>}</div>;
+ return <>
+  <div ref={host} className="world-canvas" role="group" aria-label="Interactive harbor, market, and library">{error&&<p className="world-error">{error}</p>}</div>
+  <div className="explorer-controls">
+   <div className="explorer-modes" aria-label="Exploration mode"><button aria-pressed={!walking} onClick={()=>explorerRef.current?.mode(false)}>Overview</button><button aria-pressed={walking} onClick={()=>explorerRef.current?.mode(true)}>Walk around</button></div>
+   <p>{walking?'WASD / arrows · drag to look · Shift to move faster · Esc to overview':'Orbit the world, or step into its streets.'}</p>
+   {walking&&nearby&&<button className="explorer-inspect" onClick={()=>explorerRef.current?.inspect()}>Inspect {zoneNames[nearby]} <kbd>E</kbd></button>}
+  </div>
+  {walking&&<div className="explorer-pad" aria-label="Movement controls">
+   {([{id:'turn-left',label:'Turn left',symbol:'↶'},{id:'forward',label:'Move forward',symbol:'↑'},{id:'turn-right',label:'Turn right',symbol:'↷'},{id:'left',label:'Move left',symbol:'←'},{id:'back',label:'Move backward',symbol:'↓'},{id:'right',label:'Move right',symbol:'→'}]).map(action=><button key={action.id} aria-label={action.label} onPointerDown={event=>{event.preventDefault();event.currentTarget.setPointerCapture(event.pointerId);explorerRef.current?.input(action.id,true);}} onPointerUp={()=>explorerRef.current?.input(action.id,false)} onPointerCancel={()=>explorerRef.current?.input(action.id,false)} onLostPointerCapture={()=>explorerRef.current?.input(action.id,false)} onKeyDown={event=>{if(event.key===' '||event.key==='Enter'){event.preventDefault();explorerRef.current?.input(action.id,true);}}} onKeyUp={()=>explorerRef.current?.input(action.id,false)} onBlur={()=>explorerRef.current?.input(action.id,false)}>{action.symbol}</button>)}
+  </div>}
+ </>;
 }

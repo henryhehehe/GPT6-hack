@@ -59,6 +59,8 @@ Keep source/pack data separate from runtime classroom state. Add a schema versio
 
 Scene rendering dispatches to Alexandria, Odyssey, or Austen templates. The shared runtime retains camera navigation, evidence anchors, teacher intervention previews, and state preservation. Replace the universal `activity` assumption with bounded template-specific state: an Odyssey branch might alter the ship's route cue; Austen close reading might reveal a letter or comparison panel, not change building population.
 
+Free movement is part of the shared runtime: the Alexandria controller now supports walking, keyboard/touch input, nearby inspection, and overview switching. Each future pack must supply its own walkable floor boundaries, obstacles, elevations, and safe arrival points. Odyssey cave interiors and Austen rooms require authored traversal geometry rather than reusing Alexandria's outdoor collision map.
+
 ## Concurrent implementation after the contract is frozen
 
 Use the existing one-coordinator/three-agent model. This expansion supersedes Alexandria-only assumptions in the next sprint; retain the P0 learner-selection and state-race fixes from the parallel plan.

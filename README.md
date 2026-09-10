@@ -31,6 +31,7 @@ The first page opens the teacher studio with a prepared lesson. “Generate with
 - Teacher source editor, structural intervention, Astra authoring, student invitations, live student activity, and intervention preview/application.
 - Three.js harbor district with library, market, docks, moving ships, water, citizens, evidence markers, camera focus, and visible scenario changes.
 - Original Blender-authored library and lighthouse assets, loaded as GLB with a playable fallback and independently animated archive doors. Editable source and regeneration instructions live in [assets/blender](assets/blender/README.md).
+- Ground-level exploration: choose **Walk around**, use WASD/arrows to move, drag to look, Shift for faster movement, E to inspect a nearby place, or Escape for overview. Touch movement/turn controls and location shortcuts remain available. Outdoor streets, stairs, and piers are walkable; building interiors are not yet navigable.
 - Student evidence inventory, merchant/archivist dialogue, four-part argument rubric, and archive unlock.
 - Native Astra mid-turn steering over WebSocket. A standard request remains available when the transport is unavailable; it is labeled separately.
 - Persistent classroom state and student isolation. Clients poll every 2.5 seconds; no synthetic classroom counts.
@@ -68,6 +69,8 @@ node scripts/smoke-author.mjs
 The `--live`, steering, authoring, and probe scripts make paid Astra requests. Smoke scripts create test classrooms and save access credentials under ignored `artifacts/private/`. `smoke-steering.mjs` uses the classroom created by `smoke.mjs`.
 
 Seven deterministic tests cover dangling/duplicate references, unavailable evidence, fabricated excerpts, and progression requirements. Live smoke checks verified a rejected instruction attack, a supported argument, classroom state preservation, and a native steering correction. See [build evidence](docs/BUILD-LOG.md) for actual response IDs and timings. These are small smoke tests, not educational validation or statistical latency claims.
+
+Thirteen additional movement/controller tests cover connected routes, dock/shore boundaries, wall sliding, stairs, movement speed, focus-scoped keys, blur/release handling, and camera restoration. These are offline checks; a browser usability/playtest is still needed before recording.
 
 ## One-minute video
 
