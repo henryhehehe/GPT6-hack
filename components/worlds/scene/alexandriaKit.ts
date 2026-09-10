@@ -139,6 +139,7 @@ export function loadAlexandriaKit(parent: THREE.Object3D, fallback: Fallbacks) {
 
   return {
     get ready() { return ready; },
+    getPlantTemplate() { return ready ? source?.getObjectByName('date-palm') : undefined; },
     update(blend: number, harborActivity: number, marketActivity: number) {
       if (!ready) return;
       const apply = (objects: THREE.Object3D[], activity: number) => objects.forEach((object, i) => {

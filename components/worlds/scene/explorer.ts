@@ -43,6 +43,7 @@ export function createExplorer(camera: THREE.PerspectiveCamera, orbit: OrbitCont
 
   return {
     mode,
+    visit(destination:{x:number;z:number},direction=0){clear();point={...destination};yaw=direction;pitch=0;if(!walking)mode(true);else view();canvas.focus({preventScroll:true});},
     get walking(){return walking;},
     input(action:string,pressed:boolean){if(pressed)touch.add(action);else touch.delete(action);},
     inspect,

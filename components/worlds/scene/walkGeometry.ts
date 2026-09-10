@@ -1,4 +1,6 @@
+import {CITY_SHORELINE,DISTRICT_BLOCKERS} from './cityLayout';
 /** Pure navigation geometry in the scene's Three.js X/Z coordinates. */
+import { ALEXANDRIA_DETAIL_OBSTACLES } from './alexandriaDetailLayout';
 export type WalkPoint = { x: number; z: number };
 
 export const WALK_SPAWNS = {
@@ -10,17 +12,13 @@ export const WALK_SPAWNS = {
 // The shoreline and three joined piers form one polygon. Chamfered northeast
 // corners stay inside the rendered island's curved edges. Piers require the
 // short shore connectors rendered by WorldScene (the old meshes had a gap).
-const shoreline: readonly WalkPoint[] = [
-  [-28, -22], [25, -22], [30, -17], [30, 14], [24, 18],
-  [8, 18], [8, 12], [6.5, 12], [6.5, 29.5], [3.5, 29.5],
-  [3.5, 12], [-2.5, 12], [-2.5, 29.5], [-5.5, 29.5],
-  [-5.5, 12], [-10.5, 12], [-10.5, 29.5], [-13.5, 29.5],
-  [-13.5, 23], [-28, 23],
-].map(([x, z]) => ({ x, z }));
+const shoreline: readonly WalkPoint[] = CITY_SHORELINE;
 
 type Bounds = readonly [minX: number, maxX: number, minZ: number, maxZ: number];
 // Conservative footprints cover both the authored GLBs and fallback meshes.
 const buildings: readonly Bounds[] = [
+  ...DISTRICT_BLOCKERS,
+  ...ALEXANDRIA_DETAIL_OBSTACLES.map(obstacle => obstacle.bounds),
   [-13.5, 13.5, -20.1, -3.9], // Library: do not walk through its closed geometry.
   [-25.2, -16.8, -17.2, -8.8],
   [17.8, 26.2, -19.2, -8.8],
@@ -28,6 +26,11 @@ const buildings: readonly Bounds[] = [
   [-26.2, -19.8, -6.7, .7],
   [-26.9, -21.1, 13.1, 18.9], // Authored lighthouse footprint.
   [-18.55, -14.85, 6.45, 11.95], // Harbor cargo stacks.
+  [-10.35, -7.65, -1.35, 1.35], // Courtyard fountain.
+  [-12.34, -11.66, -1.18, 1.18], // West stone bench.
+  [-6.34, -5.66, -1.18, 1.18], // East stone bench.
+  ...[-12, -4, 5].flatMap(x => [16, 25].map((z): Bounds =>
+    [x - 1.36, x - .92, z - .22, z + .22])), // Mooring bollards, clear pier centers.
   ...Array.from({ length: 5 }, (_, i): Bounds => {
     const x = 13 + (i % 2) * 8, z = 5 + Math.floor(i / 2) * 5;
     return [x - 2.5, x + 2.5, z - 1.4, z + 1.4];
