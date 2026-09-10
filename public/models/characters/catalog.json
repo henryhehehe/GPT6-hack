@@ -3,20 +3,20 @@
     "id": "dorian",
     "title": "Dorian · harbor merchant",
     "family": "alexandria-cast",
-    "creator": "Counterfactual Worlds",
+    "creator": "Counterfactual Worlds; Quaternius (CC0 head, eyes and hair)",
     "sourceUrl": "/model-catalog?collection=characters",
     "license": "MIT",
     "licenseUrl": "/models/characters/LICENSE.txt",
     "url": "/models/characters/dorian.glb",
-    "bytes": 596572,
-    "sha256": "6f55f3f255017bd2e5b03d0c3af70b82fb87933a37830ed3a34771d9dc4c9764",
+    "bytes": 650920,
+    "sha256": "c3f0d901d78b8d27b0e97655457fb633aaaa958e8f27ee71fde013f31e1b7cc2",
     "dimensions": [
       0.968,
-      1.9059,
+      1.7512,
       0.4745
     ],
-    "triangles": 11664,
-    "materials": 3,
+    "triangles": 17577,
+    "materials": 7,
     "skins": 1,
     "category": "teaching-character",
     "classroomStatus": "authored-character",
@@ -31,15 +31,15 @@
       "dorian__Anchor_Label"
     ],
     "modifications": [
-      "Original project-authored mesh, rig and gesture clips.",
+      "Original wardrobe, rig and gestures with fitted CC0 Quaternius head, eyes and hair.",
       "Runtime loader centers, grounds and scales each independent character instance."
     ],
     "usage": {
       "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
-      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "cautions": "Greek-informed fictional companion; original interpretive wardrobe, rig and gestures with adapted CC0 Quaternius head, eyes and hair. Stylized body; not a historical portrait or primary evidence.",
       "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
       "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
-      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+      "rights": "Original wardrobe, rig and gestures: MIT. Adapted Quaternius components: CC0 1.0. See the combined character notice."
     },
     "assignments": [
       {
@@ -496,20 +496,20 @@
     "id": "ione",
     "title": "Ione · archivist",
     "family": "alexandria-cast",
-    "creator": "Counterfactual Worlds",
+    "creator": "Counterfactual Worlds; Quaternius (CC0 head, eyes and hair)",
     "sourceUrl": "/model-catalog?collection=characters",
     "license": "MIT",
     "licenseUrl": "/models/characters/LICENSE.txt",
     "url": "/models/characters/ione.glb",
-    "bytes": 628720,
-    "sha256": "93433421f8c966e5979a1bd61785481dcceb1e5ff5c9d92939fd71b08c5f7244",
+    "bytes": 695684,
+    "sha256": "fdedce52165da0ada0f915f2aefc60bcf9db97eba26f12c27fd92c9f5398e497",
     "dimensions": [
       0.968,
-      1.9107,
+      1.7715,
       0.461
     ],
-    "triangles": 12776,
-    "materials": 3,
+    "triangles": 20053,
+    "materials": 6,
     "skins": 1,
     "category": "teaching-character",
     "classroomStatus": "authored-character",
@@ -524,15 +524,15 @@
       "ione__Anchor_Label"
     ],
     "modifications": [
-      "Original project-authored mesh, rig and gesture clips.",
+      "Original wardrobe, rig and gestures with fitted CC0 Quaternius head, eyes and hair.",
       "Runtime loader centers, grounds and scales each independent character instance."
     ],
     "usage": {
       "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
-      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "cautions": "Greek-informed fictional companion; original interpretive wardrobe, rig and gestures with adapted CC0 Quaternius head, eyes and hair. Stylized body; not a historical portrait or primary evidence.",
       "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
       "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
-      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+      "rights": "Original wardrobe, rig and gestures: MIT. Adapted Quaternius components: CC0 1.0. See the combined character notice."
     },
     "assignments": [
       {
@@ -1343,20 +1343,20 @@
     "id": "thaleia",
     "title": "Thaleia · market trader",
     "family": "alexandria-cast",
-    "creator": "Counterfactual Worlds",
+    "creator": "Counterfactual Worlds; Quaternius (CC0 head, eyes and hair)",
     "sourceUrl": "/model-catalog?collection=characters",
     "license": "MIT",
     "licenseUrl": "/models/characters/LICENSE.txt",
     "url": "/models/characters/thaleia.glb",
-    "bytes": 711072,
-    "sha256": "190ff713c5ade2c9c61c34a4d88e2e0d5643d6da2947d9eafc1ea11789ed8ba4",
+    "bytes": 692556,
+    "sha256": "3a605f3e14d9f8aee50b41fb7511e6e3c3f40896ec5767af701d91a0638a3a0a",
     "dimensions": [
       0.968,
-      1.9107,
+      1.7715,
       0.461
     ],
-    "triangles": 14300,
-    "materials": 3,
+    "triangles": 19721,
+    "materials": 6,
     "skins": 1,
     "category": "teaching-character",
     "classroomStatus": "authored-character",
@@ -1371,15 +1371,15 @@
       "thaleia__Anchor_Label"
     ],
     "modifications": [
-      "Original project-authored mesh, rig and gesture clips.",
+      "Original wardrobe, rig and gestures with fitted CC0 Quaternius head, eyes and hair.",
       "Runtime loader centers, grounds and scales each independent character instance."
     ],
     "usage": {
       "placement": "Use the assigned cast through its scene loader and existing positioned fallback groups.",
-      "cautions": "Original interpretive teaching asset; not primary evidence",
+      "cautions": "Greek-informed fictional companion; original interpretive wardrobe, rig and gestures with adapted CC0 Quaternius head, eyes and hair. Stylized body; not a historical portrait or primary evidence.",
       "loading": "Only the selected three readers load in a lesson; this full catalog is not an initial scene payload.",
       "animation": "Idle, Greeting and Talk are inspectable here. The themed loader handles its own mixer and reduced motion.",
-      "rights": "MIT: retain the copyright and permission notice with redistributed copies."
+      "rights": "Original wardrobe, rig and gestures: MIT. Adapted Quaternius components: CC0 1.0. See the combined character notice."
     },
     "assignments": [
       {

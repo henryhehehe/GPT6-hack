@@ -546,7 +546,7 @@
   "placedTriangles": 72590,
   "drawCalls": 120,
   "initialSceneModelBytes": 12897344,
-  "withAuthoredCharacterReserveBytes": 14833708,
+  "withAuthoredCharacterReserveBytes": 14936504,
   "checks": [
     "30 individual exports and bundle",
     "Every model placed",

@@ -321,8 +321,8 @@
       "category": "characters",
       "url": "/models/characters/dorian.glb",
       "source": "assets/blender/characters/alexandria-cast.blend",
-      "bytes": 596572,
-      "sha256": "6f55f3f255017bd2e5b03d0c3af70b82fb87933a37830ed3a34771d9dc4c9764",
+      "bytes": 650920,
+      "sha256": "c3f0d901d78b8d27b0e97655457fb633aaaa958e8f27ee71fde013f31e1b7cc2",
       "bounds": {
         "min": [
           -0.484,
@@ -331,7 +331,7 @@
         ],
         "max": [
           0.484,
-          1.9059,
+          1.7512,
           0.244
         ]
       },
@@ -344,11 +344,34 @@
         "Greeting",
         "Talk"
       ],
-      "provenance": "Original interpretive teaching asset; not primary evidence",
-      "creator": "Counterfactual Worlds",
+      "provenance": "Greek-informed fictional companion; original interpretive wardrobe, rig and gestures with adapted CC0 Quaternius head, eyes and hair. Stylized body; not a historical portrait or primary evidence.",
+      "creator": "Counterfactual Worlds; Quaternius (CC0 head, eyes and hair)",
       "license": "MIT",
       "licensePath": "LICENSE",
-      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin",
+      "components": [
+        {
+          "creator": "Quaternius",
+          "license": "CC0-1.0",
+          "licensePath": "assets/external/licenses/quaternius-base-characters.txt",
+          "source": "assets/external/prepared/quaternius-base-characters-superhero-male-fullbody.glb",
+          "modifications": "Head and neck extracted by original skin weights, fitted to wardrobe, tinted through vertex colors and rebound to shared rig. Eyes retained; female face proportions varied."
+        },
+        {
+          "creator": "Quaternius",
+          "license": "CC0-1.0",
+          "licensePath": "assets/external/licenses/quaternius-base-characters.txt",
+          "source": "assets/external/models/quaternius-base-characters/hair/Hair_SimpleParted.gltf",
+          "modifications": "Parted hair fitted and recolored; original gathered buns and ribbons retained."
+        },
+        {
+          "creator": "Quaternius",
+          "license": "CC0-1.0",
+          "licensePath": "assets/external/licenses/quaternius-base-characters.txt",
+          "source": "assets/external/models/quaternius-base-characters/hair/Hair_Beard.gltf",
+          "modifications": "Beard fitted to the extracted head, recolored and rebound to Head bone."
+        }
+      ]
     },
     {
       "id": "earlymodern-doublet",
@@ -666,8 +689,8 @@
       "category": "characters",
       "url": "/models/characters/ione.glb",
       "source": "assets/blender/characters/alexandria-cast.blend",
-      "bytes": 628720,
-      "sha256": "93433421f8c966e5979a1bd61785481dcceb1e5ff5c9d92939fd71b08c5f7244",
+      "bytes": 695684,
+      "sha256": "fdedce52165da0ada0f915f2aefc60bcf9db97eba26f12c27fd92c9f5398e497",
       "bounds": {
         "min": [
           -0.484,
@@ -676,7 +699,7 @@
         ],
         "max": [
           0.484,
-          1.9107,
+          1.7715,
           0.2305
         ]
       },
@@ -689,11 +712,27 @@
         "Greeting",
         "Talk"
       ],
-      "provenance": "Original interpretive teaching asset; not primary evidence",
-      "creator": "Counterfactual Worlds",
+      "provenance": "Greek-informed fictional companion; original interpretive wardrobe, rig and gestures with adapted CC0 Quaternius head, eyes and hair. Stylized body; not a historical portrait or primary evidence.",
+      "creator": "Counterfactual Worlds; Quaternius (CC0 head, eyes and hair)",
       "license": "MIT",
       "licensePath": "LICENSE",
-      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin",
+      "components": [
+        {
+          "creator": "Quaternius",
+          "license": "CC0-1.0",
+          "licensePath": "assets/external/licenses/quaternius-base-characters.txt",
+          "source": "assets/external/prepared/quaternius-base-characters-superhero-female-fullbody.glb",
+          "modifications": "Head and neck extracted by original skin weights, fitted to wardrobe, tinted through vertex colors and rebound to shared rig. Eyes retained; female face proportions varied."
+        },
+        {
+          "creator": "Quaternius",
+          "license": "CC0-1.0",
+          "licensePath": "assets/external/licenses/quaternius-base-characters.txt",
+          "source": "assets/external/models/quaternius-base-characters/hair/Hair_SimpleParted.gltf",
+          "modifications": "Parted hair fitted and recolored; original gathered buns and ribbons retained."
+        }
+      ]
     },
     {
       "id": "market-stall",
@@ -1595,8 +1634,8 @@
       "category": "characters",
       "url": "/models/characters/thaleia.glb",
       "source": "assets/blender/characters/alexandria-cast.blend",
-      "bytes": 711072,
-      "sha256": "190ff713c5ade2c9c61c34a4d88e2e0d5643d6da2947d9eafc1ea11789ed8ba4",
+      "bytes": 692556,
+      "sha256": "3a605f3e14d9f8aee50b41fb7511e6e3c3f40896ec5767af701d91a0638a3a0a",
       "bounds": {
         "min": [
           -0.484,
@@ -1605,7 +1644,7 @@
         ],
         "max": [
           0.484,
-          1.9107,
+          1.7715,
           0.2305
         ]
       },
@@ -1618,11 +1657,27 @@
         "Greeting",
         "Talk"
       ],
-      "provenance": "Original interpretive teaching asset; not primary evidence",
-      "creator": "Counterfactual Worlds",
+      "provenance": "Greek-informed fictional companion; original interpretive wardrobe, rig and gestures with adapted CC0 Quaternius head, eyes and hair. Stylized body; not a historical portrait or primary evidence.",
+      "creator": "Counterfactual Worlds; Quaternius (CC0 head, eyes and hair)",
       "license": "MIT",
       "licensePath": "LICENSE",
-      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin",
+      "components": [
+        {
+          "creator": "Quaternius",
+          "license": "CC0-1.0",
+          "licensePath": "assets/external/licenses/quaternius-base-characters.txt",
+          "source": "assets/external/prepared/quaternius-base-characters-superhero-female-fullbody.glb",
+          "modifications": "Head and neck extracted by original skin weights, fitted to wardrobe, tinted through vertex colors and rebound to shared rig. Eyes retained; female face proportions varied."
+        },
+        {
+          "creator": "Quaternius",
+          "license": "CC0-1.0",
+          "licensePath": "assets/external/licenses/quaternius-base-characters.txt",
+          "source": "assets/external/models/quaternius-base-characters/hair/Hair_SimpleParted.gltf",
+          "modifications": "Parted hair fitted and recolored; original gathered buns and ribbons retained."
+        }
+      ]
     },
     {
       "id": "tied-sack",

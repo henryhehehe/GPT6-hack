@@ -9,15 +9,15 @@ Generated with `node --import tsx scripts/catalog-characters.ts` from the author
 - Preserve independently loaded skeletons, the existing fallback groups, source/talk picking and scene cleanup.
 - Themed scenes use `loadThemedCharacters`; Alexandria uses `loadTeachingCharacters`. Their update and readiness APIs differ.
 - Preview dimensions describe source geometry. The runtime applies its own grounding/centering and character-height normalization.
-- Keep the MIT copyright and permission notice when redistributing the original wardrobe and animation assets. Regency head, eye and parted-hair components are adapted from the CC0 Quaternius kit; see the combined notice.
+- Keep the MIT copyright and permission notice when redistributing the original wardrobe and animation assets. Regency and Greek head, eye and parted-hair components, plus Dorian’s beard, are adapted from the CC0 Quaternius kit; see the combined notice.
 
 ## Dorian · harbor merchant
 
-ID: `dorian` · 596,572 bytes · 11,664 triangles · 3 materials · 1 skins.
-Source dimensions X/Y/Z: 0.968 / 1.9059 / 0.4745 m. Clips: Idle, Greeting, Talk.
+ID: `dorian` · 650,920 bytes · 17,577 triangles · 7 materials · 1 skins.
+Source dimensions X/Y/Z: 0.968 / 1.7512 / 0.4745 m. Clips: Idle, Greeting, Talk.
 Editable source: `assets/blender/characters/alexandria-cast.blend`. Anchors: dorian__Anchor_Talk, dorian__Anchor_Label.
 [Runtime GLB](../public/models/characters/dorian.glb) · [MIT notice](../public/models/characters/LICENSE.txt)
-SHA-256: `6f55f3f255017bd2e5b03d0c3af70b82fb87933a37830ed3a34771d9dc4c9764`
+SHA-256: `c3f0d901d78b8d27b0e97655457fb633aaaa958e8f27ee71fde013f31e1b7cc2`
 
 ### The scholarly waterfront · Harbor guide
 Ancient Mediterranean interpretation
@@ -369,11 +369,11 @@ export function attachCast(anchors: Record<ZoneId, Group>) {
 
 ## Ione · archivist
 
-ID: `ione` · 628,720 bytes · 12,776 triangles · 3 materials · 1 skins.
-Source dimensions X/Y/Z: 0.968 / 1.9107 / 0.461 m. Clips: Idle, Greeting, Talk.
+ID: `ione` · 695,684 bytes · 20,053 triangles · 6 materials · 1 skins.
+Source dimensions X/Y/Z: 0.968 / 1.7715 / 0.461 m. Clips: Idle, Greeting, Talk.
 Editable source: `assets/blender/characters/alexandria-cast.blend`. Anchors: ione__Anchor_Talk, ione__Anchor_Label.
 [Runtime GLB](../public/models/characters/ione.glb) · [MIT notice](../public/models/characters/LICENSE.txt)
-SHA-256: `93433421f8c966e5979a1bd61785481dcceb1e5ff5c9d92939fd71b08c5f7244`
+SHA-256: `fdedce52165da0ada0f915f2aefc60bcf9db97eba26f12c27fd92c9f5398e497`
 
 ### The scholarly waterfront · Archive guide
 Ancient Mediterranean interpretation
@@ -935,11 +935,11 @@ export function attachCast(anchors: Record<ZoneId, Group>) {
 
 ## Thaleia · market trader
 
-ID: `thaleia` · 711,072 bytes · 14,300 triangles · 3 materials · 1 skins.
-Source dimensions X/Y/Z: 0.968 / 1.9107 / 0.461 m. Clips: Idle, Greeting, Talk.
+ID: `thaleia` · 692,556 bytes · 19,721 triangles · 6 materials · 1 skins.
+Source dimensions X/Y/Z: 0.968 / 1.7715 / 0.461 m. Clips: Idle, Greeting, Talk.
 Editable source: `assets/blender/characters/alexandria-cast.blend`. Anchors: thaleia__Anchor_Talk, thaleia__Anchor_Label.
 [Runtime GLB](../public/models/characters/thaleia.glb) · [MIT notice](../public/models/characters/LICENSE.txt)
-SHA-256: `190ff713c5ade2c9c61c34a4d88e2e0d5643d6da2947d9eafc1ea11789ed8ba4`
+SHA-256: `3a605f3e14d9f8aee50b41fb7511e6e3c3f40896ec5767af701d91a0638a3a0a`
 
 ### The scholarly waterfront · Market guide
 Ancient Mediterranean interpretation
