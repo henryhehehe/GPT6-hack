@@ -1,0 +1,220 @@
+[
+  {
+    "id": "quaternius-fantasy-props-vase-2",
+    "label": "Pottery",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Vase_2.gltf",
+    "prepared_path": "assets/external/prepared/quaternius-fantasy-props-vase-2.glb",
+    "preview_path": "assets/external/previews/quaternius-fantasy-props-vase-2.png",
+    "source_dimensions_blender_xyz": [
+      0.6946827173233032,
+      0.6946826577186584,
+      0.5163134932518005
+    ],
+    "modifications": [
+      "Re-exported as self-contained GLB using Blender 4.5.0",
+      "Resized textures larger than 1024 pixels to at most 1024; embedded in GLB",
+      "Exported opaque textures as JPEG quality 85; exporter preserves PNG where alpha is needed"
+    ],
+    "status": "prepared-awaiting-runtime-review"
+  },
+  {
+    "id": "quaternius-fantasy-props-scroll-1",
+    "label": "Scroll",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Scroll_1.gltf",
+    "prepared_path": "assets/external/prepared/quaternius-fantasy-props-scroll-1.glb",
+    "preview_path": "assets/external/previews/quaternius-fantasy-props-scroll-1.png",
+    "source_dimensions_blender_xyz": [
+      0.2438921332359314,
+      0.06311644613742828,
+      0.058787375688552856
+    ],
+    "modifications": [
+      "Re-exported as self-contained GLB using Blender 4.5.0",
+      "Resized textures larger than 1024 pixels to at most 1024; embedded in GLB",
+      "Exported opaque textures as JPEG quality 85; exporter preserves PNG where alpha is needed"
+    ],
+    "status": "prepared-awaiting-runtime-review"
+  },
+  {
+    "id": "quaternius-fantasy-props-stall-empty",
+    "label": "Market stall",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Stall_Empty.gltf",
+    "prepared_path": "assets/external/prepared/quaternius-fantasy-props-stall-empty.glb",
+    "preview_path": "assets/external/previews/quaternius-fantasy-props-stall-empty.png",
+    "source_dimensions_blender_xyz": [
+      1.844859004020691,
+      0.9322552680969238,
+      2.627182722091675
+    ],
+    "modifications": [
+      "Re-exported as self-contained GLB using Blender 4.5.0",
+      "Resized textures larger than 1024 pixels to at most 1024; embedded in GLB",
+      "Exported opaque textures as JPEG quality 85; exporter preserves PNG where alpha is needed"
+    ],
+    "status": "prepared-awaiting-runtime-review"
+  },
+  {
+    "id": "polyhaven-wicker_basket_02",
+    "label": "Wicker basket",
+    "source_path": "assets/external/models/polyhaven-wicker_basket_02/wicker_basket_02_1k.gltf",
+    "prepared_path": "assets/external/prepared/polyhaven-wicker_basket_02.glb",
+    "preview_path": "assets/external/previews/polyhaven-wicker_basket_02.png",
+    "source_dimensions_blender_xyz": [
+      0.346660315990448,
+      0.25443288683891296,
+      0.20044361054897308
+    ],
+    "modifications": [
+      "Re-exported as self-contained GLB using Blender 4.5.0",
+      "Resized textures larger than 1024 pixels to at most 1024; embedded in GLB",
+      "Exported opaque textures as JPEG quality 85; exporter preserves PNG where alpha is needed",
+      "Decimated geometry toward 4000 triangles; inspect silhouette and UV shading before integration"
+    ],
+    "status": "prepared-awaiting-runtime-review"
+  },
+  {
+    "id": "quaternius-base-characters-superhero-female-fullbody",
+    "label": "Female rigged base",
+    "source_path": "assets/external/models/quaternius-base-characters/bodies/Superhero_Female_FullBody.gltf",
+    "prepared_path": "assets/external/prepared/quaternius-base-characters-superhero-female-fullbody.glb",
+    "preview_path": "assets/external/previews/quaternius-base-characters-superhero-female-fullbody.png",
+    "source_dimensions_blender_xyz": [
+      1.6688661575317383,
+      0.30269700288772583,
+      1.7750505208969116
+    ],
+    "modifications": [
+      "Re-exported as self-contained GLB using Blender 4.5.0",
+      "Resized textures larger than 1024 pixels to at most 1024; embedded in GLB",
+      "Exported opaque textures as JPEG quality 85; exporter preserves PNG where alpha is needed"
+    ],
+    "status": "prepared-awaiting-runtime-review"
+  },
+  {
+    "id": "quaternius-base-characters-superhero-male-fullbody",
+    "label": "Male rigged base",
+    "source_path": "assets/external/models/quaternius-base-characters/bodies/Superhero_Male_FullBody.gltf",
+    "prepared_path": "assets/external/prepared/quaternius-base-characters-superhero-male-fullbody.glb",
+    "preview_path": "assets/external/previews/quaternius-base-characters-superhero-male-fullbody.png",
+    "source_dimensions_blender_xyz": [
+      1.8588662147521973,
+      0.2914878726005554,
+      1.819586992263794
+    ],
+    "modifications": [
+      "Re-exported as self-contained GLB using Blender 4.5.0",
+      "Resized textures larger than 1024 pixels to at most 1024; embedded in GLB",
+      "Exported opaque textures as JPEG quality 85; exporter preserves PNG where alpha is needed"
+    ],
+    "status": "prepared-awaiting-runtime-review"
+  },
+  {
+    "id": "kenney-pirate-kit-boat-row-small",
+    "label": "Rowboat",
+    "source_path": "assets/external/models/kenney-pirate-kit/boat-row-small.glb",
+    "prepared_path": "assets/external/prepared/kenney-pirate-kit-boat-row-small.glb",
+    "preview_path": "assets/external/previews/kenney-pirate-kit-boat-row-small.png",
+    "source_dimensions_blender_xyz": [
+      2.748538017272949,
+      2.3721463680267334,
+      0.847695529460907
+    ],
+    "modifications": [
+      "Re-exported as self-contained GLB using Blender 4.5.0",
+      "Resized textures larger than 1024 pixels to at most 1024; embedded in GLB",
+      "Exported opaque textures as JPEG quality 85; exporter preserves PNG where alpha is needed"
+    ],
+    "status": "prepared-awaiting-runtime-review"
+  },
+  {
+    "id": "polyhaven-coast_rocks_01",
+    "label": "Coastal rocks",
+    "source_path": "assets/external/models/polyhaven-coast_rocks_01/coast_rocks_01_1k.gltf",
+    "prepared_path": "assets/external/prepared/polyhaven-coast_rocks_01.glb",
+    "preview_path": "assets/external/previews/polyhaven-coast_rocks_01.png",
+    "source_dimensions_blender_xyz": [
+      59.51361083984375,
+      42.523353576660156,
+      3.266965627670288
+    ],
+    "modifications": [
+      "Re-exported as self-contained GLB using Blender 4.5.0",
+      "Resized textures larger than 1024 pixels to at most 1024; embedded in GLB",
+      "Exported opaque textures as JPEG quality 85; exporter preserves PNG where alpha is needed",
+      "Decimated geometry toward 12000 triangles; inspect silhouette and UV shading before integration"
+    ],
+    "status": "prepared-awaiting-runtime-review"
+  },
+  {
+    "id": "polyhaven-wooden_table_02",
+    "label": "Reading table",
+    "source_path": "assets/external/models/polyhaven-wooden_table_02/wooden_table_02_1k.gltf",
+    "prepared_path": "assets/external/prepared/polyhaven-wooden_table_02.glb",
+    "preview_path": "assets/external/previews/polyhaven-wooden_table_02.png",
+    "source_dimensions_blender_xyz": [
+      1.1344165802001953,
+      0.7060248255729675,
+      0.7995429039001465
+    ],
+    "modifications": [
+      "Re-exported as self-contained GLB using Blender 4.5.0",
+      "Resized textures larger than 1024 pixels to at most 1024; embedded in GLB",
+      "Exported opaque textures as JPEG quality 85; exporter preserves PNG where alpha is needed"
+    ],
+    "status": "prepared-awaiting-runtime-review"
+  },
+  {
+    "id": "quaternius-fantasy-props-chair-1",
+    "label": "Chair",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Chair_1.gltf",
+    "prepared_path": "assets/external/prepared/quaternius-fantasy-props-chair-1.glb",
+    "preview_path": "assets/external/previews/quaternius-fantasy-props-chair-1.png",
+    "source_dimensions_blender_xyz": [
+      0.5805182456970215,
+      0.5489380955696106,
+      1.1232843399047852
+    ],
+    "modifications": [
+      "Re-exported as self-contained GLB using Blender 4.5.0",
+      "Resized textures larger than 1024 pixels to at most 1024; embedded in GLB",
+      "Exported opaque textures as JPEG quality 85; exporter preserves PNG where alpha is needed"
+    ],
+    "status": "prepared-awaiting-runtime-review"
+  },
+  {
+    "id": "polyhaven-planter_pot_clay",
+    "label": "Garden planter",
+    "source_path": "assets/external/models/polyhaven-planter_pot_clay/planter_pot_clay_1k.gltf",
+    "prepared_path": "assets/external/prepared/polyhaven-planter_pot_clay.glb",
+    "preview_path": "assets/external/previews/polyhaven-planter_pot_clay.png",
+    "source_dimensions_blender_xyz": [
+      0.2659967243671417,
+      0.2634630501270294,
+      0.22187034785747528
+    ],
+    "modifications": [
+      "Re-exported as self-contained GLB using Blender 4.5.0",
+      "Resized textures larger than 1024 pixels to at most 1024; embedded in GLB",
+      "Exported opaque textures as JPEG quality 85; exporter preserves PNG where alpha is needed"
+    ],
+    "status": "prepared-awaiting-runtime-review"
+  },
+  {
+    "id": "kenney-pirate-kit-rocks-a",
+    "label": "Low-poly rocks",
+    "source_path": "assets/external/models/kenney-pirate-kit/rocks-a.glb",
+    "prepared_path": "assets/external/prepared/kenney-pirate-kit-rocks-a.glb",
+    "preview_path": "assets/external/previews/kenney-pirate-kit-rocks-a.png",
+    "source_dimensions_blender_xyz": [
+      5.112595558166504,
+      4.386431694030762,
+      2.8980000019073486
+    ],
+    "modifications": [
+      "Re-exported as self-contained GLB using Blender 4.5.0",
+      "Resized textures larger than 1024 pixels to at most 1024; embedded in GLB",
+      "Exported opaque textures as JPEG quality 85; exporter preserves PNG where alpha is needed"
+    ],
+    "status": "prepared-awaiting-runtime-review"
+  }
+]

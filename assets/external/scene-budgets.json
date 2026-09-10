@@ -1,0 +1,26 @@
+[
+  {
+    "setting": "alexandria",
+    "placements": 7,
+    "uniqueAssets": 7,
+    "bytes": 1026416
+  },
+  {
+    "setting": "coast",
+    "placements": 14,
+    "uniqueAssets": 9,
+    "bytes": 3514904
+  },
+  {
+    "setting": "garden",
+    "placements": 10,
+    "uniqueAssets": 4,
+    "bytes": 974852
+  },
+  {
+    "setting": "archive",
+    "placements": 6,
+    "uniqueAssets": 3,
+    "bytes": 408292
+  }
+]

@@ -1,0 +1,459 @@
+[
+  {
+    "key": "archive-scroll",
+    "asset": "quaternius-fantasy-props-scroll-1",
+    "at": [
+      -4.65,
+      5.1,
+      -8.45
+    ],
+    "zone": "library",
+    "turn": 0.12,
+    "setting": "alexandria"
+  },
+  {
+    "key": "archive-pouch",
+    "asset": "quaternius-fantasy-props-pouch-large",
+    "at": [
+      -4.15,
+      5.1,
+      -8.55
+    ],
+    "zone": "library",
+    "setting": "alexandria"
+  },
+  {
+    "key": "market-vessel",
+    "asset": "quaternius-fantasy-props-vase-2",
+    "at": [
+      14.65,
+      2.01,
+      5.55
+    ],
+    "zone": "market",
+    "setting": "alexandria"
+  },
+  {
+    "key": "market-vessel-tall",
+    "asset": "quaternius-fantasy-props-vase-4",
+    "at": [
+      22.65,
+      2.01,
+      5.55
+    ],
+    "zone": "market",
+    "setting": "alexandria"
+  },
+  {
+    "key": "market-bag",
+    "asset": "quaternius-fantasy-props-bag",
+    "at": [
+      14.65,
+      1.32,
+      4.35
+    ],
+    "activity": "market",
+    "setting": "alexandria"
+  },
+  {
+    "key": "quay-rope",
+    "asset": "quaternius-fantasy-props-rope-2",
+    "at": [
+      -5.05,
+      1.28,
+      20
+    ],
+    "zone": "harbor",
+    "setting": "alexandria"
+  },
+  {
+    "key": "quay-paddle",
+    "asset": "kenney-pirate-kit-tool-paddle",
+    "at": [
+      -10.9,
+      1.28,
+      21.9
+    ],
+    "turn": 1.5707963267948966,
+    "zone": "harbor",
+    "setting": "alexandria"
+  },
+  {
+    "key": "harbor-vessel",
+    "asset": "quaternius-fantasy-props-vase-2",
+    "at": [
+      -9.35,
+      0.22,
+      5.9
+    ],
+    "zone": "harbor",
+    "solid": true,
+    "turn": 0,
+    "setting": "coast"
+  },
+  {
+    "key": "harbor-pouch",
+    "asset": "quaternius-fantasy-props-pouch-large",
+    "at": [
+      -12.65,
+      1.125,
+      3.6
+    ],
+    "zone": "harbor",
+    "solid": false,
+    "turn": 0,
+    "setting": "coast"
+  },
+  {
+    "key": "harbor-bucket",
+    "asset": "quaternius-fantasy-props-bucket-wooden-1",
+    "at": [
+      -9.95,
+      0.22,
+      4.7
+    ],
+    "zone": "harbor",
+    "solid": true,
+    "turn": 0,
+    "setting": "coast"
+  },
+  {
+    "key": "market-vessel",
+    "asset": "quaternius-fantasy-props-vase-4",
+    "at": [
+      14.65,
+      0.22,
+      5.9
+    ],
+    "zone": "market",
+    "solid": true,
+    "turn": 0,
+    "setting": "coast"
+  },
+  {
+    "key": "market-pouch",
+    "asset": "quaternius-fantasy-props-pouch-large",
+    "at": [
+      11.35,
+      1.125,
+      3.6
+    ],
+    "zone": "market",
+    "solid": false,
+    "turn": 0,
+    "setting": "coast"
+  },
+  {
+    "key": "market-bucket",
+    "asset": "quaternius-fantasy-props-bucket-wooden-1",
+    "at": [
+      14.05,
+      0.22,
+      4.7
+    ],
+    "zone": "market",
+    "solid": true,
+    "turn": 0,
+    "setting": "coast"
+  },
+  {
+    "key": "library-vessel",
+    "asset": "quaternius-fantasy-props-vase-2",
+    "at": [
+      2.65,
+      0.22,
+      -11.1
+    ],
+    "zone": "library",
+    "solid": true,
+    "turn": 0,
+    "setting": "coast"
+  },
+  {
+    "key": "library-pouch",
+    "asset": "quaternius-fantasy-props-pouch-large",
+    "at": [
+      -0.65,
+      1.125,
+      -13.4
+    ],
+    "zone": "library",
+    "solid": false,
+    "turn": 0,
+    "setting": "coast"
+  },
+  {
+    "key": "library-bucket",
+    "asset": "quaternius-fantasy-props-bucket-wooden-1",
+    "at": [
+      2.05,
+      0.22,
+      -12.3
+    ],
+    "zone": "library",
+    "solid": true,
+    "turn": 0,
+    "setting": "coast"
+  },
+  {
+    "key": "shore-rock-scan",
+    "asset": "polyhaven-coast_rocks_01",
+    "at": [
+      -32,
+      -2.7,
+      -14
+    ],
+    "turn": 0.4,
+    "setting": "coast"
+  },
+  {
+    "key": "shore-rocks-b",
+    "asset": "kenney-pirate-kit-rocks-b",
+    "at": [
+      30,
+      -2.65,
+      -13
+    ],
+    "turn": 0.8,
+    "setting": "coast"
+  },
+  {
+    "key": "shore-rocks-c",
+    "asset": "kenney-pirate-kit-rocks-c",
+    "at": [
+      -12,
+      -2.65,
+      -31
+    ],
+    "setting": "coast"
+  },
+  {
+    "key": "shore-rowboat",
+    "asset": "kenney-pirate-kit-boat-row-small",
+    "at": [
+      -23,
+      -2.75,
+      24
+    ],
+    "turn": 0.6,
+    "setting": "coast"
+  },
+  {
+    "key": "shore-rowboat-large",
+    "asset": "kenney-pirate-kit-boat-row-large",
+    "at": [
+      24,
+      -2.75,
+      25
+    ],
+    "turn": -0.4,
+    "setting": "coast"
+  },
+  {
+    "key": "harbor-candle",
+    "asset": "quaternius-fantasy-props-candle-1",
+    "at": [
+      -12.48,
+      1.055,
+      3.5
+    ],
+    "zone": "harbor",
+    "solid": false,
+    "turn": 0,
+    "setting": "garden"
+  },
+  {
+    "key": "harbor-planter",
+    "asset": "polyhaven-planter_pot_clay",
+    "at": [
+      -9.85,
+      0.22,
+      2.8
+    ],
+    "zone": "harbor",
+    "solid": true,
+    "turn": 0,
+    "setting": "garden"
+  },
+  {
+    "key": "harbor-basket",
+    "asset": "polyhaven-wicker_basket_02",
+    "at": [
+      -14.15,
+      0.22,
+      2.8
+    ],
+    "zone": "harbor",
+    "solid": true,
+    "turn": 0,
+    "setting": "garden"
+  },
+  {
+    "key": "market-candle",
+    "asset": "quaternius-fantasy-props-candle-1",
+    "at": [
+      11.52,
+      1.055,
+      3.5
+    ],
+    "zone": "market",
+    "solid": false,
+    "turn": 0,
+    "setting": "garden"
+  },
+  {
+    "key": "market-planter",
+    "asset": "polyhaven-planter_pot_clay",
+    "at": [
+      14.15,
+      0.22,
+      2.8
+    ],
+    "zone": "market",
+    "solid": true,
+    "turn": 0,
+    "setting": "garden"
+  },
+  {
+    "key": "market-basket",
+    "asset": "polyhaven-wicker_basket_02",
+    "at": [
+      9.85,
+      0.22,
+      2.8
+    ],
+    "zone": "market",
+    "solid": true,
+    "turn": 0,
+    "setting": "garden"
+  },
+  {
+    "key": "library-candle",
+    "asset": "quaternius-fantasy-props-candle-1",
+    "at": [
+      -0.48,
+      1.055,
+      -13.5
+    ],
+    "zone": "library",
+    "solid": false,
+    "turn": 0,
+    "setting": "garden"
+  },
+  {
+    "key": "library-planter",
+    "asset": "polyhaven-planter_pot_clay",
+    "at": [
+      2.15,
+      0.22,
+      -14.2
+    ],
+    "zone": "library",
+    "solid": true,
+    "turn": 0,
+    "setting": "garden"
+  },
+  {
+    "key": "library-basket",
+    "asset": "polyhaven-wicker_basket_02",
+    "at": [
+      -2.15,
+      0.22,
+      -14.2
+    ],
+    "zone": "library",
+    "solid": true,
+    "turn": 0,
+    "setting": "garden"
+  },
+  {
+    "key": "garden-produce",
+    "asset": "quaternius-fantasy-props-farmcrate-apple",
+    "at": [
+      16,
+      0,
+      5
+    ],
+    "solid": true,
+    "zone": "market",
+    "setting": "garden"
+  },
+  {
+    "key": "harbor-candle",
+    "asset": "quaternius-fantasy-props-candle-1",
+    "at": [
+      -11.37,
+      1.125,
+      3.55
+    ],
+    "zone": "harbor",
+    "solid": false,
+    "turn": 0,
+    "setting": "archive"
+  },
+  {
+    "key": "harbor-vessel",
+    "asset": "quaternius-fantasy-props-vase-2",
+    "at": [
+      -9.7,
+      0.22,
+      3.9
+    ],
+    "zone": "harbor",
+    "solid": true,
+    "turn": 0,
+    "setting": "archive"
+  },
+  {
+    "key": "market-candle",
+    "asset": "quaternius-fantasy-props-candle-1",
+    "at": [
+      12.63,
+      1.125,
+      3.55
+    ],
+    "zone": "market",
+    "solid": false,
+    "turn": 0,
+    "setting": "archive"
+  },
+  {
+    "key": "market-vessel",
+    "asset": "quaternius-fantasy-props-vase-2",
+    "at": [
+      14.3,
+      0.22,
+      3.9
+    ],
+    "zone": "market",
+    "solid": true,
+    "turn": 0,
+    "setting": "archive"
+  },
+  {
+    "key": "library-candle",
+    "asset": "quaternius-fantasy-props-candle-1",
+    "at": [
+      0.63,
+      1.125,
+      -13.45
+    ],
+    "zone": "library",
+    "solid": false,
+    "turn": 0,
+    "setting": "archive"
+  },
+  {
+    "key": "library-vessel",
+    "asset": "quaternius-fantasy-props-vase-4",
+    "at": [
+      2.3,
+      0.22,
+      -13.1
+    ],
+    "zone": "library",
+    "solid": true,
+    "turn": 0,
+    "setting": "archive"
+  }
+]

@@ -1,0 +1,3279 @@
+[
+  {
+    "id": "kenney-pirate-kit-barrel",
+    "source_path": "assets/external/models/kenney-pirate-kit/barrel.glb",
+    "source_payload_bytes_with_dependencies": 24153,
+    "mesh_triangles": 148,
+    "default_scene_triangles": 148,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/kenney-pirate-kit/Textures/colormap.png",
+        "bytes": 10061,
+        "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+      },
+      {
+        "path": "assets/external/models/kenney-pirate-kit/barrel.glb",
+        "bytes": 14092,
+        "sha256": "7616dedf7c1023afa6ecd3c52a4609460aae0e582dee14e60ec5e47c1174793b"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-crate",
+    "source_path": "assets/external/models/kenney-pirate-kit/crate.glb",
+    "source_payload_bytes_with_dependencies": 19293,
+    "mesh_triangles": 76,
+    "default_scene_triangles": 76,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/kenney-pirate-kit/Textures/colormap.png",
+        "bytes": 10061,
+        "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+      },
+      {
+        "path": "assets/external/models/kenney-pirate-kit/crate.glb",
+        "bytes": 9232,
+        "sha256": "b525674e07c8b83667512a8dd93be0d7684358347d0e64d2bb16b156ac382ed1"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-boat-row-small",
+    "source_path": "assets/external/models/kenney-pirate-kit/boat-row-small.glb",
+    "source_payload_bytes_with_dependencies": 27677,
+    "mesh_triangles": 168,
+    "default_scene_triangles": 168,
+    "mesh_primitives": 2,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/kenney-pirate-kit/Textures/colormap.png",
+        "bytes": 10061,
+        "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+      },
+      {
+        "path": "assets/external/models/kenney-pirate-kit/boat-row-small.glb",
+        "bytes": 17616,
+        "sha256": "846d9b17a73f80e03f7201d3bf0ad1b1bbb49e114b99697740d3426e4f42482d"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-boat-row-large",
+    "source_path": "assets/external/models/kenney-pirate-kit/boat-row-large.glb",
+    "source_payload_bytes_with_dependencies": 26033,
+    "mesh_triangles": 174,
+    "default_scene_triangles": 174,
+    "mesh_primitives": 2,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/kenney-pirate-kit/Textures/colormap.png",
+        "bytes": 10061,
+        "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+      },
+      {
+        "path": "assets/external/models/kenney-pirate-kit/boat-row-large.glb",
+        "bytes": 15972,
+        "sha256": "b496c0d5f9053ebc7e9b9a39a4770d5ccaff5510c51b7c72c1b8391442e61d0f"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-tool-paddle",
+    "source_path": "assets/external/models/kenney-pirate-kit/tool-paddle.glb",
+    "source_payload_bytes_with_dependencies": 16925,
+    "mesh_triangles": 60,
+    "default_scene_triangles": 60,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/kenney-pirate-kit/Textures/colormap.png",
+        "bytes": 10061,
+        "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+      },
+      {
+        "path": "assets/external/models/kenney-pirate-kit/tool-paddle.glb",
+        "bytes": 6864,
+        "sha256": "2a387ead62c44ec4218d664582a956f92a66b3c7db168d68394ccfabefae58b8"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-mast",
+    "source_path": "assets/external/models/kenney-pirate-kit/mast.glb",
+    "source_payload_bytes_with_dependencies": 40877,
+    "mesh_triangles": 302,
+    "default_scene_triangles": 302,
+    "mesh_primitives": 3,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/kenney-pirate-kit/Textures/colormap.png",
+        "bytes": 10061,
+        "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+      },
+      {
+        "path": "assets/external/models/kenney-pirate-kit/mast.glb",
+        "bytes": 30816,
+        "sha256": "22b04158e300d9a1c99c27d884214be5241d599dc93cba7394e9164043f99db8"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-mast-ropes",
+    "source_path": "assets/external/models/kenney-pirate-kit/mast-ropes.glb",
+    "source_payload_bytes_with_dependencies": 46217,
+    "mesh_triangles": 350,
+    "default_scene_triangles": 350,
+    "mesh_primitives": 3,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/kenney-pirate-kit/Textures/colormap.png",
+        "bytes": 10061,
+        "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+      },
+      {
+        "path": "assets/external/models/kenney-pirate-kit/mast-ropes.glb",
+        "bytes": 36156,
+        "sha256": "ad2bd14acacd3f4901177d8b13bcc6158f558e8c1959b6e19576e17ea8b10570"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-ship-small",
+    "source_path": "assets/external/models/kenney-pirate-kit/ship-small.glb",
+    "source_payload_bytes_with_dependencies": 126501,
+    "mesh_triangles": 1370,
+    "default_scene_triangles": 1370,
+    "mesh_primitives": 4,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/kenney-pirate-kit/Textures/colormap.png",
+        "bytes": 10061,
+        "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+      },
+      {
+        "path": "assets/external/models/kenney-pirate-kit/ship-small.glb",
+        "bytes": 116440,
+        "sha256": "6fdabdfd358f345ad3dd0510af4165843ab3fffe46357395c94ca00db4f317b3"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-ship-medium",
+    "source_path": "assets/external/models/kenney-pirate-kit/ship-medium.glb",
+    "source_payload_bytes_with_dependencies": 155005,
+    "mesh_triangles": 1723,
+    "default_scene_triangles": 1723,
+    "mesh_primitives": 6,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/kenney-pirate-kit/Textures/colormap.png",
+        "bytes": 10061,
+        "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+      },
+      {
+        "path": "assets/external/models/kenney-pirate-kit/ship-medium.glb",
+        "bytes": 144944,
+        "sha256": "279ea019268f855240c3cebf7616644c8141c20bee617da72eae4733b8e310af"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-ship-wreck",
+    "source_path": "assets/external/models/kenney-pirate-kit/ship-wreck.glb",
+    "source_payload_bytes_with_dependencies": 233737,
+    "mesh_triangles": 2282,
+    "default_scene_triangles": 2282,
+    "mesh_primitives": 16,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/kenney-pirate-kit/Textures/colormap.png",
+        "bytes": 10061,
+        "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+      },
+      {
+        "path": "assets/external/models/kenney-pirate-kit/ship-wreck.glb",
+        "bytes": 223676,
+        "sha256": "0b2cac74f23ffdc3bf5020880126338287a0a0317d6a98ce4250123d8821ad2b"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-palm-detailed-bend",
+    "source_path": "assets/external/models/kenney-pirate-kit/palm-detailed-bend.glb",
+    "source_payload_bytes_with_dependencies": 62073,
+    "mesh_triangles": 482,
+    "default_scene_triangles": 482,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/kenney-pirate-kit/Textures/colormap.png",
+        "bytes": 10061,
+        "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+      },
+      {
+        "path": "assets/external/models/kenney-pirate-kit/palm-detailed-bend.glb",
+        "bytes": 52012,
+        "sha256": "9bc339e2942d6fba9007caa9fa4301a6a08f4b134511bea65ce236ba2910e7f8"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-palm-detailed-straight",
+    "source_path": "assets/external/models/kenney-pirate-kit/palm-detailed-straight.glb",
+    "source_payload_bytes_with_dependencies": 61977,
+    "mesh_triangles": 482,
+    "default_scene_triangles": 482,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/kenney-pirate-kit/Textures/colormap.png",
+        "bytes": 10061,
+        "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+      },
+      {
+        "path": "assets/external/models/kenney-pirate-kit/palm-detailed-straight.glb",
+        "bytes": 51916,
+        "sha256": "cdc42b4bd02d01a5e15a5d69f1db83e1c77ca7d0a97ad2d9ae8f6a409fed8a36"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-rocks-a",
+    "source_path": "assets/external/models/kenney-pirate-kit/rocks-a.glb",
+    "source_payload_bytes_with_dependencies": 37705,
+    "mesh_triangles": 264,
+    "default_scene_triangles": 264,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/kenney-pirate-kit/Textures/colormap.png",
+        "bytes": 10061,
+        "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+      },
+      {
+        "path": "assets/external/models/kenney-pirate-kit/rocks-a.glb",
+        "bytes": 27644,
+        "sha256": "df8f27bd88a9b624337b08adde53c73dd25ddabd52dbee1de9da412d68bb4f08"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-rocks-b",
+    "source_path": "assets/external/models/kenney-pirate-kit/rocks-b.glb",
+    "source_payload_bytes_with_dependencies": 41377,
+    "mesh_triangles": 300,
+    "default_scene_triangles": 300,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/kenney-pirate-kit/Textures/colormap.png",
+        "bytes": 10061,
+        "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+      },
+      {
+        "path": "assets/external/models/kenney-pirate-kit/rocks-b.glb",
+        "bytes": 31316,
+        "sha256": "218cf9bfbe51228c78c9fa48a8543bef1037a695024f8fd5f3c47eec4c3a26d4"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-rocks-c",
+    "source_path": "assets/external/models/kenney-pirate-kit/rocks-c.glb",
+    "source_payload_bytes_with_dependencies": 34633,
+    "mesh_triangles": 232,
+    "default_scene_triangles": 232,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/kenney-pirate-kit/Textures/colormap.png",
+        "bytes": 10061,
+        "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+      },
+      {
+        "path": "assets/external/models/kenney-pirate-kit/rocks-c.glb",
+        "bytes": 24572,
+        "sha256": "67c086e5d522fda43f3c84b34092ae88c4b142ad23c11be9cf9743659a138032"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-rocks-sand-a",
+    "source_path": "assets/external/models/kenney-pirate-kit/rocks-sand-a.glb",
+    "source_payload_bytes_with_dependencies": 67113,
+    "mesh_triangles": 552,
+    "default_scene_triangles": 552,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/kenney-pirate-kit/Textures/colormap.png",
+        "bytes": 10061,
+        "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+      },
+      {
+        "path": "assets/external/models/kenney-pirate-kit/rocks-sand-a.glb",
+        "bytes": 57052,
+        "sha256": "bde0570946080d6f2dafd63a34be640d5c3713abd4559d6a9d689ce63f74113f"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-structure-platform-dock",
+    "source_path": "assets/external/models/kenney-pirate-kit/structure-platform-dock.glb",
+    "source_payload_bytes_with_dependencies": 43397,
+    "mesh_triangles": 324,
+    "default_scene_triangles": 324,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/kenney-pirate-kit/Textures/colormap.png",
+        "bytes": 10061,
+        "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+      },
+      {
+        "path": "assets/external/models/kenney-pirate-kit/structure-platform-dock.glb",
+        "bytes": 33336,
+        "sha256": "bf64343d37b5570cb78cf0918e3eeb98f96f9b2c69b3f16d103c61ebc8f063f7"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-platform-planks",
+    "source_path": "assets/external/models/kenney-pirate-kit/platform-planks.glb",
+    "source_payload_bytes_with_dependencies": 16585,
+    "mesh_triangles": 48,
+    "default_scene_triangles": 48,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/kenney-pirate-kit/Textures/colormap.png",
+        "bytes": 10061,
+        "sha256": "451e1d7a53b8e76f4b2ee58742e241509fee5f82cf2cee6e3f7aca86ba718abe"
+      },
+      {
+        "path": "assets/external/models/kenney-pirate-kit/platform-planks.glb",
+        "bytes": 6524,
+        "sha256": "4313f45d4feb8cd01adbb4b4785f368c7df091f33e473dea536172868805b167"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-bag",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Bag.gltf",
+    "source_payload_bytes_with_dependencies": 14295800,
+    "mesh_triangles": 858,
+    "default_scene_triangles": 858,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 6,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Bag.bin",
+        "bytes": 27188,
+        "sha256": "6bf8ad99d0048264aa37157a92f394ab32aeeb5270dab2f3f76282b1eda4e012"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Bag.gltf",
+        "bytes": 4318,
+        "sha256": "ccbf22a9162a2a2173caa7346e796b8f92a86dbbbe02a196530bf5642293e545"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Cloth_BaseColor.png",
+        "bytes": 1936754,
+        "sha256": "c4d0e14506e05cc56e7ca62ebeeb2d45de055296a55e5a8e9c1330ff8ff1833a"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Cloth_Normal.png",
+        "bytes": 3920858,
+        "sha256": "e91a490f94bc00707fb5be08045e316b4a18962f07a3b6e3d9d7c2058cfc51c0"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Cloth_ORM.png",
+        "bytes": 623426,
+        "sha256": "9bdaa0d1be8c393b07d6185165d73c7cddc058d5c123ad49449945f45a7e0c0d"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-barrel",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Barrel.gltf",
+    "source_payload_bytes_with_dependencies": 14702948,
+    "mesh_triangles": 824,
+    "default_scene_triangles": 824,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 6,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Barrel.bin",
+        "bytes": 57144,
+        "sha256": "d8f963e2975b6bbd4b631b5cd7ade2d5dfc76dfb9f8387e2d398935f5405cf20"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Barrel.gltf",
+        "bytes": 4311,
+        "sha256": "cececb2da345addb21567e3ce1b30a9da071b689bcec59d85cd7a4446f531e87"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-bench",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Bench.gltf",
+    "source_payload_bytes_with_dependencies": 14665095,
+    "mesh_triangles": 404,
+    "default_scene_triangles": 404,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 6,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Bench.bin",
+        "bytes": 19304,
+        "sha256": "08d6976112645dc1f6a554019e2fc965d0bceba7a01c4f6013615ac46520b418"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Bench.gltf",
+        "bytes": 4298,
+        "sha256": "0184d3b128a8a3bcc828d7bc6aa867038e2a85a339130ed015f2727e739f9ab7"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-bookcase-2",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Bookcase_2.gltf",
+    "source_payload_bytes_with_dependencies": 14738790,
+    "mesh_triangles": 2148,
+    "default_scene_triangles": 2148,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 6,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Bookcase_2.bin",
+        "bytes": 92968,
+        "sha256": "2d61ba836ecd93e3c0ac9d590b183c600bcb9e1bd32a84960e83b5f77520f2bb"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Bookcase_2.gltf",
+        "bytes": 4329,
+        "sha256": "58bb7dcdc7f0a9e49b4edb6b9d6d142999133104965bd5ab1d0237dd3b5c1b55"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-bookstand",
+    "source_path": "assets/external/models/quaternius-fantasy-props/BookStand.gltf",
+    "source_payload_bytes_with_dependencies": 7847499,
+    "mesh_triangles": 1526,
+    "default_scene_triangles": 1526,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/BookStand.bin",
+        "bytes": 62020,
+        "sha256": "153aa58a6296d61d39832600c80ceeb2f00011d90c7da477c3f326f4744140dd"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/BookStand.gltf",
+        "bytes": 2223,
+        "sha256": "c7b717e6388bc151cb026256aee8a0b611bf759d294f5070a1c11157483eb07e"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-book-5",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Book_5.gltf",
+    "source_payload_bytes_with_dependencies": 9730000,
+    "mesh_triangles": 96,
+    "default_scene_triangles": 96,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Book_5.bin",
+        "bytes": 5856,
+        "sha256": "32060c5c94d297a4409a02f93c73fc86b221311bfa0bee627626e050023836f5"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Book_5.gltf",
+        "bytes": 2403,
+        "sha256": "10b082a9984c355bb68e288362bb5e39c62d037ae5a24e3fcec2a5ded4a3b1ec"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_BaseColor.png",
+        "bytes": 2263132,
+        "sha256": "75225a4ccfd8cc358c871de7a7a3cab7118ef197419a88464e807b81716215c8"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_Normal.png",
+        "bytes": 4441458,
+        "sha256": "c4b28a8ba8efe3108cd11356ecab67e8bf75a10cebf29c78ee7724552c305a3e"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_ORM.png",
+        "bytes": 3017151,
+        "sha256": "2d83d8df79aca2c8f630d389b43f09113afee98e746dfd42ddc3ce3302a136a2"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-book-stack-1",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Book_Stack_1.gltf",
+    "source_payload_bytes_with_dependencies": 9736927,
+    "mesh_triangles": 208,
+    "default_scene_triangles": 208,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Book_Stack_1.bin",
+        "bytes": 12768,
+        "sha256": "cdbe0b7f468ac1713989e0c7f67c93dd83a899825d518b4911d56f4613c85fb7"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Book_Stack_1.gltf",
+        "bytes": 2418,
+        "sha256": "aac90f5a6859acb1edf12b248e12a914f652e8a0a0af0fa6cee6dda3225a7fd2"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_BaseColor.png",
+        "bytes": 2263132,
+        "sha256": "75225a4ccfd8cc358c871de7a7a3cab7118ef197419a88464e807b81716215c8"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_Normal.png",
+        "bytes": 4441458,
+        "sha256": "c4b28a8ba8efe3108cd11356ecab67e8bf75a10cebf29c78ee7724552c305a3e"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_ORM.png",
+        "bytes": 3017151,
+        "sha256": "2d83d8df79aca2c8f630d389b43f09113afee98e746dfd42ddc3ce3302a136a2"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-bucket-wooden-1",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Bucket_Wooden_1.gltf",
+    "source_payload_bytes_with_dependencies": 14677948,
+    "mesh_triangles": 976,
+    "default_scene_triangles": 976,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 6,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Bucket_Wooden_1.bin",
+        "bytes": 32544,
+        "sha256": "be608473cd78557d466be9b9e2f6ff15f1edf1e4f5fcdd27be75d494f52578f2"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Bucket_Wooden_1.gltf",
+        "bytes": 3911,
+        "sha256": "b4f93568d96d38dca162098e75fb3eb4ffaf5ff6e41f8f788476abd3be4984cf"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-cabinet",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Cabinet.gltf",
+    "source_payload_bytes_with_dependencies": 14760585,
+    "mesh_triangles": 2388,
+    "default_scene_triangles": 2388,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 6,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Cabinet.bin",
+        "bytes": 114768,
+        "sha256": "dcfed47cc915564061483171ea8b8a4b4563177a4692e37ea91308b8b6f41450"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Cabinet.gltf",
+        "bytes": 4324,
+        "sha256": "43df513943cde0590ca1925c3920ace9d08e4694d51282a1f5ab70b42e79fe44"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-candlestick",
+    "source_path": "assets/external/models/quaternius-fantasy-props/CandleStick.gltf",
+    "source_payload_bytes_with_dependencies": 6881872,
+    "mesh_triangles": 730,
+    "default_scene_triangles": 730,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/CandleStick.bin",
+        "bytes": 21436,
+        "sha256": "45ad392961f6389aa7616f5efa03b5f7edf7285866743b1c704670d01f7284cd"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/CandleStick.gltf",
+        "bytes": 2199,
+        "sha256": "f57eaff5b2b61bda1c3b17460295b9fc708e9700e5070aee6e3afd0c297131a3"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-candle-1",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Candle_1.gltf",
+    "source_payload_bytes_with_dependencies": 9730132,
+    "mesh_triangles": 212,
+    "default_scene_triangles": 212,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Candle_1.bin",
+        "bytes": 6200,
+        "sha256": "18ce193bb732642969a897b709dd2aa5b59c7fdb87ddc330152794e48b9d981b"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Candle_1.gltf",
+        "bytes": 2191,
+        "sha256": "9539cc17bdc7b774ae7adbfe9c148e89f81e3eba09079d7310f0b789113b6cad"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_BaseColor.png",
+        "bytes": 2263132,
+        "sha256": "75225a4ccfd8cc358c871de7a7a3cab7118ef197419a88464e807b81716215c8"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_Normal.png",
+        "bytes": 4441458,
+        "sha256": "c4b28a8ba8efe3108cd11356ecab67e8bf75a10cebf29c78ee7724552c305a3e"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_ORM.png",
+        "bytes": 3017151,
+        "sha256": "2d83d8df79aca2c8f630d389b43f09113afee98e746dfd42ddc3ce3302a136a2"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-chair-1",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Chair_1.gltf",
+    "source_payload_bytes_with_dependencies": 14673901,
+    "mesh_triangles": 496,
+    "default_scene_triangles": 496,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 6,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Chair_1.bin",
+        "bytes": 28096,
+        "sha256": "dc16da2a14704460a4050ef08782bb46b56b911eb161965b3f2676a1b24c201d"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Chair_1.gltf",
+        "bytes": 4312,
+        "sha256": "9c3e659f25c850990cbf8a4d850b6222110248cd5c1419a2c0f548a312dd8457"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-crate-wooden",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Crate_Wooden.gltf",
+    "source_payload_bytes_with_dependencies": 14712401,
+    "mesh_triangles": 1576,
+    "default_scene_triangles": 1576,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 6,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Crate_Wooden.bin",
+        "bytes": 66496,
+        "sha256": "7ae016386790e5998fbdf1656a5dc53a3f1374c3525b22798d84397a36ae937b"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Crate_Wooden.gltf",
+        "bytes": 4412,
+        "sha256": "fb06d4b7b9bbfbb9dc51fa56ecff3fe7ba8e9142d643cabedd17a55d7ea46ee5"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-farmcrate-empty",
+    "source_path": "assets/external/models/quaternius-fantasy-props/FarmCrate_Empty.gltf",
+    "source_payload_bytes_with_dependencies": 14700112,
+    "mesh_triangles": 1928,
+    "default_scene_triangles": 1928,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 6,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/FarmCrate_Empty.bin",
+        "bytes": 54704,
+        "sha256": "9c380c8ff9314aa5ca94deaf816527be4aae60802c8bba42d30978f1685b520d"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/FarmCrate_Empty.gltf",
+        "bytes": 3915,
+        "sha256": "7dccd0a93f29a31ffc05b8b5d39704b2d6c65eb477c895325ecf19c6dc17c644"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-farmcrate-apple",
+    "source_path": "assets/external/models/quaternius-fantasy-props/FarmCrate_Apple.gltf",
+    "source_payload_bytes_with_dependencies": 24503985,
+    "mesh_triangles": 4028,
+    "default_scene_triangles": 4028,
+    "mesh_primitives": 3,
+    "materials": 3,
+    "images": 9,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/FarmCrate_Apple.bin",
+        "bytes": 134488,
+        "sha256": "9f764bf2f2e960ec32ff31198f6b54787391e71bec166da59372f596299d24e6"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/FarmCrate_Apple.gltf",
+        "bytes": 6263,
+        "sha256": "56de7097ddbf22801537f38b77335b2d85a4e2d24bdcbe9ceb1b3bc666a24997"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_BaseColor.png",
+        "bytes": 2263132,
+        "sha256": "75225a4ccfd8cc358c871de7a7a3cab7118ef197419a88464e807b81716215c8"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_Normal.png",
+        "bytes": 4441458,
+        "sha256": "c4b28a8ba8efe3108cd11356ecab67e8bf75a10cebf29c78ee7724552c305a3e"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_ORM.png",
+        "bytes": 3017151,
+        "sha256": "2d83d8df79aca2c8f630d389b43f09113afee98e746dfd42ddc3ce3302a136a2"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-mug",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Mug.gltf",
+    "source_payload_bytes_with_dependencies": 14657862,
+    "mesh_triangles": 268,
+    "default_scene_triangles": 268,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 6,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Mug.bin",
+        "bytes": 12488,
+        "sha256": "bbf61011611387a248b9107b13f40a9cddb31e605f677b2102b236147bf31691"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Mug.gltf",
+        "bytes": 3881,
+        "sha256": "73c4cb7e575685d0220a5d1dd40f1a68de9e64bfd34a54bcba6085b62a119a9d"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-pot-1",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Pot_1.gltf",
+    "source_payload_bytes_with_dependencies": 6897582,
+    "mesh_triangles": 1068,
+    "default_scene_triangles": 1068,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Pot_1.bin",
+        "bytes": 37160,
+        "sha256": "eebe6918dbdc743501bdcb2d9f576a52028eb3451bdcf95d92674b97918cafc9"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Pot_1.gltf",
+        "bytes": 2185,
+        "sha256": "d925a5e5541d83d2d1885b9d3928fbf553cf4a37ff902cf22d33280805efcf6f"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-pot-1-lid",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Pot_1_Lid.gltf",
+    "source_payload_bytes_with_dependencies": 6906553,
+    "mesh_triangles": 1292,
+    "default_scene_triangles": 1292,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Pot_1_Lid.bin",
+        "bytes": 46120,
+        "sha256": "5c125852b29cf3afa17ec2f0a28585651cb9fbc6b1dd84339288a3a0d504ec8a"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Pot_1_Lid.gltf",
+        "bytes": 2196,
+        "sha256": "b8455f37f1eee179893d08a396aff3b6e715878d1a2bedcdaa4ea6b596d9b5b2"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-pouch-large",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Pouch_Large.gltf",
+    "source_payload_bytes_with_dependencies": 16615864,
+    "mesh_triangles": 730,
+    "default_scene_triangles": 730,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 6,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Pouch_Large.bin",
+        "bytes": 31580,
+        "sha256": "e83904bdef5ea9b4038f0005a76d5e47367900b4af2bdd44e9869af6e042967b"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Pouch_Large.gltf",
+        "bytes": 4306,
+        "sha256": "9af4639dfbf39f07142e3491e62e80161164ec0729dc92e9cb0d00abc50d3358"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_BaseColor.png",
+        "bytes": 2263132,
+        "sha256": "75225a4ccfd8cc358c871de7a7a3cab7118ef197419a88464e807b81716215c8"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_Normal.png",
+        "bytes": 4441458,
+        "sha256": "c4b28a8ba8efe3108cd11356ecab67e8bf75a10cebf29c78ee7724552c305a3e"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_ORM.png",
+        "bytes": 3017151,
+        "sha256": "2d83d8df79aca2c8f630d389b43f09113afee98e746dfd42ddc3ce3302a136a2"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-rope-1",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Rope_1.gltf",
+    "source_payload_bytes_with_dependencies": 7827103,
+    "mesh_triangles": 1748,
+    "default_scene_triangles": 1748,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Rope_1.bin",
+        "bytes": 41624,
+        "sha256": "950d7977e2dcd8fa40c6103f7cd6d4bc9eb93dbc2da37bd3a3b092868efd61c4"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Rope_1.gltf",
+        "bytes": 2223,
+        "sha256": "b4722ec5baf1313b654d2500ba36e2a2b512bbd9b037f304b94b6665d2286313"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-rope-2",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Rope_2.gltf",
+    "source_payload_bytes_with_dependencies": 7820383,
+    "mesh_triangles": 1460,
+    "default_scene_triangles": 1460,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Rope_2.bin",
+        "bytes": 34904,
+        "sha256": "412afce0c7a43f3b8d87ade3298ef4d76b2124937ec8bc1809fe471a6b7b56cb"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Rope_2.gltf",
+        "bytes": 2223,
+        "sha256": "2df33e9eef473315c9c65abf63152c2ee264c53391e244e1a5cebe77cb0826bf"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-rope-3",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Rope_3.gltf",
+    "source_payload_bytes_with_dependencies": 7827105,
+    "mesh_triangles": 1748,
+    "default_scene_triangles": 1748,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Rope_3.bin",
+        "bytes": 41624,
+        "sha256": "8c647df0b8dce95ed0a3310ff5f42c7c38dc9b20298f74bed9833abf077dd7ec"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Rope_3.gltf",
+        "bytes": 2225,
+        "sha256": "b87badbc1eeff6905b5f89d7d4096e57eb80378239e74f4b4b925701dca6a874"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-scroll-1",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Scroll_1.gltf",
+    "source_payload_bytes_with_dependencies": 17232541,
+    "mesh_triangles": 512,
+    "default_scene_triangles": 512,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 4,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Scroll_1.bin",
+        "bytes": 20112,
+        "sha256": "884fe80cb3075c274acbac22d44e1cb6dba63ac3e62d7df167ccbf52f8f35308"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Scroll_1.gltf",
+        "bytes": 3954,
+        "sha256": "f8b03860718121bfe6975b31996a0bb36e978e208a7df5a52fe4b0f3efbb14aa"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Page_Noise.png",
+        "bytes": 7486734,
+        "sha256": "4d4069a8d588dab3dcd36f9ea309fc617815b766ce225b78bcd487751585e312"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_BaseColor.png",
+        "bytes": 2263132,
+        "sha256": "75225a4ccfd8cc358c871de7a7a3cab7118ef197419a88464e807b81716215c8"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_Normal.png",
+        "bytes": 4441458,
+        "sha256": "c4b28a8ba8efe3108cd11356ecab67e8bf75a10cebf29c78ee7724552c305a3e"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_ORM.png",
+        "bytes": 3017151,
+        "sha256": "2d83d8df79aca2c8f630d389b43f09113afee98e746dfd42ddc3ce3302a136a2"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-scroll-2",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Scroll_2.gltf",
+    "source_payload_bytes_with_dependencies": 17240835,
+    "mesh_triangles": 672,
+    "default_scene_triangles": 672,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 4,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Scroll_2.bin",
+        "bytes": 28392,
+        "sha256": "5e1dfa4c4eaa03b3841f6f2cc1948e4a54b17b3a1e165890981e4186b4e30427"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Scroll_2.gltf",
+        "bytes": 3968,
+        "sha256": "4dfb8f44b30afdbe1f65f922484484c6a41ecc3ae2a9ccc6a4f5f6a7314bba1d"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Page_Noise.png",
+        "bytes": 7486734,
+        "sha256": "4d4069a8d588dab3dcd36f9ea309fc617815b766ce225b78bcd487751585e312"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_BaseColor.png",
+        "bytes": 2263132,
+        "sha256": "75225a4ccfd8cc358c871de7a7a3cab7118ef197419a88464e807b81716215c8"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_Normal.png",
+        "bytes": 4441458,
+        "sha256": "c4b28a8ba8efe3108cd11356ecab67e8bf75a10cebf29c78ee7724552c305a3e"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_ORM.png",
+        "bytes": 3017151,
+        "sha256": "2d83d8df79aca2c8f630d389b43f09113afee98e746dfd42ddc3ce3302a136a2"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-shelf-arch",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Shelf_Arch.gltf",
+    "source_payload_bytes_with_dependencies": 14710661,
+    "mesh_triangles": 1286,
+    "default_scene_triangles": 1286,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 6,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Shelf_Arch.bin",
+        "bytes": 64836,
+        "sha256": "4e1d171e1a4c1ad593e0aea94f89ba29cff757a4f385043a1ef01a0f7633004c"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Shelf_Arch.gltf",
+        "bytes": 4332,
+        "sha256": "f8fb72e169162f99e47abbf530307f4a70e967b8b5eaf3844295cc9a212a574f"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-shelf-simple",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Shelf_Simple.gltf",
+    "source_payload_bytes_with_dependencies": 7807496,
+    "mesh_triangles": 480,
+    "default_scene_triangles": 480,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Shelf_Simple.bin",
+        "bytes": 22016,
+        "sha256": "0064b2a3fc0f3252c55587ec582a49e085b2aa05dca2aa33e9e6a313f88139c6"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Shelf_Simple.gltf",
+        "bytes": 2224,
+        "sha256": "aaddd9bf393cf4ed685a810f1d03cfe2a27dba98c060f889e09a968f91d91106"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-stall-cart-empty",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Stall_Cart_Empty.gltf",
+    "source_payload_bytes_with_dependencies": 21366652,
+    "mesh_triangles": 3936,
+    "default_scene_triangles": 3936,
+    "mesh_primitives": 3,
+    "materials": 3,
+    "images": 9,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Stall_Cart_Empty.bin",
+        "bytes": 237264,
+        "sha256": "d70b989c539d9883e9e83f0428390857bf846bb109715a60cb5d526753c33deb"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Stall_Cart_Empty.gltf",
+        "bytes": 6857,
+        "sha256": "aaeda0ad9ffe8c317909d7450c994b28b1e608fdf04690fa07726b810fb64c88"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Cloth_BaseColor.png",
+        "bytes": 1936754,
+        "sha256": "c4d0e14506e05cc56e7ca62ebeeb2d45de055296a55e5a8e9c1330ff8ff1833a"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Cloth_Normal.png",
+        "bytes": 3920858,
+        "sha256": "e91a490f94bc00707fb5be08045e316b4a18962f07a3b6e3d9d7c2058cfc51c0"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Cloth_ORM.png",
+        "bytes": 623426,
+        "sha256": "9bdaa0d1be8c393b07d6185165d73c7cddc058d5c123ad49449945f45a7e0c0d"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-stall-empty",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Stall_Empty.gltf",
+    "source_payload_bytes_with_dependencies": 21217511,
+    "mesh_triangles": 1496,
+    "default_scene_triangles": 1496,
+    "mesh_primitives": 3,
+    "materials": 3,
+    "images": 9,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Stall_Empty.bin",
+        "bytes": 88176,
+        "sha256": "9ddececa6f5e0922ee32b064c400abea4dd068be2bfc78891017fca334158826"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Stall_Empty.gltf",
+        "bytes": 6804,
+        "sha256": "b0e6b4f6cb6b9dc0b35d92eceb89ebc27addac167fe56fe38cfc77e3afd62af9"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Cloth_BaseColor.png",
+        "bytes": 1936754,
+        "sha256": "c4d0e14506e05cc56e7ca62ebeeb2d45de055296a55e5a8e9c1330ff8ff1833a"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Cloth_Normal.png",
+        "bytes": 3920858,
+        "sha256": "e91a490f94bc00707fb5be08045e316b4a18962f07a3b6e3d9d7c2058cfc51c0"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Cloth_ORM.png",
+        "bytes": 623426,
+        "sha256": "9bdaa0d1be8c393b07d6185165d73c7cddc058d5c123ad49449945f45a7e0c0d"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-stool",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Stool.gltf",
+    "source_payload_bytes_with_dependencies": 7797151,
+    "mesh_triangles": 152,
+    "default_scene_triangles": 152,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Stool.bin",
+        "bytes": 11472,
+        "sha256": "6ca3a6bc9b415409d842a338a74c174d0efe4d4972bf8a924fda87c8bda40191"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Stool.gltf",
+        "bytes": 2423,
+        "sha256": "55a111d97463adb71a59eddb8bbee777c5743e66a58403b06e869cc35e4da670"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-table-large",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Table_Large.gltf",
+    "source_payload_bytes_with_dependencies": 14702205,
+    "mesh_triangles": 986,
+    "default_scene_triangles": 986,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 6,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Table_Large.bin",
+        "bytes": 56396,
+        "sha256": "af7bfe0cbf0532e01543e4fd5d6d710df70106a7d938c4d74a50c8911ee9bf35"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Table_Large.gltf",
+        "bytes": 4316,
+        "sha256": "ffd4e5b803f38f02922c2b0303ae3b5a602f7c239e717b725c0553019be8fcf2"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-table-plate",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Table_Plate.gltf",
+    "source_payload_bytes_with_dependencies": 6867228,
+    "mesh_triangles": 172,
+    "default_scene_triangles": 172,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Table_Plate.bin",
+        "bytes": 6792,
+        "sha256": "23c73317b3936f395002c7be5089c4e70ee1cbdcf9f1abdb49af314faf7fe7dc"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Table_Plate.gltf",
+        "bytes": 2199,
+        "sha256": "306bf85a1b02df6dda78a13b47ad2c1cf0646aac47818ec937e0be0c5f2997a3"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-vase-2",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Vase_2.gltf",
+    "source_payload_bytes_with_dependencies": 9745336,
+    "mesh_triangles": 598,
+    "default_scene_triangles": 598,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_BaseColor.png",
+        "bytes": 2263132,
+        "sha256": "75225a4ccfd8cc358c871de7a7a3cab7118ef197419a88464e807b81716215c8"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_Normal.png",
+        "bytes": 4441458,
+        "sha256": "c4b28a8ba8efe3108cd11356ecab67e8bf75a10cebf29c78ee7724552c305a3e"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_ORM.png",
+        "bytes": 3017151,
+        "sha256": "2d83d8df79aca2c8f630d389b43f09113afee98e746dfd42ddc3ce3302a136a2"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Vase_2.bin",
+        "bytes": 21188,
+        "sha256": "1dce19b5d65d83c271b4ca1340446a482aefbd4a03dac61bb2a94ca3c71f99ea"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Vase_2.gltf",
+        "bytes": 2407,
+        "sha256": "92218a88b02bac2bf4b3855dff452f209068cbfd58724585b7bf20556ac17ab5"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-vase-4",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Vase_4.gltf",
+    "source_payload_bytes_with_dependencies": 9746181,
+    "mesh_triangles": 598,
+    "default_scene_triangles": 598,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_BaseColor.png",
+        "bytes": 2263132,
+        "sha256": "75225a4ccfd8cc358c871de7a7a3cab7118ef197419a88464e807b81716215c8"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_Normal.png",
+        "bytes": 4441458,
+        "sha256": "c4b28a8ba8efe3108cd11356ecab67e8bf75a10cebf29c78ee7724552c305a3e"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Props_ORM.png",
+        "bytes": 3017151,
+        "sha256": "2d83d8df79aca2c8f630d389b43f09113afee98e746dfd42ddc3ce3302a136a2"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Vase_4.bin",
+        "bytes": 22028,
+        "sha256": "3348683b971156e44965efbcec6008970adc73d9efe97a5131965e216cac892f"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Vase_4.gltf",
+        "bytes": 2412,
+        "sha256": "bfc60358ab3bab21ff6fed8141ea9bc910877f752ef2bb5a22f6215086aa17e3"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-workbench",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Workbench.gltf",
+    "source_payload_bytes_with_dependencies": 14709219,
+    "mesh_triangles": 1368,
+    "default_scene_triangles": 1368,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 6,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Workbench.bin",
+        "bytes": 63408,
+        "sha256": "d26f2a0ba01b4a8db8d6820d1bd0d281297fea30e48c9952484167d18a637b39"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Workbench.gltf",
+        "bytes": 4318,
+        "sha256": "518fc5c955def18cfcb781b3b955da0e8edcf4f37830a21561ef32c03ad0397e"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-workbench-drawers",
+    "source_path": "assets/external/models/quaternius-fantasy-props/Workbench_Drawers.gltf",
+    "source_payload_bytes_with_dependencies": 14662630,
+    "mesh_triangles": 364,
+    "default_scene_triangles": 364,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 6,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_BaseColor.png",
+        "bytes": 2232961,
+        "sha256": "075fbc9ec2fabc15732bd4025b6f63a0b25762df38440d06bf30437565d39bab"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_Normal.png",
+        "bytes": 3485710,
+        "sha256": "3340c4cc47ff06d5e94a2dbe2a2a12d914d0ef055fcf66f63d876666bd160e42"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Furniture_ORM.png",
+        "bytes": 2064585,
+        "sha256": "7bf417e82baf313793c5791bf48cdc8e573f1f7136197785bf0eb235cb0f8153"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_BaseColor.png",
+        "bytes": 1361221,
+        "sha256": "50422bbda9661effc259caf8b386224cac4b5ca811d2c5b3b8b25ae8efc714db"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_Normal.png",
+        "bytes": 3625541,
+        "sha256": "ab7315c864c9a9e6d716c940a599928506e1569d3b0c9085f8f1a64ec520d790"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/T_Trim_Metal_ORM.png",
+        "bytes": 1871475,
+        "sha256": "7407bccfc39ca74ecd68a61217395959bf56ac2063e6c93b384b11f07f5687c5"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Workbench_Drawers.bin",
+        "bytes": 16824,
+        "sha256": "1c59f665e4c12ee9de34ba9d22f48c3c6ba7086c3ee483883ff5881fab3dd87f"
+      },
+      {
+        "path": "assets/external/models/quaternius-fantasy-props/Workbench_Drawers.gltf",
+        "bytes": 4313,
+        "sha256": "f7f5a88b34e29dbc58402dce54b80d0404f4b6eb1042f4002479b712e36fa10f"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-base-characters-superhero-female-fullbody",
+    "source_path": "assets/external/models/quaternius-base-characters/bodies/Superhero_Female_FullBody.gltf",
+    "source_payload_bytes_with_dependencies": 16049970,
+    "mesh_triangles": 15060,
+    "default_scene_triangles": 15060,
+    "mesh_primitives": 3,
+    "materials": 3,
+    "images": 7,
+    "skins": 1,
+    "joint_counts": [
+      65
+    ],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-base-characters/bodies/Superhero_Female_FullBody.bin",
+        "bytes": 990808,
+        "sha256": "3a8220a485b33d05d879115a50697728b45a151781106033afb8b8c243fca208"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/bodies/Superhero_Female_FullBody.gltf",
+        "bytes": 31656,
+        "sha256": "adedf28000a0716f689b009a70314506fc62f827498f77ba852acb5610f3f3f4"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/bodies/T_Eye_Brown.png",
+        "bytes": 35958,
+        "sha256": "d08e3356a83211bc6ca21fe3a8e39f4b5c1a3b8f85457fc2c0fb57be09935025"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/bodies/T_Eye_Normal_png.png",
+        "bytes": 15099,
+        "sha256": "9ed61f7726a54fe346a78b9e5a18905d8e2b88f86235d97f53cd207a26f3f8c7"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/bodies/T_Hair_2_BaseColor.png",
+        "bytes": 1729467,
+        "sha256": "f9f4f2fb3eeeefb0b6f0fdef38b0770fd6607640c1c680b8139dd76697e9f9b3"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/bodies/T_Hair_2_Normal.png",
+        "bytes": 4710013,
+        "sha256": "172f230aae0d4366c3cfc0402b2e6d1811b11f8487344bff28605eeacac1558d"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/bodies/T_Superhero_Female_Dark_BaseColor.png",
+        "bytes": 1319410,
+        "sha256": "d366843ee7d9e9f37ec87a0e1c98c7f2e45573c08eeb80a51a6d9344e68cf288"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/bodies/T_Superhero_Female_Normal.png",
+        "bytes": 3940537,
+        "sha256": "cf922460b43ccd31e983e34db05514c9d451dd2f9cdd01a843978e797719f859"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/bodies/T_Superhero_Female_Roughness.png",
+        "bytes": 3277022,
+        "sha256": "d2beabf2bd0313e32c68dcdbb80dca371a6e994fabf96efa97128bf9f14fa57b"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-base-characters-superhero-male-fullbody",
+    "source_path": "assets/external/models/quaternius-base-characters/bodies/Superhero_Male_FullBody.gltf",
+    "source_payload_bytes_with_dependencies": 15487990,
+    "mesh_triangles": 14318,
+    "default_scene_triangles": 14318,
+    "mesh_primitives": 3,
+    "materials": 3,
+    "images": 7,
+    "skins": 1,
+    "joint_counts": [
+      65
+    ],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-base-characters/bodies/Superhero_Male_FullBody.bin",
+        "bytes": 720076,
+        "sha256": "459003f9745853ae562a85506a2b94dd56515c1f37728f9fa3d2ce1a3e4cd92f"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/bodies/Superhero_Male_FullBody.gltf",
+        "bytes": 30989,
+        "sha256": "e7fcea214ecf8855afbf910b50de6f9c7d1decfb71ca28bad8a4481452dafeb4"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/bodies/T_Eye_Brown.png",
+        "bytes": 35958,
+        "sha256": "d08e3356a83211bc6ca21fe3a8e39f4b5c1a3b8f85457fc2c0fb57be09935025"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/bodies/T_Eye_Normal_png.png",
+        "bytes": 15099,
+        "sha256": "9ed61f7726a54fe346a78b9e5a18905d8e2b88f86235d97f53cd207a26f3f8c7"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/bodies/T_Hair_1_BaseColor.png",
+        "bytes": 1570376,
+        "sha256": "bc7aa863bd22ab0a995cd838cceb4d3a5186ee54ee2fb0108fad85d20c057e6e"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/bodies/T_Hair_1_Normal_png.png",
+        "bytes": 4326126,
+        "sha256": "57fd0ad8c96a4d01b38769637e066cecaa285b456f6e48ce00863754a457affb"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/bodies/T_Superhero_Male_Dark.png",
+        "bytes": 1384380,
+        "sha256": "df680cbc1967a61e85998bfafb8f7bc0a36dd604bb3266486c4b06b1a184bb45"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/bodies/T_Superhero_Male_Normal.png",
+        "bytes": 4252937,
+        "sha256": "9b25cf9200216eb754b79cf4c63b5380c419780788322f3c57cdd2b3e02679a6"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/bodies/T_Superhero_Male_Roughness.png",
+        "bytes": 3152049,
+        "sha256": "c70dabf48574cda55644d556beae1ee7cf1bdcf68a50d259d20f2f2358f27991"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-base-characters-eyebrows-female",
+    "source_path": "assets/external/models/quaternius-base-characters/hair/Eyebrows_Female.gltf",
+    "source_payload_bytes_with_dependencies": 6509583,
+    "mesh_triangles": 1480,
+    "default_scene_triangles": 1480,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 2,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/Eyebrows_Female.bin",
+        "bytes": 67248,
+        "sha256": "f2efdf2b9d44137630ff4df01cfd9068fe3c3f8c2896c009860404ea17989dbf"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/Eyebrows_Female.gltf",
+        "bytes": 2855,
+        "sha256": "9d24b43ac63197c3c242349d54d599d7d8dd5bdee6e7ce37847224f3ff1fb14d"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/T_Hair_2_BaseColor.png",
+        "bytes": 1729467,
+        "sha256": "f9f4f2fb3eeeefb0b6f0fdef38b0770fd6607640c1c680b8139dd76697e9f9b3"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/T_Hair_2_Normal.png",
+        "bytes": 4710013,
+        "sha256": "172f230aae0d4366c3cfc0402b2e6d1811b11f8487344bff28605eeacac1558d"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-base-characters-eyebrows-regular",
+    "source_path": "assets/external/models/quaternius-base-characters/hair/Eyebrows_Regular.gltf",
+    "source_payload_bytes_with_dependencies": 5925096,
+    "mesh_triangles": 984,
+    "default_scene_triangles": 984,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 2,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/Eyebrows_Regular.bin",
+        "bytes": 26576,
+        "sha256": "434c62e704037b5d2a12a0c7237513617806fc6cf53d67608f120b0908dd3396"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/Eyebrows_Regular.gltf",
+        "bytes": 2018,
+        "sha256": "a91059d18fad4bd3af7546a4226976d8a2139eb82c3fe0790a1c5287c6ac6ed8"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/T_Hair_1_BaseColor.png",
+        "bytes": 1570376,
+        "sha256": "bc7aa863bd22ab0a995cd838cceb4d3a5186ee54ee2fb0108fad85d20c057e6e"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/T_Hair_1_Normal.png",
+        "bytes": 4326126,
+        "sha256": "57fd0ad8c96a4d01b38769637e066cecaa285b456f6e48ce00863754a457affb"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-base-characters-hair-beard",
+    "source_path": "assets/external/models/quaternius-base-characters/hair/Hair_Beard.gltf",
+    "source_payload_bytes_with_dependencies": 5923783,
+    "mesh_triangles": 1034,
+    "default_scene_triangles": 1034,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 2,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/Hair_Beard.bin",
+        "bytes": 25276,
+        "sha256": "781cf9b719d75a9f8d73881d2ca0713fe580d774edc96adaded392aad37a72b7"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/Hair_Beard.gltf",
+        "bytes": 2005,
+        "sha256": "c91ef54606aad25a9d1191deaba90cb411c0067d8cef262b2f4819f242e5b365"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/T_Hair_1_BaseColor.png",
+        "bytes": 1570376,
+        "sha256": "bc7aa863bd22ab0a995cd838cceb4d3a5186ee54ee2fb0108fad85d20c057e6e"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/T_Hair_1_Normal.png",
+        "bytes": 4326126,
+        "sha256": "57fd0ad8c96a4d01b38769637e066cecaa285b456f6e48ce00863754a457affb"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-base-characters-hair-buns",
+    "source_path": "assets/external/models/quaternius-base-characters/hair/Hair_Buns.gltf",
+    "source_payload_bytes_with_dependencies": 6573491,
+    "mesh_triangles": 3284,
+    "default_scene_triangles": 3284,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 2,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/Hair_Buns.bin",
+        "bytes": 131768,
+        "sha256": "4f6d4c010201278483da8d6d46ec40e3beb8d9e679ec2139bed216c561bccd38"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/Hair_Buns.gltf",
+        "bytes": 2243,
+        "sha256": "2bb3593575e21c9af39a53e48c42c1314b0a894e9577f3f14abffcb145cd56c5"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/T_Hair_2_BaseColor.png",
+        "bytes": 1729467,
+        "sha256": "f9f4f2fb3eeeefb0b6f0fdef38b0770fd6607640c1c680b8139dd76697e9f9b3"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/T_Hair_2_Normal.png",
+        "bytes": 4710013,
+        "sha256": "172f230aae0d4366c3cfc0402b2e6d1811b11f8487344bff28605eeacac1558d"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-base-characters-hair-buzzed",
+    "source_path": "assets/external/models/quaternius-base-characters/hair/Hair_Buzzed.gltf",
+    "source_payload_bytes_with_dependencies": 5918400,
+    "mesh_triangles": 830,
+    "default_scene_triangles": 830,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 2,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/Hair_Buzzed.bin",
+        "bytes": 19892,
+        "sha256": "89992fc7a5319df6f2908e44a3b694329fac4b500629a573224702e5fdd16f77"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/Hair_Buzzed.gltf",
+        "bytes": 2006,
+        "sha256": "43752a4c8f2464eb2494a8ab179bf7ad237638a3d47fb3de0a38361db40e1451"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/T_Hair_1_BaseColor.png",
+        "bytes": 1570376,
+        "sha256": "bc7aa863bd22ab0a995cd838cceb4d3a5186ee54ee2fb0108fad85d20c057e6e"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/T_Hair_1_Normal.png",
+        "bytes": 4326126,
+        "sha256": "57fd0ad8c96a4d01b38769637e066cecaa285b456f6e48ce00863754a457affb"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-base-characters-hair-buzzedfemale",
+    "source_path": "assets/external/models/quaternius-base-characters/hair/Hair_BuzzedFemale.gltf",
+    "source_payload_bytes_with_dependencies": 5918585,
+    "mesh_triangles": 830,
+    "default_scene_triangles": 830,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 2,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/Hair_BuzzedFemale.bin",
+        "bytes": 19892,
+        "sha256": "6f1ab9bc997b01311dc0635ee165edfe27bd9715222718bc4cf4265e10b933af"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/Hair_BuzzedFemale.gltf",
+        "bytes": 2191,
+        "sha256": "3f30e5a7b0fc6d04d2980a4e937cc5e4b03ca923c9247869168ef13e1b40b747"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/T_Hair_1_BaseColor.png",
+        "bytes": 1570376,
+        "sha256": "bc7aa863bd22ab0a995cd838cceb4d3a5186ee54ee2fb0108fad85d20c057e6e"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/T_Hair_1_Normal.png",
+        "bytes": 4326126,
+        "sha256": "57fd0ad8c96a4d01b38769637e066cecaa285b456f6e48ce00863754a457affb"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-base-characters-hair-long",
+    "source_path": "assets/external/models/quaternius-base-characters/hair/Hair_Long.gltf",
+    "source_payload_bytes_with_dependencies": 6557532,
+    "mesh_triangles": 2906,
+    "default_scene_triangles": 2906,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 2,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/Hair_Long.bin",
+        "bytes": 115996,
+        "sha256": "13996da35c7afbf8cb5097da37207ee5b7c2e2904d4ab9e2ace9843030fff8d5"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/Hair_Long.gltf",
+        "bytes": 2056,
+        "sha256": "94500e2e37e09efc8b8b920b8c6437ef1c76ca35863992b82d0d5de6e77122e9"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/T_Hair_2_BaseColor.png",
+        "bytes": 1729467,
+        "sha256": "f9f4f2fb3eeeefb0b6f0fdef38b0770fd6607640c1c680b8139dd76697e9f9b3"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/T_Hair_2_Normal.png",
+        "bytes": 4710013,
+        "sha256": "172f230aae0d4366c3cfc0402b2e6d1811b11f8487344bff28605eeacac1558d"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-base-characters-hair-simpleparted",
+    "source_path": "assets/external/models/quaternius-base-characters/hair/Hair_SimpleParted.gltf",
+    "source_payload_bytes_with_dependencies": 5930544,
+    "mesh_triangles": 1301,
+    "default_scene_triangles": 1301,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 2,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/Hair_SimpleParted.bin",
+        "bytes": 32032,
+        "sha256": "57c6359703a37e346ee38a9c7ba55c8dee761c0a02da99847d06f5a91728f3cc"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/Hair_SimpleParted.gltf",
+        "bytes": 2010,
+        "sha256": "ce6c666d00bcca2baa0c58d0442505f90f8feff952592effc4697a2341e9e56d"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/T_Hair_1_BaseColor.png",
+        "bytes": 1570376,
+        "sha256": "bc7aa863bd22ab0a995cd838cceb4d3a5186ee54ee2fb0108fad85d20c057e6e"
+      },
+      {
+        "path": "assets/external/models/quaternius-base-characters/hair/T_Hair_1_Normal.png",
+        "bytes": 4326126,
+        "sha256": "57fd0ad8c96a4d01b38769637e066cecaa285b456f6e48ce00863754a457affb"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-animations-ual1-standard",
+    "source_path": "assets/external/models/quaternius-animations/UAL1_Standard.glb",
+    "source_payload_bytes_with_dependencies": 7618436,
+    "mesh_triangles": 13744,
+    "default_scene_triangles": 13744,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 0,
+    "skins": 1,
+    "joint_counts": [
+      65
+    ],
+    "animation_clips": [
+      "A_TPose",
+      "Crouch_Fwd_Loop",
+      "Crouch_Idle_Loop",
+      "Dance_Loop",
+      "Death01",
+      "Driving_Loop",
+      "Fixing_Kneeling",
+      "Hit_Chest",
+      "Hit_Head",
+      "Idle_Loop",
+      "Idle_Talking_Loop",
+      "Idle_Torch_Loop",
+      "Interact",
+      "Jog_Fwd_Loop",
+      "Jump_Land",
+      "Jump_Loop",
+      "Jump_Start",
+      "PickUp_Table",
+      "Pistol_Aim_Down",
+      "Pistol_Aim_Neutral",
+      "Pistol_Aim_Up",
+      "Pistol_Idle_Loop",
+      "Pistol_Reload",
+      "Pistol_Shoot",
+      "Punch_Cross",
+      "Punch_Jab",
+      "Push_Loop",
+      "Roll",
+      "Sitting_Enter",
+      "Sitting_Exit",
+      "Sitting_Idle_Loop",
+      "Sitting_Talking_Loop",
+      "Spell_Simple_Enter",
+      "Spell_Simple_Exit",
+      "Spell_Simple_Idle_Loop",
+      "Spell_Simple_Shoot",
+      "Sprint_Loop",
+      "Swim_Fwd_Loop",
+      "Swim_Idle_Loop",
+      "Sword_Attack",
+      "Sword_Idle",
+      "Walk_Formal_Loop",
+      "Walk_Loop"
+    ],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-animations/UAL1_Standard.glb",
+        "bytes": 7618436,
+        "sha256": "69591853d817488edaa8fd9bf8fc1d821eaeaf789f8627b3cd23b41c4ed67997"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-animations-ual1-standard-rm",
+    "source_path": "assets/external/models/quaternius-animations/UAL1_Standard_RM.glb",
+    "source_payload_bytes_with_dependencies": 7620504,
+    "mesh_triangles": 13744,
+    "default_scene_triangles": 13744,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 0,
+    "skins": 1,
+    "joint_counts": [
+      65
+    ],
+    "animation_clips": [
+      "A_TPose",
+      "Crouch_Fwd_Loop",
+      "Crouch_Idle_Loop",
+      "Dance_Loop",
+      "Death01",
+      "Driving_Loop",
+      "Fixing_Kneeling",
+      "Hit_Chest",
+      "Hit_Head",
+      "Idle_Loop",
+      "Idle_Talking_Loop",
+      "Idle_Torch_Loop",
+      "Interact",
+      "Jog_Fwd_Loop",
+      "Jump_Land",
+      "Jump_Loop",
+      "Jump_Start",
+      "PickUp_Table",
+      "Pistol_Aim_Down",
+      "Pistol_Aim_Neutral",
+      "Pistol_Aim_Up",
+      "Pistol_Idle_Loop",
+      "Pistol_Reload",
+      "Pistol_Shoot",
+      "Punch_Cross",
+      "Punch_Jab",
+      "Push_Loop",
+      "Roll",
+      "Sitting_Enter",
+      "Sitting_Exit",
+      "Sitting_Idle_Loop",
+      "Sitting_Talking_Loop",
+      "Spell_Simple_Enter",
+      "Spell_Simple_Exit",
+      "Spell_Simple_Idle_Loop",
+      "Spell_Simple_Shoot",
+      "Sprint_Loop",
+      "Swim_Fwd_Loop",
+      "Swim_Idle_Loop",
+      "Sword_Attack",
+      "Sword_Idle",
+      "Walk_Formal_Loop",
+      "Walk_Loop"
+    ],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/quaternius-animations/UAL1_Standard_RM.glb",
+        "bytes": 7620504,
+        "sha256": "be684571ed655a1b892c2c07e6e2aeca053b606c442d34004adaf1d944090d01"
+      }
+    ]
+  },
+  {
+    "id": "polyhaven-coast_rocks_01",
+    "source_path": "assets/external/models/polyhaven-coast_rocks_01/coast_rocks_01_1k.gltf",
+    "source_payload_bytes_with_dependencies": 21684204,
+    "mesh_triangles": 679936,
+    "default_scene_triangles": 679936,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": true,
+    "files": [
+      {
+        "path": "assets/external/models/polyhaven-coast_rocks_01/coast_rocks_01.bin",
+        "bytes": 19320352,
+        "sha256": "3d1c33b18fdcf0efebab46526e94d17efccbc3c9a06dc14b89b04b93109fa3d2"
+      },
+      {
+        "path": "assets/external/models/polyhaven-coast_rocks_01/coast_rocks_01_1k.gltf",
+        "bytes": 2810,
+        "sha256": "9d45b232fe8bfc8f9d84aaa900ba28f150764e4b40accf7d50fbb45a3de54c51"
+      },
+      {
+        "path": "assets/external/models/polyhaven-coast_rocks_01/textures/coast_rocks_01_arm_1k.jpg",
+        "bytes": 602817,
+        "sha256": "13fddfb9051fa36720b5c35f4f52a49826b1e3a4063f66e440a7033dd90c30cc"
+      },
+      {
+        "path": "assets/external/models/polyhaven-coast_rocks_01/textures/coast_rocks_01_diff_1k.jpg",
+        "bytes": 839761,
+        "sha256": "a6814ce9c023fc7c90eb38c2afe658a3076b94ed44d136c2dbd3605d18fade7b"
+      },
+      {
+        "path": "assets/external/models/polyhaven-coast_rocks_01/textures/coast_rocks_01_nor_gl_1k.jpg",
+        "bytes": 918464,
+        "sha256": "848292bb5fd720fefd37fa94326071bc81e2290bbf409bb019efb6fb30399809"
+      }
+    ]
+  },
+  {
+    "id": "polyhaven-wooden_table_02",
+    "source_path": "assets/external/models/polyhaven-wooden_table_02/wooden_table_02_1k.gltf",
+    "source_payload_bytes_with_dependencies": 485316,
+    "mesh_triangles": 196,
+    "default_scene_triangles": 196,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/polyhaven-wooden_table_02/textures/wooden_table_02_arm_1k.jpg",
+        "bytes": 174545,
+        "sha256": "b970a81e4b03f3b8a341c9eb639f112fff1782d681c846255ebc9073cd803ced"
+      },
+      {
+        "path": "assets/external/models/polyhaven-wooden_table_02/textures/wooden_table_02_diff_1k.jpg",
+        "bytes": 178379,
+        "sha256": "2334ac3e23d69222322515d9bad066b4e90d7d81989fe231b8fb12f39179ad9e"
+      },
+      {
+        "path": "assets/external/models/polyhaven-wooden_table_02/textures/wooden_table_02_nor_gl_1k.jpg",
+        "bytes": 122129,
+        "sha256": "9470e08e5dab4ab6a7cafab2a488a50fb54fa8f38890e9032c39dcbf7f5846d2"
+      },
+      {
+        "path": "assets/external/models/polyhaven-wooden_table_02/wooden_table_02.bin",
+        "bytes": 7576,
+        "sha256": "52ed7cc67b3aa403375cf9bd18050e8cc21bcced6532a0183c1a733f0965df6d"
+      },
+      {
+        "path": "assets/external/models/polyhaven-wooden_table_02/wooden_table_02_1k.gltf",
+        "bytes": 2687,
+        "sha256": "bb38e301840cb629d72c43c83fdb7fb308518efe2d0bc01e1ed0e9a9e43ed9d3"
+      }
+    ]
+  },
+  {
+    "id": "polyhaven-planter_pot_clay",
+    "source_path": "assets/external/models/polyhaven-planter_pot_clay/planter_pot_clay_1k.gltf",
+    "source_payload_bytes_with_dependencies": 1797158,
+    "mesh_triangles": 3080,
+    "default_scene_triangles": 3080,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/polyhaven-planter_pot_clay/planter_pot_clay.bin",
+        "bytes": 78096,
+        "sha256": "effd0a038a75a054e55e2f5f71a84c57c1c6efc4e453ae3e62d4ce5167a2913c"
+      },
+      {
+        "path": "assets/external/models/polyhaven-planter_pot_clay/planter_pot_clay_1k.gltf",
+        "bytes": 2813,
+        "sha256": "f2989068dcff9737c9f3d49d435b70e36d553822ac87134daac055ae9706af1e"
+      },
+      {
+        "path": "assets/external/models/polyhaven-planter_pot_clay/textures/planter_pot_clay_arm_1k.jpg",
+        "bytes": 613484,
+        "sha256": "68e9e509db4e330b48924c606d4a9a99b54e105c1fe1690ff2811a05d95a0def"
+      },
+      {
+        "path": "assets/external/models/polyhaven-planter_pot_clay/textures/planter_pot_clay_diff_1k.jpg",
+        "bytes": 596319,
+        "sha256": "4f2962fd238401e49fd400596fdccd1ee9e2cca9ed21e44bb924dca3076f524c"
+      },
+      {
+        "path": "assets/external/models/polyhaven-planter_pot_clay/textures/planter_pot_clay_nor_gl_1k.jpg",
+        "bytes": 506446,
+        "sha256": "25a564e55b247a94863b513853b1aeaad5c894dd78e92e1fd89e794b83b483c4"
+      }
+    ]
+  },
+  {
+    "id": "polyhaven-wicker_basket_02",
+    "source_path": "assets/external/models/polyhaven-wicker_basket_02/wicker_basket_02_1k.gltf",
+    "source_payload_bytes_with_dependencies": 3064509,
+    "mesh_triangles": 17850,
+    "default_scene_triangles": 17850,
+    "mesh_primitives": 2,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/models/polyhaven-wicker_basket_02/textures/wicker_basket_02_arm_1k.jpg",
+        "bytes": 718943,
+        "sha256": "641013be798757f4bf2c82cf335b80db2b6d2b52f8fbf0b1f1e2e22196bc60ee"
+      },
+      {
+        "path": "assets/external/models/polyhaven-wicker_basket_02/textures/wicker_basket_02_diff_1k.jpg",
+        "bytes": 867277,
+        "sha256": "c03525c27579160bcd71054aa17796570a074ff4cdd560bfed3fb9770c9ba975"
+      },
+      {
+        "path": "assets/external/models/polyhaven-wicker_basket_02/textures/wicker_basket_02_nor_gl_1k.jpg",
+        "bytes": 1041220,
+        "sha256": "d3de9d9ec34955ed866a819763eb323a0dee571f55b02f5b4c44b0fc34cf2376"
+      },
+      {
+        "path": "assets/external/models/polyhaven-wicker_basket_02/wicker_basket_02.bin",
+        "bytes": 432572,
+        "sha256": "bd92d61a377879fa28c2bdb18fd0b0a42c42c7333c04e324f346b68689655fdb"
+      },
+      {
+        "path": "assets/external/models/polyhaven-wicker_basket_02/wicker_basket_02_1k.gltf",
+        "bytes": 4497,
+        "sha256": "78c7a3bdd7025eb092b3ac744e9d83e9a75fbb242696b5dce87ec215af617768"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-vase-2:prepared",
+    "source_path": "assets/external/prepared/quaternius-fantasy-props-vase-2.glb",
+    "source_payload_bytes_with_dependencies": 395176,
+    "mesh_triangles": 598,
+    "default_scene_triangles": 598,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/prepared/quaternius-fantasy-props-vase-2.glb",
+        "bytes": 395176,
+        "sha256": "3149a9b6444561b6a4227d066cb077a46ecc47bac884100a38198ec14d24df02"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-scroll-1:prepared",
+    "source_path": "assets/external/prepared/quaternius-fantasy-props-scroll-1.glb",
+    "source_payload_bytes_with_dependencies": 453500,
+    "mesh_triangles": 512,
+    "default_scene_triangles": 512,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 4,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/prepared/quaternius-fantasy-props-scroll-1.glb",
+        "bytes": 453500,
+        "sha256": "9e42d8bac4b8670a1203038d8e6101720edb12bfa1b2444e23516ded0ac2ed33"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-stall-empty:prepared",
+    "source_path": "assets/external/prepared/quaternius-fantasy-props-stall-empty.glb",
+    "source_payload_bytes_with_dependencies": 807164,
+    "mesh_triangles": 1496,
+    "default_scene_triangles": 1496,
+    "mesh_primitives": 3,
+    "materials": 3,
+    "images": 9,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/prepared/quaternius-fantasy-props-stall-empty.glb",
+        "bytes": 807164,
+        "sha256": "29162f4b04d4aed4569cd89ca20446180e9b80ba038548ec6d20be9d256c7062"
+      }
+    ]
+  },
+  {
+    "id": "polyhaven-wicker_basket_02:prepared",
+    "source_path": "assets/external/prepared/polyhaven-wicker_basket_02.glb",
+    "source_payload_bytes_with_dependencies": 2743056,
+    "mesh_triangles": 3998,
+    "default_scene_triangles": 3998,
+    "mesh_primitives": 2,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/prepared/polyhaven-wicker_basket_02.glb",
+        "bytes": 2743056,
+        "sha256": "16320500b228b1906c85fe4a8426104c57088d647337914ce7ee0e3b078a51a1"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-base-characters-superhero-female-fullbody:prepared",
+    "source_path": "assets/external/prepared/quaternius-base-characters-superhero-female-fullbody.glb",
+    "source_payload_bytes_with_dependencies": 1485016,
+    "mesh_triangles": 15060,
+    "default_scene_triangles": 15060,
+    "mesh_primitives": 3,
+    "materials": 3,
+    "images": 7,
+    "skins": 1,
+    "joint_counts": [
+      65
+    ],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/prepared/quaternius-base-characters-superhero-female-fullbody.glb",
+        "bytes": 1485016,
+        "sha256": "93deaaa8790217ae2cac2b288f30a2decd5e3a8a541336a9d9956e1ebde7813c"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-base-characters-superhero-male-fullbody:prepared",
+    "source_path": "assets/external/prepared/quaternius-base-characters-superhero-male-fullbody.glb",
+    "source_payload_bytes_with_dependencies": 1182272,
+    "mesh_triangles": 14318,
+    "default_scene_triangles": 14318,
+    "mesh_primitives": 3,
+    "materials": 3,
+    "images": 7,
+    "skins": 1,
+    "joint_counts": [
+      65
+    ],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/prepared/quaternius-base-characters-superhero-male-fullbody.glb",
+        "bytes": 1182272,
+        "sha256": "2a5292cf8500b84f9bdba393c54c60a3849e008a1aca8d0b0e6c0926728e2cde"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-boat-row-small:prepared",
+    "source_path": "assets/external/prepared/kenney-pirate-kit-boat-row-small.glb",
+    "source_payload_bytes_with_dependencies": 18932,
+    "mesh_triangles": 168,
+    "default_scene_triangles": 168,
+    "mesh_primitives": 2,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/prepared/kenney-pirate-kit-boat-row-small.glb",
+        "bytes": 18932,
+        "sha256": "3845fbc50d0d4a43bbd21df71d0c465b00ad4092b9670ac5632fa12472e3edcb"
+      }
+    ]
+  },
+  {
+    "id": "polyhaven-coast_rocks_01:prepared",
+    "source_path": "assets/external/prepared/polyhaven-coast_rocks_01.glb",
+    "source_payload_bytes_with_dependencies": 2681900,
+    "mesh_triangles": 12000,
+    "default_scene_triangles": 12000,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/prepared/polyhaven-coast_rocks_01.glb",
+        "bytes": 2681900,
+        "sha256": "478288ef110df1431c23d0eb04d4c8943ffbd356b57ecbacf68c10c560866c41"
+      }
+    ]
+  },
+  {
+    "id": "polyhaven-wooden_table_02:prepared",
+    "source_path": "assets/external/prepared/polyhaven-wooden_table_02.glb",
+    "source_payload_bytes_with_dependencies": 485092,
+    "mesh_triangles": 196,
+    "default_scene_triangles": 196,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/prepared/polyhaven-wooden_table_02.glb",
+        "bytes": 485092,
+        "sha256": "f07a9c41d29e894069615416f5ef513fc64c12aa6889b47bf532c77a4300b249"
+      }
+    ]
+  },
+  {
+    "id": "quaternius-fantasy-props-chair-1:prepared",
+    "source_path": "assets/external/prepared/quaternius-fantasy-props-chair-1.glb",
+    "source_payload_bytes_with_dependencies": 569424,
+    "mesh_triangles": 496,
+    "default_scene_triangles": 496,
+    "mesh_primitives": 2,
+    "materials": 2,
+    "images": 6,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/prepared/quaternius-fantasy-props-chair-1.glb",
+        "bytes": 569424,
+        "sha256": "bef3798ec51465145a1429e7543069f233a7e1c2d27fa72b45d3285f52f63d02"
+      }
+    ]
+  },
+  {
+    "id": "polyhaven-planter_pot_clay:prepared",
+    "source_path": "assets/external/prepared/polyhaven-planter_pot_clay.glb",
+    "source_payload_bytes_with_dependencies": 1796144,
+    "mesh_triangles": 3080,
+    "default_scene_triangles": 3080,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/prepared/polyhaven-planter_pot_clay.glb",
+        "bytes": 1796144,
+        "sha256": "e15066c1e50874180788900a2d872c74eb51ab606cb4c9c58737aa6ab385ab72"
+      }
+    ]
+  },
+  {
+    "id": "kenney-pirate-kit-rocks-a:prepared",
+    "source_path": "assets/external/prepared/kenney-pirate-kit-rocks-a.glb",
+    "source_payload_bytes_with_dependencies": 25408,
+    "mesh_triangles": 264,
+    "default_scene_triangles": 264,
+    "mesh_primitives": 1,
+    "materials": 1,
+    "images": 1,
+    "skins": 0,
+    "joint_counts": [],
+    "animation_clips": [],
+    "required_extensions": [],
+    "exceeds_5MB_source_payload": false,
+    "files": [
+      {
+        "path": "assets/external/prepared/kenney-pirate-kit-rocks-a.glb",
+        "bytes": 25408,
+        "sha256": "67100c007d4f9ac672e037cc12e992dee9fd6be8a638de9752b3cfae041871cd"
+      }
+    ]
+  }
+]

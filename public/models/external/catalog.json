@@ -1,0 +1,3685 @@
+[
+  {
+    "id": "kenney-pirate-kit-barrel",
+    "title": "barrel",
+    "collection": "kenney-pirate-kit",
+    "creator": "Kenney",
+    "sourceUrl": "https://kenney.nl/assets/pirate-kit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/kenney-pirate-kit-barrel.glb",
+    "bytes": 16780,
+    "sha256": "6b8735e12cd2199fdf514e34170c02952c1efaf17781b165e59d672e198e92ce",
+    "dimensions": [
+      0.85,
+      0.78196,
+      0.85
+    ],
+    "triangles": 148,
+    "sourcePath": "assets/external/models/kenney-pirate-kit/barrel.glb",
+    "sourcePayloadBytes": 24153,
+    "category": "cargo",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "tempest"
+    ],
+    "use": "Harbor/coast kitbash component",
+    "usage": {
+      "category": "cargo",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.85,
+      "placement": "Stand upright at the quay edge; keep the walkway center open.",
+      "cautions": "Barrel construction is generic game art; do not use it to establish ancient cargo practices.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "kenney-pirate-kit-crate",
+    "title": "crate",
+    "collection": "kenney-pirate-kit",
+    "creator": "Kenney",
+    "sourceUrl": "https://kenney.nl/assets/pirate-kit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/kenney-pirate-kit-crate.glb",
+    "bytes": 13276,
+    "sha256": "126e8b95996ea3fd25132396d20a9058001d74974d5316808702d4a835f1d8c3",
+    "dimensions": [
+      0.61765,
+      0.44118,
+      0.75
+    ],
+    "triangles": 76,
+    "sourcePath": "assets/external/models/kenney-pirate-kit/crate.glb",
+    "sourcePayloadBytes": 19293,
+    "category": "cargo",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "tempest"
+    ],
+    "use": "Harbor/coast kitbash component",
+    "usage": {
+      "category": "cargo",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.75,
+      "placement": "Stack at most two beside a warehouse or boat landing.",
+      "cautions": "A stack needs one combined collision volume and stable supporting surfaces.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "kenney-pirate-kit-boat-row-small",
+    "title": "boat-row-small",
+    "collection": "kenney-pirate-kit",
+    "creator": "Kenney",
+    "sourceUrl": "https://kenney.nl/assets/pirate-kit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/kenney-pirate-kit-boat-row-small.glb",
+    "bytes": 19192,
+    "sha256": "d7ecd5e7f46cefa309e1b5d815c32aa07d869a23594ad257c9136b9edfb9cd2b",
+    "dimensions": [
+      3.2,
+      0.98693,
+      2.76178
+    ],
+    "triangles": 168,
+    "sourcePath": "assets/external/models/kenney-pirate-kit/boat-row-small.glb",
+    "sourcePayloadBytes": 27677,
+    "category": "boat",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "tempest"
+    ],
+    "use": "Harbor/coast kitbash component",
+    "usage": {
+      "category": "boat",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 3.2,
+      "placement": "Place just offshore with the hull touching the water; the paddles are part of the mesh.",
+      "cautions": "Decorative only: boarding and passenger controls are not included.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": "/models/external/previews/kenney-pirate-kit-boat-row-small.jpg",
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "kenney-pirate-kit-boat-row-large",
+    "title": "boat-row-large",
+    "collection": "kenney-pirate-kit",
+    "creator": "Kenney",
+    "sourceUrl": "https://kenney.nl/assets/pirate-kit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/kenney-pirate-kit-boat-row-large.glb",
+    "bytes": 18140,
+    "sha256": "e832123cf89de8a8869f6a9441e935b83bd7afb5250b0e94ef8ff637a40856cb",
+    "dimensions": [
+      4.04743,
+      1.2483,
+      4.2
+    ],
+    "triangles": 174,
+    "sourcePath": "assets/external/models/kenney-pirate-kit/boat-row-large.glb",
+    "sourcePayloadBytes": 26033,
+    "category": "boat",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "tempest"
+    ],
+    "use": "Harbor/coast kitbash component",
+    "usage": {
+      "category": "boat",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 4.2,
+      "placement": "Use as a secondary rowing craft outside the walking shoreline.",
+      "cautions": "Keep its wider hull and oars clear of piers; no navigation deck is supplied.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "kenney-pirate-kit-tool-paddle",
+    "title": "tool-paddle",
+    "collection": "kenney-pirate-kit",
+    "creator": "Kenney",
+    "sourceUrl": "https://kenney.nl/assets/pirate-kit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/kenney-pirate-kit-tool-paddle.glb",
+    "bytes": 11592,
+    "sha256": "af34367a65480e9c18b8dff31d4184729c709df972581b752f6044f2cc1dabc7",
+    "dimensions": [
+      0.44805,
+      1.6,
+      0.14135
+    ],
+    "triangles": 60,
+    "sourcePath": "assets/external/models/kenney-pirate-kit/tool-paddle.glb",
+    "sourcePayloadBytes": 16925,
+    "category": "cargo",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "tempest"
+    ],
+    "use": "Harbor/coast kitbash component",
+    "usage": {
+      "category": "cargo",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 1.6,
+      "placement": "Lean beside a rowing craft or lay along a dock edge.",
+      "cautions": "Pivot at the handle for animation; this static mesh has no rowing action.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "kenney-pirate-kit-mast",
+    "title": "mast",
+    "collection": "kenney-pirate-kit",
+    "creator": "Kenney",
+    "sourceUrl": "https://kenney.nl/assets/pirate-kit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/kenney-pirate-kit-mast.glb",
+    "bytes": 28440,
+    "sha256": "220c0bbf7ac2ccad27b0b33127dffbea3ef0a36c6f78e2868b55cf60d4486e18",
+    "dimensions": [
+      2.50975,
+      4.5,
+      0.99567
+    ],
+    "triangles": 302,
+    "sourcePath": "assets/external/models/kenney-pirate-kit/mast.glb",
+    "sourcePayloadBytes": 40877,
+    "category": "ship-module",
+    "classroomStatus": "assembly-or-context-review",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "tempest"
+    ],
+    "use": "Harbor/coast kitbash component",
+    "usage": {
+      "category": "ship-module",
+      "classroom_status": "assembly-or-context-review",
+      "target_longest_dimension_m": 4.5,
+      "placement": "Attach to an authored hull at its mast socket.",
+      "cautions": "Check sailing-period suitability and hull proportions; a mast alone is not a complete vessel.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "kenney-pirate-kit-mast-ropes",
+    "title": "mast-ropes",
+    "collection": "kenney-pirate-kit",
+    "creator": "Kenney",
+    "sourceUrl": "https://kenney.nl/assets/pirate-kit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/kenney-pirate-kit-mast-ropes.glb",
+    "bytes": 32236,
+    "sha256": "62c851901b8ffea596a8d095d9eda8f2258b9768888a00f0cfff5d1a3aa75e72",
+    "dimensions": [
+      2.50196,
+      4.5,
+      1.33998
+    ],
+    "triangles": 350,
+    "sourcePath": "assets/external/models/kenney-pirate-kit/mast-ropes.glb",
+    "sourcePayloadBytes": 46217,
+    "category": "ship-module",
+    "classroomStatus": "assembly-or-context-review",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "tempest"
+    ],
+    "use": "Harbor/coast kitbash component",
+    "usage": {
+      "category": "ship-module",
+      "classroom_status": "assembly-or-context-review",
+      "target_longest_dimension_m": 4.5,
+      "placement": "Align with the matching mast at identical scale and orientation.",
+      "cautions": "Do not add a second mast if the selected hull already contains rigging.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "kenney-pirate-kit-ship-small",
+    "title": "ship-small",
+    "collection": "kenney-pirate-kit",
+    "creator": "Kenney",
+    "sourceUrl": "https://kenney.nl/assets/pirate-kit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/kenney-pirate-kit-ship-small.glb",
+    "bytes": 87204,
+    "sha256": "f4d25753b5d029b2dab6c681cb0e0a37f45e76bbc2e0b491a95f856a07c53138",
+    "dimensions": [
+      2.64967,
+      5.5,
+      4.85772
+    ],
+    "triangles": 1370,
+    "sourcePath": "assets/external/models/kenney-pirate-kit/ship-small.glb",
+    "sourcePayloadBytes": 126501,
+    "category": "boat",
+    "classroomStatus": "assembly-or-context-review",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "tempest"
+    ],
+    "use": "Harbor/coast kitbash component",
+    "usage": {
+      "category": "boat",
+      "classroom_status": "assembly-or-context-review",
+      "target_longest_dimension_m": 5.5,
+      "placement": "Use in a generic distant seascape after checking sail and hull silhouette.",
+      "cautions": "Pirate-kit vessel: keep out of period-specific Greek scenes until adapted.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "kenney-pirate-kit-ship-medium",
+    "title": "ship-medium",
+    "collection": "kenney-pirate-kit",
+    "creator": "Kenney",
+    "sourceUrl": "https://kenney.nl/assets/pirate-kit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/kenney-pirate-kit-ship-medium.glb",
+    "bytes": 106700,
+    "sha256": "61d5b3093557f44c4f935d8c89f2e397ffb1299428b61cbf9dd4619b110f5aa1",
+    "dimensions": [
+      3.16981,
+      6.57968,
+      7
+    ],
+    "triangles": 1723,
+    "sourcePath": "assets/external/models/kenney-pirate-kit/ship-medium.glb",
+    "sourcePayloadBytes": 155005,
+    "category": "boat",
+    "classroomStatus": "assembly-or-context-review",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "tempest"
+    ],
+    "use": "Harbor/coast kitbash component",
+    "usage": {
+      "category": "boat",
+      "classroom_status": "assembly-or-context-review",
+      "target_longest_dimension_m": 7,
+      "placement": "Reserve for a medium-distance generic harbor, beyond player collision.",
+      "cautions": "Pirate-era design is not an authenticated Greek merchant ship; no walkable deck.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "kenney-pirate-kit-ship-wreck",
+    "title": "ship-wreck",
+    "collection": "kenney-pirate-kit",
+    "creator": "Kenney",
+    "sourceUrl": "https://kenney.nl/assets/pirate-kit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/kenney-pirate-kit-ship-wreck.glb",
+    "bytes": 156272,
+    "sha256": "c6bb747062e3406c422ac5923694663873afd632a5022e58d7d1787af5cad266",
+    "dimensions": [
+      2.03774,
+      4.2298,
+      4.5
+    ],
+    "triangles": 2282,
+    "sourcePath": "assets/external/models/kenney-pirate-kit/ship-wreck.glb",
+    "sourcePayloadBytes": 233737,
+    "category": "boat",
+    "classroomStatus": "assembly-or-context-review",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "tempest"
+    ],
+    "use": "Harbor/coast kitbash component",
+    "usage": {
+      "category": "boat",
+      "classroom_status": "assembly-or-context-review",
+      "target_longest_dimension_m": 4.5,
+      "placement": "Use as clearly interpretive debris on an unwalkable shoreline.",
+      "cautions": "Only include where the assigned text supports wreck scenery; do not add an invented plot event.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "kenney-pirate-kit-palm-detailed-bend",
+    "title": "palm-detailed-bend",
+    "collection": "kenney-pirate-kit",
+    "creator": "Kenney",
+    "sourceUrl": "https://kenney.nl/assets/pirate-kit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/kenney-pirate-kit-palm-detailed-bend.glb",
+    "bytes": 42388,
+    "sha256": "83442f402a8c40648be69d186a8f0d773ff69a2819d68f939657db324195603d",
+    "dimensions": [
+      3.38763,
+      5,
+      3.78242
+    ],
+    "triangles": 482,
+    "sourcePath": "assets/external/models/kenney-pirate-kit/palm-detailed-bend.glb",
+    "sourcePayloadBytes": 62073,
+    "category": "plant",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "tempest"
+    ],
+    "use": "Harbor/coast kitbash component",
+    "usage": {
+      "category": "plant",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 5,
+      "placement": "Plant on the edge of a coast setting, with the bend facing open space.",
+      "cautions": "Climate-specific vegetation; unsuitable as automatic English garden dressing.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "kenney-pirate-kit-palm-detailed-straight",
+    "title": "palm-detailed-straight",
+    "collection": "kenney-pirate-kit",
+    "creator": "Kenney",
+    "sourceUrl": "https://kenney.nl/assets/pirate-kit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/kenney-pirate-kit-palm-detailed-straight.glb",
+    "bytes": 42424,
+    "sha256": "6f73e08f5224b9190bdddbc52d18d852f737f7fa752b146c85973c93a881c742",
+    "dimensions": [
+      3.81691,
+      5,
+      3.81691
+    ],
+    "triangles": 482,
+    "sourcePath": "assets/external/models/kenney-pirate-kit/palm-detailed-straight.glb",
+    "sourcePayloadBytes": 61977,
+    "category": "plant",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "tempest"
+    ],
+    "use": "Harbor/coast kitbash component",
+    "usage": {
+      "category": "plant",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 5,
+      "placement": "Use sparingly behind a coastal station; share its materials across repeats.",
+      "cautions": "Leave the trunk out of the walking route and do not imply a botanical source identification.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "kenney-pirate-kit-rocks-a",
+    "title": "rocks-a",
+    "collection": "kenney-pirate-kit",
+    "creator": "Kenney",
+    "sourceUrl": "https://kenney.nl/assets/pirate-kit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/kenney-pirate-kit-rocks-a.glb",
+    "bytes": 25728,
+    "sha256": "10c86317e316088aade838f8f98a26bd132b350c11f1b3f8755cffe4bc1162e6",
+    "dimensions": [
+      2,
+      1.13367,
+      1.71593
+    ],
+    "triangles": 264,
+    "sourcePath": "assets/external/models/kenney-pirate-kit/rocks-a.glb",
+    "sourcePayloadBytes": 37705,
+    "category": "rock",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "tempest"
+    ],
+    "use": "Harbor/coast kitbash component",
+    "usage": {
+      "category": "rock",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 2,
+      "placement": "Place as a compact perimeter cluster or a low-cost distant substitute for the scan.",
+      "cautions": "Angular low-poly style differs from the textured coast; avoid intermixing at close range.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 1024px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": "/models/external/previews/kenney-pirate-kit-rocks-a.jpg",
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "kenney-pirate-kit-rocks-b",
+    "title": "rocks-b",
+    "collection": "kenney-pirate-kit",
+    "creator": "Kenney",
+    "sourceUrl": "https://kenney.nl/assets/pirate-kit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/kenney-pirate-kit-rocks-b.glb",
+    "bytes": 28252,
+    "sha256": "6e1693c60ddc3acdce0b936cb04a50d5c98cf3e016210d98fe78e139dda67ac9",
+    "dimensions": [
+      2.26351,
+      1.86432,
+      2.4
+    ],
+    "triangles": 300,
+    "sourcePath": "assets/external/models/kenney-pirate-kit/rocks-b.glb",
+    "sourcePayloadBytes": 41377,
+    "category": "rock",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "tempest"
+    ],
+    "use": "Harbor/coast kitbash component",
+    "usage": {
+      "category": "rock",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 2.4,
+      "placement": "Rotate around Y to vary an outer-shore cluster.",
+      "cautions": "Solid-looking rock needs a collider if within walking range.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 1024px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "kenney-pirate-kit-rocks-c",
+    "title": "rocks-c",
+    "collection": "kenney-pirate-kit",
+    "creator": "Kenney",
+    "sourceUrl": "https://kenney.nl/assets/pirate-kit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/kenney-pirate-kit-rocks-c.glb",
+    "bytes": 23620,
+    "sha256": "6b02104635059875662273e732a01e64fa62141c0dca5f276ece00b094908b51",
+    "dimensions": [
+      2.77978,
+      1.75515,
+      2.8
+    ],
+    "triangles": 232,
+    "sourcePath": "assets/external/models/kenney-pirate-kit/rocks-c.glb",
+    "sourcePayloadBytes": 34633,
+    "category": "rock",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "tempest"
+    ],
+    "use": "Harbor/coast kitbash component",
+    "usage": {
+      "category": "rock",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 2.8,
+      "placement": "Use as a taller perimeter silhouette behind a source station.",
+      "cautions": "Do not use its visual outline as automatically navigable cave geometry.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 1024px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "kenney-pirate-kit-rocks-sand-a",
+    "title": "rocks-sand-a",
+    "collection": "kenney-pirate-kit",
+    "creator": "Kenney",
+    "sourceUrl": "https://kenney.nl/assets/pirate-kit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/kenney-pirate-kit-rocks-sand-a.glb",
+    "bytes": 45908,
+    "sha256": "42d289de3e1dfd3118dc3a0a7a2e0564c9e6d3f5300832dbfebf5be0eba895a0",
+    "dimensions": [
+      3,
+      1.88473,
+      2.5739
+    ],
+    "triangles": 552,
+    "sourcePath": "assets/external/models/kenney-pirate-kit/rocks-sand-a.glb",
+    "sourcePayloadBytes": 67113,
+    "category": "rock",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "tempest"
+    ],
+    "use": "Harbor/coast kitbash component",
+    "usage": {
+      "category": "rock",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 3,
+      "placement": "Sink the sand base slightly into coastal ground to avoid a visible floating seam.",
+      "cautions": "Match sand colors first; its base is not a terrain collision mesh.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 1024px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "kenney-pirate-kit-structure-platform-dock",
+    "title": "structure-platform-dock",
+    "collection": "kenney-pirate-kit",
+    "creator": "Kenney",
+    "sourceUrl": "https://kenney.nl/assets/pirate-kit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/kenney-pirate-kit-structure-platform-dock.glb",
+    "bytes": 29624,
+    "sha256": "4799983506686e6526dfb6792a5e795c476b8c55be3e7ae886e6fca11bf25ccf",
+    "dimensions": [
+      2.98485,
+      1.56681,
+      3
+    ],
+    "triangles": 324,
+    "sourcePath": "assets/external/models/kenney-pirate-kit/structure-platform-dock.glb",
+    "sourcePayloadBytes": 43397,
+    "category": "structure",
+    "classroomStatus": "assembly-or-context-review",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "tempest"
+    ],
+    "use": "Harbor/coast kitbash component",
+    "usage": {
+      "category": "structure",
+      "classroom_status": "assembly-or-context-review",
+      "target_longest_dimension_m": 3,
+      "placement": "Snap to a designed shore connector, matching pier surface elevation.",
+      "cautions": "Keep in the catalog until traversal boundaries and shore connection are authored.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "kenney-pirate-kit-platform-planks",
+    "title": "platform-planks",
+    "collection": "kenney-pirate-kit",
+    "creator": "Kenney",
+    "sourceUrl": "https://kenney.nl/assets/pirate-kit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/kenney-pirate-kit-platform-planks.glb",
+    "bytes": 11328,
+    "sha256": "0ad73012af5fc87df45a0b68e85cacb4e7bcc6a882c00291024dc6b440076976",
+    "dimensions": [
+      1.40164,
+      0.31676,
+      2
+    ],
+    "triangles": 48,
+    "sourcePath": "assets/external/models/kenney-pirate-kit/platform-planks.glb",
+    "sourcePayloadBytes": 16585,
+    "category": "structure",
+    "classroomStatus": "assembly-or-context-review",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "tempest"
+    ],
+    "use": "Harbor/coast kitbash component",
+    "usage": {
+      "category": "structure",
+      "classroom_status": "assembly-or-context-review",
+      "target_longest_dimension_m": 2,
+      "placement": "Use to extend a designed pier or as a shallow floor insert.",
+      "cautions": "It does not extend the existing walking polygon; avoid promising an unreachable platform.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-bag",
+    "title": "Bag",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-bag.glb",
+    "bytes": 193936,
+    "sha256": "a7a2de649c4a3c56519953a3be42c334ffc04d0b70d0bc42577fc6f6c770f7de",
+    "dimensions": [
+      0.5329,
+      0.65,
+      0.44279
+    ],
+    "triangles": 858,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Bag.gltf",
+    "sourcePayloadBytes": 14295800,
+    "category": "cargo",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "cargo",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.65,
+      "placement": "Set on the floor beside a stall or underneath a reading table.",
+      "cautions": "Use as a generic cloth container, not evidence of a particular traded commodity.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 2,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-barrel",
+    "title": "Barrel",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-barrel.glb",
+    "bytes": 253952,
+    "sha256": "8348285bfcbd3ae10f59c8e81efad211cee305d4e16852dabed9f5075b7fa0e9",
+    "dimensions": [
+      0.69962,
+      0.9,
+      0.69962
+    ],
+    "triangles": 824,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Barrel.gltf",
+    "sourcePayloadBytes": 14702948,
+    "category": "cargo",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "cargo",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.9,
+      "placement": "Place beside a coastal pavilion with the base resting on the floor.",
+      "cautions": "Use one collision footprint per stack; generic medieval styling requires period review.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 2,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-bench",
+    "title": "Bench",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-bench.glb",
+    "bytes": 214660,
+    "sha256": "cd63529f05fc3557045541ea0b9b6fcf26de1151821a865babdfdf9e11faae0c",
+    "dimensions": [
+      1.7,
+      0.32646,
+      0.3271
+    ],
+    "triangles": 404,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Bench.gltf",
+    "sourcePayloadBytes": 14665095,
+    "category": "furniture",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "furniture",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 1.7,
+      "placement": "Place along a rear wall with its seat facing the reading area.",
+      "cautions": "Static furniture; sitting behavior and accessible approach must be implemented separately.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 2,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-bookcase-2",
+    "title": "Bookcase_2",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-bookcase-2.glb",
+    "bytes": 292628,
+    "sha256": "b5313c1c70fa70562090b78264a2ff2f3eb1e452db87f5bd6719256254f410c4",
+    "dimensions": [
+      1.03355,
+      1.8,
+      0.30342
+    ],
+    "triangles": 2148,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Bookcase_2.gltf",
+    "sourcePayloadBytes": 14738790,
+    "category": "furniture",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "pride-and-prejudice",
+      "macbeth",
+      "frankenstein",
+      "christmas-carol",
+      "philadelphia",
+      "douglass",
+      "seneca-falls"
+    ],
+    "use": "Reading-station furniture/prop",
+    "usage": {
+      "category": "furniture",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 1.8,
+      "placement": "Place at the back of an archive station, facing its approach.",
+      "cautions": "Bound books fit later-period reading worlds; do not silently substitute them for ancient scrolls.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 2,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-bookstand",
+    "title": "BookStand",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-bookstand.glb",
+    "bytes": 172404,
+    "sha256": "c856c036926286cdf5b1fd04ad9524a8e509ff34fb81048195c97f435192b956",
+    "dimensions": [
+      0.16824,
+      0.48,
+      0.1696
+    ],
+    "triangles": 1526,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/BookStand.gltf",
+    "sourcePayloadBytes": 7847499,
+    "category": "reading",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "pride-and-prejudice",
+      "macbeth",
+      "frankenstein",
+      "christmas-carol",
+      "philadelphia",
+      "douglass",
+      "seneca-falls"
+    ],
+    "use": "Reading-station furniture/prop",
+    "usage": {
+      "category": "reading",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.48,
+      "placement": "Rest on a desk with the reading face toward the learner.",
+      "cautions": "Attach a separate reviewed source action; decorative pages are not quotations.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-book-5",
+    "title": "Book_5",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-book-5.glb",
+    "bytes": 124852,
+    "sha256": "5d1b680081a97f0e0527198db904f9c1e2eb13b9825026b5a9a80caca7e9af4c",
+    "dimensions": [
+      0.22247,
+      0.06649,
+      0.3
+    ],
+    "triangles": 96,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Book_5.gltf",
+    "sourcePayloadBytes": 9730000,
+    "category": "reading",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "pride-and-prejudice",
+      "macbeth",
+      "frankenstein",
+      "christmas-carol",
+      "philadelphia",
+      "douglass",
+      "seneca-falls"
+    ],
+    "use": "Reading-station furniture/prop",
+    "usage": {
+      "category": "reading",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.3,
+      "placement": "Lay on a desk as a source-access prop for later-period scenes.",
+      "cautions": "The book cover does not identify the assigned edition; display that in the reader.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-book-stack-1",
+    "title": "Book_Stack_1",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-book-stack-1.glb",
+    "bytes": 135276,
+    "sha256": "a9e2bd7ed771ef3e0f9779b18b2b43e038a53a89f2b38e4ea91ce195b47fbf1b",
+    "dimensions": [
+      0.42,
+      0.31502,
+      0.33356
+    ],
+    "triangles": 208,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Book_Stack_1.gltf",
+    "sourcePayloadBytes": 9736927,
+    "category": "reading",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "pride-and-prejudice",
+      "macbeth",
+      "frankenstein",
+      "christmas-carol",
+      "philadelphia",
+      "douglass",
+      "seneca-falls"
+    ],
+    "use": "Reading-station furniture/prop",
+    "usage": {
+      "category": "reading",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.42,
+      "placement": "Place at the rear corner of a desk, preserving space for the selected passage.",
+      "cautions": "A stack represents scenery, not additional sources available to the learner.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-bucket-wooden-1",
+    "title": "Bucket_Wooden_1",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-bucket-wooden-1.glb",
+    "bytes": 223460,
+    "sha256": "4b765773a8301f57e190dcd6ef576bd9e530924a077333c2bf7ae29f5338e71e",
+    "dimensions": [
+      0.55,
+      0.37111,
+      0.48602
+    ],
+    "triangles": 976,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Bucket_Wooden_1.gltf",
+    "sourcePayloadBytes": 14677948,
+    "category": "cargo",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "cargo",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.55,
+      "placement": "Place next to a coastal crate or workbench, away from the approach lane.",
+      "cautions": "Check the handle silhouette and generic construction against the setting.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 2,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-cabinet",
+    "title": "Cabinet",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-cabinet.glb",
+    "bytes": 316260,
+    "sha256": "ebc3d1807ebd506d5eda4bff4d2e0d1b25ad58135af382a716faafbc81e36ba3",
+    "dimensions": [
+      1.5,
+      1.09861,
+      0.39329
+    ],
+    "triangles": 2388,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Cabinet.gltf",
+    "sourcePayloadBytes": 14760585,
+    "category": "furniture",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "pride-and-prejudice",
+      "macbeth",
+      "frankenstein",
+      "christmas-carol",
+      "philadelphia",
+      "douglass",
+      "seneca-falls"
+    ],
+    "use": "Reading-station furniture/prop",
+    "usage": {
+      "category": "furniture",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 1.5,
+      "placement": "Place at the rear of a reading pavilion as closed storage.",
+      "cautions": "Doors are static; do not suggest opening or collecting hidden evidence.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 2,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-candlestick",
+    "title": "CandleStick",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-candlestick.glb",
+    "bytes": 105680,
+    "sha256": "0124cbbebea8c14c28e2873984ee422394255e71e7f82423945f6389f51c1577",
+    "dimensions": [
+      0.42,
+      0.24986,
+      0.2887
+    ],
+    "triangles": 730,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/CandleStick.gltf",
+    "sourcePayloadBytes": 6881872,
+    "category": "reading",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "pride-and-prejudice",
+      "macbeth",
+      "frankenstein",
+      "christmas-carol",
+      "philadelphia",
+      "douglass",
+      "seneca-falls"
+    ],
+    "use": "Reading-station furniture/prop",
+    "usage": {
+      "category": "reading",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.42,
+      "placement": "Set on the right rear of a writing surface.",
+      "cautions": "No light or fire is added by this asset; historical placement remains interpretive.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-candle-1",
+    "title": "Candle_1",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-candle-1.glb",
+    "bytes": 124552,
+    "sha256": "02aa7ff32d2413c3b6500ea9ce0e8de2fde77f2362221a306cb2f97443e7b405",
+    "dimensions": [
+      0.12803,
+      0.18,
+      0.1471
+    ],
+    "triangles": 212,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Candle_1.gltf",
+    "sourcePayloadBytes": 9730132,
+    "category": "reading",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "pride-and-prejudice",
+      "macbeth",
+      "frankenstein",
+      "christmas-carol",
+      "philadelphia",
+      "douglass",
+      "seneca-falls"
+    ],
+    "use": "Reading-station furniture/prop",
+    "usage": {
+      "category": "reading",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.18,
+      "placement": "Use as a small tabletop candle beside books.",
+      "cautions": "Do not spawn point lights for every candle; use the scene lighting budget.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-chair-1",
+    "title": "Chair_1",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-chair-1.glb",
+    "bytes": 222088,
+    "sha256": "2caf2c44edfa5adeb3b9349e784410cd0fb417a0ff2c72b1991582cba3f445b7",
+    "dimensions": [
+      0.49096,
+      0.95,
+      0.46426
+    ],
+    "triangles": 496,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Chair_1.gltf",
+    "sourcePayloadBytes": 14673901,
+    "category": "furniture",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "pride-and-prejudice",
+      "macbeth",
+      "frankenstein",
+      "christmas-carol",
+      "philadelphia",
+      "douglass",
+      "seneca-falls"
+    ],
+    "use": "Reading-station furniture/prop",
+    "usage": {
+      "category": "furniture",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.95,
+      "placement": "Place to the side of the reading desk with its back clear of the path.",
+      "cautions": "Fantasy wooden chair, not verified Regency furniture; its geometry does not provide sitting controls.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": "/models/external/previews/quaternius-fantasy-props-chair-1.jpg",
+    "materials": 2,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-crate-wooden",
+    "title": "Crate_Wooden",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-crate-wooden.glb",
+    "bytes": 263400,
+    "sha256": "3824d650afc5ef1b2d8ac2a3cdae686767f6f1267fcdcb8a6988921e5cdf9b98",
+    "dimensions": [
+      0.67856,
+      0.75,
+      0.73176
+    ],
+    "triangles": 1576,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Crate_Wooden.gltf",
+    "sourcePayloadBytes": 14712401,
+    "category": "cargo",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "cargo",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.75,
+      "placement": "Place behind a coastal source station or alongside cargo.",
+      "cautions": "Only animate visibility with the relevant harbor activity, never the archive state.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 2,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-farmcrate-empty",
+    "title": "FarmCrate_Empty",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-farmcrate-empty.glb",
+    "bytes": 245552,
+    "sha256": "52f701856a4d1b0d7581a9a7afa7b75dd8169c6b158c6d09267438044d7ef0c3",
+    "dimensions": [
+      0.7,
+      0.23905,
+      0.40613
+    ],
+    "triangles": 1928,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/FarmCrate_Empty.gltf",
+    "sourcePayloadBytes": 14700112,
+    "category": "cargo",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "cargo",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.7,
+      "placement": "Use as a shallow market container with the open side upward.",
+      "cautions": "Parent its contents to the same group if a scenario hides the stock.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 2,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-farmcrate-apple",
+    "title": "FarmCrate_Apple",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-farmcrate-apple.glb",
+    "bytes": 454448,
+    "sha256": "b27f9b10ba473bf79d77d133ab64b7734634635a6eecd8f87512e7a444a92b34",
+    "dimensions": [
+      0.7,
+      0.23907,
+      0.40615
+    ],
+    "triangles": 4028,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/FarmCrate_Apple.gltf",
+    "sourcePayloadBytes": 24503985,
+    "category": "cargo",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "cargo",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.7,
+      "placement": "Place at a market table or garden produce station when context allows.",
+      "cautions": "Do not infer historical crop trade from this generic game prop.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 3,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-mug",
+    "title": "Mug",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-mug.glb",
+    "bytes": 203444,
+    "sha256": "2aeac786a10f15934fc4ba1d580d0905f64696cb5c9d70b0a723f353c8f88a94",
+    "dimensions": [
+      0.2,
+      0.19146,
+      0.15284
+    ],
+    "triangles": 268,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Mug.gltf",
+    "sourcePayloadBytes": 14657862,
+    "category": "reading",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "reading",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.2,
+      "placement": "Rest near the side of a later-period reading desk.",
+      "cautions": "A mug is background context, not a source-bearing artifact unless explicitly assigned.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 2,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-pot-1",
+    "title": "Pot_1",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-pot-1.glb",
+    "bytes": 121184,
+    "sha256": "845a1fd9db557c556713ba9583c4f3732d982098b5f2858ba882d16be410088a",
+    "dimensions": [
+      0.55,
+      0.22825,
+      0.49565
+    ],
+    "triangles": 1068,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Pot_1.gltf",
+    "sourcePayloadBytes": 6897582,
+    "category": "pottery",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "pottery",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.55,
+      "placement": "Stand on a stall or floor; pair with Pot_1_Lid at matched authoring scale.",
+      "cautions": "For the separately normalized lid, inspect the fit rather than assuming identical multipliers.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-pot-1-lid",
+    "title": "Pot_1_Lid",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-pot-1-lid.glb",
+    "bytes": 130156,
+    "sha256": "22bad342b4e3eb0b95b3e363f8795996871a17ebd5a3c13c2f861228cf094897",
+    "dimensions": [
+      0.4,
+      0.20801,
+      0.36047
+    ],
+    "triangles": 1292,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Pot_1_Lid.gltf",
+    "sourcePayloadBytes": 6906553,
+    "category": "pottery",
+    "classroomStatus": "assembly-or-context-review",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "pottery",
+      "classroom_status": "assembly-or-context-review",
+      "target_longest_dimension_m": 0.4,
+      "placement": "Use as a companion lid, fitted to the vessel opening in Blender.",
+      "cautions": "This is an assembly part: avoid automatically placing it as a whole pot.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-pouch-large",
+    "title": "Pouch_Large",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-pouch-large.glb",
+    "bytes": 236260,
+    "sha256": "a94527be1c53e8e82674130b508211542f0edf4900c16f6d59c3718625a1ea13",
+    "dimensions": [
+      0.3,
+      0.21167,
+      0.15941
+    ],
+    "triangles": 730,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Pouch_Large.gltf",
+    "sourcePayloadBytes": 16615864,
+    "category": "cargo",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "cargo",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.3,
+      "placement": "Rest on a table or attach to a character belt with a dedicated socket.",
+      "cautions": "Not rigged clothing; do not weight it automatically to the entire body.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 2,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-rope-1",
+    "title": "Rope_1",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-rope-1.glb",
+    "bytes": 149184,
+    "sha256": "1838e138444bfa68224150ad6b8c5d587c3923135bb68a87df0eef1946c8158e",
+    "dimensions": [
+      0.73546,
+      0.12912,
+      0.8
+    ],
+    "triangles": 1748,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Rope_1.gltf",
+    "sourcePayloadBytes": 7827103,
+    "category": "cargo",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "cargo",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.8,
+      "placement": "Lay as dock cargo with the lowest point on the support surface.",
+      "cautions": "Not a physics rope; author collision and line behavior if a task needs them.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-rope-2",
+    "title": "Rope_2",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-rope-2.glb",
+    "bytes": 142468,
+    "sha256": "dd59c3ff0b167011f1005f9d602725b7cfb284c72594311bd1d1119223de760d",
+    "dimensions": [
+      0.7648,
+      0.117,
+      0.8
+    ],
+    "triangles": 1460,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Rope_2.gltf",
+    "sourcePayloadBytes": 7820383,
+    "category": "cargo",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "cargo",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.8,
+      "placement": "Use as a second rope form beside a boat or harbor crate.",
+      "cautions": "Share the material with other rope forms and avoid stacking transparent cutouts.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-rope-3",
+    "title": "Rope_3",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-rope-3.glb",
+    "bytes": 149188,
+    "sha256": "3f90f28fa4b0d21fb263a2c3bf3d9b0527e9ce25dcb5a2fb7a6c59d6c72ba85c",
+    "dimensions": [
+      0.8,
+      0.06629,
+      0.61939
+    ],
+    "triangles": 1748,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Rope_3.gltf",
+    "sourcePayloadBytes": 7827105,
+    "category": "cargo",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "cargo",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.8,
+      "placement": "Use as an alternate coil near the dock edge or storage corner.",
+      "cautions": "Keep it off the walking centerline; no rigging constraint is included.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-scroll-1",
+    "title": "Scroll_1",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-scroll-1.glb",
+    "bytes": 158420,
+    "sha256": "0f79dfb960ca03a16b00bfce50b212808cff57f4560e2c6a8dce54df7248d9fc",
+    "dimensions": [
+      0.55,
+      0.13257,
+      0.14233
+    ],
+    "triangles": 512,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Scroll_1.gltf",
+    "sourcePayloadBytes": 17232541,
+    "category": "reading",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "reading",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.55,
+      "placement": "Lay on a reading table with a zone-level source action.",
+      "cautions": "The ornamental band is invented decoration; it is not transcribed source text.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": "/models/external/previews/quaternius-fantasy-props-scroll-1.jpg",
+    "materials": 2,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-scroll-2",
+    "title": "Scroll_2",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-scroll-2.glb",
+    "bytes": 167616,
+    "sha256": "474f0ab29d7aa0b055ec8b996dd5e3479e9c88853f8bd3c3bb4f512f25b78507",
+    "dimensions": [
+      0.55,
+      0.13862,
+      0.15035
+    ],
+    "triangles": 672,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Scroll_2.gltf",
+    "sourcePayloadBytes": 17240835,
+    "category": "reading",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "reading",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.55,
+      "placement": "Use as the companion scroll form on a coastal or archive desk.",
+      "cautions": "Select the actual passage through the reader, not by interpreting the texture markings.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 2,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-shelf-arch",
+    "title": "Shelf_Arch",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-shelf-arch.glb",
+    "bytes": 261868,
+    "sha256": "a2997f0e6038e3c093dd2a103eebcda35a3bb182b2aa03c6cd98511e4a6ccf39",
+    "dimensions": [
+      1.29281,
+      1.65,
+      0.32354
+    ],
+    "triangles": 1286,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Shelf_Arch.gltf",
+    "sourcePayloadBytes": 14710661,
+    "category": "furniture",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "furniture",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 1.65,
+      "placement": "Place against the back of a pavilion and inspect its shelf clearances.",
+      "cautions": "Generic fantasy form; it cannot open the archive or store learner progression.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 2,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-shelf-simple",
+    "title": "Shelf_Simple",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-shelf-simple.glb",
+    "bytes": 130916,
+    "sha256": "2ddd93351cec238edad0b88eb3dc507887d45a5a6fe57de2610946b633193113",
+    "dimensions": [
+      1.5,
+      0.39116,
+      0.37034
+    ],
+    "triangles": 480,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Shelf_Simple.gltf",
+    "sourcePayloadBytes": 7807496,
+    "category": "furniture",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "furniture",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 1.5,
+      "placement": "Use as understated rear storage for an archive station.",
+      "cautions": "Small reading props need explicit shelf-height placement, not only a shared floor origin.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-stall-cart-empty",
+    "title": "Stall_Cart_Empty",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-stall-cart-empty.glb",
+    "bytes": 513924,
+    "sha256": "a24c7b49bdfab326420ce686752be43580a8d497ea57afda9a9e5799e5bc14a8",
+    "dimensions": [
+      2.4,
+      2.09114,
+      0.842
+    ],
+    "triangles": 3936,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Stall_Cart_Empty.gltf",
+    "sourcePayloadBytes": 21366652,
+    "category": "furniture",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "furniture",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 2.4,
+      "placement": "Use as a freestanding display at the side of a larger market.",
+      "cautions": "Wheels are static; its footprint must not straddle a navigation route.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 3,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-stall-empty",
+    "title": "Stall_Empty",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-stall-empty.glb",
+    "bytes": 347760,
+    "sha256": "8f1f9ac62c5df024e64d04c54faa9de352843c258182da051b63997254a59581",
+    "dimensions": [
+      1.96621,
+      2.8,
+      0.99358
+    ],
+    "triangles": 1496,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Stall_Empty.gltf",
+    "sourcePayloadBytes": 21217511,
+    "category": "furniture",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "furniture",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 2.8,
+      "placement": "Use for a new market stop with the front opening toward the learner.",
+      "cautions": "Do not overlay the already-authored Alexandria canopy; provide a replacement or a separate site.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": "/models/external/previews/quaternius-fantasy-props-stall-empty.jpg",
+    "materials": 3,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-stool",
+    "title": "Stool",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-stool.glb",
+    "bytes": 120748,
+    "sha256": "60f7d7ab42db562a8881c31c28b8943eacf26ab1105c87dc316c313cbcead7b6",
+    "dimensions": [
+      0.52401,
+      0.65,
+      0.52401
+    ],
+    "triangles": 152,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Stool.gltf",
+    "sourcePayloadBytes": 7797151,
+    "category": "furniture",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "furniture",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.65,
+      "placement": "Place beside a workbench without blocking the approach.",
+      "cautions": "This is static seating; it has no sitting animation or interaction.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-table-large",
+    "title": "Table_Large",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-table-large.glb",
+    "bytes": 255392,
+    "sha256": "eab67e1de484428ba8d8a47c8bae06a6819a92765d0fb5cd399076534b85a73c",
+    "dimensions": [
+      2.2,
+      0.62826,
+      0.84699
+    ],
+    "triangles": 986,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Table_Large.gltf",
+    "sourcePayloadBytes": 14702205,
+    "category": "furniture",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "furniture",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 2.2,
+      "placement": "Center at the rear of a source pavilion, leaving the front lane open.",
+      "cautions": "Use the measured top height when placing objects; the mesh is not a collider.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 2,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-table-plate",
+    "title": "Table_Plate",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-table-plate.glb",
+    "bytes": 90816,
+    "sha256": "17e0775c274302ad740baf0a0951ac7d348a76a2c43ad3323cad55d42881aaec",
+    "dimensions": [
+      0.27696,
+      0.01675,
+      0.28
+    ],
+    "triangles": 172,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Table_Plate.gltf",
+    "sourcePayloadBytes": 6867228,
+    "category": "reading",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "reading",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.28,
+      "placement": "Lay flat on a later-period tabletop or appropriate food display.",
+      "cautions": "Generic tableware, not proof of period dining customs.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-vase-2",
+    "title": "Vase_2",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-vase-2.glb",
+    "bytes": 141404,
+    "sha256": "bda7e0b3be05ba2ffdab38c492d6c59ddcc9e6c71e1134e8fb71e712322bd5d0",
+    "dimensions": [
+      0.55,
+      0.40878,
+      0.55
+    ],
+    "triangles": 598,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Vase_2.gltf",
+    "sourcePayloadBytes": 9745336,
+    "category": "pottery",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "pottery",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.55,
+      "placement": "Use as a close-range textured vessel at the market station.",
+      "cautions": "Stylized fantasy pottery; do not call it an excavated Greek artifact.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": "/models/external/previews/quaternius-fantasy-props-vase-2.jpg",
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-vase-4",
+    "title": "Vase_4",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-vase-4.glb",
+    "bytes": 142336,
+    "sha256": "071d3543eb76207b1f40bafeba8f067d274c52b75f2192ff65ed38e6ebe567b8",
+    "dimensions": [
+      0.44449,
+      0.6,
+      0.44449
+    ],
+    "triangles": 598,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Vase_4.gltf",
+    "sourcePayloadBytes": 9746181,
+    "category": "pottery",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "pottery",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.6,
+      "placement": "Use as a contrasting vessel on the same material palette.",
+      "cautions": "Keep enough separation for its widest silhouette; review motif suitability.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-workbench",
+    "title": "Workbench",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-workbench.glb",
+    "bytes": 260944,
+    "sha256": "c510a0cdf01eed87da9d8342a3bbbc227e54d9b317b019f77c990ac4cd0aa0b8",
+    "dimensions": [
+      2,
+      0.88618,
+      1.01455
+    ],
+    "triangles": 1368,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Workbench.gltf",
+    "sourcePayloadBytes": 14709219,
+    "category": "furniture",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "odyssey",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market, cargo, pottery or archive prop",
+    "usage": {
+      "category": "furniture",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 2,
+      "placement": "Use as a coastal reading/work surface with objects at the measured top.",
+      "cautions": "Generic workshop furniture; do not imply a reconstructed historical workshop.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 2,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-fantasy-props-workbench-drawers",
+    "title": "Workbench_Drawers",
+    "collection": "quaternius-fantasy-props",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/fantasy-props-megakit",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-fantasy-props-workbench-drawers.glb",
+    "bytes": 209680,
+    "sha256": "ec85bd80d12f9936f2eb45c67ceaee966e2f0d3740aaee936fc2cee5882cc7de",
+    "dimensions": [
+      2,
+      1.14553,
+      1.41349
+    ],
+    "triangles": 364,
+    "sourcePath": "assets/external/models/quaternius-fantasy-props/Workbench_Drawers.gltf",
+    "sourcePayloadBytes": 14662630,
+    "category": "furniture",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "pride-and-prejudice",
+      "macbeth",
+      "frankenstein",
+      "christmas-carol",
+      "philadelphia",
+      "douglass",
+      "seneca-falls"
+    ],
+    "use": "Reading-station furniture/prop",
+    "usage": {
+      "category": "furniture",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 2,
+      "placement": "Use as a comparison desk in archive settings.",
+      "cautions": "Drawers are decorative; do not promise storage or opening behavior.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 2,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-base-characters-superhero-female-fullbody",
+    "title": "Superhero_Female_FullBody",
+    "collection": "quaternius-base-characters",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/universal-base-characters",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-base-characters-superhero-female-fullbody.glb",
+    "bytes": 1485016,
+    "sha256": "93deaaa8790217ae2cac2b288f30a2decd5e3a8a541336a9d9956e1ebde7813c",
+    "dimensions": [
+      1.66887,
+      1.77505,
+      0.3027
+    ],
+    "triangles": 15060,
+    "sourcePath": "assets/external/models/quaternius-base-characters/bodies/Superhero_Female_FullBody.gltf",
+    "sourcePayloadBytes": 16049970,
+    "category": "character-base",
+    "classroomStatus": "adaptation-required",
+    "worlds": [
+      "alexandria",
+      "generated-settings"
+    ],
+    "use": "Rigged base for Dorian, Thaleia or Ione",
+    "usage": {
+      "category": "character-base",
+      "classroom_status": "adaptation-required",
+      "target_longest_dimension_m": null,
+      "placement": "Import the original humanoid rig; add period garments and fit an approved hairstyle before replacing a named actor.",
+      "cautions": "Superhero proportions and minimal clothing are not suitable default teaching characters. Preserve source rig and use SkeletonUtils.clone for independent instances.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Preserve skeleton and clip names; retarget and inspect deformations before classroom use.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Supplied local aliases for broken publisher texture URIs by copying the matching same-directory normal PNG bytes. Original glTF and ZIP remain unchanged. See dependency_aliases.",
+      "Textures at most 1024px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [],
+    "clips": [],
+    "previewUrl": "/models/external/previews/quaternius-base-characters-superhero-female-fullbody.jpg",
+    "materials": 3,
+    "skins": 1
+  },
+  {
+    "id": "quaternius-base-characters-superhero-male-fullbody",
+    "title": "Superhero_Male_FullBody",
+    "collection": "quaternius-base-characters",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/universal-base-characters",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-base-characters-superhero-male-fullbody.glb",
+    "bytes": 1182272,
+    "sha256": "2a5292cf8500b84f9bdba393c54c60a3849e008a1aca8d0b0e6c0926728e2cde",
+    "dimensions": [
+      1.85887,
+      1.81959,
+      0.29149
+    ],
+    "triangles": 14318,
+    "sourcePath": "assets/external/models/quaternius-base-characters/bodies/Superhero_Male_FullBody.gltf",
+    "sourcePayloadBytes": 15487990,
+    "category": "character-base",
+    "classroomStatus": "adaptation-required",
+    "worlds": [
+      "alexandria",
+      "generated-settings"
+    ],
+    "use": "Rigged base for Dorian, Thaleia or Ione",
+    "usage": {
+      "category": "character-base",
+      "classroom_status": "adaptation-required",
+      "target_longest_dimension_m": null,
+      "placement": "Import the original humanoid rig; add period garments and fit an approved hairstyle before replacing a named actor.",
+      "cautions": "Superhero proportions and minimal clothing are not suitable default teaching characters. Preserve source rig and use SkeletonUtils.clone for independent instances.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Preserve skeleton and clip names; retarget and inspect deformations before classroom use.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Supplied local aliases for broken publisher texture URIs by copying the matching same-directory normal PNG bytes. Original glTF and ZIP remain unchanged. See dependency_aliases.",
+      "Textures at most 1024px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [],
+    "clips": [],
+    "previewUrl": "/models/external/previews/quaternius-base-characters-superhero-male-fullbody.jpg",
+    "materials": 3,
+    "skins": 1
+  },
+  {
+    "id": "quaternius-base-characters-eyebrows-female",
+    "title": "Eyebrows_Female",
+    "collection": "quaternius-base-characters",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/universal-base-characters",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-base-characters-eyebrows-female.glb",
+    "bytes": 142924,
+    "sha256": "fad73b11e89f48dc4457ba6433eee380e6fe8bcdca1fe7291aecdd898efcb5be",
+    "dimensions": [
+      0.126,
+      0.03761,
+      0.04029
+    ],
+    "triangles": 1480,
+    "sourcePath": "assets/external/models/quaternius-base-characters/hair/Eyebrows_Female.gltf",
+    "sourcePayloadBytes": 6509583,
+    "category": "character-accessory",
+    "classroomStatus": "adaptation-required",
+    "worlds": [
+      "alexandria",
+      "generated-settings"
+    ],
+    "use": "Reusable hair/brow accessory",
+    "usage": {
+      "category": "character-accessory",
+      "classroom_status": "adaptation-required",
+      "target_longest_dimension_m": null,
+      "placement": "Fit this eyebrows female accessory to the chosen body in Blender; use a head socket or reviewed skin binding.",
+      "cautions": "This is the origin-at-zero export. Preserve canonical scale for fitting; do not treat it as a complete character or retarget it as a whole body.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Preserve skeleton and clip names; retarget and inspect deformations before classroom use.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-base-characters-eyebrows-regular",
+    "title": "Eyebrows_Regular",
+    "collection": "quaternius-base-characters",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/universal-base-characters",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-base-characters-eyebrows-regular.glb",
+    "bytes": 86000,
+    "sha256": "4260e8f73980893bf0733ead68ef89c314dd323763e947e8fd5b7dc895f3dd6e",
+    "dimensions": [
+      0.12468,
+      0.03061,
+      0.03756
+    ],
+    "triangles": 984,
+    "sourcePath": "assets/external/models/quaternius-base-characters/hair/Eyebrows_Regular.gltf",
+    "sourcePayloadBytes": 5925096,
+    "category": "character-accessory",
+    "classroomStatus": "adaptation-required",
+    "worlds": [
+      "alexandria",
+      "generated-settings"
+    ],
+    "use": "Reusable hair/brow accessory",
+    "usage": {
+      "category": "character-accessory",
+      "classroom_status": "adaptation-required",
+      "target_longest_dimension_m": null,
+      "placement": "Fit this eyebrows regular accessory to the chosen body in Blender; use a head socket or reviewed skin binding.",
+      "cautions": "This is the origin-at-zero export. Preserve canonical scale for fitting; do not treat it as a complete character or retarget it as a whole body.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Preserve skeleton and clip names; retarget and inspect deformations before classroom use.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-base-characters-hair-beard",
+    "title": "Hair_Beard",
+    "collection": "quaternius-base-characters",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/universal-base-characters",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-base-characters-hair-beard.glb",
+    "bytes": 84564,
+    "sha256": "5d8e6cf66397fb8ff22e750f406a14ca9fff7dd8294c73a2c96a0ad541e2c034",
+    "dimensions": [
+      0.16151,
+      0.13982,
+      0.10493
+    ],
+    "triangles": 1034,
+    "sourcePath": "assets/external/models/quaternius-base-characters/hair/Hair_Beard.gltf",
+    "sourcePayloadBytes": 5923783,
+    "category": "character-accessory",
+    "classroomStatus": "adaptation-required",
+    "worlds": [
+      "alexandria",
+      "generated-settings"
+    ],
+    "use": "Reusable hair/brow accessory",
+    "usage": {
+      "category": "character-accessory",
+      "classroom_status": "adaptation-required",
+      "target_longest_dimension_m": null,
+      "placement": "Fit this hair beard accessory to the chosen body in Blender; use a head socket or reviewed skin binding.",
+      "cautions": "This is the origin-at-zero export. Preserve canonical scale for fitting; do not treat it as a complete character or retarget it as a whole body.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Preserve skeleton and clip names; retarget and inspect deformations before classroom use.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-base-characters-hair-buns",
+    "title": "Hair_Buns",
+    "collection": "quaternius-base-characters",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/universal-base-characters",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-base-characters-hair-buns.glb",
+    "bytes": 203360,
+    "sha256": "9a0b10aaeb6d2ab7f1bdce0481cdf700929f5c1f3226cf7f21fee337d0cd3dac",
+    "dimensions": [
+      0.30151,
+      0.2491,
+      0.23675
+    ],
+    "triangles": 3284,
+    "sourcePath": "assets/external/models/quaternius-base-characters/hair/Hair_Buns.gltf",
+    "sourcePayloadBytes": 6573491,
+    "category": "character-accessory",
+    "classroomStatus": "adaptation-required",
+    "worlds": [
+      "alexandria",
+      "generated-settings"
+    ],
+    "use": "Reusable hair/brow accessory",
+    "usage": {
+      "category": "character-accessory",
+      "classroom_status": "adaptation-required",
+      "target_longest_dimension_m": null,
+      "placement": "Fit this hair buns accessory to the chosen body in Blender; use a head socket or reviewed skin binding.",
+      "cautions": "This is the origin-at-zero export. Preserve canonical scale for fitting; do not treat it as a complete character or retarget it as a whole body.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Preserve skeleton and clip names; retarget and inspect deformations before classroom use.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-base-characters-hair-buzzed",
+    "title": "Hair_Buzzed",
+    "collection": "quaternius-base-characters",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/universal-base-characters",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-base-characters-hair-buzzed.glb",
+    "bytes": 79180,
+    "sha256": "3fb36d973b0854940ad565197fbb62edc16fd95e36b4fa6574c8c7bbdb0250da",
+    "dimensions": [
+      0.15459,
+      0.16936,
+      0.19092
+    ],
+    "triangles": 830,
+    "sourcePath": "assets/external/models/quaternius-base-characters/hair/Hair_Buzzed.gltf",
+    "sourcePayloadBytes": 5918400,
+    "category": "character-accessory",
+    "classroomStatus": "adaptation-required",
+    "worlds": [
+      "alexandria",
+      "generated-settings"
+    ],
+    "use": "Reusable hair/brow accessory",
+    "usage": {
+      "category": "character-accessory",
+      "classroom_status": "adaptation-required",
+      "target_longest_dimension_m": null,
+      "placement": "Fit this hair buzzed accessory to the chosen body in Blender; use a head socket or reviewed skin binding.",
+      "cautions": "This is the origin-at-zero export. Preserve canonical scale for fitting; do not treat it as a complete character or retarget it as a whole body.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Preserve skeleton and clip names; retarget and inspect deformations before classroom use.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-base-characters-hair-buzzedfemale",
+    "title": "Hair_BuzzedFemale",
+    "collection": "quaternius-base-characters",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/universal-base-characters",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-base-characters-hair-buzzedfemale.glb",
+    "bytes": 79308,
+    "sha256": "74584832de9bdc4ab00959cf739fe55b3b7a9c82f46abe181b101aeaba36966a",
+    "dimensions": [
+      0.15866,
+      0.17016,
+      0.19763
+    ],
+    "triangles": 830,
+    "sourcePath": "assets/external/models/quaternius-base-characters/hair/Hair_BuzzedFemale.gltf",
+    "sourcePayloadBytes": 5918585,
+    "category": "character-accessory",
+    "classroomStatus": "adaptation-required",
+    "worlds": [
+      "alexandria",
+      "generated-settings"
+    ],
+    "use": "Reusable hair/brow accessory",
+    "usage": {
+      "category": "character-accessory",
+      "classroom_status": "adaptation-required",
+      "target_longest_dimension_m": null,
+      "placement": "Fit this hair buzzedfemale accessory to the chosen body in Blender; use a head socket or reviewed skin binding.",
+      "cautions": "This is the origin-at-zero export. Preserve canonical scale for fitting; do not treat it as a complete character or retarget it as a whole body.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Preserve skeleton and clip names; retarget and inspect deformations before classroom use.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-base-characters-hair-long",
+    "title": "Hair_Long",
+    "collection": "quaternius-base-characters",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/universal-base-characters",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-base-characters-hair-long.glb",
+    "bytes": 187452,
+    "sha256": "58d4b26680ac608fd64ed10d369990b0c302acdc54a02b27bcc9d174c0b53bf9",
+    "dimensions": [
+      0.24471,
+      0.27636,
+      0.27045
+    ],
+    "triangles": 2906,
+    "sourcePath": "assets/external/models/quaternius-base-characters/hair/Hair_Long.gltf",
+    "sourcePayloadBytes": 6557532,
+    "category": "character-accessory",
+    "classroomStatus": "adaptation-required",
+    "worlds": [
+      "alexandria",
+      "generated-settings"
+    ],
+    "use": "Reusable hair/brow accessory",
+    "usage": {
+      "category": "character-accessory",
+      "classroom_status": "adaptation-required",
+      "target_longest_dimension_m": null,
+      "placement": "Fit this hair long accessory to the chosen body in Blender; use a head socket or reviewed skin binding.",
+      "cautions": "This is the origin-at-zero export. Preserve canonical scale for fitting; do not treat it as a complete character or retarget it as a whole body.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Preserve skeleton and clip names; retarget and inspect deformations before classroom use.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-base-characters-hair-simpleparted",
+    "title": "Hair_SimpleParted",
+    "collection": "quaternius-base-characters",
+    "creator": "Quaternius",
+    "sourceUrl": "https://quaternius.itch.io/universal-base-characters",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-base-characters-hair-simpleparted.glb",
+    "bytes": 91320,
+    "sha256": "63738d2f9500a7a19481f8b6f068f09bca0f782d9eca01e74cffbeae39db9026",
+    "dimensions": [
+      0.17542,
+      0.17916,
+      0.18695
+    ],
+    "triangles": 1301,
+    "sourcePath": "assets/external/models/quaternius-base-characters/hair/Hair_SimpleParted.gltf",
+    "sourcePayloadBytes": 5930544,
+    "category": "character-accessory",
+    "classroomStatus": "adaptation-required",
+    "worlds": [
+      "alexandria",
+      "generated-settings"
+    ],
+    "use": "Reusable hair/brow accessory",
+    "usage": {
+      "category": "character-accessory",
+      "classroom_status": "adaptation-required",
+      "target_longest_dimension_m": null,
+      "placement": "Fit this hair simpleparted accessory to the chosen body in Blender; use a head socket or reviewed skin binding.",
+      "cautions": "This is the origin-at-zero export. Preserve canonical scale for fitting; do not treat it as a complete character or retarget it as a whole body.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Preserve skeleton and clip names; retarget and inspect deformations before classroom use.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [],
+    "clips": [],
+    "previewUrl": null,
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "quaternius-animations-ual1-standard",
+    "title": "UAL1_Standard",
+    "collection": "quaternius-animations",
+    "creator": "Quaternius; publisher also credits Gonzalo Furnier for animation collaboration",
+    "sourceUrl": "https://quaternius.itch.io/universal-animation-library",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-animations-ual1-standard.glb",
+    "bytes": 7618436,
+    "sha256": "69591853d817488edaa8fd9bf8fc1d821eaeaf789f8627b3cd23b41c4ed67997",
+    "dimensions": [
+      1.94445,
+      1.82872,
+      0.3696
+    ],
+    "triangles": 13744,
+    "sourcePath": "assets/external/models/quaternius-animations/UAL1_Standard.glb",
+    "sourcePayloadBytes": 7618436,
+    "category": "animation-source",
+    "classroomStatus": "adaptation-required",
+    "worlds": [
+      "alexandria",
+      "generated-settings"
+    ],
+    "use": "Humanoid animation retarget source",
+    "usage": {
+      "category": "animation-source",
+      "classroom_status": "adaptation-required",
+      "target_longest_dimension_m": null,
+      "placement": "Retarget selected clips to an approved dressed humanoid; use Idle_Loop and Idle_Talking_Loop for dialogue, and stop the mixer on disposal.",
+      "cautions": "Root-motion variant moves the root; keep it out of stationary dialogue. The included demonstration body is not a lesson character; retargeting is not verified.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Preserve skeleton and clip names; retarget and inspect deformations before classroom use.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Exact source GLB copied; animation remains catalog-only"
+    ],
+    "anchors": [],
+    "clips": [
+      "A_TPose",
+      "Crouch_Fwd_Loop",
+      "Crouch_Idle_Loop",
+      "Dance_Loop",
+      "Death01",
+      "Driving_Loop",
+      "Fixing_Kneeling",
+      "Hit_Chest",
+      "Hit_Head",
+      "Idle_Loop",
+      "Idle_Talking_Loop",
+      "Idle_Torch_Loop",
+      "Interact",
+      "Jog_Fwd_Loop",
+      "Jump_Land",
+      "Jump_Loop",
+      "Jump_Start",
+      "PickUp_Table",
+      "Pistol_Aim_Down",
+      "Pistol_Aim_Neutral",
+      "Pistol_Aim_Up",
+      "Pistol_Idle_Loop",
+      "Pistol_Reload",
+      "Pistol_Shoot",
+      "Punch_Cross",
+      "Punch_Jab",
+      "Push_Loop",
+      "Roll",
+      "Sitting_Enter",
+      "Sitting_Exit",
+      "Sitting_Idle_Loop",
+      "Sitting_Talking_Loop",
+      "Spell_Simple_Enter",
+      "Spell_Simple_Exit",
+      "Spell_Simple_Idle_Loop",
+      "Spell_Simple_Shoot",
+      "Sprint_Loop",
+      "Swim_Fwd_Loop",
+      "Swim_Idle_Loop",
+      "Sword_Attack",
+      "Sword_Idle",
+      "Walk_Formal_Loop",
+      "Walk_Loop"
+    ],
+    "previewUrl": null,
+    "materials": 2,
+    "skins": 1
+  },
+  {
+    "id": "quaternius-animations-ual1-standard-rm",
+    "title": "UAL1_Standard_RM",
+    "collection": "quaternius-animations",
+    "creator": "Quaternius; publisher also credits Gonzalo Furnier for animation collaboration",
+    "sourceUrl": "https://quaternius.itch.io/universal-animation-library",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/quaternius-animations-ual1-standard-rm.glb",
+    "bytes": 7620504,
+    "sha256": "be684571ed655a1b892c2c07e6e2aeca053b606c442d34004adaf1d944090d01",
+    "dimensions": [
+      1.94445,
+      1.82872,
+      0.3696
+    ],
+    "triangles": 13744,
+    "sourcePath": "assets/external/models/quaternius-animations/UAL1_Standard_RM.glb",
+    "sourcePayloadBytes": 7620504,
+    "category": "animation-source",
+    "classroomStatus": "adaptation-required",
+    "worlds": [
+      "alexandria",
+      "generated-settings"
+    ],
+    "use": "Humanoid animation retarget source",
+    "usage": {
+      "category": "animation-source",
+      "classroom_status": "adaptation-required",
+      "target_longest_dimension_m": null,
+      "placement": "Retarget selected clips to an approved dressed humanoid; use Idle_Loop and Idle_Talking_Loop for dialogue, and stop the mixer on disposal.",
+      "cautions": "Root-motion variant moves the root; keep it out of stationary dialogue. The included demonstration body is not a lesson character; retargeting is not verified.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Preserve skeleton and clip names; retarget and inspect deformations before classroom use.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Exact source GLB copied; animation remains catalog-only"
+    ],
+    "anchors": [],
+    "clips": [
+      "A_TPose",
+      "Crouch_Fwd_Loop",
+      "Crouch_Idle_Loop",
+      "Dance_Loop",
+      "Death01",
+      "Driving_Loop",
+      "Fixing_Kneeling",
+      "Hit_Chest",
+      "Hit_Head",
+      "Idle_Loop",
+      "Idle_Talking_Loop",
+      "Idle_Torch_Loop",
+      "Interact",
+      "Jog_Fwd_Loop",
+      "Jump_Land",
+      "Jump_Loop",
+      "Jump_Start",
+      "PickUp_Table",
+      "Pistol_Aim_Down",
+      "Pistol_Aim_Neutral",
+      "Pistol_Aim_Up",
+      "Pistol_Idle_Loop",
+      "Pistol_Reload",
+      "Pistol_Shoot",
+      "Punch_Cross",
+      "Punch_Jab",
+      "Push_Loop",
+      "Roll",
+      "Sitting_Enter",
+      "Sitting_Exit",
+      "Sitting_Idle_Loop",
+      "Sitting_Talking_Loop",
+      "Spell_Simple_Enter",
+      "Spell_Simple_Exit",
+      "Spell_Simple_Idle_Loop",
+      "Spell_Simple_Shoot",
+      "Sprint_Loop",
+      "Swim_Fwd_Loop",
+      "Swim_Idle_Loop",
+      "Sword_Attack",
+      "Sword_Idle",
+      "Walk_Formal_Loop",
+      "Walk_Loop"
+    ],
+    "previewUrl": null,
+    "materials": 2,
+    "skins": 1
+  },
+  {
+    "id": "polyhaven-coast_rocks_01",
+    "title": "Coast Rocks 01",
+    "collection": "polyhaven-coast_rocks_01",
+    "creator": "Rob Tuytel, Rico Cilliers",
+    "sourceUrl": "https://polyhaven.com/a/coast_rocks_01",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/polyhaven-coast_rocks_01.glb",
+    "bytes": 2682240,
+    "sha256": "45fbbb2a243b4f4079261a27c4d3dad5a39a1fcc9b4699c303df3aeb225fa86e",
+    "dimensions": [
+      10.00113,
+      0.54901,
+      7.14595
+    ],
+    "triangles": 12000,
+    "sourcePath": "assets/external/models/polyhaven-coast_rocks_01/coast_rocks_01_1k.gltf",
+    "sourcePayloadBytes": 21684204,
+    "category": "rock",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "odyssey",
+      "tempest",
+      "generated-settings"
+    ],
+    "use": "Coastal rock/cave approach scenery",
+    "usage": {
+      "category": "rock",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 10,
+      "placement": "Place outside the station approaches; use a simple conservative perimeter collider.",
+      "cautions": "Reduced scan is scenery, not a cave interior or an identified Homeric location.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Decimated toward 12000 triangles",
+      "Textures at most 1024px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": "/models/external/previews/polyhaven-coast_rocks_01.jpg",
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "polyhaven-wooden_table_02",
+    "title": "Wooden Table 02",
+    "collection": "polyhaven-wooden_table_02",
+    "creator": "Serhii Khromov",
+    "sourceUrl": "https://polyhaven.com/a/wooden_table_02",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/polyhaven-wooden_table_02.glb",
+    "bytes": 100220,
+    "sha256": "cf240803e6a91aa6e96a3fee0949690231cb5f387da5def95009c4e50c67c7ca",
+    "dimensions": [
+      2.2,
+      1.55057,
+      1.36921
+    ],
+    "triangles": 196,
+    "sourcePath": "assets/external/models/polyhaven-wooden_table_02/wooden_table_02_1k.gltf",
+    "sourcePayloadBytes": 485316,
+    "category": "furniture",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "pride-and-prejudice",
+      "generated-settings",
+      "philadelphia",
+      "douglass",
+      "seneca-falls"
+    ],
+    "use": "Generic reading/comparison table",
+    "usage": {
+      "category": "furniture",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 2.2,
+      "placement": "Use as the lightest textured reading table; position props using its measured height.",
+      "cautions": "Generic modern scan with no verified Regency provenance.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": "/models/external/previews/polyhaven-wooden_table_02.jpg",
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "polyhaven-planter_pot_clay",
+    "title": "Planter Pot Clay",
+    "collection": "polyhaven-planter_pot_clay",
+    "creator": "Amal Kumar",
+    "sourceUrl": "https://polyhaven.com/a/planter_pot_clay",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/polyhaven-planter_pot_clay.glb",
+    "bytes": 157060,
+    "sha256": "978a8dfc5206b3bc1710a084a533299353012c85a8823114c5fe2b2cb6bd596e",
+    "dimensions": [
+      0.6,
+      0.50047,
+      0.59428
+    ],
+    "triangles": 3080,
+    "sourcePath": "assets/external/models/polyhaven-planter_pot_clay/planter_pot_clay_1k.gltf",
+    "sourcePayloadBytes": 1797158,
+    "category": "plant",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Terracotta garden prop",
+    "usage": {
+      "category": "plant",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.6,
+      "placement": "Place at a garden pavilion corner with the base on the stone pad.",
+      "cautions": "Modern planter; never select it as a Greek amphora.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": "/models/external/previews/polyhaven-planter_pot_clay.jpg",
+    "materials": 1,
+    "skins": 0
+  },
+  {
+    "id": "polyhaven-wicker_basket_02",
+    "title": "Wicker Basket 02",
+    "collection": "polyhaven-wicker_basket_02",
+    "creator": "Kuutti Siitonen",
+    "sourceUrl": "https://polyhaven.com/a/wicker_basket_02",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "url": "/models/external/polyhaven-wicker_basket_02.glb",
+    "bytes": 238792,
+    "sha256": "0982182f9e55e16fe7e55f41a4d7f78a012c8c386ca180a7211159077a58e174",
+    "dimensions": [
+      0.64939,
+      0.37599,
+      0.47672
+    ],
+    "triangles": 2999,
+    "sourcePath": "assets/external/models/polyhaven-wicker_basket_02/wicker_basket_02_1k.gltf",
+    "sourcePayloadBytes": 3064509,
+    "category": "cargo",
+    "classroomStatus": "scene-eligible",
+    "worlds": [
+      "alexandria",
+      "pride-and-prejudice",
+      "generated-settings"
+    ],
+    "use": "Market/garden basket candidate",
+    "usage": {
+      "category": "cargo",
+      "classroom_status": "scene-eligible",
+      "target_longest_dimension_m": 0.65,
+      "placement": "Use for a single inspection-distance container with space for its open lid.",
+      "cautions": "The lid is included in the footprint; simplified weaving requires close-camera review.",
+      "interaction": "Decoration by default. Only placements explicitly tagged with a zone open that zone through onSelect; geometry never collects evidence or grants credit.",
+      "loading": "Use the registered local GLB URL. Scene loading is deduplicated per asset and capped at three concurrent requests; catalog previews load one selected file.",
+      "collision": "Use the placement footprint if solid and within walking reach. Small tabletop items inherit their furniture footprint.",
+      "animation": "Static; no mixer required.",
+      "rights": "CC0-1.0. Retain the creator and publisher link in credits; illustrative geometry is separate from primary evidence."
+    },
+    "modifications": [
+      "Uniform meter scaling; X/Z centered and ground origin; inspection/label anchors added",
+      "Decimated toward 3000 triangles",
+      "Textures at most 512px; opaque JPEG quality 82, alpha PNG; embedded"
+    ],
+    "anchors": [
+      "Anchor_Inspect",
+      "Anchor_Label"
+    ],
+    "clips": [],
+    "previewUrl": "/models/external/previews/polyhaven-wicker_basket_02.jpg",
+    "materials": 1,
+    "skins": 0
+  }
+]
