@@ -13,6 +13,7 @@ Assumptions: ages 14–18, teacher-led use, approximately 45 minutes per lesson,
 - [Historical accuracy and source review](curriculum/HISTORICAL-ACCURACY-REVIEW.md): sourced context, correction history, and implementation verification.
 
 - [Detailed first-three-world briefs](curriculum/PRIORITY-LESSON-BRIEFS.md)
+- [Odyssey lesson 2 teaching handout](curriculum/ODYSSEY-02-TEACHING-PACK.md): three assigned cards, six formative examples, and a source-bounded revision sequence.
 - [Structured catalog](curriculum/catalog.json): stable world and lesson IDs, questions, activities, boundaries, sources, and status. This planning format is **not** the runtime `LessonPackSchema`.
 - [Agent state and next work](curriculum/AGENT-STATE.md)
 

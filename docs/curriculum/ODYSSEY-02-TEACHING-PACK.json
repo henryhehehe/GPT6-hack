@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "artifactType": "teacher-scaffold",
+  "runtimeImportable": false,
+  "lessonId": "odyssey-ix-02",
+  "packetVersion": "2026-09-10.3",
+  "status": "authored teaching draft; teacher review and classroom trial pending",
+  "source": {
+    "title": "Homer, The Odyssey",
+    "url": "https://www.gutenberg.org/ebooks/1727",
+    "edition": "Samuel Butler prose translation; use Ulysses in displayed excerpts",
+    "verification": "selected excerpts and bounded context matched to pinned normalized source; teacher review required",
+    "checkedAt": "2026-09-10"
+  },
+  "readingBoundary": "Book IX: narrated stratagem evaluation, crew warning, and shouted identity; only the three displayed cards are required, not the whole of Book IX.",
+  "inquiry": "How does revealing an identity change a reading of leadership?",
+  "evidenceActivity": "Compare the narrator’s claim of cleverness with his response to the crew’s warning; cite wording from both.",
+  "teacherChallenge": "What does the crew’s objection make harder to explain?",
+  "revisionTask": "Revise the leadership claim without reducing the episode to a single trait.",
+  "assessment": [
+    "interpretive claim",
+    "textual evidence",
+    "analysis of language or narrative",
+    "alternative reading"
+  ],
+  "timingNote": "45 minutes is a planning estimate, not observed timing.",
+  "schedule": [
+    {
+      "minutes": 5,
+      "title": "Predict",
+      "activity": "Distinguish solving a danger from deciding what to do after an apparent success. Write a provisional question about leadership."
+    },
+    {
+      "minutes": 8,
+      "title": "Read the self-description",
+      "activity": "Read card 1. Mark the first-person evaluation of the stratagem and identify the danger that remains in the same card."
+    },
+    {
+      "minutes": 9,
+      "title": "Read the objection",
+      "activity": "Read card 2. Separate the crew’s reported experience from its forecast. Specify whether the warning concerns a name, further sound, or both."
+    },
+    {
+      "minutes": 9,
+      "title": "Compare the response",
+      "activity": "Read card 3. Compare refusal, emotion and heroic self-description with cards 1–2. Explain a tension rather than choosing a single character label."
+    },
+    {
+      "minutes": 10,
+      "title": "Challenge and revise",
+      "activity": "Answer the inquiry with at least two cards, respond to the teacher challenge, then revise or defend the initial reading with an explanation."
+    },
+    {
+      "minutes": 4,
+      "title": "Exit check",
+      "activity": "State one supported inference and one consequence that these three cards do not establish."
+    }
+  ],
+  "quoteOffsetConvention": "Zero-based UTF-16 code units within the displayed card; exclusive end. Teaching annotations, not runtime citation objects.",
+  "quotes": [
+    {
+      "id": "self-praise",
+      "evidenceId": "1727-419-0",
+      "quote": "my clever stratagem",
+      "cardStart": 63,
+      "cardEnd": 82,
+      "sourceVersion": "122f7e3d642da7f3a4267040d0fb35e37c23b66d2b7c43c8d3669428d699d7f7"
+    },
+    {
+      "id": "crew-experience",
+      "evidenceId": "1727-426-0",
+      "quote": "he has thrown one rock at us already",
+      "cardStart": 83,
+      "cardEnd": 119,
+      "sourceVersion": "75c1784d00cc97acce41408b28aa1525da4010c7b4c483c1d769c7379c64809f"
+    },
+    {
+      "id": "sound-warning",
+      "evidenceId": "1727-426-0",
+      "quote": "any further sound of voices",
+      "cardStart": 230,
+      "cardEnd": 257,
+      "sourceVersion": "75c1784d00cc97acce41408b28aa1525da4010c7b4c483c1d769c7379c64809f"
+    },
+    {
+      "id": "refusal",
+      "evidenceId": "1727-427-0",
+      "quote": "But I would not listen to them",
+      "cardStart": 1,
+      "cardEnd": 31,
+      "sourceVersion": "a7ea89ff97f5f3141d90d6f96ffa4092ddb59ef5003991d8c6939e39dd240810"
+    },
+    {
+      "id": "emotion",
+      "evidenceId": "1727-427-0",
+      "quote": "in my rage",
+      "cardStart": 56,
+      "cardEnd": 66,
+      "sourceVersion": "a7ea89ff97f5f3141d90d6f96ffa4092ddb59ef5003991d8c6939e39dd240810"
+    },
+    {
+      "id": "self-title",
+      "evidenceId": "1727-427-0",
+      "quote": "the valiant warrior Ulysses",
+      "cardStart": 167,
+      "cardEnd": 194,
+      "sourceVersion": "a7ea89ff97f5f3141d90d6f96ffa4092ddb59ef5003991d8c6939e39dd240810"
+    }
+  ],
+  "examples": [
+    {
+      "id": "mixed-leadership",
+      "type": "supported interpretation",
+      "studentResponse": "His tactical cleverness coexists with poor attention to the crew. Calling the stratagem clever praises his success, but the later refusal to listen dismisses an objection based on an actual rock throw. His anger complicates the heroic title he gives himself.",
+      "quoteIds": [
+        "self-praise",
+        "crew-experience",
+        "refusal",
+        "emotion",
+        "self-title"
+      ],
+      "expectedFeedback": "Accept the mixed interpretation. Ask how the contrast between inward laughter and shouted self-naming changes the presentation of success. Do not require a claim that the name itself causes later losses.",
+      "revisionTarget": "Explain the effect of the contrasting forms of self-presentation."
+    },
+    {
+      "id": "candor-with-limits",
+      "type": "supported alternative",
+      "studentResponse": "The narrated admission of refusing advice allows a reader to criticize the speaker. That admission makes the account more self-exposing than the heroic title alone suggests. It does not prove that the whole narrative is reliable or that the poet approves of the choice.",
+      "quoteIds": [
+        "refusal",
+        "self-title"
+      ],
+      "expectedFeedback": "Accept this alternative if the student analyzes the first-person admission. Ask for comparison with the earlier self-praise; do not require the same conclusion as the first example.",
+      "revisionTarget": "Distinguish an effect of the narration from a claim about the narrator’s complete reliability."
+    },
+    {
+      "id": "trait-label",
+      "type": "plausible but underdeveloped",
+      "studentResponse": "Ulysses is proud and therefore a bad leader. He calls himself valiant.",
+      "quoteIds": [
+        "self-title"
+      ],
+      "expectedFeedback": "The quoted self-description is relevant, but a label does not explain the decision. Ask the learner to compare it with the crew’s warning and the explicit refusal. Anger is also named; consider how the two possible motivations differ.",
+      "revisionTarget": "Replace a single-trait verdict with a comparison supported by at least two cards."
+    },
+    {
+      "id": "invented-order",
+      "type": "deliberately fabricated quotation — diagnostic only",
+      "studentResponse": "The crew orders, “Tell him your name so he knows our victory.” Therefore Ulysses follows their plan.",
+      "quoteIds": [],
+      "expectedFeedback": "Identify the invented sentence as absent from the packet. Return to the crew’s objection and his refusal. Invite a new claim rather than crediting a clear conclusion that depends on false attribution.",
+      "revisionTarget": "Replace the invented quotation with exact assigned wording and reconsider the conclusion."
+    },
+    {
+      "id": "later-losses",
+      "type": "out-of-packet consequence",
+      "studentResponse": "His name makes Neptune destroy the entire crew later, so these cards prove that cleverness is useless.",
+      "quoteIds": [],
+      "expectedFeedback": "These three cards do not contain a prayer, a divine response, or later deaths. Do not supply later events as assessment evidence. Ask what the crew’s warning and the narrated decision establish here.",
+      "revisionTarget": "Limit the consequence claim to the supplied warning and decision; mark later outcomes as unestablished by this packet."
+    },
+    {
+      "id": "precise-warning",
+      "type": "warranted distinction",
+      "studentResponse": "The crew warns about further voices after a rock has already been thrown. That establishes a danger in speaking again, not a separate causal effect of announcing this particular name. The heroic title can still matter to how we interpret the decision.",
+      "quoteIds": [
+        "crew-experience",
+        "sound-warning",
+        "self-title"
+      ],
+      "expectedFeedback": "Accept the distinction. Ask how naming and heroic self-description affect interpretation without converting the crew’s sound warning into a claim about magical consequences.",
+      "revisionTarget": "Preserve the difference between physical risk in the warning and the meaning of self-naming."
+    }
+  ],
+  "sourceVerification": {
+    "checkedAt": "2026-09-10",
+    "method": "Matched existing pinned source files, manifest hashes, runtime source snapshots and card UTF-16 slices. No new upstream retrieval or edition audit.",
+    "cards": [
+      {
+        "evidenceId": "1727-419-0",
+        "sourceId": "1727-419",
+        "sourceSha256": "122f7e3d642da7f3a4267040d0fb35e37c23b66d2b7c43c8d3669428d699d7f7",
+        "cardSha256": "122f7e3d642da7f3a4267040d0fb35e37c23b66d2b7c43c8d3669428d699d7f7",
+        "sourceStart": 0,
+        "sourceEnd": 377
+      },
+      {
+        "evidenceId": "1727-426-0",
+        "sourceId": "1727-426",
+        "sourceSha256": "75c1784d00cc97acce41408b28aa1525da4010c7b4c483c1d769c7379c64809f",
+        "cardSha256": "75c1784d00cc97acce41408b28aa1525da4010c7b4c483c1d769c7379c64809f",
+        "sourceStart": 0,
+        "sourceEnd": 410
+      },
+      {
+        "evidenceId": "1727-427-0",
+        "sourceId": "1727-427",
+        "sourceSha256": "a7ea89ff97f5f3141d90d6f96ffa4092ddb59ef5003991d8c6939e39dd240810",
+        "cardSha256": "a7ea89ff97f5f3141d90d6f96ffa4092ddb59ef5003991d8c6939e39dd240810",
+        "sourceStart": 0,
+        "sourceEnd": 233
+      }
+    ],
+    "notices": "../../public/curriculum-notices.txt"
+  },
+  "modelEvaluation": {
+    "status": "not run",
+    "note": "Expected feedback is authored guidance; these new cases have not been submitted to a model or reviewed by a teacher."
+  }
+}
