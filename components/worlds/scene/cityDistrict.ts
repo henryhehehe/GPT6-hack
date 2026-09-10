@@ -54,7 +54,7 @@ export function createCityDistrict(parent:THREE.Object3D){
   for(const side of [-1,1]){box(trim,b.x,1.3+b.h,b.z+side*(b.d/2-.14),b.w,.55,.28);box(trim,b.x+side*(b.w/2-.14),1.3+b.h,b.z,.28,.55,b.d);}
   box(shadow,b.x,1,b.z+b.d/2+.025,1.7,2.5,.06,0,false);box(wood,b.x,1,b.z+b.d/2+.075,1.35,2.35,.06,0,false);
   for(const side of [-1,1])for(const level of [2.7,5.2]){if(level+1>b.h)continue;const x=b.x+side*b.w*.29,z=b.z+b.d/2+.1;box(shadow,x,level,z,1.25,1.45,.09,0,false);box(wood,x-.34,level+.08,z+.09,.5,1.25,.1,0,false);box(trim,x,level-.14,z+.12,1.5,.15,.35,0,false);}
-  if(b.style===2){box(wood,b.x,3.6,b.z+b.d/2+1.25,b.w*.72,.18,2.4);box(cloth,b.x,4.8,b.z+b.d/2+1.25,b.w*.76,.08,2.5);for(const side of [-1,1])put(column,wood,b.x+side*b.w*.33,2.9,b.z+b.d/2+2.25,.07,4,.07);}
+  if(b.style===2){box(wood,b.x,3.4,b.z+b.d/2+1.25,b.w*.72,.18,2.4);box(cloth,b.x,3.58,b.z+b.d/2+1.25,b.w*.76,.08,2.5);for(const side of [-1,1])put(column,wood,b.x+side*b.w*.33,2.225,b.z+b.d/2+2.25,.07,2.55,.07);}
   put(column,terracotta,b.x+b.w*.3,1.5,b.z+b.d/2+.7,.38,1.1,.38,0,false);
  }
  // An open colonnade: tall columns, layered capitals, overhead beams.
@@ -68,7 +68,7 @@ export function createCityDistrict(parent:THREE.Object3D){
  for(const x of [-10,10])for(const z of [-43,-59])box(darkLeaves,x,.94,z,10,.12,9,0,false);
  put(column,trim,0,1.2,-52,2.35,.5,2.35);put(column,stone,0,1.45,-52,2.04,.18,2.04);put(column,brass,0,2,-52,.18,1.2,.18);
  const pool=new THREE.Mesh(new THREE.CircleGeometry(1.9,48),new THREE.MeshPhysicalMaterial({color:'#4a9290',roughness:.2,metalness:.2,clearcoat:1}));pool.rotation.x=-Math.PI/2;pool.position.set(0,1.55,-52);root.add(pool);geometries.add(pool.geometry);materials.push(pool.material);
- for(const x of [-11,11])for(const z of [-42,-61]){box(trim,x,1.5,z,4,.2,1.05);for(const dx of [-1.5,1.5])box(stone,x+dx,.95,z,.35,.55,.7);}
+ for(const x of [-11,11])for(const z of [-42,-61]){box(trim,x,1.25,z,3,.16,.7);for(const dx of [-1.1,1.1])box(stone,x+dx,.95,z,.3,.3,.55);}
  for(const p of CITY_TREES)tree(p.x,p.z,p.scale);
  // Waterfront parapets and mooring posts signal the actual walk boundary.
  for(let x=34;x<64;x+=3){box(stone,x,.95,10,2.8,.65,.65);put(column,trim,x,1.8,10,.25,1.1,.25);}
@@ -76,7 +76,6 @@ export function createCityDistrict(parent:THREE.Object3D){
  // A distant coastal ridge dissolves into atmospheric haze, beyond the playable city.
  const ridgeMaterial=new THREE.MeshStandardMaterial({color:'#8e9b88',roughness:1});materials.push(ridgeMaterial);
  for(let i=0;i<9;i++)put(sphere,ridgeMaterial,-380+i*92,-8,-320-(i%3)*35,100,24+(i*13)%32,90,0,false);
- for(let i=0;i<32;i++){const x=-120+i*8,z=-235-(i%4)*12,h=3+(i*7)%7;box(plaster,x,-.3,z,5,h,7,0,false);box(terracotta,x,h-.3,z,5.3,.35,7.3,0,false);}
  const instances:THREE.InstancedMesh[]=[];
  for(const batch of batches.values()){const mesh=new THREE.InstancedMesh(batch.geometry,batch.material,batch.matrices.length);batch.matrices.forEach((m,i)=>mesh.setMatrixAt(i,m));mesh.castShadow=batch.shadow;mesh.receiveShadow=true;mesh.computeBoundingSphere();root.add(mesh);instances.push(mesh);}
  let foliageReady=false;

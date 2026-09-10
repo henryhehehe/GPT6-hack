@@ -13,6 +13,6 @@ Verified locally on 2026-09-10: `/studio` returns successfully without the teach
 3. Follow the current [demo script](SCRIPT.md) for the first claim, teacher intervention, evidence, and revised explanation. Review actual AI replies before using them in a take.
 4. Share `/try` when someone only wants to explore as a student; use `/studio` to demonstrate both roles.
 
-The existing rendered video is version 2. The version 3 script has not yet been rendered; see [recording status](README.md).
+The latest rendered video is version 3, a new edit of the version-2 recordings with updated narration and captions. It does not show later local UI/model changes; see [recording status](README.md).
 
 The local access rehearsal passed with `APP_URL=http://localhost:5173 node scripts/smoke-pilot.mjs`: direct classroom creation, student preview, teacher scenario propagation, invitation joins, separate student access, and evidence persistence. This check uses HTTP requests, makes no paid AI calls, and does not substitute for recording the current UI.

@@ -1,0 +1,8 @@
+{
+  "model": "gpt-4o-mini-tts",
+  "voice": "marin",
+  "bytes": 2599244,
+  "latencyMs": 10223,
+  "generatedAt": "2026-09-10T18:36:51.321Z",
+  "disclosure": "AI-generated narration"
+}

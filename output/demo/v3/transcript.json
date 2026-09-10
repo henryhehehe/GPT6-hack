@@ -1,0 +1,1067 @@
+{
+  "task": "transcribe",
+  "language": "english",
+  "duration": 54.150001525878906,
+  "text": "The library would definitely close. That's our student's first answer. Let's put it to the test. This is Counterfactual Worlds, a history lesson you can walk into. In our prepared Alexandria lesson, we collapse harbor trade, fewer ships, less income. But does that mean the scholars disappear? Astra challenges the student's certainty. Now the teacher changes the challenge. Could a new patron help? Astra turns that instruction into a question we preview and add to the student's world. The student reads Strabo, cites the source, and separates historical evidence from our invented ledger. The answer changes. Closure is possible, not inevitable. Now the student explains the mechanism, cites evidence, and considers another outcome. Counterfactual Worlds, step inside a question.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0,
+      "end": 2.3399999141693115,
+      "text": " The library would definitely close.",
+      "tokens": [
+        50364,
+        440,
+        6405,
+        576,
+        2138,
+        1998,
+        13,
+        50516
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.19690296053886414,
+      "compression_ratio": 1.55859375,
+      "no_speech_prob": 0.00036251518758945167
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.119999885559082,
+      "end": 4.559999942779541,
+      "text": " That's our student's first answer.",
+      "tokens": [
+        50516,
+        663,
+        311,
+        527,
+        3107,
+        311,
+        700,
+        1867,
+        13,
+        50620
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.19690296053886414,
+      "compression_ratio": 1.55859375,
+      "no_speech_prob": 0.00036251518758945167
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 5.260000228881836,
+      "end": 6.139999866485596,
+      "text": " Let's put it to the test.",
+      "tokens": [
+        50620,
+        961,
+        311,
+        829,
+        309,
+        281,
+        264,
+        1500,
+        13,
+        50706
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.19690296053886414,
+      "compression_ratio": 1.55859375,
+      "no_speech_prob": 0.00036251518758945167
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 6.940000057220459,
+      "end": 8.34000015258789,
+      "text": " This is Counterfactual Worlds,",
+      "tokens": [
+        50706,
+        639,
+        307,
+        35607,
+        44919,
+        901,
+        43003,
+        11,
+        50801
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.19690296053886414,
+      "compression_ratio": 1.55859375,
+      "no_speech_prob": 0.00036251518758945167
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 8.520000457763672,
+      "end": 10.779999732971191,
+      "text": " a history lesson you can walk into.",
+      "tokens": [
+        50801,
+        257,
+        2503,
+        6898,
+        291,
+        393,
+        1792,
+        666,
+        13,
+        50945
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.19690296053886414,
+      "compression_ratio": 1.55859375,
+      "no_speech_prob": 0.00036251518758945167
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 11.699999809265137,
+      "end": 13.399999618530273,
+      "text": " In our prepared Alexandria lesson,",
+      "tokens": [
+        50945,
+        682,
+        527,
+        4927,
+        41943,
+        6898,
+        11,
+        51054
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.19690296053886414,
+      "compression_ratio": 1.55859375,
+      "no_speech_prob": 0.00036251518758945167
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 13.880000114440918,
+      "end": 17.579999923706055,
+      "text": " we collapse harbor trade, fewer ships, less income.",
+      "tokens": [
+        51054,
+        321,
+        15584,
+        36947,
+        4923,
+        11,
+        13366,
+        11434,
+        11,
+        1570,
+        5742,
+        13,
+        51278
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.19690296053886414,
+      "compression_ratio": 1.55859375,
+      "no_speech_prob": 0.00036251518758945167
+    },
+    {
+      "id": 7,
+      "seek": 0,
+      "start": 18.079999923706055,
+      "end": 20.100000381469727,
+      "text": " But does that mean the scholars disappear?",
+      "tokens": [
+        51278,
+        583,
+        775,
+        300,
+        914,
+        264,
+        8553,
+        11596,
+        30,
+        51412
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.19690296053886414,
+      "compression_ratio": 1.55859375,
+      "no_speech_prob": 0.00036251518758945167
+    },
+    {
+      "id": 8,
+      "seek": 0,
+      "start": 21.280000686645508,
+      "end": 23,
+      "text": " Astra challenges the student's certainty.",
+      "tokens": [
+        51412,
+        45242,
+        4759,
+        264,
+        3107,
+        311,
+        27022,
+        13,
+        51544
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.19690296053886414,
+      "compression_ratio": 1.55859375,
+      "no_speech_prob": 0.00036251518758945167
+    },
+    {
+      "id": 9,
+      "seek": 0,
+      "start": 23.65999984741211,
+      "end": 25.399999618530273,
+      "text": " Now the teacher changes the challenge.",
+      "tokens": [
+        51544,
+        823,
+        264,
+        5027,
+        2962,
+        264,
+        3430,
+        13,
+        51660
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.19690296053886414,
+      "compression_ratio": 1.55859375,
+      "no_speech_prob": 0.00036251518758945167
+    },
+    {
+      "id": 10,
+      "seek": 0,
+      "start": 25.979999542236328,
+      "end": 27.260000228881836,
+      "text": " Could a new patron help?",
+      "tokens": [
+        51660,
+        7497,
+        257,
+        777,
+        21843,
+        854,
+        30,
+        51768
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.19690296053886414,
+      "compression_ratio": 1.55859375,
+      "no_speech_prob": 0.00036251518758945167
+    },
+    {
+      "id": 11,
+      "seek": 2726,
+      "start": 28.059999465942383,
+      "end": 31.360000610351562,
+      "text": " Astra turns that instruction into a question we preview",
+      "tokens": [
+        50404,
+        45242,
+        4523,
+        300,
+        10951,
+        666,
+        257,
+        1168,
+        321,
+        14281,
+        50586
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.195323184132576,
+      "compression_ratio": 1.6465517282485962,
+      "no_speech_prob": 0.0004305163165554404
+    },
+    {
+      "id": 12,
+      "seek": 2726,
+      "start": 31.360000610351562,
+      "end": 33.18000030517578,
+      "text": " and add to the student's world.",
+      "tokens": [
+        50586,
+        293,
+        909,
+        281,
+        264,
+        3107,
+        311,
+        1002,
+        13,
+        50702
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.195323184132576,
+      "compression_ratio": 1.6465517282485962,
+      "no_speech_prob": 0.0004305163165554404
+    },
+    {
+      "id": 13,
+      "seek": 2726,
+      "start": 34.08000183105469,
+      "end": 36.439998626708984,
+      "text": " The student reads Strabo, cites the source,",
+      "tokens": [
+        50702,
+        440,
+        3107,
+        15700,
+        12875,
+        1763,
+        11,
+        269,
+        3324,
+        264,
+        4009,
+        11,
+        50840
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.195323184132576,
+      "compression_ratio": 1.6465517282485962,
+      "no_speech_prob": 0.0004305163165554404
+    },
+    {
+      "id": 14,
+      "seek": 2726,
+      "start": 36.84000015258789,
+      "end": 39.540000915527344,
+      "text": " and separates historical evidence from our invented ledger.",
+      "tokens": [
+        50840,
+        293,
+        34149,
+        8584,
+        4467,
+        490,
+        527,
+        14479,
+        4684,
+        1321,
+        13,
+        51022
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.195323184132576,
+      "compression_ratio": 1.6465517282485962,
+      "no_speech_prob": 0.0004305163165554404
+    },
+    {
+      "id": 15,
+      "seek": 2726,
+      "start": 40.41999816894531,
+      "end": 41.220001220703125,
+      "text": " The answer changes.",
+      "tokens": [
+        51022,
+        440,
+        1867,
+        2962,
+        13,
+        51093
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.195323184132576,
+      "compression_ratio": 1.6465517282485962,
+      "no_speech_prob": 0.0004305163165554404
+    },
+    {
+      "id": 16,
+      "seek": 2726,
+      "start": 42.220001220703125,
+      "end": 44.439998626708984,
+      "text": " Closure is possible, not inevitable.",
+      "tokens": [
+        51093,
+        2033,
+        7641,
+        307,
+        1944,
+        11,
+        406,
+        21451,
+        13,
+        51269
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.195323184132576,
+      "compression_ratio": 1.6465517282485962,
+      "no_speech_prob": 0.0004305163165554404
+    },
+    {
+      "id": 17,
+      "seek": 2726,
+      "start": 45.380001068115234,
+      "end": 47.08000183105469,
+      "text": " Now the student explains the mechanism,",
+      "tokens": [
+        51269,
+        823,
+        264,
+        3107,
+        13948,
+        264,
+        7513,
+        11,
+        51374
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.195323184132576,
+      "compression_ratio": 1.6465517282485962,
+      "no_speech_prob": 0.0004305163165554404
+    },
+    {
+      "id": 18,
+      "seek": 2726,
+      "start": 47.84000015258789,
+      "end": 50.13999938964844,
+      "text": " cites evidence, and considers another outcome.",
+      "tokens": [
+        51374,
+        269,
+        3324,
+        4467,
+        11,
+        293,
+        33095,
+        1071,
+        9700,
+        13,
+        51550
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.195323184132576,
+      "compression_ratio": 1.6465517282485962,
+      "no_speech_prob": 0.0004305163165554404
+    },
+    {
+      "id": 19,
+      "seek": 2726,
+      "start": 51.099998474121094,
+      "end": 53.97999954223633,
+      "text": " Counterfactual Worlds, step inside a question.",
+      "tokens": [
+        51550,
+        35607,
+        44919,
+        901,
+        43003,
+        11,
+        1823,
+        1854,
+        257,
+        1168,
+        13,
+        51713
+      ],
+      "temperature": 0,
+      "avg_logprob": -0.195323184132576,
+      "compression_ratio": 1.6465517282485962,
+      "no_speech_prob": 0.0004305163165554404
+    }
+  ],
+  "words": [
+    {
+      "word": "The",
+      "start": 0,
+      "end": 0.3199999928474426
+    },
+    {
+      "word": "library",
+      "start": 0.3199999928474426,
+      "end": 0.800000011920929
+    },
+    {
+      "word": "would",
+      "start": 0.800000011920929,
+      "end": 1.3600000143051147
+    },
+    {
+      "word": "definitely",
+      "start": 1.3600000143051147,
+      "end": 1.840000033378601
+    },
+    {
+      "word": "close",
+      "start": 1.840000033378601,
+      "end": 2.3399999141693115
+    },
+    {
+      "word": "That's",
+      "start": 3.119999885559082,
+      "end": 3.2799999713897705
+    },
+    {
+      "word": "our",
+      "start": 3.2799999713897705,
+      "end": 3.5199999809265137
+    },
+    {
+      "word": "student's",
+      "start": 3.5199999809265137,
+      "end": 3.9600000381469727
+    },
+    {
+      "word": "first",
+      "start": 3.9600000381469727,
+      "end": 4.260000228881836
+    },
+    {
+      "word": "answer",
+      "start": 4.260000228881836,
+      "end": 4.559999942779541
+    },
+    {
+      "word": "Let's",
+      "start": 5.260000228881836,
+      "end": 5.420000076293945
+    },
+    {
+      "word": "put",
+      "start": 5.420000076293945,
+      "end": 5.519999980926514
+    },
+    {
+      "word": "it",
+      "start": 5.519999980926514,
+      "end": 5.659999847412109
+    },
+    {
+      "word": "to",
+      "start": 5.659999847412109,
+      "end": 5.739999771118164
+    },
+    {
+      "word": "the",
+      "start": 5.739999771118164,
+      "end": 6.039999961853027
+    },
+    {
+      "word": "test",
+      "start": 6.039999961853027,
+      "end": 6.139999866485596
+    },
+    {
+      "word": "This",
+      "start": 6.940000057220459,
+      "end": 7.019999980926514
+    },
+    {
+      "word": "is",
+      "start": 7.019999980926514,
+      "end": 7.320000171661377
+    },
+    {
+      "word": "Counterfactual",
+      "start": 7.320000171661377,
+      "end": 8.020000457763672
+    },
+    {
+      "word": "Worlds",
+      "start": 8.020000457763672,
+      "end": 8.34000015258789
+    },
+    {
+      "word": "a",
+      "start": 8.520000457763672,
+      "end": 8.979999542236328
+    },
+    {
+      "word": "history",
+      "start": 8.979999542236328,
+      "end": 9.260000228881836
+    },
+    {
+      "word": "lesson",
+      "start": 9.260000228881836,
+      "end": 9.5600004196167
+    },
+    {
+      "word": "you",
+      "start": 9.5600004196167,
+      "end": 9.960000038146973
+    },
+    {
+      "word": "can",
+      "start": 9.960000038146973,
+      "end": 10.260000228881836
+    },
+    {
+      "word": "walk",
+      "start": 10.260000228881836,
+      "end": 10.460000038146973
+    },
+    {
+      "word": "into",
+      "start": 10.460000038146973,
+      "end": 10.779999732971191
+    },
+    {
+      "word": "In",
+      "start": 11.699999809265137,
+      "end": 11.760000228881836
+    },
+    {
+      "word": "our",
+      "start": 11.760000228881836,
+      "end": 12
+    },
+    {
+      "word": "prepared",
+      "start": 12,
+      "end": 12.420000076293945
+    },
+    {
+      "word": "Alexandria",
+      "start": 12.420000076293945,
+      "end": 13.039999961853027
+    },
+    {
+      "word": "lesson",
+      "start": 13.039999961853027,
+      "end": 13.399999618530273
+    },
+    {
+      "word": "we",
+      "start": 13.880000114440918,
+      "end": 14.039999961853027
+    },
+    {
+      "word": "collapse",
+      "start": 14.039999961853027,
+      "end": 14.479999542236328
+    },
+    {
+      "word": "harbor",
+      "start": 14.479999542236328,
+      "end": 14.859999656677246
+    },
+    {
+      "word": "trade",
+      "start": 14.859999656677246,
+      "end": 15.220000267028809
+    },
+    {
+      "word": "fewer",
+      "start": 15.880000114440918,
+      "end": 16.079999923706055
+    },
+    {
+      "word": "ships",
+      "start": 16.079999923706055,
+      "end": 16.440000534057617
+    },
+    {
+      "word": "less",
+      "start": 17.100000381469727,
+      "end": 17.15999984741211
+    },
+    {
+      "word": "income",
+      "start": 17.15999984741211,
+      "end": 17.579999923706055
+    },
+    {
+      "word": "But",
+      "start": 18.079999923706055,
+      "end": 18.459999084472656
+    },
+    {
+      "word": "does",
+      "start": 18.459999084472656,
+      "end": 18.600000381469727
+    },
+    {
+      "word": "that",
+      "start": 18.600000381469727,
+      "end": 18.899999618530273
+    },
+    {
+      "word": "mean",
+      "start": 18.899999618530273,
+      "end": 18.979999542236328
+    },
+    {
+      "word": "the",
+      "start": 18.979999542236328,
+      "end": 19.559999465942383
+    },
+    {
+      "word": "scholars",
+      "start": 19.559999465942383,
+      "end": 19.559999465942383
+    },
+    {
+      "word": "disappear",
+      "start": 19.559999465942383,
+      "end": 20.100000381469727
+    },
+    {
+      "word": "Astra",
+      "start": 21.280000686645508,
+      "end": 21.3799991607666
+    },
+    {
+      "word": "challenges",
+      "start": 21.3799991607666,
+      "end": 21.940000534057617
+    },
+    {
+      "word": "the",
+      "start": 21.940000534057617,
+      "end": 22.260000228881836
+    },
+    {
+      "word": "student's",
+      "start": 22.260000228881836,
+      "end": 23
+    },
+    {
+      "word": "certainty",
+      "start": 23,
+      "end": 23
+    },
+    {
+      "word": "Now",
+      "start": 23.65999984741211,
+      "end": 23.81999969482422
+    },
+    {
+      "word": "the",
+      "start": 23.81999969482422,
+      "end": 24.079999923706055
+    },
+    {
+      "word": "teacher",
+      "start": 24.079999923706055,
+      "end": 24.360000610351562
+    },
+    {
+      "word": "changes",
+      "start": 24.360000610351562,
+      "end": 24.719999313354492
+    },
+    {
+      "word": "the",
+      "start": 24.719999313354492,
+      "end": 25.399999618530273
+    },
+    {
+      "word": "challenge",
+      "start": 25.399999618530273,
+      "end": 25.399999618530273
+    },
+    {
+      "word": "Could",
+      "start": 25.979999542236328,
+      "end": 26.079999923706055
+    },
+    {
+      "word": "a",
+      "start": 26.079999923706055,
+      "end": 26.3799991607666
+    },
+    {
+      "word": "new",
+      "start": 26.3799991607666,
+      "end": 26.540000915527344
+    },
+    {
+      "word": "patron",
+      "start": 26.540000915527344,
+      "end": 26.84000015258789
+    },
+    {
+      "word": "help",
+      "start": 26.84000015258789,
+      "end": 27.260000228881836
+    },
+    {
+      "word": "Astra",
+      "start": 28.059999465942383,
+      "end": 28.459999084472656
+    },
+    {
+      "word": "turns",
+      "start": 28.459999084472656,
+      "end": 28.860000610351562
+    },
+    {
+      "word": "that",
+      "start": 28.860000610351562,
+      "end": 29.15999984741211
+    },
+    {
+      "word": "instruction",
+      "start": 29.15999984741211,
+      "end": 29.559999465942383
+    },
+    {
+      "word": "into",
+      "start": 29.559999465942383,
+      "end": 30.18000030517578
+    },
+    {
+      "word": "a",
+      "start": 30.18000030517578,
+      "end": 30.520000457763672
+    },
+    {
+      "word": "question",
+      "start": 30.520000457763672,
+      "end": 30.719999313354492
+    },
+    {
+      "word": "we",
+      "start": 30.719999313354492,
+      "end": 30.979999542236328
+    },
+    {
+      "word": "preview",
+      "start": 30.979999542236328,
+      "end": 31.360000610351562
+    },
+    {
+      "word": "and",
+      "start": 31.360000610351562,
+      "end": 31.860000610351562
+    },
+    {
+      "word": "add",
+      "start": 31.860000610351562,
+      "end": 32.20000076293945
+    },
+    {
+      "word": "to",
+      "start": 32.20000076293945,
+      "end": 32.31999969482422
+    },
+    {
+      "word": "the",
+      "start": 32.31999969482422,
+      "end": 32.5
+    },
+    {
+      "word": "student's",
+      "start": 32.5,
+      "end": 33.18000030517578
+    },
+    {
+      "word": "world",
+      "start": 33.18000030517578,
+      "end": 33.18000030517578
+    },
+    {
+      "word": "The",
+      "start": 34.08000183105469,
+      "end": 34.220001220703125
+    },
+    {
+      "word": "student",
+      "start": 34.220001220703125,
+      "end": 34.52000045776367
+    },
+    {
+      "word": "reads",
+      "start": 34.52000045776367,
+      "end": 34.84000015258789
+    },
+    {
+      "word": "Strabo",
+      "start": 34.84000015258789,
+      "end": 35.279998779296875
+    },
+    {
+      "word": "cites",
+      "start": 35.900001525878906,
+      "end": 35.900001525878906
+    },
+    {
+      "word": "the",
+      "start": 35.900001525878906,
+      "end": 36.15999984741211
+    },
+    {
+      "word": "source",
+      "start": 36.15999984741211,
+      "end": 36.439998626708984
+    },
+    {
+      "word": "and",
+      "start": 36.84000015258789,
+      "end": 37.099998474121094
+    },
+    {
+      "word": "separates",
+      "start": 37.099998474121094,
+      "end": 37.459999084472656
+    },
+    {
+      "word": "historical",
+      "start": 37.459999084472656,
+      "end": 38.060001373291016
+    },
+    {
+      "word": "evidence",
+      "start": 38.060001373291016,
+      "end": 38.439998626708984
+    },
+    {
+      "word": "from",
+      "start": 38.439998626708984,
+      "end": 38.65999984741211
+    },
+    {
+      "word": "our",
+      "start": 38.65999984741211,
+      "end": 38.900001525878906
+    },
+    {
+      "word": "invented",
+      "start": 38.900001525878906,
+      "end": 39.20000076293945
+    },
+    {
+      "word": "ledger",
+      "start": 39.20000076293945,
+      "end": 39.540000915527344
+    },
+    {
+      "word": "The",
+      "start": 40.41999816894531,
+      "end": 40.619998931884766
+    },
+    {
+      "word": "answer",
+      "start": 40.619998931884766,
+      "end": 40.779998779296875
+    },
+    {
+      "word": "changes",
+      "start": 40.779998779296875,
+      "end": 41.220001220703125
+    },
+    {
+      "word": "Closure",
+      "start": 42.220001220703125,
+      "end": 42.220001220703125
+    },
+    {
+      "word": "is",
+      "start": 42.220001220703125,
+      "end": 42.7599983215332
+    },
+    {
+      "word": "possible",
+      "start": 42.7599983215332,
+      "end": 43.2400016784668
+    },
+    {
+      "word": "not",
+      "start": 43.86000061035156,
+      "end": 44.060001373291016
+    },
+    {
+      "word": "inevitable",
+      "start": 44.060001373291016,
+      "end": 44.439998626708984
+    },
+    {
+      "word": "Now",
+      "start": 45.380001068115234,
+      "end": 45.599998474121094
+    },
+    {
+      "word": "the",
+      "start": 45.599998474121094,
+      "end": 45.81999969482422
+    },
+    {
+      "word": "student",
+      "start": 45.81999969482422,
+      "end": 46.040000915527344
+    },
+    {
+      "word": "explains",
+      "start": 46.040000915527344,
+      "end": 46.52000045776367
+    },
+    {
+      "word": "the",
+      "start": 46.52000045776367,
+      "end": 46.779998779296875
+    },
+    {
+      "word": "mechanism",
+      "start": 46.779998779296875,
+      "end": 47.08000183105469
+    },
+    {
+      "word": "cites",
+      "start": 47.84000015258789,
+      "end": 47.84000015258789
+    },
+    {
+      "word": "evidence",
+      "start": 47.84000015258789,
+      "end": 48.279998779296875
+    },
+    {
+      "word": "and",
+      "start": 48.7400016784668,
+      "end": 49
+    },
+    {
+      "word": "considers",
+      "start": 49,
+      "end": 49.279998779296875
+    },
+    {
+      "word": "another",
+      "start": 49.279998779296875,
+      "end": 49.720001220703125
+    },
+    {
+      "word": "outcome",
+      "start": 49.720001220703125,
+      "end": 50.13999938964844
+    },
+    {
+      "word": "Counterfactual",
+      "start": 51.099998474121094,
+      "end": 51.779998779296875
+    },
+    {
+      "word": "Worlds",
+      "start": 51.779998779296875,
+      "end": 52.119998931884766
+    },
+    {
+      "word": "step",
+      "start": 52.959999084472656,
+      "end": 52.97999954223633
+    },
+    {
+      "word": "inside",
+      "start": 52.97999954223633,
+      "end": 53.400001525878906
+    },
+    {
+      "word": "a",
+      "start": 53.400001525878906,
+      "end": 53.97999954223633
+    },
+    {
+      "word": "question",
+      "start": 53.97999954223633,
+      "end": 53.97999954223633
+    }
+  ],
+  "usage": {
+    "type": "duration",
+    "seconds": 55
+  }
+}

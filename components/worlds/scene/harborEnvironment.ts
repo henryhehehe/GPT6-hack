@@ -9,13 +9,13 @@ export function createHarborEnvironment(scene:THREE.Scene,renderer:THREE.WebGLRe
  const sunDirection=new THREE.Vector3(-.62,.43,.65).normalize();u.sunPosition.value.copy(sunDirection);u.cloudCoverage.value=.22;u.cloudDensity.value=.3;
  const generator=new THREE.PMREMGenerator(renderer),skyScene=new THREE.Scene();skyScene.add(sky);
  const environment=generator.fromScene(skyScene,.035,.1,5000);scene.add(sky);scene.environment=environment.texture;scene.environmentIntensity=.06;generator.dispose();
- scene.fog=new THREE.FogExp2('#bac8c4',.0038);
+ scene.fog=new THREE.FogExp2('#c8d8dd',.0025);
  const ambient=new THREE.HemisphereLight('#d2e7f0','#8b775a',.75);scene.add(ambient);
  const sun=new THREE.DirectionalLight('#ffdfad',2.5);sun.position.copy(sunDirection).multiplyScalar(100);sun.target.position.set(0,0,-18);scene.add(sun,sun.target);
- sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.normalBias=.07;sun.shadow.bias=-.00015;sun.shadow.radius=3;
+ sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);sun.shadow.normalBias=.025;sun.shadow.bias=-.00008;sun.shadow.radius=3;
  Object.assign(sun.shadow.camera,{left:-58,right:58,top:62,bottom:-62,near:1,far:230});sun.shadow.camera.updateProjectionMatrix();
  const normals=new THREE.TextureLoader().load('/textures/waternormals.jpg');normals.wrapS=normals.wrapT=THREE.RepeatWrapping;normals.anisotropy=4;
- const water=new Water(new THREE.PlaneGeometry(5000,5000),{textureWidth:512,textureHeight:512,waterNormals:normals,sunDirection,sunColor:0xffe5b9,waterColor:0x073e42,distortionScale:2.6,alpha:1,fog:true});
+ const water=new Water(new THREE.PlaneGeometry(5000,5000),{textureWidth:512,textureHeight:512,waterNormals:normals,sunDirection,sunColor:0xffe5b9,waterColor:0x073e42,distortionScale:1.7,alpha:1,fog:true});
  const waterMaterial=water.material as THREE.ShaderMaterial;
  water.rotation.x=-Math.PI/2;water.position.y=-.12;waterMaterial.transparent=false;waterMaterial.depthWrite=true;waterMaterial.uniforms.size.value=1.5;scene.add(water);
  // Planar reflections are updated at 30fps while the main view stays at its normal rate.

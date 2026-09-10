@@ -1,6 +1,6 @@
 # Run a bounded curriculum feedback review
 
-The runner turns the 12 [formative fixtures](FORMATIVE-EXAMPLES.json) into a repeatable local evaluation. It checks packet identity, creates one evaluation classroom per selected lesson and a separate synthetic student for every case, submits the real classroom assessment request, and saves JSON plus an HTML review sheet after each response. It never submits the expected feedback to the model.
+The runner turns the 12 [formative fixtures](FORMATIVE-EXAMPLES.json) or 20 [historical feedback cases](HISTORICAL-FEEDBACK-CASES.md) into a repeatable local evaluation. It checks packet identity, creates one evaluation classroom per selected lesson and a separate synthetic student for every case, submits the real classroom assessment request, and saves JSON plus an HTML review sheet after each response. It never submits the expected feedback to the model.
 
 A captured response is not a passing interpretation. Review the learner answer, supplied passages, actual feedback, and expected feedback focus together. Record a separate human judgment. These synthetic cases cannot establish learning gains, grading reliability, or classroom readiness.
 
@@ -11,6 +11,14 @@ Run from the repository root. Preflight is the default and makes no HTTP or mode
 ```sh
 node --import tsx scripts/evaluate-curriculum.ts
 ```
+
+Select the historical suite, which checks reported law, universal claims, Declaration chronology, edition-dependent speakers, and modern notes misattributed to original sources:
+
+```sh
+node --import tsx scripts/evaluate-curriculum.ts --suite historical
+```
+
+The default suite is `formative`. Both suites support `--case` and `--live`; case IDs must belong to the selected suite. Historical preflight additionally verifies the context-note fingerprint and the separation of original wording from editorial explanation.
 
 Run the current suite against the local app after the prerequisites below are met:
 
@@ -33,13 +41,13 @@ Reports go in a new UUID directory beneath the output parent, defaulting to igno
 - The running app and local source must contain the reviewed selected-citation learning flow, including `lib/learning.ts`. The runner loads that module's `materials` and `sourceVersion` helpers instead of duplicating the application's provenance hash. It saves a synthetic initial prediction, collects the fixture's cards, and selects each complete bounded card with its canonical text, UTF-16 offsets, source version, and a neutral relevance note. False quotations remain only in the authored learner answer, not in the selected source citation.
 - The API must support `predict` and the idempotent argument schema and return the saved turn with its request ID and selected citations. An incompatible response stops further assessment calls. The report stores submitted prediction/citations and response IDs for review.
 - Provide `CURRICULUM_EVAL_TEACHER_CODE` through the process environment, or both `CURRICULUM_EVAL_CLASS_ID` and `CURRICULUM_EVAL_TEACHER_TOKEN` for an existing local evaluation parent classroom. Do not put credentials into command-line arguments or source files. The runner does not read browser sessions or automatically load environment files. Existing parent classrooms are not edited; new lesson classrooms are launched only after exact packet comparison.
-- The local server must have teacher access, storage migrations, its model connection, and an authorized AI allowance configured. The runner respects the app's access and usage controls; it does not enable AI, increase quotas, change credentials, or bypass a paused pilot. The full suite attempts at most 12 assessments, four per lesson; smaller case selections reduce the work.
+- The local server must have teacher access, storage migrations, its model connection, and an authorized AI allowance configured. The runner respects the app's access and usage controls; it does not enable AI, increase quotas, change credentials, or bypass a paused pilot. The formative suite attempts at most 12 assessments, four per lesson; the historical suite attempts at most 20, five per lesson. Smaller case selections reduce the work.
 
 ## Results and failure behavior
 
 Preflight rejects unknown cases, wrong packet versions, unavailable evidence, and unexpected quote matches. Before live assessment, the server packet must match the local reviewed world and every synthetic student must be new. The report includes fixture/world hashes and local code fingerprints; these are local provenance records, not independent proof of a deployed build.
 
-The runner checks response structure, four distinct rubric keys, credited wording against the learner answer, evidence IDs against the case's available cards, and score arithmetic. Suspicious credit on intentionally fabricated quotations or out-of-range questions receives a review flag. It does not automatically judge semantic correctness or prescribe a fixed score for supported disagreement.
+The runner checks response structure, four distinct rubric keys, credited wording against the learner answer, evidence IDs against the case's available cards, and score arithmetic. Suspicious credit on intentionally fabricated quotations, modern notes misattributed to original sources, or out-of-range questions receives a review flag. It does not automatically judge semantic correctness or prescribe a fixed score for supported disagreement.
 
 A timeout or connection loss stops the run without retrying a potentially saved or charged submission. Reports preserve earlier captured responses and the interrupted request ID. Access/configuration blocks remain distinct from captured model behavior. Exit code 0 means preflight completed or responses were captured structurally; it does not mean semantic approval. Exit 1 means an invalid assessment result was recorded; exit 2 means a block, interruption, or startup/report-writing failure.
 
@@ -50,3 +58,12 @@ Eight runner tests cover offline preflight, missing integration/access, all 12 i
 The real CLI preflight prepared all 12 cases. A live invocation stopped before any HTTP or model call because the selected-citation module was not yet present in shared main; its integration was in progress in the separate reviewed release. The local environment presence check also found no configured pilot teacher code or AI allowance. Zero actual model responses were captured in this pass.
 
 Next: after the reviewed contract is integrated and the local pilot is configured, run a single case, inspect the report, then run the remaining predeclared cases and record human judgments. Do not reinterpret the blocked run or stub responses as model performance.
+
+
+## Historical suite integration — September 10, 2026
+
+The 20 historical cases are now integrated into `codex/review-fixes`, which contains the working selected-citation assessment flow (`lib/learning.ts`, prediction handling, canonical passage validation, and saved citation receipts). Integration commit: `be283ee`; the corresponding historical-suite commit on shared main is `8aacd8e`. The existing main checkout still has its older assessment flow; this integration does not replace unrelated active UI or deployment work.
+
+The integrated review checkout passed all 100 automated tests, TypeScript, and the production build. The build retains the existing large-chunk warning. Its historical preflight prepared all 20 cases with zero model responses. These checks include canonical Strabo versus legacy paraphrase handling, invalidation after provenance/context changes, exact quotation validation, and synthetic runner orchestration.
+
+A live test was not completed. The first connection attempt found the previous local review server stopped. After the server restarted, automatic approval review rejected the model test because sending lesson excerpts and synthetic learner answers to the configured OpenAI service requires explicit user approval. No historical-suite model request was sent. The suite is ready for a bounded live run after that approval; no quotas, access controls, or model settings were changed to work around the rejection.

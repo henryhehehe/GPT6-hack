@@ -4,14 +4,16 @@ import {RubricSchema,validateWorld,type World} from '../../lib/world';
 import {prepareCatalogLesson} from '../../lib/curriculum';
 import fixtures from '../../docs/curriculum/FORMATIVE-EXAMPLES.json';
 import packets from '../../lib/curriculum/packets.json';
+import {historicalFixtures} from './historical';
 
 export type Example=typeof fixtures.examples[number];
 export type Result={exampleId:string;lessonId:string;kind:string;learnerText:string;expectedFeedback:string;status:'pending'|'captured'|'invalid-result'|'interrupted';evaluation?:unknown;submission?:unknown;reviewFlags:string[];humanReview:'pending';error?:string;durationMs?:number};
-export type Report={runId:string;startedAt:string;finishedAt?:string;mode:'preflight'|'live';status:'prepared'|'running'|'completed'|'blocked'|'interrupted';assessmentContract:'selected-citations-v1';packetVersion:string;fixtureHash:string;sourceHashes:Record<string,string>;results:Result[];error?:string;notice:string};
+export type Suite='formative'|'historical';
+export type Report={runId:string;startedAt:string;finishedAt?:string;mode:'preflight'|'live';suite:Suite;status:'prepared'|'running'|'completed'|'blocked'|'interrupted';assessmentContract:'selected-citations-v1';packetVersion:string;fixtureHash:string;sourceHashes:Record<string,string>;results:Result[];error?:string;notice:string};
 type Access={id:string;teacherToken:string;inviteToken:string};
 type StudentAccess={id:string;studentId:string;studentToken:string};
 export type LearningTools={materials:(evidence:World['evidence'][number])=>{id:'text'|'excerpt';text:string}[];sourceVersion:(evidence:World['evidence'][number])=>Promise<string>};
-export type Options={baseUrl:string;live?:boolean;caseIds?:string[];teacherCode?:string;parent?:Pick<Access,'id'|'teacherToken'>;learning?:LearningTools;fetcher?:typeof fetch;save?:(report:Report)=>Promise<void>};
+export type Options={baseUrl:string;live?:boolean;suite?:Suite;caseIds?:string[];teacherCode?:string;parent?:Pick<Access,'id'|'teacherToken'>;learning?:LearningTools;fetcher?:typeof fetch;save?:(report:Report)=>Promise<void>};
 export const hash=(value:unknown)=>createHash('sha256').update(typeof value==='string'?value:JSON.stringify(value)).digest('hex');
 const safeBase=(value:string)=>{
  const url=new URL(value);
@@ -19,10 +21,10 @@ const safeBase=(value:string)=>{
  return url.origin;
 };
 
-export function preflight(caseIds:string[]=[],examples:Example[]=fixtures.examples){
- if(fixtures.packetVersion!==packets.version)throw new Error('The examples target a different packet version. Review them before evaluating.');
+export function preflight(caseIds:string[]=[],examples:Example[]=fixtures.examples,packetVersion=fixtures.packetVersion){
+ if(packetVersion!==packets.version)throw new Error('The examples target a different packet version. Review them before evaluating.');
  if(new Set(examples.map(e=>e.id)).size!==examples.length)throw new Error('Example IDs must be unique.');
- if(new Set(caseIds).size!==caseIds.length||caseIds.some(id=>!examples.some(e=>e.id===id)))throw new Error('Choose unique example IDs from FORMATIVE-EXAMPLES.json.');
+ if(new Set(caseIds).size!==caseIds.length||caseIds.some(id=>!examples.some(e=>e.id===id)))throw new Error('Choose unique example IDs from the selected fixture suite.');
  const selected=caseIds.length?examples.filter(e=>caseIds.includes(e.id)):examples;
  if(!selected.length)throw new Error('At least one example is required.');
  const worlds=new Map<string,World>();
@@ -46,6 +48,7 @@ export function checkEvaluation(value:unknown,example:Example){
  if(feedback.score!==feedback.items.filter(i=>i.earned).length)throw new Error('Inconsistent assessment score.');
  const flags:string[]=[];
  if(example.kind==='fabricated-quotation'&&feedback.items.some(i=>i.key==='evidence'&&i.earned))flags.push('Evidence credit for an answer containing an intentionally fabricated quotation; review its justification.');
+ if(example.kind==='context-misattribution'&&feedback.items.some(i=>i.key==='evidence'&&i.earned))flags.push('Evidence credit for an answer attributing a modern note to the original source; review its justification.');
  if(example.kind==='out-of-range'&&feedback.items.some(i=>i.earned))flags.push('Credit awarded to an out-of-range question; inspect the rationale.');
  return flags;
 }
@@ -56,8 +59,11 @@ function verifyPacket(value:unknown,expected:World){
 }
 
 export async function runEvaluation(options:Options):Promise<Report>{
- const base=safeBase(options.baseUrl),{selected,worlds}=preflight(options.caseIds);
- const report:Report={runId:randomUUID(),startedAt:new Date().toISOString(),mode:options.live?'live':'preflight',status:'prepared',assessmentContract:'selected-citations-v1',packetVersion:packets.version,fixtureHash:hash(fixtures),sourceHashes:Object.fromEntries([...worlds].map(([id,world])=>[id,hash(world)])),results:selected.map(e=>({exampleId:e.id,lessonId:e.lessonId,kind:e.kind,learnerText:e.learnerText,expectedFeedback:e.expectedFeedback,status:'pending',reviewFlags:[],humanReview:'pending'})),notice:'Synthetic examples only. Captured means a response was recorded, not that its interpretation or grading is correct. Human review is required; no learning gains or model reliability are established.'};
+ const suite=options.suite??'formative';
+ if(!['formative','historical'].includes(suite))throw new Error('Unknown evaluation suite.');
+ const fixture=suite==='historical'?historicalFixtures():fixtures;
+ const base=safeBase(options.baseUrl),{selected,worlds}=preflight(options.caseIds,fixture.examples,fixture.packetVersion);
+ const report:Report={runId:randomUUID(),startedAt:new Date().toISOString(),mode:options.live?'live':'preflight',suite,status:'prepared',assessmentContract:'selected-citations-v1',packetVersion:packets.version,fixtureHash:hash(fixture),sourceHashes:Object.fromEntries([...worlds].map(([id,world])=>[id,hash(world)])),results:selected.map(e=>({exampleId:e.id,lessonId:e.lessonId,kind:e.kind,learnerText:e.learnerText,expectedFeedback:e.expectedFeedback,status:'pending',reviewFlags:[],humanReview:'pending'})),notice:'Synthetic examples only. Captured means a response was recorded, not that its interpretation or grading is correct. Human review is required; no learning gains or model reliability are established.'};
  const secrets=[options.teacherCode,options.parent?.teacherToken].filter((x):x is string=>!!x);
  const redact=(text:string)=>secrets.reduce((s,secret)=>s.split(secret).join('[redacted]'),text);
  const save=async()=>options.save?.(JSON.parse(redact(JSON.stringify(report))));

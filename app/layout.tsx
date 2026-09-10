@@ -4,6 +4,7 @@ import "./ui-refinements.css";
 import "./catalog-refinements.css";
 import "./student-refinements.css";
 import "./studio-simple.css";
+import "./ui-motion.css";
 
 export const metadata: Metadata = {
   title: "Counterfactual Worlds — a lesson you can step inside",

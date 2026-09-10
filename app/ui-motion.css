@@ -1,0 +1,81 @@
+/* Short, finite motion. Content is visible by default, including without animation. */
+:root { --ui-ease: cubic-bezier(.22,1,.36,1); }
+
+@keyframes ui-arrive {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes ui-dialog-in {
+  from { opacity: 0; scale: .985; }
+  to { opacity: 1; scale: 1; }
+}
+@keyframes ui-dialog-out {
+  from { opacity: 1; scale: 1; }
+  to { opacity: 0; scale: .99; }
+}
+@keyframes ui-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes ui-fade-out { from { opacity: 1; } to { opacity: 0; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .landing .home-intro-copy > :is(h1,p,.home-actions),
+  .landing :is(.home-feature,.home-teacher-note,.home-section-heading,.home-lesson-row) {
+    animation: ui-arrive 440ms var(--ui-ease) backwards;
+  }
+  .landing .home-intro-copy > p { animation-delay: 45ms; }
+  .landing .home-intro-copy > .home-actions { animation-delay: 90ms; }
+  .landing .home-feature { animation-delay: 80ms; }
+  .landing .home-teacher-note { animation-delay: 110ms; }
+  .landing .home-section-heading { animation-delay: 130ms; }
+  .landing .home-lesson-row:nth-child(1) { animation-delay: 150ms; }
+  .landing .home-lesson-row:nth-child(2) { animation-delay: 185ms; }
+  .landing .home-lesson-row:nth-child(3) { animation-delay: 220ms; }
+  /* Keyboard users should never have to wait for a reveal. */
+  .landing :is(.home-actions,.home-feature,.home-teacher-note,.home-section-heading,.home-lesson-row):focus-within { animation: none; }
+
+  .landing :is(.home-primary,.home-world-preview),
+  .cw-app :is(.primary-button,.icon-button),
+  [data-slot=dialog-content] :is(.primary-button,[data-slot=dialog-close]) {
+    transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease,
+      box-shadow 220ms ease, transform 220ms var(--ui-ease), scale 120ms ease;
+  }
+  .landing :is(.home-primary,.home-world-preview):active,
+  .cw-app :is(.primary-button,.icon-button):not(:disabled):active,
+  [data-slot=dialog-content] :is(.primary-button,[data-slot=dialog-close]):not(:disabled):active { scale: .98; }
+
+  .landing :is(.home-lesson-index,.home-preview-arrow),
+  .landing .home-lesson-row > svg,
+  .landing :is(.home-header,.home-teacher-note,.home-section-heading,.home-primary) svg,
+  .cw-app :is(.lesson-actions,.teaching-entry) button svg {
+    transition: transform 260ms var(--ui-ease), background-color 180ms ease;
+  }
+  .cw-app :is(.lesson-actions,.teaching-entry) button {
+    transition: background-color 160ms ease, color 160ms ease;
+  }
+  .cw-app .lesson-workspace > [data-slot=tabs-content][data-state=active],
+  .studio-notes [data-slot=tabs-content][data-state=active] {
+    animation: ui-arrive 200ms var(--ui-ease);
+  }
+
+  /* Scale is independent of each dialog's existing centering transform. */
+  [data-slot=dialog-content][data-state=open] { animation: ui-dialog-in 220ms var(--ui-ease) both; }
+  [data-slot=dialog-content][data-state=closed] { animation: ui-dialog-out 130ms ease-in both; }
+  [data-slot=dialog-overlay][data-state=open] { animation: ui-fade-in 180ms ease-out both; }
+  [data-slot=dialog-overlay][data-state=closed] { animation: ui-fade-out 130ms ease-in both; }
+}
+
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  .landing .home-lesson-row:hover > svg { transform: translate(2px,-2px); }
+  .landing .home-world-preview:hover .home-preview-arrow { transform: translate(2px,-2px); }
+  .landing .home-primary:hover svg { transform: translate(2px,-2px); }
+  .landing :is(.home-header,.home-teacher-note,.home-section-heading) :is(a,button):hover > svg { transform: translateX(3px); }
+  .cw-app :is(.lesson-actions,.teaching-entry) button:not(:disabled):hover svg { transform: translateX(3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing *,
+  .cw-app :is(button,a,[data-slot=tabs-content]),
+  [data-slot=dialog-content], [data-slot=dialog-content] *,
+  [data-slot=dialog-overlay] { animation: none !important; transition: none !important; }
+  .landing :is(.home-primary,.home-world-preview):hover,
+  .landing .home-lesson-row:hover > svg { transform: none; }
+}

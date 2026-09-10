@@ -1,0 +1,15 @@
+{
+  "version": 3,
+  "picture": "Re-edit of actual September 10 version-2 screen recordings; not a capture of the latest local UI",
+  "narration": "New Marin take with a separate closing pickup; AI-generated",
+  "durationSeconds": 60,
+  "bytes": 7279190,
+  "sha256": "173b2b9ffd5b6edc2748595480972a16cae2183d3a870965fe0002f618df2ea2",
+  "lastNarrationEndsSeconds": 59.82,
+  "sourceSha256": {
+    "full-take": "981b3057220fcead40e052a3b2c91ed5225e5bc17ce522aac014c67ef8dd8174",
+    "result": "3ef2da537daf60b9c8dd30b067204086454a58c97677f7d980b83f75bed2c216",
+    "source": "016dee090a16c729d58ecac8fd0fff6fb4144748e2c031210b5ded8f89a5f20e",
+    "teacher": "c2b130415ccad4e4c05ea2758d35afbdda76784705ce3379380e01593af3dcd2"
+  }
+}

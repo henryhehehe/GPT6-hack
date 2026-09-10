@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {HUMAN_SCALE} from './humanScale';
 import type { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import type { ZoneId } from '@/lib/world';
 import { groundHeight, moveWalker, WALK_SPAWNS } from './walkGeometry';
@@ -17,7 +18,7 @@ export function createExplorer(camera: THREE.PerspectiveCamera, orbit: OrbitCont
   canvas.setAttribute('aria-label','Explore the world. In Walk mode use W A S D or arrow keys, drag to look, E to inspect, Escape for overview.');
 
   function clear(){held.clear();touch.clear();drag=null;}
-  function view(){camera.position.set(point.x,navigation.groundHeight(point)+1.65,point.z);camera.rotation.set(pitch,yaw,0,'YXZ');}
+  function view(){camera.position.set(point.x,navigation.groundHeight(point)+HUMAN_SCALE.eyeHeight,point.z);camera.rotation.set(pitch,yaw,0,'YXZ');}
   function mode(value:boolean){
     if(walking===value)return;
     clear();walking=value;orbit.enabled=!value;
@@ -60,7 +61,7 @@ export function createExplorer(camera: THREE.PerspectiveCamera, orbit: OrbitCont
       let right=Number(active('KeyD','ArrowRight','right'))-Number(active('KeyA','ArrowLeft','left'));
       const length=Math.hypot(forward,right);if(length>1){forward/=length;right/=length;}
       yaw+=(Number(touch.has('turn-left'))-Number(touch.has('turn-right')))*dt*1.5;
-      const speed=active('ShiftLeft','ShiftRight')?8:4.8;
+      const speed=active('ShiftLeft','ShiftRight')?HUMAN_SCALE.jogSpeed:HUMAN_SCALE.walkSpeed;
       point=navigation.moveWalker(point,{x:(-Math.sin(yaw)*forward+Math.cos(yaw)*right)*speed*dt,z:(-Math.cos(yaw)*forward-Math.sin(yaw)*right)*speed*dt});view();
       let closest:ZoneId|null=null,distance=4.5;
       for(const zone of ['harbor','market','library'] as ZoneId[]){const p=navigation.approach[zone],d=Math.hypot(p.x-point.x,p.z-point.z);if(d<distance){distance=d;closest=zone;}}
