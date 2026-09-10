@@ -27,10 +27,19 @@ cp .env.example .env.local
 cp .env.local .dev.vars
 npm run build
 node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0000_common_dreadnoughts.sql
+node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0001_fearless_whiplash.sql
 npm run dev
 ```
 
-Apply that local database migration once, not on every launch. The server prints the preview URL, normally http://localhost:5173. Do not commit environment files. Hosted deployments use a secret configured in Sites rather than these local files.
+Apply each local database migration once, not on every launch. The server prints the preview URL, normally http://localhost:5173. Do not commit environment files. Hosted deployments use a secret configured in Sites rather than these local files.
+
+### Build from a textbook or reading
+
+In **Teacher studio → Build from source material**, enter a source title and paste a passage, upload a PDF/TXT/Markdown excerpt, or supply a direct public HTTPS PDF link. Add a reading range and optional objective. Astra prepares places, characters, activities, evidence, and a what-if investigation. Check the quotations and locators in the review screen, then **Launch new classroom**. Preview as a student before sharing its invitation. Existing student work is preserved in the previous classroom.
+
+PDFs are limited to 5 MB; text to 60,000 characters. A PDF with no range uses its first ten pages. For pasted or text-file material, supply only the intended excerpt. A whole textbook is not exhaustively transformed in one run. PDF extraction needs teacher verification, especially scans and unusual layouts. Generated scenes use symbolic coast, garden, or archive templates; they are not automatic architectural replicas. Sources are stored privately, while approved excerpts appear directly in the student journal with citations. Teacher source access survives launch and refresh.
+
+Validation: `npm test` and `node scripts/smoke-builder.mjs`; append `--live` for paid Astra generation, dialogue, PDF extraction, launch/retry, and private source tests.
 
 The first page opens the teacher studio with a prepared lesson. “Generate with Astra” creates a live, schema-validated lesson. “Preview as student” opens the connected student view. “Invite students” copies a tokenized invitation for a separate browser. Treat teacher credentials as private. The browser stores access tokens locally; the server stores authoritative classroom and student state in D1.
 

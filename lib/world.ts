@@ -3,10 +3,12 @@ import { z } from 'zod';
 export const Zone = z.enum(['harbor', 'market', 'library']);
 export type ZoneId = z.infer<typeof Zone>;
 export const EvidenceSchema = z.object({ id:z.string().max(60), title:z.string().max(90), text:z.string().max(700), kind:z.enum(['source','assumption','teaching-prop']), source:z.string().max(500), zone:Zone });
+export const LessonPackSchema=z.object({subject:z.enum(['history','literature','general']),scene:z.enum(['coast','garden','archive']),sourceTitle:z.string().min(1).max(160),readingRange:z.string().max(200),characters:z.array(z.object({zone:Zone,name:z.string().min(1).max(40),role:z.string().max(70),perspective:z.string().max(400),starters:z.array(z.string().max(180)).length(2)})).length(3),activities:z.array(z.object({zone:Zone,instruction:z.string().min(1).max(350)})).length(3)});
 export const WorldSchema = z.object({
   title:z.string().min(3).max(80), subtitle:z.string().max(160), objective:z.string().max(300), intervention:z.string().max(200),
   nodes:z.array(z.object({ id:Zone, title:z.string().max(80), baseline:z.string().max(200), consequence:z.string().max(240), mechanism:z.string().max(350), evidenceIds:z.array(z.string()).min(1).max(3), activity:z.number().min(0).max(1) })).length(3),
   evidence:z.array(EvidenceSchema).min(3).max(6),
+  lessonPack:LessonPackSchema.optional(),
 });
 export type World = z.infer<typeof WorldSchema>;
 export type Evidence = z.infer<typeof EvidenceSchema>;
