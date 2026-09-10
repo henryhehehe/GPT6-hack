@@ -7,7 +7,7 @@ import {prepareCatalogLesson} from '../lib/curriculum';
 import catalog from '../lib/curriculum/catalog.json';
 
 test('every curriculum world has reviewed museum objects, without automatically assigning them',()=>{
- assert.equal(museumObjects.length,60);
+ assert.equal(museumObjects.length,67);
  assert.equal(museumTopics.length,10);
  for(const entry of catalog.worlds){
   const world=prepareCatalogLesson(entry.lessons[0].id).world!;
@@ -22,7 +22,7 @@ test('every curriculum world has reviewed museum objects, without automatically 
 test('all retained additions reproduce from retained museum metadata with verified image rights',async()=>{
  const directory=new URL('../assets/museums/source-records/',import.meta.url);
  const files=(await readdir(directory)).filter(name=>name.endsWith('.json'));
- assert.equal(files.length,53);
+ assert.equal(files.length,60);
  for(const filename of files){
   const snapshot=JSON.parse(await readFile(new URL(filename,directory),'utf8'));
   const item=museumObjects.find(item=>`${item.id}.json`===filename)!;

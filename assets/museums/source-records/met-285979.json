@@ -1,0 +1,33 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/285979",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 285979,
+    "isPublicDomain": true,
+    "accessionNumber": "2005.100.682",
+    "title": "[Icebergs]",
+    "objectDate": "1893–95",
+    "culture": "",
+    "medium": "Albumen silver print from glass negative",
+    "dimensions": "Image: 3 5/8 × 4 1/2 in. (9.2 × 11.4 cm)\r\nMount: 4 15/16 × 5 7/8 in. (12.5 × 15 cm)",
+    "artistDisplayName": "Robert E. Peary",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Artist",
+    "artistDisplayBio": "American, 1856–1920",
+    "constituents": [
+      {
+        "constituentID": 59524,
+        "role": "Artist",
+        "name": "Robert E. Peary",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500036635",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q186585",
+        "gender": ""
+      }
+    ],
+    "creditLine": "Gilman Collection, Purchase, The Horace W. Goldsmith Foundation Gift, through Joyce and Robert Menschel, 2005",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/285979",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ph/web-large/DP279306.jpg",
+    "metadataDate": "2025-03-06T04:54:30Z"
+  }
+}

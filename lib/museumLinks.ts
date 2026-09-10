@@ -1,4 +1,5 @@
 import {getMuseumInvestigation} from './museumInvestigations';
+import {getMuseumBook} from './museumBooks';
 import {MuseumObjectIdSchema,museumObjects} from './museums';
 
 export function museumObjectPath(id:string,compareId?:string){
@@ -13,10 +14,14 @@ export function museumObjectPath(id:string,compareId?:string){
 }
 
 // Share only reviewed public IDs. Repeated, partial and invented selections are ignored.
-export function museumStudyFromQuery(query:{study?:unknown;object?:unknown;compare?:unknown}){
+export function museumStudyFromQuery(query:{study?:unknown;object?:unknown;compare?:unknown;book?:unknown}){
  if(query.study!==undefined){
   const plan=getMuseumInvestigation(query.study);
-  return plan?{objectIds:[...plan.objectIds],topic:plan.topic,studyId:plan.id}:undefined;
+ return plan?{objectIds:[...plan.objectIds],topic:plan.topic,studyId:plan.id}:undefined;
+ }
+ if(query.object===undefined&&query.compare===undefined){
+  const book=getMuseumBook(query.book);
+  return book?{objectIds:[],topic:book.topic,studyId:undefined}:undefined;
  }
  const object=MuseumObjectIdSchema.safeParse(query.object);
  if(!object.success)return undefined;

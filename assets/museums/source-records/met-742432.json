@@ -1,0 +1,49 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/742432",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 742432,
+    "isPublicDomain": true,
+    "accessionNumber": "2016.767.1",
+    "title": "Edmund Kean in the Character of Macbeth",
+    "objectDate": "1814",
+    "culture": "",
+    "medium": "Black chalk, brush and wash and watercolor",
+    "dimensions": "Sheet: 8 1/8 × 6 7/8 in. (20.6 × 17.4 cm)",
+    "artistDisplayName": "George Henry Harlow",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Artist",
+    "artistDisplayBio": "British, London 1787–1819 London",
+    "constituents": [
+      {
+        "constituentID": 166239,
+        "role": "Artist",
+        "name": "George Henry Harlow",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500001061",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q2733223",
+        "gender": ""
+      },
+      {
+        "constituentID": 196070,
+        "role": "Sitter",
+        "name": "Edmund Kean",
+        "constituentULAN_URL": "(not assigned)",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q704385",
+        "gender": ""
+      },
+      {
+        "constituentID": 164876,
+        "role": "Subject",
+        "name": "William Shakespeare",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500272240",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q692",
+        "gender": ""
+      }
+    ],
+    "creditLine": "Gift of Paul Jeromack, in memory of Robert Tuggle, 2016",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/742432",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP880871.jpg",
+    "metadataDate": "2025-03-06T04:54:30Z"
+  }
+}

@@ -3,9 +3,10 @@ import assert from 'node:assert/strict';
 import {getMuseumInvestigation,museumInvestigations,investigationObjects,investigationForObjects,museumInvestigationPath,suggestedMuseumInvestigations,addMuseumInvestigation} from '../lib/museumInvestigations';
 import {museumWorksheetHtml} from '../lib/museumWorksheet';
 import {museumTopics,museumObjects} from '../lib/museums';
+import {prepareCatalogLesson} from '../lib/curriculum';
 
 test('guided investigations bind two reviewed objects and preserve their reading boundaries',()=>{
- assert.equal(new Set(museumInvestigations.map(plan=>plan.id)).size,10);
+ assert.equal(new Set(museumInvestigations.map(plan=>plan.id)).size,17);
  for(const plan of museumInvestigations){
   const objects=investigationObjects(plan);
   assert.equal(objects.length,2);assert.notEqual(objects[0].id,objects[1].id);
@@ -15,6 +16,10 @@ test('guided investigations bind two reviewed objects and preserve their reading
   assert.equal(getMuseumInvestigation(new URL(`https://class.test${museumInvestigationPath(plan.id)}`).searchParams.get('study')),plan);
  }
  assert.match(getMuseumInvestigation('odyssey-retold')!.readingBridge,/outside Book IX/);
+ const introduction=prepareCatalogLesson('odyssey-ix-01').world!.evidence.find(e=>e.id==='1727-391-0')!;
+ assert.match(introduction.context!.text,/The goddess Calypso kept me/);
+ assert.match(getMuseumInvestigation('odyssey-retold')!.readingBridge,/Calypso is recalled in Book IX/);
+ assert.ok(museumWorksheetHtml('odyssey-retold').includes('Calypso is recalled in Book IX'));
  assert.match(getMuseumInvestigation('austen-first-impressions')!.steps[2].prompt,/Neither record/);
  assert.equal(getMuseumInvestigation(['royal-power']),undefined);
  assert.equal(getMuseumInvestigation('unknown'),undefined);
@@ -59,12 +64,12 @@ test('teaching guide includes only complete pairs and leaves the planned lesson 
  }
 });
 
-test('every collection topic has one usable investigation and suggestions respect the chosen topic',()=>{
+test('every collection topic has usable investigations and suggestions respect the chosen topic',()=>{
  for(const topic of museumTopics){
   const plans=suggestedMuseumInvestigations(topic);
-  assert.equal(plans.length,1,topic);
+  assert.ok(plans.length>=1,topic);
   assert.equal(investigationObjects(plans[0]).length,2);
-  assert.deepEqual(suggestedMuseumInvestigations(topic,plans[0].objectIds),plans);
+  assert.deepEqual(suggestedMuseumInvestigations(topic,plans[0].objectIds),[plans[0]]);
   assert.deepEqual(suggestedMuseumInvestigations(topic,[plans[0].objectIds[0]]),[]);
  }
 });

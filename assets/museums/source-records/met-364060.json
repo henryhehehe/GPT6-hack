@@ -1,0 +1,41 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/364060",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 364060,
+    "isPublicDomain": true,
+    "accessionNumber": "67.550.2a",
+    "title": "Illustration to the Tempest: Caliban, Ferdinand and Ariel",
+    "objectDate": "1836",
+    "culture": "",
+    "medium": "Graphite and pen and red ink",
+    "dimensions": "Sheet: 5 11/16 × 3 9/16 in. (14.5 × 9 cm)",
+    "artistDisplayName": "Henry Courtney Selous",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Artist",
+    "artistDisplayBio": "British, Deptford 1803–1890 Beaworthy",
+    "constituents": [
+      {
+        "constituentID": 90052,
+        "role": "Artist",
+        "name": "Henry Courtney Selous",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500029894",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q1606630",
+        "gender": ""
+      },
+      {
+        "constituentID": 164876,
+        "role": "Subject",
+        "name": "William Shakespeare",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500272240",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q692",
+        "gender": ""
+      }
+    ],
+    "creditLine": "The Elisha Whittelsey Collection, The Elisha Whittelsey Fund, 1967",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/364060",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP850235.jpg",
+    "metadataDate": "2025-03-06T04:54:30Z"
+  }
+}

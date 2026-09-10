@@ -1,0 +1,33 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/401167",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 401167,
+    "isPublicDomain": true,
+    "accessionNumber": "51.501.3985",
+    "title": "Plate 143: Polyphemus Eating Ulysses' Men, as Achaemides Watches (Ulyssis socios deuorat Polyphemus), from Ovid's 'Metamorphoses'",
+    "objectDate": "1606",
+    "culture": "",
+    "medium": "Etching",
+    "dimensions": "Sheet: 3 15/16 × 4 5/8 in. (10 × 11.7 cm)",
+    "artistDisplayName": "Antonio Tempesta",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Artist",
+    "artistDisplayBio": "Italian, Florence 1555–1630 Rome",
+    "constituents": [
+      {
+        "constituentID": 162518,
+        "role": "Artist",
+        "name": "Antonio Tempesta",
+        "constituentULAN_URL": "http://vocab.getty.edu/page/ulan/500027888",
+        "constituentWikidata_URL": "https://www.wikidata.org/wiki/Q605447",
+        "gender": ""
+      }
+    ],
+    "creditLine": "The Elisha Whittelsey Collection, The Elisha Whittelsey Fund, 1951",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/401167",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/dp/web-large/DP864225.jpg",
+    "metadataDate": "2025-03-06T04:54:30Z"
+  }
+}

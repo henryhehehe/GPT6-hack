@@ -1,0 +1,35 @@
+{
+  "endpoint": "https://openaccess-api.clevelandart.org/api/artworks/325424",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "id": 325424,
+    "accession_number": "2019.53",
+    "title": "Covent Garden Labourers",
+    "creation_date": "1877",
+    "culture": [
+      "England, 19th century"
+    ],
+    "technique": "woodburytype",
+    "measurements": "Image: 11.4 x 8.6 cm (4 1/2 x 3 3/8 in.); Paper: 11.4 x 8.6 cm (4 1/2 x 3 3/8 in.); Mounted: 27 x 20.7 cm (10 5/8 x 8 1/8 in.)",
+    "creators": [
+      {
+        "description": "John Thomson (Scottish, 1837–1921)",
+        "qualifier": null,
+        "role": "artist"
+      }
+    ],
+    "creditline": "Photography Discretionary Fund",
+    "url": "https://clevelandart.org/art/2019.53",
+    "images": {
+      "web": {
+        "url": "https://openaccess-cdn.clevelandart.org/2019.53/2019.53_web.jpg",
+        "width": "689",
+        "height": "900",
+        "filesize": "269062",
+        "filename": "2019.53_web.jpg"
+      }
+    },
+    "share_license_status": "CC0",
+    "updated_at": "2026-05-29 08:56:23.908000"
+  }
+}

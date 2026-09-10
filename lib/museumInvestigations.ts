@@ -18,7 +18,7 @@ export const museumInvestigations:MuseumInvestigationPlan[]=[
   {title:'Observe',minutes:2,prompt:'Describe the flask’s form and one visible action in the painting. Keep visual description separate from the identities supplied by their titles.'},
   {title:'Compare',minutes:3,prompt:'Compare their dates, materials, and object types. How might a perfume flask and a painting invite different encounters with a story?'},
   {title:'Test the limit',minutes:3,prompt:'Neither object is an eyewitness account of Odysseus’s travels. What would you need to read before claiming that either illustrates a particular passage?'},
- ],readingBridge:'Return to your assigned Odyssey passage. The Sirens and Calypso belong outside Book IX; use this pair to discuss reception and the limits of a visual analogy, not as illustrations of the Cyclops episode.'},
+ ],readingBridge:'Return to your assigned Odyssey passage. The Sirens encounter is outside Book IX. Calypso is recalled in Book IX, including the saved introduction context, but the painting interprets the release episode in Book V. Neither object illustrates the Cyclops episode; keep later reception distinct from the assigned text.'},
  {id:'austen-first-impressions',topic:'Jane Austen',title:'What do appearances leave out?',summary:'A dress and a teapot invite questions about first impressions and social encounters.',objectIds:['met-90487','met-192043'],minutes:8,steps:[
   {title:'Observe',minutes:2,prompt:'Describe a detail of the dress and a detail of the teapot. What is visible, and what did you learn only by reading their museum records?'},
   {title:'Compare',minutes:3,prompt:'Imagine the questions an observer might ask about clothing and hospitality. Which assumptions about a person could these objects tempt you to make without enough evidence?'},
@@ -33,7 +33,7 @@ export const museumInvestigations:MuseumInvestigationPlan[]=[
   {title:'Observe',minutes:2,prompt:'Describe Miranda’s pose in the single-figure print and the distances between figures in the grouped scene. Separate visible detail from names supplied by the records.'},
   {title:'Compare',minutes:3,prompt:'Which figure does each composition invite you to identify with? Identify a visual choice behind that response, including how Caliban is framed.'},
   {title:'Test the limit',minutes:3,prompt:'These are later interpretations. Explain why an artist’s threatening or sympathetic portrayal cannot settle the competing claims made by the play’s speakers.'},
- ],readingBridge:'Return to your assigned Tempest passage and name who speaks each account of the island’s past. Support a comparison with the words, keeping the later artists’ judgments distinct from textual evidence.'},
+ ],readingBridge:'Return to your assigned Tempest passage. If it contains competing accounts of the island’s past, compare their speakers and words. If your packet contains the opening storm instead, examine the language of authority there. Keep the later artists’ judgments separate and do not require a passage absent from your packet.'},
  {id:'declaration-paper',topic:'Declaration of Independence',title:'How does an argument become a public memory?',summary:'A writing tool and a retrospective print connect making an argument with remembering it.',objectIds:['met-4435','cma-100166'],minutes:8,steps:[
   {title:'Observe',minutes:2,prompt:'Describe a practical feature of the inkstand and the arrangement of people and papers in the etching.'},
   {title:'Compare',minutes:3,prompt:'One object supports writing; the other represents a political event. What can each help you ask about the work and presentation of public argument?'},
@@ -58,7 +58,204 @@ export const museumInvestigations:MuseumInvestigationPlan[]=[
   {title:'Observe',minutes:2,prompt:'Describe lettering, repeated stitches, or imagery in each sampler. Identify each maker and date from the museum records.'},
   {title:'Compare',minutes:3,prompt:'Compare what Mary Ann Stauffer’s 1830 work and Mariah Boil’s 1844 work reveal about practiced skills. Keep their different individual and community contexts visible.'},
   {title:'Test the limit',minutes:3,prompt:'Explain why evidence that these makers learned particular skills neither proves nor disproves a national claim about access to higher education.'},
- ],readingBridge:'Return to a specific educational grievance in the Declaration of Sentiments. State its scope precisely and identify an additional source that could evaluate it. Neither sampler documents participation at the convention.'},
+ ],readingBridge:'If your assigned Declaration of Sentiments packet includes the education grievance, state its scope and identify an additional source that could test it. Otherwise, examine a rights claim or demand in the supplied passage and explain what further evidence about education would be needed. Neither sampler documents participation at the convention.'},
+{
+ "id": "odyssey-cave-retellings",
+ "topic": "The Odyssey",
+ "title": "Whose Cyclops story are we seeing?",
+ "summary": "A later Ovid illustration and an ancient cup invite a careful return to Homer.",
+ "objectIds": [
+  "met-401167",
+  "cma-108536"
+ ],
+ "minutes": 8,
+ "steps": [
+  {
+   "title": "Observe",
+   "minutes": 2,
+   "prompt": "Describe the etching and the ram on the cup. Use the titles to distinguish depicted violence from a scene of sacrifice."
+  },
+  {
+   "title": "Compare",
+   "minutes": 3,
+   "prompt": "Read both dates and titles. The etching names Ovid and Achaemides; the cup depicts a warrior sacrificing a ram. What would go wrong if both were labelled illustrations of Homer’s escape?"
+  },
+  {
+   "title": "Test the limit",
+   "minutes": 3,
+   "prompt": "Choose one claim about the cave encounter and find its support in the assigned reading. Identify a detail in either object that cannot establish that claim."
+  }
+ ],
+ "readingBridge": "Return to the assigned Odyssey Book IX packet: the cave encounter, assumed name, escape, or shouted identity. Ovid’s later telling and the unrelated sacrificial cup are comparisons, not substitutes for Homer’s narrative. The etching depicts violence."
+},{
+ "id": "austen-letter-evidence",
+ "topic": "Jane Austen",
+ "title": "What makes a letter convincing?",
+ "summary": "A writing table and an inkstand separate the act of writing from the truth of a claim.",
+ "objectIds": [
+  "met-197364",
+  "met-191270"
+ ],
+ "minutes": 8,
+ "steps": [
+  {
+   "title": "Observe",
+   "minutes": 2,
+   "prompt": "Describe one practical feature of each object. Separate what is visible from the function supplied by its title."
+  },
+  {
+   "title": "Compare",
+   "minutes": 3,
+   "prompt": "What do these objects help you imagine about composing a letter? What do they leave unknown about the writer, recipient, and claims?"
+  },
+  {
+   "title": "Test the limit",
+   "minutes": 3,
+   "prompt": "Choose a judgment in the assigned passage and identify how it is supported or revised. Explain why the objects cannot authenticate the letter or settle its truth."
+  }
+ ],
+ "readingBridge": "Use the assigned Pride and Prejudice packet only: Chapter 35, Chapter 36, or the bounded comparison of both. The Chapter 36 lesson contains no direct Chapter 35 letter passage; do not require absent quotations or later corroborating events."
+},{
+ "id": "macbeth-prediction-choice",
+ "topic": "Macbeth",
+ "title": "Does a prediction explain a choice?",
+ "summary": "The Weird Sisters and a portrait of an actor as Macbeth frame influence and responsibility.",
+ "objectIds": [
+  "met-395662",
+  "met-742432"
+ ],
+ "minutes": 8,
+ "steps": [
+  {
+   "title": "Observe",
+   "minutes": 2,
+   "prompt": "Compare gesture, expression, and framing. Read the records to distinguish a representation of the witches from a portrait of Edmund Kean acting Macbeth."
+  },
+  {
+   "title": "Compare",
+   "minutes": 3,
+   "prompt": "Which image directs attention to an outside influence, and which to a character’s response? Describe an artistic choice without treating expression as direct access to thought."
+  },
+  {
+   "title": "Test the limit",
+   "minutes": 3,
+   "prompt": "Test a claim about responsibility using the assigned lines. Could either later image establish that Macbeth had no choice? State what the passage actually supports."
+  }
+ ],
+ "readingBridge": "Use the assigned Macbeth packet: Act 1, Scene 3 for hearing the prophecy, or Scenes 5 and 7 for persuasion and deliberation. The 1785 print explicitly names Scene 3; the 1814 actor portrait is not assigned to a particular line. Do not require an unassigned scene."
+},{
+ "id": "frankenstein-imagined-destination",
+ "topic": "Frankenstein",
+ "title": "What does ambition put outside the frame?",
+ "summary": "A late photograph of icebergs and a mountain painting offer two bounded views of nature.",
+ "objectIds": [
+  "met-285979",
+  "met-367715"
+ ],
+ "minutes": 8,
+ "steps": [
+  {
+   "title": "Observe",
+   "minutes": 2,
+   "prompt": "Describe how each image frames its landscape. Identify what lies inside the view and what you cannot see beyond it."
+  },
+  {
+   "title": "Compare",
+   "minutes": 3,
+   "prompt": "Compare what a photograph and a painting might encourage a viewer to imagine. Distinguish an impression of scale or remoteness from evidence about an expedition."
+  },
+  {
+   "title": "Test the limit",
+   "minutes": 3,
+   "prompt": "In Walton’s assigned letters, find an ambition and a qualification or uncertainty. Explain what neither landscape can establish about his fictional journey."
+  }
+ ],
+ "readingBridge": "Return to Frankenstein Letters I–II in the Ambition in a letter lesson. These 1874 and 1893–95 images postdate the novel; neither depicts Walton’s voyage or illustrates the Chapters 4–5 creation packet. Other Frankenstein lessons can use the separate anatomical-model investigation."
+},{
+ "id": "dickens-work-and-attention",
+ "topic": "Charles Dickens",
+ "title": "Who becomes visible when we look again?",
+ "summary": "Two Covent Garden photographs redirect attention toward people at work.",
+ "objectIds": [
+  "cma-325424",
+  "cma-325420"
+ ],
+ "minutes": 8,
+ "steps": [
+  {
+   "title": "Observe",
+   "minutes": 2,
+   "prompt": "Describe where people, goods, and the surrounding setting appear in each photograph. Avoid assigning an income or biography from clothing."
+  },
+  {
+   "title": "Compare",
+   "minutes": 3,
+   "prompt": "Compare the kinds of work named by the records and how each photograph directs attention. What might a quick first glance overlook?"
+  },
+  {
+   "title": "Test the limit",
+   "minutes": 3,
+   "prompt": "Choose a narrative detail from the assigned passage that makes a person visible or invites reconsideration. Explain why a later photograph cannot prove a fictional character’s circumstances."
+  }
+ ],
+ "readingBridge": "Return to the assigned A Christmas Carol packet: Stave 1, Staves 1–2, or Stave 3 with its selected Stave 1 comparison. Both photographs date to 1877 and are contextual comparisons, not images of the Cratchits or of events in the 1843 novella."
+},{
+ "id": "tempest-service-voices",
+ "topic": "The Tempest",
+ "title": "Can a composition settle a competing claim?",
+ "summary": "Two later illustrations arrange Prospero, Miranda, Caliban, Ferdinand, and Ariel differently.",
+ "objectIds": [
+  "met-364060",
+  "met-407873"
+ ],
+ "minutes": 8,
+ "steps": [
+  {
+   "title": "Observe",
+   "minutes": 2,
+   "prompt": "Read the titles to identify the figures named in each illustration. Describe a distance, pose, or grouping before interpreting a relationship."
+  },
+  {
+   "title": "Compare",
+   "minutes": 3,
+   "prompt": "Compare who is present or absent. How could that choice direct sympathy or attention toward one character’s account?"
+  },
+  {
+   "title": "Test the limit",
+   "minutes": 3,
+   "prompt": "Choose one statement about service, freedom, or the island’s past from the assigned dialogue. Separate the speaker’s claim from the artist’s later interpretation."
+  }
+ ],
+ "readingBridge": "Use the approved Tempest Act 1, Scene 2 exchanges for the A story with a listener or Competing claims lessons. The Selous title does not prove a shared conversation among all three named figures. For the Act 1, Scene 1 storm lesson, return to the storm passage rather than requiring these later exchanges."
+},{
+ "id": "douglass-authorship",
+ "topic": "Frederick Douglass",
+ "title": "What makes an author visible?",
+ "summary": "An attributed Wheatley portrait and a later Douglass portrait prompt questions about voice and evidence.",
+ "objectIds": [
+  "met-396463",
+  "met-282066"
+ ],
+ "minutes": 8,
+ "steps": [
+  {
+   "title": "Observe",
+   "minutes": 2,
+   "prompt": "Describe a detail of pose or framing in each portrait. Read the records to distinguish the sitters and preserve the attribution of the Wheatley print."
+  },
+  {
+   "title": "Compare",
+   "minutes": 3,
+   "prompt": "What might an author’s portrait communicate to a reader? Identify something about learning or composing a text that neither image can establish."
+  },
+  {
+   "title": "Test the limit",
+   "minutes": 3,
+   "prompt": "Use a specific moment from Douglass’s account of literacy to distinguish his testimony from your interpretation of a portrait. Keep Wheatley’s separate life outside claims about his experience."
+  }
+ ],
+ "readingBridge": "Return to the assigned Narrative of the Life of Frederick Douglass, Chapters VI–VII. The 1773 Wheatley portrait is attributed to Scipio Moorhead; the Douglass daguerreotype is ca. 1855. Neither documents the childhood literacy episodes, and Wheatley’s experience cannot stand in for Douglass’s first-person account."
+},
 ];
 export function getMuseumInvestigation(id:unknown){return typeof id==='string'?museumInvestigations.find(plan=>plan.id===id):undefined;}
 export function investigationForObjects(items:MuseumObject[]){

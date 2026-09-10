@@ -1,0 +1,33 @@
+{
+  "endpoint": "https://collectionapi.metmuseum.org/public/collection/v1/objects/191270",
+  "retrievedAt": "2026-09-10",
+  "record": {
+    "objectID": 191270,
+    "isPublicDomain": true,
+    "accessionNumber": "10.16.11a–f",
+    "title": "Inkstand",
+    "objectDate": "ca. 1780–85",
+    "culture": "",
+    "medium": "Sheffield plate, glass",
+    "dimensions": "3 × 6 3/4 in. (7.6 × 17.1 cm)",
+    "artistDisplayName": "Richard Morton and Co.",
+    "artistPrefix": "",
+    "artistSuffix": "",
+    "artistRole": "Maker",
+    "artistDisplayBio": "",
+    "constituents": [
+      {
+        "constituentID": 39368,
+        "role": "Maker",
+        "name": "Richard Morton and Co.",
+        "constituentULAN_URL": "",
+        "constituentWikidata_URL": "",
+        "gender": ""
+      }
+    ],
+    "creditLine": "Rogers Fund, 1910",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/191270",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/es/web-large/SF10_16_11a-f.jpg",
+    "metadataDate": "2021-04-30T11:13:27.41Z"
+  }
+}

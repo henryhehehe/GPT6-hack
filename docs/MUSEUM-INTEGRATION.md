@@ -2,9 +2,11 @@
 
 ## Current collection — expanded 10 September 2026
 
-The museum page now has **60 objects across all ten curriculum topics**, including 53 records added after the initial seven. Classroom topic suggestions cover every supported world. See [the expansion catalog and usage notes](MUSEUM-OBJECT-EXPANSION.md) for the added objects, comparison ideas, retained API snapshots, and maintenance steps. The original seven objects, demo selection, and three guided investigations remain intact. Seven additional investigations now provide one guided pair per curriculum topic; see [the classroom investigation guide](MUSEUM-INVESTIGATION-GUIDE.md).
+The museum page now has **67 objects across all ten curriculum topics**, including 60 records added after the initial seven. Classroom topic suggestions cover every supported world. See [the expansion catalog and usage notes](MUSEUM-OBJECT-EXPANSION.md) for the added objects, comparison ideas, retained API snapshots, and maintenance steps. The original seven objects, demo selection, and three guided investigations remain intact. Fourteen additional investigations now provide two guided pairs per literary reading and one per historical-source topic; see [the classroom investigation guide](MUSEUM-INVESTIGATION-GUIDE.md).
 
 ## Product decision
+
+The [10 September accuracy continuation](curriculum/MUSEUM-ACCURACY-REVIEW.md) documents corrections to the original object notes and three investigation reading bridges, with sources and validation.
 
 Treat a museum object as a separately attributed historical or artistic source, with explicit limits on its relevance. A photograph of an ancient coin is not a reconstruction of Alexandria; a seventeenth-century painting of the Odyssey is evidence of later reception, not an eyewitness account. Teaching prompts are our editorial material, not museum quotations.
 
@@ -37,7 +39,7 @@ The Alexandria demo adds **Compare gold & silver coins** within the existing inv
 
 ## Guided pairs and reusable worksheets
 
-The collection now offers ten editorial eight-minute investigations, including the original three: **How does power make itself visible?** (Alexandria coins), **What changes when a story is retold?** (the siren flask and Calypso painting), and **What do appearances leave out?** (the Met dress and teapot). Each opens the existing comparison with observation, comparison and limitation prompts, followed by a specific bridge back to its assigned reading. These are discussion starters, not museum quotations or generated answers.
+The collection now offers seventeen editorial eight-minute investigations, including the original three: **How does power make itself visible?** (Alexandria coins), **What changes when a story is retold?** (the siren flask and Calypso painting), and **What do appearances leave out?** (the Met dress and teapot). Each opens the existing comparison with observation, comparison and limitation prompts, followed by a specific bridge back to its assigned reading. These are discussion starters, not museum quotations or generated answers.
 
 Choosing the same pair manually reveals the same guide. The Alexandria demo’s gold/silver comparison also includes its guide. Teacher suggestions follow the known lesson topic; learner suggestions appear only when both objects are selected for that classroom. The selected topic filters the suggested investigations too. All-topic browsing starts with three suggestions and offers a Show all investigations control; the complete set is documented in the investigation guide.
 
@@ -116,3 +118,9 @@ Manually verify collection filtering, readable citations, image fallback, keyboa
 ## Direct object and comparison links
 
 The object inspector now offers a reusable public link and Copy link. `/collections?object=<reviewed-id>` opens one object; adding `&compare=<second-reviewed-id>` opens the ordered pair. Links may cross topics, contain no classroom or learner data, and do not modify lesson selections. The existing investigation links retain precedence. Invalid, repeated, partial, or duplicate IDs return to normal browsing. See the expansion guide for working examples.
+
+## Browse by the assigned book
+
+The collection uses the curriculum’s book titles for filters, object cards, and suggested investigations. Each selected book exposes its exact prepared lesson titles and reading ranges, derived from `lib/curriculum/catalog.json` through `lib/museumBooks.ts`. Existing saved topic IDs remain unchanged. Search accepts both book titles and author names. Seven new book-specific investigations bring the total to seventeen; their prompts, source records, reading limits, and eight-minute teaching steps are in the investigation guide.
+
+`/collections?book=<worldId>` is an allowlisted public filter link, with no automatic object assignment or learner state. It opens no inspector. `study` takes precedence, followed by explicit object/comparison selection, followed by `book`; repeated or unknown IDs fall back to browsing. All thirty prepared lesson ranges are covered by the catalog consistency tests.

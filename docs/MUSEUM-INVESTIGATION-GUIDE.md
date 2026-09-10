@@ -1,10 +1,10 @@
 # Museum investigations: classroom guide
 
-Ten reviewed object pairs, one for each curriculum topic. These are editorial discussion activities, not museum quotations or generated answers.
+Seventeen reviewed object pairs: two for each of the seven literary readings and one for each of the three historical-source topics. These are editorial discussion activities, not museum quotations or generated answers.
 
 ## Open and teach a pair
 
-1. Open the museum collection and choose a topic, or use one of the links below. Three suggestions are initially visible when browsing all topics; choose **Show all 10 investigations** to expand the list. Topic filters show the matching investigation.
+1. Open the museum collection and choose a topic, or use one of the links below. Three suggestions are initially visible when browsing all topics; choose **Show all 17 investigations** to expand the list. Book filters show both matching investigations, with the new reading-aligned pair first. Expand Read alongside these lessons for the exact prepared ranges.
 2. Choose **Explore this pair** to compare the photographs and read the timed prompts. Each image retains its own scale, so compare physical size using the museum dimensions.
 3. In the classroom, **Add pair to lesson** saves both objects together, or adds the missing object. The six-object classroom limit still applies.
 4. Learners see the guide when both objects are assigned. Complete pairs also appear in the teacher guide, with a printable worksheet and blank response spaces. Choose one eight-minute discussion within the lesson’s existing investigation time.
@@ -43,7 +43,7 @@ An ancient flask and a later painting open different windows onto myth.
 
 **Test the limit · 3 minutes.** Neither object is an eyewitness account of Odysseus’s travels. What would you need to read before claiming that either illustrates a particular passage?
 
-**Return to the reading.** Return to your assigned Odyssey passage. The Sirens and Calypso belong outside Book IX; use this pair to discuss reception and the limits of a visual analogy, not as illustrations of the Cyclops episode.
+**Return to the reading.** Return to your assigned Odyssey passage. The Sirens encounter is outside Book IX. Calypso is recalled in Book IX, including the saved introduction context, but the painting interprets the release episode in Book V. Neither object illustrates the Cyclops episode; keep later reception distinct from the assigned text.
 
 ### Jane Austen: What do appearances leave out?
 
@@ -94,7 +94,7 @@ A portrait-like Miranda and a grouped encounter frame the island’s story diffe
 
 **Test the limit · 3 minutes.** These are later interpretations. Explain why an artist’s threatening or sympathetic portrayal cannot settle the competing claims made by the play’s speakers.
 
-**Return to the reading.** Return to your assigned Tempest passage and name who speaks each account of the island’s past. Support a comparison with the words, keeping the later artists’ judgments distinct from textual evidence.
+**Return to the reading.** Return to your assigned Tempest passage. If it contains competing accounts of the island’s past, compare their speakers and words. If your packet contains the opening storm instead, examine the language of authority there. Keep the later artists’ judgments separate and do not require a passage absent from your packet.
 
 ### Declaration of Independence: How does an argument become a public memory?
 
@@ -179,10 +179,119 @@ Two named makers’ samplers make skill visible while leaving broader opportunit
 
 **Test the limit · 3 minutes.** Explain why evidence that these makers learned particular skills neither proves nor disproves a national claim about access to higher education.
 
-**Return to the reading.** Return to a specific educational grievance in the Declaration of Sentiments. State its scope precisely and identify an additional source that could evaluate it. Neither sampler documents participation at the convention.
+**Return to the reading.** If your assigned Declaration of Sentiments packet includes the education grievance, state its scope and identify an additional source that could test it. Otherwise, examine a rights claim or demand in the supplied passage and explain what further evidence about education would be needed. Neither sampler documents participation at the convention.
 
 ## Maintenance
 
 The app reads these plans from `lib/museumInvestigations.ts`. Keep IDs stable for shared links, choose two distinct reviewed objects from the same topic, and make the step times sum to the stated duration. Existing helpers handle atomic selection, unchanged retries, teacher-only writes, worksheet attribution, and reading boundaries. Adding an investigation does not alter a student’s collected evidence or generate an answer.
 
 Third expansion validation: 33 museum tests passed, including all ten pairs, topic coverage, atomic selection/retry/capacity behavior, and attributed worksheets. Scoped museum TypeScript and the production build passed. All ten added image URLs and the new Macbeth investigation link returned HTTP 200. The Sites build wrapper had disappeared from the local plugin cache, so the same project build command was run directly. No browser visual QA or deployment was performed.
+
+## Additional book-aligned investigations
+
+These pairs supplement the original ten. Select only the assigned packet; an object does not authorize requiring later chapters or absent quotations.
+
+### The Odyssey: Whose Cyclops story are we seeing?
+
+[Open the pair](/collections?study=odyssey-cave-retellings) · [Browse the book](/collections?book=odyssey-ix)
+
+A later Ovid illustration and an ancient cup invite a careful return to Homer.
+
+- [Plate 143: Polyphemus Eating Ulysses' Men, as Achaemides Watches (Ulyssis socios deuorat Polyphemus), from Ovid's 'Metamorphoses'](https://www.metmuseum.org/art/collection/search/401167) — 1606; The Metropolitan Museum of Art, 51.501.3985.
+- [Fragmentary Red-Figure Kylix (Drinking Cup): Warrior Sacrificing Ram](https://clevelandart.org/art/1926.242) — c. 490–480 BCE; Cleveland Museum of Art, 1926.242.
+
+1. **Observe · 2 minutes.** Describe the etching and the ram on the cup. Use the titles to distinguish depicted violence from a scene of sacrifice.
+2. **Compare · 3 minutes.** Read both dates and titles. The etching names Ovid and Achaemides; the cup depicts a warrior sacrificing a ram. What would go wrong if both were labelled illustrations of Homer’s escape?
+3. **Test the limit · 3 minutes.** Choose one claim about the cave encounter and find its support in the assigned reading. Identify a detail in either object that cannot establish that claim.
+
+**Return to the reading.** Return to the assigned Odyssey Book IX packet: the cave encounter, assumed name, escape, or shouted identity. Ovid’s later telling and the unrelated sacrificial cup are comparisons, not substitutes for Homer’s narrative. The etching depicts violence.
+
+### Pride and Prejudice: What makes a letter convincing?
+
+[Open the pair](/collections?study=austen-letter-evidence) · [Browse the book](/collections?book=austen-letter)
+
+A writing table and an inkstand separate the act of writing from the truth of a claim.
+
+- [Desk or writing table](https://www.metmuseum.org/art/collection/search/197364) — ca. 1780–90; The Metropolitan Museum of Art, 33.112.
+- [Inkstand](https://www.metmuseum.org/art/collection/search/191270) — ca. 1780–85; The Metropolitan Museum of Art, 10.16.11a–f.
+
+1. **Observe · 2 minutes.** Describe one practical feature of each object. Separate what is visible from the function supplied by its title.
+2. **Compare · 3 minutes.** What do these objects help you imagine about composing a letter? What do they leave unknown about the writer, recipient, and claims?
+3. **Test the limit · 3 minutes.** Choose a judgment in the assigned passage and identify how it is supported or revised. Explain why the objects cannot authenticate the letter or settle its truth.
+
+**Return to the reading.** Use the assigned Pride and Prejudice packet only: Chapter 35, Chapter 36, or the bounded comparison of both. The Chapter 36 lesson contains no direct Chapter 35 letter passage; do not require absent quotations or later corroborating events.
+
+### Macbeth: Does a prediction explain a choice?
+
+[Open the pair](/collections?study=macbeth-prediction-choice) · [Browse the book](/collections?book=macbeth)
+
+The Weird Sisters and a portrait of an actor as Macbeth frame influence and responsibility.
+
+- [The Weird Sisters (Shakespeare, MacBeth, Act 1, Scene 3)](https://www.metmuseum.org/art/collection/search/395662) — March 10, 1785; The Metropolitan Museum of Art, 59.570.361.
+- [Edmund Kean in the Character of Macbeth](https://www.metmuseum.org/art/collection/search/742432) — 1814; The Metropolitan Museum of Art, 2016.767.1.
+
+1. **Observe · 2 minutes.** Compare gesture, expression, and framing. Read the records to distinguish a representation of the witches from a portrait of Edmund Kean acting Macbeth.
+2. **Compare · 3 minutes.** Which image directs attention to an outside influence, and which to a character’s response? Describe an artistic choice without treating expression as direct access to thought.
+3. **Test the limit · 3 minutes.** Test a claim about responsibility using the assigned lines. Could either later image establish that Macbeth had no choice? State what the passage actually supports.
+
+**Return to the reading.** Use the assigned Macbeth packet: Act 1, Scene 3 for hearing the prophecy, or Scenes 5 and 7 for persuasion and deliberation. The 1785 print explicitly names Scene 3; the 1814 actor portrait is not assigned to a particular line. Do not require an unassigned scene.
+
+### Frankenstein: What does ambition put outside the frame?
+
+[Open the pair](/collections?study=frankenstein-imagined-destination) · [Browse the book](/collections?book=frankenstein)
+
+A late photograph of icebergs and a mountain painting offer two bounded views of nature.
+
+- [[Icebergs]](https://www.metmuseum.org/art/collection/search/285979) — 1893–95; The Metropolitan Museum of Art, 2005.100.682.
+- [Mont Blanc Seen from the Massif, Les Aiguilles Rouges](https://www.metmuseum.org/art/collection/search/367715) — 1874; The Metropolitan Museum of Art, 2005.78.
+
+1. **Observe · 2 minutes.** Describe how each image frames its landscape. Identify what lies inside the view and what you cannot see beyond it.
+2. **Compare · 3 minutes.** Compare what a photograph and a painting might encourage a viewer to imagine. Distinguish an impression of scale or remoteness from evidence about an expedition.
+3. **Test the limit · 3 minutes.** In Walton’s assigned letters, find an ambition and a qualification or uncertainty. Explain what neither landscape can establish about his fictional journey.
+
+**Return to the reading.** Return to Frankenstein Letters I–II in the Ambition in a letter lesson. These 1874 and 1893–95 images postdate the novel; neither depicts Walton’s voyage or illustrates the Chapters 4–5 creation packet. Other Frankenstein lessons can use the separate anatomical-model investigation.
+
+### A Christmas Carol: Who becomes visible when we look again?
+
+[Open the pair](/collections?study=dickens-work-and-attention) · [Browse the book](/collections?book=christmas-carol)
+
+Two Covent Garden photographs redirect attention toward people at work.
+
+- [Covent Garden Labourers](https://clevelandart.org/art/2019.53) — 1877; Cleveland Museum of Art, 2019.53.
+- [Covent Garden Flower Women](https://clevelandart.org/art/2019.49) — 1877; Cleveland Museum of Art, 2019.49.
+
+1. **Observe · 2 minutes.** Describe where people, goods, and the surrounding setting appear in each photograph. Avoid assigning an income or biography from clothing.
+2. **Compare · 3 minutes.** Compare the kinds of work named by the records and how each photograph directs attention. What might a quick first glance overlook?
+3. **Test the limit · 3 minutes.** Choose a narrative detail from the assigned passage that makes a person visible or invites reconsideration. Explain why a later photograph cannot prove a fictional character’s circumstances.
+
+**Return to the reading.** Return to the assigned A Christmas Carol packet: Stave 1, Staves 1–2, or Stave 3 with its selected Stave 1 comparison. Both photographs date to 1877 and are contextual comparisons, not images of the Cratchits or of events in the 1843 novella.
+
+### The Tempest: Can a composition settle a competing claim?
+
+[Open the pair](/collections?study=tempest-service-voices) · [Browse the book](/collections?book=tempest)
+
+Two later illustrations arrange Prospero, Miranda, Caliban, Ferdinand, and Ariel differently.
+
+- [Illustration to the Tempest: Caliban, Ferdinand and Ariel](https://www.metmuseum.org/art/collection/search/364060) — 1836; The Metropolitan Museum of Art, 67.550.2a.
+- [Scene from the Tempest: Caliban, Prospero and Miranda](https://www.metmuseum.org/art/collection/search/407873) — 1783–87, reissued 1801; The Metropolitan Museum of Art, 53.638.19.
+
+1. **Observe · 2 minutes.** Read the titles to identify the figures named in each illustration. Describe a distance, pose, or grouping before interpreting a relationship.
+2. **Compare · 3 minutes.** Compare who is present or absent. How could that choice direct sympathy or attention toward one character’s account?
+3. **Test the limit · 3 minutes.** Choose one statement about service, freedom, or the island’s past from the assigned dialogue. Separate the speaker’s claim from the artist’s later interpretation.
+
+**Return to the reading.** Use the approved Tempest Act 1, Scene 2 exchanges for the A story with a listener or Competing claims lessons. The Selous title does not prove a shared conversation among all three named figures. For the Act 1, Scene 1 storm lesson, return to the storm passage rather than requiring these later exchanges.
+
+### Narrative of the Life of Frederick Douglass: What makes an author visible?
+
+[Open the pair](/collections?study=douglass-authorship) · [Browse the book](/collections?book=douglass-literacy)
+
+An attributed Wheatley portrait and a later Douglass portrait prompt questions about voice and evidence.
+
+- [Phillis Wheatley](https://www.metmuseum.org/art/collection/search/396463) — 1773; The Metropolitan Museum of Art, 49.40.24.
+- [Frederick Douglass](https://www.metmuseum.org/art/collection/search/282066) — ca. 1855; The Metropolitan Museum of Art, 2001.756.
+
+1. **Observe · 2 minutes.** Describe a detail of pose or framing in each portrait. Read the records to distinguish the sitters and preserve the attribution of the Wheatley print.
+2. **Compare · 3 minutes.** What might an author’s portrait communicate to a reader? Identify something about learning or composing a text that neither image can establish.
+3. **Test the limit · 3 minutes.** Use a specific moment from Douglass’s account of literacy to distinguish his testimony from your interpretation of a portrait. Keep Wheatley’s separate life outside claims about his experience.
+
+**Return to the reading.** Return to the assigned Narrative of the Life of Frederick Douglass, Chapters VI–VII. The 1773 Wheatley portrait is attributed to Scipio Moorhead; the Douglass daguerreotype is ca. 1855. Neither documents the childhood literacy episodes, and Wheatley’s experience cannot stand in for Douglass’s first-person account.
