@@ -4,12 +4,12 @@ Explore a text as a 3D learning environment, examine its evidence, and revise an
 
 **[Try the student experience](https://counterfactual-worlds-henry.handeche49.chatgpt.site/try)** · **[Explore the worlds](https://counterfactual-worlds-henry.handeche49.chatgpt.site/worlds)** · **[Browse museum objects](https://counterfactual-worlds-henry.handeche49.chatgpt.site/collections)** · **[Teacher studio](https://counterfactual-worlds-henry.handeche49.chatgpt.site/studio)**
 
-Built for the GPT-6 Astra hackathon. This README describes the shipped application on GitHub `main`, including the September 10, 2026 version 24 release. Later development checkpoints are not automatically deployed.
+Built for the GPT-6 Astra hackathon. This README describes the shipped application on GitHub `main`, including the September 10, 2026 version 25 release. Later development checkpoints are not automatically deployed.
 
 ## What you can use
 
 - **10 prepared worlds and 30 lessons.** Alexandria, *The Odyssey*, *Pride and Prejudice*, *Macbeth*, *Frankenstein*, *A Christmas Carol*, *The Tempest*, the Declaration of Independence, Frederick Douglass's narrative, and Seneca Falls. Each world has three reading lessons with assigned ranges, questions, and source packets.
-- **Walkable 3D scenes.** Scene-specific architecture and reading arrangements, rigged companions, vegetation, water, lighting, scenic viewpoints, and optional ambient sound. Use **Walk around**, WASD/arrows, drag to look, Shift to move faster, E to inspect, or Escape for overview. On-screen movement controls are available; sound starts off.
+- **Walkable 3D scenes.** Scene-specific architecture and reading arrangements, detailed Greek and Regency companions, grounded character activity, outdoor wildlife, vegetation, water, lighting, scenic viewpoints, and optional ambient sound. Alexandria includes citizens in its work areas, responsive guide gestures, wind-driven sails and palms, and refreshed reflections. Use **Walk around**, WASD/arrows, drag to look, Shift to move faster, E to inspect, or Escape for overview. On-screen movement controls are available; sound starts off.
 - **Evidence and revision.** Save a starting prediction, collect sources, select exact quotations, make a claim, receive provisional four-part feedback, and revise with a reflection. The journal keeps text, context, and citations inside the app. Draft recovery and downloads help preserve writing.
 - **Source-grounded character dialogue.** Companions respond through Astra and can discuss the learner's saved explanation, feedback, and evidence. Conversations are simulated; talking does not award points, collect evidence, or unlock learning progress.
 - **67 museum objects and 17 guided investigations.** Browse by book or topic, inspect attributed images, compare objects, open shareable object/pair links, and connect observations to the 30 assigned lesson ranges. Saved field notes can receive Astra image feedback that separates visible detail from interpretation.
@@ -124,6 +124,7 @@ The scene combines original Blender-authored assets with licensed external model
 - [Character catalog and usage](assets/CHARACTER-USAGE-GUIDE.md)
 - [Museum object sources and editorial boundaries](docs/MUSEUM-OBJECT-EXPANSION.md)
 - [Landscape art direction](docs/LANDSCAPE-ART-DIRECTION.md) and [lighting/composition review](docs/curriculum/LIGHTING-AND-MOTION-REVIEW.md)
+- [Alexandria scene review](docs/ALEXANDRIA-SCENE-REVIEW.md) and [character activity and wildlife review](docs/SCENE-LIFE-REVIEW.md)
 
 Museum attribution and license information stays with each object. Later depictions, reconstructions, costumes, and hypothetical causal links are distinguished from evidence in the assigned text.
 
@@ -143,9 +144,7 @@ node scripts/check-public-portraits.mjs
 
 The last four commands exercise the actual built Worker with temporary local storage, dummy credentials, and intercepted API requests. They cover learning/citations, quota behavior, learner privacy, draft recovery, scene undo/reset, the first-visit learning form, and portrait authorization/caching/limits without paid model calls.
 
-The version 23 release passed **306 tests**, TypeScript, its production build, and all three Worker checks. Browser review also covered the book filter, paired-object investigation, and share link. These are engineering checks, not proof of educational effectiveness. Later checkpoints should report their own results.
-
-The version 24 portrait release also passed 306 tests, TypeScript, its production build, and the dedicated offline portrait check. Live generation consumes the portrait allowance; the offline check does not.
+The version 25 release passed **322 tests**, TypeScript, its production build, character/model validation, and built-Worker checks for portraits, quotas, privacy, and recovery. Browser review covered the updated Alexandria quay; earlier release checks also covered book filters, paired-object investigations, share links, and first-visit prediction persistence. Live portrait generation consumes its allowance; offline checks do not. These are engineering checks, not proof of educational effectiveness. Later checkpoints should report their own results.
 
 Other scripts under `scripts/smoke-*.mjs` target a running app and may create classrooms or consume quota. Review each script before running it. Live authoring, steering, dialogue, feedback, and probes use the configured API and incur usage. Gated smoke checks accept `PILOT_TEST_TEACHER_CODE` through the process environment; never put a real code in documentation or a committed command.
 
