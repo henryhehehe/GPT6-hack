@@ -1,12 +1,14 @@
+import {reserveAi,reserveClassAi,requireSameOrigin} from '@/lib/pilot';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 import { z } from 'zod';
 import { db,serverEnv,boundary } from '@/lib/server';
 import { HintSchema,validateWorld } from '@/lib/world';
 
 export async function GET(request:Request){
+ try{requireSameOrigin(request);}catch{return new Response('Access denied',{status:403});}
  if(request.headers.get('Upgrade')?.toLowerCase()!=='websocket')return new Response('WebSocket required',{status:426});
  const pair=new WebSocketPair();const [client,server]=Object.values(pair);server.accept();
- let upstream:WebSocket|null=null,activeId='',originalId='',started=false,steered=false,baseVersion=0,instruction='',start=0,closed=false;
+ let classroomId='',upstream:WebSocket|null=null,activeId='',originalId='',started=false,steered=false,baseVersion=0,instruction='',start=0,closed=false;
  const send=(data:unknown)=>{if(!closed)try{server.send(JSON.stringify(data))}catch{}};
  const close=()=>{closed=true;try{upstream?.close()}catch{}try{server.close()}catch{}};
  const fail=(error:string)=>{send({type:'error',error});close()};
@@ -16,12 +18,13 @@ export async function GET(request:Request){
   try{
    if(typeof event.data!=='string'||event.data.length>20000)throw new Error('Invalid message');const msg=JSON.parse(event.data);
    if(msg.type==='steer'){
-    if(!upstream||!activeId)throw new Error('Wait until Astra begins before adding a correction.');const input=z.string().min(1).max(1000).parse(msg.input);upstream.send(JSON.stringify({type:'response.steer',previous_response_id:activeId,input}));return;
+    if(steered)throw new Error('One correction is allowed per pilot request.');if(!upstream||!activeId)throw new Error('Wait until Astra begins before adding a correction.');const input=z.string().min(1).max(1000).parse(msg.input);steered=true;await reserveClassAi(classroomId);await reserveAi();upstream.send(JSON.stringify({type:'response.steer',previous_response_id:activeId,input}));return;
    }
    if(msg.type!=='start'||started)throw new Error('This connection has already started');started=true;
    const row=await db().prepare('SELECT teacher_token, world, version FROM classrooms WHERE id = ?').bind(z.string().uuid().parse(msg.id)).first<{teacher_token:string;world:string;version:number}>();
    if(!row||msg.token!==row.teacher_token)throw new Error('Only the teacher can direct this classroom');const key=serverEnv('OPENAI_API_KEY');if(!key)throw new Error('Astra key is not configured');
    instruction=z.string().min(5).max(1200).parse(msg.instruction);baseVersion=row.version;start=Date.now();
+   classroomId=msg.id;await reserveClassAi(classroomId);await reserveAi();
    const upstreamResponse=await fetch('https://api.openai.com/v1/responses',{headers:{Upgrade:'websocket',Authorization:`Bearer ${key}`}});upstream=upstreamResponse.webSocket;
    if(!upstream)throw new Error(`Astra steering connection unavailable (${upstreamResponse.status}). Use the standard request.`);
    upstream.accept();

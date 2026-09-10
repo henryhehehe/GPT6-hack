@@ -1,7 +1,7 @@
 import {env} from 'cloudflare:workers';
-import {astraImage,db} from '@/lib/server';
+import {db} from '@/lib/server';
 import {WorldSchema,type ZoneId} from '@/lib/world';
-import {claimPortraitSql,finishPortraitSql,portraitFingerprint,portraitInput,portraitInstructions,portraitLeaseMs} from '@/lib/characterPortrait';
+import {portraitFingerprint,portraitLeaseMs} from '@/lib/characterPortrait';
 
 type Portrait={status:string;updated_at:number;blob_key:string|null;response_id:string|null};
 const bucket=()=>(env as unknown as {BUCKET:R2Bucket}).BUCKET;
@@ -28,11 +28,6 @@ export async function GET(request:Request){
 }
 export async function POST(request:Request){
  let c:Awaited<ReturnType<typeof context>>;try{c=await context(request);}catch{return json({error:'This portrait is unavailable for this classroom.'},403);}
- const lease=crypto.randomUUID(),now=Date.now();
- try{const claim=await db().prepare(claimPortraitSql).bind(c.id,c.classId,lease,now,now-portraitLeaseMs).run();if(!claim.meta.changes)return json(status(await read(c.id)));
-  const result=await astraImage(portraitInstructions,portraitInput(c.world,c.npc),'1024x1536'),blobKey=`character-portraits/${c.classId}/${lease}.png`;
-  await bucket().put(blobKey,result.bytes,{httpMetadata:{contentType:'image/png'}});
-  const saved=await db().prepare(finishPortraitSql).bind(blobKey,result.responseId,result.model,Date.now(),c.id,lease).run();if(!saved.meta.changes)await bucket().delete(blobKey);
-  return json(status(await read(c.id)));
- }catch{await db().prepare("UPDATE character_portraits SET status='failed',updated_at=? WHERE id=? AND lease=? AND status='generating'").bind(Date.now(),c.id,lease).run().catch(()=>{});return json({status:'failed',error:'The portrait could not be prepared. You can keep talking and retry it later.'});}
+ return json({status:'disabled',error:'New portraits are turned off for this pilot.'});
+
 }

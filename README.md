@@ -10,7 +10,7 @@ Product scope also includes English: [The Odyssey and Pride and Prejudice expans
 
 For independent review, pass along [the one-page context brief](docs/REVIEW-CONTEXT.md). [Learning UX research](docs/LEARNING-UX-RESEARCH.md) compares five products and separates documented patterns from design recommendations.
 
-The [open-model shortlist](docs/OPEN-MODEL-SHORTLIST.md) records reusable 3D asset candidates for Alexandria, The Odyssey, and Pride and Prejudice, with publisher license labels, optimization needs, and an integration plan. These external candidates are not installed yet.
+The [external model library](assets/external/README.md) stores eight downloaded CC0 collections, 69 selected 3D source assets, and twelve prepared GLB examples for later integration, with licenses, checksums, measurements and previews. The [open-model shortlist](docs/OPEN-MODEL-SHORTLIST.md) preserves additional candidates and acquisition limits. These downloads are staged offline and are not yet part of the running scenes.
 
 Students can now talk to Dorian at the harbor, Thaleia at the market, and Ione near the library. Click a character or their name in the scene, or use **Talk to someone**. Astra generates source-grounded text replies and follow-ups; conversations persist per learner, character, and viewed scenario. Supporting material opens inside the source reader. Dialogue is explicitly simulated and cannot award points, collect evidence, or unlock the archive; **Make your case** remains the separate assessment flow. This release does not add voice or animated lip-sync.
 
@@ -113,3 +113,9 @@ Lesson preparation now asks GPT-6 Astra to direct its `image_generation` tool af
 A real upload fixture is included at `public/samples/pride-and-prejudice-chapter-3.pdf`, downloadable inside the builder. It contains Jane Austen's complete Chapter III, reformatted from the public-domain Project Gutenberg edition, plus a clearly separated editorial note. Select PDF pages 1–4. A TXT alternative and upload guide are under `output/pdf/`. The complete illustrated source edition is https://www.gutenberg.org/ebooks/1342.
 
 Run `node scripts/smoke-book-images.mjs --images` for a paid end-to-end check of the real PDF, lesson generation, illustration, cached replay, and teacher/student image access. Use `--resume --images` to retry the saved private test draft without repeating PDF extraction.
+
+## Teaching kit and buyer review
+
+In the teacher studio, open **Teaching guide & worksheet** for a 30-, 45-, or 60-minute sequence and a downloadable source packet with a student worksheet. The self-contained HTML download can be opened offline and printed or saved as PDF; paper answers do not sync automatically. **Learning report** compares first/latest explanations and exports every submitted turn, excluding the teacher preview. AI feedback remains provisional; repeated or changed wording is not evidence of learning gains.
+
+The [business validity review](docs/BUSINESS-VALIDITY-REVIEW.md) covers the initial buyer, competitor alternatives, school-readiness gaps, proposed pricing experiments, cost sensitivity, and a four-week customer-validation plan. Pricing and pilot targets are hypotheses, not offers or observed results.

@@ -38,3 +38,5 @@
 .city-destinations{margin-top:8px;max-width:230px;color:#d3e5dc;font-size:12px;pointer-events:auto}.city-destinations summary{background:#142d38e8;border:1px solid #ffffff30;padding:6px 10px;border-radius:7px;cursor:pointer;width:fit-content}.city-destinations[open]{background:#102733f5;padding:8px;border-radius:8px;border:1px solid #ffffff30}.city-destinations button{display:flex;justify-content:space-between;gap:16px;padding:8px 5px;color:#d3e5dc;font-size:12px;width:100%;border:0;border-bottom:1px solid #ffffff15;background:none;text-align:left}.city-destinations button:hover{color:#fff;background:#ffffff0a}.city-destinations button:last-child{border:0}
 
 .world-canvas::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#07182470 0%,transparent 32%,transparent 75%,#07182444 100%)}
+
+.pilot-notice { margin: 0; padding: 10px 24px; background: #e9f1ff; color: #163153; font-size: 14px; line-height: 1.5; }

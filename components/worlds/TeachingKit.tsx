@@ -24,7 +24,7 @@ export default function TeachingKit({world,students,previewId,view,onClose}:{wor
     setDownloaded('Download prepared. Open the HTML file and use your browser’s Print command to print or save as PDF.');
   }
   return <Dialog open={view!==null} onOpenChange={open=>{if(!open){setDownloaded('');onClose();}}}><DialogContent className="teaching-kit">
-    <header><span className="eyebrow">{view==='plan'?'PLAN YOUR LESSON':'REVIEW SUBMITTED WORK'}</span><DialogTitle>{view==='plan'?'A lesson you can teach tomorrow':'Classroom learning report'}</DialogTitle><DialogDescription>{world.title} · {world.objective}</DialogDescription></header>
+    <header><span className="eyebrow">{view==='plan'?'PLAN YOUR LESSON':'REVIEW SUBMITTED WORK'}</span><DialogTitle>{view==='plan'?'Your teaching guide & worksheet':'Classroom learning report'}</DialogTitle><DialogDescription>{world.title} · {world.objective}</DialogDescription></header>
     {view==='plan'?<>
       <div className="kit-toolbar"><label>Lesson length<select value={minutes} onChange={event=>setMinutes(Number(event.target.value) as 30|45|60)}><option value={30}>30 minutes</option><option value={45}>45 minutes</option><option value={60}>60 minutes</option></select></label><button className="primary-button" onClick={()=>save('plan')}><Download size={16}/> Download guide & worksheet</button></div>
       <p className="kit-note">Planning estimate · Suggested secondary audience; check the reading level for your learners. Download includes source cards, a student worksheet, and a paper fallback.</p>
