@@ -1,0 +1,5 @@
+import assert from 'node:assert/strict';import {lesson} from '../lib/world.ts';
+const base='http://localhost:5173';async function post(body,t){const r=await fetch(base+'/api/classroom',{method:'POST',headers:{'Content-Type':'application/json',...(t?{Authorization:`Bearer ${t}`}:{})},body:JSON.stringify(body)});const d=await r.json();if(!r.ok)throw new Error(d.error);return d;}
+for(const intervention of ['What if harbor trade collapsed?','What if a new patron replaced the lost funding after trade collapsed?','What if trade recovered but scholar funding was still reduced?']){
+ const c=await post({action:'create'});const run=await post({action:'author',id:c.id,lesson,intervention},c.teacherToken);const r=await fetch(`${base}/api/classroom?id=${c.id}`,{headers:{Authorization:`Bearer ${c.teacherToken}`}});const snapshot=await r.json();assert.equal(snapshot.world.nodes.length,3);assert.ok(snapshot.state.run.responseId);assert.equal(new Set(snapshot.world.nodes.map(n=>n.id)).size,3);console.log(JSON.stringify({intervention,passed:true,...run.run,activity:snapshot.world.nodes.map(n=>({id:n.id,activity:n.activity}))}));
+}

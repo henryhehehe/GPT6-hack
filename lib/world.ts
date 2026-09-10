@@ -15,7 +15,7 @@ export const RubricSchema = z.object({
   evidenceIds:z.array(z.string()).max(6), nextQuestion:z.string().max(250),
 });
 export type Evaluation=z.infer<typeof RubricSchema> & {score:number;unlocked:boolean;responseId:string;latencyMs:number};
-export type Turn={claim:string;npc:ZoneId;result:Evaluation;at:string;worldVersion:number};
+export type Turn={claim:string;npc:ZoneId;result:Evaluation;at:string;worldVersion:number;scenario:boolean};
 export type StudentState={name:string;evidence:string[];turns:Turn[];zone:ZoneId;unlocked:boolean};
 export type Intervention={id:string;title:string;text:string;question:string;zone:ZoneId;responseId:string;latencyMs:number;request:string;kind:'teaching-prop'};
 export type ClassroomState={scenario:boolean;hint:Intervention|null;run:{responseId:string;latencyMs:number}|null};
