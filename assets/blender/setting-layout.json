@@ -1,0 +1,1349 @@
+{
+  "archive": {
+    "models": 6,
+    "instances": 21,
+    "bytes": 650412,
+    "placements": [
+      {
+        "key": "reading-table-0",
+        "id": "reading-table",
+        "at": [
+          -12,
+          0.22,
+          3.9
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "harbor",
+        "url": "/models/props/reading-table.glb"
+      },
+      {
+        "key": "scroll-rack-1",
+        "id": "scroll-rack",
+        "at": [
+          -13.7,
+          0.22,
+          3
+        ],
+        "turn": 0.12,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "harbor",
+        "url": "/models/props/scroll-rack.glb"
+      },
+      {
+        "key": "scroll-rack-2",
+        "id": "scroll-rack",
+        "at": [
+          -10.3,
+          0.22,
+          3
+        ],
+        "turn": -0.12,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "harbor",
+        "url": "/models/props/scroll-rack.glb"
+      },
+      {
+        "key": "open-scroll-3",
+        "id": "open-scroll",
+        "at": [
+          -12.3,
+          1.12222,
+          3.9
+        ],
+        "turn": 0,
+        "scale": 0.78,
+        "collision": "none",
+        "zone": "harbor",
+        "url": "/models/props/open-scroll.glb"
+      },
+      {
+        "key": "writing-tablet-4",
+        "id": "writing-tablet",
+        "at": [
+          -11.6,
+          1.123,
+          3.92
+        ],
+        "turn": -0.15,
+        "scale": 0.72,
+        "collision": "none",
+        "zone": "harbor",
+        "url": "/models/props/writing-tablet.glb"
+      },
+      {
+        "key": "rolled-scroll-5",
+        "id": "rolled-scroll",
+        "at": [
+          -10.3,
+          1.61,
+          3
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "none",
+        "zone": "harbor",
+        "url": "/models/props/rolled-scroll.glb"
+      },
+      {
+        "key": "woven-basket-6",
+        "id": "woven-basket",
+        "at": [
+          -12.25,
+          0.22,
+          2.92
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "harbor",
+        "url": "/models/props/woven-basket.glb"
+      },
+      {
+        "key": "reading-table-7",
+        "id": "reading-table",
+        "at": [
+          12,
+          0.22,
+          3.9
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "market",
+        "url": "/models/props/reading-table.glb"
+      },
+      {
+        "key": "scroll-rack-8",
+        "id": "scroll-rack",
+        "at": [
+          10.3,
+          0.22,
+          3
+        ],
+        "turn": 0.12,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "market",
+        "url": "/models/props/scroll-rack.glb"
+      },
+      {
+        "key": "scroll-rack-9",
+        "id": "scroll-rack",
+        "at": [
+          13.7,
+          0.22,
+          3
+        ],
+        "turn": -0.12,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "market",
+        "url": "/models/props/scroll-rack.glb"
+      },
+      {
+        "key": "open-scroll-10",
+        "id": "open-scroll",
+        "at": [
+          11.7,
+          1.12222,
+          3.9
+        ],
+        "turn": 0,
+        "scale": 0.78,
+        "collision": "none",
+        "zone": "market",
+        "url": "/models/props/open-scroll.glb"
+      },
+      {
+        "key": "writing-tablet-11",
+        "id": "writing-tablet",
+        "at": [
+          12.4,
+          1.123,
+          3.92
+        ],
+        "turn": -0.15,
+        "scale": 0.72,
+        "collision": "none",
+        "zone": "market",
+        "url": "/models/props/writing-tablet.glb"
+      },
+      {
+        "key": "rolled-scroll-12",
+        "id": "rolled-scroll",
+        "at": [
+          13.7,
+          1.61,
+          3
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "none",
+        "zone": "market",
+        "url": "/models/props/rolled-scroll.glb"
+      },
+      {
+        "key": "woven-basket-13",
+        "id": "woven-basket",
+        "at": [
+          11.75,
+          0.22,
+          2.92
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "market",
+        "url": "/models/props/woven-basket.glb"
+      },
+      {
+        "key": "reading-table-14",
+        "id": "reading-table",
+        "at": [
+          0,
+          0.22,
+          -13.1
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "library",
+        "url": "/models/props/reading-table.glb"
+      },
+      {
+        "key": "scroll-rack-15",
+        "id": "scroll-rack",
+        "at": [
+          -1.7,
+          0.22,
+          -14
+        ],
+        "turn": 0.12,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "library",
+        "url": "/models/props/scroll-rack.glb"
+      },
+      {
+        "key": "scroll-rack-16",
+        "id": "scroll-rack",
+        "at": [
+          1.7,
+          0.22,
+          -14
+        ],
+        "turn": -0.12,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "library",
+        "url": "/models/props/scroll-rack.glb"
+      },
+      {
+        "key": "open-scroll-17",
+        "id": "open-scroll",
+        "at": [
+          -0.3,
+          1.12222,
+          -13.1
+        ],
+        "turn": 0,
+        "scale": 0.78,
+        "collision": "none",
+        "zone": "library",
+        "url": "/models/props/open-scroll.glb"
+      },
+      {
+        "key": "writing-tablet-18",
+        "id": "writing-tablet",
+        "at": [
+          0.4,
+          1.123,
+          -13.08
+        ],
+        "turn": -0.15,
+        "scale": 0.72,
+        "collision": "none",
+        "zone": "library",
+        "url": "/models/props/writing-tablet.glb"
+      },
+      {
+        "key": "rolled-scroll-19",
+        "id": "rolled-scroll",
+        "at": [
+          1.7,
+          1.61,
+          -14
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "none",
+        "zone": "library",
+        "url": "/models/props/rolled-scroll.glb"
+      },
+      {
+        "key": "woven-basket-20",
+        "id": "woven-basket",
+        "at": [
+          -0.25,
+          0.22,
+          -14.08
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "library",
+        "url": "/models/props/woven-basket.glb"
+      }
+    ]
+  },
+  "garden": {
+    "models": 8,
+    "instances": 30,
+    "bytes": 1189040,
+    "placements": [
+      {
+        "key": "writing-desk-0",
+        "id": "writing-desk",
+        "at": [
+          -12,
+          0.2059,
+          3.75
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "harbor",
+        "url": "/models/props/writing-desk.glb"
+      },
+      {
+        "key": "period-chair-1",
+        "id": "period-chair",
+        "at": [
+          -12,
+          0.1966,
+          4.35
+        ],
+        "turn": 3.141592653589793,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "harbor",
+        "url": "/models/props/period-chair.glb"
+      },
+      {
+        "key": "open-letter-2",
+        "id": "open-letter",
+        "at": [
+          -12.18,
+          1.043,
+          3.77
+        ],
+        "turn": -0.18,
+        "scale": 1,
+        "collision": "none",
+        "zone": "harbor",
+        "url": "/models/props/open-letter.glb"
+      },
+      {
+        "key": "folded-letter-3",
+        "id": "folded-letter",
+        "at": [
+          -11.7,
+          1.055,
+          3.75
+        ],
+        "turn": 0.1,
+        "scale": 1,
+        "collision": "none",
+        "zone": "harbor",
+        "url": "/models/props/folded-letter.glb"
+      },
+      {
+        "key": "quill-inkwell-4",
+        "id": "quill-inkwell",
+        "at": [
+          -11.65,
+          1.055,
+          3.5700000000000003
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "none",
+        "zone": "harbor",
+        "url": "/models/props/quill-inkwell.glb"
+      },
+      {
+        "key": "garden-bench-5",
+        "id": "garden-bench",
+        "at": [
+          -14.15,
+          0.1976,
+          3.9
+        ],
+        "turn": 1.5707963267948966,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "harbor",
+        "url": "/models/props/garden-bench.glb"
+      },
+      {
+        "key": "garden-bench-6",
+        "id": "garden-bench",
+        "at": [
+          -9.85,
+          0.1976,
+          3.9
+        ],
+        "turn": -1.5707963267948966,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "harbor",
+        "url": "/models/props/garden-bench.glb"
+      },
+      {
+        "key": "paneled-wall-7",
+        "id": "paneled-wall",
+        "at": [
+          -13.21,
+          0.22,
+          2.18
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "harbor",
+        "url": "/models/props/paneled-wall.glb"
+      },
+      {
+        "key": "paneled-wall-8",
+        "id": "paneled-wall",
+        "at": [
+          -10.79,
+          0.22,
+          2.18
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "harbor",
+        "url": "/models/props/paneled-wall.glb"
+      },
+      {
+        "key": "garden-path-9",
+        "id": "garden-path",
+        "at": [
+          -12,
+          0,
+          10.4
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "none",
+        "zone": "harbor",
+        "url": "/models/props/garden-path.glb"
+      },
+      {
+        "key": "writing-desk-10",
+        "id": "writing-desk",
+        "at": [
+          12,
+          0.2059,
+          3.75
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "market",
+        "url": "/models/props/writing-desk.glb"
+      },
+      {
+        "key": "period-chair-11",
+        "id": "period-chair",
+        "at": [
+          12,
+          0.1966,
+          4.35
+        ],
+        "turn": 3.141592653589793,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "market",
+        "url": "/models/props/period-chair.glb"
+      },
+      {
+        "key": "open-letter-12",
+        "id": "open-letter",
+        "at": [
+          11.82,
+          1.043,
+          3.77
+        ],
+        "turn": -0.18,
+        "scale": 1,
+        "collision": "none",
+        "zone": "market",
+        "url": "/models/props/open-letter.glb"
+      },
+      {
+        "key": "folded-letter-13",
+        "id": "folded-letter",
+        "at": [
+          12.3,
+          1.055,
+          3.75
+        ],
+        "turn": 0.1,
+        "scale": 1,
+        "collision": "none",
+        "zone": "market",
+        "url": "/models/props/folded-letter.glb"
+      },
+      {
+        "key": "quill-inkwell-14",
+        "id": "quill-inkwell",
+        "at": [
+          12.35,
+          1.055,
+          3.5700000000000003
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "none",
+        "zone": "market",
+        "url": "/models/props/quill-inkwell.glb"
+      },
+      {
+        "key": "garden-bench-15",
+        "id": "garden-bench",
+        "at": [
+          9.85,
+          0.1976,
+          3.9
+        ],
+        "turn": 1.5707963267948966,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "market",
+        "url": "/models/props/garden-bench.glb"
+      },
+      {
+        "key": "garden-bench-16",
+        "id": "garden-bench",
+        "at": [
+          14.15,
+          0.1976,
+          3.9
+        ],
+        "turn": -1.5707963267948966,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "market",
+        "url": "/models/props/garden-bench.glb"
+      },
+      {
+        "key": "paneled-wall-17",
+        "id": "paneled-wall",
+        "at": [
+          10.79,
+          0.22,
+          2.18
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "market",
+        "url": "/models/props/paneled-wall.glb"
+      },
+      {
+        "key": "paneled-wall-18",
+        "id": "paneled-wall",
+        "at": [
+          13.21,
+          0.22,
+          2.18
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "market",
+        "url": "/models/props/paneled-wall.glb"
+      },
+      {
+        "key": "garden-path-19",
+        "id": "garden-path",
+        "at": [
+          12,
+          0,
+          10.4
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "none",
+        "zone": "market",
+        "url": "/models/props/garden-path.glb"
+      },
+      {
+        "key": "writing-desk-20",
+        "id": "writing-desk",
+        "at": [
+          0,
+          0.2059,
+          -13.25
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "library",
+        "url": "/models/props/writing-desk.glb"
+      },
+      {
+        "key": "period-chair-21",
+        "id": "period-chair",
+        "at": [
+          0,
+          0.1966,
+          -12.65
+        ],
+        "turn": 3.141592653589793,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "library",
+        "url": "/models/props/period-chair.glb"
+      },
+      {
+        "key": "open-letter-22",
+        "id": "open-letter",
+        "at": [
+          -0.18,
+          1.043,
+          -13.23
+        ],
+        "turn": -0.18,
+        "scale": 1,
+        "collision": "none",
+        "zone": "library",
+        "url": "/models/props/open-letter.glb"
+      },
+      {
+        "key": "folded-letter-23",
+        "id": "folded-letter",
+        "at": [
+          0.3,
+          1.055,
+          -13.25
+        ],
+        "turn": 0.1,
+        "scale": 1,
+        "collision": "none",
+        "zone": "library",
+        "url": "/models/props/folded-letter.glb"
+      },
+      {
+        "key": "quill-inkwell-24",
+        "id": "quill-inkwell",
+        "at": [
+          0.35,
+          1.055,
+          -13.43
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "none",
+        "zone": "library",
+        "url": "/models/props/quill-inkwell.glb"
+      },
+      {
+        "key": "garden-bench-25",
+        "id": "garden-bench",
+        "at": [
+          -2.15,
+          0.1976,
+          -13.1
+        ],
+        "turn": 1.5707963267948966,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "library",
+        "url": "/models/props/garden-bench.glb"
+      },
+      {
+        "key": "garden-bench-26",
+        "id": "garden-bench",
+        "at": [
+          2.15,
+          0.1976,
+          -13.1
+        ],
+        "turn": -1.5707963267948966,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "library",
+        "url": "/models/props/garden-bench.glb"
+      },
+      {
+        "key": "paneled-wall-27",
+        "id": "paneled-wall",
+        "at": [
+          -1.21,
+          0.22,
+          -14.82
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "library",
+        "url": "/models/props/paneled-wall.glb"
+      },
+      {
+        "key": "paneled-wall-28",
+        "id": "paneled-wall",
+        "at": [
+          1.21,
+          0.22,
+          -14.82
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "library",
+        "url": "/models/props/paneled-wall.glb"
+      },
+      {
+        "key": "garden-path-29",
+        "id": "garden-path",
+        "at": [
+          0,
+          0,
+          -6.6
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "none",
+        "zone": "library",
+        "url": "/models/props/garden-path.glb"
+      }
+    ]
+  },
+  "coast": {
+    "models": 13,
+    "instances": 45,
+    "bytes": 1973120,
+    "placements": [
+      {
+        "key": "reading-table-0",
+        "id": "reading-table",
+        "at": [
+          -12.15,
+          0.22,
+          3.75
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "harbor",
+        "url": "/models/props/reading-table.glb"
+      },
+      {
+        "key": "open-scroll-1",
+        "id": "open-scroll",
+        "at": [
+          -12.15,
+          1.122,
+          3.75
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "none",
+        "zone": "harbor",
+        "url": "/models/props/open-scroll.glb"
+      },
+      {
+        "key": "cargo-crate-2",
+        "id": "cargo-crate",
+        "at": [
+          -13.85,
+          0.22,
+          3.35
+        ],
+        "turn": 0.15,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "harbor",
+        "url": "/models/props/cargo-crate.glb"
+      },
+      {
+        "key": "rope-coil-3",
+        "id": "rope-coil",
+        "at": [
+          -13.85,
+          1.054,
+          3.35
+        ],
+        "turn": 0,
+        "scale": 0.8,
+        "collision": "none",
+        "zone": "harbor",
+        "url": "/models/props/rope-coil.glb"
+      },
+      {
+        "key": "tied-sack-4",
+        "id": "tied-sack",
+        "at": [
+          -13.85,
+          0.22,
+          4.5
+        ],
+        "turn": -0.3,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "harbor",
+        "url": "/models/props/tied-sack.glb"
+      },
+      {
+        "key": "woven-basket-5",
+        "id": "woven-basket",
+        "at": [
+          -10.2,
+          0.22,
+          3.35
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "harbor",
+        "url": "/models/props/woven-basket.glb"
+      },
+      {
+        "key": "amphora-6",
+        "id": "amphora",
+        "at": [
+          -10.15,
+          0.22,
+          2.6
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "harbor",
+        "url": "/models/props/amphora.glb"
+      },
+      {
+        "key": "storage-jar-7",
+        "id": "storage-jar",
+        "at": [
+          -11.25,
+          0.22,
+          2.75
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "harbor",
+        "url": "/models/props/storage-jar.glb"
+      },
+      {
+        "key": "ceramic-bowl-8",
+        "id": "ceramic-bowl",
+        "at": [
+          -12.95,
+          0.22,
+          2.55
+        ],
+        "turn": 0,
+        "scale": 0.8,
+        "collision": "solid",
+        "zone": "harbor",
+        "url": "/models/props/ceramic-bowl.glb"
+      },
+      {
+        "key": "reading-table-9",
+        "id": "reading-table",
+        "at": [
+          11.85,
+          0.22,
+          3.75
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "market",
+        "url": "/models/props/reading-table.glb"
+      },
+      {
+        "key": "open-scroll-10",
+        "id": "open-scroll",
+        "at": [
+          11.85,
+          1.122,
+          3.75
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "none",
+        "zone": "market",
+        "url": "/models/props/open-scroll.glb"
+      },
+      {
+        "key": "cargo-crate-11",
+        "id": "cargo-crate",
+        "at": [
+          10.15,
+          0.22,
+          3.35
+        ],
+        "turn": 0.15,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "market",
+        "url": "/models/props/cargo-crate.glb"
+      },
+      {
+        "key": "rope-coil-12",
+        "id": "rope-coil",
+        "at": [
+          10.15,
+          1.054,
+          3.35
+        ],
+        "turn": 0,
+        "scale": 0.8,
+        "collision": "none",
+        "zone": "market",
+        "url": "/models/props/rope-coil.glb"
+      },
+      {
+        "key": "tied-sack-13",
+        "id": "tied-sack",
+        "at": [
+          10.15,
+          0.22,
+          4.5
+        ],
+        "turn": -0.3,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "market",
+        "url": "/models/props/tied-sack.glb"
+      },
+      {
+        "key": "woven-basket-14",
+        "id": "woven-basket",
+        "at": [
+          13.8,
+          0.22,
+          3.35
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "market",
+        "url": "/models/props/woven-basket.glb"
+      },
+      {
+        "key": "amphora-15",
+        "id": "amphora",
+        "at": [
+          13.85,
+          0.22,
+          2.6
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "market",
+        "url": "/models/props/amphora.glb"
+      },
+      {
+        "key": "storage-jar-16",
+        "id": "storage-jar",
+        "at": [
+          12.75,
+          0.22,
+          2.75
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "market",
+        "url": "/models/props/storage-jar.glb"
+      },
+      {
+        "key": "ceramic-bowl-17",
+        "id": "ceramic-bowl",
+        "at": [
+          11.05,
+          0.22,
+          2.55
+        ],
+        "turn": 0,
+        "scale": 0.8,
+        "collision": "solid",
+        "zone": "market",
+        "url": "/models/props/ceramic-bowl.glb"
+      },
+      {
+        "key": "reading-table-18",
+        "id": "reading-table",
+        "at": [
+          -0.15,
+          0.22,
+          -13.25
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "library",
+        "url": "/models/props/reading-table.glb"
+      },
+      {
+        "key": "open-scroll-19",
+        "id": "open-scroll",
+        "at": [
+          -0.15,
+          1.122,
+          -13.25
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "none",
+        "zone": "library",
+        "url": "/models/props/open-scroll.glb"
+      },
+      {
+        "key": "cargo-crate-20",
+        "id": "cargo-crate",
+        "at": [
+          -1.85,
+          0.22,
+          -13.65
+        ],
+        "turn": 0.15,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "library",
+        "url": "/models/props/cargo-crate.glb"
+      },
+      {
+        "key": "rope-coil-21",
+        "id": "rope-coil",
+        "at": [
+          -1.85,
+          1.054,
+          -13.65
+        ],
+        "turn": 0,
+        "scale": 0.8,
+        "collision": "none",
+        "zone": "library",
+        "url": "/models/props/rope-coil.glb"
+      },
+      {
+        "key": "tied-sack-22",
+        "id": "tied-sack",
+        "at": [
+          -1.85,
+          0.22,
+          -12.5
+        ],
+        "turn": -0.3,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "library",
+        "url": "/models/props/tied-sack.glb"
+      },
+      {
+        "key": "woven-basket-23",
+        "id": "woven-basket",
+        "at": [
+          1.8,
+          0.22,
+          -13.65
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "library",
+        "url": "/models/props/woven-basket.glb"
+      },
+      {
+        "key": "amphora-24",
+        "id": "amphora",
+        "at": [
+          1.85,
+          0.22,
+          -14.4
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "library",
+        "url": "/models/props/amphora.glb"
+      },
+      {
+        "key": "storage-jar-25",
+        "id": "storage-jar",
+        "at": [
+          0.75,
+          0.22,
+          -14.25
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "solid",
+        "zone": "library",
+        "url": "/models/props/storage-jar.glb"
+      },
+      {
+        "key": "ceramic-bowl-26",
+        "id": "ceramic-bowl",
+        "at": [
+          -0.95,
+          0.22,
+          -14.45
+        ],
+        "turn": 0,
+        "scale": 0.8,
+        "collision": "solid",
+        "zone": "library",
+        "url": "/models/props/ceramic-bowl.glb"
+      },
+      {
+        "key": "merchant-ship-27",
+        "id": "merchant-ship",
+        "at": [
+          -31,
+          -3.1,
+          5
+        ],
+        "turn": -0.5,
+        "scale": 1.5,
+        "collision": "none",
+        "url": "/models/props/merchant-ship.glb"
+      },
+      {
+        "key": "merchant-ship-28",
+        "id": "merchant-ship",
+        "at": [
+          29,
+          -2.95,
+          16
+        ],
+        "turn": 0.7,
+        "scale": 1.1,
+        "collision": "none",
+        "url": "/models/props/merchant-ship.glb"
+      },
+      {
+        "key": "cave-module-29",
+        "id": "cave-module",
+        "at": [
+          0,
+          0,
+          18
+        ],
+        "turn": 0,
+        "scale": 1,
+        "collision": "cave",
+        "url": "/models/props/cave-module.glb"
+      },
+      {
+        "key": "sheep-30",
+        "id": "sheep",
+        "at": [
+          -3.4,
+          0,
+          17.5
+        ],
+        "turn": 0.9,
+        "scale": 1,
+        "collision": "solid",
+        "url": "/models/props/sheep.glb"
+      },
+      {
+        "key": "sheep-31",
+        "id": "sheep",
+        "at": [
+          3.5,
+          0,
+          18.5
+        ],
+        "turn": -0.6,
+        "scale": 1,
+        "collision": "solid",
+        "url": "/models/props/sheep.glb"
+      },
+      {
+        "key": "sheep-32",
+        "id": "sheep",
+        "at": [
+          4.5,
+          0,
+          16.9
+        ],
+        "turn": -1.2,
+        "scale": 0.8,
+        "collision": "solid",
+        "url": "/models/props/sheep.glb"
+      },
+      {
+        "key": "coast-rocks-33",
+        "id": "coast-rocks",
+        "at": [
+          24.323811578419722,
+          0,
+          2.9329490785785244
+        ],
+        "turn": 0.12,
+        "scale": 0.9,
+        "collision": "solid",
+        "url": "/models/props/coast-rocks.glb"
+      },
+      {
+        "key": "coast-rocks-34",
+        "id": "coast-rocks",
+        "at": [
+          19.598564204488284,
+          0,
+          14.701914199265024
+        ],
+        "turn": 0.6435987755982988,
+        "scale": 1.15,
+        "collision": "solid",
+        "url": "/models/props/coast-rocks.glb"
+      },
+      {
+        "key": "coast-rocks-35",
+        "id": "coast-rocks",
+        "at": [
+          9.621897379154703,
+          0,
+          22.531513283066804
+        ],
+        "turn": 1.1671975511965975,
+        "scale": 1.4,
+        "collision": "solid",
+        "url": "/models/props/coast-rocks.glb"
+      },
+      {
+        "key": "coast-rocks-36",
+        "id": "coast-rocks",
+        "at": [
+          -2.9329490785785253,
+          0,
+          24.323811578419722
+        ],
+        "turn": 1.6907963267948967,
+        "scale": 0.9,
+        "collision": "solid",
+        "url": "/models/props/coast-rocks.glb"
+      },
+      {
+        "key": "coast-rocks-37",
+        "id": "coast-rocks",
+        "at": [
+          -14.701914199265023,
+          0,
+          19.598564204488284
+        ],
+        "turn": 2.2143951023931954,
+        "scale": 1.15,
+        "collision": "solid",
+        "url": "/models/props/coast-rocks.glb"
+      },
+      {
+        "key": "coast-rocks-38",
+        "id": "coast-rocks",
+        "at": [
+          -22.531513283066808,
+          0,
+          9.621897379154694
+        ],
+        "turn": 2.7379938779914945,
+        "scale": 1.4,
+        "collision": "solid",
+        "url": "/models/props/coast-rocks.glb"
+      },
+      {
+        "key": "coast-rocks-39",
+        "id": "coast-rocks",
+        "at": [
+          -24.323811578419722,
+          0,
+          -2.932949078578524
+        ],
+        "turn": 3.2615926535897932,
+        "scale": 0.9,
+        "collision": "solid",
+        "url": "/models/props/coast-rocks.glb"
+      },
+      {
+        "key": "coast-rocks-40",
+        "id": "coast-rocks",
+        "at": [
+          -19.59856420448828,
+          0,
+          -14.70191419926503
+        ],
+        "turn": 3.7851914291880924,
+        "scale": 1.15,
+        "collision": "solid",
+        "url": "/models/props/coast-rocks.glb"
+      },
+      {
+        "key": "coast-rocks-41",
+        "id": "coast-rocks",
+        "at": [
+          -9.621897379154705,
+          0,
+          -22.531513283066804
+        ],
+        "turn": 4.308790204786391,
+        "scale": 1.4,
+        "collision": "solid",
+        "url": "/models/props/coast-rocks.glb"
+      },
+      {
+        "key": "coast-rocks-42",
+        "id": "coast-rocks",
+        "at": [
+          2.932949078578522,
+          0,
+          -24.323811578419722
+        ],
+        "turn": 4.83238898038469,
+        "scale": 0.9,
+        "collision": "solid",
+        "url": "/models/props/coast-rocks.glb"
+      },
+      {
+        "key": "coast-rocks-43",
+        "id": "coast-rocks",
+        "at": [
+          14.70191419926503,
+          0,
+          -19.59856420448828
+        ],
+        "turn": 5.355987755982989,
+        "scale": 1.15,
+        "collision": "solid",
+        "url": "/models/props/coast-rocks.glb"
+      },
+      {
+        "key": "coast-rocks-44",
+        "id": "coast-rocks",
+        "at": [
+          22.531513283066804,
+          0,
+          -9.621897379154706
+        ],
+        "turn": 5.879586531581287,
+        "scale": 1.4,
+        "collision": "solid",
+        "url": "/models/props/coast-rocks.glb"
+      }
+    ]
+  }
+}
