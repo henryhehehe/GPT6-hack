@@ -41,6 +41,24 @@ APP_URL=http://127.0.0.1:5193 node scripts/smoke-builder.mjs
 
 `node --import tsx scripts/evaluate-rubric.mjs` lists twelve predeclared history cases without model calls. Add `--live` to record actual rubric outputs, response IDs, durations, failures, and how many cases were exercised in `artifacts/review/rubric-evaluation.json`. This diagnostic was prepared but not run to completion because of the local runtime failure. It does not yet include a live imported-literature rubric run; use the imported-lesson acceptance flow for that gate.
 
-## Remaining acceptance gates
+## Acceptance gates at the first checkpoint
 
 Live model verification, the imported-literature learning loop, browser accessibility/device/performance checks, and a final independent reviewer on the integrated commit/build remain outstanding. These are explicit unverified gates, not implementation passes. No browser playtest, publication, classroom pilot, or video recording occurred in this worktree pass. The original diagnostic review remains unchanged; this report does not issue readiness sign-off.
+
+
+## Follow-up integration and live validation
+
+Integrated committed main `7a9bf7e` in merge commit `b6ff754`, retaining portrait/image support, teaching-help tabs, reader errors and publication links, accessible dialogs, and focus behavior. The merged suite has **54 passing tests**, and TypeScript and the production build pass. Commit `5150634` also guards delayed lesson launch against a newer session and raises only complete-lesson output allowance from 7,000 to 12,000 tokens after a confirmed truncation.
+
+A direct Node request to Astra succeeded (HTTP 200, 1.8 seconds), isolating the earlier HTTP 503 to local workerd egress. `scripts/local-model-check.mjs` runs the **actual built Worker** with ephemeral D1/R2 and a test-only Miniflare outbound service that relays requests through Node fetch/WebSocket. The destination remains the real OpenAI API, with actual responses; no production endpoint or model output was substituted. The existing ignored `.dev.vars` supplies credentials; the script does not print them. Start it after building, then run the smoke scripts against its printed local URL. This verifies application behavior under an alternate local transport, not production deployment or workerd's normal outbound TLS.
+
+Passed through this test transport:
+
+- Existing classroom smoke: creation, persistence, collection, learner isolation, teacher-only changes, and inventory retention.
+- Full real-model learning flow: selected learner B despite forged client context, class-wide hint application, identical retry, linked revision, unchanged resubmission, and retained citations. Response IDs: `resp_045a9e72aef098f8006aa2f1a7f1bc87d2a55f261ba4006a22`, `resp_0c598815d3bdadf0006aa2f1adec8487d2aab70465e1a47dab`, `resp_0dec7ffacf141c21006aa2f1b2591c87d2aef25b620a14ba2e`, `resp_01efd0e1d552fdb9006aa2f1b8a36087d2aaaec064591fb4a2`.
+- Native WebSocket steering: correction accepted and incorporated; response `resp_043b58914b8227c6006aa2f1c5d6f487d2b94eec187f1424c5`, 13.4 seconds.
+- **12/12 rubric expectations passed**: ten real assessments plus two deterministic pre-model rejection cases. Model-case end-to-end times were 4.7–15.4 seconds. Full expected/actual outputs and response IDs are in [the diagnostic report](../artifacts/review/rubric-evaluation.json). This is a small diagnostic sample, not grading reliability or learning efficacy evidence.
+
+The first two generated-literature attempts stopped before assessment because the model exhausted 7,000 output tokens. The second response explicitly reported `incomplete/max_output_tokens`, response `resp_0895327c5714074d006aa2f2c8b52487d2a7f16b089751ff11`. After the bounded allowance fix, `scripts/smoke-literature.mjs` passed the complete generated-literature flow: original test story → canonical source review → fresh launch → prediction → supported alternative reading → selected citations → linked revision → teacher-visible retained history. Actual generation/assessment response IDs: `resp_05a74ccd087107af006aa2f3ad1c0887d29cc9569ad56fb70c`, `resp_04cda754312892bd006aa2f3c83c6087d2b453c271aca43899`, `resp_0305e9e3fd126115006aa2f3cf81ec87d28109a3da4fa09984`. This supersedes the first-checkpoint live-learning limitations above.
+
+The shared main checkout has ongoing scene/catalog/UI changes from other tasks. Its coordinating task has the validated branch commits for a merge at its checkpoint; this task does not stash or overwrite those edits. Browser/device QA, deployment, and the final independent review remain separate gates.
