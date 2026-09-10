@@ -12,13 +12,14 @@ import { ALEXANDRIA_EXTERNAL } from './scene/externalLayout';
 import { SceneArtCredits } from './SceneArtCredits';
 import LandmarkPreview from './LandmarkPreview';
 import type { LandmarkId } from '@/lib/landmarkReferences';
+import {alexandriaHintPositions,visibleAtActivity} from './scene/lessonEffects';
 import { characters } from '@/lib/characters';
 import {createHarborEnvironment} from './scene/harborEnvironment';
 import {createCityDistrict} from './scene/cityDistrict';
 import {loadTeachingCharacters} from './scene/teachingCharacters';
 import {CITY_OUTLINE,CITY_DESTINATIONS,DISTRICT_BUILDINGS} from './scene/cityLayout';
 
-type Props={world:World;scenario:boolean;focus:ZoneId|null;focusRevision?:number;unlocked:boolean;hint:boolean;onSelect:(zone:ZoneId)=>void;onTalk:(zone:ZoneId)=>void};
+type Props={world:World;scenario:boolean;focus:ZoneId|null;focusRevision?:number;unlocked:boolean;hint:{id:string;zone:ZoneId}|null;onSelect:(zone:ZoneId)=>void;onTalk:(zone:ZoneId)=>void};
 const positions:Record<ZoneId,[number,number,number]>={harbor:[-14,1,12],market:[8,2,7],library:[0,5,-12]};
 export default function WorldScene(props:Props){
  const characterButtons=useRef<Partial<Record<ZoneId,HTMLButtonElement|null>>>({});
@@ -73,17 +74,17 @@ export default function WorldScene(props:Props){
   const flame=mesh(new THREE.SphereGeometry(.6,12,8),mats.amber,beacon,-24,14.1,16);
   const landmarks=loadLandmarks(land,library.group,beacon,()=>setError('Detailed architecture could not load. The simplified world remains playable.'),id=>setReady(ids=>ids.includes(id)?ids:[...ids,id]));
   for(const x of [-12,-4,5]){box(land,3,.5,17.8,x,.7,20.6,mats.wood);for(let j=0;j<7;j++)box(land,3.1,.08,.12,x,1.21,14+j*2.2,mats.edge);for(const side of [-1,1])for(const z of [14,22,28])cylinder(land,.22,2.7,x+side*1.35,-.1,z,mats.wood);}
-  const goods:THREE.Object3D[]=[];const stalls:THREE.Group[]=[];
+  const goods:THREE.Object3D[]=[],harborCrates:THREE.Object3D[]=[];const stalls:THREE.Group[]=[];
   for(let i=0;i<5;i++){const g=new THREE.Group();g.position.set(13+(i%2)*8,1,5+Math.floor(i/2)*5);land.add(g);stalls.push(g);box(g,5,.65,2.8,0,0,0,mats.wood);for(const x of [-2.4,2.4])for(const z of [-1.3,1.3])cylinder(g,.09,3.5,x,0,z,mats.wood,6);const roof=box(g,5.8,.16,3.5,0,3.5,0,i%2?mats.cloth:mats.teal);roof.rotation.z=.08;
    for(let j=0;j<5;j++){const fruit=mesh(new THREE.SphereGeometry(.36,8,6),j%2?mats.gold:mats.roof,g,-1.8+j*.9,1,0);goods.push(fruit);}
   }
-  for(let i=0;i<14;i++){const crate=box(land,1.1,1.1,1.1,-18+(i%3)*1.3,1+Math.floor(i/6)*1.1,7+Math.floor(i/3)*1.1,mats.wood);goods.push(crate);}
+  for(let i=0;i<14;i++){const crate=box(land,1.1,1.1,1.1,-18+(i%3)*1.3,1+Math.floor(i/6)*1.1,7+Math.floor(i/3)*1.1,mats.wood);harborCrates.push(crate);}
   const palms:THREE.Group[]=[];
   function palm(x:number,z:number,s=1){const g=new THREE.Group();g.position.set(x,.8,z);g.scale.setScalar(s);land.add(g);palms.push(g);cylinder(g,.22,5,x*0,0,0,mats.wood,7);for(let j=0;j<7;j++){const leaf=mesh(new THREE.ConeGeometry(.75,3.7,4),mats.green,g,Math.sin(j)*1.25,5.1,Math.cos(j)*1.25);leaf.rotation.set(Math.cos(j)*1.2,0,-Math.sin(j)*1.2);}}
   [[-17,-5],[17,-8],[26,12],[-27,7],[-15,-18],[17,-19]].forEach(([x,z],i)=>palm(x,z,.8+i%3*.1));
   // Decorative citizens follow a fixed loop, never pretending to be real students.
   const citizens:THREE.Group[]=[];
-  for(let i=0;i<24;i++){const g=new THREE.Group();const color=[mats.cloth,mats.teal,mats.roof,mats.light][i%4];cylinder(g,.23,.85,0,0,0,color,6);mesh(new THREE.SphereGeometry(.20,8,6),mats.edge,g,0,1.04,0);g.position.set(-12+i%9*3,1.05,2+Math.floor(i/9)*3);scene.add(g);citizens.push(g);}
+  for(let i=0;i<24;i++){const g=new THREE.Group();const color=[mats.cloth,mats.teal,mats.roof,mats.light][i%4];cylinder(g,.23,.85,0,0,0,color,6);mesh(new THREE.SphereGeometry(.20,8,6),mats.edge,g,0,1.04,0);g.position.set(-10+i%8*2.7,2.9,-5-Math.floor(i/8)*.8);scene.add(g);citizens.push(g);}
   // Named teaching characters stay in place and remain present in both scenarios.
   const npcs:THREE.Group[]=[];
   for(const id of ['harbor','market','library'] as ZoneId[]){const profile=characters[id],g=new THREE.Group();g.position.set(...profile.position);g.userData.character=id;land.add(g);npcs.push(g);const robe=new THREE.MeshStandardMaterial({color:profile.color,roughness:.9});mesh(new THREE.CylinderGeometry(.25,.4,1.2,12),robe,g,0,.65,0);mesh(new THREE.SphereGeometry(.25,16,12),mats.edge,g,0,1.55,0);mesh(new THREE.SphereGeometry(.26,16,8,0,Math.PI*2,0,Math.PI*.5),mats.dark,g,0,1.62,0);for(const side of [-1,1]){const arm=cylinder(g,.10,.75,side*.35,.65,0,robe,8);arm.rotation.z=side*.18;}const ring=mesh(new THREE.RingGeometry(.65,.74,32),mats.teal,g,0,.04,0);ring.rotation.x=-Math.PI/2;ring.castShadow=false;g.traverse(object=>{object.userData.character=id;});}
@@ -96,7 +97,7 @@ export default function WorldScene(props:Props){
   cylinder(courtyardFallback,1.35,.25,-9,.95,0,mats.stone,8);cylinder(courtyardFallback,1.05,.5,-9,1.2,0,mats.light,24);cylinder(courtyardFallback,.91,.025,-9,1.7,0,mats.teal,24);cylinder(courtyardFallback,.18,.8,-9,1.45,0,mats.light);cylinder(courtyardFallback,.57,.12,-9,2.25,0,mats.light,24);
   for(const x of [-12,-6]){box(courtyardFallback,.68,.18,2.35,x,1.51,0,mats.light);for(const z of [-.83,.83])box(courtyardFallback,.46,.56,.28,x,.95,z,mats.stone);}
   for(const x of [-12,-4,5])for(const z of [16,25]){cylinder(courtyardFallback,.13,.38,x-1.14,1.28,z,mats.stone);cylinder(courtyardFallback,.21,.12,x-1.14,1.66,z,mats.light);}
-  const scenery=loadAlexandriaKit(land,{houses,palms,stalls,ships,goods,decor:[courtyardFallback]});
+  const scenery=loadAlexandriaKit(land,{houses,palms,stalls,ships,goods:[...goods,...harborCrates],decor:[courtyardFallback]});
   const details=loadAlexandriaDetails(land);
   const external=loadExternalModels(land,ALEXANDRIA_EXTERNAL);
   const markers:THREE.Mesh[]=[];const ringMats:THREE.MeshBasicMaterial[]=[];
@@ -129,10 +130,11 @@ export default function WorldScene(props:Props){
    blend=THREE.MathUtils.damp(blend,p.scenario?1:0,reduced?100:2,dt);atmosphere.update(t,reduced);teachingCharacters.update(dt,reduced);district.upgradeFoliage(scenery.getPlantTemplate());
    if(oldFocus!==p.focus||oldFocusRevision!==p.focusRevision){oldFocus=p.focus;oldFocusRevision=p.focusRevision;if(explorer.walking){explorer.focus(p.focus);}else{const point=p.focus?positions[p.focus]:[0,0,-22];target.set(point[0],point[1],point[2]);cameraTarget.set(...(p.focus?cameraViews[p.focus]:[87,65,98] as [number,number,number]));focusing=true;}}
    if(focusing&&!explorer.walking){const alpha=reduced?1:1-Math.exp(-3*dt);controls.target.lerp(target,alpha);camera.position.lerp(cameraTarget,alpha);if(controls.target.distanceTo(target)<.1&&camera.position.distanceTo(cameraTarget)<.1)focusing=false;}
-   ships.forEach((s,i)=>{s.position.y=.25+(reduced?0:Math.sin(t*1.1+i)*.16);s.rotation.z=reduced?0:Math.sin(t*.7+i)*.025;const activity=p.world.nodes.find(n=>n.id==='harbor')?.activity??.22;const visible=i/ships.length<1-blend*(1-activity);s.visible=visible;if(i>=2&&!reduced){s.position.x=[13,-20,23,-4][i-2]+Math.sin(t*.055+i)*2.5;}});
-   const market=p.world.nodes.find(n=>n.id==='market')?.activity??.35;if(!scenery.ready)goods.forEach((g,i)=>g.visible=i/goods.length<1-blend*(1-market));scenery.update(blend,p.world.nodes.find(n=>n.id==='harbor')?.activity??.22,market);details.update(blend,p.world.nodes.find(n=>n.id==='harbor')?.activity??.22,market);external.update(blend,p.world.nodes.find(n=>n.id==='harbor')?.activity??.22,market);
-   citizens.forEach((c,i)=>{const active=p.world.nodes.find(n=>n.id==='library')?.activity??.3;c.visible=i/citizens.length<1-blend*(1-active);c.position.x=-12+i%9*3+(reduced?0:Math.sin(t*.2+i)*.8);});
-   landmarks.update(p.unlocked,dt,reduced);door.scale.x=THREE.MathUtils.damp(door.scale.x,p.unlocked?.06:1,4,dt);hint.visible=p.hint;hint.rotation.y=reduced?0:Math.sin(t)*.06;
+   ships.forEach((s,i)=>{s.position.y=.25+(reduced?0:Math.sin(t*1.1+i)*.16);s.rotation.z=reduced?0:Math.sin(t*.7+i)*.025;const visible=visibleAtActivity(p.world,'harbor',i,ships.length,blend);s.visible=visible;if(i>=2&&!reduced){s.position.x=[13,-20,23,-4][i-2]+Math.sin(t*.055+i)*2.5;}});
+   if(!scenery.ready){goods.forEach((g,i)=>g.visible=visibleAtActivity(p.world,'market',i,goods.length,blend));harborCrates.forEach((g,i)=>g.visible=visibleAtActivity(p.world,'harbor',i,harborCrates.length,blend));}
+   const harbor=p.world.nodes.find(n=>n.id==='harbor')?.activity??.22,market=p.world.nodes.find(n=>n.id==='market')?.activity??.35;scenery.update(blend,harbor,market);details.update(blend,harbor,market);external.update(blend,harbor,market);
+   citizens.forEach((c,i)=>{c.visible=visibleAtActivity(p.world,'library',i,citizens.length,blend);c.position.x=-10+i%8*2.7+(reduced?0:Math.sin(t*.2+i)*.8);});
+   landmarks.update(p.unlocked,dt,reduced);door.scale.x=THREE.MathUtils.damp(door.scale.x,p.unlocked?.06:1,4,dt);hint.visible=!!p.hint;if(p.hint)hint.position.set(...alexandriaHintPositions[p.hint.zone]);hint.rotation.y=reduced?0:Math.sin(t)*.06;
    ringMats.forEach(m=>m.color.set(p.scenario?'#ffc574':'#6adeca'));pathMat.opacity=blend*.38;path.visible=blend>.01;particle.visible=blend>.2;if(!reduced)particle.position.copy(curve.getPoint((t*.13)%1));flame.scale.setScalar(1);
    explorer.update(dt);if(!explorer.walking)controls.update();
    for(const npc of npcs){const id=npc.userData.character as ZoneId,button=characterButtons.current[id];npc.rotation.y=Math.atan2(camera.position.x-npc.position.x,camera.position.z-npc.position.z);if(button){labelPoint.copy(npc.position);labelPoint.y+=2.4;const distance=camera.position.distanceTo(labelPoint);labelPoint.project(camera);const visible=labelPoint.z>-1&&labelPoint.z<1&&Math.abs(labelPoint.x)<.95&&Math.abs(labelPoint.y)<.85&&(!explorer.walking||distance<14);button.style.display=visible?'flex':'none';if(visible){button.style.left=`${(labelPoint.x+1)*.5*el.clientWidth}px`;button.style.top=`${(1-labelPoint.y)*.5*el.clientHeight}px`;}}}
