@@ -5,7 +5,7 @@ import { Box3, Group, Matrix4, Mesh, Raycaster, Vector3 } from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { loadAlexandriaDetails } from '../components/worlds/scene/alexandriaDetails.ts';
 import { ALEXANDRIA_DETAIL_IDS, ALEXANDRIA_DETAIL_OBSTACLES, ALEXANDRIA_DETAIL_PLACEMENTS } from '../components/worlds/scene/alexandriaDetailLayout.ts';
-import { isWalkable, moveWalker, WALK_SPAWNS } from '../components/worlds/scene/walkGeometry.ts';
+import { groundHeight, isWalkable, moveWalker, WALK_SPAWNS } from '../components/worlds/scene/walkGeometry.ts';
 import { HUMAN_SCALE } from '../components/worlds/scene/humanScale.ts';
 
 const base = new URL('../public/models/alexandria-details/',import.meta.url);
@@ -74,12 +74,20 @@ for(const {bounds:[x0,x1,z0,z1]} of ALEXANDRIA_DETAIL_OBSTACLES) {
 for(const p of Object.values(WALK_SPAWNS))assert(isWalkable(p));
 const cross=moveWalker(WALK_SPAWNS.harbor,{x:22,z:0});assert(Math.abs(cross.x-WALK_SPAWNS.market.x)<.01);
 // Verify actual exported ground props fit the authored collision clusters.
-for(const p of ALEXANDRIA_DETAIL_PLACEMENTS.filter(p=>p.at[1]===1)) {
+for(const p of ALEXANDRIA_DETAIL_PLACEMENTS.filter(p=>p.at[1]===1||p.at[1]===.95)) {
   const a=rows.find(r=>r.id===p.id),s=p.scale??1;
   const x0=p.at[0]+a.bounds.min[0]*s,x1=p.at[0]+a.bounds.max[0]*s,z0=p.at[2]+a.bounds.min[2]*s,z1=p.at[2]+a.bounds.max[2]*s;
   assert(ALEXANDRIA_DETAIL_OBSTACLES.some(({bounds:[a,b,c,d]})=>x0>=a-.025&&x1<=b+.025&&z0>=c-.025&&z1<=d+.025),`${p.id} extends past collision envelope`);
 }
 const size=async relative=>(await readFile(new URL(relative,import.meta.url))).length;
+const harborGround=['fishing-creel','grain-measure','sailmaker-kit'];
+for(const p of ALEXANDRIA_DETAIL_PLACEMENTS.filter(p=>harborGround.includes(p.id))) {
+  const model=rows.find(r=>r.id===p.id);
+  assert(Math.abs(p.at[1]+model.bounds.min[1]*(p.scale??1)-groundHeight({x:p.at[0],z:p.at[2]}))<.004,`${p.id} must touch the quay`);
+}
+assert(gltf.scene.getObjectByName('rigging-block').getObjectByName('SuspensionAnchor'),'Pulley must retain its attachment anchor');
+await writeFile(new URL('../assets/blender/harbor-detail-layout.json',import.meta.url),JSON.stringify(
+  ALEXANDRIA_DETAIL_PLACEMENTS.filter(p=>[...harborGround,'rigging-block','fishing-net-rack','stone-anchor'].includes(p.id)),null,2)+'\n');
 // Check the actual GLB support at all four corners, not just an assumed height.
 const kitBuffer=await readFile(new URL('../public/models/alexandria/alexandria-kit.glb',import.meta.url));
 const kit=await new GLTFLoader().parseAsync(kitBuffer.buffer.slice(kitBuffer.byteOffset,kitBuffer.byteOffset+kitBuffer.length),'');

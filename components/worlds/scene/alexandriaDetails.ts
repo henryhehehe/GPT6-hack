@@ -12,7 +12,7 @@ export function loadAlexandriaDetails(parent: THREE.Object3D) {
     const geometry = id === 'well' ? new THREE.CylinderGeometry(.82,.82,height,16) :
       new THREE.BoxGeometry(x1-x0, height, z1-z0);
     const mesh = new THREE.Mesh(geometry, fallbackMaterial); mesh.name = id;
-    mesh.position.set((x0+x1)/2,1+height/2,(z0+z1)/2); mesh.castShadow = true; mesh.receiveShadow = true; fallback.add(mesh);
+    mesh.position.set((x0+x1)/2,(id === 'fishing-gear' ? .95 : 1)+height/2,(z0+z1)/2); mesh.castShadow = true; mesh.receiveShadow = true; fallback.add(mesh);
   }
   const stock: { object: THREE.Group; zone: 'harbor' | 'market' }[] = [];
   const instances: THREE.InstancedMesh[] = [];
@@ -25,7 +25,7 @@ export function loadAlexandriaDetails(parent: THREE.Object3D) {
     });
     geometries.forEach(g => g.dispose()); materials.forEach(m => m.dispose()); source = undefined;
   };
-  void new GLTFLoader().loadAsync('/models/alexandria-details/alexandria-details.glb?v=2').then(gltf => {
+  void new GLTFLoader().loadAsync('/models/alexandria-details/alexandria-details.glb?v=3').then(gltf => {
     source = gltf.scene;
     if (disposed) { disposeSource(); return; }
     for (const id of ALEXANDRIA_DETAIL_IDS) if (!source.getObjectByName(id)) throw new Error(`Missing detail: ${id}`);
