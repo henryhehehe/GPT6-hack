@@ -1,5 +1,7 @@
 # Counterfactual Worlds: solo hackathon plan
 
+**Current implementation:** the first build now exists. Use [the parallel implementation plan](../docs/PARALLEL-IMPLEMENTATION-PLAN.md) for the next sprint and [the one-minute storyboard](05-one-minute-demo.md) for the video. The original planning assumptions and three-minute sequence below are retained for context.
+
 Reviewed September 10, 2026, around 11:00 EDT. Solo builder; Astra API access confirmed by builder. This is a plan, not a built or benchmarked application. The 22:00 deadline and code-reuse rules come from the original handoff and should be checked against the organizer briefing. Judging weights come from the user's problem statement.
 
 ## Recommendation

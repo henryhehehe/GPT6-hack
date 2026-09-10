@@ -4,6 +4,8 @@ A teacher shapes a historical thought experiment. A student explores a living 3D
 
 Built for the GPT-6 Astra hackathon. The one-minute video uses **both interfaces**: teacher → student → teacher intervention → student revision.
 
+Next sprint: [parallel implementation plan](docs/PARALLEL-IMPLEMENTATION-PLAN.md), with three agent tracks, exclusive file ownership, integration contracts, priorities, and acceptance checks.
+
 ## Run locally
 
 Requires Node 24 (the repository includes `.tool-versions`).
