@@ -67,7 +67,7 @@ export function applyThemeSurfaces(scene:THREE.Scene,theme:WorldTheme){
   const palette={ground:new THREE.Color(theme.ground),stone:new THREE.Color(theme.stone),wall:new THREE.Color(theme.building),wood:new THREE.Color(theme.roof)};
   root.traverse(object=>{
    if(!(object instanceof THREE.Mesh)||!(object.material instanceof THREE.MeshStandardMaterial)||object.material.emissiveIntensity&&object.material.emissive.getHex()!==0)return;
-   if(!['BoxGeometry','ExtrudeGeometry','CylinderGeometry'].includes(object.geometry.type))return;
+   if(!['BoxGeometry','ExtrudeGeometry','CylinderGeometry'].includes(object.geometry.type)&&!object.geometry.userData.worldSurface)return;
    const old=object.material;
    let role=(Object.keys(palette) as (keyof typeof palette)[]).find(key=>palette[key].equals(old.color));
    if(!role&&['884d3b','806252'].includes(old.color.getHexString()))role='wall';

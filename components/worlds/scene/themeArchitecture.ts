@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import type {WorldTheme} from '@/lib/worldThemes';
 import {themeLayout} from './themeLayouts';
+import {surfaceUnionGeometry,type SurfaceRectangle} from './surfaceUnion';
 
 export type ArchitectureBounds=readonly[number,number,number,number];
 
@@ -44,6 +45,10 @@ export function addThemeArchitecture(scene:THREE.Scene,theme:WorldTheme,includeT
     outline.closePath();const terrain=new THREE.ExtrudeGeometry(outline,{depth:2,bevelEnabled:false});geometries.add(terrain);
     const land=shape(terrain,ground,0,0,0,1,1,1);land.rotation.x=Math.PI/2;
     const water=material(theme.water);box(water,0,-2.65,0,260,.1,260);
+  }else if(interior){
+    // The indoor floor owns its footprint. Terrain ends at its edge instead of
+    // sharing exactly the same y=0 surface under the entire wooden floor.
+    for(const [x,z,w,d] of [[0,-54.25,180,71.5],[0,53.25,180,73.5],[-54.75,-1,70.5,35],[54.75,-1,70.5,35]])box(ground,x,-.3,z,w,.6,d);
   }else box(ground,0,-.3,0,180,.6,180);
 
   if(interior){
@@ -52,7 +57,7 @@ export function addThemeArchitecture(scene:THREE.Scene,theme:WorldTheme,includeT
     box(wall,0,4,-18.5,40,8,.65,true);
     for(const x of [-19.5,19.5])box(wall,x,2,-1,.65,4,35,true);
     windows(0,-18.1,layout.kind==='study'?5:7,4.5);
-    for(let i=-17;i<=17;i+=1.5)box(trim,i,.015,-1,.035,.015,34);
+    // Board joints come from the floor material, not thin shadow-casting strips.
     box(trim,0,7.8,-18.05,40,.3,.3);
   }
   if(layout.kind==='study'){
@@ -127,12 +132,14 @@ export function addThemeArchitecture(scene:THREE.Scene,theme:WorldTheme,includeT
   }
 
   // Each stop has an unobstructed arrival apron; furniture owns its individual collisions.
+  const paths:SurfaceRectangle[]=[];
   for(const p of Object.values(layout.spots)){
     // Outdoor reading places blend into the landscape, not three white stages.
     box(interior?wood:layout.kind==='street'?stone:ground,p.x,.11,p.z,8,.22,7);
-    if(!interior&&layout.kind!=='street'){
-      const length=Math.hypot(p.x,p.z),path=box(stone,p.x/2,.025,p.z/2,1.8,.05,length);path.rotation.y=Math.atan2(p.x,p.z);
+    if(!interior&&!['street','courtyard','ruin'].includes(layout.kind)){
+      paths.push({x:p.x/2,z:p.z/2,width:1.8,depth:Math.hypot(p.x,p.z),turn:Math.atan2(p.x,p.z)});
     }
   }
+  if(paths.length){const geometry=surfaceUnionGeometry(paths,.05);geometries.add(geometry);const path=shape(geometry,stone,0,0,0,1,1,1);path.name='Joined reading paths';path.castShadow=false;}
   return {root,obstacles,dispose(){root.removeFromParent();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());}};
 }
