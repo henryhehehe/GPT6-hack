@@ -27,6 +27,19 @@
       "clips": []
     },
     {
+      "id": "cave-module",
+      "bytes": 246056,
+      "triangles": 2000,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        4.46,
+        2.779,
+        4.4
+      ],
+      "clips": []
+    },
+    {
       "id": "ceramic-bowl",
       "bytes": 74740,
       "triangles": 2944,
@@ -36,6 +49,19 @@
         0.68,
         0.275,
         0.68
+      ],
+      "clips": []
+    },
+    {
+      "id": "coast-rocks",
+      "bytes": 34676,
+      "triangles": 240,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        2.223,
+        1.115,
+        1.558
       ],
       "clips": []
     },
@@ -83,6 +109,19 @@
         2.705,
         2.465,
         1.444
+      ],
+      "clips": []
+    },
+    {
+      "id": "merchant-ship",
+      "bytes": 300308,
+      "triangles": 4780,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        2.86,
+        4.226,
+        5.668
       ],
       "clips": []
     },
@@ -148,6 +187,19 @@
         1.21,
         1.42,
         0.43
+      ],
+      "clips": []
+    },
+    {
+      "id": "sheep",
+      "bytes": 221368,
+      "triangles": 4792,
+      "primitives": 2,
+      "materials": 2,
+      "size": [
+        0.64,
+        0.87,
+        1.26
       ],
       "clips": []
     },
@@ -221,6 +273,6 @@
       "clips": []
     }
   ],
-  "totalBytes": 3800912,
-  "withLandmarksBytes": 8360124
+  "totalBytes": 4603320,
+  "withLandmarksBytes": 9162532
 }

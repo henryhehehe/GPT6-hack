@@ -26,6 +26,12 @@ Delivered slatted cargo crate, tied sack, woven basket, rope coil, rolled/open s
 
 All 16 Alexandria exports pass the GLTFLoader checks. Exact current sizes and geometry counts are recorded in `assets/model-metrics.json`; the complete kit remains below 4 MB, and below 8.5 MB together with the original two landmarks. This is a download-size result, not a frame-rate measurement.
 
+## Checkpoint 4 — Odyssey scenery models
+
+Delivered a coastal rock cluster, open-ended cave shell, merchant ship with sail/rigging/deck/steering oar, and a static sheep. Inspected the studio sheet; refined the cave from a uniform tunnel to a faceted rock shell with angular outcrops. The cave has named entrance/exit anchors and an open central passage. These are editable scene modules, not a completed traversable Odyssey lesson or an identified historical vessel/location.
+
+All 20 exports pass the loader checks; their combined payload is 4,603,320 bytes, or 9,162,532 bytes with the existing landmarks. The original Alexandria pottery can be reused without another download. The ship has no sailing animation; the sheep is a static prop.
+
 ## Verification limits
 
 No browser performance, touch hardware, two-student rehearsal, or live lesson acceptance is claimed by these offline export/render checks. Asset integration must preserve source access, conversations, and student state. Per-asset anchors use `<asset-id>__Anchor_Inspect`, `__Anchor_Talk`, and `__Anchor_Label`; the manifest records the exact names to avoid Blender name collisions.

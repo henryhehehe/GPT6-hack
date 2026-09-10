@@ -65,6 +65,39 @@
       "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
     },
     {
+      "id": "cave-module",
+      "title": "Open cave module",
+      "pack": "odyssey",
+      "category": "props",
+      "url": "/models/props/cave-module.glb",
+      "source": "assets/blender/props/odyssey.blend",
+      "bytes": 246056,
+      "sha256": "8fed4ebac221a34cd24c53f6d1662e48957951f682dceb642c795d2cde40fe6d",
+      "bounds": {
+        "min": [
+          -2.2301,
+          0.0,
+          -2.11
+        ],
+        "max": [
+          2.2301,
+          2.7791,
+          2.29
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "cave-module__Anchor_Inspect",
+        "Anchor_Entrance": "cave-module__Anchor_Entrance",
+        "Anchor_Exit": "cave-module__Anchor_Exit"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
       "id": "ceramic-bowl",
       "title": "Glazed ceramic bowl",
       "pack": "market",
@@ -87,6 +120,37 @@
       },
       "anchors": {
         "Anchor_Inspect": "ceramic-bowl__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "coast-rocks",
+      "title": "Coastal rock cluster",
+      "pack": "odyssey",
+      "category": "props",
+      "url": "/models/props/coast-rocks.glb",
+      "source": "assets/blender/props/odyssey.blend",
+      "bytes": 34676,
+      "sha256": "a310e1357d3fa74cfff0f31874c904f8b13f02fa47272df8e2076c70e983e4ac",
+      "bounds": {
+        "min": [
+          -1.0141,
+          0.0,
+          -0.7909
+        ],
+        "max": [
+          1.2088,
+          1.1145,
+          0.7672
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "coast-rocks__Anchor_Inspect"
       },
       "clips": [],
       "provenance": "Original interpretive teaching asset; not primary evidence",
@@ -190,6 +254,37 @@
       },
       "anchors": {
         "Anchor_Inspect": "market-stall__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "merchant-ship",
+      "title": "Interpretive merchant ship",
+      "pack": "odyssey",
+      "category": "props",
+      "url": "/models/props/merchant-ship.glb",
+      "source": "assets/blender/props/odyssey.blend",
+      "bytes": 300308,
+      "sha256": "cb916084ec6e3e086912f78ab201ae3c7b2db3fc2d4ea59150942640356853e3",
+      "bounds": {
+        "min": [
+          -1.43,
+          0.0,
+          -2.8341
+        ],
+        "max": [
+          1.43,
+          4.2257,
+          2.8341
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "merchant-ship__Anchor_Inspect"
       },
       "clips": [],
       "provenance": "Original interpretive teaching asset; not primary evidence",
@@ -345,6 +440,37 @@
       },
       "anchors": {
         "Anchor_Inspect": "scroll-rack__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "sheep",
+      "title": "Woolly sheep",
+      "pack": "odyssey",
+      "category": "props",
+      "url": "/models/props/sheep.glb",
+      "source": "assets/blender/props/odyssey.blend",
+      "bytes": 221368,
+      "sha256": "553842b1c5d569bdf99ee455ceff4464edba8245b962aa07716083083d421af6",
+      "bounds": {
+        "min": [
+          -0.32,
+          0.0,
+          -0.58
+        ],
+        "max": [
+          0.32,
+          0.87,
+          0.68
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "sheep__Anchor_Inspect"
       },
       "clips": [],
       "provenance": "Original interpretive teaching asset; not primary evidence",
