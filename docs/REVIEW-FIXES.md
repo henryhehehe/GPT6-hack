@@ -66,3 +66,20 @@ The shared main checkout has ongoing scene/catalog/UI changes from other tasks. 
 ## Expanded-scene integration
 
 Merged committed main `f4b6edb`, including expanded Alexandria `2bdcd7a`, into the isolated review branch. The merge retains reflective water, atmosphere, flicker corrections, city geometry/navigation, model replacement and its fallback visibility, invitation dialog, scene provenance, and accessible lesson tabs. Review behavior remains connected: library activity affects terrace scholars, harbor activity affects ships/cargo, market activity affects merchandise, and hints use the selected zone anchor. The complete combined suite passes **56 tests**; TypeScript and the production build pass. Shared main remains with its coordinating task for final integration of active curriculum/UI work.
+
+## Curriculum and teaching-kit integration
+
+Integrated published world release `6aa043b` with curriculum checkpoint `450771f` in `62fe62e`, then added committed studio/returning-student dependencies through `3582cc1` in `d2e13b2`. This preserves the 10-world / 30-lesson library, authored source context and references, lesson-mode boundaries, review-before-launch, downloadable teaching kit, and class-specific invitation recovery alongside the complete selected-learner and citation/revision contracts.
+
+Integration corrections:
+
+- New Alexandria quotes the complete reviewed Jones excerpt. Legacy saved paraphrase cards retain their separate short verified quotation and existing citation hashes.
+- Citation versions now include bounded context, locators, edition notes, reading notes, and reference links. Context/provenance mutations invalidate selections; reviewed source replacement preserves the canonical packet.
+- Teaching reports include recorded predictions, exact selected passages and source versions, linked revisions/reflections, and archive reflections. Downloads escape all learner/source text. Punctuation-only changes remain unchanged wording; no report claims measured learning improvement.
+- Returning-student recovery uses the class-specific access store and session identity guards. A requested catalog lesson still opens after restoring an existing teacher session. The inactive learning-progress label says “Revise.”
+
+Validation on `d2e13b2`: **89/89 tests**, TypeScript, and the production build pass (existing large-bundle advisory remains). The actual built Worker with ephemeral D1/R2 passed ten prepared-lesson HTTP flows covering source fidelity, teacher review, retry identity, fresh launch, collection, and mode restrictions. The HTTP/WebSocket learner isolation/prediction/quotation/progress checks also passed.
+
+The real-model synthetic learner loop passed again using the documented test-only Node egress transport: selected B despite forged caller context, class hint application, linked revision, unchanged resubmission, replay-safe retry, and retained citations. Actual response IDs: `resp_0de40615cfe0747b006aa2f80d94e487d28639d6aee9988f43`, `resp_010afdf1856247f2006aa2f814417c87d2b686074b17207d96`, `resp_0961ed9be0121e09006aa2f818dd4487d29ebaf5e68f412bf9`, `resp_046cb4b188f80011006aa2f8224eb887d2a9b9ff2a0b9ec49c`. Automatic approval initially rejected external model traffic; after confirming the script creates only synthetic learners in an empty local database and uses literal test claims/public source material, reconsideration approved the same command. No actual student data was used.
+
+The pilot-release task has `d2e13b2` for its isolated integration. Its publication/usage policy and remaining shared-main changes are owned by their respective tasks. This worktree has not deployed or modified shared main. The prior published world release received browser QA from its owner; this subsequent curriculum integration has API/code validation, not a new browser or independent final readiness sign-off.
