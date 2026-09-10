@@ -6,6 +6,8 @@ Built for the GPT-6 Astra hackathon. The one-minute video uses **both interfaces
 
 Next sprint: [parallel implementation plan](docs/PARALLEL-IMPLEMENTATION-PLAN.md), with three agent tracks, exclusive file ownership, integration contracts, priorities, and acceptance checks.
 
+Product scope also includes English: [The Odyssey and Pride and Prejudice expansion](docs/LITERATURE-EXPANSION.md). Those literature packs are planned; the current runtime remains the Alexandria lesson.
+
 ## Run locally
 
 Requires Node 24 (the repository includes `.tool-versions`).

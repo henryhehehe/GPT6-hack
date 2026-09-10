@@ -4,6 +4,8 @@ Updated September 10, 2026. This is the next implementation sprint for the exist
 
 ## Target
 
+**Scope expansion:** the user also wants English literature, including The Odyssey and Pride and Prejudice. [Literature expansion](LITERATURE-EXPANSION.md) defines the book-specific teaching loops, Blender packs, source/rubric contracts, and revised agent work. Retain the correctness fixes below; freeze the generalized lesson-pack contract before implementing literature across these tracks. The running app remains Alexandria-only until that work is complete.
+
 **Art direction update:** the user requested higher-fidelity Blender landmarks. The separate asset track creates an editable library/lighthouse source scene and GLB exports; the scene owner integrates them through `components/worlds/scene/landmarks.ts`. Preserve the loaded assets and door-node contract when carrying out track B below. This does not replace the per-zone activity or hint-placement fixes.
 
 Ship a reliable, readable **teacher → student → teacher intervention → student revision** loop for the 60-second video. Prioritize correct learner context, visible causal changes, and preserved progress over additional worlds or dashboard features. The recording follows `counterfactual-worlds-handoff/05-one-minute-demo.md`.
