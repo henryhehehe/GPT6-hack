@@ -52,6 +52,13 @@
 .cw-app .world-panel .scene-header { max-height: 32%; overflow: auto; pointer-events: auto; scrollbar-width: thin; }
 .cw-app .workspace .world-panel .explorer-controls,.cw-app .workspace .world-panel .setting-image-controls { top: var(--scene-controls-top,180px); z-index: 5; }
 .cw-app .scene-header h2 { line-height: 1.4; }
+.scene-provenance[data-slot=popover-content] { width: min(330px,calc(100vw - 24px)); max-height: var(--radix-popover-content-available-height); overflow-y: auto; overscroll-behavior: contain; padding: 18px; border-radius: 12px; border: 1px solid #91b7bb50; background: #102733; color: #dce9ed; box-shadow: 0 16px 48px #0006; }
+.scene-provenance header { display: flex; gap: 12px; align-items: center; justify-content: space-between; }
+.scene-provenance h2 { font-size: 1rem; font-weight: 600; }
+.scene-provenance header button { display: grid; place-items: center; width: 36px; height: 36px; flex-shrink: 0; border-radius: 7px; background: #24414e; color: #d4e6e8; }
+.scene-provenance .provenance-kind { display: inline-block; margin: 12px 0; padding: 4px 8px; border: 1px solid #b9c49240; border-radius: 5px; color: #dfd2ac; font-size: .75rem; }
+.scene-provenance p { font-size: .875rem; line-height: 1.7; color: #b8cdd6; }
+.scene-provenance .provenance-guidance { margin-top: 14px; padding-top: 12px; border-top: 1px solid #8bb4bd2b; color: #aedccd; }
 .cw-app .world-status { white-space: normal; display: inline-block; }
 .cw-app .location-nav { padding: 0 12px; gap: 6px; }
 .cw-app .location-nav button { flex: 1 1 0; min-width: 0; min-height: 44px; max-width: 220px; font-size: .875rem; padding: 9px 10px; text-align: left; }
