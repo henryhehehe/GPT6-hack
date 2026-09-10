@@ -38,6 +38,10 @@ Delivered a folded/sealed letter, open letter, quill/inkwell, upholstered chair,
 
 These are period-inspired original furnishings, not objects authenticated by Austen's text or a reproduction of a film set. Blank paper opens the lesson's own source reader when integrated. Elizabeth/Darcy characters, source review, spoiler boundaries, and a playable literature room are not supplied by this model collection.
 
+## Checkpoint 6 — room and garden modules
+
+Delivered a paneled wall and garden paving module with separate edging stones. Both have editable source and an inspected studio preview. All 30 models pass export checks. These modules supply scenery only: native room/garden traversal and source-station placement still require scene integration.
+
 ## Verification limits
 
 No browser performance, touch hardware, two-student rehearsal, or live lesson acceptance is claimed by these offline export/render checks. Asset integration must preserve source access, conversations, and student state. Per-asset anchors use `<asset-id>__Anchor_Inspect`, `__Anchor_Talk`, and `__Anchor_Label`; the manifest records the exact names to avoid Blender name collisions.

@@ -122,6 +122,19 @@
       "clips": []
     },
     {
+      "id": "garden-path",
+      "bytes": 488876,
+      "triangles": 5184,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        2.21,
+        0.14,
+        3.985
+      ],
+      "clips": []
+    },
+    {
       "id": "ione",
       "bytes": 628720,
       "triangles": 12776,
@@ -187,6 +200,19 @@
         0.782,
         0.102,
         0.57
+      ],
+      "clips": []
+    },
+    {
+      "id": "paneled-wall",
+      "bytes": 204616,
+      "triangles": 2160,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        2.42,
+        2.6,
+        0.235
       ],
       "clips": []
     },
@@ -377,6 +403,6 @@
       "clips": []
     }
   ],
-  "totalBytes": 5329948,
-  "withLandmarksBytes": 9889160
+  "totalBytes": 6023440,
+  "withLandmarksBytes": 10582652
 }

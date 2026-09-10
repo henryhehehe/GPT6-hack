@@ -289,6 +289,37 @@
       "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
     },
     {
+      "id": "garden-path",
+      "title": "Garden paving module",
+      "pack": "austen-architecture",
+      "category": "props",
+      "url": "/models/props/garden-path.glb",
+      "source": "assets/blender/props/austen-architecture.blend",
+      "bytes": 488876,
+      "sha256": "94268add5a5272fbcf1cc8ed72f0867c7cb8209a7c1173a1af181e6be53daf57",
+      "bounds": {
+        "min": [
+          -1.105,
+          0.0,
+          -1.9925
+        ],
+        "max": [
+          1.105,
+          0.14,
+          1.9925
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "garden-path__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
       "id": "ione",
       "title": "Ione \u00b7 archivist",
       "pack": "alexandria-cast",
@@ -440,6 +471,37 @@
       },
       "anchors": {
         "Anchor_Inspect": "open-scroll__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "paneled-wall",
+      "title": "Paneled interior wall",
+      "pack": "austen-architecture",
+      "category": "props",
+      "url": "/models/props/paneled-wall.glb",
+      "source": "assets/blender/props/austen-architecture.blend",
+      "bytes": 204616,
+      "sha256": "57dd64175003f06b41392b950fba38b63d0929ca5b73685e99a36e4096b1cc7c",
+      "bounds": {
+        "min": [
+          -1.21,
+          0.0,
+          -0.08
+        ],
+        "max": [
+          1.21,
+          2.6,
+          0.155
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "paneled-wall__Anchor_Inspect"
       },
       "clips": [],
       "provenance": "Original interpretive teaching asset; not primary evidence",
