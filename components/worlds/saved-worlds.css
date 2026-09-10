@@ -1,3 +1,47 @@
-.saved-world-library{width:min(760px,calc(100vw - 32px));max-width:760px;max-height:90dvh;display:flex;flex-direction:column;gap:16px;background:#142029;color:#e6eeed;border:1px solid #354750;padding:24px}
-.saved-world-library header{padding-right:24px}.saved-world-library header p,.saved-world-library small{color:#b5c5c9}.saved-world-search{display:grid;gap:6px;font-size:13px}.saved-world-search input{padding:10px 12px;border:1px solid #4d646b;border-radius:6px;background:#0e1920;color:inherit;width:100%}
-.saved-world-list{overflow:auto;min-height:0;display:grid;gap:12px}.saved-world-list article{padding:16px;border:1px solid #3b4d55;border-radius:8px;display:grid;gap:14px}.saved-world-list h3{margin:5px 0;font-size:20px;line-height:1.3}.saved-world-list p{font-size:14px;color:#c7d4d7}.saved-world-actions{display:flex;gap:10px;flex-wrap:wrap}.saved-world-library .helper{font-size:12px;margin:0}.saved-world-library button:focus-visible,.saved-world-library input:focus-visible{outline:2px solid #a9e8d5;outline-offset:3px}
+.saved-world-library[data-slot=dialog-content] {
+ width:min(690px,calc(100vw - 32px)); max-width:690px; max-height:calc(100dvh - 32px);
+ display:flex; flex-direction:column; gap:0; padding:26px 0 0;
+ background:#222220; color:#eee; border:1px solid #55554f; border-top:3px solid #d8321c; border-radius:var(--control-radius);
+ font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+.saved-world-library header { padding:0 58px 22px 24px; }
+.saved-world-library [data-slot=dialog-title] { font:650 25px/1.2 'Helvetica Neue',Helvetica,Arial,sans-serif; letter-spacing:-.6px; }
+.saved-world-library [data-slot=dialog-description] { color:#bdbdb5; font-size:14px; line-height:1.6; margin-top:10px; }
+.saved-world-filter { padding:0 24px 18px; border-bottom:1px solid #494943; }
+.saved-world-search-label { display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin-bottom:8px; font-size:14px; }
+.saved-world-search-label span { color:#aaa99f; font-size:12px; }
+.saved-world-search { display:flex; align-items:center; gap:10px; background:#171717; border:1px solid #65655d; padding:0 10px; color:#bdbdb5; }
+.saved-world-search:focus-within { outline:2px solid #ff927f; outline-offset:2px; }
+.saved-world-search input { min-width:0; flex:1; padding:10px 0; border:0; border-radius:0; background:transparent; color:#eee; width:100%; font-size:16px; outline:none; }
+.saved-world-search input::placeholder { color:#aaa99f; }
+.saved-world-search button { width:32px; height:36px; display:grid; place-items:center; background:transparent; border:0; color:#d5d5cd; flex-shrink:0; }
+.saved-world-list { overflow-y:auto; overscroll-behavior:contain; min-height:0; padding:0 24px; scrollbar-width:thin; scrollbar-color:#888 transparent; }
+.saved-world-list article { padding:20px 0; border-bottom:1px solid #494943; }
+.saved-world-list article:last-child { border-bottom:0; }
+.saved-world-meta { display:flex; justify-content:space-between; gap:12px; font-size:12px; line-height:1.5; color:#ff927f; }
+.saved-world-meta time { color:#aaa99f; white-space:nowrap; }
+.saved-world-list h3 { margin:7px 0; font:600 21px/1.3 'Helvetica Neue',Helvetica,Arial,sans-serif; letter-spacing:-.4px; overflow-wrap:anywhere; }
+.saved-world-list p { font-size:14px; line-height:1.6; color:#c4c4bc; overflow-wrap:anywhere; }
+.saved-world-list small { display:block; font-size:12px; color:#aaa99f; margin-top:5px; overflow-wrap:anywhere; }
+.saved-world-actions { display:flex; align-items:center; gap:12px 20px; flex-wrap:wrap; margin-top:16px; }
+.saved-world-actions .primary-button { background:#eee; border-color:#eee; color:#222220; border-radius:var(--control-radius); min-height:40px; font-size:14px; }
+.saved-world-actions .primary-button:hover { background:#fff; border-color:#fff; }
+.saved-world-library .text-button { color:#ff927f; min-height:40px; font-size:14px; }
+.saved-world-library .text-button:hover { text-decoration:underline; text-underline-offset:4px; }
+.saved-world-library .saved-world-footnote { padding:15px 24px; border-top:1px solid #494943; color:#aaa99f; font-size:12px; line-height:1.65; }
+.saved-world-loading { display:flex; align-items:center; gap:10px; padding:32px 24px; font-size:14px; color:#c4c4bc; }
+.saved-world-loading svg { flex-shrink:0; }
+.saved-world-empty { padding:32px 0; }
+.saved-world-empty > svg { color:#ff927f; margin-bottom:6px; }
+.saved-world-empty .text-button { margin-top:12px; }
+.saved-world-error { padding:14px 24px; border-bottom:1px solid #a15a4b; color:#ffc6bb; font-size:14px; line-height:1.6; }
+.saved-world-library :is(button,input):focus-visible { outline:2px solid #ff927f; outline-offset:3px; }
+.saved-world-library .saved-world-search input:focus-visible { outline:none; }
+.saved-world-library[data-slot=dialog-content] > [data-slot=dialog-close] { display:grid; place-items:center; width:36px; height:36px; top:12px; right:12px; border:1px solid #626259; border-radius:var(--control-radius); background:transparent; color:#eee; opacity:1; }
+@media(max-width:480px) {
+ .saved-world-library header { padding-left:18px; }
+ .saved-world-filter,.saved-world-list,.saved-world-library .saved-world-footnote { padding-inline:18px; }
+ .saved-world-meta { flex-wrap:wrap; gap:3px 12px; }
+ .saved-world-actions { gap:8px 16px; }
+ .saved-world-actions button { width:100%; }
+}
