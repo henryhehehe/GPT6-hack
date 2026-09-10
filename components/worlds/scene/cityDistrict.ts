@@ -43,8 +43,7 @@ export function createCityDistrict(parent:THREE.Object3D){
   treePositions.push({x,z,scale});const trunk=new THREE.Mesh(column,wood);trunk.position.set(x,3.3,z);trunk.scale.set(.16,4.8,.16);foliageFallback.add(trunk);
   for(let i=0;i<7;i++){const a=i/7*Math.PI*2,leaf=new THREE.Mesh(sphere,i%2?leaves:darkLeaves);leaf.position.set(x+Math.cos(a)*1.05*scale,5.6+Math.sin(i*3)*.35,z+Math.sin(a)*1.05*scale);leaf.scale.set(1.5*scale,.45*scale,.62*scale);leaf.rotation.y=-a;foliageFallback.add(leaf);}
  }
- // Streets connect the original waterfront to the districts and garden.
- for(const [x,z,w,d] of [[0,-28,53,5],[-27,-37,5,65],[28,-38,5,66],[-43,3,37,5],[48,3,37,5],[0,-34,36,4],[0,-66,36,4],[0,-49,5,34]] as const)box(trim,x,.91,z,w,.035,d,0,false);
+ // WorldScene joins the plaza and streets into one non-overlapping paving mesh.
  for(const b of DISTRICT_BUILDINGS){
   box(b.style===1?stone:plaster,b.x,.94,b.z,b.w,b.h,b.d);
   box(stone,b.x,.94,b.z,b.w+.18,.55,b.d+.18);
