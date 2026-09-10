@@ -62,6 +62,10 @@ for (const asset of manifest.assets) {
   if (asset.clips.length) {
     assert(skinned, `${asset.id}: clips without skinned mesh`);
     for (const clip of gltf.animations) {
+      assert(clip.tracks.some(track => {
+        const width = track.getValueSize();
+        return track.values.some((value, index) => index >= width && Math.abs(value-track.values[index%width]) > .0001);
+      }), `${asset.id}: ${clip.name} contains no motion`);
       const mixer = new AnimationMixer(scene);
       const action = mixer.clipAction(clip).setLoop(LoopOnce, 1); action.clampWhenFinished = true; action.play();
       for (const t of [0, clip.duration * .25, clip.duration * .5, clip.duration]) {

@@ -27,6 +27,40 @@
       "clips": []
     },
     {
+      "id": "dorian",
+      "bytes": 596572,
+      "triangles": 11664,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.906,
+        0.475
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
+      "id": "ione",
+      "bytes": 628720,
+      "triangles": 12776,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.911,
+        0.461
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
+    },
+    {
       "id": "market-stall",
       "bytes": 420732,
       "triangles": 7016,
@@ -51,8 +85,25 @@
         0.75
       ],
       "clips": []
+    },
+    {
+      "id": "thaleia",
+      "bytes": 711072,
+      "triangles": 14300,
+      "primitives": 3,
+      "materials": 3,
+      "size": [
+        0.968,
+        1.911,
+        0.461
+      ],
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ]
     }
   ],
-  "totalBytes": 728916,
-  "withLandmarksBytes": 5288128
+  "totalBytes": 2665280,
+  "withLandmarksBytes": 7224492
 }

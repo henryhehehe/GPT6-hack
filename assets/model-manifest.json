@@ -65,6 +65,78 @@
       "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
     },
     {
+      "id": "dorian",
+      "title": "Dorian \u00b7 harbor merchant",
+      "pack": "alexandria-cast",
+      "category": "characters",
+      "url": "/models/characters/dorian.glb",
+      "source": "assets/blender/characters/alexandria-cast.blend",
+      "bytes": 596572,
+      "sha256": "6f55f3f255017bd2e5b03d0c3af70b82fb87933a37830ed3a34771d9dc4c9764",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.0,
+          -0.2305
+        ],
+        "max": [
+          0.484,
+          1.9059,
+          0.244
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "dorian__Anchor_Talk",
+        "Anchor_Label": "dorian__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "ione",
+      "title": "Ione \u00b7 archivist",
+      "pack": "alexandria-cast",
+      "category": "characters",
+      "url": "/models/characters/ione.glb",
+      "source": "assets/blender/characters/alexandria-cast.blend",
+      "bytes": 628720,
+      "sha256": "93433421f8c966e5979a1bd61785481dcceb1e5ff5c9d92939fd71b08c5f7244",
+      "bounds": {
+        "min": [
+          -0.484,
+          -0.0,
+          -0.2305
+        ],
+        "max": [
+          0.484,
+          1.9107,
+          0.2305
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "ione__Anchor_Talk",
+        "Anchor_Label": "ione__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
       "id": "market-stall",
       "title": "Striped market stall",
       "pack": "market",
@@ -120,6 +192,42 @@
         "Anchor_Inspect": "storage-jar__Anchor_Inspect"
       },
       "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "thaleia",
+      "title": "Thaleia \u00b7 market trader",
+      "pack": "alexandria-cast",
+      "category": "characters",
+      "url": "/models/characters/thaleia.glb",
+      "source": "assets/blender/characters/alexandria-cast.blend",
+      "bytes": 711072,
+      "sha256": "190ff713c5ade2c9c61c34a4d88e2e0d5643d6da2947d9eafc1ea11789ed8ba4",
+      "bounds": {
+        "min": [
+          -0.484,
+          0.0,
+          -0.2305
+        ],
+        "max": [
+          0.484,
+          1.9107,
+          0.2305
+        ]
+      },
+      "anchors": {
+        "Anchor_Talk": "thaleia__Anchor_Talk",
+        "Anchor_Label": "thaleia__Anchor_Label"
+      },
+      "clips": [
+        "Idle",
+        "Greeting",
+        "Talk"
+      ],
       "provenance": "Original interpretive teaching asset; not primary evidence",
       "creator": "Counterfactual Worlds",
       "license": "MIT",

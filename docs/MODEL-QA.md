@@ -12,6 +12,14 @@ Inspected the Blender preview and corrected its initial cropped canopy framing. 
 
 All geometry and surface colors are original and MIT licensed. The source model uses editable named components consolidated by surface material for export. These are stylized interpretive props, not historical evidence. The scroll/letter reader and runtime source bindings remain application-owned.
 
+## Checkpoint 2 — teaching characters
+
+Delivered Thaleia, Dorian, and Ione with distinct garments/accessories and a shared 17-bone skeleton. Each GLB includes `Idle`, `Greeting`, and `Talk` clips and talk/label anchors. The cast totals 1,936,364 bytes and 38,740 triangles; individual characters use three material primitives and 11,664–14,300 triangles.
+
+Inspected front, back, and mid-greeting studio renders. Fixed garment/belt intersections, open neckline gaps, and the initial segmented beard. Gesture poses keep feet planted and Ione's scroll attached. Animation remains deliberately modest, without facial animation or lip sync.
+
+The GLTFLoader checker passed all seven delivered assets. It additionally verifies skin weights sum to one, each rig contains the expected minimum bone count, all advertised clips exist and contain actual motion, and sampled animated bounds remain finite and bounded. The market/cast payload plus existing landmarks is 7,224,492 bytes. Browser playtesting remains separate.
+
 ## Verification limits
 
 No browser performance, touch hardware, two-student rehearsal, or live lesson acceptance is claimed by these offline export/render checks. Asset integration must preserve source access, conversations, and student state. Per-asset anchors use `<asset-id>__Anchor_Inspect`, `__Anchor_Talk`, and `__Anchor_Label`; the manifest records the exact names to avoid Blender name collisions.
