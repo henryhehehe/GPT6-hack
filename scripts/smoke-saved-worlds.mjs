@@ -1,0 +1,23 @@
+import {readFile} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+const base=process.env.APP_URL||'http://localhost:5173';
+const c=JSON.parse(await readFile(process.env.TEST_ACCESS_FILE||'artifacts/private/smoke-access.json','utf8'));
+async function request(path,token,body){const r=await fetch(base+path,{method:body?'POST':'GET',headers:{Authorization:`Bearer ${token}`,...(body?{'Content-Type':'application/json'}:{})},body:body?JSON.stringify(body):undefined});return {status:r.status,data:await r.json()};}
+const endpoint=`/api/saved-worlds?id=${c.id}`;
+const read=()=>request(`/api/classroom?id=${c.id}&studentId=${c.studentId}`,c.teacherToken);
+const before=await read();assert.equal(before.status,200);
+const list=await request(endpoint,c.teacherToken);assert.equal(list.status,200);assert.equal(list.data.classroom.id,c.id);
+assert.equal(JSON.stringify(list.data).includes(c.teacherToken),false);assert.equal((await request(endpoint,c.studentToken)).status,403);
+const body={kind:'classroom',sourceId:c.id,requestId:crypto.randomUUID()};
+const [a,b]=await Promise.all([request(endpoint,c.teacherToken,body),request(endpoint,c.teacherToken,body)]);assert.equal(a.status,200,JSON.stringify(a.data));assert.deepEqual(a,b);
+const draftId=a.data.draftId;
+const draft=await request(`/api/lesson-builder?id=${c.id}&draftId=${draftId}`,c.teacherToken);assert.equal(draft.status,200);assert.deepEqual(draft.data.world.evidence,before.data.world.evidence);
+const launchBody={action:'launch',draftId,reviewed:true,reviewedImageResponseId:draft.data.world.settingImage?.responseId??null};
+const launch=await request(`/api/lesson-builder?id=${c.id}`,c.teacherToken,launchBody);assert.equal(launch.status,200,JSON.stringify(launch.data));assert.notEqual(launch.data.id,c.id);
+assert.deepEqual((await request(`/api/lesson-builder?id=${c.id}`,c.teacherToken,launchBody)).data,launch.data);
+const fresh=await request(`/api/classroom?id=${launch.data.id}&studentId=${launch.data.studentId}`,launch.data.studentToken);assert.equal(fresh.status,200);assert.deepEqual(fresh.data.student.evidence,[]);assert.deepEqual(fresh.data.student.turns,[]);assert.equal(fresh.data.state.scenario,false);
+assert.deepEqual((await read()).data.students,before.data.students);
+assert.equal((await request(endpoint,launch.data.teacherToken)).status,403);
+assert.notEqual((await request(`/api/saved-worlds?id=${launch.data.id}`,launch.data.teacherToken,{...body,sourceId:launch.data.id})).status,200);
+assert.ok((await request(endpoint,c.teacherToken)).data.drafts.some(d=>d.id===draftId));
+console.log('PASS saved-world listing, teacher-only access, concurrent reuse retries, new classroom identity, source retention, empty new progress, unchanged original progress, launch retry, cross-class isolation, and saved draft retrieval. No model calls.');
