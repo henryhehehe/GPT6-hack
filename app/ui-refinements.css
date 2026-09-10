@@ -105,6 +105,38 @@
 .lesson-builder[data-slot=dialog-content] .source-length > span:last-child { white-space: nowrap; }
 .evidence-reader[data-slot=dialog-content] .reader-document > p { white-space: pre-wrap; }
 :is(.evidence-reader,.lesson-builder,.character-dialogue)[data-slot=dialog-content] > [data-slot=dialog-close] { width: 36px; height: 36px; display: grid; place-items: center; top: 10px; right: 10px; border-radius: 7px; background: #203b48; opacity: 1; }
+.invitation-dialog[data-slot=dialog-content] { width: min(460px,calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow-y: auto; padding: 32px; gap: 0; background: #132b37; color: #e0eceb; border: 1px solid #91b7bb40; border-radius: 18px; }
+.invitation-dialog .invitation-mark { display: grid; place-items: center; width: 58px; height: 58px; margin-bottom: 24px; border: 1px solid #83e0cd40; background: #83e0cd0d; color: #a4e7d6; border-radius: 16px; }
+.invitation-dialog[data-slot=dialog-content] h2 { font: 500 2rem/1.25 Georgia,serif; margin: 14px 0 0; }
+.invitation-dialog[data-slot=dialog-content] [data-slot=dialog-description] { color: #aec6d0; font-size: 1rem; line-height: 1.65; margin: 16px 0 24px; }
+.invitation-dialog label { display: block; font-size: .875rem; margin-bottom: 8px; color: #d3e3e7; }
+.invitation-dialog input { font-size: 1rem; min-height: 48px; }
+.invitation-dialog .primary-button { min-height: 46px; margin-top: 4px; }
+.invitation-error { border: 1px solid #e8b39750; background: #56362c66; border-radius: 9px; padding: 14px; margin-bottom: 18px; color: #f4c5ac; font-size: .875rem; }
+.invitation-dialog .invitation-error p { color: #efc9b5; margin: 8px 0; font-size: .875rem; overflow-wrap: anywhere; }
+.invitation-error small { font-size: .8125rem; color: #d9beb0; line-height: 1.6; display: block; }
+.inspector[data-slot=dialog-content] { top: 50%; left: 50%; right: auto; width: min(440px,calc(100vw - 32px)); max-width: 440px; max-height: calc(100dvh - 32px); gap: 0; padding: 28px; color: #dce9ee; }
+.inspector[data-slot=dialog-content] h2 { font-size: 1.25rem; padding-right: 24px; }
+.inspector[data-slot=dialog-content] p { font-size: .875rem; }
+.inspector[data-slot=dialog-content] [data-slot=dialog-description] { padding-bottom: 14px; border-bottom: 1px solid #a7c6d426; line-height: 1.65; }
+.evidence-reader[data-slot=dialog-content] .reader-error { flex-basis: 100%; border: 1px solid #e7b19750; padding: 12px; border-radius: 7px; color: #f3c4ac; font-size: .875rem; line-height: 1.6; background: #442e28; }
+.evidence-reader .publication-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 14px; color: #a3e2d0; font-size: .875rem; text-decoration: underline; text-underline-offset: 4px; }
+.character-dialogue[data-slot=dialog-content] .character-heading,.character-dialogue[data-slot=dialog-content] .character-compose { flex-shrink: 0; }
+.character-dialogue[data-slot=dialog-content] .character-messages { flex: 1; min-height: 0; }
+@media (max-height: 700px) {
+  .invitation-dialog[data-slot=dialog-content] { padding: 24px; }
+  .invitation-dialog .invitation-mark { width: 44px; height: 44px; margin-bottom: 16px; }
+  .invitation-dialog[data-slot=dialog-content] h2 { font-size: 1.75rem; }
+  .invitation-dialog[data-slot=dialog-content] [data-slot=dialog-description] { font-size: .875rem; margin: 12px 0 18px; }
+}
+@media (max-height: 600px) {
+  .character-dialogue[data-slot=dialog-content] .character-heading { padding: 14px 42px 12px 18px; }
+  .character-dialogue[data-slot=dialog-content] .character-heading [data-slot=dialog-description] { display: none; }
+  .character-dialogue[data-slot=dialog-content] .character-portrait { width: 40px; height: 46px; }
+  .character-dialogue[data-slot=dialog-content] .character-compose { padding: 10px 18px; }
+  .character-dialogue[data-slot=dialog-content] .character-compose footer span { display: none; }
+  .character-dialogue[data-slot=dialog-content] .character-compose footer { justify-content: flex-end; }
+}
 @media (min-width: 1101px) {
   .cw-app:not(.immersive-student) { height: 100dvh; min-height: 640px; }
   .cw-app:not(.immersive-student) .app-header { height: 68px; padding: 0 24px; }
