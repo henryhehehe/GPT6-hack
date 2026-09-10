@@ -10,6 +10,8 @@ Product scope also includes English: [The Odyssey and Pride and Prejudice expans
 
 For independent review, pass along [the one-page context brief](docs/REVIEW-CONTEXT.md). [Learning UX research](docs/LEARNING-UX-RESEARCH.md) compares five products and separates documented patterns from design recommendations.
 
+The [open-model shortlist](docs/OPEN-MODEL-SHORTLIST.md) records reusable 3D asset candidates for Alexandria, The Odyssey, and Pride and Prejudice, with publisher license labels, optimization needs, and an integration plan. These external candidates are not installed yet.
+
 ## Run locally
 
 Requires Node 24 (the repository includes `.tool-versions`).
