@@ -36,26 +36,26 @@ export async function POST(request:Request){try{
  const auth=request.headers.get('Authorization')?.replace('Bearer ','')||'';
  if(action==='join'){
   await limitVisitor(request,'classroom-join',40);
-  await reserveQuota(`joins:${id}`,40,'This pilot classroom is full.');
   if(auth!==row.invite_token)throw new Error('This invitation is invalid');const studentId=crypto.randomUUID(),studentToken=token();const name=z.string().min(1).max(35).parse(b.name);
+  await reserveQuota(`joins:${id}`,40,'This pilot classroom is full.');
   await db().prepare('INSERT INTO students (id, class_id, token, state, revision) VALUES (?, ?, ?, ?, 1)').bind(studentId,id,studentToken,JSON.stringify(initialStudent(name))).run();return json({id,studentId,studentToken});
  }
  if(['scenario','author','director','apply'].includes(action)){
   if(auth!==row.teacher_token)throw new Error('Only the teacher can change the world');
   if(action==='scenario'){if(b.scenario===true&&!scenarioAllowed(world))throw new Error('This lesson uses original evidence without a what-if branch.');state.scenario=z.boolean().parse(b.scenario);await saveClass(row,state);return json({ok:true});}
   if(action==='author'){
-   await reserveClassAi(id);
    if(world.lessonPack)throw new Error('Choose a new lesson or build from source to change this reading.');
    const active=await db().prepare(`SELECT id FROM students WHERE class_id = ? AND ${meaningfulProgressSql} LIMIT 1`).bind(id).first();if(active)throw new Error('Students have started collecting evidence or speaking. Start a fresh classroom before generating a new lesson.');
    const source=z.string().min(100).max(12000).parse(b.lesson);const intervention=z.string().min(5).max(250).parse(b.intervention);
+   await reserveClassAi(id);
    const result=await astra('world',WorldSchema.omit({lessonPack:true,settingImage:true}).extend({evidence:z.array(EvidenceSchema.omit({context:true})).min(3).max(6)}),boundary+' Build a compact harbor-market-library learning world from the supplied source text. Exactly one node per place. Keep all historical source evidence from the supplied template exactly unchanged; new content must be an assumption or teaching-prop, never a new historical source. Use the chosen intervention to create plausible, conditional consequences and visual activity levels 0..1. The geometry templates are fixed, but every explanation and activity level should follow the lesson. Keep concise.',{source,intervention,template:initialWorld});
    const generated=preserveReviewedSources(preserveHistoricalSources(result.value),initialWorld);
    state.run={responseId:result.responseId,latencyMs:result.latencyMs};state.hint=null;const update=await db().prepare(replaceWorldSql).bind(JSON.stringify(state),JSON.stringify(generated),source,id,row.version).run();if(update.meta.changes!==1)throw new Error('The world changed or a student started working during generation. Start a fresh classroom.');return json({ok:true,run:state.run});
   }
   if(action==='director'){
    const {student:learner,basis}=await directorContext(db(),id,auth,b.studentId);
-   await reserveClassAi(id);
    const instruction=z.string().min(5).max(1200).parse(b.instruction);
+   await reserveClassAi(id);
    const result=await astra('intervention',HintSchema,boundary+' Create a teacher intervention: a short visual teaching-prop description and one guiding question. Use the lesson subject and mode: literature asks for textual analysis and alternative readings; a documentary source investigation asks for source evaluation and warranted reasoning; a counterfactual asks for a conditional mechanism. Stay within the supplied source packet and its bounded context; never introduce later events. Do not reveal a complete answer or award points. Honor the teacher instruction, use only supplied evidence/assumptions. Prefer concrete comparisons.',{instruction,world,student:learner});
    return json({patch:{id:crypto.randomUUID(),...result.value,responseId:result.responseId,latencyMs:result.latencyMs,request:instruction,kind:'teaching-prop',basis},baseVersion:row.version});
   }
