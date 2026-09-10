@@ -4,7 +4,7 @@ Explore a text as a 3D learning environment, examine its evidence, and revise an
 
 **[Try the student experience](https://counterfactual-worlds-henry.handeche49.chatgpt.site/try)** · **[Explore the worlds](https://counterfactual-worlds-henry.handeche49.chatgpt.site/worlds)** · **[Browse museum objects](https://counterfactual-worlds-henry.handeche49.chatgpt.site/collections)** · **[Teacher studio](https://counterfactual-worlds-henry.handeche49.chatgpt.site/studio)**
 
-Built for the GPT-6 Astra hackathon. This README describes the shipped application on GitHub `main`, including the September 10, 2026 version 23 release. Later development checkpoints are not automatically deployed.
+Built for the GPT-6 Astra hackathon. This README describes the shipped application on GitHub `main`, including the September 10, 2026 version 24 release. Later development checkpoints are not automatically deployed.
 
 ## What you can use
 
@@ -31,7 +31,9 @@ Classrooms support multiple students with separate saved state and access tokens
 
 AI calls require server-side credentials and an available pilot allowance. The current policy includes a configurable shared request cap and six AI reservations per classroom, shared by teacher and students. A steering correction consumes another reservation. When AI is paused or the allowance is exhausted, users can still explore, read, and keep writing. See [the policy implementation](lib/pilotPolicy.ts) and [quota enforcement](lib/pilot.ts).
 
-New setting-image and portrait generation is currently disabled. Existing saved illustrations remain readable, and curated museum images still support visual analysis. An illustration or reconstructed scene is an interpretation, not source evidence.
+Character conversations offer **Generate portrait** on request. Portraits use a separate lifetime allowance: currently 20 attempts across the public pilot and three per classroom, independent of the text allowance of 30 shared requests and six per classroom. Failed upstream attempts count; cached portraits are reused without another generation charge. Portraits are stored privately and labeled as AI-generated interpretations.
+
+New setting-image generation remains disabled. Existing saved illustrations remain readable, and curated museum images still support visual analysis. An illustration or reconstructed scene is an interpretation, not source evidence.
 
 ## Run locally
 
@@ -52,9 +54,10 @@ OPENAI_API_KEY=your-server-side-api-key
 OPENAI_MODEL=gpt-6-astra
 PILOT_TEACHER_CODE=choose-a-private-local-code
 PILOT_AI_REQUEST_LIMIT=0
+PILOT_PORTRAIT_REQUEST_LIMIT=0
 ```
 
-The checked-in `.env.example` supplies the first two entries; add the two pilot settings shown above. The teacher code is required for local studio access. The allowance is a request count, not a dollar budget, and persists in the local database.
+The checked-in `.env.example` supplies the API settings and disables new portraits by default; add the teacher code and text-AI allowance shown above. The teacher code is required for local studio access. Set `PILOT_PORTRAIT_REQUEST_LIMIT` to a positive value only when you intend to generate paid portraits. Both allowances are request counts, not dollar budgets, and persist in the local database.
 
 The deployment-specific `.openai/hosting.json` is intentionally ignored by Git, but the Vite configuration imports it. **For a fresh clone**, create `.openai/hosting.json` with these local bindings. Preserve an existing file if the checkout is already configured for Sites.
 
@@ -135,11 +138,14 @@ npm run build
 node --import tsx scripts/check-review-learning.mjs
 node --import tsx scripts/check-pilot-reservation-order.mjs
 node --import tsx scripts/check-release-privacy-recovery.mjs
+node scripts/check-public-portraits.mjs
 ```
 
-The last three commands exercise the actual built Worker with temporary local storage, dummy credentials, and intercepted API requests. They cover learning/citations, quota behavior, learner privacy, draft recovery, scene undo/reset, and the first-visit learning form without paid model calls.
+The last four commands exercise the actual built Worker with temporary local storage, dummy credentials, and intercepted API requests. They cover learning/citations, quota behavior, learner privacy, draft recovery, scene undo/reset, the first-visit learning form, and portrait authorization/caching/limits without paid model calls.
 
 The version 23 release passed **306 tests**, TypeScript, its production build, and all three Worker checks. Browser review also covered the book filter, paired-object investigation, and share link. These are engineering checks, not proof of educational effectiveness. Later checkpoints should report their own results.
+
+The version 24 portrait release also passed 306 tests, TypeScript, its production build, and the dedicated offline portrait check. Live generation consumes the portrait allowance; the offline check does not.
 
 Other scripts under `scripts/smoke-*.mjs` target a running app and may create classrooms or consume quota. Review each script before running it. Live authoring, steering, dialogue, feedback, and probes use the configured API and incur usage. Gated smoke checks accept `PILOT_TEST_TEACHER_CODE` through the process environment; never put a real code in documentation or a committed command.
 
