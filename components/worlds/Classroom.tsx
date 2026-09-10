@@ -2,8 +2,7 @@
 import { useCallback,useEffect,useRef,useState } from 'react';
 import { BookOpen,GraduationCap,Globe2,ArrowUpRight,ArrowRight,Sparkles,Link2,Check,Ship,Landmark,Store,Compass,RotateCcw,Send,Plus,X,ChevronRight,Layers3,LockKeyhole,UnlockKeyhole,FileText,Eye,LoaderCircle,Info,Radio } from 'lucide-react';
 import { Tabs,TabsList,TabsTrigger,TabsContent } from '@/components/ui/tabs';
-import WorldScene from './WorldScene';
-import GeneratedWorldScene from './GeneratedWorldScene';
+import {WorldScene,GeneratedWorldScene} from './DeferredScenes';
 import LessonBuilder from './LessonBuilder';
 import LearningWork from './LearningWork';
 import LearnerWork from './LearnerWork';
