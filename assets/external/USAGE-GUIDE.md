@@ -968,7 +968,7 @@ Import this GLB in a standalone viewer or Blender. Assemble the matching compone
 
 **Current use:**
 
-- alexandria / `market-bag`: position [14.65, 1.32, 4.35], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- alexandria / `market-bag`: position [14.65, 1.808, 4.35], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
@@ -1818,7 +1818,7 @@ Import this GLB in a standalone viewer or Blender. Assemble the matching compone
 
 **Current use:**
 
-- alexandria / `archive-pouch`: position [-4.15, 5.1, -8.55], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- alexandria / `archive-pouch`: position [-4.15, 4.7806, -8.8], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
 - coast / `harbor-pouch`: position [-12.65, 1.125, 3.6], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
 - coast / `market-pouch`: position [11.35, 1.125, 3.6], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
 - coast / `library-pouch`: position [-0.65, 1.125, -13.4], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
@@ -2009,7 +2009,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- alexandria / `archive-scroll`: position [-4.65, 5.1, -8.45], yaw 0.12 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- alexandria / `archive-scroll`: position [-4.65, 4.7947999999999995, -8.45], yaw 0.12 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
 - archive / `archive-comparison-scroll`: position [6.7, 1.149, -12], yaw 0 rad, uniform scale 1; opens library; supported by archive-comparison-desk.
 
 **How to reuse:**
@@ -2433,7 +2433,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- alexandria / `market-vessel`: position [14.65, 2.01, 5.55], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- alexandria / `market-vessel`: position [11.15, 1.808, 5.65], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
 - coast / `harbor-vessel`: position [-9.35, 0.22, 5.9], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 - coast / `library-vessel`: position [2.65, 0.22, -11.1], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 - archive / `harbor-vessel`: position [-9.7, 0.22, 3.9], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
@@ -2484,7 +2484,7 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- alexandria / `market-vessel-tall`: position [22.65, 2.01, 5.55], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- alexandria / `market-vessel-tall`: position [19.15, 1.808, 5.65], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
 - coast / `market-vessel`: position [14.65, 0.22, 5.9], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 - archive / `library-vessel`: position [2.3, 0.22, -13.1], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 

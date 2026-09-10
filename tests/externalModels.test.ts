@@ -100,3 +100,17 @@ test('display items rest on real model surfaces, including the half-scale tea ta
   }
  }
 });
+
+test('Alexandria additions stay on calibrated furniture and clear the balance scales',async()=>{
+ const {readFile}=await import('node:fs/promises'),{GLTFLoader}=await import('three/addons/loaders/GLTFLoader.js');
+ const {HUMAN_SCALE}=await import('../components/worlds/scene/humanScale');
+ const bytes=await readFile(new URL('../public/models/alexandria/alexandria-kit.glb',import.meta.url));
+ const {scene}=await new GLTFLoader().parseAsync(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength),'');
+ for(const item of externalPlacements('alexandria').filter(p=>p.key.startsWith('archive-')||p.key.startsWith('market-'))){
+  const desk=item.key.startsWith('archive-'),center=desk?[-4.7,4,-8.4]:[item.key==='market-vessel-tall'?21:13,1,5];
+  const root=new THREE.Group();root.add(scene.getObjectByName(desk?'writing-desk':'market-canopy')!.clone(true));root.position.set(center[0],center[1],center[2]);root.scale.set(1,desk?HUMAN_SCALE.deskVertical:HUMAN_SCALE.marketVertical,1);root.updateMatrixWorld(true);
+  const ray=new THREE.Raycaster(new THREE.Vector3(item.at[0],item.at[1]+.03,item.at[2]),new THREE.Vector3(0,-1,0));
+  const hit=ray.intersectObject(root,true)[0];assert.ok(hit,`${item.key} misses furniture`);assert.ok(Math.abs(item.at[1]-hit.point.y)<.025,`${item.key} floats: ${item.at[1]} vs ${hit.point.y}`);
+  if(!desk){const balance=scene.getObjectByName('balance-scale')!.clone(true),wrapper=new THREE.Group();wrapper.add(balance);wrapper.position.set(center[0]+1.75,center[1]+1.01*HUMAN_SCALE.marketVertical,center[2]+.5);wrapper.scale.setScalar(.65);wrapper.updateMatrixWorld(true);const box=new THREE.Box3().setFromObject(wrapper),p=placementBounds(item);assert.ok(p[1]<box.min.x||p[0]>box.max.x||p[3]<box.min.z||p[2]>box.max.z,`${item.key} overlaps balance scale`);}
+ }
+});
