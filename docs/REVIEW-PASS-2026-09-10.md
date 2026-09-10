@@ -10,4 +10,16 @@ Reviewed frozen candidate `73a951be1f8a38fc8ca8fbd5206d8fc93bb38c15` (runtime `6
 
 The defects were sent to the active release owner before publication. Fixes and rechecks were still pending when this report was written. The existing 176-test result and earlier release harness did not exercise these interleavings or inspect private fields in student hint payloads.
 
+## Resolution and independent recheck
+
+All three findings were corrected in release runtime `c9940e7`; the positive regression was finalized in `41c17211748b8ec423212d0f568565acbec47bc2`. The review task independently reran that built-Worker regression and confirmed:
+
+- Students and subsequent dialogue/assessment requests receive only the six public hint fields. The teacher retains the original instruction and learner basis.
+- A late conversation completion compares the saved record before writing, preserving newer same-source drafts and pending retry IDs after reopening.
+- Visits update location independently. Assessment writes preserve the latest stored location without dropping their meaningful-progress revision or world-version guards.
+
+Additional independent SQLite checks exercised both visit/assessment orderings, competing meaningful writes, blocked world replacement after progress, and stale-world visits/assessments. All passed. The release owner also completed 228 tests, TypeScript, the production build, and the earlier learning/quota regressions. No migration, data reset, or quota change was required.
+
+These findings are closed for that verified source. Publication must use a reconciled source containing these fixes because another update reached the hosting repository afterward. Successful deployment of the final merged source is a separate checkpoint; this report does not claim it has completed.
+
 Reproduction source: `scripts/reproduce-review-findings.mjs`. Run with `node --import tsx` from the candidate checkout while pointing to this script's absolute path. The script reads that checkout's built Worker and migrations, uses disposable local storage and fake credentials, intercepts all outbound requests with fixed responses, and disposes the Worker. It asserts the defective behavior to reproduce these findings; it is not a passing release gate and its assertions should be inverted when implementing regression tests for the fixes.
