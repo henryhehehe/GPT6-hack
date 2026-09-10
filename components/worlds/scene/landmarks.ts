@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import type { LandmarkId } from '@/lib/landmarkReferences';
 
 /** Load authored geometry without blocking the playable procedural fallback. */
 export function loadLandmarks(
@@ -7,19 +8,21 @@ export function loadLandmarks(
   libraryFallback: THREE.Object3D,
   lighthouseFallback: THREE.Object3D,
   onFailure: () => void,
+  onReady?: (id: LandmarkId) => void,
 ) {
   let disposed = false;
   const roots: THREE.Object3D[] = [];
   const doors: { object: THREE.Object3D; angle: number; direction: number }[] = [];
   const loader = new GLTFLoader();
 
-  async function load(url: string, position: [number, number, number], fallback: THREE.Object3D) {
+  async function load(id: LandmarkId, url: string, position: [number, number, number], fallback: THREE.Object3D) {
     try {
       const { scene } = await loader.loadAsync(url);
       if (disposed) { disposeModel(scene); return; }
       scene.position.set(...position);
       scene.traverse(object => {
         if (object instanceof THREE.Mesh) {
+          object.userData.landmarkReference = id;
           object.castShadow = true;
           object.receiveShadow = true;
         }
@@ -30,13 +33,14 @@ export function loadLandmarks(
       parent.add(scene);
       roots.push(scene);
       fallback.visible = false;
+      onReady?.(id);
     } catch {
       if (!disposed) onFailure();
     }
   }
 
-  void load('/models/library.glb?v=1', [0, 2.9, -13], libraryFallback);
-  void load('/models/lighthouse.glb?v=1', [-24, 1, 16], lighthouseFallback);
+  void load('library', '/models/library.glb?v=1', [0, 2.9, -13], libraryFallback);
+  void load('lighthouse', '/models/lighthouse.glb?v=1', [-24, 1, 16], lighthouseFallback);
 
   return {
     update(unlocked: boolean, dt: number, reducedMotion: boolean) {
