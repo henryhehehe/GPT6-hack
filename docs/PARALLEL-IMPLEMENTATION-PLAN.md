@@ -4,6 +4,8 @@ Updated September 10, 2026. This is the next implementation sprint for the exist
 
 ## Target
 
+**Product acceptance:** [Product readiness](PRODUCT-READINESS.md) defines the signature teacher-directed learning moment and concrete usability gates. A separate agent reviews the present build independently; after fixes, a final independent review against the frozen commit and deployed app is required before calling it ready. Distinguish recording readiness from a supervised classroom pilot or broader release.
+
 **Learning/immersion priority:** [UX research](LEARNING-UX-RESEARCH.md) and the [independent review brief](REVIEW-CONTEXT.md) now guide the next pass. The student shell now uses a viewport-filling world with an on-demand journal/conversation and in-app evidence reader. Next learning gates: structured per-claim citation selection, passage annotations/versioning, an explicit prediction and revision reflection, and teacher-visible changes in reasoning. Evidence count and archive unlock must not be reported as learning outcomes. These requirements apply to the literature expansion too.
 
 **Scope expansion:** the user also wants English literature, including The Odyssey and Pride and Prejudice. [Literature expansion](LITERATURE-EXPANSION.md) defines the book-specific teaching loops, Blender packs, source/rubric contracts, and revised agent work. Retain the correctness fixes below; freeze the generalized lesson-pack contract before implementing literature across these tracks. The running app remains Alexandria-only until that work is complete.
@@ -12,7 +14,7 @@ Updated September 10, 2026. This is the next implementation sprint for the exist
 
 Ship a reliable, readable **teacher → student → teacher intervention → student revision** loop for the 60-second video. Prioritize correct learner context, visible causal changes, and preserved progress over additional worlds or dashboard features. The recording follows `counterfactual-worlds-handoff/05-one-minute-demo.md`.
 
-Existing baseline: teacher authoring, invitations, shared classroom state, Three.js world, evidence collection, argument assessment, intervention preview/application, and native Astra steering work in local smoke checks. Seven deterministic tests and the production build passed previously. Those results do not substitute for validation after this sprint. Private hosting failed on TLS certificate provisioning; local playback remains available.
+Existing baseline: teacher authoring, invitations, shared classroom state, Three.js world, evidence collection, argument assessment, intervention preview/application, and native Astra steering work in prior smoke checks. Twenty deterministic tests, TypeScript, and the production build passed for the immersive UI release at `c4672a6`, which was published privately. Earlier TLS provisioning failure is resolved. Those results do not substitute for validation after this sprint or an actual two-student session.
 
 ## Team and ownership
 
@@ -101,7 +103,8 @@ Integrate A+C selected learner behavior first, then A+B hint placement. No new f
 4. Run the new race regressions, existing live smoke checks affected by the changed contract, and the bounded rubric evaluation. Reuse already-passing unaffected authoring checks unless a related change requires them.
 5. Run scene mapping checks and the required WebMCP contract checks if affected. Browser layout/performance checks are separately pending until performed; do not label them passed based on a build.
 6. Update `docs/BUILD-LOG.md` with actual agent contributions, defects fixed, tests, and measured results. This is submission evidence for Astra in development.
-7. Commit and push the integrated, validated state. Retry the existing saved private deployment only if source is unchanged; otherwise build/package/save the new exact source and deploy privately. Preserve the existing Sites project. TLS failure is a hosting blocker, not evidence of an application failure.
+7. Commit and push the integrated, validated state; build/package/save the exact source and deploy privately. Preserve the existing Sites project and authorized audience.
+8. Run the final independent review from `PRODUCT-READINESS.md` on that commit and deployment. Resolve blockers, verify fixes, and record separate readiness verdicts before recording. The diagnostic review of the earlier build is not this final gate.
 
 ## Wave 3 — One-minute demonstration
 
