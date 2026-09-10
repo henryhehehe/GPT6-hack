@@ -66,6 +66,58 @@
       "clips": []
     },
     {
+      "id": "citizen-indigo",
+      "bytes": 91424,
+      "triangles": 2297,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.967,
+        1.906,
+        0.472
+      ],
+      "clips": []
+    },
+    {
+      "id": "citizen-ochre",
+      "bytes": 91328,
+      "triangles": 2297,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.967,
+        1.906,
+        0.472
+      ],
+      "clips": []
+    },
+    {
+      "id": "citizen-rose",
+      "bytes": 85080,
+      "triangles": 2297,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.971,
+        1.907,
+        0.461
+      ],
+      "clips": []
+    },
+    {
+      "id": "citizen-teal",
+      "bytes": 86816,
+      "triangles": 2297,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.968,
+        1.912,
+        0.461
+      ],
+      "clips": []
+    },
+    {
       "id": "coast-rocks",
       "bytes": 34676,
       "triangles": 240,
@@ -403,6 +455,6 @@
       "clips": []
     }
   ],
-  "totalBytes": 6023440,
-  "withLandmarksBytes": 10582652
+  "totalBytes": 6378088,
+  "withLandmarksBytes": 10937300
 }

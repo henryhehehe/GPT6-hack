@@ -42,6 +42,12 @@ These are period-inspired original furnishings, not objects authenticated by Aus
 
 Delivered a paneled wall and garden paving module with separate edging stones. Both have editable source and an inspected studio preview. All 30 models pass export checks. These modules supply scenery only: native room/garden traversal and source-station placement still require scene integration.
 
+## Checkpoint 7 — background population
+
+Delivered four static background figures in ochre, teal, indigo, and rose, derived from the original cast geometry and reduced to the background budget. Each uses a single material primitive and fewer than 3,000 triangles, with no dialogue or animation contract. Removed thin hem decoration after the first decimated render exposed intersection artifacts. The final preview was inspected at the intended group-view scale.
+
+All 34 assets pass validation, including the stricter 3,000-triangle background limit and existence of each editable source file. Background figures are intended for distant placement; use the hero models at conversation distance.
+
 ## Verification limits
 
 No browser performance, touch hardware, two-student rehearsal, or live lesson acceptance is claimed by these offline export/render checks. Asset integration must preserve source access, conversations, and student state. Per-asset anchors use `<asset-id>__Anchor_Inspect`, `__Anchor_Talk`, and `__Anchor_Label`; the manifest records the exact names to avoid Blender name collisions.

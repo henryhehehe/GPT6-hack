@@ -160,6 +160,130 @@
       "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
     },
     {
+      "id": "citizen-indigo",
+      "title": "Background figure \u00b7 indigo",
+      "pack": "background-citizens",
+      "category": "characters",
+      "url": "/models/characters/citizen-indigo.glb",
+      "source": "assets/blender/characters/background-citizens.blend",
+      "bytes": 91424,
+      "sha256": "b88b288216e7fa889cfbc801b8cf42e5bd0d3d77f187f7cd5c9aebcceb482fcf",
+      "bounds": {
+        "min": [
+          -0.4825,
+          -0.0006,
+          -0.2303
+        ],
+        "max": [
+          0.4845,
+          1.9051,
+          0.2419
+        ]
+      },
+      "anchors": {
+        "Anchor_Ground": "citizen-indigo__Anchor_Ground"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "citizen-ochre",
+      "title": "Background figure \u00b7 ochre",
+      "pack": "background-citizens",
+      "category": "characters",
+      "url": "/models/characters/citizen-ochre.glb",
+      "source": "assets/blender/characters/background-citizens.blend",
+      "bytes": 91328,
+      "sha256": "c56ec7c75d5db461e6e2afd55edc8d98bd2a06d0062ca97dc8578980b2bc2076",
+      "bounds": {
+        "min": [
+          -0.4825,
+          -0.0006,
+          -0.2303
+        ],
+        "max": [
+          0.4845,
+          1.9051,
+          0.2419
+        ]
+      },
+      "anchors": {
+        "Anchor_Ground": "citizen-ochre__Anchor_Ground"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "citizen-rose",
+      "title": "Background figure \u00b7 rose",
+      "pack": "background-citizens",
+      "category": "characters",
+      "url": "/models/characters/citizen-rose.glb",
+      "source": "assets/blender/characters/background-citizens.blend",
+      "bytes": 85080,
+      "sha256": "d450aa3b0fe3525decaa4f1b89f038012d8be39ced9d0233293abb7328149c33",
+      "bounds": {
+        "min": [
+          -0.4857,
+          0.001,
+          -0.2303
+        ],
+        "max": [
+          0.4853,
+          1.908,
+          0.2303
+        ]
+      },
+      "anchors": {
+        "Anchor_Ground": "citizen-rose__Anchor_Ground"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "citizen-teal",
+      "title": "Background figure \u00b7 teal",
+      "pack": "background-citizens",
+      "category": "characters",
+      "url": "/models/characters/citizen-teal.glb",
+      "source": "assets/blender/characters/background-citizens.blend",
+      "bytes": 86816,
+      "sha256": "d0fa12c4c2f47ba01c16993da9f00ba08278eebc1baef4d14066b729141c0e14",
+      "bounds": {
+        "min": [
+          -0.4846,
+          -0.0011,
+          -0.2303
+        ],
+        "max": [
+          0.4837,
+          1.9107,
+          0.2303
+        ]
+      },
+      "anchors": {
+        "Anchor_Ground": "citizen-teal__Anchor_Ground"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
       "id": "coast-rocks",
       "title": "Coastal rock cluster",
       "pack": "odyssey",

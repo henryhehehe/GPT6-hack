@@ -1,5 +1,5 @@
 // Validate exported assets with the same GLTFLoader used by the application.
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile, stat } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { Box3, Vector3, Mesh, AnimationMixer, LoopOnce } from 'three';
@@ -10,6 +10,7 @@ const manifest = JSON.parse(await readFile(new URL('assets/model-manifest.json',
 const rows = [];
 assert.equal(new Set(manifest.assets.map(a => a.id)).size, manifest.assets.length, 'Duplicate asset IDs');
 for (const asset of manifest.assets) {
+  assert((await stat(new URL(asset.source, repo))).size > 100, `${asset.id}: editable source missing`);
   const bytes = await readFile(new URL(`public${asset.url}`, repo));
   assert.equal(bytes.length, asset.bytes, `${asset.id}: stale byte count`);
   assert.equal(createHash('sha256').update(bytes).digest('hex'), asset.sha256, `${asset.id}: stale checksum`);
@@ -65,7 +66,7 @@ for (const asset of manifest.assets) {
   });
   assert(materials.size <= 3, `${asset.id}: material budget`);
   assert(primitives <= 3, `${asset.id}: primitive budget`);
-  const maxTriangles = asset.category === 'characters' ? 15_000 : asset.id === 'market-stall' || asset.id === 'scroll-rack' ? 12_000 : 8_000;
+  const maxTriangles = asset.pack === 'background-citizens' ? 3_000 : asset.category === 'characters' ? 15_000 : 8_000;
   assert(triangles <= maxTriangles, `${asset.id}: ${triangles} triangles exceeds ${maxTriangles}`);
   assert.deepEqual(gltf.animations.map(c => c.name).sort(), [...asset.clips].sort(), `${asset.id}: clip contract`);
   if (asset.clips.length) {
