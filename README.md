@@ -1,139 +1,163 @@
 # Counterfactual Worlds
 
-Deployment: when a development checkpoint is ready, ask **“Deploy the latest checkpoint.”** Follow the [deployment runbook](docs/DEPLOYMENT.md) for validation, publishing, pilot limits, and recovery. Development edits are not automatically published.
+Explore a text as a 3D learning environment, examine its evidence, and revise an explanation. Teachers choose or build a lesson, invite students, and use GPT-6 Astra to respond to their reasoning and change the scene without losing their work.
 
-A teacher shapes a historical thought experiment. A student explores a living 3D harbor, examines evidence, and defends a causal explanation. The teacher can add help to the running world without losing the student's work.
+**[Try the student experience](https://counterfactual-worlds-henry.handeche49.chatgpt.site/try)** · **[Explore the worlds](https://counterfactual-worlds-henry.handeche49.chatgpt.site/worlds)** · **[Browse museum objects](https://counterfactual-worlds-henry.handeche49.chatgpt.site/collections)** · **[Teacher studio](https://counterfactual-worlds-henry.handeche49.chatgpt.site/studio)**
 
-Built for the GPT-6 Astra hackathon. The one-minute video uses **both interfaces**: teacher → student → teacher intervention → student revision.
+Built for the GPT-6 Astra hackathon. This README describes the shipped application on GitHub `main`, including the September 10, 2026 version 23 release. Later development checkpoints are not automatically deployed.
 
-Next sprint: [parallel implementation plan](docs/PARALLEL-IMPLEMENTATION-PLAN.md), with three agent tracks, exclusive file ownership, integration contracts, priorities, and acceptance checks.
+## What you can use
 
-Product scope also includes English: [The Odyssey and Pride and Prejudice expansion](docs/LITERATURE-EXPANSION.md). Those literature packs are planned; the current runtime remains the Alexandria lesson.
+- **10 prepared worlds and 30 lessons.** Alexandria, *The Odyssey*, *Pride and Prejudice*, *Macbeth*, *Frankenstein*, *A Christmas Carol*, *The Tempest*, the Declaration of Independence, Frederick Douglass's narrative, and Seneca Falls. Each world has three reading lessons with assigned ranges, questions, and source packets.
+- **Walkable 3D scenes.** Scene-specific architecture and reading arrangements, rigged companions, vegetation, water, lighting, scenic viewpoints, and optional ambient sound. Use **Walk around**, WASD/arrows, drag to look, Shift to move faster, E to inspect, or Escape for overview. On-screen movement controls are available; sound starts off.
+- **Evidence and revision.** Save a starting prediction, collect sources, select exact quotations, make a claim, receive provisional four-part feedback, and revise with a reflection. The journal keeps text, context, and citations inside the app. Draft recovery and downloads help preserve writing.
+- **Source-grounded character dialogue.** Companions respond through Astra and can discuss the learner's saved explanation, feedback, and evidence. Conversations are simulated; talking does not award points, collect evidence, or unlock learning progress.
+- **67 museum objects and 17 guided investigations.** Browse by book or topic, inspect attributed images, compare objects, open shareable object/pair links, and connect observations to the 30 assigned lesson ranges. Saved field notes can receive Astra image feedback that separates visible detail from interpretation.
+- **Teacher tools.** A saved-world library, textbook/excerpt builder, invitations, live learner activity, individual learning reports, and printable teaching guides and worksheets. Teachers can prepare help from a selected learner's saved work and review it before sharing with the class.
+- **Astra scene direction.** Preview and apply changes to lighting, haze, water conditions, and viewpoints across the reading worlds. Alexandria also supports bounded what-if changes to ship, market, and crowd activity. Teacher undo/reset controls preserve sources and student work.
 
-For independent review, pass along [the one-page context brief](docs/REVIEW-CONTEXT.md). [Learning UX research](docs/LEARNING-UX-RESEARCH.md) compares five products and separates documented patterns from design recommendations.
+### How a class works
 
-The [external model library](assets/external/README.md) includes 69 local CC0 GLBs with a [detailed guide for every item](assets/external/USAGE-GUIDE.md). Open `/model-catalog` in the app for search, live 3D previews, animation playback and downloads. All forty-nine scene-eligible external models now supplement Alexandria and the coast, garden and archive settings in 91 placements; unadapted characters and assemblies remain references. Licenses, original source files and checksums are retained. See [integration notes](docs/EXTERNAL-MODEL-INTEGRATION.md) and the [remaining shortlist](docs/OPEN-MODEL-SHORTLIST.md).
+1. The teacher selects a prepared lesson or reviews one built from source material, introduces its question, and shares the classroom invitation.
+2. Students record an initial prediction, explore the assigned places, read sources, and collect quotations or museum observations.
+3. Students explain their reasoning. Astra provides formative feedback; the teacher uses the learning report to identify missing evidence or unsupported assumptions.
+4. The teacher can share a challenge or a reviewed scene edit. Students return to the evidence, revise their argument, and explain what changed their thinking.
 
-Students can now talk to Dorian at the harbor, Thaleia at the market, and Ione near the library. Click a character or their name in the scene, or use **Talk to someone**. Astra generates source-grounded text replies and follow-ups; conversations persist per learner, character, and viewed scenario. Supporting material opens inside the source reader. Dialogue is explicitly simulated and cannot award points, collect evidence, or unlock the archive; **Make your case** remains the separate assessment flow. This release does not add voice or animated lip-sync.
+Classrooms support multiple students with separate saved state and access tokens. Clients refresh classroom state after each request and poll approximately every 2.5 seconds. This is shared classroom activity, not multiplayer avatar-position synchronization. A separate WebSocket connection supports mid-response steering of Astra's teacher director; a standard request path is also available.
 
-Run `node scripts/smoke-dialogue.mjs` for request-boundary checks, or add `--live` for three real Astra turns (uses the configured API key and incurs API usage). `APP_URL` can select the target environment. The script creates an isolated test classroom and does not print access credentials.
+## Access and pilot limits
+
+`/worlds` and `/collections` are public browsing routes. `/try` creates an isolated **learner-only** trial when needed and restores it in the same browser. It does not provide teacher credentials or invitation privileges. `/studio` requires the private teacher access code; classroom invitations give students access to their assigned room.
+
+AI calls require server-side credentials and an available pilot allowance. The current policy includes a configurable shared request cap and six AI reservations per classroom, shared by teacher and students. A steering correction consumes another reservation. When AI is paused or the allowance is exhausted, users can still explore, read, and keep writing. See [the policy implementation](lib/pilotPolicy.ts) and [quota enforcement](lib/pilot.ts).
+
+New setting-image and portrait generation is currently disabled. Existing saved illustrations remain readable, and curated museum images still support visual analysis. An illustration or reconstructed scene is an interpretation, not source evidence.
 
 ## Run locally
 
-Requires Node 24 (the repository includes `.tool-versions`).
+Use **Node 24**; `.tool-versions` pins `24.13.0`. The app uses React, TypeScript, Three.js, vinext/Vite, and local Cloudflare D1/R2 emulation.
 
 ```sh
-npm install
+git clone https://github.com/henryhehehe/GPT6-hack.git
+cd GPT6-hack
+npm run install:ci
 cp .env.example .env.local
-# Add OPENAI_API_KEY to .env.local, then:
+mkdir -p .openai
+```
+
+Edit `.env.local` with your own values. Set the AI allowance to `0` for a local run without paid model calls; choose a positive allowance only when you intend to exercise live Astra features.
+
+```dotenv
+OPENAI_API_KEY=your-server-side-api-key
+OPENAI_MODEL=gpt-6-astra
+PILOT_TEACHER_CODE=choose-a-private-local-code
+PILOT_AI_REQUEST_LIMIT=0
+```
+
+The checked-in `.env.example` supplies the first two entries; add the two pilot settings shown above. The teacher code is required for local studio access. The allowance is a request count, not a dollar budget, and persists in the local database.
+
+The deployment-specific `.openai/hosting.json` is intentionally ignored by Git, but the Vite configuration imports it. **For a fresh clone**, create `.openai/hosting.json` with these local bindings. Preserve an existing file if the checkout is already configured for Sites.
+
+```json
+{
+  "d1": "DB",
+  "r2": "BUCKET"
+}
+```
+
+Then build and initialize the local database:
+
+```sh
 cp .env.local .dev.vars
 npm run build
-node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0000_common_dreadnoughts.sql
-node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0001_fearless_whiplash.sql
-node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0002_zippy_warhawk.sql
-node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0003_large_phil_sheldon.sql
+
+# Run once for a new local database, in filename order.
+for migration in drizzle/[0-9]*.sql; do
+  node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file "$migration"
+done
+
 npm run dev
 ```
 
-Apply each local database migration once, not on every launch. The server prints the preview URL, normally http://localhost:5173. Do not commit environment files. Hosted deployments use a secret configured in Sites rather than these local files.
+Open `http://localhost:5173`. Use `/try` for a student trial or `/studio` with the local teacher code. Do not reapply the SQL files to an already initialized database; apply only new migrations. After changing runtime values, update `.dev.vars` and restart the server. Environment files, teacher codes, invitation credentials, and local database state must stay out of Git.
 
-### Build from a textbook or reading
+`npm start` runs the built app through a local Wrangler preview; it is not a standalone production Node server. Hosted settings and resources are configured through Sites, separately from local files.
 
-In **Teacher studio → Build from source material**, enter a source title and paste a passage, upload a PDF/TXT/Markdown excerpt, or supply a direct public HTTPS PDF link. Add a reading range and optional objective. Astra prepares places, characters, activities, evidence, and a what-if investigation. Check the quotations and locators in the review screen, then **Launch new classroom**. Preview as a student before sharing its invitation. Existing student work is preserved in the previous classroom.
+## Build a lesson from a book or upload
 
-PDFs are limited to 5 MB; text to 60,000 characters. A PDF with no range uses its first ten pages. For pasted or text-file material, supply only the intended excerpt. A whole textbook is not exhaustively transformed in one run. PDF extraction needs teacher verification, especially scans and unusual layouts. Generated scenes use symbolic coast, garden, or archive templates; they are not automatic architectural replicas. Sources are stored privately, while approved excerpts appear directly in the student journal with citations. Teacher source access survives launch and refresh.
+In **Teacher studio → Build from source material**, choose a prepared lesson, paste text, upload a PDF/TXT/Markdown excerpt, or enter a direct public HTTPS PDF URL. Supply the reading range and an optional learning objective. Astra prepares places, characters, activities, evidence, and an inquiry. Review the source quotations and locators, then launch a classroom and preview the student experience before inviting students.
 
-Validation: `npm test` and `node scripts/smoke-builder.mjs`; append `--live` for paid Astra generation, dialogue, PDF extraction, launch/retry, and private source tests.
+Uploads are limited to 5 MB and source text to 60,000 characters. With no reading range, PDF extraction is instructed to use the first ten PDF pages. Supply the intended excerpt rather than expecting an entire textbook to be exhaustively transformed in one run. PDF extraction, especially from scans or unusual layouts, needs teacher verification.
 
-The first page opens the teacher studio with a prepared lesson. “Generate with Astra” creates a live, schema-validated lesson. “Preview as student” opens the connected student view. “Invite students” copies a tokenized invitation for a separate browser. Treat teacher credentials as private. The browser stores access tokens locally; the server stores authoritative classroom and student state in D1.
+Custom lessons use reusable coast, garden, or archive settings. Astra generates validated lesson data; it does not generate arbitrary executable geometry or an accurate architectural replica. Uploaded originals remain private, while reviewed excerpts become the classroom's cited evidence.
 
-## What works
+A real public-domain upload fixture is included: [Pride and Prejudice, Chapter III (PDF)](public/samples/pride-and-prejudice-chapter-3.pdf). Use PDF pages 1–4. See [the upload guide and text alternative](output/pdf/UPLOAD-GUIDE.md).
 
-- Teacher source editor, structural intervention, Astra authoring, student invitations, live student activity, and intervention preview/application.
-- Three.js harbor district with library, market, docks, moving ships, water, citizens, evidence markers, camera focus, and visible scenario changes.
-- Original Blender-authored library and lighthouse assets, loaded as GLB with a playable fallback and independently animated archive doors. Editable source and regeneration instructions live in [assets/blender](assets/blender/README.md).
-- Ground-level exploration: choose **Walk around**, use WASD/arrows to move, drag to look, Shift for faster movement, E to inspect a nearby place, or Escape for overview. Touch movement/turn controls and location shortcuts remain available. Outdoor streets, stairs, and piers are walkable; building interiors are not yet navigable.
-- A viewport-filling student world with an on-demand journal and argument panel. The in-app reader contains text, source context, citation insertion, and an attributed setting illustration; students can reopen sources while drafting. The illustration is explicitly separate from historical evidence.
-- Student evidence inventory, merchant/archivist dialogue, four-part argument rubric, and archive unlock.
-- Native Astra mid-turn steering over WebSocket. A standard request remains available when the transport is unavailable; it is labeled separately.
-- Persistent classroom state and student isolation. Clients poll every 2.5 seconds; no synthetic classroom counts.
-- Provenance labels for historical sources, explicit assumptions, and invented teaching props.
-- WebMCP tools for inspecting places, collecting evidence, and reading displayed state.
-
-## Architecture
+## Architecture and model use
 
 ```mermaid
 flowchart LR
-  Teacher[Teacher studio] --> Author[Astra author / director]
-  Author --> Validation[Zod + semantic validation]
+  Teacher[Teacher studio] --> Astra[Astra author and director]
+  Sources[Reviewed text and museum records] --> Astra
+  Astra --> Validation[Schema and semantic validation]
   Validation --> DB[(D1 classroom state)]
-  DB --> Student[Student world / Three.js]
-  Student --> Judge[Astra argument feedback]
-  Judge --> Rubric[Validated excerpts + evidence IDs]
-  Rubric --> DB
+  DB --> Student[Student world and journal]
+  Student --> Feedback[Astra dialogue and formative feedback]
+  Feedback --> Validation
   DB --> Teacher
+  Uploads[Private source uploads and saved images] --> R2[(R2 storage)]
 ```
 
-Astra generates declarative lesson data, causal explanations, visual activity parameters, NPC feedback, and teaching interventions. The renderer uses authored, bounded architecture templates; it does not execute arbitrary model-generated code. World versions and per-student revisions reject stale writes. Patches preserve student progress; duplicate patch IDs are idempotent. API keys remain server-side.
+Astra is used for source extraction, lesson authoring, character dialogue, argument feedback, museum-image critique, and teacher interventions. Structured outputs are validated before being stored or applied. Scene controls operate within explicit schemas; the model cannot rewrite reviewed sources, award progress through dialogue, or execute arbitrary generated code.
 
-## Checks and development evidence
+The server owns classroom and student state. Version/revision checks reject stale writes, request IDs make supported retries idempotent, and learner responses omit private teacher context and other students' work. Keys remain server-side. Browser storage holds device-local drafts, preferences, and access needed to resume a session.
+
+## Models and provenance
+
+The scene combines original Blender-authored assets with licensed external models. The in-app `/model-catalog` provides previews, animation controls, downloads, and provenance. See:
+
+- [Blender sources and regeneration](assets/blender/README.md)
+- [External model library](assets/external/README.md) and [per-model usage guide](assets/external/USAGE-GUIDE.md)
+- [Character catalog and usage](assets/CHARACTER-USAGE-GUIDE.md)
+- [Museum object sources and editorial boundaries](docs/MUSEUM-OBJECT-EXPANSION.md)
+- [Landscape art direction](docs/LANDSCAPE-ART-DIRECTION.md) and [lighting/composition review](docs/curriculum/LIGHTING-AND-MOTION-REVIEW.md)
+
+Museum attribution and license information stays with each object. Later depictions, reconstructions, costumes, and hypothetical causal links are distinguished from evidence in the assigned text.
+
+## Validation
+
+For offline checks:
 
 ```sh
 npm test
 npx tsc --noEmit
 npm run build
-node scripts/smoke.mjs
-node scripts/smoke.mjs --live
-node scripts/smoke-steering.mjs
-node scripts/smoke-author.mjs
+node --import tsx scripts/check-review-learning.mjs
+node --import tsx scripts/check-pilot-reservation-order.mjs
+node --import tsx scripts/check-release-privacy-recovery.mjs
 ```
 
-The `--live`, steering, authoring, and probe scripts make paid Astra requests. Smoke scripts create test classrooms and save access credentials under ignored `artifacts/private/`. `smoke-steering.mjs` uses the classroom created by `smoke.mjs`.
+The last three commands exercise the actual built Worker with temporary local storage, dummy credentials, and intercepted API requests. They cover learning/citations, quota behavior, learner privacy, draft recovery, scene undo/reset, and the first-visit learning form without paid model calls.
 
-Seven deterministic tests cover dangling/duplicate references, unavailable evidence, fabricated excerpts, and progression requirements. Live smoke checks verified a rejected instruction attack, a supported argument, classroom state preservation, and a native steering correction. See [build evidence](docs/BUILD-LOG.md) for actual response IDs and timings. These are small smoke tests, not educational validation or statistical latency claims.
+The version 23 release passed **306 tests**, TypeScript, its production build, and all three Worker checks. Browser review also covered the book filter, paired-object investigation, and share link. These are engineering checks, not proof of educational effectiveness. Later checkpoints should report their own results.
 
-Thirteen additional movement/controller tests cover connected routes, dock/shore boundaries, wall sliding, stairs, movement speed, focus-scoped keys, blur/release handling, and camera restoration. These are offline checks; a browser usability/playtest is still needed before recording.
+Other scripts under `scripts/smoke-*.mjs` target a running app and may create classrooms or consume quota. Review each script before running it. Live authoring, steering, dialogue, feedback, and probes use the configured API and incur usage. Gated smoke checks accept `PILOT_TEST_TEACHER_CODE` through the process environment; never put a real code in documentation or a committed command.
 
-## One-minute video
+## Deployment and project notes
 
-See [the 60-second storyboard](counterfactual-worlds-handoff/05-one-minute-demo.md). Record real interactions, then edit waits transparently. Prepared lessons and earlier generated results are labeled. No canned NPC answer is substituted on an API failure.
+GitHub pushes and local changes do not automatically deploy. Follow [the deployment runbook](docs/DEPLOYMENT.md) to select a verified checkpoint, preserve published functionality and access policy, and publish through the existing Sites project. Never copy local runtime credentials or private submission notes into public source history.
 
-Suggested sequence: teacher selects a cause → student watches the world change → student submits a weak argument → teacher creates and steers a hint → student uses evidence to revise → archive opens. Put development/engineering detail in the submission text.
+Useful background:
 
-## Sources and limits
+- [Independent review context](docs/REVIEW-CONTEXT.md)
+- [Learning UX research](docs/LEARNING-UX-RESEARCH.md)
+- [Curriculum teaching packs](docs/curriculum/)
+- [Astra learning and scene-edit contracts](docs/ASTRA-LEARNING-UPGRADE.md)
+- [Museum teaching guide](docs/MUSEUM-INVESTIGATION-GUIDE.md)
+- [Business validity review](docs/BUSINESS-VALIDITY-REVIEW.md)
 
-Historical context is a short paraphrase of [Strabo, Geography 17.1.8](https://penelope.uchicago.edu/Thayer/E/Roman/Texts/Strabo/17A1*.html), public-domain translation hosted by the University of Chicago. It describes institutional support around the Museum; it does not establish a precise library budget or prove trade was its only support.
+The original `counterfactual-worlds-handoff/` materials and older build logs are design history; their planned features, interface descriptions, and test counts may be superseded by the current code. The demo uses real teacher and student interactions; prepared material and edited waiting time should be identified honestly.
 
-Architecture is illustrative. Ship counts and funding links are explicitly hypothetical. The app explores possible consequences under assumptions, not verified alternate history. The model can still misjudge arguments; this is formative feedback, not a validated assessment or evidence of learning gains. The authoring runtime is deliberately limited to harbor/market/library lessons. Historical source cards are locked to reviewed text; arbitrary new historical sourcing is not automated.
+## Limits
 
-The application currently uses bearer classroom/invitation tokens and is intended for a private hackathon demonstration. A classroom-scale release needs identity management, teacher-reviewed lesson packs, stronger quota controls, fuller rubric evaluation, and accessibility/performance testing. Private Sites hosting requires the owner to sign in; an invitation does not bypass hosting access restrictions.
-
-Original concept materials remain in `counterfactual-worlds-handoff/`; the reviewed plan supersedes their conflicting claims and the one-minute storyboard supersedes the three-minute script. The original prototype is reference material and uses an optional Claude interface; the new application explicitly calls Astra.
-
-### Book-specific setting illustrations
-
-For the hackathon, new image generation is paused and lesson preparation skips it so a ready walkable lesson can launch. Existing saved illustrations remain available. The underlying image workflow can ask GPT-6 Astra to direct its `image_generation` tool after the evidence-grounded lesson is saved when re-enabled. The image tool defaults to `gpt-image-2.5-flare`, using the existing server API key; `OPENAI_IMAGE_MODEL` may override that tool model. Generated PNGs remain private in R2. The teacher reviews the exact image revision before launch; students can switch between the illustrated setting and the walkable learning view and inspect the image in the source reader. Illustrations depict the baseline and are labeled interpretations, never source evidence. Image errors preserve the lesson and allow a retry or image-less launch. Successful images are reused, not regenerated on refresh.
-
-A real upload fixture is included at `public/samples/pride-and-prejudice-chapter-3.pdf`, downloadable inside the builder. It contains Jane Austen's complete Chapter III, reformatted from the public-domain Project Gutenberg edition, plus a clearly separated editorial note. Select PDF pages 1–4. A TXT alternative and upload guide are under `output/pdf/`. The complete illustrated source edition is https://www.gutenberg.org/ebooks/1342.
-
-When image generation is re-enabled, run `node scripts/smoke-book-images.mjs --images` for a paid end-to-end check of the real PDF, lesson generation, illustration, cached replay, and teacher/student image access. Use `--resume --images` to retry the saved private test draft without repeating PDF extraction.
-
-## Teaching kit and buyer review
-
-In the teacher studio, open **Teaching guide & worksheet** for a 30-, 45-, or 60-minute sequence and a downloadable source packet with a student worksheet. The self-contained HTML download can be opened offline and printed or saved as PDF; paper answers do not sync automatically. **Learning report** compares first/latest explanations and exports every submitted turn, excluding the teacher preview. AI feedback remains provisional; repeated or changed wording is not evidence of learning gains.
-
-From **Learning report** or **Live classroom**, choose **Prepare teaching help** on a learner. Review their saved explanation, then generate a challenge. Both request paths load the selected learner from classroom storage; the preview identifies whose work informed it and that **Share with whole class** sends it to everyone. Report filters highlight missing work or criteria flagged in the latest provisional AI feedback.
-
-The [business validity review](docs/BUSINESS-VALIDITY-REVIEW.md) covers the initial buyer, competitor alternatives, school-readiness gaps, proposed pricing experiments, cost sensitivity, and a four-week customer-validation plan. Pricing and pilot targets are hypotheses, not offers or observed results.
-
-### Try it before a school rollout
-
-Start at `/try` to explore and write, then switch to **Teacher studio** in the same practice classroom. No signup or teacher code is needed. **Learning report** can include your own practice learner without counting it as a joined student. Older learner-only trials stay intact; open `/studio` separately to try teacher tools.
-
-**Download my writing** works without a new AI call and includes your unsent draft, saved evidence, and prior submitted explanations. It is a local copy, not a submission. New image generation is paused for the hackathon, so the builder goes directly from lesson generation to review. Shared AI and classroom quotas remain in place.
-
-### Learner-aware characters, museum critique, and live scene edits
-
-After submitting an explanation, choose **Help me rethink my answer** to discuss its reasoning with a character. Characters can use the learner's saved argument, feedback, evidence and museum notes. In a saved museum field note, **Ask Astra about my observation** examines the curated object image and distinguishes visible detail from interpretation; feedback is saved and does not award points.
-
-In Alexandria's **Teaching help**, enable **Change scene activity too**. Describe a change, steer it while Astra works, preview the scene privately, then apply it to the classroom. Astra can change existing ships, market stock and district-crowd activity with conditional explanations. It cannot create arbitrary buildings or geometry. Student work and reviewed sources are preserved. See [the upgrade and verified demo steps](docs/ASTRA-LEARNING-UPGRADE.md). Existing AI quotas still apply; this local implementation is not automatically deployed.
+This is a public pilot, not a production school identity or student-information system. Teacher access uses a private code and classroom tokens; broader rollout needs stronger identity management, accessibility/performance evaluation, and classroom research. Scenes and costumes are interpretive, not verified historical reconstructions. AI feedback can be wrong and remains formative, not a validated grade or demonstrated learning gain.
