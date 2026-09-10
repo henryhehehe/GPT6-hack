@@ -1,0 +1,65 @@
+[
+  {
+    "paragraph": 1,
+    "source": "voiceover-natural.wav",
+    "in": 0,
+    "out": 6.319999866485595,
+    "speed": 1,
+    "start": 0.12,
+    "end": 6.4399998664855955
+  },
+  {
+    "paragraph": 2,
+    "source": "voiceover-natural.wav",
+    "in": 6.860000057220459,
+    "out": 15.400000267028808,
+    "speed": 1,
+    "start": 7.12,
+    "end": 15.660000209808349
+  },
+  {
+    "paragraph": 3,
+    "source": "voiceover-natural.wav",
+    "in": 15.800000114440918,
+    "out": 23.18,
+    "speed": 1,
+    "start": 17.12,
+    "end": 24.499999885559085
+  },
+  {
+    "paragraph": 4,
+    "source": "voiceover-natural.wav",
+    "in": 23.57999984741211,
+    "out": 33.36000030517578,
+    "speed": 1,
+    "start": 25.12,
+    "end": 34.90000045776367
+  },
+  {
+    "paragraph": 5,
+    "source": "voiceover-natural.wav",
+    "in": 34.00000183105469,
+    "out": 39.72000091552734,
+    "speed": 1,
+    "start": 37.12,
+    "end": 42.83999908447265
+  },
+  {
+    "paragraph": 6,
+    "source": "voiceover-natural.wav",
+    "in": 40.339998168945314,
+    "out": 50.31999938964844,
+    "speed": 1.1471265770923131,
+    "start": 45.12,
+    "end": 53.81999999999999
+  },
+  {
+    "paragraph": 7,
+    "source": "closing-natural.wav",
+    "in": 0,
+    "out": 6.060000114440918,
+    "speed": 1.063157914814196,
+    "start": 54.12,
+    "end": 59.82
+  }
+]

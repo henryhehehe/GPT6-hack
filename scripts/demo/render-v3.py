@@ -61,7 +61,11 @@ def main():
   length=SLOTS[i+1]-SLOTS[i];speed=max(1,(end-start)/(length-.3))
   assert speed<=1.2, f'Paragraph {i+1} needs a new take, not excessive acceleration'
   dst=segments/f'voice-{i}.wav'
-  run(ff+['-ss',start,'-i',source,'-t',end-start,'-af',f'atempo={speed},adelay=120:all=1,apad=whole_dur={length},atrim=duration={length}', '-ar','24000','-ac','1','-c:a','pcm_s16le',dst]);audio.append(dst)
+  excerpt=segments/f'voice-source-{i}.wav'
+  with wave.open(str(source)) as w:
+   params=w.getparams();w.setpos(round(start*w.getframerate()));pcm=w.readframes(round((end-start)*w.getframerate()))
+  with wave.open(str(excerpt),'wb') as w:w.setparams(params);w.writeframes(pcm)
+  run(ff+['-i',excerpt,'-af',f'atempo={speed},adelay=120:all=1,apad=whole_len={length*24000},atrim=end_sample={length*24000},asetpts=N/SR/TB', '-ar','24000','-ac','1','-c:a','pcm_s16le',dst]);audio.append(dst)
   timing.append({'paragraph':i+1,'source':source.name,'in':start,'out':end,'speed':speed,'start':SLOTS[i]+.12,'end':SLOTS[i]+.12+(end-start)/speed})
   begin=0
   for j,word in enumerate(words):
@@ -75,10 +79,12 @@ def main():
  (OUT/'narration-timing.json').write_text(json.dumps(timing,indent=2)+'\n')
  audio_list=OUT/'audio-concat.txt';audio_list.write_text(''.join(f"file '{p}'\n" for p in audio))
  run(ff+['-f','concat','-safe','0','-i',audio_list,'-c:a','pcm_s16le',OUT/'voiceover-final.wav'])
+ with wave.open(str(OUT/'voiceover-final.wav')) as w:
+  assert w.getnframes()==60*w.getframerate(), 'Narration slots must assemble to exactly 60 seconds'
  paths=[];manifest=[];cursor=0
  for i,(name,start,end,crop,label) in enumerate(EDL):
   dst=segments/f'{i:02}.mp4';duration=end-start
-  run(ff+['-ss',start,'-i',RAW/f'{name}.mov','-t',duration,'-vf',crop+',setsar=1,fps=30,pad=1920:1080:0:0:color=0x0b151d','-an','-c:v','libx264','-preset','fast','-crf','19','-pix_fmt','yuv420p',dst])
+  run(ff+['-ss',start,'-t',duration,'-i',RAW/f'{name}.mov','-vf',crop+',setsar=1,fps=30,tpad=stop_mode=clone:stop_duration=0.1,pad=1920:1080:0:0:color=0x0b151d','-frames:v',duration*30,'-an','-c:v','libx264','-preset','fast','-crf','19','-pix_fmt','yuv420p',dst])
   paths.append(dst);manifest.append({'start':cursor,'end':cursor+duration,'source':f'output/demo/v2/raw/{name}.mov','in':start,'out':end,'crop':crop,'label':label});cursor+=duration
   print(f'Edited shot {i+1}/{len(EDL)}',flush=True)
  assert cursor==60

@@ -1,0 +1,18 @@
+{
+  "durationSeconds": 60,
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "decodedFrames": 1800,
+  "fullDecode": "passed",
+  "audioDurationSeconds": 60,
+  "meanDBFS": -17.3,
+  "peakDBFS": -1.5,
+  "lastNarrationEndsSeconds": 59.82,
+  "bytes": 7279190,
+  "sha256": "173b2b9ffd5b6edc2748595480972a16cae2183d3a870965fe0002f618df2ea2",
+  "scriptVerification": "Every word in the first six paragraphs and the complete closing pickup matched transcription after normalizing punctuation and Counter-factual segmentation.",
+  "visualReview": "12-frame final contact sheet and full-size opening/closing compositions; moving app footage, source labels, readable editorial quotes and footer captions.",
+  "subjectiveListening": "Not independently verified",
+  "recordingScope": "Re-edit of version-2 recordings, not a capture of the latest local UI."
+}
