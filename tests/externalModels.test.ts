@@ -19,7 +19,7 @@ test('external loader caps concurrency and cancels queued work after disposal',a
  depot.dispose();const late=finishes.map(()=>disposable());finishes.forEach((done,i)=>done(late[i]));assert.deepEqual(await Promise.all(pending),Array(7).fill(null));await tick();assert.equal(requests,3);late.forEach(s=>assert.deepEqual(s.counts,{geometry:1,material:1,texture:1}));
 });
 test('failure keeps fallback and frees a worker for the next asset',async()=>{
- let calls=0;const depot=new ExternalModelDepot(async()=>{if(++calls===1)throw new Error('offline');return {scene:new THREE.Group()};});
+ let calls=0;const depot=new ExternalModelDepot(async()=>{if(++calls===1)throw new Error('offline');return disposable();});
  const results=await Promise.all(eligible.slice(0,5).map(a=>depot.load(a.id)));assert.equal(results[0],null);assert.ok(results.slice(1).every(Boolean));assert.equal(calls,5);depot.dispose();
 });
 test('unregistered IDs, assemblies and undressed references never fetch in a lesson',async()=>{

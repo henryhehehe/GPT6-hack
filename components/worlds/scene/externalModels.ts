@@ -42,9 +42,9 @@ export class ExternalModelDepot {
         try{
           const {scene}=await this.fetchModel(`${asset.url}?v=${asset.sha256.slice(0,12)}`);
           if(this.disposed){disposeModelResources(scene);resolve(null);return;}
-          let skinned=false;
-          scene.traverse(o=>{if(o instanceof THREE.SkinnedMesh)skinned=true;});
-          if(skinned){disposeModelResources(scene);resolve(null);return;}
+          let skinned=false,meshes=0;
+          scene.traverse(o=>{if(o instanceof THREE.SkinnedMesh)skinned=true;if(o instanceof THREE.Mesh)meshes++;});
+          if(skinned||meshes===0){disposeModelResources(scene);resolve(null);return;}
           this.sources.add(scene);resolve(scene);
         }catch{resolve(null);}
       }});
@@ -65,10 +65,11 @@ export class ExternalModelDepot {
 }
 
 /** Optional dressing is immediately represented by bounded, inspectable fallbacks. */
-export function loadExternalModels(parent:THREE.Object3D,placements:readonly ExternalPlacement[]){
-  const depot=new ExternalModelDepot(),root=new THREE.Group();root.name='ExternalSceneArt';parent.add(root);
+export function loadExternalModels(parent:THREE.Object3D,placements:readonly ExternalPlacement[],fetchModel?:FetchModel){
+  const depot=new ExternalModelDepot(fetchModel),root=new THREE.Group();root.name='ExternalSceneArt';parent.add(root);
   const interactables:THREE.Object3D[]=[],stock:{object:THREE.Group;zone:'harbor'|'market'}[]=[];
   const placeholders=new Set<THREE.Mesh>();
+  const status=new Map<string,'loading'|'ready'|'failed'|'disposed'>(),pending:Promise<void>[]=[];
   let disposed=false;
   for(const placement of placements){
     const asset=assets.get(placement.asset);if(!asset||asset.classroomStatus!=='scene-eligible')continue;
@@ -83,15 +84,18 @@ export function loadExternalModels(parent:THREE.Object3D,placements:readonly Ext
     group.add(fallback);placeholders.add(fallback);
     if(placement.zone)interactables.push(group);
     if(placement.activity)stock.push({object:group,zone:placement.activity});
-    void depot.load(asset.id).then(source=>{
-      if(disposed||!source)return;
+    status.set(asset.id,'loading');
+    pending.push(depot.load(asset.id).then(source=>{
+      if(disposed)return;
+      if(!source){status.set(asset.id,'failed');return;}
+      status.set(asset.id,'ready');
       const clone=source.clone(true);
       clone.traverse(object=>{if(object instanceof THREE.Mesh){object.castShadow=true;object.receiveShadow=true;}});
       group.add(clone);group.remove(fallback);disposeModelResources(fallback);placeholders.delete(fallback);
-    });
+    }));
   }
   return {
-    root,
+    root,status,ready:Promise.all(pending).then(()=>status),
     /** Raycast groups recursively, then resolve parents. This also works on fallbacks. */
     inspect(ray:THREE.Raycaster):ZoneId|null{
       const hit=ray.intersectObjects(interactables,true).find(h=>{
@@ -108,6 +112,6 @@ export function loadExternalModels(parent:THREE.Object3D,placements:readonly Ext
         items.forEach(({object},i)=>{object.visible=i/items.length<1-blend*(1-activity);});
       }
     },
-    dispose(){if(disposed)return;disposed=true;parent.remove(root);placeholders.forEach(disposeModelResources);placeholders.clear();depot.dispose();},
+    dispose(){if(disposed)return;disposed=true;parent.remove(root);root.clear();for(const [id,state] of status)if(state==='loading')status.set(id,'disposed');placeholders.forEach(disposeModelResources);placeholders.clear();depot.dispose();},
   };
 }

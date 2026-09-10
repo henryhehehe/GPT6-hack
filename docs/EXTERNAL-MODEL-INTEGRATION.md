@@ -1,10 +1,12 @@
 # External model integration
 
-September 10, 2026. The acquired CC0 library now has **69 self-contained local GLBs**, a searchable **`/model-catalog`** route, and a [detailed usage guide for every item](../assets/external/USAGE-GUIDE.md). **49 distinct external models appear in 91 placements** across Alexandria and the generated coast, garden and archive settings.
+September 10, 2026. The acquired CC0 library now has **69 self-contained local GLBs**, a searchable **`/model-catalog`** route, and a [detailed usage guide for every item](../assets/external/USAGE-GUIDE.md). **47 distinct external models appear in 117 placements across the ten lesson worlds**. Including the three reusable templates, the catalog records 49 models in 201 placements. The latest follow-up below describes the current scene additions and runtime checks.
 
 The catalog provides an actual GLB preview, optional animation playback, downloads, original source links, creators/licenses, measured geometry/file sizes, dimensions, readiness, placement and collision instructions, animation/retargeting notes, current coordinates, code examples and preparation history. It loads one selected model at a time. Model preview does not automatically play animations.
 
-## What appears in lessons
+## Initial base-layout inventory
+
+This earlier four-layout inventory is retained to explain the reusable templates. Current per-world counts and payloads are in the [generated usage guide](../assets/external/USAGE-GUIDE.md).
 
 | Setting | External additions | Placements | Unique GLB transfer |
 | --- | --- | ---: | ---: |
@@ -114,3 +116,17 @@ Eighteen new placements reuse the existing CC0 book, book-stack and candlestick 
 The scene review found that the retained library already covers these reading-room gaps. No new asset download or license dependency was needed. Existing authored ships, cave, sheep, joinery, writing desks, letters and quill/inkwell already provide the major scene-specific objects. Character bases and unassembled ship parts remain adaptation references; the new work does not silently promote them into classroom use. The book art is illustrative, contains no new teaching evidence, and does not claim an authenticated edition or historically reconstructed furnishing.
 
 Validation: all 69 published GLBs passed checksum, embedded-dependency, geometry and origin checks. The 25 focused checks passed, including all themed arrivals and source-stop routes, exact catalog/runtime placement agreement, supported copies, parsed setup code, and actual-mesh raycasts for all 18 new objects. Their footprints fit the supports and do not overlap. Browser visual review and classroom-device performance remain unverified.
+
+## Follow-up — additional scene props and runtime loading verification
+
+Five more placements now appear through the existing lesson renderer:
+
+- **A Christmas Carol:** a market stall and apple crate at `[12, 0, -15]`, outside the source apron. The produce sits on the measured 0.88818 m counter with a 3 mm clearance; the canopy height is not used as a tabletop height. Both objects open the market source station.
+- **The Tempest:** a small interpreted camp pot at `[17, 0, 5]`, connected to the market source station. It is optional scene dressing and makes no claim about a specific object in the text.
+- **Frankenstein:** a low study shelf at `[-7, 0, -14]` and a supported book at 0.394 m, both connected to the library source station.
+
+The new `themeExternalActivityAreas.ts` entries join `themedExternalPlacements`, which `GeneratedWorldScene` already passes to `loadExternalModels`. Solid objects therefore enter the same navigation registry before vegetation is placed. No second model layer, duplicate renderer hook, or scene-specific fetch path was added. The catalog now reflects **47 distinct external models in 117 lesson placements**; including reusable templates, it records **49 models in 201 placements**. The two palm variants remain template-only because the themed landscape already provides its own vegetation.
+
+`loadExternalModels` now exposes `ready` and per-asset `status` (`loading`, `ready`, `failed`, `disposed`) for integration checks, and accepts the same optional fetch-adapter pattern as the authored loader. Normal renderers continue to use its local allowlisted GLB URLs. Empty GLB scenes retain their source-selectable fallback. Scene disposal clears the detached object hierarchy, and models completing after disposal cannot reattach.
+
+Runtime verification loads the actual local GLB geometry for every lesson world, confirms placeholder replacement and placement transforms, raycasts the new source links and supporting surfaces, verifies one request per unique asset, and checks shared-resource disposal. Separate failure/empty/late-completion cases preserve source access and prevent reattachment. These tests exclude browser texture decoding and WebGL appearance. The combined 41 focused tests pass, including navigation with the current vegetation and architecture. All 69 catalog GLBs were revalidated; the regenerated per-item guide and budgets match the scene registry.

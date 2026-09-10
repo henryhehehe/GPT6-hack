@@ -774,6 +774,30 @@
     "setting": "frankenstein"
   },
   {
+    "key": "study-low-shelf",
+    "asset": "quaternius-fantasy-props-shelf-simple",
+    "at": [
+      -7,
+      0,
+      -14
+    ],
+    "zone": "library",
+    "solid": true,
+    "setting": "frankenstein"
+  },
+  {
+    "key": "study-shelf-book",
+    "asset": "quaternius-fantasy-props-book-5",
+    "at": [
+      -7,
+      0.394,
+      -14
+    ],
+    "zone": "library",
+    "support": "study-low-shelf",
+    "setting": "frankenstein"
+  },
+  {
     "key": "harbor-candle",
     "asset": "quaternius-fantasy-props-candle-1",
     "at": [
@@ -894,6 +918,30 @@
     "support": "counting-house-cabinet",
     "zone": "harbor",
     "solid": false,
+    "setting": "christmas-carol"
+  },
+  {
+    "key": "winter-produce-stall",
+    "asset": "quaternius-fantasy-props-stall-empty",
+    "at": [
+      12,
+      0,
+      -15
+    ],
+    "zone": "market",
+    "solid": true,
+    "setting": "christmas-carol"
+  },
+  {
+    "key": "winter-produce-apples",
+    "asset": "quaternius-fantasy-props-farmcrate-apple",
+    "at": [
+      12,
+      0.8912,
+      -15
+    ],
+    "zone": "market",
+    "support": "winter-produce-stall",
     "setting": "christmas-carol"
   },
   {
@@ -1087,6 +1135,18 @@
     ],
     "turn": 1.2,
     "scale": 1.5,
+    "setting": "tempest"
+  },
+  {
+    "key": "island-camp-pot",
+    "asset": "quaternius-fantasy-props-pot-1",
+    "at": [
+      17,
+      0,
+      5
+    ],
+    "zone": "market",
+    "solid": true,
     "setting": "tempest"
   },
   {

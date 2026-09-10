@@ -16,4 +16,4 @@ export function scenePlacements(scene:CatalogScene):ExternalPlacement[]{
 export const catalogPlacements:CatalogPlacement[]=catalogScenes.flatMap(scene=>scenePlacements(scene).map(p=>({...p,setting:scene.id})));
 export const catalogWorldPlacements=catalogPlacements.filter(p=>catalogScenes.some(s=>s.id===p.setting&&s.kind==='world'));
 export const sceneLabel=(id:string)=>catalogScenes.find(s=>s.id===id)?.label??id;
-export const sceneSource=(id:string)=>catalogScenes.find(s=>s.id===id)?.kind==='world'&&id!=='alexandria'?'themedSetting.ts / themeExternalDetails.ts':'externalLayout.ts';
+export const sceneSource=(id:string)=>catalogScenes.find(s=>s.id===id)?.kind==='world'&&id!=='alexandria'?'themedSetting.ts and its detail/activity helpers':'externalLayout.ts';

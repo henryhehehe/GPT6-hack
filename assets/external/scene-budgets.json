@@ -35,25 +35,25 @@
     "setting": "frankenstein",
     "label": "Frankenstein",
     "kind": "world",
-    "placements": 10,
-    "uniqueAssets": 7,
-    "bytes": 1361116
+    "placements": 12,
+    "uniqueAssets": 8,
+    "bytes": 1492032
   },
   {
     "setting": "christmas-carol",
     "label": "A Christmas Carol",
     "kind": "world",
-    "placements": 9,
-    "uniqueAssets": 7,
-    "bytes": 1566096
+    "placements": 11,
+    "uniqueAssets": 9,
+    "bytes": 2368304
   },
   {
     "setting": "tempest",
     "label": "The Tempest",
     "kind": "world",
-    "placements": 16,
-    "uniqueAssets": 9,
-    "bytes": 3549208
+    "placements": 17,
+    "uniqueAssets": 10,
+    "bytes": 3670392
   },
   {
     "setting": "declaration",

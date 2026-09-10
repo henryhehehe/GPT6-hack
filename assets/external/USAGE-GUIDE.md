@@ -4,7 +4,7 @@ Generated from source usage records, measured published GLBs, and the actual pla
 
 Open /model-catalog in the running application for search, one-at-a-time 3D previews, clip playback and downloads. All 69 entries have local self-contained GLBs; only reviewed static selections load in lessons.
 
-The ten lesson worlds use **43 distinct external models** in **112 placements**. Including the three reusable base templates, the catalog indexes **49 models in 196 placements**. Template-only models are not presented as lesson usage. Character bases/accessories and animation sources remain adaptation references. Scene-eligible means permitted for reviewed placement, not historically authenticated or device-benchmarked.
+The ten lesson worlds use **47 distinct external models** in **117 placements**. Including the three reusable base templates, the catalog indexes **49 models in 201 placements**. Template-only models are not presented as lesson usage. Character bases/accessories and animation sources remain adaptation references. Scene-eligible means permitted for reviewed placement, not historically authenticated or device-benchmarked.
 
 ## Scene payloads
 
@@ -16,9 +16,9 @@ These are uncompressed GLB transfer bytes for external additions only, deduplica
 | The Odyssey (world) | 25 | 20 | 4,981,628 |
 | Pride and Prejudice (world) | 13 | 7 | 1,136,972 |
 | Macbeth (world) | 5 | 3 | 530,288 |
-| Frankenstein (world) | 10 | 7 | 1,361,116 |
-| A Christmas Carol (world) | 9 | 7 | 1,566,096 |
-| The Tempest (world) | 16 | 9 | 3,549,208 |
+| Frankenstein (world) | 12 | 8 | 1,492,032 |
+| A Christmas Carol (world) | 11 | 9 | 2,368,304 |
+| The Tempest (world) | 17 | 10 | 3,670,392 |
 | Declaration of Independence (world) | 11 | 5 | 745,752 |
 | Douglass: literacy (world) | 8 | 6 | 914,700 |
 | Seneca Falls (world) | 8 | 6 | 918,156 |
@@ -28,7 +28,7 @@ These are uncompressed GLB transfer bytes for external additions only, deduplica
 
 ## Integration contract
 
-- Base placements live in `components/worlds/scene/externalLayout.ts`. Lesson worlds resolve them through `themedSetting.ts`; supported reading details use `themeExternalDetails.ts`. The catalog indexes the final translated placements from the same runtime functions. Only IDs from `lib/externalAssetIndex.json` are accepted. Never turn generated lesson text into a URL.
+- Base placements live in `components/worlds/scene/externalLayout.ts`. Lesson worlds resolve them through `themedSetting.ts`; supported reading details use `themeExternalDetails.ts`, and scene-specific props use `themeExternalActivityAreas.ts`. The catalog indexes the final translated placements from the same runtime functions. Only IDs from `lib/externalAssetIndex.json` are accepted. Never turn generated lesson text into a URL.
 - Static exports use meters, Y-up, X/Z centered, and a ground origin. Scale defaults to 1; an explicit uniform placement scale also transforms collision bounds. The garden tea table uses 0.5 for a seated height. `Anchor_Inspect` is 65% up the bounds; `Anchor_Label` is above the top. The bounds describe the whole object, not the usable tabletop or hull waterline.
 - Use `loadExternalModels(parent, placements)` for lessons. It deduplicates requests, allows three concurrent loads, shares static geometry/materials, and retains a box fallback on failure. Call `dispose()` before traversing the parent for cleanup. Late results are disposed instead of attached.
 - `zone` opens the corresponding source station through the existing `onSelect` callback. It does not collect evidence, alter claim text, award points, or replace primary sources. Untagged objects are scenery.
@@ -144,7 +144,7 @@ These are uncompressed GLB transfer bytes for external additions only, deduplica
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-barrel', at: [0, 0, 0], turn: 0 }
@@ -192,7 +192,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-crate', at: [0, 0, 0], turn: 0 }
@@ -240,7 +240,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-boat-row-small', at: [0, 0, 0], turn: 0 }
@@ -288,7 +288,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-boat-row-large', at: [0, 0, 0], turn: 0 }
@@ -335,7 +335,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-tool-paddle', at: [0, 0, 0], turn: 0 }
@@ -607,7 +607,7 @@ Import this GLB in a standalone viewer or Blender. Assemble the matching compone
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-palm-detailed-bend', at: [0, 0, 0], turn: 0 }
@@ -664,7 +664,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-palm-detailed-straight', at: [0, 0, 0], turn: 0 }
@@ -713,7 +713,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-rocks-a', at: [0, 0, 0], turn: 0 }
@@ -762,7 +762,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-rocks-b', at: [0, 0, 0], turn: 0 }
@@ -811,7 +811,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-rocks-c', at: [0, 0, 0], turn: 0 }
@@ -860,7 +860,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-rocks-sand-a', at: [0, 0, 0], turn: 0 }
@@ -993,7 +993,7 @@ Import this GLB in a standalone viewer or Blender. Assemble the matching compone
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-bag', at: [0, 0, 0], turn: 0 }
@@ -1041,7 +1041,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-barrel', at: [0, 0, 0], turn: 0 }
@@ -1089,7 +1089,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-bench', at: [0, 0, 0], turn: 0 }
@@ -1138,7 +1138,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-bookcase-2', at: [0, 0, 0], turn: 0 }
@@ -1186,7 +1186,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-bookstand', at: [0, 0, 0], turn: 0 }
@@ -1230,6 +1230,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 **Current use:**
 
 - Frankenstein / `study-cabinet-book-5`: position [-7.896, 1.4311930000000002, -16], yaw 0 rad, uniform scale 1; opens library; supported by study-cabinet.
+- Frankenstein / `study-shelf-book`: position [-7, 0.394, -14], yaw 0 rad, uniform scale 1; opens library; supported by study-low-shelf.
 - A Christmas Carol / `counting-house-cabinet-book-5`: position [-12.92, 1.10161, 15], yaw 0 rad, uniform scale 1; opens harbor; supported by counting-house-cabinet.
 - Declaration of Independence / `assembly-table-left-book-5`: position [-6.872, 1.008216, -6], yaw 0 rad, uniform scale 1; opens library; supported by assembly-table-left.
 - Declaration of Independence / `assembly-table-right-book-5`: position [7.128, 1.008216, -6], yaw 0 rad, uniform scale 1; opens library; supported by assembly-table-right.
@@ -1239,7 +1240,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-book-5', at: [0, 0, 0], turn: 0 }
@@ -1292,7 +1293,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-book-stack-1', at: [0, 0, 0], turn: 0 }
@@ -1347,7 +1348,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-bucket-wooden-1', at: [0, 0, 0], turn: 0 }
@@ -1396,7 +1397,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-cabinet', at: [0, 0, 0], turn: 0 }
@@ -1449,7 +1450,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-candlestick', at: [0, 0, 0], turn: 0 }
@@ -1522,7 +1523,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-candle-1', at: [0, 0, 0], turn: 0 }
@@ -1571,7 +1572,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-chair-1', at: [0, 0, 0], turn: 0 }
@@ -1620,7 +1621,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-crate-wooden', at: [0, 0, 0], turn: 0 }
@@ -1668,7 +1669,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-farmcrate-empty', at: [0, 0, 0], turn: 0 }
@@ -1711,11 +1712,12 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **Current use:**
 
+- A Christmas Carol / `winter-produce-apples`: position [12, 0.8912, -15], yaw 0 rad, uniform scale 1; opens market; supported by winter-produce-stall.
 - Garden template / `garden-produce`: position [16, 0, 5], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-farmcrate-apple', at: [0, 0, 0], turn: 0 }
@@ -1763,7 +1765,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-mug', at: [0, 0, 0], turn: 0 }
@@ -1806,11 +1808,12 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **Current use:**
 
+- The Tempest / `island-camp-pot`: position [17, 0, 5], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 - Garden template / `garden-cooking-pot`: position [16.5, 0, 8], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-pot-1', at: [0, 0, 0], turn: 0 }
@@ -1909,7 +1912,7 @@ Import this GLB in a standalone viewer or Blender. Assemble the matching compone
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-pouch-large', at: [0, 0, 0], turn: 0 }
@@ -1957,7 +1960,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-rope-1', at: [0, 0, 0], turn: 0 }
@@ -2004,7 +2007,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-rope-2', at: [0, 0, 0], turn: 0 }
@@ -2052,7 +2055,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-rope-3', at: [0, 0, 0], turn: 0 }
@@ -2100,7 +2103,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-scroll-1', at: [0, 0, 0], turn: 0 }
@@ -2148,7 +2151,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-scroll-2', at: [0, 0, 0], turn: 0 }
@@ -2196,7 +2199,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-shelf-arch', at: [0, 0, 0], turn: 0 }
@@ -2239,11 +2242,12 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **Current use:**
 
+- Frankenstein / `study-low-shelf`: position [-7, 0, -14], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 - Archive template / `reading-low-shelf`: position [-9, 0, -13.5], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-shelf-simple', at: [0, 0, 0], turn: 0 }
@@ -2291,7 +2295,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-stall-cart-empty', at: [0, 0, 0], turn: 0 }
@@ -2334,11 +2338,12 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **Current use:**
 
+- A Christmas Carol / `winter-produce-stall`: position [12, 0, -15], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 - Garden template / `garden-display-stall`: position [18, 0, 4], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-stall-empty', at: [0, 0, 0], turn: 0 }
@@ -2386,7 +2391,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-stool', at: [0, 0, 0], turn: 0 }
@@ -2436,7 +2441,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-table-large', at: [0, 0, 0], turn: 0 }
@@ -2484,7 +2489,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-table-plate', at: [0, 0, 0], turn: 0 }
@@ -2539,7 +2544,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-vase-2', at: [0, 0, 0], turn: 0 }
@@ -2591,7 +2596,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-vase-4', at: [0, 0, 0], turn: 0 }
@@ -2639,7 +2644,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-workbench', at: [0, 0, 0], turn: 0 }
@@ -2687,7 +2692,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-workbench-drawers', at: [0, 0, 0], turn: 0 }
@@ -3244,7 +3249,7 @@ Use the local GLB as a reference in Blender or a standalone Three.js viewer. Fit
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'polyhaven-coast_rocks_01', at: [0, 0, 0], turn: 0 }
@@ -3293,7 +3298,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'polyhaven-wooden_table_02', at: [0, 0, 0], turn: 0 }
@@ -3345,7 +3350,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'polyhaven-planter_pot_clay', at: [0, 0, 0], turn: 0 }
@@ -3397,7 +3402,7 @@ Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExt
 
 **How to reuse:**
 
-Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` and its `themeExternalDetails.ts` / `themeExternalActivityAreas.ts` helpers for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'polyhaven-wicker_basket_02', at: [0, 0, 0], turn: 0 }
