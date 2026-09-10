@@ -3,6 +3,7 @@ import {Sky} from 'three/addons/objects/Sky.js';
 import {Water} from './vendor/Water.js';
 import type {WorldTheme} from '@/lib/worldThemes';
 import {themeLayout} from './themeLayouts';
+import {applyThemeSurfaces} from './themeSurfaces';
 
 export type ThemeLighting={sun:[number,number,number];strength:number;fill:number;exposure:number;haze:number;cloud:number;environment:number};
 const daylight:ThemeLighting={sun:[-45,60,35],strength:2.6,fill:.65,exposure:.8,haze:.005,cloud:.22,environment:.22};
@@ -21,10 +22,11 @@ export const THEME_LIGHTING:Record<string,ThemeLighting>={
 
 /** Reuses the harbor's physical sky, filtered environment and local water-normal asset. */
 export function createThemeEnvironment(scene:THREE.Scene,renderer:THREE.WebGLRenderer,theme:WorldTheme){
+  const surfaces=applyThemeSurfaces(scene,theme);
   const settings=THEME_LIGHTING[theme.id]??daylight,layout=themeLayout(theme);
   const interior=['study','assembly','meeting'].includes(layout.kind),coast=['cove','island'].includes(layout.kind);
   renderer.toneMappingExposure=settings.exposure;
-  renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+  renderer.shadowMap.type=THREE.PCFShadowMap;
   const sky=new Sky();sky.scale.setScalar(1000);
   const u=sky.material.uniforms,direction=new THREE.Vector3(...settings.sun).normalize();
   u.turbidity.value=2+settings.cloud*7;u.rayleigh.value=1.4;u.mieCoefficient.value=.004;u.mieDirectionalG.value=.8;u.sunPosition.value.copy(direction);
@@ -59,6 +61,7 @@ export function createThemeEnvironment(scene:THREE.Scene,renderer:THREE.WebGLRen
     }};
   }
   return {update(time:number,reduced:boolean){u.time.value=reduced?0:time;ocean?.update(time,reduced);},dispose(){
+    surfaces.dispose();
     scene.remove(sky,fill,sun,sun.target,...lamps);scene.environment=null;environment.dispose();sky.geometry.dispose();sky.material.dispose();sun.shadow.map?.dispose();
     ocean?.dispose();
   }};

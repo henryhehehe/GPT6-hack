@@ -19,3 +19,19 @@ export function worldTheme(world:World):WorldTheme{
  const scene=world.lessonPack?.scene??'archive';
  return {...base,id:'custom',place:world.lessonPack?.sourceTitle??world.title,atmosphere:'Read the sources, compare perspectives, and develop your explanation.',landscape:scene==='coast'?'shore':scene==='garden'?'estate':'town',furniture:scene,guides:['Source guide','Evidence guide','Reflection guide'],roles:['Reading guide','Reading guide','Reading guide']};
 }
+
+export type SurfaceFinish='sand'|'earth'|'chalk'|'ashlar'|'slate'|'brick'|'limewash'|'planks'|'parquet'|'frost';
+export type WorkSurfaces={ground:SurfaceFinish;wall:SurfaceFinish;stone:SurfaceFinish;wood:SurfaceFinish;woodColor:string;stoneColor:string;wet:boolean};
+/** Surface finishes are art direction, not claims about a surviving historical building. */
+export const WORLD_SURFACES:Record<string,WorkSurfaces>={
+ alexandria:{ground:'sand',wall:'ashlar',stone:'chalk',wood:'planks',woodColor:'#796044',stoneColor:'#d9c9a5',wet:false},
+ 'odyssey-ix':{ground:'sand',wall:'chalk',stone:'chalk',wood:'planks',woodColor:'#887150',stoneColor:'#d4c5a0',wet:false},
+ 'austen-letter':{ground:'earth',wall:'limewash',stone:'ashlar',wood:'parquet',woodColor:'#866949',stoneColor:'#cdbfa5',wet:false},
+ macbeth:{ground:'earth',wall:'ashlar',stone:'slate',wood:'planks',woodColor:'#574d42',stoneColor:'#737c77',wet:true},
+ frankenstein:{ground:'earth',wall:'limewash',stone:'slate',wood:'planks',woodColor:'#604433',stoneColor:'#899298',wet:false},
+ 'christmas-carol':{ground:'frost',wall:'brick',stone:'slate',wood:'planks',woodColor:'#6d5040',stoneColor:'#939c9f',wet:true},
+ tempest:{ground:'sand',wall:'chalk',stone:'slate',wood:'planks',woodColor:'#6c7168',stoneColor:'#697e83',wet:true},
+ declaration:{ground:'earth',wall:'limewash',stone:'ashlar',wood:'parquet',woodColor:'#946541',stoneColor:'#b6afa0',wet:false},
+ 'douglass-literacy':{ground:'earth',wall:'brick',stone:'brick',wood:'planks',woodColor:'#8a7253',stoneColor:'#a28066',wet:false},
+ 'seneca-falls':{ground:'earth',wall:'limewash',stone:'chalk',wood:'planks',woodColor:'#b19469',stoneColor:'#cfc4ac',wet:false},
+};
