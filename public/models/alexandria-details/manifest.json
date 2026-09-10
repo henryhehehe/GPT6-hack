@@ -1,0 +1,466 @@
+{
+  "version": 1,
+  "provenance": "Original interpretive scene assets; not archaeological replicas or primary evidence.",
+  "assets": [
+    {
+      "id": "cargo-handcart",
+      "title": "Spoked cargo handcart",
+      "zone": "harbor",
+      "description": "Separate planks, ten-spoke wheels, tire bands, pegged side rails and long handles.",
+      "file": "cargo-handcart.glb",
+      "bytes": 188468,
+      "blenderBounds": [
+        [
+          -0.9399999976158142,
+          -2.002485752105713,
+          -0.010516660287976265
+        ],
+        [
+          0.9399999976158142,
+          1.1150000095367432,
+          1.5099999904632568
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "fishing-net-rack",
+      "title": "Hanging fishing net",
+      "zone": "harbor",
+      "description": "Sagging diamond-mesh net on braced posts, with top floats and bottom weights.",
+      "file": "fishing-net-rack.glb",
+      "bytes": 99104,
+      "blenderBounds": [
+        [
+          -1.2999999523162842,
+          -0.4317690134048462,
+          -0.019999999552965164
+        ],
+        [
+          1.2999999523162842,
+          0.41999998688697815,
+          2.240000009536743
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "stone-anchor",
+      "title": "Stone-weight anchor",
+      "zone": "harbor",
+      "description": "Pierced triangular stone weight and attached lifting line.",
+      "file": "stone-anchor.glb",
+      "bytes": 10040,
+      "blenderBounds": [
+        [
+          -0.5868961215019226,
+          -0.18000000715255737,
+          0.0
+        ],
+        [
+          0.5868961215019226,
+          0.18000000715255737,
+          1.0886818170547485
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "harbor-capstan",
+      "title": "Wooden winding capstan",
+      "zone": "harbor",
+      "description": "Bound timber drum, spindle, radial handspikes, foot frame and wrapped rope.",
+      "file": "harbor-capstan.glb",
+      "bytes": 61012,
+      "blenderBounds": [
+        [
+          -0.8500000238418579,
+          -0.8500000238418579,
+          0.0
+        ],
+        [
+          0.8500000238418579,
+          0.8500000238418579,
+          1.159999966621399
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "fish-tray",
+      "title": "Fishmonger display tray",
+      "zone": "market",
+      "description": "Slatted tray with individually modeled fish, tails, fins and eyes.",
+      "file": "fish-tray.glb",
+      "bytes": 98016,
+      "blenderBounds": [
+        [
+          -0.6549999713897705,
+          -0.4950000047683716,
+          0.0
+        ],
+        [
+          0.6549999713897705,
+          0.4950000047683716,
+          0.28999999165534973
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "scroll-case",
+      "title": "Sealed cylindrical scroll case",
+      "zone": "library",
+      "description": "Timber tube with separate fitted lid, bronze bands, shoulder strap and wax seal.",
+      "file": "scroll-case.glb",
+      "bytes": 36568,
+      "blenderBounds": [
+        [
+          -0.20999999344348907,
+          -0.24799999594688416,
+          0.0
+        ],
+        [
+          0.4702765941619873,
+          0.20999999344348907,
+          1.149999976158142
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "open-papyrus",
+      "title": "Open papyrus roll",
+      "zone": "library",
+      "description": "Thin curved sheet with curled ends, reed roller and blank reading surface.",
+      "file": "open-papyrus.glb",
+      "bytes": 7844,
+      "blenderBounds": [
+        [
+          -0.5099999904632568,
+          -0.6550000309944153,
+          0.027024734765291214
+        ],
+        [
+          0.5099999904632568,
+          0.6550000309944153,
+          0.2029999941587448
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "wax-diptych",
+      "title": "Hinged wax diptych",
+      "zone": "library",
+      "description": "Recessed wax panels, carved wooden frames, cord hinges and bronze stylus.",
+      "file": "wax-diptych.glb",
+      "bytes": 52580,
+      "blenderBounds": [
+        [
+          -0.42500001192092896,
+          -0.313376247882843,
+          0.0
+        ],
+        [
+          0.42500001192092896,
+          0.3050000071525574,
+          0.10141268372535706
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "seven-string-lyre",
+      "title": "Seven-string lyre",
+      "zone": "library",
+      "description": "Carved hollow soundbox, curved arms, tuning pegs, bridge and seven strings.",
+      "file": "seven-string-lyre.glb",
+      "bytes": 24048,
+      "blenderBounds": [
+        [
+          -0.4832547903060913,
+          -0.3700000047683716,
+          0.0
+        ],
+        [
+          0.4832547903060913,
+          0.3700000047683716,
+          1.2962201833724976
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "armillary-model",
+      "title": "Ringed astronomy model",
+      "zone": "library",
+      "description": "Nested engraved bronze rings on a turned stand; illustrative instrument.",
+      "file": "armillary-model.glb",
+      "bytes": 66880,
+      "blenderBounds": [
+        [
+          -0.5049999952316284,
+          -0.5316506028175354,
+          0.0
+        ],
+        [
+          0.5016245245933533,
+          0.5316245555877686,
+          1.5016506910324097
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "courtyard-sundial",
+      "title": "Stone sundial",
+      "zone": "library",
+      "description": "Octagonal pedestal with bronze gnomon and incised radial hour marks.",
+      "file": "courtyard-sundial.glb",
+      "bytes": 8904,
+      "blenderBounds": [
+        [
+          -0.4300000071525574,
+          -0.4300000071525574,
+          0.0
+        ],
+        [
+          0.4300000071525574,
+          0.4300000071525574,
+          1.1399999856948853
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "courtyard-well",
+      "title": "Stone well with windlass",
+      "zone": "setting",
+      "description": "Hollow ashlar well, timber uprights, winding axle, rope and hanging bucket.",
+      "file": "courtyard-well.glb",
+      "bytes": 98216,
+      "blenderBounds": [
+        [
+          -1.100000023841858,
+          -0.8500000238418579,
+          0.0
+        ],
+        [
+          1.2899999618530273,
+          0.8500000238418579,
+          2.0999999046325684
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "rotary-quern",
+      "title": "Hand grain mill",
+      "zone": "market",
+      "description": "Two stone grinding discs, central grain opening and offset wooden handle.",
+      "file": "rotary-quern.glb",
+      "bytes": 25076,
+      "blenderBounds": [
+        [
+          -0.4399999976158142,
+          -0.4399999976158142,
+          0.0
+        ],
+        [
+          0.4399999976158142,
+          0.4399999976158142,
+          0.6499999761581421
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "bread-board",
+      "title": "Baker bread board",
+      "zone": "market",
+      "description": "Round scored loaves and braided bread on a slatted serving board.",
+      "file": "bread-board.glb",
+      "bytes": 66000,
+      "blenderBounds": [
+        [
+          -0.5950000286102295,
+          -0.4000000059604645,
+          0.0
+        ],
+        [
+          0.5950000286102295,
+          0.4000000059604645,
+          0.22999998927116394
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "pouring-jug",
+      "title": "Handled pouring jug",
+      "zone": "market",
+      "description": "Hollow ceramic jug, narrow pouring lip, curved handle and slip bands.",
+      "file": "pouring-jug.glb",
+      "bytes": 34820,
+      "blenderBounds": [
+        [
+          -0.25999999046325684,
+          -0.25999999046325684,
+          0.0
+        ],
+        [
+          0.413799524307251,
+          0.25999999046325684,
+          0.75
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "weighted-loom",
+      "title": "Warp-weighted loom",
+      "zone": "market",
+      "description": "Braced timber frame, individually strung warp, dyed weaving and hanging clay weights.",
+      "file": "weighted-loom.glb",
+      "bytes": 47404,
+      "blenderBounds": [
+        [
+          -0.949999988079071,
+          -0.2529999911785126,
+          -0.01857995241880417
+        ],
+        [
+          0.949999988079071,
+          0.6909851431846619,
+          2.183000087738037
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "reed-screen",
+      "title": "Woven reed screen",
+      "zone": "setting",
+      "description": "Framed privacy panel of individual reeds, bound cross weave and splayed feet.",
+      "file": "reed-screen.glb",
+      "bytes": 21676,
+      "blenderBounds": [
+        [
+          -0.699999988079071,
+          -0.3199999928474426,
+          -0.010000001639127731
+        ],
+        [
+          0.699999988079071,
+          0.3199999928474426,
+          1.7000000476837158
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "stone-planter",
+      "title": "Carved stone planter",
+      "zone": "setting",
+      "description": "Fluted hollow planter with layered rim and a cluster of broad leaves.",
+      "file": "stone-planter.glb",
+      "bytes": 32372,
+      "blenderBounds": [
+        [
+          -0.4399999976158142,
+          -0.4881206452846527,
+          0.0
+        ],
+        [
+          0.46021798253059387,
+          0.46759968996047974,
+          1.25
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "craft-tool-rack",
+      "title": "Craftsman tool rack",
+      "zone": "market",
+      "description": "Pegboard with mallet, bow drill, chisel and wooden measuring square.",
+      "file": "craft-tool-rack.glb",
+      "bytes": 67288,
+      "blenderBounds": [
+        [
+          -0.6499999761581421,
+          -0.1899999976158142,
+          0.0
+        ],
+        [
+          0.6499999761581421,
+          0.10249999910593033,
+          1.3600000143051147
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "mosaic-pavement",
+      "title": "Geometric mosaic pavement",
+      "zone": "setting",
+      "description": "Individual inset tesserae in a meander border and central diamond pattern.",
+      "file": "mosaic-pavement.glb",
+      "bytes": 318172,
+      "blenderBounds": [
+        [
+          -1.4199999570846558,
+          -1.4199999570846558,
+          0.0
+        ],
+        [
+          1.4199999570846558,
+          1.4199999570846558,
+          0.057999998331069946
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    }
+  ]
+}

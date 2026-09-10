@@ -1,0 +1,331 @@
+{
+  "assets": [
+    {
+      "id": "merchant-ship",
+      "bytes": 743100,
+      "triangles": 25300,
+      "meshPrimitives": 9,
+      "size": [
+        4.06,
+        6.07,
+        7.73
+      ]
+    },
+    {
+      "id": "fishing-skiff",
+      "bytes": 350188,
+      "triangles": 10916,
+      "meshPrimitives": 4,
+      "size": [
+        3.341,
+        1.909,
+        5.616
+      ]
+    },
+    {
+      "id": "market-canopy",
+      "bytes": 280684,
+      "triangles": 7584,
+      "meshPrimitives": 5,
+      "size": [
+        5.2,
+        3.56,
+        2.9
+      ]
+    },
+    {
+      "id": "amphora",
+      "bytes": 92388,
+      "triangles": 4832,
+      "meshPrimitives": 3,
+      "size": [
+        0.88,
+        1.36,
+        0.68
+      ]
+    },
+    {
+      "id": "hydria",
+      "bytes": 94508,
+      "triangles": 4948,
+      "meshPrimitives": 3,
+      "size": [
+        1.35,
+        1.15,
+        1.015
+      ]
+    },
+    {
+      "id": "krater",
+      "bytes": 88188,
+      "triangles": 4600,
+      "meshPrimitives": 3,
+      "size": [
+        1.378,
+        0.9,
+        1.06
+      ]
+    },
+    {
+      "id": "pottery-display",
+      "bytes": 303684,
+      "triangles": 16108,
+      "meshPrimitives": 3,
+      "size": [
+        3.357,
+        0.979,
+        1.465
+      ]
+    },
+    {
+      "id": "produce-display",
+      "bytes": 645408,
+      "triangles": 29008,
+      "meshPrimitives": 5,
+      "size": [
+        3.782,
+        0.678,
+        0.782
+      ]
+    },
+    {
+      "id": "textile-display",
+      "bytes": 92084,
+      "triangles": 2320,
+      "meshPrimitives": 5,
+      "size": [
+        3.55,
+        0.256,
+        1.293
+      ]
+    },
+    {
+      "id": "cargo-crate",
+      "bytes": 192308,
+      "triangles": 3796,
+      "meshPrimitives": 3,
+      "size": [
+        1.04,
+        1.001,
+        1.18
+      ]
+    },
+    {
+      "id": "rope-coil",
+      "bytes": 91652,
+      "triangles": 5016,
+      "meshPrimitives": 1,
+      "size": [
+        1.192,
+        0.07,
+        0.965
+      ]
+    },
+    {
+      "id": "grain-sack",
+      "bytes": 34404,
+      "triangles": 1644,
+      "meshPrimitives": 3,
+      "size": [
+        0.78,
+        1.04,
+        0.78
+      ]
+    },
+    {
+      "id": "woven-basket",
+      "bytes": 95296,
+      "triangles": 4972,
+      "meshPrimitives": 3,
+      "size": [
+        0.92,
+        0.643,
+        0.92
+      ]
+    },
+    {
+      "id": "scroll-rack",
+      "bytes": 183232,
+      "triangles": 7416,
+      "meshPrimitives": 4,
+      "size": [
+        1.95,
+        2.445,
+        0.8
+      ]
+    },
+    {
+      "id": "writing-desk",
+      "bytes": 83864,
+      "triangles": 1880,
+      "meshPrimitives": 6,
+      "size": [
+        2.05,
+        1.26,
+        1.18
+      ]
+    },
+    {
+      "id": "wooden-stool",
+      "bytes": 26240,
+      "triangles": 1264,
+      "meshPrimitives": 2,
+      "size": [
+        0.72,
+        0.685,
+        0.72
+      ]
+    },
+    {
+      "id": "oil-lamp",
+      "bytes": 30304,
+      "triangles": 1128,
+      "meshPrimitives": 2,
+      "size": [
+        0.48,
+        0.344,
+        0.833
+      ]
+    },
+    {
+      "id": "balance-scale",
+      "bytes": 33292,
+      "triangles": 1316,
+      "meshPrimitives": 3,
+      "size": [
+        1.42,
+        1.13,
+        0.46
+      ]
+    },
+    {
+      "id": "bronze-brazier",
+      "bytes": 73984,
+      "triangles": 2976,
+      "meshPrimitives": 3,
+      "size": [
+        0.918,
+        1.229,
+        0.918
+      ]
+    },
+    {
+      "id": "courtyard-fountain",
+      "bytes": 57292,
+      "triangles": 2640,
+      "meshPrimitives": 3,
+      "size": [
+        2.7,
+        1.6,
+        2.7
+      ]
+    },
+    {
+      "id": "marble-bench",
+      "bytes": 77280,
+      "triangles": 3084,
+      "meshPrimitives": 2,
+      "size": [
+        2.35,
+        0.74,
+        0.68
+      ]
+    },
+    {
+      "id": "date-palm",
+      "bytes": 352192,
+      "triangles": 15910,
+      "meshPrimitives": 5,
+      "size": [
+        4.732,
+        5.812,
+        4.861
+      ]
+    },
+    {
+      "id": "cypress-tree",
+      "bytes": 225448,
+      "triangles": 7324,
+      "meshPrimitives": 3,
+      "size": [
+        1.316,
+        4.73,
+        1.332
+      ]
+    },
+    {
+      "id": "harbor-warehouse",
+      "bytes": 821516,
+      "triangles": 23472,
+      "meshPrimitives": 9,
+      "size": [
+        8.109,
+        7.205,
+        8.205
+      ]
+    },
+    {
+      "id": "courtyard-house",
+      "bytes": 645276,
+      "triangles": 12048,
+      "meshPrimitives": 8,
+      "size": [
+        7.94,
+        7.425,
+        10.155
+      ]
+    },
+    {
+      "id": "workshop-house",
+      "bytes": 460820,
+      "triangles": 8460,
+      "meshPrimitives": 8,
+      "size": [
+        6.94,
+        4.425,
+        6.155
+      ]
+    },
+    {
+      "id": "mooring-bollard",
+      "bytes": 41220,
+      "triangles": 2148,
+      "meshPrimitives": 2,
+      "size": [
+        0.6,
+        0.75,
+        0.6
+      ]
+    },
+    {
+      "id": "quay-steps",
+      "bytes": 94552,
+      "triangles": 1728,
+      "meshPrimitives": 1,
+      "size": [
+        2.38,
+        1.14,
+        1.95
+      ]
+    }
+  ],
+  "bundleBytes": 6158180,
+  "initialSceneModelBytes": 10717392,
+  "uniqueTriangles": 213838,
+  "meshPrimitives": 111,
+  "placedKitDrawCalls": 256,
+  "placedKitTriangles": 610416,
+  "checks": [
+    "28 individual GLBs and bundle loaded",
+    "Y-up and exact vertex bounds",
+    "Finite vertices and PBR materials",
+    "Download and geometry budgets",
+    "Interaction anchor preservation",
+    "Production loader and instancing",
+    "Independent harbor/market activity",
+    "Disposal after late load",
+    "Atomic fallback on incomplete bundle",
+    "Clear spawns and pier centerlines"
+  ],
+  "limitation": "CPU-side integration and geometry checks; no browser GPU frame-rate measurement."
+}

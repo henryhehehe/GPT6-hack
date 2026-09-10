@@ -1,5 +1,7 @@
 # Authored landmark assets
 
+The scene now also includes an original **48-model Alexandria scenery collection**. See [the model catalog](../../docs/ALEXANDRIA-MODELS.md), [its studio preview](alexandria-contact-sheet.png), and `alexandria-kit.blend`. The additional 20 models have source `alexandria-details.blend` and preview `alexandria-details-contact-sheet.png`. Individual exports and runtime bundles live in `public/models/alexandria/` and `public/models/alexandria-details/`.
+
 The library complex and coastal lighthouse are original Blender models made for Counterfactual Worlds. They are interpretive Hellenistic settings, not verified replicas of the ancient Library of Alexandria or Pharos. Architecture is visual context; evidence cards retain their independent source labels.
 
 ## Files

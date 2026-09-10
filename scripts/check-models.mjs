@@ -1,5 +1,5 @@
 // Validate exported assets with the same GLTFLoader used by the application.
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile, stat } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { Box3, Vector3, Mesh, AnimationMixer, LoopOnce } from 'three';
@@ -10,6 +10,7 @@ const manifest = JSON.parse(await readFile(new URL('assets/model-manifest.json',
 const rows = [];
 assert.equal(new Set(manifest.assets.map(a => a.id)).size, manifest.assets.length, 'Duplicate asset IDs');
 for (const asset of manifest.assets) {
+  assert((await stat(new URL(asset.source, repo))).size > 100, `${asset.id}: editable source missing`);
   const bytes = await readFile(new URL(`public${asset.url}`, repo));
   assert.equal(bytes.length, asset.bytes, `${asset.id}: stale byte count`);
   assert.equal(createHash('sha256').update(bytes).digest('hex'), asset.sha256, `${asset.id}: stale checksum`);
@@ -32,6 +33,15 @@ for (const asset of manifest.assets) {
     assert(Math.abs(bounds.max.getComponent(i) - asset.bounds.max[i]) < .006, `${asset.id}: maximum bound mismatch`);
   }
   for (const name of Object.values(asset.anchors)) assert(scene.getObjectByName(name), `${asset.id}: missing ${name}`);
+  if (asset.id === 'austen-doorway') {
+    const hinge = scene.getObjectByName('austen-doorway__DoorHinge');
+    assert(hinge, 'Austen door hinge is missing');
+    const closed = new Box3().setFromObject(hinge, true).getSize(new Vector3());
+    hinge.rotation.y = Math.PI * .45; scene.updateMatrixWorld(true);
+    const open = new Box3().setFromObject(hinge, true).getSize(new Vector3());
+    assert(open.z > closed.z + .5, 'Austen door must swing around a vertical hinge');
+    hinge.rotation.y = 0; scene.updateMatrixWorld(true);
+  }
   let triangles = 0, primitives = 0, skinned = 0;
   const materials = new Set();
   scene.traverse(object => {
@@ -56,7 +66,7 @@ for (const asset of manifest.assets) {
   });
   assert(materials.size <= 3, `${asset.id}: material budget`);
   assert(primitives <= 3, `${asset.id}: primitive budget`);
-  const maxTriangles = asset.category === 'characters' ? 15_000 : asset.id === 'market-stall' || asset.id === 'scroll-rack' ? 12_000 : 8_000;
+  const maxTriangles = asset.pack === 'background-citizens' ? 3_000 : asset.category === 'characters' ? 15_000 : 8_000;
   assert(triangles <= maxTriangles, `${asset.id}: ${triangles} triangles exceeds ${maxTriangles}`);
   assert.deepEqual(gltf.animations.map(c => c.name).sort(), [...asset.clips].sort(), `${asset.id}: clip contract`);
   if (asset.clips.length) {

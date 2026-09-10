@@ -1,3 +1,4 @@
+import {CITY_DESTINATIONS} from '../components/worlds/scene/cityLayout';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { groundHeight, isWalkable, moveWalker, WALK_SPAWNS, type WalkPoint } from '../components/worlds/scene/walkGeometry';
@@ -28,8 +29,8 @@ test('each pier is reachable from shore with no water crossing', () => {
 });
 
 test('radius keeps the walker off shoreline and pier edges', () => {
-  assert.equal(isWalkable({ x: -27.9, z: 0 }), false);
-  assert.equal(isWalkable({ x: -27.6, z: 0 }), true);
+  assert.equal(isWalkable({ x: -61.95, z: 9 }), false);
+  assert.equal(isWalkable({ x: -61.4, z: 9 }), true);
   assert.equal(isWalkable({ x: -2.6, z: 25 }), false);
   assert.equal(isWalkable({ x: -2.9, z: 25 }), true);
   assert.equal(isWalkable({ x: -2.9, z: 25 }, .5), false);
@@ -76,4 +77,16 @@ test('invalid input does not corrupt walker state', () => {
   near(moveWalker(start, { x: 0, z: 0 }), start);
   assert.equal(isWalkable({ x: NaN, z: 1 }), false);
   assert.equal(isWalkable(start, -.1), false);
+});
+
+test('expanded city destinations are reachable from the original waterfront',()=>{
+ for(const destination of CITY_DESTINATIONS)assert.ok(isWalkable(destination.point),destination.name);
+ route({x:-14,z:8},[{x:-14,z:3},{x:-28,z:3},{x:-28,z:-28},{x:0,z:-28},{x:0,z:-40},{x:5,z:-40},{x:5,z:-52},{x:15,z:-52}]);
+ route({x:-28,z:3},[{x:-43,z:3},{x:-43,z:-28}]);
+ route({x:8,z:8},[{x:8,z:0},{x:16,z:0},{x:16,z:2},{x:56,z:2},{x:56,z:5}]);
+});
+
+test('expanded district parapets and awning posts remain solid',()=>{
+ assert.equal(isWalkable({x:40,z:10}),false);assert.equal(isWalkable({x:-43,z:8.7}),false);
+ assert.ok(moveWalker({x:40,z:9},{x:0,z:2}).z<9.65);
 });

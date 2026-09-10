@@ -1,0 +1,65 @@
+/* Keep student tools usable while reading and writing on smaller screens. */
+.cw-app.immersive-student :is(.left-panel,.right-panel) {
+  overscroll-behavior: contain;
+  scroll-padding: 64px 16px 20px;
+}
+.cw-app.immersive-student .panel-close {
+  position: sticky;
+  float: right;
+  top: 12px;
+  right: auto;
+  width: 40px;
+  height: 40px;
+  margin: 12px 12px -52px 0;
+  z-index: 3;
+  box-shadow: 0 3px 12px #0003;
+}
+.cw-app.immersive-student .claim-compose textarea {
+  font-size: 1rem;
+  scroll-margin: 64px 0 20px;
+}
+.cw-app.immersive-student .collected-tags button {
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.evidence-reader[data-slot=dialog-content] {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.evidence-reader :is(.reader-heading,.reader-tabs,.reader-actions) { flex-shrink: 0; }
+.evidence-reader .reader-heading .eyebrow { padding-right: 24px; }
+.evidence-reader :is(.reader-document,.reader-figure) {
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scrollbar-color: #45616c transparent;
+}
+.evidence-reader .reader-document { overflow-wrap: anywhere; }
+.evidence-reader .reader-actions { position: relative; }
+.evidence-reader .reader-tabs button { min-width: 0; }
+@media (max-height: 600px) {
+  .evidence-reader .reader-heading { padding: 14px 48px 12px 20px; }
+  .evidence-reader .reader-heading h2 { font-size: 1.25rem; margin: 7px 0; }
+  .evidence-reader .reader-heading p { font-size: .8125rem; }
+  .evidence-reader .reader-tabs { padding: 8px 20px; }
+  .evidence-reader .reader-actions { padding: 10px 20px; gap: 6px; }
+  .evidence-reader[data-slot=dialog-content] .reader-actions button { flex: 1; width: auto; min-height: 44px; font-size: .8125rem; }
+}
+@media (max-width: 700px) {
+  .cw-app.immersive-student :is(.left-panel,.right-panel) {
+    bottom: 12px;
+    background: #10242f;
+  }
+  .cw-app.immersive-student .dialogue-panel {
+    display: block;
+    padding: 20px;
+  }
+  .cw-app.immersive-student .npc-heading { padding-bottom: 14px; padding-right: 40px; }
+  .cw-app.immersive-student .conversation { min-height: 0; padding-top: 12px; }
+  .cw-app.immersive-student .conversation > .helper { margin: 0 0 10px; }
+  .cw-app.immersive-student .claim-compose { padding-top: 10px; margin-top: 0; }
+  .cw-app.immersive-student .claim-compose > .primary-button { min-height: 46px; }
+  .cw-app.immersive-student .claim-compose > .helper { margin-bottom: 0; }
+}

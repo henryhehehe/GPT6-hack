@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./ui-refinements.css";
 import "./catalog-refinements.css";
+import "./student-refinements.css";
 
 export const metadata: Metadata = {
   title: "Counterfactual Worlds — a lesson you can step inside",
