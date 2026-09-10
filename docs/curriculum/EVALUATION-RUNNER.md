@@ -58,3 +58,12 @@ Eight runner tests cover offline preflight, missing integration/access, all 12 i
 The real CLI preflight prepared all 12 cases. A live invocation stopped before any HTTP or model call because the selected-citation module was not yet present in shared main; its integration was in progress in the separate reviewed release. The local environment presence check also found no configured pilot teacher code or AI allowance. Zero actual model responses were captured in this pass.
 
 Next: after the reviewed contract is integrated and the local pilot is configured, run a single case, inspect the report, then run the remaining predeclared cases and record human judgments. Do not reinterpret the blocked run or stub responses as model performance.
+
+
+## Historical suite integration — September 10, 2026
+
+The 20 historical cases are now integrated into `codex/review-fixes`, which contains the working selected-citation assessment flow (`lib/learning.ts`, prediction handling, canonical passage validation, and saved citation receipts). Integration commit: `be283ee`; the corresponding historical-suite commit on shared main is `8aacd8e`. The existing main checkout still has its older assessment flow; this integration does not replace unrelated active UI or deployment work.
+
+The integrated review checkout passed all 100 automated tests, TypeScript, and the production build. The build retains the existing large-chunk warning. Its historical preflight prepared all 20 cases with zero model responses. These checks include canonical Strabo versus legacy paraphrase handling, invalidation after provenance/context changes, exact quotation validation, and synthetic runner orchestration.
+
+A live test was not completed. The first connection attempt found the previous local review server stopped. After the server restarted, automatic approval review rejected the model test because sending lesson excerpts and synthetic learner answers to the configured OpenAI service requires explicit user approval. No historical-suite model request was sent. The suite is ready for a bounded live run after that approval; no quotas, access controls, or model settings were changed to work around the rejection.
