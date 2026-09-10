@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import type { World, ZoneId } from '@/lib/world';
+import { loadLandmarks } from './scene/landmarks';
 
 type Props={world:World;scenario:boolean;focus:ZoneId|null;unlocked:boolean;hint:boolean;onSelect:(zone:ZoneId)=>void};
 const positions:Record<ZoneId,[number,number,number]>={harbor:[-14,1,12],market:[8,2,7],library:[0,5,-12]};
@@ -10,11 +11,12 @@ export default function WorldScene(props:Props){
  const host=useRef<HTMLDivElement>(null);const latest=useRef(props);latest.current=props;const [error,setError]=useState('');
  useEffect(()=>{
   if(!host.current)return;
+  setError('');
   const el=host.current; let renderer:THREE.WebGLRenderer;
   try{renderer=new THREE.WebGLRenderer({antialias:true,alpha:true,powerPreference:'high-performance'});}catch{setError('This browser cannot display the 3D world. You can still explore every place using the location buttons.');return;}
-  renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;el.appendChild(renderer.domElement);
+  renderer.setPixelRatio(Math.min(devicePixelRatio,1.7));renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFShadowMap;renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.15;el.appendChild(renderer.domElement);
   const scene=new THREE.Scene();scene.fog=new THREE.FogExp2('#112a3e',0.003);
-  const camera=new THREE.PerspectiveCamera(37,1,.1,400);camera.position.set(61,49,69);
+  const camera=new THREE.PerspectiveCamera(37,1,.1,400);camera.position.set(55,43,63);
   const controls=new OrbitControls(camera,renderer.domElement);controls.enableDamping=true;controls.dampingFactor=.07;controls.target.set(0,0,0);controls.minDistance=28;controls.maxDistance=130;controls.maxPolarAngle=Math.PI*.46;controls.minPolarAngle=.2;controls.enablePan=false;
   scene.add(new THREE.HemisphereLight('#c0e7ff','#48544c',2.1));
   const sun=new THREE.DirectionalLight('#ffddac',4);sun.position.set(-25,50,20);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);Object.assign(sun.shadow.camera,{left:-45,right:45,top:45,bottom:-45,near:1,far:150});sun.shadow.normalBias=.04;scene.add(sun);
@@ -42,9 +44,11 @@ export default function WorldScene(props:Props){
   const library=temple(0,-13);const door=library.door;
   function house(x:number,z:number,w:number,d:number,h:number){box(land,w,h,d,x,1,z);box(land,w+.4,.4,d+.4,x,h+1,z,mats.light);box(land,1.1,2,.2,x,1,z+d/2+.1,mats.dark);for(let dx=-w/3;dx<=w/3;dx+=w/1.5)box(land,.7,.9,.2,x+dx,3,z+d/2+.12,mats.wood);}
   house(-21,-13,8,8,5);house(22,-14,8,10,7);house(23,-3,7,6,4);house(-23,-3,6,7,4);
-  // A slender beacon balances the library silhouette.
-  box(land,5,1,5,-24,1,16,mats.light);box(land,3.8,9,3.8,-24,2,16,mats.light);box(land,4.5,.55,4.5,-24,11,16,mats.edge);cylinder(land,1.35,3,-24,11.5,16);mesh(new THREE.ConeGeometry(1.9,1.5,8),mats.roof,land,-24,15.2,16);
-  const flame=mesh(new THREE.SphereGeometry(.6,12,8),mats.amber,land,-24,14.1,16);
+  // Keep the lightweight beacon until its authored model is ready.
+  const beacon=new THREE.Group();land.add(beacon);
+  box(beacon,5,1,5,-24,1,16,mats.light);box(beacon,3.8,9,3.8,-24,2,16,mats.light);box(beacon,4.5,.55,4.5,-24,11,16,mats.edge);cylinder(beacon,1.35,3,-24,11.5,16);mesh(new THREE.ConeGeometry(1.9,1.5,8),mats.roof,beacon,-24,15.2,16);
+  const flame=mesh(new THREE.SphereGeometry(.6,12,8),mats.amber,beacon,-24,14.1,16);
+  const landmarks=loadLandmarks(land,library.group,beacon,()=>setError('Detailed architecture could not load. The simplified world remains playable.'));
   // Water ripples, restrained enough that the world remains readable.
   const waterMat=new THREE.ShaderMaterial({transparent:true,uniforms:{time:{value:0}},vertexShader:`varying vec2 vUv; uniform float time; void main(){vUv=uv;vec3 p=position;p.z+=sin(p.x*.22+time)*.10+sin(p.y*.3-time*.8)*.08;gl_Position=projectionMatrix*modelViewMatrix*vec4(p,1.);}`,fragmentShader:`varying vec2 vUv;uniform float time;void main(){float a=sin(vUv.x*160.+sin(vUv.y*80.+time)*2.+time)*sin(vUv.y*150.-time);float foam=smoothstep(.84,1.,a);vec3 c=mix(vec3(.035,.24,.30),vec3(.12,.46,.49),vUv.y);c+=foam*.12;gl_FragColor=vec4(c,.92);}`});
   const water=mesh(new THREE.PlaneGeometry(150,140,50,50),waterMat,scene,0,-.1,0);water.rotation.x=-Math.PI/2;water.receiveShadow=false;water.castShadow=false;
@@ -71,21 +75,23 @@ export default function WorldScene(props:Props){
   const ray=new THREE.Raycaster();const pointer=new THREE.Vector2();let down:[number,number]|null=null;
   const onDown=(e:PointerEvent)=>{down=[e.clientX,e.clientY]};const onUp=(e:PointerEvent)=>{if(!down||Math.hypot(e.clientX-down[0],e.clientY-down[1])>5)return;const rect=el.getBoundingClientRect();pointer.set((e.clientX-rect.left)/rect.width*2-1,-(e.clientY-rect.top)/rect.height*2+1);ray.setFromCamera(pointer,camera);const hit=ray.intersectObjects(markers)[0];if(hit)latest.current.onSelect(hit.object.userData.zone);};
   el.addEventListener('pointerdown',onDown);el.addEventListener('pointerup',onUp);
-  const resize=()=>{const w=el.clientWidth,h=el.clientHeight;renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();};const observer=new ResizeObserver(resize);observer.observe(el);resize();
+  const resize=()=>{const w=Math.max(1,el.clientWidth),h=Math.max(1,el.clientHeight);renderer.setSize(w,h);camera.aspect=w/h;camera.updateProjectionMatrix();};const observer=new ResizeObserver(resize);observer.observe(el);resize();
   let frame=0,t=0,last=performance.now(),blend=0,oldFocus:ZoneId|null=null;const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const target=new THREE.Vector3(0,0,0);let focusing=false;
-  function animate(now:number){const dt=Math.min((now-last)/1000,.05);last=now;t+=dt;const p=latest.current;
+  const target=new THREE.Vector3(0,0,0),cameraTarget=new THREE.Vector3(55,43,63);let focusing=false;
+  const cameraViews:Record<ZoneId,[number,number,number]>={library:[27,23,23],harbor:[23,25,51],market:[40,29,39]};
+  const interruptFocus=()=>{focusing=false;};controls.addEventListener('start',interruptFocus);
+  function animate(now:number){const dt=Number.isFinite(now-last)?Math.max(0,Math.min((now-last)/1000,.05)):0;last=now;t+=dt;const p=latest.current;
    blend=THREE.MathUtils.damp(blend,p.scenario?1:0,reduced?100:2,dt);waterMat.uniforms.time.value=reduced?0:t;
-   if(oldFocus!==p.focus){oldFocus=p.focus;const point=p.focus?positions[p.focus]:[0,0,0];target.set(point[0],point[1],point[2]);focusing=true;}
-   if(focusing){controls.target.lerp(target,.055);if(controls.target.distanceTo(target)<.1)focusing=false;}
+   if(oldFocus!==p.focus){oldFocus=p.focus;const point=p.focus?positions[p.focus]:[0,0,0];target.set(point[0],point[1],point[2]);cameraTarget.set(...(p.focus?cameraViews[p.focus]:[55,43,63] as [number,number,number]));focusing=true;}
+   if(focusing){const alpha=reduced?1:1-Math.exp(-3*dt);controls.target.lerp(target,alpha);camera.position.lerp(cameraTarget,alpha);if(controls.target.distanceTo(target)<.1&&camera.position.distanceTo(cameraTarget)<.1)focusing=false;}
    ships.forEach((s,i)=>{s.position.y=.25+(reduced?0:Math.sin(t*1.1+i)*.16);s.rotation.z=reduced?0:Math.sin(t*.7+i)*.025;const activity=p.world.nodes.find(n=>n.id==='harbor')?.activity??.22;const visible=i/ships.length<1-blend*(1-activity);s.visible=visible;if(i>=2&&!reduced){s.position.x=[13,-20,23,-4][i-2]+Math.sin(t*.055+i)*2.5;}});
    const market=p.world.nodes.find(n=>n.id==='market')?.activity??.35;goods.forEach((g,i)=>g.visible=i/goods.length<1-blend*(1-market));
    citizens.forEach((c,i)=>{const active=p.world.nodes.find(n=>n.id==='library')?.activity??.3;c.visible=i/citizens.length<1-blend*(1-active);c.position.x=-12+i%9*3+(reduced?0:Math.sin(t*.2+i)*.8);});
-   door.scale.x=THREE.MathUtils.damp(door.scale.x,p.unlocked?.06:1,4,dt);hint.visible=p.hint;hint.rotation.y=reduced?0:Math.sin(t)*.06;
+   landmarks.update(p.unlocked,dt,reduced);door.scale.x=THREE.MathUtils.damp(door.scale.x,p.unlocked?.06:1,4,dt);hint.visible=p.hint;hint.rotation.y=reduced?0:Math.sin(t)*.06;
    ringMats.forEach(m=>m.color.set(p.scenario?'#ffc574':'#6adeca'));pathMat.opacity=blend*.55;particle.visible=blend>.2;if(!reduced)particle.position.copy(curve.getPoint((t*.13)%1));flame.scale.setScalar(1+(reduced?0:Math.sin(t*5)*.12));
    controls.update();renderer.render(scene,camera);frame=requestAnimationFrame(animate);
   }frame=requestAnimationFrame(animate);
-  return()=>{cancelAnimationFrame(frame);observer.disconnect();controls.dispose();el.removeEventListener('pointerdown',onDown);el.removeEventListener('pointerup',onUp);scene.traverse(o=>{if(o instanceof THREE.Mesh){o.geometry.dispose();const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>m.dispose());}});renderer.dispose();renderer.domElement.remove();};
+  return()=>{cancelAnimationFrame(frame);landmarks.dispose();observer.disconnect();controls.removeEventListener('start',interruptFocus);controls.dispose();el.removeEventListener('pointerdown',onDown);el.removeEventListener('pointerup',onUp);scene.traverse(o=>{if(o instanceof THREE.Mesh){o.geometry.dispose();const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>m.dispose());}});renderer.dispose();renderer.domElement.remove();};
  },[]);
  return <div ref={host} className="world-canvas" role="img" aria-label="Interactive 3D harbor, market, and library. Use the location buttons to inspect evidence.">{error&&<p className="world-error">{error}</p>}</div>;
 }

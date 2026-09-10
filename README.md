@@ -28,6 +28,7 @@ The first page opens the teacher studio with a prepared lesson. “Generate with
 
 - Teacher source editor, structural intervention, Astra authoring, student invitations, live student activity, and intervention preview/application.
 - Three.js harbor district with library, market, docks, moving ships, water, citizens, evidence markers, camera focus, and visible scenario changes.
+- Original Blender-authored library and lighthouse assets, loaded as GLB with a playable fallback and independently animated archive doors. Editable source and regeneration instructions live in [assets/blender](assets/blender/README.md).
 - Student evidence inventory, merchant/archivist dialogue, four-part argument rubric, and archive unlock.
 - Native Astra mid-turn steering over WebSocket. A standard request remains available when the transport is unavailable; it is labeled separately.
 - Persistent classroom state and student isolation. Clients poll every 2.5 seconds; no synthetic classroom counts.
