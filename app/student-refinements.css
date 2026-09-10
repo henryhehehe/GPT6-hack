@@ -1,0 +1,40 @@
+/* Keep student tools usable while reading and writing on smaller screens. */
+.cw-app.immersive-student :is(.left-panel,.right-panel) {
+  overscroll-behavior: contain;
+  scroll-padding: 64px 16px 20px;
+}
+.cw-app.immersive-student .panel-close {
+  position: sticky;
+  float: right;
+  top: 12px;
+  right: auto;
+  width: 40px;
+  height: 40px;
+  margin: 12px 12px -52px 0;
+  z-index: 3;
+  box-shadow: 0 3px 12px #0003;
+}
+.cw-app.immersive-student .claim-compose textarea {
+  font-size: 1rem;
+  scroll-margin: 64px 0 20px;
+}
+.cw-app.immersive-student .collected-tags button {
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 700px) {
+  .cw-app.immersive-student :is(.left-panel,.right-panel) {
+    bottom: 12px;
+    background: #10242f;
+  }
+  .cw-app.immersive-student .dialogue-panel {
+    display: block;
+    padding: 20px;
+  }
+  .cw-app.immersive-student .npc-heading { padding-bottom: 14px; padding-right: 40px; }
+  .cw-app.immersive-student .conversation { min-height: 0; padding-top: 12px; }
+  .cw-app.immersive-student .conversation > .helper { margin: 0 0 10px; }
+  .cw-app.immersive-student .claim-compose { padding-top: 10px; margin-top: 0; }
+  .cw-app.immersive-student .claim-compose > .primary-button { min-height: 46px; }
+  .cw-app.immersive-student .claim-compose > .helper { margin-bottom: 0; }
+}
