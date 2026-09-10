@@ -9,6 +9,9 @@ export const WALK_SPAWNS = {
   library: { x: 0, z: -2 },
 } as const satisfies Record<string, WalkPoint>;
 
+// Face the actual named companion from each arrival point.
+export const WALK_FACING={harbor:Math.PI,market:-Math.PI/2,library:-Math.atan2(2,1.35)} as const;
+
 // The shoreline and three joined piers form one polygon. Chamfered northeast
 // corners stay inside the rendered island's curved edges. Piers require the
 // short shore connectors rendered by WorldScene (the old meshes had a gap).

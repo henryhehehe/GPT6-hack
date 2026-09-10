@@ -1,0 +1,17 @@
+/* Keep touch navigation clear of the city menu and companion controls. */
+.world-canvas.alexandria-canvas ~ .explorer-pad {
+  top: auto;
+  left: auto;
+  right: 16px;
+  bottom: 16px;
+}
+.world-canvas.alexandria-canvas ~ .explorer-controls:has(.world-tools[open]) ~ .explorer-pad {
+  visibility: hidden;
+  pointer-events: none;
+}
+@media (max-width: 600px) {
+  .world-canvas.alexandria-canvas ~ .explorer-pad {
+    right: 12px;
+    bottom: 12px;
+  }
+}

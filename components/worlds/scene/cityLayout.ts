@@ -21,7 +21,10 @@ export const DISTRICT_BLOCKERS:readonly (readonly [number,number,number,number])
  ...[-11,11].flatMap(x=>[-42,-61].map(z=>[x-2,x+2,z-.6,z+.6] as const)),
 ];
 export const CITY_DESTINATIONS=[
- {name:'Harbor promenade',point:{x:-30,z:5},yaw:Math.PI*.65},
+ {name:'Working quay',point:{x:-23,z:5},yaw:-Math.PI/2},
+ {name:'Market stalls',point:{x:17,z:16},yaw:Math.atan2(4,6)},
+ {name:'Library forecourt',point:{x:0,z:3.8},yaw:0},
+ {name:'Harbor promenade',point:{x:-30,z:5},yaw:-Math.PI*.65},
  {name:'Merchant quarter',point:{x:-43,z:-28},yaw:0},
  {name:'Scholars’ garden',point:{x:0,z:-40},yaw:0},
  {name:'Shaded colonnade',point:{x:15,z:-52},yaw:Math.PI*.5},

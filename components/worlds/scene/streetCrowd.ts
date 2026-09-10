@@ -22,7 +22,7 @@ export function loadStreetCrowd(parent:THREE.Object3D){
     const body=clone(gltf.scene),person=new THREE.Group(),adultHeight=1.58+(index*7%11)*.03;
     body.scale.multiplyScalar(adultHeight/Math.max(height,.01));body.position.y-=bounds.min.y*adultHeight/Math.max(height,.01);
     body.traverse(o=>{if(o instanceof THREE.Mesh){o.castShadow=true;o.receiveShadow=true;}});const rig=index%5===0?createCrowdRig(gltf.scene,adultHeight,['#ad783d','#376b64','#454f6b','#9a6260'][variantIndex]):null;person.add(rig?rig.root:body);root.add(person);
-    person.position.set(route.points[0].x,groundHeight(route.points[0]),route.points[0].z);person.rotation.y=rig?Math.atan2(route.points[1].x-route.points[0].x,route.points[1].z-route.points[0].z):index*2.39996;
+    person.position.set(route.points[0].x,groundHeight(route.points[0]),route.points[0].z);person.rotation.y=rig?Math.atan2(route.points[1].x-route.points[0].x,route.points[1].z-route.points[0].z):Math.atan2(route.lookAt.x-route.points[0].x,route.lookAt.z-route.points[0].z);
     const mixer=gltf.animations.length?new THREE.AnimationMixer(body):null;
     const walk=walkingClip&&mixer?mixer.clipAction(walkingClip):null,idle=idleClip&&mixer?mixer.clipAction(idleClip):null;idle?.play();
     people.push({rig,root:person,route,index,mixer,walk,idle,travel:0,direction:1,pause:2+index%5,clock:0});
@@ -36,7 +36,7 @@ export function loadStreetCrowd(parent:THREE.Object3D){
    p.root.visible=rank/group.length<1-THREE.MathUtils.clamp(blend,0,1)*(1-activity);if(!p.root.visible)continue;
    const distance=camera.position.distanceTo(p.root.position);
    // Most figures retain the full authored body; six use an articulated walking variant.
-   if((!p.walk&&!p.rig)||reduced){p.walk?.stop();p.rig?.update(p.travel,false);if(!reduced&&distance<45){const turn=Math.sin(t*.16+p.index)*.08;p.root.rotation.y=THREE.MathUtils.damp(p.root.rotation.y,p.index*2.39996+turn,2,delta);}continue;}
+   if((!p.walk&&!p.rig)||reduced){p.walk?.stop();p.rig?.update(p.travel,false);if(!reduced&&distance<45){const turn=Math.sin(t*.16+p.index)*.08,target=Math.atan2(p.route.lookAt.x-p.root.position.x,p.route.lookAt.z-p.root.position.z)+turn;const angle=Math.atan2(Math.sin(target-p.root.rotation.y),Math.cos(target-p.root.rotation.y));p.root.rotation.y+=angle*(1-Math.exp(-2*delta));}continue;}
    if(distance>70){p.rig?.update(p.travel,false);continue;}p.pause=Math.max(0,p.pause-delta);
    if(p.pause>0){p.rig?.update(p.travel,false);const target=p.route.points[p.direction===1?1:0],angle=Math.atan2(target.x-p.root.position.x,target.z-p.root.position.z);p.root.rotation.y+=Math.atan2(Math.sin(angle-p.root.rotation.y),Math.cos(angle-p.root.rotation.y))*(1-Math.exp(-3*delta));}
    if(p.pause===0){

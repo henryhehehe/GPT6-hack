@@ -19,7 +19,7 @@ export function themedCharacterIds(theme:WorldTheme):Record<ZoneId,string>{
 }
 
 /** Each import owns its skeleton/resources. Failed or late loads leave a usable fallback. */
-export function loadThemedCharacters(theme:WorldTheme,anchors:Record<ZoneId,THREE.Group>,fetchModel:FetchModel=url=>new GLTFLoader().loadAsync(url)){
+export function loadThemedCharacters(theme:WorldTheme,anchors:Record<ZoneId,THREE.Group>,fetchModel:FetchModel=url=>new GLTFLoader().loadAsync(url),options:{activity?:boolean;heights?:Record<ZoneId,number>}={}){
   const ids=themedCharacterIds(theme);
   const status:Record<ZoneId,ThemedCharacterStatus>={harbor:'failed',market:'failed',library:'failed'};
   let disposed=false,reducedMotion=false;
@@ -27,7 +27,7 @@ export function loadThemedCharacters(theme:WorldTheme,anchors:Record<ZoneId,THRE
     fallbacks:anchors[zone].children.map(child=>({child,visible:child.visible})),
     model:null as THREE.Group|null,container:null as THREE.Group|null,mixer:null as THREE.AnimationMixer|null,
     idle:null as THREE.AnimationAction|null,gesture:null as THREE.AnimationAction|null,
-    clips:[] as THREE.AnimationClip[],greeted:false,height:[1.82,1.72,1.77][index],phase:index*2.17,elapsed:0,
+    clips:[] as THREE.AnimationClip[],greeted:false,height:options.heights?.[zone]??[1.82,1.72,1.77][index],phase:index*2.17,elapsed:0,
     activity:null as ReturnType<typeof createCharacterActivity>|null,
     ambient:null as ReturnType<typeof createCharacterIdleMotion>|null}));
   const freed=new WeakSet<THREE.Group>();
@@ -82,7 +82,7 @@ export function loadThemedCharacters(theme:WorldTheme,anchors:Record<ZoneId,THRE
         if(state.idle){state.idle.reset().play();state.idle.time=(state.elapsed+state.phase)%state.idle.getClip().duration;}
       });
       state.anchor.add(motion);
-      state.activity=createCharacterActivity(model,motion,theme.id,zones.indexOf(state.zone));
+      state.activity=options.activity===false?null:createCharacterActivity(model,motion,theme.id,zones.indexOf(state.zone));
       state.fallbacks.forEach(({child})=>{child.visible=false;});
       status[state.zone]='ready';
     }catch{

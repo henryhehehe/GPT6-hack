@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {addAlexandriaWind,applyAlexandriaWindDepth} from './alexandriaWind';
 import {HUMAN_SCALE,MARKET_COUNTER_Y,LIBRARY_DESK_Y} from './humanScale';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
@@ -53,6 +54,7 @@ type Fallbacks = {
 export function loadAlexandriaKit(parent: THREE.Object3D, fallback: Fallbacks) {
   let disposed = false, ready = false;
   let source: THREE.Group | undefined;
+  let wind:ReturnType<typeof addAlexandriaWind>|undefined;
   const additions = new THREE.Group(); additions.name = 'AlexandriaOriginalScenery';
   const cargo: THREE.Object3D[] = [], merchandise: THREE.Object3D[] = [];
   const replacements: { target: THREE.Group; model: THREE.Object3D; hidden: THREE.Object3D[] }[] = [];
@@ -75,7 +77,8 @@ export function loadAlexandriaKit(parent: THREE.Object3D, fallback: Fallbacks) {
         if (/linen|teal|green|leaflight/.test(material.name)) material.side = THREE.DoubleSide;
       }
     });
-    const make = (id: AssetId) => templates.get(id)!.clone(true);
+    wind=addAlexandriaWind(source);
+    const make = (id: AssetId) => {const clone=templates.get(id)!.clone(true);clone.traverse(o=>{if(o instanceof THREE.Mesh)applyAlexandriaWindDepth(o);});return clone;};
     const place = (p: Placement) => {
       const wrapper = new THREE.Group(); wrapper.add(make(p.id)); wrapper.position.set(...p.at);
       wrapper.rotation.y = p.turn ?? 0;
@@ -119,7 +122,7 @@ export function loadAlexandriaKit(parent: THREE.Object3D, fallback: Fallbacks) {
     }
     for (const { mesh, matrices } of batches.values()) {
       const instance = new THREE.InstancedMesh(mesh.geometry, mesh.material, matrices.length);
-      instance.name = mesh.name; instance.castShadow = true; instance.receiveShadow = true;
+      applyAlexandriaWindDepth(instance);instance.name = mesh.name; instance.castShadow = true; instance.receiveShadow = true;
       matrices.forEach((matrix, i) => instance.setMatrixAt(i, matrix));
       instance.instanceMatrix.needsUpdate = true; instance.computeBoundingSphere();
       instanceMeshes.push(instance); additions.add(instance);
@@ -133,7 +136,7 @@ export function loadAlexandriaKit(parent: THREE.Object3D, fallback: Fallbacks) {
     parent.add(additions); ready = true;
   }).catch(error => {
     // Decorative failures must never interrupt a lesson or remove its fallbacks.
-    if (source) disposeSource(source);
+    wind?.dispose();if (source) disposeSource(source);
     instanceMeshes.forEach(mesh => mesh.dispose());
     if (!disposed) console.warn('Alexandria scenery unavailable; using the original scene.', error);
   });
@@ -142,7 +145,8 @@ export function loadAlexandriaKit(parent: THREE.Object3D, fallback: Fallbacks) {
     loaded,
     get ready() { return ready; },
     getPlantTemplate() { return ready ? source?.getObjectByName('date-palm') : undefined; },
-    update(blend: number, harborActivity: number, marketActivity: number) {
+    update(blend: number, harborActivity: number, marketActivity: number, time=0, reduced=false) {
+      wind?.update(time,reduced);
       if (!ready) return;
       const apply = (objects: THREE.Object3D[], activity: number) => objects.forEach((object, i) => {
         object.visible = i / objects.length < 1 - blend * (1 - THREE.MathUtils.clamp(activity, 0, 1));
@@ -150,7 +154,7 @@ export function loadAlexandriaKit(parent: THREE.Object3D, fallback: Fallbacks) {
       apply(cargo, harborActivity); apply(merchandise, marketActivity);
     },
     dispose() {
-      disposed = true; parent.remove(additions);
+      disposed = true; wind?.dispose();parent.remove(additions);
       for (const { target, model, hidden } of replacements) {
         target.remove(model); hidden.forEach(child => { child.visible = true; });
       }

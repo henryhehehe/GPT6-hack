@@ -1,19 +1,14 @@
 import * as THREE from 'three';
 import {TEACHING_HEIGHTS} from './humanScale';
-import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 import type {ZoneId} from '@/lib/world';
+import {WORLD_THEMES} from '@/lib/worldThemes';
+import {loadThemedCharacters} from './themedCharacters';
 
-/** Authored characters replace their visible fallbacks only after successful load. */
-export function loadTeachingCharacters(npcs:THREE.Group[]){
- let disposed=false;const roots:THREE.Group[]=[],mixers:THREE.AnimationMixer[]=[];
- const files:Record<ZoneId,string>={harbor:'dorian',market:'thaleia',library:'ione'};
- function release(root:THREE.Object3D){const geometries=new Set<THREE.BufferGeometry>(),materials=new Set<THREE.Material>();root.traverse(o=>{if(o instanceof THREE.Mesh){geometries.add(o.geometry);(Array.isArray(o.material)?o.material:[o.material]).forEach(m=>materials.add(m));}});geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());}
- const loaded=Promise.all(npcs.map(npc=>new GLTFLoader().loadAsync(`/models/characters/${files[npc.userData.character as ZoneId]}.glb`).then(gltf=>{
-  if(disposed){release(gltf.scene);return;}
-  const model=gltf.scene,bounds=new THREE.Box3().setFromObject(model),height=bounds.max.y-bounds.min.y,scale=TEACHING_HEIGHTS[npc.userData.character as ZoneId]/Math.max(height,.01);model.scale.multiplyScalar(scale);model.position.y-=bounds.min.y*scale;
-  model.traverse(o=>{o.userData.character=npc.userData.character;if(o instanceof THREE.Mesh){o.castShadow=true;o.receiveShadow=true;}});
-  npc.children.forEach(child=>{child.visible=false;});npc.add(model);roots.push(model);
-  if(gltf.animations.length){const mixer=new THREE.AnimationMixer(model),clip=gltf.animations.find(c=>/idle/i.test(c.name))??gltf.animations[0];mixer.clipAction(clip).play();mixers.push(mixer);}
- }).catch(()=>{/* Existing character remains usable if its model fails. */})));
- return {loaded,update(dt:number,reduced:boolean){if(!reduced)mixers.forEach(m=>m.update(dt));},dispose(){disposed=true;mixers.forEach(m=>{m.stopAllAction();m.uncacheRoot(m.getRoot());});roots.forEach(root=>{root.removeFromParent();release(root);});}};
+type FetchModel=(url:string)=>Promise<{scene:THREE.Group;animations:THREE.AnimationClip[]}>;
+/** Alexandria uses the shared safe loader/gestures while retaining its fixed guide locations. */
+export function loadTeachingCharacters(npcs:THREE.Group[],fetchModel?:FetchModel){
+ const anchors=Object.fromEntries(npcs.map(npc=>[npc.userData.character as ZoneId,npc])) as Record<ZoneId,THREE.Group>;
+ const actors=loadThemedCharacters(WORLD_THEMES.alexandria,anchors,fetchModel,{activity:false,heights:TEACHING_HEIGHTS});
+ const camera=new THREE.Vector3();
+ return {loaded:actors.ready,update(dt:number,reduced:boolean,cameraPosition=camera,walking=false){actors.update(dt,reduced,cameraPosition,walking);},talk:actors.talk,dispose:actors.dispose};
 }
