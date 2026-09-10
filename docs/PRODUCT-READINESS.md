@@ -29,7 +29,9 @@ The review fixes were integrated with the curriculum and published-scene source 
 
 See [review implementation and validation](REVIEW-FIXES.md), [captured curriculum results](CURRICULUM-EVALUATION-RESULTS.md), [historical evaluation and scoring caveat](curriculum/HISTORICAL-LIVE-EVALUATION.md), and the reservation-order report on `codex/review-pilot-guards`. These are scoped implementation records, not a final independent readiness verdict.
 
-The release owner froze the combined source at `252c375d820264ddacc1a8a04d800e6e85fee2c8`, including the reservation fix as `0b6bbf9` and interactive-scene default as `2ef8f1e`. On September 10 it reported all 131 tests, full TypeScript checking, the official Sites build, and isolated access/quota checks passing. The review task independently confirmed the frozen commit and a clean release worktree; these final test results are owner-reported. Publication is in progress, so a matching deployment and its access behavior remain to be confirmed. Shared main still contains active changes and is not itself the validated release snapshot.
+The release owner froze the combined source at `252c375d820264ddacc1a8a04d800e6e85fee2c8`, including the reservation fix as `0b6bbf9` and interactive-scene default as `2ef8f1e`. On September 10 it reported all 131 tests, full TypeScript checking, the official Sites build, and the isolated reservation-order regression against the built Worker passing. The review task independently confirmed the frozen commit and a clean release worktree; these final test results are owner-reported.
+
+The owner confirmed successful publication of that source as version 13, deployment `appgdep_6aa2fe61b80c8191a83fd4012802104c`, environment revision 2, at [Counterfactual Worlds](https://counterfactual-worlds-henry.handeche49.chatgpt.site). Public/teacher/quota settings were unchanged. Deployment success does not establish anonymous access or pass the outstanding classroom/browser gates above. Shared main still contains active changes and is not itself the validated release snapshot.
 
 ## Final independent review
 
