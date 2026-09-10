@@ -1,4 +1,4 @@
-import {reserveAi,requireImages} from './pilot';
+import {reserveAi,requireImages,reservePortrait} from './pilot';
 import { env } from 'cloudflare:workers';
 import { z } from 'zod';
 import { zodToJsonSchema } from 'zod-to-json-schema';
@@ -23,6 +23,15 @@ export async function astraSettingImage(world:import('./world').World){
 }
 export async function astraImage(instructions:string,input:unknown,size:'1536x1024'|'1024x1536'){
  requireImages();
+ return generateImage(instructions,input,size);
+}
+export async function astraPortraitImage(world:import('./world').World,npc:import('./world').ZoneId,classId:string){
+ const {portraitInput,portraitInstructions}=await import('./characterPortrait');
+ if(!serverEnv('OPENAI_API_KEY'))throw new Error('Image generation needs the server API connection.');
+ await reservePortrait(classId);
+ return generateImage(portraitInstructions,portraitInput(world,npc),'1024x1536');
+}
+async function generateImage(instructions:string,input:unknown,size:'1536x1024'|'1024x1536'){
  const key=serverEnv('OPENAI_API_KEY');if(!key)throw new Error('Image generation needs the server API connection.');
  const model=serverEnv('OPENAI_IMAGE_MODEL')||'gpt-image-2.5-flare',started=Date.now();
  const response=await fetch('https://api.openai.com/v1/responses',{method:'POST',headers:{Authorization:`Bearer ${key}`,'Content-Type':'application/json'},body:JSON.stringify({model:serverEnv('OPENAI_MODEL')||'gpt-6-astra',instructions,input:JSON.stringify(input),tools:[{type:'image_generation',model,size,quality:'medium',output_format:'png'}],tool_choice:{type:'image_generation'}}),signal:AbortSignal.timeout(240000)});

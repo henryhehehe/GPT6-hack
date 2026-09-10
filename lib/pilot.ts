@@ -11,6 +11,12 @@ export async function reserveAi(){
  await reserveQuota('ai:pilot-v1',limit,aiDisabledMessage);
 }
 export async function reserveClassAi(id:string){await reserveQuota(`ai:class:${id}`,6,'This classroom has used its six pilot AI requests. Your work is saved; you can keep exploring.');}
+export async function reservePortrait(classId:string){
+ const limit=quotaLimit(settings().PILOT_PORTRAIT_REQUEST_LIMIT);
+ if(!limit)throw new Error('New portraits are paused for this pilot. You can keep talking.');
+ await reserveQuota(`portraits:class:${classId}`,3,'This classroom has used its three portrait attempts. Saved portraits and conversations remain available.');
+ await reserveQuota('portraits:pilot-v1',limit,'The pilot portrait allowance has been used. Saved portraits and conversations remain available.');
+}
 export function requireImages(){if(!pilotFeatures.settingImages)throw new Error('New image generation is turned off for this pilot. Existing illustrations remain available.');}
 async function digest(text:string){return Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(text)))).map(x=>x.toString(16).padStart(2,'0')).join('');}
 export async function teacherSession(code:string){return digest(`teacher-session:${code}`);}

@@ -1,7 +1,9 @@
 import {env} from 'cloudflare:workers';
-import {db} from '@/lib/server';
+import {astraPortraitImage,db} from '@/lib/server';
 import {WorldSchema,type ZoneId} from '@/lib/world';
-import {portraitFingerprint,portraitLeaseMs} from '@/lib/characterPortrait';
+import {claimPortraitSql,finishPortraitSql,portraitFingerprint,portraitLeaseMs} from '@/lib/characterPortrait';
+
+import {requireSameOrigin} from '@/lib/pilot';
 
 type Portrait={status:string;updated_at:number;blob_key:string|null;response_id:string|null};
 const bucket=()=>(env as unknown as {BUCKET:R2Bucket}).BUCKET;
@@ -27,7 +29,17 @@ export async function GET(request:Request){
  }catch{return json({error:'This portrait is unavailable for this classroom.'},403);}
 }
 export async function POST(request:Request){
- let c:Awaited<ReturnType<typeof context>>;try{c=await context(request);}catch{return json({error:'This portrait is unavailable for this classroom.'},403);}
- return json({status:'disabled',error:'New portraits are turned off for this pilot.'});
-
+ let c:Awaited<ReturnType<typeof context>>;try{requireSameOrigin(request);c=await context(request);}catch{return json({error:'This portrait is unavailable for this classroom.'},403);}
+ const lease=crypto.randomUUID(),now=Date.now();
+ try{const claim=await db().prepare(claimPortraitSql).bind(c.id,c.classId,lease,now,now-portraitLeaseMs).run();if(!claim.meta.changes)return json(status(await read(c.id)));
+  const result=await astraPortraitImage(c.world,c.npc,c.classId),blobKey=`character-portraits/${c.classId}/${lease}.png`;
+  await bucket().put(blobKey,result.bytes,{httpMetadata:{contentType:'image/png'}});
+  const saved=await db().prepare(finishPortraitSql).bind(blobKey,result.responseId,result.model,Date.now(),c.id,lease).run();if(!saved.meta.changes)await bucket().delete(blobKey);
+  return json(status(await read(c.id)));
+ }catch(error){await db().prepare("UPDATE character_portraits SET status='failed',updated_at=? WHERE id=? AND lease=? AND status='generating'").bind(Date.now(),c.id,lease).run().catch(()=>{});
+  const message=error instanceof Error?error.message:'';
+  // Only quota/config messages are safe and useful to expose; upstream/storage details stay private.
+  const limited=/^(New portraits are paused|This classroom has used its three portrait attempts|The pilot portrait allowance has been used)/.test(message);
+  return json({status:limited?'disabled':'failed',error:limited?message:'The portrait could not be prepared. You can keep talking and retry it later.'});
+ }
 }
