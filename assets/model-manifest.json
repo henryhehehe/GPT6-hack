@@ -1166,8 +1166,8 @@
       "category": "characters",
       "url": "/models/characters/regency-coat.glb",
       "source": "assets/blender/characters/regency-readers.blend",
-      "bytes": 555208,
-      "sha256": "7480ca419befc7ceea642a214c95e3ea8d4a5400349ce2fef1864ec1e4b45a65",
+      "bytes": 1409136,
+      "sha256": "3bdbb52be8c52b8c2bdc9606364ebdb351ca8697f1316f14f9c45053af94de2b",
       "bounds": {
         "min": [
           -0.484,
@@ -1176,7 +1176,7 @@
         ],
         "max": [
           0.484,
-          1.9059,
+          1.7512,
           0.281
         ]
       },
@@ -1189,11 +1189,20 @@
         "Greeting",
         "Talk"
       ],
-      "provenance": "Original interpretive teaching asset; not primary evidence",
-      "creator": "Counterfactual Worlds",
+      "provenance": "Period-informed fictional companion; original clothing, rig and gestures with adapted CC0 Quaternius head, eyes and hair. Not a historical portrait or primary evidence.",
+      "creator": "Counterfactual Worlds; Quaternius (CC0 head, eyes and hair)",
       "license": "MIT",
       "licensePath": "LICENSE",
-      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin",
+      "components": [
+        {
+          "creator": "Quaternius",
+          "license": "CC0-1.0",
+          "licensePath": "assets/external/licenses/quaternius-base-characters.txt",
+          "source": "assets/external/prepared/quaternius-base-characters-superhero-male-fullbody.glb",
+          "modifications": "Head and neck extracted by original skin weights, fitted to wardrobe and rebound to shared rig. Parted hair fitted; authored gathered buns retained."
+        }
+      ]
     },
     {
       "id": "regency-dress",
@@ -1202,17 +1211,17 @@
       "category": "characters",
       "url": "/models/characters/regency-dress.glb",
       "source": "assets/blender/characters/regency-readers.blend",
-      "bytes": 569396,
-      "sha256": "e60cf89d21220fa3d8301cfef9206c79f93c64800e82d647977a45f03e9cba78",
+      "bytes": 1601336,
+      "sha256": "d1acd4e13cf9c3987f9a94a657261ff84b4dec46ec8a5ee6a21dd77943cea025",
       "bounds": {
         "min": [
           -0.484,
           0.006,
-          -0.226
+          -0.2232
         ],
         "max": [
           0.484,
-          1.9107,
+          1.7715,
           0.256
         ]
       },
@@ -1225,11 +1234,20 @@
         "Greeting",
         "Talk"
       ],
-      "provenance": "Original interpretive teaching asset; not primary evidence",
-      "creator": "Counterfactual Worlds",
+      "provenance": "Period-informed fictional companion; original clothing, rig and gestures with adapted CC0 Quaternius head, eyes and hair. Not a historical portrait or primary evidence.",
+      "creator": "Counterfactual Worlds; Quaternius (CC0 head, eyes and hair)",
       "license": "MIT",
       "licensePath": "LICENSE",
-      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin",
+      "components": [
+        {
+          "creator": "Quaternius",
+          "license": "CC0-1.0",
+          "licensePath": "assets/external/licenses/quaternius-base-characters.txt",
+          "source": "assets/external/prepared/quaternius-base-characters-superhero-female-fullbody.glb",
+          "modifications": "Head and neck extracted by original skin weights, fitted to wardrobe and rebound to shared rig. Parted hair fitted; authored gathered buns retained."
+        }
+      ]
     },
     {
       "id": "regency-gown",
@@ -1238,17 +1256,17 @@
       "category": "characters",
       "url": "/models/characters/regency-gown.glb",
       "source": "assets/blender/characters/regency-readers.blend",
-      "bytes": 655024,
-      "sha256": "673c4f3e5428fabc46ee989e46262e903f5f651b3ca3e9f05d14a14acd18793e",
+      "bytes": 1601300,
+      "sha256": "82d7469e0a2323a3b64d12f0323dfc5ee314aeaecbbd420598505466f182d409",
       "bounds": {
         "min": [
           -0.484,
           0.006,
-          -0.226
+          -0.2232
         ],
         "max": [
           0.484,
-          1.9107,
+          1.7715,
           0.256
         ]
       },
@@ -1261,11 +1279,20 @@
         "Greeting",
         "Talk"
       ],
-      "provenance": "Original interpretive teaching asset; not primary evidence",
-      "creator": "Counterfactual Worlds",
+      "provenance": "Period-informed fictional companion; original clothing, rig and gestures with adapted CC0 Quaternius head, eyes and hair. Not a historical portrait or primary evidence.",
+      "creator": "Counterfactual Worlds; Quaternius (CC0 head, eyes and hair)",
       "license": "MIT",
       "licensePath": "LICENSE",
-      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin",
+      "components": [
+        {
+          "creator": "Quaternius",
+          "license": "CC0-1.0",
+          "licensePath": "assets/external/licenses/quaternius-base-characters.txt",
+          "source": "assets/external/prepared/quaternius-base-characters-superhero-female-fullbody.glb",
+          "modifications": "Head and neck extracted by original skin weights, fitted to wardrobe and rebound to shared rig. Parted hair fitted; authored gathered buns retained."
+        }
+      ]
     },
     {
       "id": "rolled-scroll",

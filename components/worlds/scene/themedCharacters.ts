@@ -5,6 +5,8 @@ import type {ZoneId} from '@/lib/world';
 import type {WorldTheme} from '@/lib/worldThemes';
 import {characterCostume} from '@/lib/characterCostumes';
 import {createCharacterIdleMotion} from './characterIdleMotion';
+import {createCharacterActivity} from './characterActivity';
+import {correctAuthoredLegWeights} from './characterLegWeights';
 import {disposeModelResources} from './externalModels';
 
 const zones:ZoneId[]=['harbor','market','library'];
@@ -26,6 +28,7 @@ export function loadThemedCharacters(theme:WorldTheme,anchors:Record<ZoneId,THRE
     model:null as THREE.Group|null,container:null as THREE.Group|null,mixer:null as THREE.AnimationMixer|null,
     idle:null as THREE.AnimationAction|null,gesture:null as THREE.AnimationAction|null,
     clips:[] as THREE.AnimationClip[],greeted:false,height:[1.82,1.72,1.77][index],phase:index*2.17,elapsed:0,
+    activity:null as ReturnType<typeof createCharacterActivity>|null,
     ambient:null as ReturnType<typeof createCharacterIdleMotion>|null}));
   const freed=new WeakSet<THREE.Group>();
   function release(model:THREE.Group){
@@ -66,7 +69,9 @@ export function loadThemedCharacters(theme:WorldTheme,anchors:Record<ZoneId,THRE
       container.position.set(-(bounds.min.x+bounds.max.x)*.5*scale,-bounds.min.y*scale,-(bounds.min.z+bounds.max.z)*.5*scale);
       container.add(model);
       model.traverse(o=>{o.userData.npc=state.zone;if(o instanceof THREE.Mesh){o.castShadow=true;o.receiveShadow=true;}});
-      state.model=model;state.container=container;state.clips=gltf.animations;
+      const motion=new THREE.Group();motion.name=`CharacterActivity:${state.zone}`;motion.userData.npc=state.zone;motion.add(container);
+      state.model=model;state.container=motion;state.clips=gltf.animations;
+      correctAuthoredLegWeights(model,id);
       state.mixer=new THREE.AnimationMixer(model);
       state.ambient=createCharacterIdleMotion(model,state.phase);
       const idle=gltf.animations.find(c=>c.name.toLowerCase()==='idle');
@@ -76,7 +81,8 @@ export function loadThemedCharacters(theme:WorldTheme,anchors:Record<ZoneId,THRE
         state.gesture.stop();state.gesture=null;
         if(state.idle){state.idle.reset().play();state.idle.time=(state.elapsed+state.phase)%state.idle.getClip().duration;}
       });
-      state.anchor.add(container);
+      state.anchor.add(motion);
+      state.activity=createCharacterActivity(model,motion,theme.id,zones.indexOf(state.zone));
       state.fallbacks.forEach(({child})=>{child.visible=false;});
       status[state.zone]='ready';
     }catch{
@@ -109,16 +115,17 @@ export function loadThemedCharacters(theme:WorldTheme,anchors:Record<ZoneId,THRE
             state.anchor.rotation.y+=THREE.MathUtils.clamp(delta,-step*1.4,step*1.4);
           }
         }
-        state.ambient?.restore();state.elapsed+=step;
+        state.activity?.restore();state.ambient?.restore();state.elapsed+=step;
         state.mixer?.update(step);
         state.ambient?.apply(state.elapsed,walking&&distance<5,!!state.gesture);
+        state.activity?.apply(step,walking&&distance<5||!!state.gesture,!!state.gesture);
       }
     },
     talk(zone:ZoneId){const state=states.find(s=>s.zone===zone);if(state)gesture(state,'Talk');},
     dispose(){
       if(disposed)return;disposed=true;
       for(const state of states){
-        state.ambient?.dispose();
+        state.activity?.dispose();state.ambient?.dispose();
         state.mixer?.stopAllAction();
         if(state.model){state.mixer?.uncacheRoot(state.model);state.container?.removeFromParent();release(state.model);}
         state.fallbacks.forEach(({child,visible})=>{child.visible=visible;});

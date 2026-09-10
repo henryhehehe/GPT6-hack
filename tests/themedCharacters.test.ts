@@ -1,4 +1,5 @@
 import test from 'node:test';
+import {geometryOnlyGlb} from './helpers/glbGeometry';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
@@ -150,7 +151,7 @@ test('every referenced character GLB has verified bytes, finite geometry and ani
     const bytes=await readFile(new URL(`../public${asset.url}`,import.meta.url));
     assert.equal(bytes.byteLength,asset.bytes,`${id} declared byte size`);
     assert.equal(createHash('sha256').update(bytes).digest('hex'),asset.sha256);
-    const data=bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength);
+    const data=geometryOnlyGlb(bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength));
     const gltf=await loader.parseAsync(data,''),duplicate=await loader.parseAsync(data.slice(0),'');
     assert.ok(['Idle','Greeting','Talk'].every(name=>gltf.animations.some(clip=>clip.name===name)),`${id} clips`);
     const skeletons=new Set<THREE.Skeleton>(),bones=new Set<THREE.Bone>();

@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import {addThemeWildlife} from './themeWildlife';
 import type {WorldTheme} from '@/lib/worldThemes';
 import {themeWind,windGust,windDisplacement} from './themeWind';
 
@@ -18,9 +19,10 @@ const wrap=(value:number,width:number)=>((value%width)+width)%width;
 
 /** Low-density atmosphere stays separate from source objects and never intercepts picking. */
 export function addThemeAtmosphere(scene:THREE.Scene,theme:WorldTheme){
+ const wildlife=addThemeWildlife(scene,theme);
  const wind=themeWind(theme);
  const profile=WORLD_WEATHER[theme.id],root=new THREE.Group();root.name='Ambient weather';scene.add(root);
- if(!profile)return {root,update(_time:number,_reduced:boolean){},dispose(){root.removeFromParent();}};
+ if(!profile)return {root,update: wildlife.update,dispose(){wildlife.dispose();root.removeFromParent();}};
  let seed=[...theme.id].reduce((n,c)=>n*31+c.charCodeAt(0),7)>>>0;
  const random=()=>{seed=(seed*1664525+1013904223)>>>0;return seed/4294967296;};
  const starts=Array.from({length:profile.count},()=>({x:random()*44-22,y:random()*14,z:random()*44-24,phase:random()*6.28}));
@@ -35,6 +37,7 @@ export function addThemeAtmosphere(scene:THREE.Scene,theme:WorldTheme){
  let disposed=false,lastFrame=-1;
  function update(time:number,reduced:boolean){
   if(disposed)return;
+  wildlife.update(time,reduced);
   root.visible=!reduced;if(reduced){lastFrame=-1;return;}
   const frame=Math.floor((Number.isFinite(time)?Math.max(0,time):0)*30);
   if(frame===lastFrame)return;lastFrame=frame;
@@ -55,5 +58,5 @@ export function addThemeAtmosphere(scene:THREE.Scene,theme:WorldTheme){
   geometry.getAttribute('position').needsUpdate=true;
  }
  update(0,false);
- return {root,update,dispose(){if(disposed)return;disposed=true;root.removeFromParent();geometry.dispose();material.dispose();}};
+ return {root,update,dispose(){if(disposed)return;disposed=true;wildlife.dispose();root.removeFromParent();geometry.dispose();material.dispose();}};
 }

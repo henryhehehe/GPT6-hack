@@ -130,6 +130,10 @@ def character(period,style,identity,color,index):
 if __name__=='__main__':
     selected=sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else list(CAST)
     for period in selected:
+        if period=='regency':
+            from upgrade_regency_characters import build
+            build()
+            continue
         a.reset();models=[];pack=period+'-readers'
         for index,(style,identity,color) in enumerate(CAST[period]):
             asset_id=period+'-'+style;root=a.root(asset_id)

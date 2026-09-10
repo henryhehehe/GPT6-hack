@@ -1,3 +1,4 @@
+import {CHARACTER_ACTIVITY_RADIUS} from './characterActivity';
 import {stationPoint,distanceToSegment,type StationLayout} from './stationTransform';
 import manifest from '@/assets/model-manifest.json';
 import type { ZoneId } from '@/lib/world';
@@ -117,7 +118,7 @@ export function settingObstacles(placements: SettingPlacement[], legacyScenery =
 export function createSettingNavigation(placements: SettingPlacement[], extraObstacles: readonly Bounds[] = [], layout?: StationLayout) {
   const spots = layout?.spots ?? SETTING_SPOTS;
   const obstacles = [...settingObstacles(placements, !layout), ...extraObstacles];
-  if(layout)for(const zone of Object.keys(spots) as ZoneId[]){const p=stationPoint(layout,zone,1.3,.5);obstacles.push([p.x-.3,p.x+.3,p.z-.3,p.z+.3]);}
+  if(layout)for(const zone of Object.keys(spots) as ZoneId[]){const p=stationPoint(layout,zone,1.3,.5);const clearance=.3+CHARACTER_ACTIVITY_RADIUS;obstacles.push([p.x-clearance,p.x+clearance,p.z-clearance,p.z+clearance]);}
   const paving = placements.filter(p => p.id === 'garden-path').map(placementBounds);
   const finite = (p: Point) => Number.isFinite(p.x) && Number.isFinite(p.z);
   function isWalkable(p: Point, radius = .28) {
