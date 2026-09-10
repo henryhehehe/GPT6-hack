@@ -85,3 +85,5 @@ Use the supported and uncertain answers to check whether feedback accepts disagr
 ## Evaluation procedure
 
 Load the declared lesson and packet version, save only the listed evidence cards, submit the learner text, and record the actual feedback separately. Compare the response against the expectation with human review. Do not count the static quote/ID tests as a live grading evaluation. Live runs use the configured model connection and are not part of this fixture preparation.
+
+The [evaluation runner](EVALUATION-RUNNER.md) now automates this procedure against the integrated selected-citation API and writes a review sheet. Its live run is separately gated by integration and server configuration.

@@ -45,17 +45,15 @@ export function externalPlacements(setting: ExternalSetting): ExternalPlacement[
     const add = (name:string,asset:string,x:number,y:number,z:number,solid=false,turn=0) =>
       result.push({key:`${zone}-${name}`,asset,at:[spot.x+x,y,spot.z+z],zone,solid,turn});
     if (setting === 'archive') {
-      add('candle',prop('candle-1'),.62,1.125,-1.4);
-      add('book',prop('book-5'),-.58,1.125,-1.15);
-      add('pouch',prop('pouch-large'),.60,1.125,-.87);
+      add('candle',prop('candle-1'),.63,1.125,-1.45);
       add('vessel',prop(zone==='library'?'vase-4':'vase-2'),2.3,.22,-1.1,true);
     } else if (setting === 'garden') {
-      // The desk top is .22 + .955 - .0141 = 1.1609 m; leave letters and ink visible.
-      add('candle',prop('candle-1'),-.48,1.163,-1.5);
+      // The usable inset desktop is .849 above its origin (the .955 bound includes its gallery).
+      add('candle',prop('candle-1'),-.48,1.055,-1.5);
       add('planter',ph('planter_pot_clay'),2.15,.22,-2.2,true);
       add('basket',ph('wicker_basket_02'),-2.15,.22,-2.2,true);
     } else {
-      add('vessel',prop(zone==='market'?'vase-4':'vase-2'),.36,1.125,-1.25);
+      add('vessel',prop(zone==='market'?'vase-4':'vase-2'),2.65,.22,.9,true);
       add('pouch',prop('pouch-large'),-.65,1.125,-1.4);
       add('bucket',prop('bucket-wooden-1'),2.05,.22,-.3,true);
     }

@@ -1,0 +1,6 @@
+Rights record (not a verbatim copy of publisher terms).
+Poly Haven licenses its downloadable model and texture assets under CC0 1.0 Universal.
+Publisher: https://polyhaven.com/license
+License: https://creativecommons.org/publicdomain/zero/1.0/
+Verified 2026-09-10. Asset creators are recorded per item in catalog.json.
+Publisher website preview renders are excluded; any local previews are rendered from downloaded assets.

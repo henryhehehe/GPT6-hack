@@ -5,6 +5,7 @@ import { createHash } from 'node:crypto';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { loadSettingAssets } from '../components/worlds/scene/settingAssets';
+import { pickSceneSelection } from '../components/worlds/scene/scenePicking';
 import { SETTING_ASSETS, SETTING_ASSET_IDS, SETTING_SPOTS, createSettingNavigation, settingPlacements, type Setting, type SettingAssetId } from '../components/worlds/scene/settingLayout';
 
 const settings: Setting[] = ['archive', 'garden', 'coast'];
@@ -81,7 +82,16 @@ test('successful loads replace all matching fallbacks, share resources and dispo
     } });
     return { scene };
   });
+  const inspectScrolls = () => {
+    pack.root.updateMatrixWorld(true);
+    for (const p of placements.filter(p => p.id === 'open-scroll')) {
+      const ray = new THREE.Raycaster(new THREE.Vector3(p.at[0], 5, p.at[2]), new THREE.Vector3(0, -1, 0));
+      assert.deepEqual(pickSceneSelection(ray, pack.root), { action: 'evidence', zone: p.zone }, 'scroll opens its own station');
+    }
+  };
+  inspectScrolls();
   await pack.ready;
+  inspectScrolls();
   assert.equal(calls.length, 6, 'one request per distinct asset');
   assert.ok([...pack.status.values()].every(s => s === 'ready'));
   assert.equal(pack.root.children.length, placements.length);
