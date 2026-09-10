@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "license": "MIT",
+  "assets": [
+    {
+      "id": "amphora",
+      "title": "Painted amphora",
+      "pack": "market",
+      "category": "props",
+      "url": "/models/props/amphora.glb",
+      "source": "assets/blender/props/market.blend",
+      "bytes": 119340,
+      "sha256": "8db79f4f753e9b824aba11eb950755debd1f254ae50f54f2319bd399994882cc",
+      "bounds": {
+        "min": [
+          -0.3715,
+          0.0,
+          -0.31
+        ],
+        "max": [
+          0.3715,
+          1.085,
+          0.31
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "amphora__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "ceramic-bowl",
+      "title": "Glazed ceramic bowl",
+      "pack": "market",
+      "category": "props",
+      "url": "/models/props/ceramic-bowl.glb",
+      "source": "assets/blender/props/market.blend",
+      "bytes": 74740,
+      "sha256": "9bf63266590bd09a2425140cdcc0877a3043bfbe3e985ede3e3a23a79d5541df",
+      "bounds": {
+        "min": [
+          -0.34,
+          0.0,
+          -0.34
+        ],
+        "max": [
+          0.34,
+          0.275,
+          0.34
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "ceramic-bowl__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "market-stall",
+      "title": "Striped market stall",
+      "pack": "market",
+      "category": "props",
+      "url": "/models/props/market-stall.glb",
+      "source": "assets/blender/props/market.blend",
+      "bytes": 420732,
+      "sha256": "63f8f284a0ed6c21118e38a0a31b91ccdce802617b7537064a5efc2fe6c839cd",
+      "bounds": {
+        "min": [
+          -1.3523,
+          -0.0,
+          -0.722
+        ],
+        "max": [
+          1.3523,
+          2.465,
+          0.722
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "market-stall__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    },
+    {
+      "id": "storage-jar",
+      "title": "Lidded storage jar",
+      "pack": "market",
+      "category": "props",
+      "url": "/models/props/storage-jar.glb",
+      "source": "assets/blender/props/market.blend",
+      "bytes": 114104,
+      "sha256": "7152313d27d1b07fc4554af86f346b8e550a3a5bc49d7e26731842f792426863",
+      "bounds": {
+        "min": [
+          -0.4558,
+          0.0,
+          -0.375
+        ],
+        "max": [
+          0.4558,
+          0.843,
+          0.375
+        ]
+      },
+      "anchors": {
+        "Anchor_Inspect": "storage-jar__Anchor_Inspect"
+      },
+      "clips": [],
+      "provenance": "Original interpretive teaching asset; not primary evidence",
+      "creator": "Counterfactual Worlds",
+      "license": "MIT",
+      "licensePath": "LICENSE",
+      "dimensionsConvention": "meters; glTF Y-up, forward +Z; ground-level origin"
+    }
+  ]
+}

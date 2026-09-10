@@ -1,0 +1,58 @@
+{
+  "assets": [
+    {
+      "id": "amphora",
+      "bytes": 119340,
+      "triangles": 4800,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.743,
+        1.085,
+        0.62
+      ],
+      "clips": []
+    },
+    {
+      "id": "ceramic-bowl",
+      "bytes": 74740,
+      "triangles": 2944,
+      "primitives": 2,
+      "materials": 2,
+      "size": [
+        0.68,
+        0.275,
+        0.68
+      ],
+      "clips": []
+    },
+    {
+      "id": "market-stall",
+      "bytes": 420732,
+      "triangles": 7016,
+      "primitives": 2,
+      "materials": 2,
+      "size": [
+        2.705,
+        2.465,
+        1.444
+      ],
+      "clips": []
+    },
+    {
+      "id": "storage-jar",
+      "bytes": 114104,
+      "triangles": 3808,
+      "primitives": 1,
+      "materials": 1,
+      "size": [
+        0.912,
+        0.843,
+        0.75
+      ],
+      "clips": []
+    }
+  ],
+  "totalBytes": 728916,
+  "withLandmarksBytes": 5288128
+}
