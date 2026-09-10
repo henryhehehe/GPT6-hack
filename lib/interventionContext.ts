@@ -21,5 +21,5 @@ export async function loadInterventionContext(database:Pick<D1Database,'prepare'
   return {classroomId:id,baseVersion:row.version,audience:'classroom' as const,
     learner:{id:row.student_id,name:student.name,revision:row.student_revision},
     input:{instruction,world:validateWorld(JSON.parse(row.world)),scenario:state.scenario,
-      student:{zone:student.zone,evidence:student.evidence,turns:student.turns.slice(-3).map(turn=>({claim:turn.claim,scenario:turn.scenario,worldVersion:turn.worldVersion,at:turn.at,feedback:{items:turn.result.items,nextQuestion:turn.result.nextQuestion}}))}}};
+      student:{prediction:student.prediction,archiveReflection:student.archiveReflection,zone:student.zone,evidence:student.evidence,turns:student.turns.slice(-3).map(turn=>({id:turn.id,citations:turn.citations,revisesTurnId:turn.revisesTurnId,reflection:turn.reflection,revisionChanged:turn.revisionChanged,hintId:turn.hintId,claim:turn.claim,scenario:turn.scenario,worldVersion:turn.worldVersion,at:turn.at,feedback:{items:turn.result.items,nextQuestion:turn.result.nextQuestion}}))}}};
 }

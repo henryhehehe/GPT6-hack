@@ -17,7 +17,7 @@ export async function GET(request:Request){
  server.addEventListener('close',()=>{clearTimeout(timeout);close()});server.addEventListener('error',()=>{clearTimeout(timeout);close()});
  server.addEventListener('message',async event=>{
   try{
-   if(typeof event.data!=='string'||event.data.length>20000)throw new Error('Invalid message');const msg=JSON.parse(event.data);
+   if(typeof event.data!=='string'||new TextEncoder().encode(event.data).byteLength>20000)throw new Error('Invalid message');const msg=JSON.parse(event.data);
    if(msg.type==='steer'){
     if(steered)throw new Error('One correction is allowed per pilot request.');if(!upstream||!activeId)throw new Error('Wait until Astra begins before adding a correction.');const input=z.string().min(1).max(1000).parse(msg.input);steered=true;await reserveClassAi(classroomId);await reserveAi();upstream.send(JSON.stringify({type:'response.steer',previous_response_id:activeId,input}));return;
    }
@@ -31,7 +31,7 @@ export async function GET(request:Request){
    const upstreamResponse=await fetch('https://api.openai.com/v1/responses',{headers:{Upgrade:'websocket',Authorization:`Bearer ${key}`}});upstream=upstreamResponse.webSocket;
    if(closed){upstream?.close();return;}
    if(!upstream)throw new Error(`Astra steering connection unavailable (${upstreamResponse.status}). Use the standard request.`);
-   upstream.accept();
+   if(closed){upstream.close();return;}upstream.accept();
    upstream.addEventListener('message',e=>{try{
     const data=JSON.parse(String(e.data));
     if(data.type==='response.created'){activeId=data.response.id;if(!originalId)originalId=activeId;send({type:'ready'});}
@@ -44,9 +44,10 @@ export async function GET(request:Request){
      if(data.response.id!==activeId||(steered&&activeId===originalId))return;
      const text=data.response.output?.flatMap((i:{content?:{type:string;text?:string}[]})=>i.content??[]).filter((c:{type:string})=>c.type==='output_text').map((c:{text:string})=>c.text).join('');
      if(!text)return;
-     const value=HintSchema.parse(JSON.parse(text));send({type:'result',steered,result:{baseVersion,classroomId:context.classroomId,learner:context.learner,audience:context.audience,patch:{id:crypto.randomUUID(),...value,responseId:data.response.id,latencyMs:Date.now()-start,request:instruction,kind:'teaching-prop'}}});clearTimeout(timeout);close();
+     const value=HintSchema.parse(JSON.parse(text));send({type:'result',steered,result:{baseVersion,classroomId:context.classroomId,learner:context.learner,audience:context.audience,patch:{id:crypto.randomUUID(),...value,responseId:data.response.id,latencyMs:Date.now()-start,request:instruction,kind:'teaching-prop',basis:{studentId:context.learner.id,name:context.learner.name,revision:context.learner.revision}}}});clearTimeout(timeout);close();
     }
    }catch{fail('Astra returned an invalid intervention. No world changes were applied.');}});
+   upstream.addEventListener('close',()=>{if(!closed)fail('Astra connection closed before completion. Try again.');});
    upstream.addEventListener('error',()=>fail('Astra connection failed. Your classroom is unchanged.'));
    const schema=zodToJsonSchema(HintSchema,{$refStrategy:'none'});delete schema.$schema;
    upstream.send(JSON.stringify({type:'response.create',model:serverEnv('OPENAI_MODEL')||'gpt-6-astra',reasoning:{effort:'medium'},instructions:boundary+interventionInstructions,input:JSON.stringify(context.input),max_output_tokens:2500,text:{format:{type:'json_schema',name:'intervention',strict:true,schema}}}));

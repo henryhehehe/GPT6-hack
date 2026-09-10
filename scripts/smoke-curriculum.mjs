@@ -1,3 +1,4 @@
+import {smokeTeacherHeaders} from './smoke-teacher.mjs';
 import assert from 'node:assert/strict';
 import {randomUUID} from 'node:crypto';
 import {readFileSync} from 'node:fs';
@@ -10,7 +11,8 @@ if(isolated&&!['localhost','127.0.0.1','[::1]'].includes(new URL(base).hostname)
 const runId=randomUUID().replaceAll('-','').slice(0,8),visitorHeaders={};let visitor=0;
 function nextVisitor(){if(isolated)visitorHeaders['CF-Connecting-IP']=`2001:db8:${runId.slice(0,4)}:${runId.slice(4)}::${++visitor}`;}
 nextVisitor();
-async function post(path,body,token){const r=await fetch(base+path,{method:'POST',redirect:'error',headers:{'Content-Type':'application/json',...visitorHeaders,...(token?{Authorization:`Bearer ${token}`}:{})},body:JSON.stringify(body)});return {status:r.status,data:await r.json()};}
+const teacherHeaders=await smokeTeacherHeaders(base,visitorHeaders);
+async function post(path,body,token){const r=await fetch(base+path,{method:'POST',redirect:'error',headers:{...teacherHeaders,'Content-Type':'application/json',...visitorHeaders,...(token?{Authorization:`Bearer ${token}`}:{})},body:JSON.stringify(body)});return {status:r.status,data:await r.json()};}
 function sameAccess(actual,expected){for(const key of ['id','teacherToken','inviteToken','studentId','studentToken'])assert.ok(typeof actual[key]==='string'&&actual[key]===expected[key],`Launch retry changed ${key}; credentials omitted.`);}
 const original=(await post('/api/classroom',{action:'create'})).data;
 assert.ok(original.teacherToken);

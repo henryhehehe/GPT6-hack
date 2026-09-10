@@ -86,3 +86,12 @@ test('standalone downloads escape hostile learner and source text and load no re
     assert.ok(!html.includes('<link'));
   }
 });
+
+test('learning reports retain exact selected quotes, prediction and linked revision reflection safely',()=>{
+ const first={...turn('A patron can support learning.'),id:'first'};
+ const revised={...turn('A patron may help if the support continues.'),id:'second',revisesTurnId:'first',revisionChanged:true,reflection:'I added a condition after reading the source.',citations:[{evidenceId:'strabo',material:'text' as const,sourceVersion:'a'.repeat(64),start:0,end:24,quote:'<script>selected</script>',relevance:'The source supports <b>conditional</b> reasoning.'}]};
+ const student={...learner('B',[first,revised]),prediction:{text:'My original prediction',at:'now',worldVersion:1},archiveReflection:{text:'Another interpretation remains possible.',at:'later',worldVersion:1}};
+ const html=learningReportHtml(initialWorld,[student],undefined,'now');
+ for(const text of ['My original prediction','Revises submission 1','I added a condition','Another interpretation','Student-selected passages','a'.repeat(64),'&lt;script&gt;selected&lt;/script&gt;','&lt;b&gt;conditional&lt;/b&gt;'])assert.ok(html.includes(text),text);
+ assert.ok(!html.includes('<script>'));assert.equal(learnerSummary(learner('B',[turn('Same words.'),turn('SAME WORDS!!!')])).status,'Same wording');
+});

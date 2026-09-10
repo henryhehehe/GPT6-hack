@@ -1,4 +1,5 @@
 import {museumObjects,museumCitation} from './museums';
+import {normalizedAnswer,turnId} from './learning';
 import catalog from './curriculum/catalog.json';
 import {scenarioAllowed, type StudentState, type World} from './world';
 
@@ -11,7 +12,7 @@ export function rubricName(world:World,key:string) {
 }
 export function learnerSummary(student:Learner) {
   const first=student.turns[0], latest=student.turns.at(-1);
-  const normalize=(text:string)=>text.normalize('NFKC').trim().replace(/\s+/g,' ').toLowerCase();
+  const normalize=normalizedAnswer;
   const status=!latest?'No explanation yet':student.turns.length===1?'First explanation':
     first.worldVersion!==latest.worldVersion||first.scenario!==latest.scenario?'Context changed':
     normalize(first.claim)===normalize(latest.claim)?'Same wording':'Wording changed';
@@ -36,7 +37,7 @@ export function teachingPlan(world:World,minutes:30|45|60) {
   const times=minutes===30?[3,9,6,4,8]:minutes===60?[5,20,12,8,15]:[5,15,8,5,12];
   const analysis=world.lessonPack?.subject==='literature'?'how the language supports your interpretation':'why the evidence supports your explanation';
   return [
-    {title:'Predict',minutes:times[0],instruction:`Ask: ${world.objective} Students write an initial answer on paper before reading.`},
+    {title:'Predict',minutes:times[0],instruction:`Ask: ${world.objective} Students save a starting prediction in the app, or write one on paper, before reading.`},
     {title:'Read & investigate',minutes:times[1],instruction:lesson?.evidenceActivity??'Read the evidence cards. Identify what each source establishes and separate it from assumptions and invented teaching props.'},
     {title:'Make a case',minutes:times[2],instruction:`Write a claim, cite a specific detail, and explain ${analysis}. Name a limitation or an alternative. Submit in the app or write on the worksheet.`},
     {title:'Challenge',minutes:times[3],instruction:world.lessonPack?.curriculum?.teacherChallenge??'Could another explanation fit the same evidence? Which assumption would you need to check?'},
@@ -79,8 +80,8 @@ export function learningReportHtml(world:World,students:Learner[],previewId:stri
   const practice=includePractice?students.find(student=>student.id===previewId):undefined;
   const learners=practice?[practice,...joined]:joined;
   return documentHtml(`${world.title} — learning report`,
-    `${p(`Downloaded: ${generatedAt}`)}${p(world.objective)}${p(`${joined.length} joined learners. ${practice?'Your practice learner is included separately and is not counted as a joined learner.':'Teacher preview excluded.'} Snapshot of submitted work; unsent drafts and paper responses are not included.`)}${p('Keep this report with your classroom records: it contains learner names and writing. Source IDs below are references returned by AI, not proof of student-selected citations. Earlier source versions are not reconstructed here.')}
-    ${learners.length?learners.map(student=>{const summary=learnerSummary(student);return `<section><h2>${escapeHtml(student.id===previewId?'Your practice learner':student.name)}</h2>${p(`${student.turns.length} submissions · ${summary.status}`)}${student.turns.length?student.turns.map((turn,index)=>`<article><h3>Submission ${index+1}</h3>${p(`${turn.at} · World v${turn.worldVersion} · ${turn.scenario?'Hypothetical branch':'Baseline'}`)}<blockquote>${escapeHtml(turn.claim)}</blockquote>${p(`Provisional AI feedback: ${turn.result.reply}`)}<ul>${turn.result.items.map(item=>`<li>${escapeHtml(rubricName(world,item.key))}: ${item.earned?'AI marked supported':'AI suggested review'} — ${escapeHtml(item.reason)}${item.excerpt?` (learner excerpt: “${escapeHtml(item.excerpt)}”)`:''}</li>`).join('')}</ul>${p(`AI-referenced evidence IDs: ${turn.result.evidenceIds.join(', ')||'None'}`)}${p(`Next question: ${turn.result.nextQuestion}`)}</article>`).join(''):p('No explanation submitted yet.')}</section>`;}).join(''):p('No joined learners yet.')}`);
+    `${p(`Downloaded: ${generatedAt}`)}${p(world.objective)}${p(`${joined.length} joined learners. ${practice?'Practice learner included separately.':'Teacher preview excluded.'} Snapshot of submitted work; unsent drafts and paper responses are not included.`)}${p('Keep this report with your classroom records: it contains learner names and writing. AI-referenced source IDs alone are not proof of student-selected citations. Where recorded, exact selected quotes, source versions, predictions, and revision reflections are included below; older submissions may lack them.')}
+    ${learners.length?learners.map(student=>{const summary=learnerSummary(student);return `<section><h2>${escapeHtml(student.id===previewId?'Your practice learner':student.name)}</h2>${p(`${student.turns.length} submissions · ${summary.status}`)}${student.prediction?`<h3>Starting prediction</h3>${p(student.prediction.text)}${p(`${student.prediction.at} · World v${student.prediction.worldVersion}`)}`:p('No starting prediction recorded.')}${student.archiveReflection?`<h3>Archive reflection</h3>${p(student.archiveReflection.text)}`:''}${student.turns.length?student.turns.map((turn,index)=>`<article><h3>Submission ${index+1}</h3>${p(`${turn.at} · World v${turn.worldVersion} · ${turn.scenario?'Hypothetical branch':'Baseline'}`)}<blockquote>${escapeHtml(turn.claim)}</blockquote>${turn.revisesTurnId?`${p(`Revises submission ${student.turns.findIndex((prior,i)=>turnId(prior,i)===turn.revisesTurnId)+1} · ${turn.revisionChanged?'Changed wording':'Unchanged resubmission'}`)}${p(`Reason for revision: ${turn.reflection??''}`)}`:''}${turn.citations?.length?`<h4>Student-selected passages</h4>${turn.citations.map(c=>`<blockquote>${escapeHtml(c.quote)}</blockquote>${p(`Source ${c.evidenceId} · ${c.material} · UTF-16 range ${c.start}–${c.end} · Version ${c.sourceVersion}`)}${p(`Learner explanation: ${c.relevance}`)}`).join('')}`:p('No student-selected passages recorded.')}${p(`Provisional AI feedback: ${turn.result.reply}`)}<ul>${turn.result.items.map(item=>`<li>${escapeHtml(rubricName(world,item.key))}: ${item.earned?'AI marked supported':'AI suggested review'} — ${escapeHtml(item.reason)}${item.excerpt?` (learner excerpt: “${escapeHtml(item.excerpt)}”)`:''}</li>`).join('')}</ul>${p(`AI-referenced evidence IDs: ${turn.result.evidenceIds.join(', ')||'None'}`)}${p(`Next question: ${turn.result.nextQuestion}`)}</article>`).join(''):p('No explanation submitted yet.')}</section>`;}).join(''):p('No joined learners yet.')}`);
 }
 
 export function investigationDownloadHtml(world:World,student:StudentState,draft:string,scenario:boolean,generatedAt:string) {

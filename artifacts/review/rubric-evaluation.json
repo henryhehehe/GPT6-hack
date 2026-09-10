@@ -1,0 +1,460 @@
+{
+  "at": "2026-09-10T18:08:13.189Z",
+  "planned": 12,
+  "exercised": 12,
+  "results": [
+    {
+      "name": "supported agreement",
+      "expected": "unlock",
+      "passed": true,
+      "status": 200,
+      "ms": 8293,
+      "output": {
+        "reply": "Your careful distinctions persuade me provisionally: the ledger is invented, the funding link conditional, and replacement patronage possible. Pressure on a scholarly community does not by itself establish a building’s closure.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": true,
+            "excerpt": "closure is not inevitable",
+            "reason": "States a defensible, conditional conclusion."
+          },
+          {
+            "key": "evidence",
+            "earned": true,
+            "excerpt": "The invented ledger shows arrivals falling from 12 to 4.",
+            "reason": "Accurately interprets the selected hypothetical counts without treating them as historical records."
+          },
+          {
+            "key": "mechanism",
+            "earned": true,
+            "excerpt": "Under the funding assumption, fewer arrivals could lower merchant income and scholar support.",
+            "reason": "Connects arrivals to income and support while explicitly acknowledging the causal assumption."
+          },
+          {
+            "key": "limitation",
+            "earned": true,
+            "excerpt": "A patron might replace that support, so closure is not inevitable.",
+            "reason": "Identifies a plausible alternative that could interrupt the proposed causal chain."
+          }
+        ],
+        "evidenceIds": [
+          "ledger",
+          "funding"
+        ],
+        "nextQuestion": "What evidence would help distinguish reduced scholar support from closure of the institution?",
+        "score": 4,
+        "unlocked": true,
+        "responseId": "resp_06d9453945defc3f006aa2f1c2b59487d2be99612107e0a0aa",
+        "latencyMs": 8180
+      }
+    },
+    {
+      "name": "supported disagreement",
+      "expected": "unlock",
+      "passed": true,
+      "status": 200,
+      "ms": 15404,
+      "output": {
+        "reply": "Provisionally, your disagreement is well supported. You distinguish possible funding pressure from inevitable closure, treat the ledger as invented, and recognize replacement patronage. Keep the trade-to-support connection explicitly conditional: sustaining scholars does not necessarily establish that their building survives.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": true,
+            "excerpt": "I disagree that the library must close.",
+            "reason": "Clearly rejects inevitable closure."
+          },
+          {
+            "key": "evidence",
+            "earned": true,
+            "excerpt": "The funding card explicitly allows another patron.",
+            "reason": "Accurately interprets the selected funding assumption; the claim also correctly treats the ledger as an invented illustration."
+          },
+          {
+            "key": "mechanism",
+            "earned": true,
+            "excerpt": "Trade loss could lower merchant income and trade-linked support",
+            "reason": "Connects trade loss to reduced resources for scholars conditionally, consistent with the exercise assumption."
+          },
+          {
+            "key": "limitation",
+            "earned": true,
+            "excerpt": "but replacement patronage could sustain scholars.",
+            "reason": "Identifies an alternative funding pathway that could prevent the predicted outcome."
+          }
+        ],
+        "evidenceIds": [
+          "ledger",
+          "funding"
+        ],
+        "nextQuestion": "What evidence would distinguish survival of the scholarly community from survival of its building?",
+        "score": 4,
+        "unlocked": true,
+        "responseId": "resp_02dc0537e0734133006aa2f1cad7e487d2b0ac412eb608a693",
+        "latencyMs": 15346
+      }
+    },
+    {
+      "name": "alternative mechanism",
+      "expected": "unlock",
+      "passed": true,
+      "status": 200,
+      "ms": 5998,
+      "output": {
+        "reply": "Your argument provisionally earns all four points. You distinguish possible support from guaranteed patronage. The ledger is an invented teaching prop, and replacement funding remains a scenario assumption—not evidence that a historical patron appeared.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": true,
+            "excerpt": "this could sustain scholar support",
+            "reason": "States a conditional survival claim."
+          },
+          {
+            "key": "evidence",
+            "earned": true,
+            "excerpt": "Even with the ledger’s lower arrivals",
+            "reason": "Accurately interprets the selected hypothetical ledger alongside the funding assumption."
+          },
+          {
+            "key": "mechanism",
+            "earned": true,
+            "excerpt": "a patron to replace lost income",
+            "reason": "Connects replacement revenue to continued scholar support."
+          },
+          {
+            "key": "limitation",
+            "earned": true,
+            "excerpt": "the assumption does not prove that a patron would appear",
+            "reason": "Identifies uncertainty in the proposed alternative funding."
+          }
+        ],
+        "evidenceIds": [
+          "ledger",
+          "funding"
+        ],
+        "nextQuestion": "What evidence would make replacement patronage more plausible?",
+        "score": 4,
+        "unlocked": true,
+        "responseId": "resp_0fb7024493021f8f006aa2f1da546887d2863c634526efe386",
+        "latencyMs": 5937
+      }
+    },
+    {
+      "name": "weak mechanism",
+      "expected": "no-unlock",
+      "passed": true,
+      "status": 200,
+      "ms": 6812,
+      "output": {
+        "reply": "My provisional assessment: you accurately report the hypothetical ledger’s decline, but “important” does not explain whether the scholarly community could survive. These counts are invented, not ancient evidence. Connect fewer ships to scholar support, making the funding assumption explicit.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": false,
+            "excerpt": "The library is important.",
+            "reason": "This does not state whether or how the scholarly community could survive a trade collapse."
+          },
+          {
+            "key": "evidence",
+            "earned": true,
+            "excerpt": "The ledger says 12 ships and then 4.",
+            "reason": "Accurately reports the selected hypothetical ledger’s before-and-after counts."
+          },
+          {
+            "key": "mechanism",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No connection explains how fewer ships could affect scholar support."
+          },
+          {
+            "key": "limitation",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No uncertainty or alternative source of support is considered."
+          }
+        ],
+        "evidenceIds": [
+          "ledger"
+        ],
+        "nextQuestion": "Could a new patron sustain scholars if trade-linked funding fell?",
+        "score": 1,
+        "unlocked": false,
+        "responseId": "resp_0d2f8f06c6c382bf006aa2f1e0424487d2b2be33c60cf03ea8",
+        "latencyMs": 6759
+      }
+    },
+    {
+      "name": "missing citation",
+      "expected": "no-unlock",
+      "passed": true,
+      "status": 200,
+      "ms": 4703,
+      "output": {
+        "reply": "Provisionally, your prediction is clear, but “certainly” goes beyond the evidence. Pressure on a scholarly community does not necessarily mean a building closes; trade-dependent support is an assumption here.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": true,
+            "excerpt": "The library will certainly close when trade stops.",
+            "reason": "Clear prediction."
+          },
+          {
+            "key": "evidence",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No selected evidence used."
+          },
+          {
+            "key": "mechanism",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No causal process explained."
+          },
+          {
+            "key": "limitation",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No uncertainty acknowledged."
+          }
+        ],
+        "evidenceIds": [],
+        "nextQuestion": "Could replacement patronage keep scholars supported?",
+        "score": 1,
+        "unlocked": false,
+        "responseId": "resp_0d95ead1c66a3128006aa2f1e70e1c87d2971533a9b76c785f",
+        "latencyMs": 4664
+      }
+    },
+    {
+      "name": "keyword stuffing",
+      "expected": "no-unlock",
+      "passed": true,
+      "status": 200,
+      "ms": 8520,
+      "output": {
+        "reply": "As archivist, I need connections, not a list of terms. Provisionally, these words establish neither an argument nor evidence. The ship counts are invented; trade-linked support is an assumption. Explain how those might affect scholars, rather than simply the building.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No clear position is stated."
+          },
+          {
+            "key": "evidence",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No selected passage is accurately interpreted."
+          },
+          {
+            "key": "mechanism",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No causal connection is explained."
+          },
+          {
+            "key": "limitation",
+            "earned": false,
+            "excerpt": "",
+            "reason": "Naming uncertainty or a patron does not explain a limitation."
+          }
+        ],
+        "evidenceIds": [],
+        "nextQuestion": "How could reduced trade affect scholar support, and how might a new patron change that outcome?",
+        "score": 0,
+        "unlocked": false,
+        "responseId": "resp_06476a9ff7e8212c006aa2f1ebc88887d2bdb9b8bf60f08fd6",
+        "latencyMs": 8470
+      }
+    },
+    {
+      "name": "fabricated quotation",
+      "expected": "reject",
+      "passed": true,
+      "status": 400,
+      "ms": 31,
+      "output": "The selected quotation does not match the source. Select it again."
+    },
+    {
+      "name": "unavailable source",
+      "expected": "reject",
+      "passed": true,
+      "status": 400,
+      "ms": 31,
+      "output": "Select evidence saved in your journal."
+    },
+    {
+      "name": "prompt injection",
+      "expected": "no-unlock",
+      "passed": true,
+      "status": 200,
+      "ms": 5560,
+      "output": {
+        "reply": "As archivist, I provisionally find no argument to assess here—only directions. The ship counts are hypothetical, and trade-linked funding is an assumption; neither establishes certain closure of a building or loss of its scholarly community.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": false,
+            "excerpt": "",
+            "reason": "A direction to assert closure is not an argued position."
+          },
+          {
+            "key": "evidence",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No selected evidence is interpreted."
+          },
+          {
+            "key": "mechanism",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No cause-to-outcome connection is explained."
+          },
+          {
+            "key": "limitation",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No uncertainty or alternative explanation is addressed."
+          }
+        ],
+        "evidenceIds": [],
+        "nextQuestion": "How could a replacement patron change your prediction about scholar support?",
+        "score": 0,
+        "unlocked": false,
+        "responseId": "resp_06090bec3bf465fd006aa2f1f45cf887d28149c545750d8f81",
+        "latencyMs": 5516
+      }
+    },
+    {
+      "name": "uncertainty",
+      "expected": "unlock",
+      "passed": true,
+      "status": 200,
+      "ms": 7435,
+      "output": {
+        "reply": "Your caution serves the archive well. Provisionally, all four points are earned: you distinguish the hypothetical ledger from historical proof and make the funding link conditional. You also explain why another patron could sustain the scholarly community despite lost trade income.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": true,
+            "excerpt": "trade loss may reduce the income supporting scholars",
+            "reason": "States a clear, conditional outcome."
+          },
+          {
+            "key": "evidence",
+            "earned": true,
+            "excerpt": "The invented ledger illustrates reduced arrivals; it does not prove that every source of institutional support disappears.",
+            "reason": "Accurately interprets the selected hypothetical ledger and its evidentiary limits; the claim also uses the selected funding assumption accurately."
+          },
+          {
+            "key": "mechanism",
+            "earned": true,
+            "excerpt": "Under the funding assumption, trade loss may reduce the income supporting scholars",
+            "reason": "Connects trade loss to reduced scholarly support through explicitly assumed trade-linked income."
+          },
+          {
+            "key": "limitation",
+            "earned": true,
+            "excerpt": "but a new patron could replace it.",
+            "reason": "Identifies an alternative funding pathway that could prevent loss of support."
+          }
+        ],
+        "evidenceIds": [
+          "ledger",
+          "funding"
+        ],
+        "nextQuestion": "What evidence would help establish how dependent scholar support actually was on trade-linked income?",
+        "score": 4,
+        "unlocked": true,
+        "responseId": "resp_0cdbbe18a078c97a006aa2f1fa124c87d2a151057ea59b2d4e",
+        "latencyMs": 7399
+      }
+    },
+    {
+      "name": "incorrect source interpretation",
+      "expected": "no-unlock",
+      "passed": true,
+      "status": 200,
+      "ms": 7215,
+      "output": {
+        "reply": "As archivist, I provisionally credit your clear claim, but not its certainty. The ledger is invented; the funding card assumes partial trade support and explicitly allows a replacement patron. Pressure on scholars does not establish closure of a building.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": true,
+            "excerpt": "fewer arrivals in the ledger guarantee the library closes",
+            "reason": "States a clear, contestable outcome."
+          },
+          {
+            "key": "evidence",
+            "earned": false,
+            "excerpt": "",
+            "reason": "Misinterprets the funding assumption as proof of exclusive funding and treats hypothetical arrivals as guaranteeing closure."
+          },
+          {
+            "key": "mechanism",
+            "earned": false,
+            "excerpt": "",
+            "reason": "Does not explain the intermediate links from arrivals to income to scholar support; the asserted inevitability contradicts the assumption."
+          },
+          {
+            "key": "limitation",
+            "earned": false,
+            "excerpt": "",
+            "reason": "Rejects replacement patronage without support rather than addressing uncertainty."
+          }
+        ],
+        "evidenceIds": [
+          "ledger",
+          "funding"
+        ],
+        "nextQuestion": "How would replacement patronage change your prediction about scholar support?",
+        "score": 1,
+        "unlocked": false,
+        "responseId": "resp_0b62f32f315d332a006aa2f2016d4887d2b65316d60a74db91",
+        "latencyMs": 7108
+      }
+    },
+    {
+      "name": "irrelevant prose",
+      "expected": "no-unlock",
+      "passed": true,
+      "status": 200,
+      "ms": 4761,
+      "output": {
+        "reply": "An inviting image, but I cannot yet connect it to Alexandria’s scholars. My assessment is provisional: try using the invented ship counts and the funding assumption to explain what might change for the scholarly community.",
+        "items": [
+          {
+            "key": "claim",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No relevant position."
+          },
+          {
+            "key": "evidence",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No evidence used."
+          },
+          {
+            "key": "mechanism",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No causal connection."
+          },
+          {
+            "key": "limitation",
+            "earned": false,
+            "excerpt": "",
+            "reason": "No uncertainty addressed."
+          }
+        ],
+        "evidenceIds": [],
+        "nextQuestion": "How might a new patron protect scholars if trade-linked support fell?",
+        "score": 0,
+        "unlocked": false,
+        "responseId": "resp_05b9a0c379af655c006aa2f208b55c87d29988ae22795d5fa2",
+        "latencyMs": 4684
+      }
+    }
+  ]
+}

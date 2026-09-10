@@ -6,9 +6,10 @@ import {initialWorld,type StudentState} from '../lib/world';
 import {loadInterventionContext} from '../lib/interventionContext';
 
 // Run the actual Worker handlers offline. Only runtime bindings and upstream transport are substituted.
-const testEnv:Record<string,unknown>={OPENAI_API_KEY:'offline-test-key',PILOT_AI_REQUEST_LIMIT:'100'};
+const testEnv:Record<string,unknown>={OPENAI_API_KEY:'offline-test-key',PILOT_AI_REQUEST_LIMIT:'100',PILOT_TEACHER_CODE:'offline-teacher'};
 (globalThis as unknown as {__interventionTestEnv:unknown}).__interventionTestEnv=testEnv;
 const hooks=registerHooks({resolve(specifier,context,next){return specifier==='cloudflare:workers'?{url:'data:text/javascript,export const env = globalThis.__interventionTestEnv;',shortCircuit:true}:next(specifier,context);}});
+const {teacherSession}=await import('../lib/pilot');
 const {POST,GET:readClassroom}=await import('../app/api/classroom/route');
 
 after(()=>{hooks.deregister();delete (globalThis as unknown as {__interventionTestEnv?:unknown}).__interventionTestEnv;});
@@ -47,7 +48,7 @@ test('teacher attaches museum objects durably; learners read but cannot change s
 test('try creates a persistent museum demo, while ordinary creation keeps its existing defaults',async t=>{
  const f=fixture();t.after(()=>f.sql.close());
  for(const action of ['try','create']){
-  const response=await POST(new Request('https://class.test/api/classroom',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action})}));
+  const response=await POST(new Request('https://class.test/api/classroom',{method:'POST',headers:{'Content-Type':'application/json',...(action==='create'?{Cookie:`cw-teacher=${await teacherSession('offline-teacher')}`}:{})},body:JSON.stringify({action})}));
   assert.equal(response.status,200);const access=await response.json() as {id:string;teacherToken:string;studentId:string;studentToken:string};
   const read=await readClassroom(new Request(`https://class.test/api/classroom?id=${access.id}&studentId=${access.studentId}`,{headers:{Authorization:`Bearer ${access.studentToken}`}}));
   assert.equal(read.status,200);const body=await read.json() as {world:{museumObjectIds?:string[];evidence:unknown[]}};

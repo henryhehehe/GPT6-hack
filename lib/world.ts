@@ -1,5 +1,7 @@
 import { z } from 'zod';
 import {MuseumSelectionSchema} from './museums';
+import type { Citation } from './learning';
+import type { DirectorBasis } from './directorContext';
 import alexandriaSource from './curriculum/alexandria.json';
 import sourceNotes from './curriculum/sourceNotes.json';
 
@@ -25,11 +27,11 @@ export const RubricSchema = z.object({
   evidenceIds:z.array(z.string()).max(6), nextQuestion:z.string().max(250),
 });
 export type Evaluation=z.infer<typeof RubricSchema> & {score:number;unlocked:boolean;responseId:string;latencyMs:number};
-export type Turn={requestId?:string;claim:string;npc:ZoneId;result:Evaluation;at:string;worldVersion:number;scenario:boolean};
+export type Turn={requestId?:string;id?:string;submission?:string;citations?:Citation[];revisesTurnId?:string;reflection?:string;revisionChanged?:boolean;hintId?:string;claim:string;npc:ZoneId;result:Evaluation;at:string;worldVersion:number;scenario:boolean};
 export const DialogueSchema=z.object({reply:z.string().min(1).max(900),evidenceIds:z.array(z.string().max(60)).max(3),followUp:z.string().max(200)});
 export type DialogueTurn={id:string;message:string;npc:ZoneId;result:z.infer<typeof DialogueSchema>;at:string;worldVersion:number;scenario:boolean;responseId:string;latencyMs:number};
-export type StudentState={name:string;evidence:string[];turns:Turn[];zone:ZoneId;unlocked:boolean;dialogue?:DialogueTurn[]};
-export type Intervention={id:string;title:string;text:string;question:string;zone:ZoneId;responseId:string;latencyMs:number;request:string;kind:'teaching-prop'};
+export type StudentState={name:string;evidence:string[];turns:Turn[];zone:ZoneId;unlocked:boolean;dialogue?:DialogueTurn[];prediction?:{text:string;at:string;worldVersion:number};archiveReflection?:{text:string;at:string;worldVersion:number}};
+export type Intervention={id:string;title:string;text:string;question:string;zone:ZoneId;responseId:string;latencyMs:number;request:string;kind:'teaching-prop';basis?:DirectorBasis};
 export type ClassroomState={scenario:boolean;hint:Intervention|null;run:{responseId:string;latencyMs:number}|null};
 export const HintSchema=z.object({title:z.string().max(80),text:z.string().max(650),question:z.string().max(250),zone:Zone});
 export const lesson = `Alexandria: knowledge and the systems that sustain it.
@@ -81,7 +83,7 @@ export function gradeArgument(value:unknown,claim:string,available:string[],worl
  r.items=r.items.map(i=>({...i,earned:i.earned&&i.excerpt.trim().length>0&&text.includes(i.excerpt.toLowerCase().replace(/\s+/g,' ').trim())}));
  const e=r.items.find(i=>i.key==='evidence')!;if(!r.evidenceIds.length)e.earned=false;
  const score=r.items.filter(i=>i.earned).length;
- return {...r,score,unlocked:score>=3&&e.earned&&!!r.items.find(i=>i.key==='mechanism')?.earned};
+ return {...r,score,unlocked:score===4&&e.earned};
 }
 export const zoneNames:Record<ZoneId,string>={harbor:'Harbor',market:'Market',library:'Library'};
 export const npcNames:Record<ZoneId,string>={harbor:'Dorian, the merchant',market:'Thaleia, the market trader',library:'Ione, the archivist'};

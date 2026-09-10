@@ -106,17 +106,17 @@ test('closing the WebSocket during context lookup stops before quota and upstrea
 });
 
 
-test('a guest owns only their new demo; invitees retain learner-only access',async t=>{
+test('public trials and invitees retain learner-only access',async t=>{
   const f=fixture();t.after(()=>f.sql.close());const fetchMock=mock.method(globalThis,'fetch',async()=>{throw new Error('Unexpected AI call');});t.after(()=>fetchMock.mock.restore());
   const created=await POST(new Request('https://class.test/api/classroom',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'try'})}));
   assert.equal(created.status,200);
   const guest=await created.json() as {id:string;studentId:string;studentToken:string;teacherToken:string;inviteToken:string};
-  assert.ok(guest.teacherToken);assert.ok(guest.inviteToken);assert.notEqual(guest.id,classId);
-  const owned=await readClassroom(new Request(`https://class.test/api/classroom?id=${guest.id}`,{headers:{Authorization:`Bearer ${guest.teacherToken}`}}));assert.equal(owned.status,200);
-  const own=await owned.json() as {students:{id:string;name:string}[]};assert.equal(own.students.length,1);assert.equal(own.students[0].name,'Practice learner');
-  assert.notEqual((await readClassroom(new Request(`https://class.test/api/classroom?id=${classId}`,{headers:{Authorization:`Bearer ${guest.teacherToken}`}}))).status,200);
-  const joined=await POST(new Request('https://class.test/api/classroom',{method:'POST',headers:{Authorization:`Bearer ${guest.inviteToken}`,'Content-Type':'application/json'},body:JSON.stringify({action:'join',id:guest.id,name:'Guest learner'})}));
+  assert.equal(guest.teacherToken,undefined);assert.equal(guest.inviteToken,undefined);assert.notEqual(guest.id,classId);
+  const owned=await readClassroom(new Request(`https://class.test/api/classroom?id=${guest.id}&studentId=${guest.studentId}`,{headers:{Authorization:`Bearer ${guest.studentToken}`}}));assert.equal(owned.status,200);
+  const own=await owned.json() as {students:unknown[]};assert.deepEqual(own.students,[]);
+  assert.notEqual((await readClassroom(new Request(`https://class.test/api/classroom?id=${classId}&studentId=${guest.studentId}`,{headers:{Authorization:`Bearer ${guest.studentToken}`}}))).status,200);
+  const joined=await POST(new Request('https://class.test/api/classroom',{method:'POST',headers:{Authorization:'Bearer invite-secret','Content-Type':'application/json'},body:JSON.stringify({action:'join',id:classId,name:'Guest learner'})}));
   assert.equal(joined.status,200);const invited=await joined.json() as {studentToken:string;teacherToken?:string;inviteToken?:string};assert.equal(invited.teacherToken,undefined);assert.equal(invited.inviteToken,undefined);
-  const denied=await POST(new Request('https://class.test/api/classroom',{method:'POST',headers:{Authorization:`Bearer ${invited.studentToken}`,'Content-Type':'application/json'},body:JSON.stringify({action:'scenario',id:guest.id,scenario:true})}));assert.equal(denied.status,400);
+  const denied=await POST(new Request('https://class.test/api/classroom',{method:'POST',headers:{Authorization:`Bearer ${invited.studentToken}`,'Content-Type':'application/json'},body:JSON.stringify({action:'scenario',id:classId,scenario:true})}));assert.equal(denied.status,400);
   assert.equal(fetchMock.mock.callCount(),0);
 });

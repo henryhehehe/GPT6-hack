@@ -128,6 +128,6 @@ The [business validity review](docs/BUSINESS-VALIDITY-REVIEW.md) covers the init
 
 ### Try it before a school rollout
 
-Start at `/try` to explore and write, then switch to **Teacher studio** in the same practice classroom. No signup or teacher code is needed. **Learning report** can include your own practice learner without counting it as a joined student. Older learner-only trials stay intact; open `/studio` separately to try teacher tools.
+Start at `/try` to explore and write without signup. Teacher tools are available separately at `/studio` with the private teacher code. Public trials receive learner access only. **Learning report** can include your own practice learner without counting it as a joined student. Older learner-only trials stay intact; open `/studio` separately to try teacher tools.
 
 **Download my writing** works without a new AI call and includes your unsent draft, saved evidence, and prior submitted explanations. It is a local copy, not a submission. New image generation is paused for the hackathon, so the builder goes directly from lesson generation to review. Shared AI and classroom quotas remain in place.

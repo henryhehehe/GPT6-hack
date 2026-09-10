@@ -8,10 +8,10 @@ export async function astra<T>(name:string,schema:z.ZodType<T>,instructions:stri
  const key=serverEnv('OPENAI_API_KEY');if(!key)throw new Error('Add OPENAI_API_KEY to the server environment to use Astra. Your work is preserved.');
  await reserveAi();
  const started=Date.now();const jsonSchema=zodToJsonSchema(schema,{$refStrategy:'none'});delete jsonSchema.$schema;
- const res=await fetch('https://api.openai.com/v1/responses',{method:'POST',headers:{Authorization:`Bearer ${key}`,'Content-Type':'application/json'},body:JSON.stringify({model:serverEnv('OPENAI_MODEL')||'gpt-6-astra',reasoning:{effort:'low'},instructions,input:file?[{role:'user',content:[{type:'input_text',text:JSON.stringify(input)},{type:'input_file',...file}]}]:JSON.stringify(input),max_output_tokens:file?9000:['argument','character_dialogue','intervention'].includes(name)?1800:7000,text:{format:{type:'json_schema',name,strict:true,schema:jsonSchema}}}),signal:AbortSignal.timeout(timeoutMs)});
- const data=await res.json() as {id:string;error?:{message:string};status:string;output?:{content?:{type:string;text?:string}[]}[]};
+ const res=await fetch('https://api.openai.com/v1/responses',{method:'POST',headers:{Authorization:`Bearer ${key}`,'Content-Type':'application/json'},body:JSON.stringify({model:serverEnv('OPENAI_MODEL')||'gpt-6-astra',reasoning:{effort:'low'},instructions,input:file?[{role:'user',content:[{type:'input_text',text:JSON.stringify(input)},{type:'input_file',...file}]}]:JSON.stringify(input),max_output_tokens:name==='complete_lesson'?12000:file?9000:['argument','character_dialogue','intervention'].includes(name)?1800:7000,text:{format:{type:'json_schema',name,strict:true,schema:jsonSchema}}}),signal:AbortSignal.timeout(timeoutMs)});
+ const data=await res.json() as {id:string;error?:{message:string};status:string;incomplete_details?:{reason?:string};output?:{content?:{type:string;text?:string}[]}[]};
  if(!res.ok)throw new Error(`Astra request failed (${res.status}). Please retry; no progress was changed.`);
- if(data.status!=='completed')throw new Error('Astra did not finish. Please retry; your work is preserved.');
+ if(data.status!=='completed')throw new Error(data.incomplete_details?.reason==='max_output_tokens'?'Astra reached its response limit. Your work is preserved; retry with a shorter request.':'Astra did not finish. Please retry; your work is preserved.');
  const text=data.output?.flatMap(i=>i.content??[]).filter(c=>c.type==='output_text').map(c=>c.text).join('');if(!text)throw new Error('Astra returned no answer. Please retry.');
  return {value:schema.parse(JSON.parse(text)),responseId:data.id,latencyMs:Date.now()-started};
 }
