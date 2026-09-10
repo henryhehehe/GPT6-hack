@@ -12,6 +12,7 @@ import { ALEXANDRIA_EXTERNAL } from './scene/externalLayout';
 import SceneLoading from './SceneLoading';
 import {activeSceneAppearance,appearanceLighting} from '@/lib/sceneAppearance';
 import {trackSceneLoading} from './scene/sceneLoading';
+import WorldAmbience from './WorldAmbience';
 import { SceneArtCredits } from './SceneArtCredits';
 import LandmarkPreview from './LandmarkPreview';
 import type { LandmarkId } from '@/lib/landmarkReferences';
@@ -152,7 +153,7 @@ export default function WorldScene(props:Props){
   }frame=requestAnimationFrame(animate);
   return()=>{loadingTracker.dispose();cancelAnimationFrame(frame);explorer.dispose();explorerRef.current=null;landmarks.dispose();teachingCharacters.dispose();crowd.dispose();scenery.dispose();district.dispose();atmosphere.dispose();details.dispose();external.dispose();observer.disconnect();controls.removeEventListener('start',interruptFocus);controls.dispose();el.removeEventListener('pointerdown',onDown);el.removeEventListener('pointerup',onUp);el.removeEventListener('pointermove',onMove);el.removeEventListener('pointerleave',onLeave);scene.traverse(o=>{if(o instanceof THREE.Mesh){o.geometry.dispose();const ms=Array.isArray(o.material)?o.material:[o.material];ms.forEach(m=>m.dispose());}});renderer.dispose();renderer.domElement.remove();};
  },[]);
- return <>
+ return <><WorldAmbience worldId={'alexandria'}/>
   <SceneLoading loading={loading} hasFrame={sceneRendered} sceneName={'Alexandria'}/>
   <div ref={host} className="world-canvas" role="group" aria-label="Interactive harbor, market, and library" aria-busy={loading}>{error&&<p className="world-error">{error}</p>}</div>
   {(['harbor','market','library'] as ZoneId[]).map(id=><button key={id} ref={element=>{characterButtons.current[id]=element;}} className="character-world-label" style={{display:'none'}} onClick={()=>props.onTalk(id)} aria-label={`Talk to ${characters[id].name}, ${characters[id].role}`}><span>◌</span>{characters[id].name}<small>Talk</small></button>)}
