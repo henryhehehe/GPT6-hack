@@ -599,6 +599,98 @@
       "license": "MIT",
       "creator": "Counterfactual Worlds",
       "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "fishing-creel",
+      "title": "Woven fishing creel",
+      "zone": "harbor",
+      "description": "Tapered open wicker creel with bound mouth, alternating reed weave, lid and carrying strap.",
+      "file": "fishing-creel.glb",
+      "bytes": 93480,
+      "blenderBounds": [
+        [
+          -0.35638803243637085,
+          -0.2827903628349304,
+          0.0
+        ],
+        [
+          0.6078973412513733,
+          0.2827903628349304,
+          0.7955884337425232
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "rigging-block",
+      "title": "Rope and pulley block",
+      "zone": "harbor",
+      "description": "Paired timber cheeks, a grooved bronze sheave, axle pegs and two reeved rope ends; origin at suspension line.",
+      "file": "rigging-block.glb",
+      "bytes": 32888,
+      "blenderBounds": [
+        [
+          -0.13600000739097595,
+          -0.11385640501976013,
+          -0.7400000095367432
+        ],
+        [
+          0.13600000739097595,
+          0.11385640501976013,
+          0.11385640501976013
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "grain-measure",
+      "title": "Wooden grain measure",
+      "zone": "harbor",
+      "description": "Open stave measure with wooden base, bound hoops, side handles and loose grain.",
+      "file": "grain-measure.glb",
+      "bytes": 88644,
+      "blenderBounds": [
+        [
+          -0.26345255970954895,
+          -0.19200000166893005,
+          0.0
+        ],
+        [
+          0.26345255970954895,
+          0.19200000166893005,
+          0.30000001192092896
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
+    },
+    {
+      "id": "sailmaker-kit",
+      "title": "Sail repair kit",
+      "zone": "harbor",
+      "description": "Folded sail patch, raised stitched seam, wound cord, bone needles and a wooden palm tool on an open tray.",
+      "file": "sailmaker-kit.glb",
+      "bytes": 69912,
+      "blenderBounds": [
+        [
+          -0.30000001192092896,
+          -0.20399999618530273,
+          0.0
+        ],
+        [
+          0.30000001192092896,
+          0.20399999618530273,
+          0.11249999701976776
+        ]
+      ],
+      "license": "MIT",
+      "creator": "Counterfactual Worlds",
+      "source": "scripts/blender/build_alexandria_details.py"
     }
   ]
 }
