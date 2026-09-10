@@ -31,3 +31,38 @@ test('vegetation preserves all reading routes, keeps islands off the sea, and re
   assert.ok(nature.root.children.length<32,'bounded landscape batches');nature.dispose();assert.ok([...resources.values()].every(n=>n===1));architecture.dispose();assert.equal(scene.children.length,0);
  }
 });
+
+test('wind bends foliage and rooted ground cover within culling bounds, without moving trunks',()=>{
+ const scene=new THREE.Scene(),nature=addThemeNature(scene,WORLD_THEMES.tempest,()=>true);
+ const meshes=nature.root.children.filter((o):o is THREE.InstancedMesh=>o instanceof THREE.InstancedMesh);
+ const originals=new Map(meshes.map(mesh=>[mesh,new Float32Array(mesh.instanceMatrix.array)]));
+ const leaves=meshes.find(mesh=>mesh.name==='Wind in foliage')!,grass=meshes.find(mesh=>mesh.name==='Wind in ground cover'&&mesh.geometry.type==='ConeGeometry')!;
+ assert.ok(leaves&&grass);
+ nature.update(12,false);
+ assert.notDeepEqual(leaves.instanceMatrix.array,originals.get(leaves));
+ const varying=new Set<number>(),base=new THREE.Matrix4(),animated=new THREE.Matrix4(),p=new THREE.Vector3(),q=new THREE.Vector3();
+ for(const mesh of meshes){
+  const original=originals.get(mesh)!;
+  if(!mesh.name.startsWith('Wind'))assert.deepEqual(mesh.instanceMatrix.array,original,'solid trunks and rocks stay fixed');
+  for(let i=0;i<mesh.count;i++){
+   base.fromArray(original,i*16);mesh.getMatrixAt(i,animated);assert.ok(animated.elements.every(Number.isFinite));
+   if(mesh===leaves)varying.add(Math.round((animated.elements[12]-base.elements[12])*100000));
+   if(mesh===grass){p.set(0,-.5,0).applyMatrix4(base);q.set(0,-.5,0).applyMatrix4(animated);assert.ok(p.distanceTo(q)<1e-5,'grass roots stay anchored');}
+   const vertices=mesh.geometry.getAttribute('position');
+   for(let v=0;v<vertices.count;v++){
+    p.fromBufferAttribute(vertices,v).applyMatrix4(base);q.fromBufferAttribute(vertices,v).applyMatrix4(animated);
+    assert.ok(p.distanceTo(q)<.7,'bounded branch and stem movement');
+    if(mesh.name.startsWith('Wind'))assert.ok(mesh.boundingBox!.containsPoint(q)&&mesh.boundingSphere!.containsPoint(q),'animated vertices remain inside expanded culling bounds');
+   }
+  }
+ }
+ assert.ok(varying.size>20,'nearby leaves do not all move in lockstep');
+ const version=leaves.instanceMatrix.version;nature.update(12.001,false);assert.equal(leaves.instanceMatrix.version,version,'instance uploads capped at 30 Hz');
+ nature.update(24,true);for(const mesh of meshes)assert.deepEqual(mesh.instanceMatrix.array,originals.get(mesh),'reduced motion restores authored rest pose');
+ nature.update(120,true);for(const mesh of meshes)assert.deepEqual(mesh.instanceMatrix.array,originals.get(mesh));
+ const birds=nature.root.getObjectByName('Distant birds')!;
+ const rest=birds.children.map(b=>Array.from((b as THREE.Mesh).geometry.getAttribute('position').array));
+ nature.update(8,false);assert.ok(birds.children.some((b,i)=>JSON.stringify(Array.from((b as THREE.Mesh).geometry.getAttribute('position').array))!==JSON.stringify(rest[i])),'wings flap independently');
+ nature.update(NaN,false);for(const mesh of meshes)assert.ok(Array.from(mesh.instanceMatrix.array).every(Number.isFinite));
+ nature.dispose();const disposedVersion=leaves.instanceMatrix.version;nature.update(45,false);nature.dispose();assert.equal(leaves.instanceMatrix.version,disposedVersion);assert.equal(scene.children.length,0);
+});

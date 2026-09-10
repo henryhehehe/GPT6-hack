@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import type {WorldTheme} from '@/lib/worldThemes';
 import {themeLayout} from './themeLayouts';
 import type {ArchitectureBounds} from './themeArchitecture';
+import {themeWind,windGust} from './themeWind';
 
 type Point={x:number;z:number};
 
@@ -101,18 +102,76 @@ export function addThemeNature(scene:THREE.Scene,theme:WorldTheme,isWalkable:(p:
   const x=(i%2?1:-1)*(25+random()*20),z=-30+random()*45,s=.5+random()*1.4;
   put(stone,rock,x,s*.35,z,s,s*.6,s*.8,random()*6);
  }
- const instances:THREE.InstancedMesh[]=[];
+ const wind=themeWind(theme);
+ const instances:THREE.InstancedMesh[]=[],swayBatches:{mesh:THREE.InstancedMesh;base:Float32Array;phase:Uint8Array;kind:'leaves'|'stems'}[]=[];
+ const phases=new Float32Array(64),swayMatrix=new THREE.Matrix4();
+ let disposed=false,lastWindFrame=-1,wasReduced=true;
  for(const b of batches.values()){
   const mesh=new THREE.InstancedMesh(b.g,b.m,b.matrices.length);mesh.name='Instanced landscape';b.matrices.forEach((m,i)=>mesh.setMatrixAt(i,m));mesh.castShadow=b.cast;mesh.receiveShadow=true;mesh.computeBoundingSphere();root.add(mesh);instances.push(mesh);
+  const kind=foliage.includes(b.m as THREE.MeshStandardMaterial)?'leaves':b.g===blade||b.g===crown?'stems':undefined;
+  if(kind){
+   mesh.name=kind==='leaves'?'Wind in foliage':'Wind in ground cover';mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+   const base=new Float32Array(mesh.instanceMatrix.array),phase=new Uint8Array(mesh.count);
+   let margin=0;
+   b.g.computeBoundingSphere();
+   for(let i=0;i<mesh.count;i++){
+    const o=i*16;phase[i]=Math.abs(Math.round(base[o+12]*9+base[o+14]*13+base[o+13]*7))%64;
+    const scale=Math.max(Math.hypot(base[o],base[o+1],base[o+2]),Math.hypot(base[o+4],base[o+5],base[o+6]),Math.hypot(base[o+8],base[o+9],base[o+10]));
+    margin=Math.max(margin,scale*b.g.boundingSphere!.radius*.4+.2);
+   }
+   // CPU instance transforms also drive depth shadows. Expand culling for every allowed pose.
+   mesh.boundingSphere!.radius+=margin;mesh.computeBoundingBox();mesh.boundingBox!.expandByScalar(margin);
+   swayBatches.push({mesh,base,phase,kind});
+  }
  }
  // Small distant birds add movement without turning the setting into a crowd.
  const birds=new THREE.Group();birds.name='Distant birds';root.add(birds);
- const wing=new THREE.BufferGeometry();wing.setAttribute('position',new THREE.Float32BufferAttribute([0,0,0,-.48,.07,.12,-.12,0,.20,0,0,0,.12,0,.20,.48,.07,.12],3));wing.computeVertexNormals();geometries.push(wing);
+ const wingVertices=[0,0,0,-.48,.07,.12,-.12,0,.20,0,0,0,.12,0,.20,.48,.07,.12];
+ const wing=new THREE.BufferGeometry();wing.setAttribute('position',new THREE.Float32BufferAttribute(wingVertices,3));wing.computeVertexNormals();geometries.push(wing);
  const birdMaterial=material('#53605b');birdMaterial.side=THREE.DoubleSide;
- if(!interior)for(let i=0;i<(coast?7:4);i++)birds.add(new THREE.Mesh(wing,birdMaterial));
+ if(!interior)for(let i=0;i<(coast?7:4);i++){
+  const geometry=wing.clone();(geometry.getAttribute('position') as THREE.BufferAttribute).setUsage(THREE.DynamicDrawUsage);geometry.computeBoundingSphere();geometry.boundingSphere!.radius+=.3;geometries.push(geometry);
+  birds.add(new THREE.Mesh(geometry,birdMaterial));
+ }
  function update(time:number,reduced:boolean){
-  birds.children.forEach((bird,i)=>{const t=(reduced?0:time*.065)+i*.63;bird.position.set(Math.cos(t)*19,12+i*.6+Math.sin(t*2)*.5,-22+Math.sin(t)*9);bird.rotation.y=-t;bird.rotation.z=reduced?0:Math.sin(time*2+i)*.08;});
+  if(disposed)return;
+  const clock=Number.isFinite(time)?Math.max(0,time):0;
+  if(reduced){
+   if(!wasReduced)for(const b of swayBatches){b.mesh.instanceMatrix.array.set(b.base);b.mesh.instanceMatrix.needsUpdate=true;}
+   wasReduced=true;lastWindFrame=-1;
+  }else{
+   const frame=Math.floor(clock*30);
+   if(frame!==lastWindFrame||wasReduced){
+    const t=frame/30,gust=windGust(wind,t);
+    for(let i=0;i<64;i++)phases[i]=gust*(.72+.28*Math.sin(t*1.7+i*2.39996));
+    for(const b of swayBatches)for(let i=0;i<b.mesh.count;i++){
+     const o=i*16,amount=phases[b.phase[i]],bend=amount*(b.kind==='leaves'?.13:.28);
+     const dx=wind.directionX*bend,dz=wind.directionZ*bend,e=swayMatrix.elements;
+     for(let j=0;j<16;j++)e[j]=b.base[o+j];
+     // A shear around each plant's base gives springy motion without moving its roots.
+     const pivot=b.kind==='leaves'?0:Math.abs(b.base[o+5])*(b.mesh.geometry===blade?.5:1);
+     for(let j=0;j<12;j+=4){e[j]+=dx*b.base[o+j+1];e[j+2]+=dz*b.base[o+j+1];}
+     e[12]+=dx*pivot+(b.kind==='leaves'?wind.directionX*amount*.12:0);
+     e[14]+=dz*pivot+(b.kind==='leaves'?wind.directionZ*amount*.12:0);
+     b.mesh.setMatrixAt(i,swayMatrix);
+    }
+    for(const b of swayBatches)b.mesh.instanceMatrix.needsUpdate=true;
+    lastWindFrame=frame;wasReduced=false;
+   }
+  }
+  birds.children.forEach((bird,i)=>{
+   const t=(reduced?0:clock*.065)+i*.63;
+   bird.position.set(Math.cos(t)*19,12+i*.6+Math.sin(t*2)*.5,-22+Math.sin(t)*9);bird.rotation.y=-t;bird.rotation.z=reduced?0:Math.sin(clock*2+i)*.08;
+   // Alternating short flapping bouts and glides; each bird has its own cadence.
+   const beat=reduced?0:Math.sin(clock*(4.2+i*.17)+i)*.38*Math.max(0,Math.sin(clock*.38+i*1.7));
+   const geometry=(bird as THREE.Mesh).geometry,position=geometry.getAttribute('position'),cos=Math.cos(beat),sin=Math.sin(beat);
+   for(let v=0;v<6;v++){
+    const x=wingVertices[v*3],y=wingVertices[v*3+1];
+    position.setXYZ(v,Math.sign(x)*(Math.abs(x)*cos-y*sin),Math.abs(x)*sin+y*cos,wingVertices[v*3+2]);
+   }
+   position.needsUpdate=true;geometry.computeVertexNormals();
+  });
  }
  update(0,true);
- return {root,obstacles,planted,update,dispose(){root.removeFromParent();instances.forEach(m=>m.dispose());geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());leafTexture.dispose();}};
+ return {root,obstacles,planted,update,dispose(){if(disposed)return;disposed=true;root.removeFromParent();instances.forEach(m=>m.dispose());geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());leafTexture.dispose();}};
 }

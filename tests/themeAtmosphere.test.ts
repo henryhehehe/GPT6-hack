@@ -37,3 +37,22 @@ test('each generated work has two distinct, finite, elevated scenic camera poses
   }
  }
 });
+
+test('worlds share deterministic bounded gusts with stronger island wind and sheltered interiors',async()=>{
+ const {themeWind,windGust,windDisplacement}=await import('../components/worlds/scene/themeWind');
+ const storm=themeWind(WORLD_THEMES.tempest),garden=themeWind(WORLD_THEMES['austen-letter']),room=themeWind(WORLD_THEMES.frankenstein);
+ assert.ok(storm.strength>garden.strength&&garden.strength>room.strength);
+ assert.deepEqual(storm,themeWind(WORLD_THEMES.tempest));
+ for(const id of ['__proto__','toString','constructor'])assert.equal(themeWind({id}).strength,.25);
+ for(const theme of Object.values(WORLD_THEMES)){
+  const wind=themeWind(theme);assert.ok(Math.abs(Math.hypot(wind.directionX,wind.directionZ)-1)<1e-12);
+  for(const t of [0,1,10,300,10000,NaN,Infinity]){
+   assert.ok(windGust(wind,t)>=0&&windGust(wind,t)<=wind.strength);
+   assert.ok(Math.abs(windDisplacement(wind,t))<=wind.strength*1.05);
+  }
+ }
+ const a=addThemeAtmosphere(new THREE.Scene(),WORLD_THEMES.tempest),points=a.root.children[0] as THREE.Points,positions=points.geometry.getAttribute('position') as THREE.BufferAttribute;
+ a.update(5,false);const version=positions.version;a.update(5.001,false);assert.equal(positions.version,version,'particle uploads capped at 30 Hz');
+ a.update(20,true);a.update(5,false);const resume=Array.from(positions.array);a.update(90,false);a.update(5,false);assert.deepEqual(Array.from(positions.array),resume,'clock seeking and motion preference changes do not accumulate drift');
+ a.dispose();const disposedVersion=positions.version;a.update(24,false);assert.equal(positions.version,disposedVersion);
+});
