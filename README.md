@@ -8,6 +8,8 @@ Next sprint: [parallel implementation plan](docs/PARALLEL-IMPLEMENTATION-PLAN.md
 
 Product scope also includes English: [The Odyssey and Pride and Prejudice expansion](docs/LITERATURE-EXPANSION.md). Those literature packs are planned; the current runtime remains the Alexandria lesson.
 
+For independent review, pass along [the one-page context brief](docs/REVIEW-CONTEXT.md). [Learning UX research](docs/LEARNING-UX-RESEARCH.md) compares five products and separates documented patterns from design recommendations.
+
 ## Run locally
 
 Requires Node 24 (the repository includes `.tool-versions`).
@@ -32,6 +34,7 @@ The first page opens the teacher studio with a prepared lesson. “Generate with
 - Three.js harbor district with library, market, docks, moving ships, water, citizens, evidence markers, camera focus, and visible scenario changes.
 - Original Blender-authored library and lighthouse assets, loaded as GLB with a playable fallback and independently animated archive doors. Editable source and regeneration instructions live in [assets/blender](assets/blender/README.md).
 - Ground-level exploration: choose **Walk around**, use WASD/arrows to move, drag to look, Shift for faster movement, E to inspect a nearby place, or Escape for overview. Touch movement/turn controls and location shortcuts remain available. Outdoor streets, stairs, and piers are walkable; building interiors are not yet navigable.
+- A viewport-filling student world with an on-demand journal and argument panel. The in-app reader contains text, source context, citation insertion, and an attributed setting illustration; students can reopen sources while drafting. The illustration is explicitly separate from historical evidence.
 - Student evidence inventory, merchant/archivist dialogue, four-part argument rubric, and archive unlock.
 - Native Astra mid-turn steering over WebSocket. A standard request remains available when the transport is unavailable; it is labeled separately.
 - Persistent classroom state and student isolation. Clients poll every 2.5 seconds; no synthetic classroom counts.

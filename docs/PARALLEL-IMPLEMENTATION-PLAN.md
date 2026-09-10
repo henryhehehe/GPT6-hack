@@ -4,6 +4,8 @@ Updated September 10, 2026. This is the next implementation sprint for the exist
 
 ## Target
 
+**Learning/immersion priority:** [UX research](LEARNING-UX-RESEARCH.md) and the [independent review brief](REVIEW-CONTEXT.md) now guide the next pass. The student shell now uses a viewport-filling world with an on-demand journal/conversation and in-app evidence reader. Next learning gates: structured per-claim citation selection, passage annotations/versioning, an explicit prediction and revision reflection, and teacher-visible changes in reasoning. Evidence count and archive unlock must not be reported as learning outcomes. These requirements apply to the literature expansion too.
+
 **Scope expansion:** the user also wants English literature, including The Odyssey and Pride and Prejudice. [Literature expansion](LITERATURE-EXPANSION.md) defines the book-specific teaching loops, Blender packs, source/rubric contracts, and revised agent work. Retain the correctness fixes below; freeze the generalized lesson-pack contract before implementing literature across these tracks. The running app remains Alexandria-only until that work is complete.
 
 **Art direction update:** the user requested higher-fidelity Blender landmarks. The separate asset track creates an editable library/lighthouse source scene and GLB exports; the scene owner integrates them through `components/worlds/scene/landmarks.ts`. Preserve the loaded assets and door-node contract when carrying out track B below. This does not replace the per-zone activity or hint-placement fixes.
