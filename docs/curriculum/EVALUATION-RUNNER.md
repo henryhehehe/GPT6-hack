@@ -67,3 +67,8 @@ The 20 historical cases are now integrated into `codex/review-fixes`, which cont
 The integrated review checkout passed all 100 automated tests, TypeScript, and the production build. The build retains the existing large-chunk warning. Its historical preflight prepared all 20 cases with zero model responses. These checks include canonical Strabo versus legacy paraphrase handling, invalidation after provenance/context changes, exact quotation validation, and synthetic runner orchestration.
 
 A live test was not completed. The first connection attempt found the previous local review server stopped. After the server restarted, automatic approval review rejected the model test because sending lesson excerpts and synthetic learner answers to the configured OpenAI service requires explicit user approval. No historical-suite model request was sent. The suite is ready for a bounded live run after that approval; no quotas, access controls, or model settings were changed to work around the rejection.
+
+
+## Live historical evaluation completed
+
+After user approval, all 20 historical cases completed through the integrated review API with no model errors or retries. See [HISTORICAL-LIVE-EVALUATION.md](HISTORICAL-LIVE-EVALUATION.md) for the actual feedback review, saved run identifiers, and one claim-credit caveat. This supersedes the earlier historical-suite approval block; human/teacher approval remains separate.
