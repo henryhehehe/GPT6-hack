@@ -2,24 +2,33 @@
 
 Generated from source usage records, measured published GLBs, and the actual placement registry. Regenerate with `node --import tsx scripts/catalog-external-models.ts`.
 
-Open `/model-catalog` in the running application for search, one-at-a-time 3D previews, clip playback and downloads. All 69 entries have local self-contained GLBs; only reviewed static selections load in lessons.
+Open /model-catalog in the running application for search, one-at-a-time 3D previews, clip playback and downloads. All 69 entries have local self-contained GLBs; only reviewed static selections load in lessons.
 
-Currently **49 distinct external models** appear in **91 placements across four settings**. Character bases/accessories and animation sources remain adaptation references. Scene-eligible means permitted for reviewed placement, not historically authenticated or device-benchmarked.
+The ten lesson worlds use **43 distinct external models** in **112 placements**. Including the three reusable base templates, the catalog indexes **49 models in 196 placements**. Template-only models are not presented as lesson usage. Character bases/accessories and animation sources remain adaptation references. Scene-eligible means permitted for reviewed placement, not historically authenticated or device-benchmarked.
 
 ## Scene payloads
 
 These are uncompressed GLB transfer bytes for external additions only, deduplicated within each scene. They exclude authored assets, JavaScript, renderer/GPU allocations, catalog metadata and textures after decoding. No FPS claim is implied.
 
-| Setting | Placements | Unique models | Extra GLB bytes |
+| Lesson scene / template | Placements | Unique models | Extra GLB bytes |
 | --- | ---: | ---: | ---: |
-| alexandria | 7 | 7 | 1,026,416 |
-| coast | 47 | 22 | 5,066,440 |
-| garden | 19 | 13 | 3,034,500 |
-| archive | 18 | 15 | 2,793,756 |
+| Alexandria (world) | 7 | 7 | 1,026,416 |
+| The Odyssey (world) | 25 | 20 | 4,981,628 |
+| Pride and Prejudice (world) | 13 | 7 | 1,136,972 |
+| Macbeth (world) | 5 | 3 | 530,288 |
+| Frankenstein (world) | 10 | 7 | 1,361,116 |
+| A Christmas Carol (world) | 9 | 7 | 1,566,096 |
+| The Tempest (world) | 16 | 9 | 3,549,208 |
+| Declaration of Independence (world) | 11 | 5 | 745,752 |
+| Douglass: literacy (world) | 8 | 6 | 914,700 |
+| Seneca Falls (world) | 8 | 6 | 918,156 |
+| Coast template (template) | 47 | 22 | 5,066,440 |
+| Garden template (template) | 19 | 13 | 3,034,500 |
+| Archive template (template) | 18 | 15 | 2,793,756 |
 
 ## Integration contract
 
-- Runtime placements live in `components/worlds/scene/externalLayout.ts`; only IDs from `lib/externalAssetIndex.json` are accepted. Never turn generated lesson text into a URL.
+- Base placements live in `components/worlds/scene/externalLayout.ts`. Lesson worlds resolve them through `themedSetting.ts`; supported reading details use `themeExternalDetails.ts`. The catalog indexes the final translated placements from the same runtime functions. Only IDs from `lib/externalAssetIndex.json` are accepted. Never turn generated lesson text into a URL.
 - Static exports use meters, Y-up, X/Z centered, and a ground origin. Scale defaults to 1; an explicit uniform placement scale also transforms collision bounds. The garden tea table uses 0.5 for a seated height. `Anchor_Inspect` is 65% up the bounds; `Anchor_Label` is above the top. The bounds describe the whole object, not the usable tabletop or hull waterline.
 - Use `loadExternalModels(parent, placements)` for lessons. It deduplicates requests, allows three concurrent loads, shares static geometry/materials, and retains a box fallback on failure. Call `dispose()` before traversing the parent for cleanup. Late results are disposed instead of attached.
 - `zone` opens the corresponding source station through the existing `onSelect` callback. It does not collect evidence, alter claim text, award points, or replace primary sources. Untagged objects are scenery.
@@ -130,11 +139,12 @@ These are uncompressed GLB transfer bytes for external additions only, deduplica
 
 **Current use:**
 
-- coast / `coastal-small-barrel`: position [-16.5, 0, 2], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- The Odyssey / `coastal-small-barrel`: position [-16.5, 0, -1], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- Coast template / `coastal-small-barrel`: position [-16.5, 0, 2], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-barrel', at: [0, 0, 0], turn: 0 }
@@ -177,11 +187,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `coastal-small-crate`: position [-16.5, 0, 3.2], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- The Odyssey / `coastal-small-crate`: position [-16.5, 0, 0.20000000000000018], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- Coast template / `coastal-small-crate`: position [-16.5, 0, 3.2], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-crate', at: [0, 0, 0], turn: 0 }
@@ -224,11 +235,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `shore-rowboat`: position [-23, -2.75, 24], yaw 0.6 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- The Odyssey / `shore-rowboat`: position [-23, -2.75, 24], yaw 0.6 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- Coast template / `shore-rowboat`: position [-23, -2.75, 24], yaw 0.6 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-boat-row-small', at: [0, 0, 0], turn: 0 }
@@ -271,11 +283,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `shore-rowboat-large`: position [24, -2.75, 25], yaw -0.4 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- The Odyssey / `shore-rowboat-large`: position [24, -2.75, 25], yaw -0.4 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- Coast template / `shore-rowboat-large`: position [24, -2.75, 25], yaw -0.4 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-boat-row-large', at: [0, 0, 0], turn: 0 }
@@ -318,11 +331,11 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- alexandria / `quay-paddle`: position [-10.9, 1.28, 21.9], yaw 1.5707963267948966 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
+- Alexandria / `quay-paddle`: position [-10.9, 1.28, 21.9], yaw 1.5707963267948966 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-tool-paddle', at: [0, 0, 0], turn: 0 }
@@ -580,21 +593,21 @@ Import this GLB in a standalone viewer or Blender. Assemble the matching compone
 
 **Current use:**
 
-- coast / `coastal-palm-1`: position [22.06833839313344, 0, 6.479848807352883], yaw 0.28559933214452665 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-3`: position [15.061796880741557, 0, 17.38224021014794], yaw 0.8567979964335799 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-5`: position [3.273241280285563, 0, 22.765893163261453], yaw 1.427996660722633 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-7`: position [-9.554545299043385, 0, 20.921535893153923], yaw 1.9991953250116865 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-9`: position [-19.34883125511717, 0, 12.43473880147874], yaw 2.57039398930074 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-11`: position [-23, 0, 2.8166876380389124e-15], yaw 3.141592653589793 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-13`: position [-19.34883125511717, 0, -12.434738801478744], yaw 3.7127913178788465 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-15`: position [-9.554545299043404, 0, -20.921535893153916], yaw 4.283989982167899 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-17`: position [3.2732412802855517, 0, -22.765893163261453], yaw 4.855188646456953 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-19`: position [15.061796880741563, 0, -17.382240210147938], yaw 5.426387310746007 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-21`: position [22.06833839313344, 0, -6.479848807352885], yaw 5.99758597503506 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-1`: position [22.06833839313344, 0, 6.479848807352883], yaw 0.28559933214452665 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-3`: position [15.061796880741557, 0, 17.38224021014794], yaw 0.8567979964335799 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-5`: position [3.273241280285563, 0, 22.765893163261453], yaw 1.427996660722633 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-7`: position [-9.554545299043385, 0, 20.921535893153923], yaw 1.9991953250116865 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-9`: position [-19.34883125511717, 0, 12.43473880147874], yaw 2.57039398930074 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-11`: position [-23, 0, 2.8166876380389124e-15], yaw 3.141592653589793 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-13`: position [-19.34883125511717, 0, -12.434738801478744], yaw 3.7127913178788465 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-15`: position [-9.554545299043404, 0, -20.921535893153916], yaw 4.283989982167899 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-17`: position [3.2732412802855517, 0, -22.765893163261453], yaw 4.855188646456953 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-19`: position [15.061796880741563, 0, -17.382240210147938], yaw 5.426387310746007 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-21`: position [22.06833839313344, 0, -6.479848807352885], yaw 5.99758597503506 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-palm-detailed-bend', at: [0, 0, 0], turn: 0 }
@@ -637,21 +650,21 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `coastal-palm-0`: position [23, 0, 0], yaw 0 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-2`: position [19.34883125511717, 0, 12.434738801478744], yaw 0.5711986642890533 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-4`: position [9.554545299043388, 0, 20.921535893153923], yaw 1.1423973285781066 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-6`: position [-3.2732412802855553, 0, 22.765893163261453], yaw 1.7135959928671598 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-8`: position [-15.061796880741555, 0, 17.38224021014794], yaw 2.284794657156213 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-10`: position [-22.068338393133438, 0, 6.479848807352892], yaw 2.855993321445266 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-12`: position [-22.06833839313344, 0, -6.479848807352876], yaw 3.4271919857343196 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-14`: position [-15.06179688074156, 0, -17.382240210147938], yaw 3.998390650023373 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-16`: position [-3.27324128028556, 0, -22.765893163261453], yaw 4.569589314312426 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-18`: position [9.554545299043397, 0, -20.92153589315392], yaw 5.14078797860148 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
-- coast / `coastal-palm-20`: position [19.348831255117158, 0, -12.434738801478758], yaw 5.711986642890532 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-0`: position [23, 0, 0], yaw 0 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-2`: position [19.34883125511717, 0, 12.434738801478744], yaw 0.5711986642890533 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-4`: position [9.554545299043388, 0, 20.921535893153923], yaw 1.1423973285781066 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-6`: position [-3.2732412802855553, 0, 22.765893163261453], yaw 1.7135959928671598 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-8`: position [-15.061796880741555, 0, 17.38224021014794], yaw 2.284794657156213 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-10`: position [-22.068338393133438, 0, 6.479848807352892], yaw 2.855993321445266 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-12`: position [-22.06833839313344, 0, -6.479848807352876], yaw 3.4271919857343196 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-14`: position [-15.06179688074156, 0, -17.382240210147938], yaw 3.998390650023373 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-16`: position [-3.27324128028556, 0, -22.765893163261453], yaw 4.569589314312426 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-18`: position [9.554545299043397, 0, -20.92153589315392], yaw 5.14078797860148 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
+- Coast template / `coastal-palm-20`: position [19.348831255117158, 0, -12.434738801478758], yaw 5.711986642890532 rad, uniform scale 1; scenery only; solid ground footprint (trunk radius 1.5 m).
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-palm-detailed-straight', at: [0, 0, 0], turn: 0 }
@@ -694,11 +707,13 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `offshore-rocks-a`: position [16, -2.65, -28], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- The Odyssey / `offshore-rocks-a`: position [16, -2.65, -28], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- The Tempest / `offshore-rocks-a`: position [16, -2.65, -28], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- Coast template / `offshore-rocks-a`: position [16, -2.65, -28], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-rocks-a', at: [0, 0, 0], turn: 0 }
@@ -741,11 +756,13 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `shore-rocks-b`: position [30, -2.65, -13], yaw 0.8 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- The Odyssey / `shore-rocks-b`: position [30, -2.65, -13], yaw 0.8 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- The Tempest / `shore-rocks-b`: position [30, -2.65, -13], yaw 0.8 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- Coast template / `shore-rocks-b`: position [30, -2.65, -13], yaw 0.8 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-rocks-b', at: [0, 0, 0], turn: 0 }
@@ -788,11 +805,13 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `shore-rocks-c`: position [-12, -2.65, -31], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- The Odyssey / `shore-rocks-c`: position [-12, -2.65, -31], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- The Tempest / `shore-rocks-c`: position [-12, -2.65, -31], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- Coast template / `shore-rocks-c`: position [-12, -2.65, -31], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-rocks-c', at: [0, 0, 0], turn: 0 }
@@ -835,11 +854,13 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `offshore-sand-bank`: position [-28, -2.7, 21], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- The Odyssey / `offshore-sand-bank`: position [-28, -2.7, 21], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- The Tempest / `offshore-sand-bank`: position [-28, -2.7, 21], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- Coast template / `offshore-sand-bank`: position [-28, -2.7, 21], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'kenney-pirate-kit-rocks-sand-a', at: [0, 0, 0], turn: 0 }
@@ -968,11 +989,11 @@ Import this GLB in a standalone viewer or Blender. Assemble the matching compone
 
 **Current use:**
 
-- alexandria / `market-bag`: position [14.65, 1.808, 4.35], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- Alexandria / `market-bag`: position [14.65, 1.808, 4.35], yaw 0 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-bag', at: [0, 0, 0], turn: 0 }
@@ -1015,11 +1036,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `coastal-tall-barrel`: position [-18, 0, 2], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- The Odyssey / `coastal-tall-barrel`: position [-18, 0, -1], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- Coast template / `coastal-tall-barrel`: position [-18, 0, 2], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-barrel', at: [0, 0, 0], turn: 0 }
@@ -1062,11 +1084,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- garden / `garden-reading-bench`: position [4.8, 0, 12.2], yaw 1.5707963267948966 rad, uniform scale 1.3; opens market; solid ground footprint.
+- Douglass: literacy / `courtyard-bench`: position [-11, 0, 14], yaw 0 rad, uniform scale 1.5; scenery only; solid ground footprint.
+- Garden template / `garden-reading-bench`: position [4.8, 0, 12.2], yaw 1.5707963267948966 rad, uniform scale 1.3; opens market; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-bench', at: [0, 0, 0], turn: 0 }
@@ -1109,11 +1132,13 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- archive / `reading-bookcase`: position [-5, 0, -15], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- Frankenstein / `study-bookcase-left`: position [-15, 0, -4], yaw 0 rad, uniform scale 1.5; scenery only; solid ground footprint.
+- Frankenstein / `study-bookcase-right`: position [15, 0, -4], yaw 0 rad, uniform scale 1.5; scenery only; solid ground footprint.
+- Archive template / `reading-bookcase`: position [-5, 0, -15], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-bookcase-2', at: [0, 0, 0], turn: 0 }
@@ -1156,11 +1181,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- archive / `reading-bookstand`: position [-7.65, 0.631, -12.05], yaw 0 rad, uniform scale 1; opens library; supported by reading-table.
+- Seneca Falls / `meeting-lectern`: position [0, 0, -15], yaw 0 rad, uniform scale 1.4; scenery only; solid ground footprint.
+- Archive template / `reading-bookstand`: position [-7.65, 0.631, -12.05], yaw 0 rad, uniform scale 1; opens library; supported by reading-table.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-bookstand', at: [0, 0, 0], turn: 0 }
@@ -1203,11 +1229,17 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- archive / `reading-book`: position [-7.05, 0.631, -12.05], yaw 0 rad, uniform scale 1; opens library; supported by reading-table.
+- Frankenstein / `study-cabinet-book-5`: position [-7.896, 1.4311930000000002, -16], yaw 0 rad, uniform scale 1; opens library; supported by study-cabinet.
+- A Christmas Carol / `counting-house-cabinet-book-5`: position [-12.92, 1.10161, 15], yaw 0 rad, uniform scale 1; opens harbor; supported by counting-house-cabinet.
+- Declaration of Independence / `assembly-table-left-book-5`: position [-6.872, 1.008216, -6], yaw 0 rad, uniform scale 1; opens library; supported by assembly-table-left.
+- Declaration of Independence / `assembly-table-right-book-5`: position [7.128, 1.008216, -6], yaw 0 rad, uniform scale 1; opens library; supported by assembly-table-right.
+- Douglass: literacy / `courtyard-table-book-5`: position [11.08, 1.1485299999999998, -10], yaw 0 rad, uniform scale 1; opens library; supported by courtyard-table.
+- Seneca Falls / `meeting-desk-book-5`: position [-9.888, 0.882564, -13], yaw 0 rad, uniform scale 1; opens library; supported by meeting-desk.
+- Archive template / `reading-book`: position [-7.05, 0.631, -12.05], yaw 0 rad, uniform scale 1; opens library; supported by reading-table.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-book-5', at: [0, 0, 0], turn: 0 }
@@ -1250,11 +1282,17 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- archive / `reading-book-stack`: position [-6.45, 0.631, -12.05], yaw 0 rad, uniform scale 1; opens library; supported by reading-table.
+- Frankenstein / `study-cabinet-book-stack-1`: position [-8.585, 1.4311930000000002, -16], yaw 0 rad, uniform scale 1; opens library; supported by study-cabinet.
+- A Christmas Carol / `counting-house-cabinet-book-stack-1`: position [-13.45, 1.10161, 15], yaw 0 rad, uniform scale 1; opens harbor; supported by counting-house-cabinet.
+- Declaration of Independence / `assembly-table-left-book-stack-1`: position [-7.72, 1.008216, -6], yaw 0 rad, uniform scale 1; opens library; supported by assembly-table-left.
+- Declaration of Independence / `assembly-table-right-book-stack-1`: position [6.28, 1.008216, -6], yaw 0 rad, uniform scale 1; opens library; supported by assembly-table-right.
+- Douglass: literacy / `courtyard-table-book-stack-1`: position [10.55, 1.1485299999999998, -10], yaw 0 rad, uniform scale 1; opens library; supported by courtyard-table.
+- Seneca Falls / `meeting-desk-book-stack-1`: position [-10.63, 0.882564, -13], yaw 0 rad, uniform scale 1; opens library; supported by meeting-desk.
+- Archive template / `reading-book-stack`: position [-6.45, 0.631, -12.05], yaw 0 rad, uniform scale 1; opens library; supported by reading-table.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-book-stack-1', at: [0, 0, 0], turn: 0 }
@@ -1297,13 +1335,19 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `harbor-bucket`: position [-9.95, 0.22, 4.7], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
-- coast / `market-bucket`: position [14.05, 0.22, 4.7], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
-- coast / `library-bucket`: position [2.05, 0.22, -12.3], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- The Odyssey / `harbor-bucket`: position [-9.95, 0.22, 1.7000000000000002], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- The Odyssey / `market-bucket`: position [11.05, 0.22, 6.699999999999999], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- The Odyssey / `library-bucket`: position [2.05, 0.22, -11.3], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- The Tempest / `harbor-bucket`: position [-8.95, 0.22, 5.699999999999999], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- The Tempest / `market-bucket`: position [14.05, 0.22, -0.2999999999999998], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- The Tempest / `library-bucket`: position [3.05, 0.22, -12.3], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- Coast template / `harbor-bucket`: position [-9.95, 0.22, 4.7], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- Coast template / `market-bucket`: position [14.05, 0.22, 4.7], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- Coast template / `library-bucket`: position [2.05, 0.22, -12.3], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-bucket-wooden-1', at: [0, 0, 0], turn: 0 }
@@ -1346,11 +1390,13 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- archive / `reading-cabinet`: position [-7, 0, -15], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- Frankenstein / `study-cabinet`: position [-8, 0, -16], yaw 0 rad, uniform scale 1.3; scenery only; solid ground footprint.
+- A Christmas Carol / `counting-house-cabinet`: position [-13, 0, 15], yaw 0 rad, uniform scale 1; scenery only; solid ground footprint.
+- Archive template / `reading-cabinet`: position [-7, 0, -15], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-cabinet', at: [0, 0, 0], turn: 0 }
@@ -1393,11 +1439,17 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- archive / `reading-candlestick`: position [-7.65, 0.631, -11.77], yaw 0 rad, uniform scale 1; opens library; supported by reading-table.
+- Frankenstein / `study-cabinet-candlestick`: position [-7.35, 1.4311930000000002, -16], yaw 0 rad, uniform scale 1; opens library; supported by study-cabinet.
+- A Christmas Carol / `counting-house-cabinet-candlestick`: position [-12.5, 1.10161, 15], yaw 0 rad, uniform scale 1; opens harbor; supported by counting-house-cabinet.
+- Declaration of Independence / `assembly-table-left-candlestick`: position [-6.2, 1.008216, -6], yaw 0 rad, uniform scale 1; opens library; supported by assembly-table-left.
+- Declaration of Independence / `assembly-table-right-candlestick`: position [7.8, 1.008216, -6], yaw 0 rad, uniform scale 1; opens library; supported by assembly-table-right.
+- Douglass: literacy / `courtyard-table-candlestick`: position [11.5, 1.1485299999999998, -10], yaw 0 rad, uniform scale 1; opens library; supported by courtyard-table.
+- Seneca Falls / `meeting-desk-candlestick`: position [-9.3, 0.882564, -13], yaw 0 rad, uniform scale 1; opens library; supported by meeting-desk.
+- Archive template / `reading-candlestick`: position [-7.65, 0.631, -11.77], yaw 0 rad, uniform scale 1; opens library; supported by reading-table.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-candlestick', at: [0, 0, 0], turn: 0 }
@@ -1440,16 +1492,37 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- garden / `harbor-candle`: position [-12.48, 1.055, 3.5], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
-- garden / `market-candle`: position [11.52, 1.055, 3.5], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
-- garden / `library-candle`: position [-0.48, 1.055, -13.5], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
-- archive / `harbor-candle`: position [-11.37, 1.125, 3.55], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
-- archive / `market-candle`: position [12.63, 1.125, 3.55], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
-- archive / `library-candle`: position [0.63, 1.125, -13.45], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- Pride and Prejudice / `harbor-candle`: position [-11.48, 1.055, 5.5], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
+- Pride and Prejudice / `market-candle`: position [10.52, 1.055, -3.5], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- Pride and Prejudice / `library-candle`: position [-7.48, 1.055, -12.5], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- Macbeth / `harbor-candle`: position [-12.48, 1.055, 3.5], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
+- Macbeth / `market-candle`: position [10.52, 1.055, 0.5], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- Macbeth / `library-candle`: position [-0.48, 1.055, -13.5], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- Frankenstein / `harbor-candle`: position [-10.48, 1.055, 1.5], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
+- Frankenstein / `market-candle`: position [9.52, 1.055, 1.5], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- Frankenstein / `library-candle`: position [-0.48, 1.055, -11.5], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- A Christmas Carol / `harbor-candle`: position [-10.48, 1.055, 7.5], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
+- A Christmas Carol / `market-candle`: position [9.52, 1.055, -1.5], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- A Christmas Carol / `library-candle`: position [-10.48, 1.055, -11.5], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- Declaration of Independence / `harbor-candle`: position [-10.48, 1.055, 0.5], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
+- Declaration of Independence / `market-candle`: position [9.52, 1.055, 0.5], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- Declaration of Independence / `library-candle`: position [-0.48, 1.055, -12.5], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- Douglass: literacy / `harbor-candle`: position [-11.48, 1.055, 5.5], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
+- Douglass: literacy / `market-candle`: position [10.52, 1.055, 2.5], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- Douglass: literacy / `library-candle`: position [-0.48, 1.055, -12.5], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- Seneca Falls / `harbor-candle`: position [-10.48, 1.055, 5.5], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
+- Seneca Falls / `market-candle`: position [9.52, 1.055, 5.5], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- Seneca Falls / `library-candle`: position [-0.48, 1.055, -11.5], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- Garden template / `harbor-candle`: position [-12.48, 1.055, 3.5], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
+- Garden template / `market-candle`: position [11.52, 1.055, 3.5], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- Garden template / `library-candle`: position [-0.48, 1.055, -13.5], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- Archive template / `harbor-candle`: position [-11.37, 1.125, 3.55], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
+- Archive template / `market-candle`: position [12.63, 1.125, 3.55], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- Archive template / `library-candle`: position [0.63, 1.125, -13.45], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-candle-1', at: [0, 0, 0], turn: 0 }
@@ -1492,12 +1565,13 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- garden / `garden-tea-chair`: position [6.5, 0, 13.15], yaw 3.141592653589793 rad, uniform scale 1; opens market; solid ground footprint.
-- archive / `archive-comparison-chair`: position [7, 0, -10.7], yaw 3.141592653589793 rad, uniform scale 1; opens library; solid ground footprint.
+- Pride and Prejudice / `garden-tea-chair`: position [5.5, 0, 6.15], yaw 3.141592653589793 rad, uniform scale 1; opens market; solid ground footprint.
+- Garden template / `garden-tea-chair`: position [6.5, 0, 13.15], yaw 3.141592653589793 rad, uniform scale 1; opens market; solid ground footprint.
+- Archive template / `archive-comparison-chair`: position [7, 0, -10.7], yaw 3.141592653589793 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-chair-1', at: [0, 0, 0], turn: 0 }
@@ -1540,11 +1614,13 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `coastal-wood-crate`: position [-19.4, 0, 2], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- The Odyssey / `coastal-wood-crate`: position [-19.4, 0, -1], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- Macbeth / `ruin-crate`: position [-13, 0, -7], yaw 0 rad, uniform scale 1; scenery only; solid ground footprint.
+- Coast template / `coastal-wood-crate`: position [-19.4, 0, 2], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-crate-wooden', at: [0, 0, 0], turn: 0 }
@@ -1587,11 +1663,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- garden / `garden-empty-produce-box`: position [16, 0, 6.2], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- A Christmas Carol / `street-crate`: position [13, 0, 12], yaw 0 rad, uniform scale 1; scenery only; solid ground footprint.
+- Garden template / `garden-empty-produce-box`: position [16, 0, 6.2], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-farmcrate-empty', at: [0, 0, 0], turn: 0 }
@@ -1634,11 +1711,11 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- garden / `garden-produce`: position [16, 0, 5], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- Garden template / `garden-produce`: position [16, 0, 5], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-farmcrate-apple', at: [0, 0, 0], turn: 0 }
@@ -1681,11 +1758,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- garden / `garden-tea-mug`: position [6.77, 0.778, 11.85], yaw 0 rad, uniform scale 1; opens market; supported by garden-tea-table.
+- Pride and Prejudice / `garden-tea-mug`: position [5.77, 0.778, 4.85], yaw 0 rad, uniform scale 1; opens market; supported by garden-tea-table.
+- Garden template / `garden-tea-mug`: position [6.77, 0.778, 11.85], yaw 0 rad, uniform scale 1; opens market; supported by garden-tea-table.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-mug', at: [0, 0, 0], turn: 0 }
@@ -1728,11 +1806,11 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- garden / `garden-cooking-pot`: position [16.5, 0, 8], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- Garden template / `garden-cooking-pot`: position [16.5, 0, 8], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-pot-1', at: [0, 0, 0], turn: 0 }
@@ -1818,14 +1896,20 @@ Import this GLB in a standalone viewer or Blender. Assemble the matching compone
 
 **Current use:**
 
-- alexandria / `archive-pouch`: position [-4.15, 4.7806, -8.8], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
-- coast / `harbor-pouch`: position [-12.65, 1.125, 3.6], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
-- coast / `market-pouch`: position [11.35, 1.125, 3.6], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
-- coast / `library-pouch`: position [-0.65, 1.125, -13.4], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- Alexandria / `archive-pouch`: position [-4.15, 4.7806, -8.8], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- The Odyssey / `harbor-pouch`: position [-12.649999999999999, 1.125, 0.5999999999999996], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
+- The Odyssey / `market-pouch`: position [8.350000000000001, 1.125, 5.6], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- The Odyssey / `library-pouch`: position [-0.65, 1.125, -12.399999999999999], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- The Tempest / `harbor-pouch`: position [-11.649999999999999, 1.125, 4.6], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
+- The Tempest / `market-pouch`: position [11.350000000000001, 1.125, -1.4], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- The Tempest / `library-pouch`: position [0.35, 1.125, -13.399999999999999], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- Coast template / `harbor-pouch`: position [-12.65, 1.125, 3.6], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
+- Coast template / `market-pouch`: position [11.35, 1.125, 3.6], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- Coast template / `library-pouch`: position [-0.65, 1.125, -13.4], yaw 0 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-pouch-large', at: [0, 0, 0], turn: 0 }
@@ -1868,11 +1952,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `coastal-rope-coil`: position [-19.4, 0.707, 2], yaw 0 rad, uniform scale 0.65; opens harbor; supported by coastal-wood-crate.
+- The Odyssey / `coastal-rope-coil`: position [-19.4, 0.707, -1], yaw 0 rad, uniform scale 0.65; opens harbor; supported by coastal-wood-crate.
+- Coast template / `coastal-rope-coil`: position [-19.4, 0.707, 2], yaw 0 rad, uniform scale 0.65; opens harbor; supported by coastal-wood-crate.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-rope-1', at: [0, 0, 0], turn: 0 }
@@ -1915,11 +2000,11 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- alexandria / `quay-rope`: position [-5.05, 1.28, 20], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
+- Alexandria / `quay-rope`: position [-5.05, 1.28, 20], yaw 0 rad, uniform scale 1; opens harbor; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-rope-2', at: [0, 0, 0], turn: 0 }
@@ -1962,11 +2047,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `coastal-spare-rope`: position [-20, 0, 5], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- The Odyssey / `coastal-spare-rope`: position [-20, 0, 2], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- Coast template / `coastal-spare-rope`: position [-20, 0, 5], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-rope-3', at: [0, 0, 0], turn: 0 }
@@ -2009,12 +2095,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- alexandria / `archive-scroll`: position [-4.65, 4.7947999999999995, -8.45], yaw 0.12 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
-- archive / `archive-comparison-scroll`: position [6.7, 1.149, -12], yaw 0 rad, uniform scale 1; opens library; supported by archive-comparison-desk.
+- Alexandria / `archive-scroll`: position [-4.65, 4.7947999999999995, -8.45], yaw 0.12 rad, uniform scale 1; opens library; existing support/trunk blocker or outside walking route.
+- Archive template / `archive-comparison-scroll`: position [6.7, 1.149, -12], yaw 0 rad, uniform scale 1; opens library; supported by archive-comparison-desk.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-scroll-1', at: [0, 0, 0], turn: 0 }
@@ -2057,11 +2143,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `coastal-work-scroll`: position [-18.45, 0.879, 5], yaw 0 rad, uniform scale 1; opens harbor; supported by coastal-workbench.
+- The Odyssey / `coastal-work-scroll`: position [-18.45, 0.879, 2], yaw 0 rad, uniform scale 1; opens harbor; supported by coastal-workbench.
+- Coast template / `coastal-work-scroll`: position [-18.45, 0.879, 5], yaw 0 rad, uniform scale 1; opens harbor; supported by coastal-workbench.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-scroll-2', at: [0, 0, 0], turn: 0 }
@@ -2104,11 +2191,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- archive / `reading-arch-shelf`: position [-9, 0, -15], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- Frankenstein / `study-shelf`: position [8, 0, -16], yaw 0 rad, uniform scale 1.5; scenery only; solid ground footprint.
+- Archive template / `reading-arch-shelf`: position [-9, 0, -15], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-shelf-arch', at: [0, 0, 0], turn: 0 }
@@ -2151,11 +2239,11 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- archive / `reading-low-shelf`: position [-9, 0, -13.5], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- Archive template / `reading-low-shelf`: position [-9, 0, -13.5], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-shelf-simple', at: [0, 0, 0], turn: 0 }
@@ -2198,11 +2286,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- garden / `garden-display-cart`: position [18, 0, 8], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- A Christmas Carol / `street-cart`: position [10, 0, 13], yaw 0 rad, uniform scale 1; scenery only; solid ground footprint.
+- Garden template / `garden-display-cart`: position [18, 0, 8], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-stall-cart-empty', at: [0, 0, 0], turn: 0 }
@@ -2245,11 +2334,11 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- garden / `garden-display-stall`: position [18, 0, 4], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- Garden template / `garden-display-stall`: position [18, 0, 4], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-stall-empty', at: [0, 0, 0], turn: 0 }
@@ -2292,11 +2381,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `coastal-work-stool`: position [-18, 0, 6.25], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- The Odyssey / `coastal-work-stool`: position [-18, 0, 3.25], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- Coast template / `coastal-work-stool`: position [-18, 0, 6.25], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-stool', at: [0, 0, 0], turn: 0 }
@@ -2339,11 +2429,14 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- archive / `reading-table`: position [-7, 0, -12], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- Declaration of Independence / `assembly-table-left`: position [-7, 0, -6], yaw 0 rad, uniform scale 1.6; scenery only; solid ground footprint.
+- Declaration of Independence / `assembly-table-right`: position [7, 0, -6], yaw 0 rad, uniform scale 1.6; scenery only; solid ground footprint.
+- Seneca Falls / `meeting-desk`: position [-10, 0, -13], yaw 0 rad, uniform scale 1.4; scenery only; solid ground footprint.
+- Archive template / `reading-table`: position [-7, 0, -12], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-table-large', at: [0, 0, 0], turn: 0 }
@@ -2386,11 +2479,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- garden / `garden-tea-plate`: position [6.25, 0.778, 12.02], yaw 0 rad, uniform scale 1; opens market; supported by garden-tea-table.
+- Pride and Prejudice / `garden-tea-plate`: position [5.25, 0.778, 5.02], yaw 0 rad, uniform scale 1; opens market; supported by garden-tea-table.
+- Garden template / `garden-tea-plate`: position [6.25, 0.778, 12.02], yaw 0 rad, uniform scale 1; opens market; supported by garden-tea-table.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-table-plate', at: [0, 0, 0], turn: 0 }
@@ -2433,15 +2527,19 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- alexandria / `market-vessel`: position [11.15, 1.808, 5.65], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
-- coast / `harbor-vessel`: position [-9.35, 0.22, 5.9], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
-- coast / `library-vessel`: position [2.65, 0.22, -11.1], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
-- archive / `harbor-vessel`: position [-9.7, 0.22, 3.9], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
-- archive / `market-vessel`: position [14.3, 0.22, 3.9], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- Alexandria / `market-vessel`: position [11.15, 1.808, 5.65], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- The Odyssey / `harbor-vessel`: position [-9.350000000000001, 0.22, 2.9000000000000004], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- The Odyssey / `library-vessel`: position [2.65, 0.22, -10.100000000000001], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- The Tempest / `harbor-vessel`: position [-8.350000000000001, 0.22, 6.9], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- The Tempest / `library-vessel`: position [3.65, 0.22, -11.100000000000001], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- Coast template / `harbor-vessel`: position [-9.35, 0.22, 5.9], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- Coast template / `library-vessel`: position [2.65, 0.22, -11.1], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- Archive template / `harbor-vessel`: position [-9.7, 0.22, 3.9], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- Archive template / `market-vessel`: position [14.3, 0.22, 3.9], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-vase-2', at: [0, 0, 0], turn: 0 }
@@ -2484,13 +2582,16 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- alexandria / `market-vessel-tall`: position [19.15, 1.808, 5.65], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
-- coast / `market-vessel`: position [14.65, 0.22, 5.9], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
-- archive / `library-vessel`: position [2.3, 0.22, -13.1], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- Alexandria / `market-vessel-tall`: position [19.15, 1.808, 5.65], yaw 0 rad, uniform scale 1; opens market; existing support/trunk blocker or outside walking route.
+- The Odyssey / `market-vessel`: position [11.649999999999999, 0.22, 7.9], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- Macbeth / `ruin-vessel`: position [13, 0, -9], yaw 0 rad, uniform scale 1; scenery only; solid ground footprint.
+- The Tempest / `market-vessel`: position [14.649999999999999, 0.22, 0.9000000000000004], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- Coast template / `market-vessel`: position [14.65, 0.22, 5.9], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- Archive template / `library-vessel`: position [2.3, 0.22, -13.1], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-vase-4', at: [0, 0, 0], turn: 0 }
@@ -2533,11 +2634,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- coast / `coastal-workbench`: position [-18, 0, 5], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- The Odyssey / `coastal-workbench`: position [-18, 0, 2], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- Coast template / `coastal-workbench`: position [-18, 0, 5], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-workbench', at: [0, 0, 0], turn: 0 }
@@ -2580,11 +2682,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- archive / `archive-comparison-desk`: position [7, 0, -12], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- Douglass: literacy / `courtyard-table`: position [11, 0, -10], yaw 0 rad, uniform scale 1; scenery only; solid ground footprint.
+- Archive template / `archive-comparison-desk`: position [7, 0, -12], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'quaternius-fantasy-props-workbench-drawers', at: [0, 0, 0], turn: 0 }
@@ -3133,11 +3236,15 @@ Use the local GLB as a reference in Blender or a standalone Three.js viewer. Fit
 
 **Current use:**
 
-- coast / `shore-rock-scan`: position [-32, -2.7, -14], yaw 0.4 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- The Odyssey / `shore-rock-scan`: position [-32, -2.7, -14], yaw 0.4 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- The Tempest / `shore-rock-scan`: position [-32, -2.7, -14], yaw 0.4 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
+- The Tempest / `storm-east-shelf`: position [31, -0.4, -8], yaw 0.4 rad, uniform scale 1.7; scenery only; existing support/trunk blocker or outside walking route.
+- The Tempest / `storm-rock-shelf`: position [-31, -0.15, 10], yaw 1.2 rad, uniform scale 1.5; scenery only; existing support/trunk blocker or outside walking route.
+- Coast template / `shore-rock-scan`: position [-32, -2.7, -14], yaw 0.4 rad, uniform scale 1; scenery only; existing support/trunk blocker or outside walking route.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'polyhaven-coast_rocks_01', at: [0, 0, 0], turn: 0 }
@@ -3181,11 +3288,12 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- garden / `garden-tea-table`: position [6.5, 0, 12], yaw 0 rad, uniform scale 0.5; opens market; solid ground footprint.
+- Pride and Prejudice / `garden-tea-table`: position [5.5, 0, 5], yaw 0 rad, uniform scale 0.5; opens market; solid ground footprint.
+- Garden template / `garden-tea-table`: position [6.5, 0, 12], yaw 0 rad, uniform scale 0.5; opens market; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'polyhaven-wooden_table_02', at: [0, 0, 0], turn: 0 }
@@ -3228,13 +3336,16 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- garden / `harbor-planter`: position [-9.85, 0.22, 2.8], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
-- garden / `market-planter`: position [14.15, 0.22, 2.8], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
-- garden / `library-planter`: position [2.15, 0.22, -14.2], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- Pride and Prejudice / `harbor-planter`: position [-8.850000000000001, 0.22, 4.800000000000001], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- Pride and Prejudice / `market-planter`: position [13.149999999999999, 0.22, -4.2], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- Pride and Prejudice / `library-planter`: position [-4.85, 0.22, -13.2], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- Garden template / `harbor-planter`: position [-9.85, 0.22, 2.8], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- Garden template / `market-planter`: position [14.15, 0.22, 2.8], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- Garden template / `library-planter`: position [2.15, 0.22, -14.2], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'polyhaven-planter_pot_clay', at: [0, 0, 0], turn: 0 }
@@ -3277,13 +3388,16 @@ Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface 
 
 **Current use:**
 
-- garden / `harbor-basket`: position [-14.15, 0.22, 2.8], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
-- garden / `market-basket`: position [9.85, 0.22, 2.8], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
-- garden / `library-basket`: position [-2.15, 0.22, -14.2], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- Pride and Prejudice / `harbor-basket`: position [-13.149999999999999, 0.22, 4.800000000000001], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- Pride and Prejudice / `market-basket`: position [8.850000000000001, 0.22, -4.2], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- Pride and Prejudice / `library-basket`: position [-9.15, 0.22, -13.2], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
+- Garden template / `harbor-basket`: position [-14.15, 0.22, 2.8], yaw 0 rad, uniform scale 1; opens harbor; solid ground footprint.
+- Garden template / `market-basket`: position [9.85, 0.22, 2.8], yaw 0 rad, uniform scale 1; opens market; solid ground footprint.
+- Garden template / `library-basket`: position [-2.15, 0.22, -14.2], yaw 0 rad, uniform scale 1; opens library; solid ground footprint.
 
 **How to reuse:**
 
-Add a reviewed entry to `externalLayout.ts`, choose a stable supporting surface and check the walking route. Do not copy the example coordinates blindly.
+Use `externalLayout.ts` for reusable templates or `themedSetting.ts` / `themeExternalDetails.ts` for a named world. Choose a stable supporting surface and check the walking route. The catalog provides resolved per-scene JSON including external support furniture; do not apply the theme translation a second time. Do not copy the example coordinates blindly.
 
 ```ts
 { key: 'unique-name', asset: 'polyhaven-wicker_basket_02', at: [0, 0, 0], turn: 0 }

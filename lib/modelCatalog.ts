@@ -1,10 +1,9 @@
 import index from './externalAssetIndex.json';
-import {externalPlacements,type ExternalPlacement,type ExternalSetting} from '@/components/worlds/scene/externalLayout';
+import type {ExternalPlacement} from '@/components/worlds/scene/externalLayout';
+import {catalogScenes,catalogPlacements,type CatalogPlacement} from './modelCatalogScenes';
+export {catalogScenes,catalogSettings,catalogPlacements,catalogWorldPlacements,sceneLabel,sceneSource,type CatalogPlacement} from './modelCatalogScenes';
 
 export type CatalogAsset={id:string;title:string;creator:string;sourceUrl:string;license:string;licenseUrl:string;url:string;bytes:number;sha256:string;dimensions:number[];triangles:number;materials:number;skins:number;category:string;classroomStatus:string;sourcePath:string;clips:string[];modifications:string[];anchors:string[];usage:Record<string,string|number|null>};
-export const catalogSettings:ExternalSetting[]=['alexandria','coast','garden','archive'];
-export type CatalogPlacement=ExternalPlacement&{setting:ExternalSetting};
-export const catalogPlacements:CatalogPlacement[]=catalogSettings.flatMap(setting=>externalPlacements(setting).map(p=>({...p,setting})));
 export const catalogLabel=(text:string)=>text.replaceAll('-',' ').replaceAll('_',' ');
 export const catalogSize=(bytes:number)=>bytes>=1000000?`${(bytes/1000000).toFixed(2)} MB`:`${(bytes/1000).toFixed(1)} kB`;
 export const readinessLabel=(status:string)=>status==='scene-eligible'?'Ready for scene placement':status==='adaptation-required'?'Needs adaptation':'Needs assembly / context review';
@@ -41,6 +40,8 @@ export function placementCode(placement:CatalogPlacement){
  return JSON.stringify(placementBundle(placement),null,2);
 }
 export function loaderCode(placement:CatalogPlacement){
+ const scene=catalogScenes.find(s=>s.id===placement.setting);
+ if(scene?.kind==='world'&&scene.id!=='alexandria')return themedLoaderCode(scene.id);
  const generated=placement.setting!=='alexandria';
  return `import type { Object3D } from 'three';
 import { loadExternalModels } from '@/components/worlds/scene/externalModels';
@@ -62,4 +63,29 @@ ${generated?`  const navigation = createSettingNavigation(
 // Keep the existing pickSceneSelection / onSelect interaction hooks.
 // Call the returned dispose() inside your scene cleanup, before
 // disposing the parent scene. Do not call it immediately after setup.`;
+}
+
+function themedLoaderCode(id:string){
+ return `import type { Object3D } from 'three';
+import { WORLD_THEMES } from '@/lib/worldThemes';
+import { themedExternalPlacements } from '@/components/worlds/scene/themedSetting';
+import { placementBounds } from '@/components/worlds/scene/externalLayout';
+import { loadExternalModels } from '@/components/worlds/scene/externalModels';
+
+// Attach the external layer to a new themed scene.
+// Existing GeneratedWorldScene already does this.
+export function attachSceneArt(scene: Object3D) {
+  const theme = WORLD_THEMES['${id}'];
+  const placements = themedExternalPlacements(theme);
+  const art = loadExternalModels(scene, placements);
+  const obstacles = placements.filter(p => p.solid).map(placementBounds);
+  return { art, placements, obstacles, dispose: () => art.dispose() };
+}
+
+// Keep the themed authored furniture and architecture loaders.
+// Merge these obstacles with architecture.obstacles when calling
+// createSettingNavigation(themedPlacements(theme), combinedObstacles,
+//   themeLayout(theme)). Do not use the base-template navigation.
+// Keep pickSceneSelection / onSelect. Call the returned dispose()
+// inside scene cleanup, before disposing the parent scene.`;
 }

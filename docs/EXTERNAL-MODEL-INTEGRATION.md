@@ -94,3 +94,23 @@ The catalog now verifies fetched metadata against the bundled runtime registry a
 The preview and integration panel sit together. Pick a current placement, then copy valid JSON or a scene-setup function with cleanup. Tabletop copies include their supporting external table/crate and preserve its scale. Current coordinates assume the named base layout; when making another instance, update keys, support references and placement together. Existing scenes already attach this art, so the setup example is for a new scene.
 
 Individual assets have shareable `?asset=` links. On narrow screens, choosing an item brings its detail into view. The viewer provides Fit and keyboard-accessible zoom buttons, and pausing an animation preserves its playback position. Full placement tables, deeper loading notes and provenance remain available in expandable sections. Four catalog checks cover registry freshness, combined filters, copyable support bundles and setup-code parsing/cleanup.
+
+## Follow-up — actual lesson scenes and supported reading details
+
+The catalog now indexes the same resolved placements that the ten lesson worlds load, rather than treating the four base layouts as the current lesson scenes. It distinguishes 112 external placements in ten worlds from 84 placements in three reusable templates (196 cataloged placements in total). Scene filters, asset links with `?asset=…&scene=…`, per-item placement lists, setup examples, and lesson links follow that distinction. The generated usage guide and payload report include every world and template. These counts cover external art only; the separately authored Alexandria and setting kits remain outside this catalog.
+
+Eighteen new placements reuse the existing CC0 book, book-stack and candlestick GLBs on six existing furniture supports:
+
+| World | Existing support | Added objects | Opens source station |
+| --- | --- | --- | --- |
+| Frankenstein | Study cabinet | Book, book stack, candlestick | Library |
+| A Christmas Carol | Counting-house cabinet | Book, book stack, candlestick | Harbor |
+| Declaration | Left and right comparison tables | Three objects per table | Library |
+| Douglass: literacy | Courtyard work desk | Book, book stack, candlestick | Library |
+| Seneca Falls | Meeting desk | Book, book stack, candlestick | Library |
+
+`themeExternalDetails.ts` places each item relative to its final, already translated furniture transform. Measured top heights are 0.62826 m for the large table, 1.14553 m for the drawer workbench and 1.09861 m for the cabinet, before support scaling. The helper preserves the small objects' scale, adds a 3 mm surface clearance, inherits support rotation, and leaves ground collision with the existing furniture. Every item references its supporting entry, so the catalog can copy both together. Do not translate these resolved coordinates a second time.
+
+The scene review found that the retained library already covers these reading-room gaps. No new asset download or license dependency was needed. Existing authored ships, cave, sheep, joinery, writing desks, letters and quill/inkwell already provide the major scene-specific objects. Character bases and unassembled ship parts remain adaptation references; the new work does not silently promote them into classroom use. The book art is illustrative, contains no new teaching evidence, and does not claim an authenticated edition or historically reconstructed furnishing.
+
+Validation: all 69 published GLBs passed checksum, embedded-dependency, geometry and origin checks. The 25 focused checks passed, including all themed arrivals and source-stop routes, exact catalog/runtime placement agreement, supported copies, parsed setup code, and actual-mesh raycasts for all 18 new objects. Their footprints fit the supports and do not overlap. Browser visual review and classroom-device performance remain unverified.
