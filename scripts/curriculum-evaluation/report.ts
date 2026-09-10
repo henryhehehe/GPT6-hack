@@ -1,0 +1,12 @@
+import type {Report} from './runner';
+const escape=(value:unknown)=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
+
+export function reportHtml(report:Report){
+ return `<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Curriculum feedback review</title>
+<style>body{font:17px/1.6 system-ui,sans-serif;color:#173329;background:#f6f5ef;max-width:960px;margin:40px auto;padding:0 24px}h1,h2{line-height:1.2}article{background:white;border:1px solid #cbd6ce;border-radius:12px;padding:24px;margin:24px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px}small{color:#456354}.notice{border-left:4px solid #52745d;padding:16px;background:#eaf0e9}.flag{color:#813018}dt{font-weight:700}dd{margin:0 0 18px}@media print{body{margin:0}article{break-inside:avoid}}</style>
+<h1>Curriculum feedback review</h1><p><strong>${escape(report.status)}</strong> · ${escape(report.mode)} · packet ${escape(report.packetVersion)}</p><p class="notice">${escape(report.notice)}</p>
+<p>${report.results.filter(r=>r.status==='captured').length} of ${report.results.length} responses captured. Every interpretation review is pending.</p>
+${report.error?`<p class="flag">${escape(report.error)}</p>`:''}
+<small>Run ${escape(report.runId)} · ${escape(report.startedAt)} · ${escape(report.assessmentContract)}</small>
+${report.results.map(result=>`<article><h2>${escape(result.exampleId)}</h2><p>${escape(result.status)} · human review: pending</p><dl><dt>Learner answer</dt><dd>${escape(result.learnerText)}</dd><dt>Expected feedback focus</dt><dd>${escape(result.expectedFeedback)}</dd></dl>${result.error?`<p class="flag">${escape(result.error)}</p>`:''}${result.reviewFlags.map(flag=>`<p class="flag">${escape(flag)}</p>`).join('')}<details ${result.evaluation?'open':''}><summary>Recorded assessment</summary><pre>${escape(result.evaluation?JSON.stringify(result.evaluation,null,2):'No model response recorded.')}</pre></details>${result.submission?`<details><summary>Submitted prediction and selected passages</summary><pre>${escape(JSON.stringify(result.submission,null,2))}</pre></details>`:''}<p><strong>Reviewer:</strong> Does the feedback use the assigned text accurately, respect its limits, and help the learner revise? Record your judgment separately; the runner does not answer this question.</p></article>`).join('')}</html>`;
+}
