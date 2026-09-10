@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import * as THREE from 'three';
 import {WORLD_THEMES, WORLD_SURFACES, type SurfaceFinish} from '../lib/worldThemes';
 import {addThemeArchitecture} from '../components/worlds/scene/themeArchitecture';
-import {applyThemeSurfaces, surfaceTexel} from '../components/worlds/scene/themeSurfaces';
+import {applyThemeSurfaces, surfaceTexel, SURFACE_TEXTURE_SIZE} from '../components/worlds/scene/themeSurfaces';
 
 type Resource = THREE.BufferGeometry | THREE.Material | THREE.Texture;
 function observe(resources: Iterable<Resource>) {
@@ -41,7 +41,8 @@ test('every configured work treats native architecture, restores shared sources,
    owned.add(mesh.geometry); owned.add(replacement);
    for (const texture of [replacement.map, replacement.bumpMap, replacement.roughnessMap]) {
     assert.ok(texture instanceof THREE.DataTexture);
-    assert.equal(texture.image.width, 128); assert.equal(texture.image.height, 128);
+    assert.equal(texture.image.width, SURFACE_TEXTURE_SIZE); assert.equal(texture.image.height, SURFACE_TEXTURE_SIZE);
+    assert.ok(texture.image.width<=256,'bounded material memory');
     assert.equal(texture.wrapS, THREE.RepeatWrapping); assert.equal(texture.wrapT, THREE.RepeatWrapping);
     owned.add(texture);
    }

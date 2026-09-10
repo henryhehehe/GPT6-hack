@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import * as THREE from 'three';
 import {WORLD_THEMES} from '../lib/worldThemes';
 import {addThemeNature} from '../components/worlds/scene/themeNature';
+import {vegetationGeometry,foliageTexture} from '../components/worlds/scene/vegetationGeometry';
 import {addThemeArchitecture} from '../components/worlds/scene/themeArchitecture';
 import {themeLayout} from '../components/worlds/scene/themeLayouts';
 import {createSettingNavigation} from '../components/worlds/scene/settingLayout';
@@ -36,7 +37,7 @@ test('wind bends foliage and rooted ground cover within culling bounds, without 
  const scene=new THREE.Scene(),nature=addThemeNature(scene,WORLD_THEMES.tempest,()=>true);
  const meshes=nature.root.children.filter((o):o is THREE.InstancedMesh=>o instanceof THREE.InstancedMesh);
  const originals=new Map(meshes.map(mesh=>[mesh,new Float32Array(mesh.instanceMatrix.array)]));
- const leaves=meshes.find(mesh=>mesh.name==='Wind in foliage')!,grass=meshes.find(mesh=>mesh.name==='Wind in ground cover'&&mesh.geometry.type==='ConeGeometry')!;
+ const leaves=meshes.find(mesh=>mesh.name==='Wind in foliage')!,grass=meshes.find(mesh=>mesh.name==='Wind in ground cover'&&mesh.geometry.name==='Botanical grass')!;
  assert.ok(leaves&&grass);
  nature.update(12,false);
  assert.notDeepEqual(leaves.instanceMatrix.array,originals.get(leaves));
@@ -47,7 +48,7 @@ test('wind bends foliage and rooted ground cover within culling bounds, without 
   for(let i=0;i<mesh.count;i++){
    base.fromArray(original,i*16);mesh.getMatrixAt(i,animated);assert.ok(animated.elements.every(Number.isFinite));
    if(mesh===leaves)varying.add(Math.round((animated.elements[12]-base.elements[12])*100000));
-   if(mesh===grass){p.set(0,-.5,0).applyMatrix4(base);q.set(0,-.5,0).applyMatrix4(animated);assert.ok(p.distanceTo(q)<1e-5,'grass roots stay anchored');}
+   if(mesh.name==='Wind in ground cover'){p.set(0,0,0).applyMatrix4(base);q.set(0,0,0).applyMatrix4(animated);assert.ok(p.distanceTo(q)<1e-5,'botanical roots stay anchored');}
    const vertices=mesh.geometry.getAttribute('position');
    for(let v=0;v<vertices.count;v++){
     p.fromBufferAttribute(vertices,v).applyMatrix4(base);q.fromBufferAttribute(vertices,v).applyMatrix4(animated);
@@ -65,4 +66,25 @@ test('wind bends foliage and rooted ground cover within culling bounds, without 
  nature.update(8,false);assert.ok(birds.children.some((b,i)=>JSON.stringify(Array.from((b as THREE.Mesh).geometry.getAttribute('position').array))!==JSON.stringify(rest[i])),'wings flap independently');
  nature.update(NaN,false);for(const mesh of meshes)assert.ok(Array.from(mesh.instanceMatrix.array).every(Number.isFinite));
  nature.dispose();const disposedVersion=leaves.instanceMatrix.version;nature.update(45,false);nature.dispose();assert.equal(leaves.instanceMatrix.version,disposedVersion);assert.equal(scene.children.length,0);
+});
+
+
+test('botanical geometry stays finite, ground rooted and cheap enough for instancing',()=>{
+ for(const kind of ['grass','plant','flowers'] as const){
+  const geometry=vegetationGeometry(kind),position=geometry.getAttribute('position'),normal=geometry.getAttribute('normal'),index=geometry.index!;
+  assert.ok(index.count/3<=160,'each botanical instance stays below 160 triangles');
+  assert.ok(geometry.boundingBox!.min.y>=0&&geometry.boundingBox!.max.y<=1,'geometry fits authored metre scales');
+  for(const attribute of [position,normal,geometry.getAttribute('color')])assert.ok(Array.from(attribute.array).every(Number.isFinite));
+  const a=new THREE.Vector3(),b=new THREE.Vector3(),c=new THREE.Vector3();
+  for(let i=0;i<index.count;i+=3){
+   a.fromBufferAttribute(position,index.getX(i));b.fromBufferAttribute(position,index.getX(i+1));c.fromBufferAttribute(position,index.getX(i+2));
+   assert.ok(b.sub(a).cross(c.sub(a)).lengthSq()>1e-12,'tapered tips never create zero-area triangles');
+  }
+  if(kind!=='flowers')assert.equal(geometry.boundingBox!.min.y,0,'roots share the wind pivot');
+  geometry.dispose();
+ }
+ const texture=foliageTexture(),data=texture.image.data as Uint8Array,shades=new Set<number>();let filled=0;
+ for(let i=0;i<data.length;i+=4)if(data[i+3]){filled++;shades.add(data[i]);}
+ assert.ok(filled>128*128*.25&&filled<128*128*.8,'leaf clusters retain real openings');
+ assert.ok(shades.size>20,'pigment and veins provide tonal structure');texture.dispose();
 });

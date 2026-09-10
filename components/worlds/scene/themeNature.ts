@@ -3,6 +3,7 @@ import type {WorldTheme} from '@/lib/worldThemes';
 import {themeLayout} from './themeLayouts';
 import type {ArchitectureBounds} from './themeArchitecture';
 import {themeWind,windGust} from './themeWind';
+import {vegetationGeometry,foliageTexture} from './vegetationGeometry';
 
 type Point={x:number;z:number};
 
@@ -19,19 +20,12 @@ export function addThemeNature(scene:THREE.Scene,theme:WorldTheme,isWalkable:(p:
  const greens=(heath?['#626745','#767552','#4d5a40']:coast?['#637454','#7c8860','#485e42']:['#48653a','#687f45','#819658']).map(material);
  const grasses=(heath?['#8a795c','#6a6b43','#927a67']:coast?['#aa9f68','#929359','#71835a']:['#799450','#a2aa64','#54733d']).map(material);
  const petals=(heath?['#988091','#806d87']:['#e4d8b6','#b9a1c5','#bcba76']).map(material);
- // Opaque cutout leaf clusters have real gaps, rather than solid spherical crowns.
- const leafPixels=new Uint8Array(128*128*4),leaves=Array.from({length:60},(_,i)=>{
-  const angle=i*2.39996,r=.43*Math.sqrt((i+.5)/60);return {x:.5+Math.cos(angle)*r,y:.5+Math.sin(angle)*r,a:angle};
- });
- for(let y=0;y<128;y++)for(let x=0;x<128;x++){
-  const i=(y*128+x)*4;leafPixels[i]=leafPixels[i+1]=leafPixels[i+2]=255;
-  const filled=leaves.some(l=>{const dx=x/128-l.x,dy=y/128-l.y,u=dx*Math.cos(l.a)+dy*Math.sin(l.a),v=-dx*Math.sin(l.a)+dy*Math.cos(l.a);return (u/.095)**2+(v/.040)**2<1;});
-  leafPixels[i+3]=filled?255:0;
- }
- const leafTexture=new THREE.DataTexture(leafPixels,128,128);leafTexture.needsUpdate=true;leafTexture.generateMipmaps=true;leafTexture.minFilter=THREE.LinearMipmapLinearFilter;leafTexture.magFilter=THREE.LinearFilter;
- const foliage=greens.map(g=>{const m=g.clone();m.map=leafTexture;m.alphaTest=.45;m.side=THREE.DoubleSide;materials.push(m);return m;});
- const trunk=new THREE.CylinderGeometry(.7,1,1,7),crown=new THREE.IcosahedronGeometry(1,1),blade=new THREE.ConeGeometry(1,1,3),stone=new THREE.DodecahedronGeometry(1,0);
- const leafCard=new THREE.PlaneGeometry(1,1);geometries.push(trunk,crown,blade,stone,leafCard);
+ // Fine folded blades and leaves keep a botanical silhouette at walking distance.
+ for(const m of [...greens,...grasses,...petals]){m.vertexColors=true;m.side=THREE.DoubleSide;}
+ const leafTexture=foliageTexture();
+ const foliage=greens.map(g=>{const m=g.clone();m.vertexColors=false;m.map=leafTexture;m.alphaTest=.45;materials.push(m);return m;});
+ const trunk=new THREE.CylinderGeometry(.7,1,1,7),blade=vegetationGeometry('grass'),plant=vegetationGeometry('plant'),flower=vegetationGeometry('flowers'),stone=new THREE.DodecahedronGeometry(1,0);
+ const leafCard=new THREE.PlaneGeometry(1,1);geometries.push(trunk,blade,plant,flower,stone,leafCard);
  const batches=new Map<string,{g:THREE.BufferGeometry;m:THREE.Material;matrices:THREE.Matrix4[];cast:boolean}>(),transform=new THREE.Object3D();
  function put(g:THREE.BufferGeometry,m:THREE.Material,x:number,y:number,z:number,sx:number,sy:number,sz:number,turn=0,tilt=0,cast=false){
   transform.position.set(x,y,z);transform.rotation.set(tilt,turn,0);transform.scale.set(sx,sy,sz);transform.updateMatrix();
@@ -85,17 +79,18 @@ export function addThemeNature(scene:THREE.Scene,theme:WorldTheme,isWalkable:(p:
    if(!clear(p)||!isWalkable(p,.5)||Math.hypot(p.x,p.z)>24)continue;
    if(layout.kind==='courtyard'&&!(p.x>3&&p.x<11&&p.z>10&&p.z<16))continue;
    const h=.16+random()*(heath?.38:.3);
-   put(blade,grasses[i%3],p.x,h/2,p.z,.05+random()*.04,h,.08,random()*6,random()*.25);
-   if(i%8===0)put(crown,petals[i%petals.length],p.x,h+.03,p.z,.05,.035,.05);
-   if(i%23===0)put(crown,greens[i%3],p.x,.18,p.z,.35+random()*.25,.2,.32,random()*6);
+   const spread=.17+random()*.10;
+   put(blade,grasses[i%3],p.x,.005,p.z,spread,h,spread,random()*6);
+   if(i%8===0)put(flower,petals[i%petals.length],p.x,h*.6,p.z,.14,.12,.14,random()*6);
+   if(i%23===0)put(plant,greens[i%3],p.x,.005,p.z,.26+random()*.18,.25,.3,random()*6);
   }
  }
  // Plant the already-blocked beds instead of adding obstacles to their paths.
  const beds=garden?[[0,-5,7,3],[9,13,7,4],[-13,-3,5,3]]:layout.kind==='courtyard'?[[7,13,6.5,3.5]]:[];
  for(const [x,z,w,d] of beds)for(let i=0;i<100;i++){
   const xx=x+(random()-.5)*(w-.4),zz=z+(random()-.5)*(d-.4);
-  put(crown,greens[i%3],xx,1.03,zz,.20,.18,.2,random()*6);
-  if(i%2===0)put(crown,petals[i%petals.length],xx,1.22,zz,.10,.05,.09);
+  put(plant,greens[i%3],xx,.86,zz,.32,.38,.32,random()*6);
+  if(i%2===0)put(flower,petals[i%petals.length],xx,1.12,zz,.27,.20,.27,random()*6);
  }
  // Broken stone and heather occupy the heath's outer land, beyond the courtyard.
  if(heath)for(let i=0;i<28;i++){
@@ -108,7 +103,7 @@ export function addThemeNature(scene:THREE.Scene,theme:WorldTheme,isWalkable:(p:
  let disposed=false,lastWindFrame=-1,wasReduced=true;
  for(const b of batches.values()){
   const mesh=new THREE.InstancedMesh(b.g,b.m,b.matrices.length);mesh.name='Instanced landscape';b.matrices.forEach((m,i)=>mesh.setMatrixAt(i,m));mesh.castShadow=b.cast;mesh.receiveShadow=true;mesh.computeBoundingSphere();root.add(mesh);instances.push(mesh);
-  const kind=foliage.includes(b.m as THREE.MeshStandardMaterial)?'leaves':b.g===blade||b.g===crown?'stems':undefined;
+  const kind=foliage.includes(b.m as THREE.MeshStandardMaterial)?'leaves':b.g===blade||b.g===plant||b.g===flower?'stems':undefined;
   if(kind){
    mesh.name=kind==='leaves'?'Wind in foliage':'Wind in ground cover';mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
    const base=new Float32Array(mesh.instanceMatrix.array),phase=new Uint8Array(mesh.count);
@@ -148,11 +143,9 @@ export function addThemeNature(scene:THREE.Scene,theme:WorldTheme,isWalkable:(p:
      const o=i*16,amount=phases[b.phase[i]],bend=amount*(b.kind==='leaves'?.13:.28);
      const dx=wind.directionX*bend,dz=wind.directionZ*bend,e=swayMatrix.elements;
      for(let j=0;j<16;j++)e[j]=b.base[o+j];
-     // A shear around each plant's base gives springy motion without moving its roots.
-     const pivot=b.kind==='leaves'?0:Math.abs(b.base[o+5])*(b.mesh.geometry===blade?.5:1);
+     // Botanical meshes originate at soil level; shearing leaves their roots fixed.
      for(let j=0;j<12;j+=4){e[j]+=dx*b.base[o+j+1];e[j+2]+=dz*b.base[o+j+1];}
-     e[12]+=dx*pivot+(b.kind==='leaves'?wind.directionX*amount*.12:0);
-     e[14]+=dz*pivot+(b.kind==='leaves'?wind.directionZ*amount*.12:0);
+     if(b.kind==='leaves'){e[12]+=wind.directionX*amount*.12;e[14]+=wind.directionZ*amount*.12;}
      b.mesh.setMatrixAt(i,swayMatrix);
     }
     for(const b of swayBatches)b.mesh.instanceMatrix.needsUpdate=true;

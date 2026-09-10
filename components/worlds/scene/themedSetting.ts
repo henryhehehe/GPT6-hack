@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import type {WorldTheme} from '@/lib/worldThemes';
 import {settingPlacements,SETTING_SPOTS,SETTING_ASSETS,type SettingPlacement} from './settingLayout';
 import {themeLayout} from './themeLayouts';
+import {createDistantTerrain} from './themeTerrain';
 import {externalPlacements} from './externalLayout';
 import {themeExternalDetails,linkSupportStations} from './themeExternalDetails';
 import {themeExternalActivityAreas} from './themeExternalActivityAreas';
@@ -81,19 +82,9 @@ export function themedExternalPlacements(theme:WorldTheme){
 /** Distant scenery is outside the walking boundary; local furniture owns its collisions. */
 export function addThemeScenery(scene:THREE.Scene,theme:WorldTheme){
  const root=new THREE.Group();root.name='Interpreted setting';scene.add(root);
- const materials=new Set<THREE.Material>(),geometries=new Set<THREE.BufferGeometry>();
- const mat=(color:string,roughness=.9)=>{const m=new THREE.MeshStandardMaterial({color,roughness});materials.add(m);return m;};
- const hill=mat(theme.ground);
- const mound=new THREE.SphereGeometry(1,16,10);geometries.add(mound);
- function mesh(g:THREE.BufferGeometry,m:THREE.Material,x:number,y:number,z:number,sx:number,sy:number,sz:number){const o=new THREE.Mesh(g,m);o.position.set(x,y,z);o.scale.set(sx,sy,sz);o.castShadow=false;o.receiveShadow=true;root.add(o);return o;}
- if(theme.landscape==='shore'||theme.landscape==='highlands'){
-  for(let i=0;i<9;i++){
-   const angle=Math.PI*.12+i*Math.PI*.105,r=57+(i%3)*9,height=theme.landscape==='highlands'?13+i%4*5:5+i%4*3;
-   mesh(mound,hill,Math.cos(angle)*r,-2,Math.sin(angle)*-r,12+i%3*4,height,10+i%2*4);
-  }
- }
-
- return {dispose(){root.removeFromParent();geometries.forEach(g=>g.dispose());materials.forEach(m=>m.dispose());}};
+ const terrain=createDistantTerrain(theme);if(terrain)root.add(terrain);
+ let disposed=false;
+ return {dispose(){if(disposed)return;disposed=true;root.removeFromParent();terrain?.geometry.dispose();terrain?.material.dispose();}};
 }
 
 /** Fictional reading companions, with a human silhouette and neutral period-inspired clothing. */
