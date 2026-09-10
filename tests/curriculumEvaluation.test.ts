@@ -100,3 +100,28 @@ test('saved errors redact credentials and HTML reports cannot execute returned m
  report.results[0].expectedFeedback='<img src=x onerror=alert(1)>';
  const html=reportHtml(report);assert.ok(!html.includes('<img'));assert.ok(html.includes('&lt;img'));assert.ok(!html.includes('<script'));
 });
+
+test('historical suite selects its own cases and preserves offline and review boundaries',async()=>{
+ let calls=0;
+ const report=await runEvaluation({baseUrl:'http://localhost:5173',suite:'historical',fetcher:async()=>{calls++;throw Error('Offline only');}});
+ assert.equal(calls,0);assert.equal(report.suite,'historical');assert.equal(report.results.length,20);
+ assert.equal(new Set(report.results.map(r=>r.lessonId)).size,4);
+ assert.ok(report.results.every(r=>r.status==='pending'&&r.humanReview==='pending'));
+ const one=await runEvaluation({baseUrl:'http://localhost:5173',suite:'historical',caseIds:['tempest-03-history-edition-disagreement']});
+ assert.equal(one.results.length,1);assert.equal(one.results[0].kind,'uncertain');
+ await assert.rejects(()=>runEvaluation({baseUrl:'http://localhost:5173',caseIds:['tempest-03-history-edition-disagreement']}),/selected fixture suite/);
+ assert.throws(()=>preflight([],undefined,'obsolete'),/different packet version/);
+ assert.ok(reportHtml(report).includes('historical suite'));
+});
+
+test('historical orchestration submits learner work only and flags credited note misattribution for review',async()=>{
+ const app=fakeApp();
+ const report=await runEvaluation({baseUrl:'http://localhost:5173',suite:'historical',live:true,parent,learning,fetcher:app.fetcher});
+ assert.equal(report.status,'completed');assert.equal(app.students.size,20);assert.equal(app.worlds.size,4);
+ assert.ok(app.submissions.every(s=>!('contextAssertions' in s)&&!('expectedFeedback' in s)));
+ assert.ok(report.results.every(r=>r.status==='captured'&&r.humanReview==='pending'));
+ const example=report.results.find(r=>r.kind==='context-misattribution')!;
+ const result=emptyEvaluation();result.items[1]={key:'evidence',earned:true,excerpt:example.learnerText,reason:'Test credit; requires attribution review.'};result.score=1;
+ const flags=checkEvaluation(result,{...example,id:example.exampleId,evidenceIds:[],quotedPhrases:[]});
+ assert.equal(flags.length,1);assert.match(flags[0],/modern note/);
+});

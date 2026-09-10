@@ -1,0 +1,318 @@
+{
+  "schemaVersion": 1,
+  "packetVersion": "2026-09-10.3",
+  "sourceNotesSha256": "b029b2d3cf11bb7b96e006842e2d3a510379c65b7e223f83d4004f5dfca62ffc",
+  "status": "Authored historical feedback review cases; no live model responses or semantic scores.",
+  "gradingNote": "Expectations are qualitative, not exact-score targets. Fabricated-quotation and context-misattribution cases intentionally contain errors. Contextual notes are available to the learner but are not original-source quotations. A source-bounded uncertainty answer can be defensible without naming an external authority.",
+  "examples": [
+    {
+      "id": "douglass-literacy-01-history-coercion",
+      "lessonId": "douglass-literacy-01",
+      "kind": "supported",
+      "learnerText": "Auld’s interruption makes literacy a question of power: he stops instruction, and Douglass describes the restriction as revealing a pathway toward freedom. The report shows coercion; it does not itself establish a Maryland statute.",
+      "evidenceIds": [
+        "23-99-0",
+        "23-99-1450"
+      ],
+      "quotedPhrases": [],
+      "expectedFeedback": "Recognize the explanation connecting control of instruction and Douglass's narrated insight. Attribute the prohibition to Auld as reported by Douglass. Do not convert the phrase unlawful into a verified statute or treat the absence of a specific statute as absence of coercion.",
+      "contextAssertions": []
+    },
+    {
+      "id": "douglass-literacy-01-history-reported-law",
+      "lessonId": "douglass-literacy-01",
+      "kind": "uncertain",
+      "learnerText": "The phrase “it was unlawful, as well as unsafe” occurs in Douglass’s report of what Auld told his wife. I would need a legal source to establish whether that was Maryland law.",
+      "evidenceIds": [
+        "23-99-0"
+      ],
+      "quotedPhrases": [
+        "it was unlawful, as well as unsafe"
+      ],
+      "expectedFeedback": "Recognize warranted uncertainty and accurate reported-speech attribution. The learner need not independently know Maryland legal history. If mentioning the supplied reading note, identify it as separate context and invite an explanation of how the interruption controls learning.",
+      "contextAssertions": []
+    },
+    {
+      "id": "douglass-literacy-01-history-invented-statute",
+      "lessonId": "douglass-literacy-01",
+      "kind": "fabricated-quotation",
+      "learnerText": "Douglass quotes a Maryland statute saying “Every enslaved reader shall be imprisoned,” so his chapter supplies the exact law.",
+      "evidenceIds": [
+        "23-99-0"
+      ],
+      "quotedPhrases": [
+        "Every enslaved reader shall be imprisoned"
+      ],
+      "expectedFeedback": "Identify the absent quotation and the misrepresentation of a narrative as a statutory text. Ask for actual wording and its speaker. Do not affirm the invented statute or dismiss the entire Narrative as unreliable.",
+      "contextAssertions": []
+    },
+    {
+      "id": "douglass-literacy-01-history-escape-date",
+      "lessonId": "douglass-literacy-01",
+      "kind": "out-of-range",
+      "learnerText": "What exact day did Douglass escape, and which route did he take? This chapter should settle both.",
+      "evidenceIds": [
+        "23-99-1450"
+      ],
+      "quotedPhrases": [],
+      "expectedFeedback": "Explain that this Chapter VI packet does not establish the escape date or route. The pathway metaphor and resolve to learn do not record immediate escape. Return to the supplied account without filling the gap with outside biography.",
+      "contextAssertions": []
+    },
+    {
+      "id": "douglass-literacy-01-history-note-as-quotation",
+      "lessonId": "douglass-literacy-01",
+      "kind": "context-misattribution",
+      "learnerText": "Douglass writes “Distinguish household coercion from law.” That direct quotation is my proof of what his narrator says.",
+      "evidenceIds": [
+        "23-99-0"
+      ],
+      "quotedPhrases": [],
+      "expectedFeedback": "The sentence is a modern reading note, not Douglass's wording. Correct the attribution without treating the distinction itself as false; ask the learner to cite the Narrative separately.",
+      "contextAssertions": [
+        {
+          "evidenceId": "23-99-0",
+          "material": "readingNote",
+          "text": "Distinguish household coercion from law"
+        }
+      ]
+    },
+    {
+      "id": "seneca-falls-02-history-qualified-grievance",
+      "lessonId": "seneca-falls-02",
+      "kind": "supported",
+      "learnerText": "The grievance says “all colleges being closed against her.” The reading note’s Oberlin exception challenges that universal wording without showing that educational exclusion was unimportant.",
+      "evidenceIds": [
+        "sentiments-document-3906"
+      ],
+      "quotedPhrases": [
+        "all colleges being closed against her"
+      ],
+      "expectedFeedback": "Recognize a qualification of scope that preserves the broader grievance. Attribute Oberlin to the contextual note, not the 1848 declaration. The exception does not justify dismissing every claim in the declaration.",
+      "contextAssertions": [
+        {
+          "evidenceId": "sentiments-document-3906",
+          "material": "readingNote",
+          "text": "Oberlin admitted women to its baccalaureate program in 1837, and three graduated in 1841"
+        }
+      ]
+    },
+    {
+      "id": "seneca-falls-02-history-universal-needs-checking",
+      "lessonId": "seneca-falls-02",
+      "kind": "uncertain",
+      "learnerText": "The word “all” makes the education grievance universal. The declaration states that claim, but by itself it does not show the admissions rules of every college.",
+      "evidenceIds": [
+        "sentiments-document-3906"
+      ],
+      "quotedPhrases": [
+        "all"
+      ],
+      "expectedFeedback": "Recognize a defensible source limitation without requiring the learner to name Oberlin. Ask how evidence of particular institutions could test the claim. Do not score disagreement with universal wording as failure to understand the rights argument.",
+      "contextAssertions": []
+    },
+    {
+      "id": "seneca-falls-02-history-invented-enactment",
+      "lessonId": "seneca-falls-02",
+      "kind": "fabricated-quotation",
+      "learnerText": "The declaration announces “All colleges are hereby required to admit women,” so the convention immediately changed admissions law everywhere.",
+      "evidenceIds": [
+        "sentiments-document-3906"
+      ],
+      "quotedPhrases": [
+        "All colleges are hereby required to admit women"
+      ],
+      "expectedFeedback": "Identify the absent quotation and distinguish a grievance and demand from enacted legislation or achieved institutional change. Ask for the actual education grievance; do not invent a statute or its effects.",
+      "contextAssertions": []
+    },
+    {
+      "id": "seneca-falls-02-history-national-admissions-list",
+      "lessonId": "seneca-falls-02",
+      "kind": "out-of-range",
+      "learnerText": "List every college that admitted women in 1848 and the exact number enrolled at each.",
+      "evidenceIds": [
+        "sentiments-document-3906"
+      ],
+      "quotedPhrases": [],
+      "expectedFeedback": "The packet and its bounded note do not provide a national admissions or enrollment survey. The Oberlin example does not establish an exhaustive list. Suggest the additional records needed and return to testing the scope of the supplied grievance.",
+      "contextAssertions": []
+    },
+    {
+      "id": "seneca-falls-02-history-oberlin-in-original",
+      "lessonId": "seneca-falls-02",
+      "kind": "context-misattribution",
+      "learnerText": "The Declaration of Sentiments itself says “Oberlin admitted women to its baccalaureate program in 1837,” so its authors already wrote this exception into the education grievance.",
+      "evidenceIds": [
+        "sentiments-document-3906"
+      ],
+      "quotedPhrases": [],
+      "expectedFeedback": "Identify the quotation as wording from the modern reading note, absent from the supplied declaration text. Do not infer what the authors knew from that note. Preserve the original universal wording and keep the contextual qualification separate.",
+      "contextAssertions": [
+        {
+          "evidenceId": "sentiments-document-3906",
+          "material": "readingNote",
+          "text": "Oberlin admitted women to its baccalaureate program in 1837"
+        }
+      ]
+    },
+    {
+      "id": "declaration-01-history-principle-and-action",
+      "lessonId": "declaration-01",
+      "kind": "supported",
+      "learnerText": "The principles allow people to “alter or to abolish” destructive government, and the conclusion uses “solemnly publish and declare” to announce separation. This is an argument and political declaration; the words alone do not prove military victory.",
+      "evidenceIds": [
+        "declaration-10-0",
+        "declaration-40-0"
+      ],
+      "quotedPhrases": [
+        "alter or to abolish",
+        "solemnly publish and declare"
+      ],
+      "expectedFeedback": "Recognize the connection between a stated principle and the conclusion's announced action. Preserve the distinction between declaration and demonstrated later effects. Do not demand a war chronology absent from the assigned evidence.",
+      "contextAssertions": []
+    },
+    {
+      "id": "declaration-01-history-dates-in-context",
+      "lessonId": "declaration-01",
+      "kind": "uncertain",
+      "learnerText": "The reading note distinguishes the July 2 independence vote, July 4 adoption, and most signatures on August 2. The excerpt’s declaration of independence does not itself tell me when every person signed.",
+      "evidenceIds": [
+        "declaration-40-0"
+      ],
+      "quotedPhrases": [],
+      "expectedFeedback": "Recognize both accurate use of the separately supplied chronology and the limit of the excerpt. Do not say all delegates signed on July 4 or all signed on August 2; the note explicitly allows later signatures.",
+      "contextAssertions": [
+        {
+          "evidenceId": "declaration-40-0",
+          "material": "readingNote",
+          "text": "most delegates signed the engrossed parchment on August 2; others signed later"
+        }
+      ]
+    },
+    {
+      "id": "declaration-01-history-invented-signing-record",
+      "lessonId": "declaration-01",
+      "kind": "fabricated-quotation",
+      "learnerText": "The document says “Every delegate signed this parchment on July 4,” which proves all the signatures were added that day.",
+      "evidenceIds": [
+        "declaration-40-0"
+      ],
+      "quotedPhrases": [
+        "Every delegate signed this parchment on July 4"
+      ],
+      "expectedFeedback": "Identify the invented quotation. Separate adoption from signing, using the labeled context if helpful. Do not invent an all-signers date or treat the excerpt as a signing register.",
+      "contextAssertions": []
+    },
+    {
+      "id": "declaration-01-history-later-outcomes",
+      "lessonId": "declaration-01",
+      "kind": "out-of-range",
+      "learnerText": "Using only these excerpts, name the final battle and treaty that secured independence and explain every treaty term.",
+      "evidenceIds": [
+        "declaration-40-0"
+      ],
+      "quotedPhrases": [],
+      "expectedFeedback": "State that the supplied opening, principles, and conclusion cannot establish subsequent battles or treaty terms. Return to the document's stated justification and announcement without fabricating later evidence.",
+      "contextAssertions": []
+    },
+    {
+      "id": "declaration-01-history-note-in-original",
+      "lessonId": "declaration-01",
+      "kind": "context-misattribution",
+      "learnerText": "The Declaration’s own authors wrote “most delegates signed the engrossed parchment on August 2,” so this quotation is part of their announced justification for independence.",
+      "evidenceIds": [
+        "declaration-40-0"
+      ],
+      "quotedPhrases": [],
+      "expectedFeedback": "Correct the attribution: the chronology appears in a modern reading note, not the assigned Declaration text. A factually useful note is not a quotation from the historical document or part of its argument.",
+      "contextAssertions": [
+        {
+          "evidenceId": "declaration-40-0",
+          "material": "readingNote",
+          "text": "most delegates signed the engrossed parchment on August 2"
+        }
+      ]
+    },
+    {
+      "id": "tempest-03-history-competing-accounts",
+      "lessonId": "tempest-03",
+      "kind": "supported",
+      "learnerText": "In this Gutenberg edition, Prospero says “I pitied thee” while Caliban says “This island’s mine.” Pity presents authority as a benefit; possession presents it as a taking. The conflicting accounts invite comparison rather than proving either speaker’s whole story.",
+      "evidenceIds": [
+        "1540-170-0",
+        "1540-167-0"
+      ],
+      "quotedPhrases": [
+        "I pitied thee",
+        "This island’s mine"
+      ],
+      "expectedFeedback": "Recognize close comparison of the supplied language and its different justifications. Retain Gutenberg's speaker label while acknowledging its edition. Accept multiple supported interpretations; do not turn either dramatic claim into an independently verified history.",
+      "contextAssertions": []
+    },
+    {
+      "id": "tempest-03-history-edition-disagreement",
+      "lessonId": "tempest-03",
+      "kind": "uncertain",
+      "learnerText": "The note says Folger gives the speech beginning “Abhorred slave” to Miranda, although this card labels it PROSPERO. I need to name the edition before drawing a conclusion about which character uses that language.",
+      "evidenceIds": [
+        "1540-170-0"
+      ],
+      "quotedPhrases": [
+        "Abhorred slave"
+      ],
+      "expectedFeedback": "Recognize edition-aware uncertainty. Do not flag Miranda as an invented speaker merely because the selected Gutenberg card says PROSPERO. Keep the current source label intact and identify Folger information as editorial context, not a second quoted packet.",
+      "contextAssertions": [
+        {
+          "evidenceId": "1540-170-0",
+          "material": "editorialNote",
+          "text": "Folger assigns it to Miranda"
+        }
+      ]
+    },
+    {
+      "id": "tempest-03-history-invented-consent",
+      "lessonId": "tempest-03",
+      "kind": "fabricated-quotation",
+      "learnerText": "Caliban says “I freely gave this island to Prospero forever,” so his account proves that he consented to permanent rule.",
+      "evidenceIds": [
+        "1540-167-0"
+      ],
+      "quotedPhrases": [
+        "I freely gave this island to Prospero forever"
+      ],
+      "expectedFeedback": "Identify the absent quotation and unsupported inference of consent. Ask for the actual claim of possession and account of their earlier relationship. Do not validate invented language because it supports a plausible thematic argument.",
+      "contextAssertions": []
+    },
+    {
+      "id": "tempest-03-history-ending-as-proof",
+      "lessonId": "tempest-03",
+      "kind": "out-of-range",
+      "learnerText": "Does the final scene of Act 5 settle which of these accounts is true? Tell me exactly how each character ends up.",
+      "evidenceIds": [
+        "1540-131-0",
+        "1540-167-0",
+        "1540-170-0"
+      ],
+      "quotedPhrases": [],
+      "expectedFeedback": "Act 5 lies outside this Act 1 Scene 2 packet. Explain the limit and invite comparison of the supplied accounts. Do not supply ending events or use them as required evidence.",
+      "contextAssertions": []
+    },
+    {
+      "id": "tempest-03-history-editorial-in-dialogue",
+      "lessonId": "tempest-03",
+      "kind": "context-misattribution",
+      "learnerText": "Prospero says “Name your edition when comparing speakers.” This proves the character knows that his speech has different editors.",
+      "evidenceIds": [
+        "1540-170-0"
+      ],
+      "quotedPhrases": [],
+      "expectedFeedback": "Identify the sentence as a modern editorial instruction, not dramatic dialogue. Correct the speaker attribution and ask for actual words from the play; do not invent metatheatrical awareness from interface notes.",
+      "contextAssertions": [
+        {
+          "evidenceId": "1540-170-0",
+          "material": "editorialNote",
+          "text": "Name your edition when comparing speakers"
+        }
+      ]
+    }
+  ]
+}
